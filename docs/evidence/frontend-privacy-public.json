@@ -1,0 +1,124 @@
+{
+  "checkedAt": "2026-09-19T23:36:48.643Z",
+  "mode": "PUBLIC_PRIVACY_COPY_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "authRequests": 0,
+  "modelRequests": 0,
+  "mutations": 0,
+  "blockedRequests": 0,
+  "build": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "redirectedTo": "/",
+      "localSha256": "757a5c80bfe2eb8896f306dc6c96684eec4f85d96cef2faba68d5f1cc559ef90",
+      "publicSha256": "757a5c80bfe2eb8896f306dc6c96684eec4f85d96cef2faba68d5f1cc559ef90",
+      "match": true
+    },
+    {
+      "path": "/assets/AccountPages-CmjPlcy8.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "5a29d0d481a55e0278c49c053514f1030a1868953fad04d18115d2a437ca1ca0",
+      "publicSha256": "5a29d0d481a55e0278c49c053514f1030a1868953fad04d18115d2a437ca1ca0",
+      "match": true
+    },
+    {
+      "path": "/assets/Chat-ldOgM8IM.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "44d24f82531c44b780cdb7d3de1c33920bd61e42fa44e4711fd18b88132b2dcf",
+      "publicSha256": "44d24f82531c44b780cdb7d3de1c33920bd61e42fa44e4711fd18b88132b2dcf",
+      "match": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-DJE6eONh.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "44905f0789385eedecd7ee1b025baa06f90c2b52a77214e075f7c6e61c99cc21",
+      "publicSha256": "44905f0789385eedecd7ee1b025baa06f90c2b52a77214e075f7c6e61c99cc21",
+      "match": true
+    },
+    {
+      "path": "/assets/ConnectionState-BgyXbVNw.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "f891ad85ecc04e8daf00b78cdb05f4648c9e6712da0597341fdf7bbc3ef3d1f1",
+      "publicSha256": "f891ad85ecc04e8daf00b78cdb05f4648c9e6712da0597341fdf7bbc3ef3d1f1",
+      "match": true
+    },
+    {
+      "path": "/assets/Reading-BRg_IwJu.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "7967c0a50546736c6076492f0d8d510be84f053be1d6441ee908ba2333de6682",
+      "publicSha256": "7967c0a50546736c6076492f0d8d510be84f053be1d6441ee908ba2333de6682",
+      "match": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-ByszkonX.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "3169b51c37c91ba71b47d73fb3fd5da3473d20c7943824c548a8962951d27679",
+      "publicSha256": "3169b51c37c91ba71b47d73fb3fd5da3473d20c7943824c548a8962951d27679",
+      "match": true
+    },
+    {
+      "path": "/assets/index-CRTEWzWi.css",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "60642f0f03a67555dd5d6fd61bca711340a4263afb606fafc07619bf522aff47",
+      "publicSha256": "60642f0f03a67555dd5d6fd61bca711340a4263afb606fafc07619bf522aff47",
+      "match": true
+    },
+    {
+      "path": "/assets/pagination-DlEnJobJ.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "fe7ce353fb54a0e7118e5cdfccaa8513d94d9eb5e84a381606cd567661f84a9d",
+      "publicSha256": "fe7ce353fb54a0e7118e5cdfccaa8513d94d9eb5e84a381606cd567661f84a9d",
+      "match": true
+    }
+  ],
+  "views": [
+    {
+      "width": 360,
+      "status": 200,
+      "copyMatched": true,
+      "errors": [],
+      "scrollWidth": 360,
+      "csp": [],
+      "clippedParagraphs": 0,
+      "screenshots": [
+        "tests/ui/artifacts/privacy-public/section-04-360.png",
+        "tests/ui/artifacts/privacy-public/section-07-360.png"
+      ]
+    },
+    {
+      "width": 1440,
+      "status": 200,
+      "copyMatched": true,
+      "errors": [],
+      "scrollWidth": 1440,
+      "csp": [],
+      "clippedParagraphs": 0,
+      "screenshots": [
+        "tests/ui/artifacts/privacy-public/section-04-1440.png",
+        "tests/ui/artifacts/privacy-public/section-07-1440.png"
+      ]
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Only privacy copy, layout and deployed build bytes verified; no signup, CAPTCHA, session, Edge or model request.",
+    "The CSS hash also changed because Tailwind scanned test/evidence utility-like words. No application stylesheet or Tailwind configuration was modified."
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "preparedAt": "2026-09-19T23:09:37.140Z",
+  "status": "DEPLOYED_AWAITING_HOSTED_FOCUS_SMOKE",
+  "deployedAt": "2026-09-19T23:39:27Z",
+  "deployedFunctions": ["saju"],
+  "postDeploymentStartup": {
+    "optionsStatus": 204,
+    "unauthenticatedPostStatus": 401,
+    "allowedOrigin": "https://jumzip.pages.dev",
+    "authenticatedRequests": 0,
+    "modelRequests": 0
+  },
+  "baseCommit": "ea3d0a4797a2ec19acfb711d72147efb839e53eb",
+  "overlayCommit": "ec118014549cb40d02f582ed73ce092e40a20c4a",
+  "previousVerifiedManifest": "docs/evidence/edge-deletion-guard-release.json",
+  "promptVersion": "JumZipPersona-v4",
+  "intentVersion": "JumZipIntent-v1",
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "purpose": "Preserve the original Saju question focus during interpretation retry, retaining the verified provider/prompt/intent and deletion guards.",
+  "plannedFunctions": [
+    "saju"
+  ],
+  "stagedTypecheckPassed": true,
+  "independentReview": {
+    "reviewer": "Codex / fortune_audit",
+    "reviewerKind": "AI",
+    "exactFileHashesVerified": 53,
+    "changedFilesSinceVerifiedRelease": 2,
+    "providerPromptIntentContractsUnchanged": true,
+    "startupAndBoundaryMode": "SYNTHETIC_DENO_ENV_SERVE_AND_QUERY_DOUBLES",
+    "observedStatuses": [204, 401, 200, 422, 404],
+    "networkRequests": 0,
+    "issuesRequiringChange": 0,
+    "startupEvidenceStorage": "Inline execution output only; no separate script or raw report was created."
+  },
+  "changedSinceVerifiedRelease": [
+    "supabase/functions/_shared/orchestration/saju.ts",
+    "supabase/functions/_shared/persistence/saju.ts"
+  ],
+  "changedFiles": [
+    "supabase/functions/_shared/orchestration/compatibility.ts",
+    "supabase/functions/_shared/orchestration/execute.ts",
+    "supabase/functions/_shared/orchestration/saju.ts",
+    "supabase/functions/_shared/persistence/saju.ts"
+  ],
+  "files": [
+    {
+      "path": "supabase/config.toml",
+      "sha256": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+      "originalGitBlob": "35c18ecdbb1c6cb186f067286899c2614014ce4b",
+      "stagedGitBlob": "35c18ecdbb1c6cb186f067286899c2614014ce4b",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/contracts/index.ts",
+      "sha256": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+      "originalGitBlob": "a28c6164d52a9e944640c685f0c597baa97a8de9",
+      "stagedGitBlob": "a28c6164d52a9e944640c685f0c597baa97a8de9",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/fortune-timing.ts",
+      "sha256": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "originalGitBlob": "7784707de9c9c202925ec2e9636702fc2b79fb2f",
+      "stagedGitBlob": "7784707de9c9c202925ec2e9636702fc2b79fb2f",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/full-saju.ts",
+      "sha256": "0d1d4e7709e9ee4dcdb388cf4ab6c0ff76c78201a01e76f95875390e067441a6",
+      "originalGitBlob": "32ef9bdda6968986b34bcb4c68809128ba840627",
+      "stagedGitBlob": "32ef9bdda6968986b34bcb4c68809128ba840627",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/index.ts",
+      "sha256": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "originalGitBlob": "5d9aa0be2b7af484e4970383a05db2289ec6a894",
+      "stagedGitBlob": "5d9aa0be2b7af484e4970383a05db2289ec6a894",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/router.ts",
+      "sha256": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "originalGitBlob": "9d9c0cc9d83961f68eda7195b73def95f592a8a4",
+      "stagedGitBlob": "9d9c0cc9d83961f68eda7195b73def95f592a8a4",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/balance.ts",
+      "sha256": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "originalGitBlob": "78f1b949472225821a496756327791772712566f",
+      "stagedGitBlob": "78f1b949472225821a496756327791772712566f",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/constants.ts",
+      "sha256": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "originalGitBlob": "a49db89e7a3c76f102810fb4a8a4357f7d8f89a8",
+      "stagedGitBlob": "a49db89e7a3c76f102810fb4a8a4357f7d8f89a8",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/index.ts",
+      "sha256": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "originalGitBlob": "3f4332efae21c4d46bf700478c93ce95fb19bb94",
+      "stagedGitBlob": "3f4332efae21c4d46bf700478c93ce95fb19bb94",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/natal.ts",
+      "sha256": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "originalGitBlob": "a6a740c25ba30dc156e5f0d43f0fc085889431cd",
+      "stagedGitBlob": "a6a740c25ba30dc156e5f0d43f0fc085889431cd",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/rational.ts",
+      "sha256": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "originalGitBlob": "975f67079aca15903763190e7d58a255c7f0f880",
+      "stagedGitBlob": "975f67079aca15903763190e7d58a255c7f0f880",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/relations.ts",
+      "sha256": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "originalGitBlob": "2043f2f188e761f712fc7cdea852b4cceeeb1c7c",
+      "stagedGitBlob": "2043f2f188e761f712fc7cdea852b4cceeeb1c7c",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/shinsal.ts",
+      "sha256": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "originalGitBlob": "f8f24cdae7ee5444cac95e0735306f1366cb69ae",
+      "stagedGitBlob": "f8f24cdae7ee5444cac95e0735306f1366cb69ae",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/strength.ts",
+      "sha256": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "originalGitBlob": "5b7f03b312df74e0013fc7effb31ba3f73b6fdc4",
+      "stagedGitBlob": "5b7f03b312df74e0013fc7effb31ba3f73b6fdc4",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/types.ts",
+      "sha256": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "originalGitBlob": "b86a3e309a7e20f48941eb9dc3cf86e895e6a765",
+      "stagedGitBlob": "b86a3e309a7e20f48941eb9dc3cf86e895e6a765",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju-compatibility.ts",
+      "sha256": "b8755006d0053b51243c67abfd07c99fb3763fa157cbe01110ab7dbda9b4a156",
+      "originalGitBlob": "65ea49c721d97ec056b470b809890d4ef0304abd",
+      "stagedGitBlob": "65ea49c721d97ec056b470b809890d4ef0304abd",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju.ts",
+      "sha256": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "originalGitBlob": "7ec29ba1f0f4ef4e6faf88e75fec99ea0f77bd79",
+      "stagedGitBlob": "7ec29ba1f0f4ef4e6faf88e75fec99ea0f77bd79",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/tarot.ts",
+      "sha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "originalGitBlob": "435d34c940610a76c47715be2c880236914147ce",
+      "stagedGitBlob": "435d34c940610a76c47715be2c880236914147ce",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/errors.ts",
+      "sha256": "16a3b8ba406c1da85f32340580713a74340bbc89ba4aa5696556a7724c1b2610",
+      "originalGitBlob": "9457fb274e6af840f5beff55592a055ce46cf872",
+      "stagedGitBlob": "9457fb274e6af840f5beff55592a055ce46cf872",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/handler.ts",
+      "sha256": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+      "originalGitBlob": "c126e44aa40c8249cc7433c633eebc72a5f5e106",
+      "stagedGitBlob": "c126e44aa40c8249cc7433c633eebc72a5f5e106",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/network.ts",
+      "sha256": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+      "originalGitBlob": "97134177e3db4b0bdf43cded3aed697c8b9d697d",
+      "stagedGitBlob": "97134177e3db4b0bdf43cded3aed697c8b9d697d",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/runtime.ts",
+      "sha256": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+      "originalGitBlob": "6f791fdb12679c392b943dd932fad93aa3ba1f39",
+      "stagedGitBlob": "6f791fdb12679c392b943dd932fad93aa3ba1f39",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/index.ts",
+      "sha256": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "originalGitBlob": "7dc22cf393723dfa12e170b63e058c9919f2008f",
+      "stagedGitBlob": "7dc22cf393723dfa12e170b63e058c9919f2008f",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/intent.ts",
+      "sha256": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+      "originalGitBlob": "4055ceb2b1b6e84f4f22b3c81b625c9789fea034",
+      "stagedGitBlob": "4055ceb2b1b6e84f4f22b3c81b625c9789fea034",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/provider.ts",
+      "sha256": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+      "originalGitBlob": "daa144e7071f8c4c8a46a83062e6345dbb02a123",
+      "stagedGitBlob": "daa144e7071f8c4c8a46a83062e6345dbb02a123",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/reply.ts",
+      "sha256": "773f1536106ca9873088d412a6d39a6952fbc67c5ed48435dc7db11dc542f4b5",
+      "originalGitBlob": "7f2fa0abc0f70f64690fbf775dea82b984324f33",
+      "stagedGitBlob": "7f2fa0abc0f70f64690fbf775dea82b984324f33",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/validator.ts",
+      "sha256": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "originalGitBlob": "162619dcb2fc89da61df853e22cd6b87801e2610",
+      "stagedGitBlob": "162619dcb2fc89da61df853e22cd6b87801e2610",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/compatibility.ts",
+      "sha256": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+      "originalGitBlob": "1a2679b6239a75fdca427d3a4b54abc77e44580b",
+      "stagedGitBlob": "170f853da6e1dec8cbccde66e55dee0ced494c22",
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/execute.ts",
+      "sha256": "96f8568d408d374c0ecac0d3759d51e34d78405bf381a4af360c00f881955dff",
+      "originalGitBlob": "c0e7a760e5d091d7abb47196b09c857279a146ef",
+      "stagedGitBlob": "da929f57750437690d7682de038cf080a84c802a",
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/location.ts",
+      "sha256": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+      "originalGitBlob": "0a3c4994a6486c9bc7bb699a5e9402e86dbe4b12",
+      "stagedGitBlob": "0a3c4994a6486c9bc7bb699a5e9402e86dbe4b12",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/maintenance.ts",
+      "sha256": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+      "originalGitBlob": "03cedfc7e3eb2bf7b6facf76ca3d1cb29bcc6237",
+      "stagedGitBlob": "03cedfc7e3eb2bf7b6facf76ca3d1cb29bcc6237",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/memory.ts",
+      "sha256": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+      "originalGitBlob": "f016b5e9947660ad833ff1899a5289090d15ff33",
+      "stagedGitBlob": "f016b5e9947660ad833ff1899a5289090d15ff33",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/privacy.ts",
+      "sha256": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+      "originalGitBlob": "174dab6c6bb6d756335f00d6fa03c7feeda7c1b5",
+      "stagedGitBlob": "174dab6c6bb6d756335f00d6fa03c7feeda7c1b5",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/saju.ts",
+      "sha256": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+      "originalGitBlob": "1a16f1280e799326c6d870a36dd03989d4a9852f",
+      "stagedGitBlob": "9d76d5f6af150f0b0ec898d6141aee59ed70bb47",
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/titles.ts",
+      "sha256": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+      "originalGitBlob": "458caa2431c834621f8597ae8e1a36ba5ab7884f",
+      "stagedGitBlob": "458caa2431c834621f8597ae8e1a36ba5ab7884f",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/cleanup.ts",
+      "sha256": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+      "originalGitBlob": "f85970eebc7828c7feebabea54dbc65ec9db57e2",
+      "stagedGitBlob": "f85970eebc7828c7feebabea54dbc65ec9db57e2",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/compatibility.ts",
+      "sha256": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+      "originalGitBlob": "67042005ef854290d1533a26f4c3384d372f7453",
+      "stagedGitBlob": "67042005ef854290d1533a26f4c3384d372f7453",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/repository.ts",
+      "sha256": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+      "originalGitBlob": "c5f3728ece41b30ae5bbca7d54346d691e8ca429",
+      "stagedGitBlob": "c5f3728ece41b30ae5bbca7d54346d691e8ca429",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/saju.ts",
+      "sha256": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+      "originalGitBlob": "17ab6359e0c114c73edadd533c4855c43b8e5de7",
+      "stagedGitBlob": "bbb47c4f7b9c0069a5edebdbcffd355a94638d64",
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/persona/benchmark.ts",
+      "sha256": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "originalGitBlob": "9c79d43c3e726fdefa854f6766751fbc3564cf3e",
+      "stagedGitBlob": "9c79d43c3e726fdefa854f6766751fbc3564cf3e",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/config.ts",
+      "sha256": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "originalGitBlob": "e5794f1167afe27f672a8ad54927e6d7c3d55a09",
+      "stagedGitBlob": "e5794f1167afe27f672a8ad54927e6d7c3d55a09",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/context.ts",
+      "sha256": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "originalGitBlob": "55d92f1507341f507a817745d147c76e4e8db104",
+      "stagedGitBlob": "55d92f1507341f507a817745d147c76e4e8db104",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/index.ts",
+      "sha256": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "originalGitBlob": "1044d420d2b7b762e2ba89d740ec591904dce971",
+      "stagedGitBlob": "1044d420d2b7b762e2ba89d740ec591904dce971",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/memory.ts",
+      "sha256": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+      "originalGitBlob": "2b1c5a0524ab4c66b3ca317a12067b29d879a453",
+      "stagedGitBlob": "2b1c5a0524ab4c66b3ca317a12067b29d879a453",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/prompt.ts",
+      "sha256": "040661052ddf8cd7ebd66d4683c144ac407034c895de3fdb19355cf9f9f75b78",
+      "originalGitBlob": "9d29eaeebbde87c570ad85850463adb108c4abfe",
+      "stagedGitBlob": "9d29eaeebbde87c570ad85850463adb108c4abfe",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/tool-facts.ts",
+      "sha256": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+      "originalGitBlob": "c84ff8fb33c582a1fabc7a7d70ef9cf8aa89959c",
+      "stagedGitBlob": "c84ff8fb33c582a1fabc7a7d70ef9cf8aa89959c",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/validation/requests.ts",
+      "sha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+      "originalGitBlob": "a98b5e2b5835a1a96de5264a95a3c4710455a55d",
+      "stagedGitBlob": "a98b5e2b5835a1a96de5264a95a3c4710455a55d",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/account/index.ts",
+      "sha256": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+      "originalGitBlob": "fffe878216f0741dc45131d6af9a1fb20e65cb75",
+      "stagedGitBlob": "fffe878216f0741dc45131d6af9a1fb20e65cb75",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/chat/index.ts",
+      "sha256": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+      "originalGitBlob": "21e0c6c5354afc8c93622df21db03b65a4542449",
+      "stagedGitBlob": "21e0c6c5354afc8c93622df21db03b65a4542449",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/compatibility/index.ts",
+      "sha256": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+      "originalGitBlob": "060abecc1dbba992ac38bea62ba5733cf3c96946",
+      "stagedGitBlob": "060abecc1dbba992ac38bea62ba5733cf3c96946",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/deno.json",
+      "sha256": "a6335d2b3e0cc45ec3b2c1315e1f91acc5918e40c479e33c4982c314a978e62d",
+      "originalGitBlob": "70a567301d9728293b16c9e3566c3a3656537178",
+      "stagedGitBlob": "70a567301d9728293b16c9e3566c3a3656537178",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/saju/index.ts",
+      "sha256": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+      "originalGitBlob": "d2ab80b4b5101f852a2becbe616c53cf3334486d",
+      "stagedGitBlob": "d2ab80b4b5101f852a2becbe616c53cf3334486d",
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/tarot/index.ts",
+      "sha256": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+      "originalGitBlob": "03671e9abe969d4e81b1b330ea845918cd1d0a80",
+      "stagedGitBlob": "03671e9abe969d4e81b1b330ea845918cd1d0a80",
+      "changed": false
+    }
+  ],
+  "localIntegration": "docs/evidence/backend-local-saju-focus.json",
+  "deployedEdgeSmoke": null
+}

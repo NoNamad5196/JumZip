@@ -1,0 +1,37 @@
+{
+  "scope": "Main verification after local synthetic HTTP integration",
+  "integrationEvidence": "docs/evidence/backend-local-edge-contract-smoke.json",
+  "candidateEnvironmentMatchedBeforeExecution": {
+    "model": true,
+    "baseUrl": true,
+    "privateKey": true,
+    "jsonObject": true,
+    "recommendationsEnabled": true,
+    "titlesDisabled": true,
+    "memoryMaintenanceDisabled": true
+  },
+  "originalEnvironmentRestoredAfterExecution": {
+    "model": true,
+    "baseUrl": true,
+    "privateKey": true,
+    "jsonSchema": true,
+    "recommendationsDisabled": true,
+    "titlesDisabled": true,
+    "memoryMaintenanceDisabled": true
+  },
+  "nativeLoopbackHealthStatus": 200,
+  "syntheticServerStoppedThroughAuthenticatedControl": true,
+  "syntheticServerExitCode": 0,
+  "syntheticProviderRequests": 10,
+  "syntheticProviderFailures": 0,
+  "dockerDesktopOrDatabaseRestarted": false,
+  "hostedSettingsChanged": false,
+  "secretValuesRecorded": false,
+  "notes": [
+    "The YEAR_FLOW Saju case began with a PARTIAL consultation seeded through real RPCs using a pure-engine result and an explicit synthetic failure. The actual HTTP case verified RETRY; it did not exercise CALCULATE or a real model failure.",
+    "Container environment comparisons read Docker inspect privately and emitted booleans only.",
+    "Only the project-owned local functions serve process and Edge container were switched; the native provider and other Supabase containers remained running.",
+    "The old tool-session handle was unavailable, so the exact project CLI executable, functions serve command and original env-file path were verified before stopping its process.",
+    "An initial curl probe failed because curl was absent. A bounded bash TCP health request then verified HTTP200 from inside the existing Edge container without network or binding changes."
+  ]
+}
