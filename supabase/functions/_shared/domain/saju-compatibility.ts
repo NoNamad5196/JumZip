@@ -1,4 +1,4 @@
-import { buildSajuInputContext, type FullSajuResult, type FortuneOverlay, type SajuInputAvailability, type SajuCalculationUncertainty } from './full-saju.ts';
+import { buildSajuInputContext, getComputedPillarCoverage, type FullSajuResult, type FortuneOverlay, type SajuInputAvailability, type SajuCalculationUncertainty } from './full-saju.ts';
 import { BRANCH_RELATIONS, control, ELEMENTS, gen, getTenGod, knownPositions, STEM_COMBINATIONS, stemElement } from './rules/constants.ts';
 import type { Element, NatalRuleResult, PillarPosition, RuleRelation, TenGod } from './rules/types.ts';
 
@@ -147,6 +147,7 @@ export function buildCompatibilityInterpretationData(result: SajuCompatibilityRe
   // evidence with explicit counts; avoid exceeding the Persona context budget on dense charts.
   return { kind: result.kind, engineVersion: result.engineVersion, ruleVersion: result.ruleVersion, conventionVersion: result.conventionVersion,
     personAInputContext: inputContext(result.personA), personBInputContext: inputContext(result.personB),
+    computedPillarCoverage: { personA: getComputedPillarCoverage(result.personA.charts), personB: getComputedPillarCoverage(result.personB.charts) },
     dayMasterRelation: s.dayMasterRelation, elementComplement: ELEMENTS.map(element => {
       const rows = s.elementComplement.filter(row => row.element === element);
       return { element, possiblePersonAProportions: unique(rows.map(row => row.personAProportion)), possiblePersonBProportions: unique(rows.map(row => row.personBProportion)), possiblePersonABalanceRoles: unique(rows.map(row => row.personABalanceRole)), possiblePersonBBalanceRoles: unique(rows.map(row => row.personBBalanceRole)) };

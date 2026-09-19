@@ -1,0 +1,781 @@
+{
+  "status": "PROPOSAL_ONLY_NOT_IMPLEMENTED",
+  "versionProposal": "JumZipPersona-v7",
+  "source": "supabase/functions/_shared/domain/tarot.ts",
+  "sourceCanonicalLFSha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+  "networkRequests": 0,
+  "newTraditionalMeanings": 0,
+  "canonicalDatasetChanged": false,
+  "templateKo": "“{원래 위치 label}” 위치의 {원래 카드명} {선택 방향 label}에 주어진 상징 키워드는 {그 방향의 원래 keyword 배열}입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다.",
+  "mappingCount": 44,
+  "uniqueCardCount": 22,
+  "mapping": [
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 0,
+      "nameKo": "광대",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "새 출발",
+        "자유",
+        "가능성",
+        "모험",
+        "순수"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 광대 정방향에 주어진 상징 키워드는 새 출발, 자유, 가능성, 모험, 순수입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 0,
+      "nameKo": "광대",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "무모함",
+        "준비 부족",
+        "회피",
+        "경솔함",
+        "불안정"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 광대 역방향에 주어진 상징 키워드는 무모함, 준비 부족, 회피, 경솔함, 불안정입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 1,
+      "nameKo": "마법사",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "실행력",
+        "기술",
+        "의지",
+        "자원 활용",
+        "주도권"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 마법사 정방향에 주어진 상징 키워드는 실행력, 기술, 의지, 자원 활용, 주도권입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 1,
+      "nameKo": "마법사",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "과장",
+        "조작",
+        "능력 낭비",
+        "실행 부족",
+        "허세"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 마법사 역방향에 주어진 상징 키워드는 과장, 조작, 능력 낭비, 실행 부족, 허세입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 2,
+      "nameKo": "여사제",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "직감",
+        "숨은 정보",
+        "관찰",
+        "내면",
+        "침묵"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 여사제 정방향에 주어진 상징 키워드는 직감, 숨은 정보, 관찰, 내면, 침묵입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 2,
+      "nameKo": "여사제",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "혼란",
+        "직감 무시",
+        "비밀",
+        "과도한 의심",
+        "단절"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 여사제 역방향에 주어진 상징 키워드는 혼란, 직감 무시, 비밀, 과도한 의심, 단절입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 3,
+      "nameKo": "여황제",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "풍요",
+        "애정",
+        "성장",
+        "돌봄",
+        "창조"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 여황제 정방향에 주어진 상징 키워드는 풍요, 애정, 성장, 돌봄, 창조입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 3,
+      "nameKo": "여황제",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "과보호",
+        "의존",
+        "정체",
+        "자기돌봄 부족",
+        "과잉"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 여황제 역방향에 주어진 상징 키워드는 과보호, 의존, 정체, 자기돌봄 부족, 과잉입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 4,
+      "nameKo": "황제",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "안정",
+        "구조",
+        "책임",
+        "통제",
+        "리더십"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 황제 정방향에 주어진 상징 키워드는 안정, 구조, 책임, 통제, 리더십입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 4,
+      "nameKo": "황제",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "권위주의",
+        "경직",
+        "통제 상실",
+        "고집",
+        "압박"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 황제 역방향에 주어진 상징 키워드는 권위주의, 경직, 통제 상실, 고집, 압박입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 5,
+      "nameKo": "교황",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "전통",
+        "규범",
+        "조언",
+        "공식화",
+        "배움"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 교황 정방향에 주어진 상징 키워드는 전통, 규범, 조언, 공식화, 배움입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 5,
+      "nameKo": "교황",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "관습 거부",
+        "독단",
+        "형식 피로",
+        "다른 길",
+        "가치 충돌"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 교황 역방향에 주어진 상징 키워드는 관습 거부, 독단, 형식 피로, 다른 길, 가치 충돌입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 6,
+      "nameKo": "연인",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "선택",
+        "연결",
+        "끌림",
+        "가치 일치",
+        "관계"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 연인 정방향에 주어진 상징 키워드는 선택, 연결, 끌림, 가치 일치, 관계입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 6,
+      "nameKo": "연인",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "불일치",
+        "갈등",
+        "선택 회피",
+        "유혹",
+        "관계 균열"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 연인 역방향에 주어진 상징 키워드는 불일치, 갈등, 선택 회피, 유혹, 관계 균열입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 7,
+      "nameKo": "전차",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "추진",
+        "승부",
+        "집중",
+        "통제",
+        "전진"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 전차 정방향에 주어진 상징 키워드는 추진, 승부, 집중, 통제, 전진입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 7,
+      "nameKo": "전차",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "방향 상실",
+        "과속",
+        "충돌",
+        "통제 실패",
+        "지연"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 전차 역방향에 주어진 상징 키워드는 방향 상실, 과속, 충돌, 통제 실패, 지연입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 8,
+      "nameKo": "힘",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "용기",
+        "인내",
+        "자기통제",
+        "부드러운 힘",
+        "회복"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 힘 정방향에 주어진 상징 키워드는 용기, 인내, 자기통제, 부드러운 힘, 회복입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 8,
+      "nameKo": "힘",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "자신감 저하",
+        "억압",
+        "감정 폭발",
+        "지침",
+        "불안"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 힘 역방향에 주어진 상징 키워드는 자신감 저하, 억압, 감정 폭발, 지침, 불안입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 9,
+      "nameKo": "은둔자",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "성찰",
+        "거리두기",
+        "탐색",
+        "독립",
+        "깊이"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 은둔자 정방향에 주어진 상징 키워드는 성찰, 거리두기, 탐색, 독립, 깊이입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 9,
+      "nameKo": "은둔자",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "고립",
+        "회피",
+        "과도한 폐쇄",
+        "외로움",
+        "방향 상실"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 은둔자 역방향에 주어진 상징 키워드는 고립, 회피, 과도한 폐쇄, 외로움, 방향 상실입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 10,
+      "nameKo": "운명의 수레바퀴",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "전환",
+        "기회",
+        "흐름 변화",
+        "우연",
+        "사이클"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 운명의 수레바퀴 정방향에 주어진 상징 키워드는 전환, 기회, 흐름 변화, 우연, 사이클입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 10,
+      "nameKo": "운명의 수레바퀴",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "반복 패턴",
+        "지연",
+        "통제 불가",
+        "불운 체감",
+        "변화 저항"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 운명의 수레바퀴 역방향에 주어진 상징 키워드는 반복 패턴, 지연, 통제 불가, 불운 체감, 변화 저항입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 11,
+      "nameKo": "정의",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "균형",
+        "책임",
+        "사실",
+        "공정",
+        "결과"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 정의 정방향에 주어진 상징 키워드는 균형, 책임, 사실, 공정, 결과입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 11,
+      "nameKo": "정의",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "불공정",
+        "책임 회피",
+        "편향",
+        "오판",
+        "불균형"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 정의 역방향에 주어진 상징 키워드는 불공정, 책임 회피, 편향, 오판, 불균형입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 12,
+      "nameKo": "매달린 사람",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "멈춤",
+        "관점 전환",
+        "기다림",
+        "내려놓음",
+        "희생"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 매달린 사람 정방향에 주어진 상징 키워드는 멈춤, 관점 전환, 기다림, 내려놓음, 희생입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 12,
+      "nameKo": "매달린 사람",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "의미 없는 지연",
+        "집착",
+        "정체",
+        "희생 강요",
+        "버티기"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 매달린 사람 역방향에 주어진 상징 키워드는 의미 없는 지연, 집착, 정체, 희생 강요, 버티기입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 13,
+      "nameKo": "죽음",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "종료",
+        "변화",
+        "전환",
+        "정리",
+        "재시작"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 죽음 정방향에 주어진 상징 키워드는 종료, 변화, 전환, 정리, 재시작입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 13,
+      "nameKo": "죽음",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "변화 거부",
+        "미련",
+        "지연된 끝",
+        "반복",
+        "정체"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 죽음 역방향에 주어진 상징 키워드는 변화 거부, 미련, 지연된 끝, 반복, 정체입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 14,
+      "nameKo": "절제",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "조율",
+        "균형",
+        "회복",
+        "인내",
+        "중간지점"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 절제 정방향에 주어진 상징 키워드는 조율, 균형, 회복, 인내, 중간지점입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 14,
+      "nameKo": "절제",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "극단",
+        "조급함",
+        "불균형",
+        "과잉",
+        "조율 실패"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 절제 역방향에 주어진 상징 키워드는 극단, 조급함, 불균형, 과잉, 조율 실패입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 15,
+      "nameKo": "악마",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "집착",
+        "욕망",
+        "유혹",
+        "의존",
+        "얽힘"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 악마 정방향에 주어진 상징 키워드는 집착, 욕망, 유혹, 의존, 얽힘입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 15,
+      "nameKo": "악마",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "해방",
+        "인식",
+        "거리두기",
+        "중독 탈피",
+        "통제 회복"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 악마 역방향에 주어진 상징 키워드는 해방, 인식, 거리두기, 중독 탈피, 통제 회복입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 16,
+      "nameKo": "탑",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "충격",
+        "붕괴",
+        "폭로",
+        "급변",
+        "재구성"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 탑 정방향에 주어진 상징 키워드는 충격, 붕괴, 폭로, 급변, 재구성입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 16,
+      "nameKo": "탑",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "붕괴 회피",
+        "내부 균열",
+        "불안 지속",
+        "늦어진 변화",
+        "피해 축소"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 탑 역방향에 주어진 상징 키워드는 붕괴 회피, 내부 균열, 불안 지속, 늦어진 변화, 피해 축소입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 17,
+      "nameKo": "별",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "희망",
+        "회복",
+        "영감",
+        "신뢰",
+        "가능성"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 별 정방향에 주어진 상징 키워드는 희망, 회복, 영감, 신뢰, 가능성입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 17,
+      "nameKo": "별",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "낙담",
+        "기대 과잉",
+        "자신감 저하",
+        "방향 상실",
+        "회복 지연"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 별 역방향에 주어진 상징 키워드는 낙담, 기대 과잉, 자신감 저하, 방향 상실, 회복 지연입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 18,
+      "nameKo": "달",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "불확실성",
+        "감정",
+        "환상",
+        "숨은 두려움",
+        "직감"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 달 정방향에 주어진 상징 키워드는 불확실성, 감정, 환상, 숨은 두려움, 직감입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 18,
+      "nameKo": "달",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "혼란 해소",
+        "진실 노출",
+        "불안 감소",
+        "착각 깨짐",
+        "현실 확인"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 달 역방향에 주어진 상징 키워드는 혼란 해소, 진실 노출, 불안 감소, 착각 깨짐, 현실 확인입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 19,
+      "nameKo": "태양",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "명확함",
+        "기쁨",
+        "활력",
+        "성공",
+        "공개"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 태양 정방향에 주어진 상징 키워드는 명확함, 기쁨, 활력, 성공, 공개입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 19,
+      "nameKo": "태양",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "지연된 기쁨",
+        "과신",
+        "피로",
+        "기대와 현실 차이",
+        "부분 성과"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 태양 역방향에 주어진 상징 키워드는 지연된 기쁨, 과신, 피로, 기대와 현실 차이, 부분 성과입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 20,
+      "nameKo": "심판",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "각성",
+        "결론",
+        "재평가",
+        "부름",
+        "두 번째 기회"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 심판 정방향에 주어진 상징 키워드는 각성, 결론, 재평가, 부름, 두 번째 기회입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 20,
+      "nameKo": "심판",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "결정 회피",
+        "자기비판",
+        "과거 집착",
+        "판단 지연",
+        "기회 외면"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 심판 역방향에 주어진 상징 키워드는 결정 회피, 자기비판, 과거 집착, 판단 지연, 기회 외면입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 21,
+      "nameKo": "세계",
+      "orientation": "UPRIGHT",
+      "sourceField": "upright",
+      "keywords": [
+        "완성",
+        "통합",
+        "성취",
+        "마무리",
+        "다음 단계"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 세계 정방향에 주어진 상징 키워드는 완성, 통합, 성취, 마무리, 다음 단계입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningVersion": "JumZipTarotMeanings-v1",
+      "cardId": 21,
+      "nameKo": "세계",
+      "orientation": "REVERSED",
+      "sourceField": "reversed",
+      "keywords": [
+        "미완성",
+        "마지막 과제",
+        "지연",
+        "닫히지 않은 문제",
+        "성취감 부족"
+      ],
+      "examplePositionKey": "THEIR_ATTITUDE",
+      "exampleStatementKo": "“상대의 마음 / 태도” 위치의 세계 역방향에 주어진 상징 키워드는 미완성, 마지막 과제, 지연, 닫히지 않은 문제, 성취감 부족입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    }
+  ],
+  "proposalSamples": [
+    {
+      "meaningProvenance": {
+        "meaningVersion": "JumZipTarotMeanings-v1",
+        "cardId": 9,
+        "orientation": "REVERSED",
+        "positionIndex": 1,
+        "positionKey": "THEIR_ATTITUDE"
+      },
+      "selectedDirectionBasisKo": "“상대의 마음 / 태도” 위치의 은둔자 역방향에 주어진 상징 키워드는 고립, 회피, 과도한 폐쇄, 외로움, 방향 상실입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningProvenance": {
+        "meaningVersion": "JumZipTarotMeanings-v1",
+        "cardId": 9,
+        "orientation": "UPRIGHT",
+        "positionIndex": 1,
+        "positionKey": "THEIR_ATTITUDE"
+      },
+      "selectedDirectionBasisKo": "“상대의 마음 / 태도” 위치의 은둔자 정방향에 주어진 상징 키워드는 성찰, 거리두기, 탐색, 독립, 깊이입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningProvenance": {
+        "meaningVersion": "JumZipTarotMeanings-v1",
+        "cardId": 9,
+        "orientation": "REVERSED",
+        "positionIndex": 0,
+        "positionKey": "YOUR_ATTITUDE"
+      },
+      "selectedDirectionBasisKo": "“사용자의 마음 / 태도” 위치의 은둔자 역방향에 주어진 상징 키워드는 고립, 회피, 과도한 폐쇄, 외로움, 방향 상실입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningProvenance": {
+        "meaningVersion": "JumZipTarotMeanings-v1",
+        "cardId": 15,
+        "orientation": "REVERSED",
+        "positionIndex": 1,
+        "positionKey": "RISK"
+      },
+      "selectedDirectionBasisKo": "“주의해야 할 리스크” 위치의 악마 역방향에 주어진 상징 키워드는 해방, 인식, 거리두기, 중독 탈피, 통제 회복입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    },
+    {
+      "meaningProvenance": {
+        "meaningVersion": "JumZipTarotMeanings-v1",
+        "cardId": 7,
+        "orientation": "UPRIGHT",
+        "positionIndex": 0,
+        "positionKey": "SUPPORTING_FORCE"
+      },
+      "selectedDirectionBasisKo": "“현재 선택을 밀어주는 힘” 위치의 전차 정방향에 주어진 상징 키워드는 추진, 승부, 집중, 통제, 전진입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다."
+    }
+  ],
+  "bounds": {
+    "statementUtf8BytesMaximum": 268,
+    "statementCharactersMaximum": 112
+  },
+  "limitations": [
+    "These are proposed provider-only fields, not new engine output or UI copy.",
+    "All statements are generated by one generic concatenation of existing canonical fields, with no per-card override.",
+    "The statement can be checked deterministically; the natural-language interpretation still requires semantic review.",
+    "No production code, provider schema, canonical corpus, expected answer, model, or deployment was changed.",
+    "A future budget preflight must measure the actual approved prompt; these byte lengths are not token or billing forecasts."
+  ]
+}

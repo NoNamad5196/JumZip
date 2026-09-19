@@ -1,0 +1,173 @@
+{
+  "checkedAt": "2026-09-19T21:10:23.742Z",
+  "mode": "PUBLIC_GUEST_READ_ONLY_DEPLOY_DIFF",
+  "origin": "https://jumzip.pages.dev",
+  "authenticationAttempted": false,
+  "captchaInteractionAttempted": false,
+  "modelCalls": 0,
+  "scope": "Home and history guest responsive/CSP/asset errors plus deployed current-build hashes; authenticated deletion behavior is covered separately by local fixtures and remote RPC tests.",
+  "build": {
+    "assets": [
+      {
+        "path": "/assets/AccountPages-CEDPokZs.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "179958d9f7a99ffb2f8ea62166d01a24e380442909aa7ce0cf5a3a3c6c5c5e6e",
+        "publicSha256": "179958d9f7a99ffb2f8ea62166d01a24e380442909aa7ce0cf5a3a3c6c5c5e6e",
+        "match": true
+      },
+      {
+        "path": "/assets/Chat-C6uPfvBI.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "014d71f65f62f2da0e1ff4ff67d61cb57d4d728fcdf712836ec92ef4a093e0bc",
+        "publicSha256": "014d71f65f62f2da0e1ff4ff67d61cb57d4d728fcdf712836ec92ef4a093e0bc",
+        "match": true
+      },
+      {
+        "path": "/assets/CompatibilitySnapshot-CnJ4oSGU.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "83d2816163121c03f74b116864b05fa110c9d374a1c95aadfd9c64a62ac59817",
+        "publicSha256": "83d2816163121c03f74b116864b05fa110c9d374a1c95aadfd9c64a62ac59817",
+        "match": true
+      },
+      {
+        "path": "/assets/ConnectionState-ByxnN1IC.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "c9939cada26694ec27d70d9867b451fd7e4b92f5a8b14e4a73acd68c22de52fd",
+        "publicSha256": "c9939cada26694ec27d70d9867b451fd7e4b92f5a8b14e4a73acd68c22de52fd",
+        "match": true
+      },
+      {
+        "path": "/assets/es-D4THWdz3.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "match": true
+      },
+      {
+        "path": "/assets/index-4H5XfwnN.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "ea1170d55b2387f06fcc5d45975df6c457928cba45eef54733cf2903ef672c16",
+        "publicSha256": "ea1170d55b2387f06fcc5d45975df6c457928cba45eef54733cf2903ef672c16",
+        "match": true
+      },
+      {
+        "path": "/assets/index-Cv2Nn-15.css",
+        "type": "CSS",
+        "status": 200,
+        "localSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "publicSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "match": true
+      },
+      {
+        "path": "/assets/pagination-C6JwV-ae.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "82b4be4190aea337b15087e1d23384246a202fff45bfc49fd624f1e94686cea4",
+        "publicSha256": "82b4be4190aea337b15087e1d23384246a202fff45bfc49fd624f1e94686cea4",
+        "match": true
+      },
+      {
+        "path": "/assets/Reading-BuLnHsVl.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "207ae1d165f1f43708f8a574b23639afcf9d24118aa30caf354c69d577b7c3e9",
+        "publicSha256": "207ae1d165f1f43708f8a574b23639afcf9d24118aa30caf354c69d577b7c3e9",
+        "match": true
+      }
+    ],
+    "index": {
+      "status": 200,
+      "localSha256": "f43979a66d13d8c65d098fba83687b214d8453bad7e1279541d7facc65e4b659",
+      "publicSha256": "f43979a66d13d8c65d098fba83687b214d8453bad7e1279541d7facc65e4b659",
+      "match": true
+    }
+  },
+  "routes": [
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "scrollWidth": 1440,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "brokenImages": 0,
+      "csp": [],
+      "guestLoginLinks": [],
+      "errors": [],
+      "failures": [],
+      "assetErrors": [],
+      "screenshot": "tests/ui/artifacts/history-deletion-public-home-1440.png"
+    },
+    {
+      "path": "/history",
+      "width": 1440,
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "scrollWidth": 1440,
+      "title": "나의 이야기 보관함",
+      "brokenImages": 0,
+      "csp": [],
+      "guestLoginLinks": [
+        "/onboarding",
+        "/auth"
+      ],
+      "errors": [],
+      "failures": [],
+      "assetErrors": [],
+      "screenshot": "tests/ui/artifacts/history-deletion-public-history-1440.png"
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "scrollWidth": 360,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "brokenImages": 0,
+      "csp": [],
+      "guestLoginLinks": [],
+      "errors": [],
+      "failures": [],
+      "assetErrors": [],
+      "screenshot": "tests/ui/artifacts/history-deletion-public-home-360.png"
+    },
+    {
+      "path": "/history",
+      "width": 360,
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "scrollWidth": 360,
+      "title": "나의 이야기 보관함",
+      "brokenImages": 0,
+      "csp": [],
+      "guestLoginLinks": [
+        "/onboarding",
+        "/auth"
+      ],
+      "errors": [],
+      "failures": [],
+      "assetErrors": [],
+      "screenshot": "tests/ui/artifacts/history-deletion-public-history-360.png"
+    }
+  ],
+  "blockedMutations": [],
+  "summary": {
+    "routeCount": 4,
+    "jsAssetCount": 8,
+    "cssAssetCount": 1,
+    "buildHashMatches": true,
+    "overflowCount": 0,
+    "cspViolations": 0,
+    "pageErrors": 0,
+    "assetErrors": 0,
+    "failedRequests": 0,
+    "blockedMutationCount": 0
+  },
+  "passed": true
+}

@@ -16,6 +16,8 @@ export interface SajuCalculationUncertainty {
   unresolvedPillars: PillarPosition[];
   currentPeriodStatus: NonNullable<FullSajuResult['timing']>['activeDaewoonStatus'];
 }
+/** Describes calculated pillars, not whether original input records were retained. */
+export type ComputedPillarCoverage = Record<PillarPosition, 'CONFIRMED' | 'POSSIBLE' | 'UNAVAILABLE'>;
 export interface FortuneOverlay {
   source: 'SEWOON' | 'MONTHLY'; year: number; month?: number; pillar: RulePillar;
   interactions: { type: RuleRelation['type']; participants: { source: 'NATAL' | 'DAEWOON' | 'SEWOON' | 'MONTHLY'; position: string; value: string }[]; transformedElement: Element | null; activatedBy: string[] }[];
@@ -115,11 +117,24 @@ export function buildSajuInputContext(result: FullSajuResult): { inputAvailabili
   return { inputAvailability, calculationUncertainty: { causes, unresolvedPillars: POSITIONS.filter(position => result.pillars[position] === null), currentPeriodStatus } };
 }
 
+/** A confirmed pillar must exist and be identical in every correlated chart.
+ * Mixed missing/present candidates remain possible; none is selected or recombined. */
+export function getComputedPillarCoverage(charts: readonly Pick<NatalRuleResult, 'pillars'>[]): ComputedPillarCoverage {
+  return Object.fromEntries(POSITIONS.map(position => {
+    const values = charts.map(chart => chart.pillars[position]);
+    if (!values.length || values.every(value => value === null)) return [position, 'UNAVAILABLE'];
+    const first = values[0];
+    const same = first !== null && first !== undefined && values.every(value => value !== null && value.heavenlyStem === first.heavenlyStem && value.earthlyBranch === first.earthlyBranch);
+    return [position, same ? 'CONFIRMED' : 'POSSIBLE'];
+  })) as ComputedPillarCoverage;
+}
+
 /** Compact immutable facts for Persona; detailed proofs stay in the saved server snapshot. */
 export function buildSajuInterpretationData(result: FullSajuResult) {
   return {
     kind: 'SAJU', engineVersion: result.engineVersion, ruleVersion: result.ruleVersion, conventionVersion: result.conventionVersion,
     ...buildSajuInputContext(result),
+    computedPillarCoverage: getComputedPillarCoverage(result.possible_values.charts),
     status: result.status, pillars: result.pillars, tenGods: result.tenGods, elements: result.elements?.proportion ?? null,
     strength: { score: result.strength.score, grade: result.strength.grade, limited: result.strength.limited },
     gyeokguk: result.gyeokguk ? { primary: result.gyeokguk.primary, secondary: result.gyeokguk.secondary, monthCore: result.gyeokguk.monthCore, geonrok: result.gyeokguk.geonrok, yangin: result.gyeokguk.yangin, specialStructureCandidate: result.gyeokguk.specialStructureCandidate } : null,

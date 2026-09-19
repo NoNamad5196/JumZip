@@ -1,0 +1,299 @@
+{
+  "startedStackAt": "2026-09-20 local session",
+  "completedAt": "2026-09-19T21:30:27.620Z",
+  "target": "http://127.0.0.1:54321",
+  "model": "jumzip-local-smoke",
+  "maximumInferenceOperations": 3,
+  "scope": "Local anonymous Auth, RLS, all five Edge auth boundaries, actual Chat/replay/Tarot/retry and cascade cleanup. Tiny-model output quality is reported separately from infrastructure.",
+  "optionalModelWork": "Intent, title and memory are disabled only in the ignored local Edge env; production source and hosted settings remain unchanged.",
+  "inferenceOperations": 3,
+  "providerSourceSha256": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+  "checks": [
+    {
+      "name": "public local anonymous sign-in returns an anonymous identity",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "local Auth server verifies the newly issued session",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "public local anonymous sign-in returns an anonymous identity",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "local Auth server verifies the newly issued session",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "authenticated owner can create and read its local conversation",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "another authenticated identity cannot read the conversation",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "another authenticated identity cannot update the conversation",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "no-session public REST request cannot read user conversations",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "chat rejects missing bearer before executing",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "tarot rejects missing bearer before executing",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "saju rejects missing bearer before executing",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "compatibility rejects missing bearer before executing",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "account rejects missing bearer before executing",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "Auth getUser rejects invalid JWT",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "configured local CORS preflight succeeds",
+      "passed": false,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "unconfigured CORS origin is rejected",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "authenticated invalid action is rejected before persistence",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "current source prompt version is available for provenance comparison",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "native model produces an accepted Chat response",
+      "passed": true,
+      "kind": "model_response"
+    },
+    {
+      "name": "Chat original user message survives success or inference failure",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "persisted Chat provenance identifies native model and source prompt",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "same request replays the canonical success or failure without a new execution",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "local Tarot always persists its authoritative draw before interpretation",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "native model produces an accepted Tarot interpretation",
+      "passed": false,
+      "kind": "model_response"
+    },
+    {
+      "name": "Tarot reload matches authoritative card identity orientation and position",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "cross-owner draw remains hidden by local RLS",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "explicit retry preserves the existing draw and never redraws",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "native model produces an accepted retry interpretation",
+      "passed": false,
+      "kind": "model_response"
+    },
+    {
+      "name": "actual local account Edge action succeeds after persisted Chat and Tarot",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "deleted account token is rejected through fresh Auth getUser",
+      "passed": true,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "local synthetic identity and all fourteen owned tables independently absent",
+      "passed": false,
+      "kind": "infrastructure"
+    },
+    {
+      "name": "local synthetic identity and all fourteen owned tables independently absent",
+      "passed": false,
+      "kind": "infrastructure"
+    }
+  ],
+  "observations": [
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "chat",
+      "status": 401,
+      "elapsedMs": 399,
+      "executionStatus": null,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "tarot",
+      "status": 401,
+      "elapsedMs": 356,
+      "executionStatus": null,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "saju",
+      "status": 401,
+      "elapsedMs": 373,
+      "executionStatus": null,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "compatibility",
+      "status": 401,
+      "elapsedMs": 385,
+      "executionStatus": null,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "account",
+      "status": 401,
+      "elapsedMs": 380,
+      "executionStatus": null,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "chat",
+      "status": 401,
+      "elapsedMs": 16,
+      "executionStatus": null,
+      "code": "AUTH_EXPIRED"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "chat",
+      "status": 204,
+      "elapsedMs": 5,
+      "executionStatus": null,
+      "code": null
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "chat",
+      "status": 403,
+      "elapsedMs": 7,
+      "executionStatus": null,
+      "code": "FORBIDDEN"
+    },
+    {
+      "stage": "AUTH_BOUNDARIES",
+      "endpoint": "chat",
+      "status": 400,
+      "elapsedMs": 52,
+      "executionStatus": null,
+      "code": "VALIDATION_ERROR"
+    },
+    {
+      "stage": "CHAT",
+      "endpoint": "chat",
+      "status": 201,
+      "elapsedMs": 10094,
+      "executionStatus": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "CHAT_REPLAY",
+      "endpoint": "chat",
+      "status": 200,
+      "elapsedMs": 65,
+      "executionStatus": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "TAROT_DRAW",
+      "endpoint": "tarot",
+      "status": 200,
+      "elapsedMs": 14820,
+      "executionStatus": "PARTIAL",
+      "code": "LLM_INVALID_RESPONSE"
+    },
+    {
+      "stage": "TAROT_RETRY",
+      "endpoint": "tarot",
+      "status": 200,
+      "elapsedMs": 3641,
+      "executionStatus": "PARTIAL",
+      "code": "LLM_INVALID_RESPONSE"
+    },
+    {
+      "stage": "ACCOUNT_DELETE",
+      "endpoint": "account",
+      "status": 200,
+      "elapsedMs": 121,
+      "executionStatus": null,
+      "code": null
+    },
+    {
+      "stage": "ACCOUNT_DELETE",
+      "endpoint": "chat",
+      "status": 401,
+      "elapsedMs": 23,
+      "executionStatus": null,
+      "code": "AUTH_EXPIRED"
+    }
+  ],
+  "failure": null,
+  "pendingCleanupCount": 2,
+  "infrastructurePassed": false,
+  "modelResponsesPassed": false
+}

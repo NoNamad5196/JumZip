@@ -1,0 +1,78 @@
+{
+  "partialScope": {
+    "selectedCount": 3,
+    "originalCount": 24,
+    "executionOrder": [
+      "v5-ab-swapped-contrast:SANI",
+      "10-retry-same-draw:BOMI",
+      "s03-correlated-boundary:ARANG"
+    ],
+    "orderReason": "The large A/B payload runs first so its unchanged conservative reserve fits the authorized350 cap.",
+    "unselectedIds": [
+      "v5-intent-pure-recall-no-profile",
+      "10-retry-same-draw:SANI",
+      "10-retry-same-draw:ARANG",
+      "s03-correlated-boundary:BOMI",
+      "s03-correlated-boundary:SANI",
+      "s02-unknown-hour:BOMI",
+      "s05-compatibility-evidence:ARANG",
+      "s06-compatibility-uncertain:ARANG",
+      "s07-no-invented-score:ARANG",
+      "v5-hermit-upright-contrast:BOMI",
+      "v5-reversed-owner-contrast:SANI",
+      "v5-legacy-provenance:ARANG",
+      "v5-pure-recall:BOMI",
+      "v5-recall-explicit-tarot:ARANG",
+      "v5-intent-pure-recall-has-profile",
+      "v5-intent-memory-control",
+      "v5-intent-current-preference",
+      "v5-intent-innate-character",
+      "v5-intent-recall-explicit-tarot",
+      "v5-intent-target-remembers",
+      "v5-intent-forget-and-tarot"
+    ],
+    "inputExpectedRubricUnchanged": true,
+    "parentAuthorization": "Main 2026-09-20 KST: micro3 only, hard350, account8.86k with150 lag allowance; full24 not authorized."
+  },
+  "corpusVersion": "JumZipV5Focused-v1",
+  "synthetic": true,
+  "fullAcceptanceEligible": false,
+  "doesNotReplaceOriginal84": true,
+  "executionOrder": [
+    "v5-ab-swapped-contrast:SANI",
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG"
+  ],
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "reviewChecks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    }
+  ],
+  "intent": []
+}

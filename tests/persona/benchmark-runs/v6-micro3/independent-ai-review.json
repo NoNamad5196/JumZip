@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "JumZipV5Focused-v1",
+  "status": "REVIEWED_FAIL_HARD_FAILS",
+  "reviewer": "Codex / contracts_audit",
+  "reviewerKind": "AI",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-19T21:38:27.490896+00:00",
+  "fullAcceptanceEligible": false,
+  "instructionsKo": "실제 응답 전체와 고정 입력을 직접 읽고 점수를 작성한다. 비어 있는 점수나 자동 체크를 품질 통과로 처리하지 않는다. AI 검토자는 AI라고 표시한다. 기존 원본84 검사를 이 작은 묶음으로 대체하지 않는다.",
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "실제 입력의 A=민수 목48.333...%, B=사용자 목80%와 응답 48.3%/80%가 맞는다. A hour UNAVAILABLE에 맞게 민수 시주를 알 수 없다고 말한다.",
+        "v5의 “너도 … 시주는 미상”이라는 모순은 이번 출력에는 없다. 다만 요청한 A/B 구분에서 B의 hour CONFIRMED를 직접 설명하지 않고 끝냈고 전체 비중 설명도 목에만 머물러 tool fidelity 1점. 누락은 반대 사실 진술과 구분해 Hard Fail은0으로 판단한다.",
+        "NOT_RECORDED를 임의 출생일이나 입력 누락으로 보강하지 않는다."
+      ],
+      "reviewedOutput": "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네. 민수의 시주는 아직 알 수 없는 상태야. 궁금한 게 더 있어?",
+      "checks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ],
+      "total": 9,
+      "reviewedSegments": [
+        "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네.",
+        "민수의 시주는 아직 알 수 없는 상태야.",
+        "궁금한 게 더 있어?"
+      ],
+      "reviewedOutputSha256": "702ce76d6d1399727ed5882fe3e90211fb4f9ccef130bb083ac442d6886b41c9",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "providerRequestSha256": "93dbe7c9671960a9730559c11d3be00078944ffaac1daedf1da0a3b54a67b32d",
+      "runtimeValid": true,
+      "repaired": false,
+      "reviewerKind": "AI",
+      "reviewMethod": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "TOOL_RESULT_OPPOSITE_MEANING"
+      ],
+      "evidenceKo": [
+        "저장된 은둔자는 상대 위치 REVERSED이고 v6 provider view의 activeMeaning은 고립·회피·과도한 폐쇄·외로움·방향 상실이다. 공통 advice가 제거된 현재 입력을 직접 확인했다.",
+        "실제 출력 “상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여”는 건전한 고독 필요를 위축의 원인으로 놓는다. 역방향 회피/과도한 폐쇄를 정방향의 고독 필요 쪽으로 재해석해 기존 v4/v5와 동일한 반대 의미 Hard Fail이다. “보여”라는 어미는 방향 왜곡을 해소하지 않는다.",
+        "세 카드의 위치는 유지했고 새 추첨·저장 원자료 변경·사용자 탓 주장은 없다. 짧고 친근한 재설명 말투는 유지했다."
+      ],
+      "reviewedOutput": "응, 다시 쉽게 말해줄게! 너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여. 두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야. 어떤 부분이 제일 이해하기 어려웠어?",
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "total": 8,
+      "reviewedSegments": [
+        "응, 다시 쉽게 말해줄게!",
+        "너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여.",
+        "두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야.",
+        "어떤 부분이 제일 이해하기 어려웠어?"
+      ],
+      "reviewedOutputSha256": "a63e1c8a92a338024db9a06780a1ea4816c5603574fd2a7eb58bb0d5b4213dab",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "providerRequestSha256": "fcde6ccbd3bc312b340e83d396756247b8dc5d28d3038163d9a8c5a5984e9ec6",
+      "runtimeValid": true,
+      "repaired": false,
+      "reviewerKind": "AI",
+      "reviewMethod": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "입력은 calendarDate PROVIDED, clockTime UNKNOWN이며 year/month/day POSSIBLE, hour UNAVAILABLE, 현재 대운 UNRESOLVED다. 답변은 미확정의 원인을 시각으로 설명하고 날짜 미제공을 새로 단정하지 않는다.",
+        "가능한 점수32·37·58을 모두 정확히 나열하고 FIRE/METAL을 확정 용신 아닌 후보로 유지한다. 연속 범위·단일 점수·ACTIVE 대운·임의 기간을 만들지 않는다.",
+        "세 문장으로 간결하지만 불(FIRE)·금(METAL)이라는 내부 영문 코드 병기는 일상적인 아랑 대화의 자연스러움을 낮춰 naturalness1점으로 평가했다. 이 스타일 감점은 Hard Fail이 아니다."
+      ],
+      "reviewedOutput": "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요. 그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요. 정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?",
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "total": 9,
+      "reviewedSegments": [
+        "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요.",
+        "그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요.",
+        "정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?"
+      ],
+      "reviewedOutputSha256": "c65c9732564f02000a0cbf1c884164ffa72196d2d8908bdda6c242071d97be20",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "providerRequestSha256": "dd460151876a70449967d4bd5b4b4ecdfe4735ba7d9ff1aa8316ce7e9fd4ff9c",
+      "runtimeValid": true,
+      "repaired": false,
+      "reviewerKind": "AI",
+      "reviewMethod": "DIRECT_RESPONSE_REVIEW"
+    }
+  ],
+  "intent": [],
+  "scope": "MICRO3_PARTIAL_NOT_ACCEPTANCE",
+  "doesNotReplaceFocused24": true,
+  "doesNotReplaceOriginal84": true,
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v6",
+  "intentPromptVersion": "JumZipIntent-v2",
+  "sourceBindings": {
+    "tests\\persona\\benchmark-runs\\v6-micro3\\results.json": "7474ce66cfd44732687d1f1f92d4ab05efb3eef26022b10b73ec50e375468918",
+    "tests\\persona\\benchmark-runs\\v6-micro3\\selection.json": "89669394b0671c64e93b2d0030376eb107a8b3759a531a3c56de45e619ba2c1e",
+    "tests\\persona\\benchmark-runs\\v6-micro3\\micro-manifest.json": "b9e9bf446636df40b597f694d72ab11e3bc9a2f7dd3f8bde29ee2f18df7c5559",
+    "tests\\persona\\benchmark-runs\\v6-micro3\\provider-attempts.jsonl": "ab137a132ec2d560f1278d76dabd08eedefe4543ccf7593215d8904b67f8c719",
+    "tests/persona/v5-focused-corpus.mts": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+  },
+  "inputHashVerification": {
+    "method": "Read-only current frozen corpus import; SHA256(JSON.stringify(input)) matched micro3 selection for all selected rows. Full current Persona tool views were printed and directly read.",
+    "checked": 3,
+    "mismatches": 0
+  },
+  "summary": {
+    "replyCount": 3,
+    "validReplyCount": 3,
+    "runtimeFailures": 0,
+    "repairs": 0,
+    "scoreTotal": 26,
+    "operationalMean": 8.666666666666666,
+    "returnedMean": 8.666666666666666,
+    "hardFailCount": 1,
+    "hardFailIds": [
+      "10-retry-same-draw:BOMI"
+    ],
+    "intentEvaluated": 0,
+    "result": "FAIL: one unchanged-criterion Hard Fail; micro3 cannot establish focused24 or original84 acceptance"
+  },
+  "comparisonLimitsKo": [
+    "검토자는 AI이며 사람 검토를 주장하지 않는다. 다른 검토자의 primary-ai-review.json은 열지 않고 원문·고정 기준·실제 입력을 직접 대조했다.",
+    "v5 corpus의 사용자 발화·ID·기대 의미는 유지되어 회귀 비교 의미는 보존된다. 단, production projection 추가로 Saju/궁합 직렬화 입력 hash가 바뀌었으므로 v5와 provider payload가 완전히 동일한 실험이라고 표현하면 안 된다.",
+    "이번 micro3에는 v6 projection 변경이 적용되어 B 시주 CONFIRMED 등의 양의 근거와 Tarot 선택 방향 의미만 제공된다. v5의 실패출력은 그대로 보존하고 새 성공/개선만 이3건 범위에서 판단했다.",
+    "A/B 시주 모순이 이번 출력에서 사라졌다는 것은 관찰이다. B 시주 확정 상태를 능동적으로 모두 설명했거나 전체24/84에서 재발하지 않는다는 검증은 아니다.",
+    "추가 provider 호출·production 변경·기존 결과 수정0. 이 새 독립 검토 파일만 작성했다."
+  ]
+}

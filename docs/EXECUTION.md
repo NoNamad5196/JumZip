@@ -20,7 +20,17 @@ Each code batch must pass typecheck, relevant tests and production build; DB/Edg
 
 M7.5 A–G and the separate M9 civil-date convention were explicitly approved. Both have independent expected fixtures frozen before implementation. See [rule freeze](saju-rule-freeze.md) and [luck convention](luck-timing-convention.md). New result-changing rules must not be guessed.
 
-## Current integration — 06:06 KST
+## Current integration — 06:40 KST
+
+Checkpoint `b96a2ab67e59da690ac6625cb9aeafb767aa62d9` is pushed and [CI passed](https://github.com/NoNamad5196/JumZip/actions/runs/35469560439). Its selected-memory frontend was deployed around06:08KST; the public index, eight JS files and stylesheet matched that build, and four actual desktop/mobile guest views passed. The following candidate source now passes TypeScript, whole lint, **604 tests /three live skips**, production build,26 asset checks, source/public credential scans and six browser regression tests. The new CAPTCHA UI clears stale error display after a fresh successful challenge; the service gives an actionable CAPTCHA message without echoing provider details.
+
+The public Auth log identified `invalid-input-secret` at06:06KST. The existing Cloudflare widget secret differed from Supabase's stored CAPTCHA secret. The same widget's correct key was saved and read back; CAPTCHA remained enabled. One deliberately invalid token was rejected400 without a user/session, and its server log now reports `invalid-input-response`, not a secret error. No key was rotated, printed or stored in source. Actual public signup success still needs its own browser check; CAPTCHA action-time approval is pending.
+
+Docker recovered at06:13KST after the two stale socket-only runtime directories were quarantined together, with backups preserved. Linux engine29.5.2 responded. Local Supabase started and applied001–014. A pinned, hash-verified native llama.cpp b11053/Qwen3.5-0.8B Q4_0 server passed **6/6 protocol/schema checks**. Actual local Auth/RLS/Edge/native Chat, same-UUID replay, persisted Tarot/PARTIAL retry and account cascade were exercised. The tiny model's two Tarot interpretations failed validation, so this is not a complete local interpretation or Persona acceptance pass. The original report preserves27 passes/5 failures; separate no-model verification corrects two cleanup-table assertions and the local Kong preflight expectation, with both owned identities and15 tables verified absent. Local Vector logging remains unavailable because its configured Docker TCP endpoint has no listener. Hosted configuration and production models were not changed by this local test.
+
+Persona v6 explicitly separates computed pillar coverage from recorded input and removes direction-independent Tarot advice from provider facts. Its three-case diagnostic produced3 valid replies with118.401184 neurons, but direct review still finds the reversed-Hermit hard failure. No production model/prompt deployment followed. The original full84 and remaining v6 focused cases are not claimed passed. A generic direction-grounding proposal is documented separately and is not implemented in this checkpoint.
+
+## Previous integration — 06:06 KST
 
 Checkpoint `ea3d0a4797a2ec19acfb711d72147efb839e53eb` was pushed to `main` and [its CI passed](https://github.com/NoNamad5196/JumZip/actions/runs/35468084847). The next integrated source now passes **595 tests / three explicit live skips**, whole TypeScript and lint, production build, 26 asset checks, public/source credential scans, six existing browser tests and four additional deletion-dialog fixture views. No skipped test counts as passed.
 

@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-09-19T21:21:08.723Z",
+  "completedAt": "2026-09-19T21:21:12.994Z",
+  "binary": "llama.cpp b11053 Windows x64 CPU",
+  "binaryArchiveSha256": "a73abd4fd618b8145bbe7a9e9ca2dad880f05eb589a5942f921b1f39bd2d87dc",
+  "model": "ggml-org/Qwen3.5-0.8B-GGUF Q4_0",
+  "modelRevision": "8fea620810c4afa23dd6443f999a48574c1611a3",
+  "modelSha256": "57d1997790d1744fba5b40a7317df71ea5e2acee28c47e78f0cce39c0703f8cf",
+  "baseUrl": "http://127.0.0.1:8080/v1",
+  "contextTokens": 8192,
+  "parallel": 1,
+  "cpuThreads": 4,
+  "modelOutputTokenLimit": 160,
+  "scope": "Actual native loopback provider protocol/schema/repair compatibility; not Persona quality, local Edge integration, or public release acceptance",
+  "providerSourceHash": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+  "checks": [
+    {
+      "name": "native server health ready",
+      "passed": true
+    },
+    {
+      "name": "OpenAI model alias available",
+      "passed": true
+    },
+    {
+      "name": "inference rejects missing local API key",
+      "passed": true
+    },
+    {
+      "name": "generateChat returns actual Korean schema response",
+      "passed": true
+    },
+    {
+      "name": "generateStructured validates exact schema and Korean output",
+      "passed": true
+    },
+    {
+      "name": "repairChat produces schema response from supplied malformed draft",
+      "passed": true
+    }
+  ],
+  "inferenceRequests": 3,
+  "responses": [
+    {
+      "method": "generateChat",
+      "text": "{\"text\": \"안녕하세요. 저는 한국어로 한 문장 인사를 하는 AI입니다. 오늘 저는 어떻게 도와드릴까요?.\", \"toolReferences\": []}",
+      "wallTimeMs": 1802,
+      "usage": {
+        "promptTokens": 50,
+        "completionTokens": 37
+      }
+    },
+    {
+      "method": "generateStructured",
+      "text": "{\"kind\":\"LOCAL_SMOKE\",\"value\":42,\"note\":\"한국어 인사 한 문장\"}",
+      "wallTimeMs": 1390
+    },
+    {
+      "method": "repairChat",
+      "text": "{\"text\":\"미완성\",\"toolReferences\":[]}",
+      "wallTimeMs": 1037,
+      "usage": {
+        "promptTokens": 106,
+        "completionTokens": 17
+      }
+    }
+  ],
+  "failure": null,
+  "passed": true
+}

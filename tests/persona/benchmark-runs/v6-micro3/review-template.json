@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "JumZipV5Focused-v1",
+  "status": "UNREVIEWED",
+  "reviewer": null,
+  "reviewerKind": null,
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": null,
+  "fullAcceptanceEligible": false,
+  "instructionsKo": "실제 응답 전체와 고정 입력을 직접 읽고 점수를 작성한다. 비어 있는 점수나 자동 체크를 품질 통과로 처리하지 않는다. AI 검토자는 AI라고 표시한다. 기존 원본84 검사를 이 작은 묶음으로 대체하지 않는다.",
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    }
+  ],
+  "intent": []
+}

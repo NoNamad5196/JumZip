@@ -29,7 +29,13 @@ export const authProviders = {
 } as const;
 export const supabase: SupabaseClient | null = url && anonKey ? createClient(url, anonKey, { auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }) : null;
 function db(): SupabaseClient { if (!supabase) throw new ServiceError('NOT_CONFIGURED', '서비스 연결을 준비하고 있어요. 잠시 후 다시 방문해 주세요.'); return supabase; }
-function check(error: { message: string; code?: string } | null) { if (error) throw new ServiceError(error.code || 'DATABASE_ERROR', '정보를 불러오거나 저장하지 못했어요. 다시 시도해 주세요.', true); }
+function check(error: { message: string; code?: string } | null) {
+  if (!error) return;
+  const message = error.code === 'captcha_failed'
+    ? '보안 확인을 완료하지 못했어요. 새 확인 절차를 마친 뒤 다시 시도해 주세요.'
+    : '정보를 불러오거나 저장하지 못했어요. 다시 시도해 주세요.';
+  throw new ServiceError(error.code || 'DATABASE_ERROR', message, true);
+}
 async function userId() { const session = await service.getSession(); if (!session) throw new ServiceError('UNAUTHORIZED', '먼저 시작 화면에서 로그인해 주세요.'); return session.user.id; }
 async function touch() { const { error } = await db().rpc('touch_activity'); check(error); }
 function isEnvelope(value: unknown): value is Envelope<unknown> {

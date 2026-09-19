@@ -1,0 +1,182 @@
+{
+  "at": "2026-09-19T21:32:23.775Z",
+  "scope": "No-model follow-up: independently verify cleanup and correct local-gateway preflight expectation. Initial three-operation model report remains unchanged.",
+  "corrections": [
+    "cleanup table is saju_compatibility_readings; also verified daily_draw_claims",
+    "Kong locally handles a browser-style preflight with 200 and wildcard; actual disallowed-origin POST was already rejected403"
+  ],
+  "identities": [
+    {
+      "authAbsent": true,
+      "tables": [
+        {
+          "table": "profiles",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "conversations",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "consultations",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "messages",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "tarot_draw_groups",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "tarot_draws",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "birth_profiles",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "saju_readings",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "saju_compatibility_readings",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "related_people",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "memories",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "memory_suppressions",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "request_executions",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "rate_limit_buckets",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "daily_draw_claims",
+          "count": 0,
+          "errorCode": null
+        }
+      ],
+      "passed": true
+    },
+    {
+      "authAbsent": true,
+      "tables": [
+        {
+          "table": "profiles",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "conversations",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "consultations",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "messages",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "tarot_draw_groups",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "tarot_draws",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "birth_profiles",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "saju_readings",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "saju_compatibility_readings",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "related_people",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "memories",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "memory_suppressions",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "request_executions",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "rate_limit_buckets",
+          "count": 0,
+          "errorCode": null
+        },
+        {
+          "table": "daily_draw_claims",
+          "count": 0,
+          "errorCode": null
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "cors": {
+    "status": 200,
+    "allowOrigin": "*",
+    "allowMethods": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,TRACE,CONNECT",
+    "allowHeaders": "authorization,apikey,content-type",
+    "passed": true
+  },
+  "pendingCleanupCount": 0,
+  "modelCalls": 0,
+  "passed": true
+}

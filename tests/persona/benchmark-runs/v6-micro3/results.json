@@ -1,0 +1,88 @@
+{
+  "scope": "MICRO3_PARTIAL_NOT_ACCEPTANCE",
+  "entries": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네. 민수의 시주는 아직 알 수 없는 상태야. 궁금한 게 더 있어?",
+        "segments": [
+          "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네.",
+          "민수의 시주는 아직 알 수 없는 상태야.",
+          "궁금한 게 더 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v6",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T21:26:02.248Z",
+          "usage": {
+            "promptTokens": 4689,
+            "completionTokens": 59
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2203,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": {
+        "content": "응, 다시 쉽게 말해줄게! 너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여. 두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야. 어떤 부분이 제일 이해하기 어려웠어?",
+        "segments": [
+          "응, 다시 쉽게 말해줄게!",
+          "너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여.",
+          "두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야.",
+          "어떤 부분이 제일 이해하기 어려웠어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v6",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T21:26:07.191Z",
+          "usage": {
+            "promptTokens": 3124,
+            "completionTokens": 190
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 4942,
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요. 그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요. 정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?",
+        "segments": [
+          "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요.",
+          "그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요.",
+          "정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v6",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T21:26:09.546Z",
+          "usage": {
+            "promptTokens": 4161,
+            "completionTokens": 101
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2354,
+      "review": null
+    }
+  ],
+  "neuronsAccounted": 118.40118400000003
+}

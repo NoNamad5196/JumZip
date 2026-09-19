@@ -27,7 +27,7 @@ Without `--after`, the preparation script writes `initial-migrations.sql` for an
 
 Migration 014 must precede the frontend record-deletion dialogs. `history_deletion_memories` returns owner-scoped candidates with their known conversation provenance, and `delete_history_with_memories` atomically validates/deletes only explicitly selected IDs and the record. An empty selection preserves independent memories; a stale/foreign selection rolls back. Neither RPC accepts a caller-supplied owner ID. Hosted regression evidence is `docs/evidence/backend-history-deletion-smoke.json`.
 
-The v5/Intent-v2 source checkpoint is a benchmark candidate, not an instruction to switch production providers. Production remains Qwen/v4 until the candidate's semantic and actual integration checks are accepted. Preserve the failed v5 output/reviews and original full84 corpus.
+The v5/v6 and Intent-v2 source checkpoints are benchmark candidates, not an instruction to switch production providers. Production remains Qwen/v4 until the candidate's semantic and actual integration checks are accepted. Preserve failed diagnostic output/reviews and the original full84 corpus.
 
 Deploy with:
 
@@ -60,6 +60,14 @@ These scripts create disposable, clearly marked accounts and remove them after c
 Cloudflare email verification is complete. [jumzip.pages.dev](https://jumzip.pages.dev) is publicly deployed from the initial checked build; root render and desktop/mobile guest route reloads were actually inspected. This is not yet authenticated release acceptance. For direct upload, select the entire `dist` folder so its hierarchy is preserved. A ZIP uploaded as a single asset exceeds the 25 MB file limit for this build; folder upload succeeded with 174 files. Retain the previous deployment when publishing another revision.
 
 Turnstile and hosted anonymous/manual linking are enabled. Missing/invalid CAPTCHA requests actually fail; public success is still unverified. The user chose Google login; Google Cloud currently requires the owner to enable two-step verification before OAuth provisioning can continue. The frontend exposes a provider only after its public availability flag is enabled; no GitHub OAuth app was created.
+
+At06:32KST, the mismatched hosted CAPTCHA secret was repaired using the existing widget's secret. A fresh read confirmed equality and enabled protection. A deliberately invalid token was rejected400 with `invalid-input-response`; the earlier `invalid-input-secret` is preserved in the logs. This verifies secret configuration and continued rejection only, not successful public signup. Never disable CAPTCHA to make a smoke pass.
+
+## Local runtime verification
+
+Docker recovery and retained socket backups are recorded in `local-runtime-status.md`. Native provider evidence is `evidence/local-provider-smoke.json`. Keep local inference bound to loopback, require its separate random API key, and never reuse production provider credentials. Binary/model hashes are pinned in that report. Ignored `test-results/local-edge.env.local` supplies the local Supabase Edge serve process; it must not read `.env.server.local` or target the hosted URL.
+
+`tests/backend/live-local-supabase-smoke.mjs` is opt-in and enforces a loopback Supabase URL. Its actual first run verified Chat, persistence/retry and account boundaries, but the0.8B model failed both Tarot interpretations. Preserve `backend-local-supabase-smoke.json` and the separate no-model `backend-local-supabase-verification.json`; do not relabel the entire suite as passed. Owned test identities and15 application tables were independently confirmed absent. Local Vector analytics has no Docker TCP listener; do not expose an unauthenticated Docker daemon to satisfy logging.
 
 ## Retention and operational checks
 

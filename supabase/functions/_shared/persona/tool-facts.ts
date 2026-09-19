@@ -67,10 +67,10 @@ export function buildPersonaToolFacts(value: unknown): unknown {
         nameKo: meaning.nameKo, orientationLabel: card.orientation === 'UPRIGHT' ? '정방향' : '역방향', positionLabel: positionLabels[card.positionKey] ?? card.positionKey,
         activeMeaning: card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed,
         symbolicFrame: { evidenceKind: 'SYMBOLIC_NOT_OBSERVED', subjectRole, meaningSource: 'activeMeaning', certainty: 'POSSIBILITY' },
-        contextAdvice: meaning.guidance.advice, meaningVersion: TAROT_MEANING_VERSION };
+        meaningVersion: TAROT_MEANING_VERSION };
     });
     return { ...tool, cards, requiredToolReferences: cards.map(({ cardId, orientation, positionIndex }) => ({ cardId, orientation, positionIndex })),
-      interpretationContract: '현재 방향의 activeMeaning부터 해석한다. symbolicFrame의 대상과 가능성 수준을 유지한다. contextAdvice는 다음 행동을 검토하는 조언이지 현재 상태의 원인·필요를 입증하지 않는다. 상대의 욕구나 마음을 관찰한 사실처럼 말하지 않는다. requiredToolReferences는 재추첨 요청에도 저장된 카드 그대로 복사한다.' };
+      interpretationContract: '현재 방향의 activeMeaning만 카드 의미의 근거로 쓴다. symbolicFrame의 대상과 가능성 수준을 유지한다. 현실적인 조언은 상징과 실제 대화 자료를 구분해 제안하며 상대의 욕구나 현재 상태의 원인으로 확정하지 않는다. requiredToolReferences는 재추첨 요청에도 저장된 카드 그대로 복사한다.' };
   }
   if (tool.kind !== 'SAJU' && tool.kind !== 'SAJU_COMPATIBILITY') return value;
   const annotate = (item: unknown): unknown => {
@@ -95,6 +95,7 @@ export function buildPersonaToolFacts(value: unknown): unknown {
   }
   result.unconfirmedFields = Object.entries(result).filter(([, item]) => item === null).map(([key]) => key);
   result.inputStatusContract = 'inputAvailability는 원자료 값이 아닌 입력 상태다. PROVIDED는 이미 제공됨, UNKNOWN은 시각 미상, NOT_RECORDED는 상태 기록이 없음이다. NOT_RECORDED를 사용자 미입력으로 단정하지 않는다. calculationUncertainty는 계산 경계·후보의 제한이며 날짜 입력의 유무와 다르다.';
+  result.computedPillarContract = 'computedPillarCoverage는 실제 계산 기둥의 상태다. CONFIRMED는 모든 상관 후보에 같은 기둥이 있음, POSSIBLE은 후보가 다르거나 일부에만 있어 미확정, UNAVAILABLE은 계산 자료에 해당 기둥이 없음이다. 입력 상태가 NOT_RECORDED여도 계산 기둥이 CONFIRMED이면 미상으로 바꾸지 않는다. 이 coverage 자체가 없는 이전 자료에서는 상태가 표시되지 않은 것이며 미상이라고 단정하지 않는다. 궁합의 personA/personB를 각각 따른다.';
   if (tool.kind === 'SAJU_COMPATIBILITY') {
     result.descriptiveElementFacts = describeCompatibility(tool.elementComplement);
     result.availableEvidence = ['dayMasterRelation: 두 일간의 관계', 'elementComplement: A와 B 각각의 실제 오행 비율 및 균형 역할', 'spousePalaceRelations/stemRelations/branchRelations: 위치가 표시된 관계', 'timing: 대운·연운·월운에 따른 관계 활성화 근거'];

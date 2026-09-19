@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "reviewerKind": "AI",
+  "reviewer": "Codex / fortune_audit",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-19T21:28:00.009Z",
+  "sourceReport": "tests/persona/benchmark-runs/v6-micro3/results.json",
+  "sourceReportSha256": "7474ce66cfd44732687d1f1f92d4ab05efb3eef26022b10b73ec50e375468918",
+  "sourceReportCanonicalLFHash": "7474ce66cfd44732687d1f1f92d4ab05efb3eef26022b10b73ec50e375468918",
+  "sourceManifestSha256": "b9e9bf446636df40b597f694d72ab11e3bc9a2f7dd3f8bde29ee2f18df7c5559",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v6",
+  "intentPromptVersion": "JumZipIntent-v2",
+  "scope": "Authorized three-reply subset of unchanged v5 focused24; not full24 or original84 acceptance",
+  "fullAcceptanceEligible": false,
+  "manualScorePolicy": "0=clear failure,1=partly met,2=met. All qualitative scores authored after direct comparison. Opposite-card causation remains a Hard Fail despite conditional wording, consistent with prior reviews.",
+  "assessment": {
+    "status": "FAILED",
+    "total": 24,
+    "maximum": 30,
+    "average": 8,
+    "hardFailCount": 1,
+    "pendingReviews": 0,
+    "full24Status": "NOT_RUN_V6",
+    "full84Status": "NOT_RUN_V6; previous full84 remains FAILED"
+  },
+  "runtime": {
+    "replyCount": 3,
+    "attempts": 3,
+    "repairCount": 0,
+    "neurons": 118.40118400000003,
+    "ceiling": 350,
+    "sourceFrozen": true,
+    "pendingMicroIds": [],
+    "unselected24Ids": [
+      "v5-intent-pure-recall-no-profile",
+      "10-retry-same-draw:SANI",
+      "10-retry-same-draw:ARANG",
+      "s03-correlated-boundary:BOMI",
+      "s03-correlated-boundary:SANI",
+      "s02-unknown-hour:BOMI",
+      "s05-compatibility-evidence:ARANG",
+      "s06-compatibility-uncertain:ARANG",
+      "s07-no-invented-score:ARANG",
+      "v5-hermit-upright-contrast:BOMI",
+      "v5-reversed-owner-contrast:SANI",
+      "v5-legacy-provenance:ARANG",
+      "v5-pure-recall:BOMI",
+      "v5-recall-explicit-tarot:ARANG",
+      "v5-intent-pure-recall-has-profile",
+      "v5-intent-memory-control",
+      "v5-intent-current-preference",
+      "v5-intent-innate-character",
+      "v5-intent-recall-explicit-tarot",
+      "v5-intent-target-remembers",
+      "v5-intent-forget-and-tarot"
+    ]
+  },
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "A 민수의 목48.3%와 B 사용자의 목80%를 정확히 유지하며 시주 미상은 민수에게만 귀속한다. B의 시주도 미상이라는 v5 오류는 이번 출력에서 재현되지 않았다. B 시주가 확정이라고 명시하지는 않았지만 요청한 누구의 시주가 미상인지에는 올바르게 답했다. 단일 응답으로 일반적인 재발 방지를 입증하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네. 민수의 시주는 아직 알 수 없는 상태야. 궁금한 게 더 있어?",
+      "reviewedSegments": [
+        "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네.",
+        "민수의 시주는 아직 알 수 없는 상태야.",
+        "궁금한 게 더 있어?"
+      ],
+      "reviewedOutputSha256": "702ce76d6d1399727ed5882fe3e90211fb4f9ccef130bb083ac442d6886b41c9",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "inputHashMatchesSelection": true
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "OPPOSITE_HERMIT_ORIENTATION"
+      ],
+      "evidenceKo": [
+        "은둔자 REVERSED activeMeaning은 고립/회피/과도한 폐쇄/외로움/방향 상실이다. 실제 응답은 상대방이 혼자만의 시간이 필요해서 움츠러들었다는 원인을 제시한다. 선택 방향의 어려움을 정당한 고독 필요로 대체한 같은 오류이며, 상태로 보여라는 완곡어로 해결되지 않는다. 조언 제거 후에도 재현돼 공통 contextAdvice의 제거만으로 해결된다는 가설은 지지되지 않는다. JSON 카드 참조 일치와 의미 충실성은 별개다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "응, 다시 쉽게 말해줄게! 너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여. 두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야. 어떤 부분이 제일 이해하기 어려웠어?",
+      "reviewedSegments": [
+        "응, 다시 쉽게 말해줄게!",
+        "너는 관계에 대해 적극적으로 연결되고 싶은 마음인 것 같고, 상대방은 지금 혼자만의 시간이 필요해서 조금은 움츠러든 상태로 보여.",
+        "두 사람 사이에는 서로 맞춰가는 조율의 과정이 필요하다는 의미야.",
+        "어떤 부분이 제일 이해하기 어려웠어?"
+      ],
+      "reviewedOutputSha256": "a63e1c8a92a338024db9a06780a1ea4816c5603574fd2a7eb58bb0d5b4213dab",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "inputHashMatchesSelection": true
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "출생 시각 미상과 원국/대운 미확정을 유지하고 32,37,58점 및 용신 FIRE/METAL 대안을 정확히 나열한다. 이미 제공된 날짜를 모른다고 하거나 후보를 확정값으로 합치지 않는다. FIRE/METAL 내부 코드 노출과 일반적인 안내 문체가 남아 있다. 마지막 문장은 UI 입력 수정 안내 대신 정확한 태어난 시각을 채팅에서 다시 알려 달라는 요청이므로 prompt의 입력 경로 안내를 충분히 따르지 않았다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요. 그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요. 정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?",
+      "reviewedSegments": [
+        "현재는 태어난 시각이 확인되지 않아 원국과 대운이 아직 미확정 상태예요.",
+        "그래서 점수도 32, 37, 58점처럼 몇 가지 가능성으로 나뉘어 있고, 용신 또한 불(FIRE)이나 금(METAL)처럼 후보로만 남아 있어요.",
+        "정확한 흐름을 보고 싶다면 태어난 시각을 포함해서 다시 알려주시겠어요?"
+      ],
+      "reviewedOutputSha256": "c65c9732564f02000a0cbf1c884164ffa72196d2d8908bdda6c242071d97be20",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "inputHashMatchesSelection": true
+    }
+  ]
+}

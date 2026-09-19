@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "status": "LOCAL_PREPARATION_VERIFIED",
+  "networkRequests": 0,
+  "source": {
+    "previousSelection": "tests/persona/benchmark-runs/v5-focused/selection.json",
+    "previousUsage": "tests/persona/benchmark-runs/v5-focused/manifest.json",
+    "currentPreflight": "tests/persona/benchmark-runs/v6-focused/preflight-JumZipPersona-v6-JumZipIntent-v2.json"
+  },
+  "sameOriginalCaseIdsOrderExpectationsAndRubric": true,
+  "rows": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "previousInputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "inputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "previousInputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "inputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "previousInputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "inputSha256": "55e8c23ceeac6920c5d97f1d0d42ee27eca897048b42d81889a0ba6ad045fa65",
+      "previousInputSha256": "3f440d03091a834709ef0ee98234ad0bc6b2c79523bcde796164e23738e9454a",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "inputSha256": "6ee8865c2def53604d44a09c9024e066b8913c292abbf611f886619c0b088db6",
+      "previousInputSha256": "2a1fdd9f7b8abdfbcfb9df6c7911a54511ffa69ebff5dd6ff0e11c8d0efeb6eb",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "previousInputSha256": "1ee75615886dc3ab1ae71c21dc510bfcbc27f355b520a5092ba92c2c4749c15e",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "inputSha256": "c0c5dd0e3b7c4b1d4c04a368b7c3716eb61bdca3eb5700d06cd3293c349d4015",
+      "previousInputSha256": "30b7c7ceff36aba8a3691706baa329b45e3bc3d20f77eda95012488569b71c2d",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "inputSha256": "13f6eea5914c814a0d1953fb1a9dff1d4240e77eeba90c522289470149927b7f",
+      "previousInputSha256": "8945a1eddcf513df9fab9875d6649db001c3f4f54121c95cc29ddaa881227216",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "inputSha256": "d7bac40b26cca275e9447a917dd2fd6034a1ddb14632fb7608f2727e63f61018",
+      "previousInputSha256": "992cedbe93b9b5535f082781fd9e9bcd35ffe1f57d42fdc05f57816e81c636b0",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "inputSha256": "3f39d665e014ebc746d28a91cb26f9601a9b71656778b4be787732e873954fb5",
+      "previousInputSha256": "8415db49a6b58b0ce2c100cd50e5f7bd23cf2f6edb8570ba383ea5339062b9e3",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "inputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "previousInputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "inputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "previousInputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "inputSha256": "ac14a403d6b5f8bb0786d275a6b1b7d337a8e69624e33d4115e91029316d0201",
+      "previousInputSha256": "38949710e61e5a6023c06fb447a8843e0b6fec438f95fc6b2dd417d4b16522e3",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "previousInputSha256": "ead2d1f4be783d96d4a34b930c2c0b63d05a421bdca9be4617bbf54853e3dfb8",
+      "exactInputUnchanged": false,
+      "onlyAddedComputedCoverage": true,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "inputSha256": "1dd1b77724a04e3ae5bd46aab06398cb61bcee1c208362bfaefb37a58901b1d4",
+      "previousInputSha256": "1dd1b77724a04e3ae5bd46aab06398cb61bcee1c208362bfaefb37a58901b1d4",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "inputSha256": "a90b7df80704ab5f7f2976930b8457c5e72e7f4a5bfc3f94ea33061e16b29e9f",
+      "previousInputSha256": "a90b7df80704ab5f7f2976930b8457c5e72e7f4a5bfc3f94ea33061e16b29e9f",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "inputSha256": "1013ee5c065fc5540e7ce100e6dbc7a98ea924526cebab2f73e62c07ae6d0eef",
+      "previousInputSha256": "1013ee5c065fc5540e7ce100e6dbc7a98ea924526cebab2f73e62c07ae6d0eef",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "inputSha256": "82446d9fb7c4d3eed16fb85f6def4142494f42eb68368fbb712e943f269e99b4",
+      "previousInputSha256": "82446d9fb7c4d3eed16fb85f6def4142494f42eb68368fbb712e943f269e99b4",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "inputSha256": "9838c188133438ac85bf40408a22aff6c71160fc1660220358e6cd70957198a6",
+      "previousInputSha256": "9838c188133438ac85bf40408a22aff6c71160fc1660220358e6cd70957198a6",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "inputSha256": "2c54ddcc956abadd8486d63fe077355157c29a081fb51659c1db6219614fd1e9",
+      "previousInputSha256": "2c54ddcc956abadd8486d63fe077355157c29a081fb51659c1db6219614fd1e9",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "inputSha256": "4fbbc35065667dde03dc318285bd90e6bda185cc9ba836af2940d08155ad23d2",
+      "previousInputSha256": "4fbbc35065667dde03dc318285bd90e6bda185cc9ba836af2940d08155ad23d2",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "inputSha256": "6bc8d5f89de00a1f597aaccf925a113342c33a311e08c700d54f4e991a237163",
+      "previousInputSha256": "6bc8d5f89de00a1f597aaccf925a113342c33a311e08c700d54f4e991a237163",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "inputSha256": "a87e6c4867695d81e1e3dc70513276fb39804a4848e65301e0851d7c419c15ca",
+      "previousInputSha256": "a87e6c4867695d81e1e3dc70513276fb39804a4848e65301e0851d7c419c15ca",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "inputSha256": "f84c21cde05857482cfb7b4055cf7e1c99ceee5f540104e72f887aa3a06d91c1",
+      "previousInputSha256": "f84c21cde05857482cfb7b4055cf7e1c99ceee5f540104e72f887aa3a06d91c1",
+      "exactInputUnchanged": true,
+      "onlyAddedComputedCoverage": false,
+      "sameReviewChecks": true,
+      "sameExpected": true
+    }
+  ],
+  "changedInputsExplanation": "The frozen source corpus is unchanged. Production compact projection now adds computedPillarCoverage. Recursively removing only that field exactly recovers each prior v5 input hash; all other cases are byte-identical.",
+  "forecasts": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "byteDelta": -94,
+      "estimatedInitialNeurons": 32.11947953836363,
+      "estimatedAtMaximumOutput": 52.92877853836362,
+      "conservativeReserveNeurons": 152.246977
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "byteDelta": 822,
+      "estimatedInitialNeurons": 40.10462437795275,
+      "estimatedAtMaximumOutput": 62.495757377952756,
+      "conservativeReserveNeurons": 193.656482
+    },
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 11.90921,
+      "estimatedAtMaximumOutput": 19.354739,
+      "conservativeReserveNeurons": 54.218724
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "byteDelta": -94,
+      "estimatedInitialNeurons": 31.47289417886179,
+      "estimatedAtMaximumOutput": 52.85492617886179,
+      "conservativeReserveNeurons": 151.165148
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "byteDelta": -94,
+      "estimatedInitialNeurons": 32.05551416532543,
+      "estimatedAtMaximumOutput": 53.02845116532543,
+      "conservativeReserveNeurons": 152.474252
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "byteDelta": 822,
+      "estimatedInitialNeurons": 40.002354910616724,
+      "estimatedAtMaximumOutput": 62.39348791061673,
+      "conservativeReserveNeurons": 193.429207
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "byteDelta": 822,
+      "estimatedInitialNeurons": 39.70983852619642,
+      "estimatedAtMaximumOutput": 62.31915552619642,
+      "conservativeReserveNeurons": 192.347378
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "byteDelta": 825,
+      "estimatedInitialNeurons": 37.46976896780721,
+      "estimatedAtMaximumOutput": 59.96999396780721,
+      "conservativeReserveNeurons": 180.301803
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "byteDelta": 945,
+      "estimatedInitialNeurons": 46.32431527392859,
+      "estimatedAtMaximumOutput": 67.89725827392859,
+      "conservativeReserveNeurons": 208.565722
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "byteDelta": 944,
+      "estimatedInitialNeurons": 65.5969886780162,
+      "estimatedAtMaximumOutput": 88.20630567801621,
+      "conservativeReserveNeurons": 294.521127
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "byteDelta": 945,
+      "estimatedInitialNeurons": 45.14935111503459,
+      "estimatedAtMaximumOutput": 67.70412211503458,
+      "conservativeReserveNeurons": 207.947534
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "byteDelta": -94,
+      "estimatedInitialNeurons": 33.165287505489836,
+      "estimatedAtMaximumOutput": 52.82912050548984,
+      "conservativeReserveNeurons": 152.028793
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "byteDelta": -94,
+      "estimatedInitialNeurons": 31.918659537618336,
+      "estimatedAtMaximumOutput": 52.86432353761834,
+      "conservativeReserveNeurons": 151.410605
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "byteDelta": 822,
+      "estimatedInitialNeurons": 39.39333524047591,
+      "estimatedAtMaximumOutput": 61.83901424047592,
+      "conservativeReserveNeurons": 190.947364
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "byteDelta": 945,
+      "estimatedInitialNeurons": 45.18274673542884,
+      "estimatedAtMaximumOutput": 67.32842273542884,
+      "conservativeReserveNeurons": 205.802058
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "byteDelta": 136,
+      "estimatedInitialNeurons": 25.518456781236925,
+      "estimatedAtMaximumOutput": 48.78232578123693,
+      "conservativeReserveNeurons": 134.410435
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "byteDelta": 136,
+      "estimatedInitialNeurons": 26.310068051260853,
+      "estimatedAtMaximumOutput": 49.137569051260854,
+      "conservativeReserveNeurons": 135.737721
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 11.918301,
+      "estimatedAtMaximumOutput": 19.36383,
+      "conservativeReserveNeurons": 54.209633
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 11.900119,
+      "estimatedAtMaximumOutput": 19.482013,
+      "conservativeReserveNeurons": 54.855094
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 11.809209,
+      "estimatedAtMaximumOutput": 19.309284,
+      "conservativeReserveNeurons": 54.009631
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 12.736491,
+      "estimatedAtMaximumOutput": 19.309284,
+      "conservativeReserveNeurons": 53.964176
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 12.236486,
+      "estimatedAtMaximumOutput": 19.409285,
+      "conservativeReserveNeurons": 54.282361
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 12.981948,
+      "estimatedAtMaximumOutput": 19.309284,
+      "conservativeReserveNeurons": 53.973267
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "byteDelta": 0,
+      "estimatedInitialNeurons": 13.018312,
+      "estimatedAtMaximumOutput": 19.345648,
+      "conservativeReserveNeurons": 54.109632
+    }
+  ],
+  "forecastTotals": {
+    "priorActualV5Neurons": 693.8978480000001,
+    "estimatedInitialNeuronsUsingSameEntryV5Tokens": 710.0037595836143,
+    "estimatedAtMaximumOutput": 1117.462379583614,
+    "largestPrecallReserve": 294.521127,
+    "configuredHardCeiling": 800
+  },
+  "limitations": [
+    "Estimates are not bounds and do not include repairs.",
+    "Actual execution still reserves request bytes as input tokens plus maximum output before each HTTP call.",
+    "A hard cap may stop before all24. This artifact gives no live authorization or current account balance.",
+    "This focused suite cannot replace original84 acceptance."
+  ]
+}
