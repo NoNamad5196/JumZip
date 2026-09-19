@@ -25,6 +25,10 @@ Without `--after`, the preparation script writes `initial-migrations.sql` for an
 
 ## Edge release
 
+Migration 014 must precede the frontend record-deletion dialogs. `history_deletion_memories` returns owner-scoped candidates with their known conversation provenance, and `delete_history_with_memories` atomically validates/deletes only explicitly selected IDs and the record. An empty selection preserves independent memories; a stale/foreign selection rolls back. Neither RPC accepts a caller-supplied owner ID. Hosted regression evidence is `docs/evidence/backend-history-deletion-smoke.json`.
+
+The v5/Intent-v2 source checkpoint is a benchmark candidate, not an instruction to switch production providers. Production remains Qwen/v4 until the candidate's semantic and actual integration checks are accepted. Preserve the failed v5 output/reviews and original full84 corpus.
+
 Deploy with:
 
 ```powershell

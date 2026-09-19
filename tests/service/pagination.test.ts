@@ -23,6 +23,44 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllEnvs());
 
 describe('history continuation through the real Supabase query builder', () => {
+  it('loads every deletion candidate with stable microsecond cursors and the same owner-scoped RPC arguments', async () => {
+    let upper = 205;
+    const bodies: unknown[] = [];
+    http.fetch.mockImplementation(async (input: string, init: RequestInit) => {
+      http.urls.push(new URL(input)); bodies.push(JSON.parse(String(init.body)));
+      const rows = Array.from({ length: Math.min(201, upper) }, (_, i) => row(upper - i));
+      upper -= Math.min(200, upper); return reply(rows);
+    });
+    const { service } = await import('../../src/lib/service');
+    const memories = await service.getDeletionMemories('CONSULTATION', id(30));
+    expect(memories).toHaveLength(205);
+    expect(new Set(memories.map(memory => memory.id)).size).toBe(205);
+    expect(bodies).toEqual(Array(2).fill({ p_kind: 'CONSULTATION', p_record_id: id(30) }));
+    expect(http.urls.every(url => url.pathname.endsWith('/rpc/history_deletion_memories'))).toBe(true);
+    expect(http.urls[1].searchParams.get('or')).toContain(`created_at.eq."${at}"`);
+    expect(http.urls[1].searchParams.get('or')).toContain(`id.lt.${id(6)}`);
+  });
+  it('rejects a partial deletion preview if a later page fails', async () => {
+    http.fetch.mockResolvedValueOnce(reply(Array.from({ length: 201 }, (_, i) => row(201 - i))));
+    http.fetch.mockResolvedValueOnce(reply({ code: '42501', message: 'denied' }, 403));
+    const { service } = await import('../../src/lib/service');
+    await expect(service.getDeletionMemories('CONVERSATION', id(30))).rejects.toMatchObject({ code: '42501' });
+  });
+  it('sends one atomic deletion request with only explicit memory IDs and defaults to preserving memories', async () => {
+    const bodies: unknown[] = [];
+    http.fetch.mockImplementation(async (input: string, init: RequestInit) => {
+      http.urls.push(new URL(input)); bodies.push(JSON.parse(String(init.body)));
+      return reply({ deleted: true, memoriesDeleted: 0 });
+    });
+    const { service } = await import('../../src/lib/service');
+    await service.deleteReading(id(30), { memoryIds: [id(1)] });
+    await service.deleteConversation(id(40));
+    expect(bodies).toEqual([
+      { p_kind: 'CONSULTATION', p_record_id: id(30), p_memory_ids: [id(1)] },
+      { p_kind: 'CONVERSATION', p_record_id: id(40), p_memory_ids: [] },
+    ]);
+    expect(http.urls.every(url => url.pathname.endsWith('/rpc/delete_history_with_memories'))).toBe(true);
+  });
   it('keeps microseconds and an ID tie-break while displaying each older message page chronologically', async () => {
     http.fetch.mockImplementationOnce(async (input: string) => { http.urls.push(new URL(input)); return reply([row(4), row(3), row(2)]); });
     const { service } = await import('../../src/lib/service');

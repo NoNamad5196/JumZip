@@ -4,6 +4,8 @@ import { createOpenAICompatibleProvider, type LLMProvider, type StructuredReques
 import type { Intent } from '../../supabase/functions/_shared/domain/router.ts';
 
 const output = (intent: Intent, extra: Record<string, unknown> = {}) => ({
+  requestPurpose: ['small_talk', 'general_concern'].includes(intent) ? 'GENERAL_CHAT' : 'FORTUNE_EXPLORATION',
+  intentEvidenceQuote: '우리 관계가 궁금해.',
   intent, explicitTool: null, explicitToolQuote: null,
   targetPersonPresent: false, recentSituationPresent: false, periodPresent: false, choicesPresent: false, highStakes: false, ...extra,
 });
@@ -44,7 +46,7 @@ describe('M11 structured intent → deterministic recommendation matrix', () => 
   });
 
   it('preserves validated current explicit tool priority over the inferred default', async () => {
-    const provider = testProvider(output('daily_fortune', { explicitTool: 'SAJU', explicitToolQuote: '사주로 오늘 운세' }));
+    const provider = testProvider(output('daily_fortune', { intentEvidenceQuote: '오늘 운세', explicitTool: 'SAJU', explicitToolQuote: '사주로 오늘 운세' }));
     const result = await extractToolRecommendation(provider, input({ currentMessage: '사주로 오늘 운세 보고 싶어.', hasOwnBirthData: true }));
     expect(result?.recommendedTools[0]).toMatchObject({ tool: 'SAJU', mode: 'DAILY', missingSlots: [] });
     const explicitUI = await extractToolRecommendation(testProvider(output('natal_character')), input({ explicitTool: 'TAROT' }));
@@ -52,9 +54,9 @@ describe('M11 structured intent → deterministic recommendation matrix', () => 
   });
 
   it('rejects invented explicit requests, old-message evidence and a negated tool choice', async () => {
-    expect(await extractToolRecommendation(testProvider(output('daily_fortune', { explicitTool: 'SAJU', explicitToolQuote: '사주로 봐줘' })), input({ currentMessage: '오늘 운세', recentMessages: [{ role: 'user', content: '사주로 봐줘' }] }))).toBeNull();
-    expect(await extractToolRecommendation(testProvider(output('daily_fortune', { explicitTool: 'SAJU', explicitToolQuote: '사주' })), input({ currentMessage: '사주 말고 타로로 봐줘' }))).toBeNull();
-    const tarot = await extractToolRecommendation(testProvider(output('daily_fortune', { explicitTool: 'TAROT', explicitToolQuote: '타로로 봐줘' })), input({ currentMessage: '사주 말고 타로로 봐줘' }));
+    expect(await extractToolRecommendation(testProvider(output('daily_fortune', { intentEvidenceQuote: '오늘 운세', explicitTool: 'SAJU', explicitToolQuote: '사주로 봐줘' })), input({ currentMessage: '오늘 운세', recentMessages: [{ role: 'user', content: '사주로 봐줘' }] }))).toBeNull();
+    expect(await extractToolRecommendation(testProvider(output('daily_fortune', { intentEvidenceQuote: '타로로 봐줘', explicitTool: 'SAJU', explicitToolQuote: '사주' })), input({ currentMessage: '사주 말고 타로로 봐줘' }))).toBeNull();
+    const tarot = await extractToolRecommendation(testProvider(output('daily_fortune', { intentEvidenceQuote: '타로로 봐줘', explicitTool: 'TAROT', explicitToolQuote: '타로로 봐줘' })), input({ currentMessage: '사주 말고 타로로 봐줘' }));
     expect(tarot?.recommendedTools[0]?.tool).toBe('TAROT');
   });
 
@@ -66,7 +68,7 @@ describe('M11 structured intent → deterministic recommendation matrix', () => 
   });
 
   it('sends no raw birth profile and minimizes birth details in current/recent chat', async () => {
-    const provider = testProvider(output('natal_character'));
+    const provider = testProvider(output('natal_character', { intentEvidenceQuote: '타고난 성향이 궁금해.' }));
     await extractToolRecommendation(provider, input({
       currentMessage: '생년월일은 1992-10-24, 출생시간 05:30, 출생도시 서울이야.\n타고난 성향이 궁금해.',
       recentMessages: [{ role: 'user', content: 'birthDate=1992-10-24; timezone=Asia/Seoul; longitude=126.978' }, { role: 'assistant', content: '성향 이야기를 이어가요.' }],

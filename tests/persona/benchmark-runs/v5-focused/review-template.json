@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "JumZipV5Focused-v1",
+  "status": "UNREVIEWED",
+  "reviewer": null,
+  "reviewerKind": null,
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": null,
+  "fullAcceptanceEligible": false,
+  "instructionsKo": "실제 응답 전체와 고정 입력을 직접 읽고 점수를 작성한다. 비어 있는 점수나 자동 체크를 품질 통과로 처리하지 않는다. AI 검토자는 AI라고 표시한다. 기존 원본84 검사를 이 작은 묶음으로 대체하지 않는다.",
+  "reply": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ]
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ]
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ]
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "은둔자 정방향의 성찰/탐색을 역방향 회피로 단정하지 않음",
+        "상대 위치라도 실제 마음이나 욕구를 확정하지 않음",
+        "연인=나, 은둔자=상대, 절제=방향 보존"
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "은둔자 역방향은 이번에는 나의 위치이며 상대에게 옮기지 않음",
+        "상대 위치 연인도 실제 호감의 증명이 아님",
+        "회피/과도한 폐쇄를 건전한 고독 필요로 뒤집지 않음"
+      ]
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "상태 기록이 없음과 사용자 입력이 없음을 구분",
+        "날짜 제공/미제공을 새로 확정하지 않음",
+        "기존 후보와 null을 유지하고 출생 원자료를 복원하지 않음"
+      ]
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "실제 제공된 종이별 접기 선호만 회상",
+        "새 사주/타로 결과나 도구 필요성을 만들지 않음",
+        "cards 없음에도 toolReferences 빈 배열을 정확히 반환"
+      ]
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "scores": {
+        "personaFidelity": null,
+        "naturalness": null,
+        "contextConsistency": null,
+        "toolFidelity": null,
+        "concisionRhythm": null
+      },
+      "hardFails": null,
+      "evidenceKo": [],
+      "reviewedOutput": null,
+      "checks": [
+        "회상과 긍정적 타로 요청을 모두 존중",
+        "종이별 선호 외 실제 모임 사실을 창작하지 않음",
+        "아직 실행되지 않은 카드/방향/결과를 만들지 않음"
+      ]
+    }
+  ],
+  "intent": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "checks": [
+        "실제 Qwen 오분류 질문 그대로",
+        "취미 회상을 타고난 성향으로 바꾸지 않음",
+        "분류 실패로 null인 것을 정상 무추천으로 집계하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "checks": [
+        "프로필 존재 boolean만 바꿔도 회상 목적은 같음",
+        "birth-data 존재로 사주 추천을 강제하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "checks": [
+        "기억 거부는 현재의 관리 요청",
+        "과거 assistant의 사주 제안을 현재 선택으로 승격하지 않음",
+        "삭제 실행 여부는 분류기가 주장하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "checks": [
+        "현재 선호 공유를 선천 성향 질문으로 확대하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "SAJU",
+        "modes": [
+          "NATAL"
+        ]
+      },
+      "checks": [
+        "선천적 성향에 대한 의미상 요청은 기존 natal 행렬로 연결",
+        "단순 회상과 구분하며 없는 원국을 계산했다고 하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "GENERAL_3",
+          "RELATIONSHIP_3",
+          "DECISION_3"
+        ]
+      },
+      "checks": [
+        "회상 단어가 있어도 현재 긍정적 타로 요청을 제거하지 않음",
+        "원문 근거를 보존하고 실행은 하지 않음",
+        "모임 질문의 세부 spread는 원래 행렬의 허용 범위로 검토"
+      ]
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "checks": [
+        "그 사람의 기억/마음 질문을 내 메모리 회상과 구분",
+        "도구가 상대의 실제 마음을 증명한다는 해석은 생성하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "classificationCorrect": null,
+      "explicitToolPriorityCorrect": null,
+      "noRawDataLeak": null,
+      "structuredValidationSucceeded": null,
+      "evidenceKo": [],
+      "reviewedStructuredOutput": null,
+      "reviewedRecommendation": null,
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "checks": [
+        "저장 거부와 긍정적 타로 요청을 각각 존중",
+        "모든 기억 발화를 정규식으로 도구 금지하지 않음",
+        "현재 canonical API의 오늘 운세 모드는 DAILY이며 내부 한 장 spread와 구분"
+      ]
+    }
+  ]
+}

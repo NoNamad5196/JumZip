@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-09-19T20:53:56.810Z",
+  "mode": "LOCAL_PRODUCTION_BUILD_DELETION_FIXTURE",
+  "realAuthentication": false,
+  "realBackendWrites": false,
+  "views": [
+    {
+      "kind": "CONSULTATION",
+      "width": 1440,
+      "viewport": 1440,
+      "pageWidth": 1440,
+      "dialogWidth": 598,
+      "dialogScrollWidth": 598,
+      "errors": [],
+      "unexpected": [],
+      "selectedMemoryCount": 1,
+      "atomicRpcCalls": 1,
+      "screenshot": "tests/ui/artifacts/deletion-consultation-1440.png"
+    },
+    {
+      "kind": "CONVERSATION",
+      "width": 1440,
+      "viewport": 1440,
+      "pageWidth": 1440,
+      "dialogWidth": 598,
+      "dialogScrollWidth": 598,
+      "errors": [],
+      "unexpected": [],
+      "selectedMemoryCount": 1,
+      "atomicRpcCalls": 1,
+      "screenshot": "tests/ui/artifacts/deletion-conversation-1440.png"
+    },
+    {
+      "kind": "CONSULTATION",
+      "width": 360,
+      "viewport": 360,
+      "pageWidth": 360,
+      "dialogWidth": 320,
+      "dialogScrollWidth": 320,
+      "errors": [],
+      "unexpected": [],
+      "selectedMemoryCount": 1,
+      "atomicRpcCalls": 1,
+      "screenshot": "tests/ui/artifacts/deletion-consultation-360.png"
+    },
+    {
+      "kind": "CONVERSATION",
+      "width": 360,
+      "viewport": 360,
+      "pageWidth": 360,
+      "dialogWidth": 320,
+      "dialogScrollWidth": 320,
+      "errors": [],
+      "unexpected": [],
+      "selectedMemoryCount": 1,
+      "atomicRpcCalls": 1,
+      "screenshot": "tests/ui/artifacts/deletion-conversation-360.png"
+    }
+  ],
+  "passed": true
+}

@@ -20,7 +20,17 @@ Each code batch must pass typecheck, relevant tests and production build; DB/Edg
 
 M7.5 A–G and the separate M9 civil-date convention were explicitly approved. Both have independent expected fixtures frozen before implementation. See [rule freeze](saju-rule-freeze.md) and [luck convention](luck-timing-convention.md). New result-changing rules must not be guessed.
 
-## Current integration — 05:36 KST
+## Current integration — 06:06 KST
+
+Checkpoint `ea3d0a4797a2ec19acfb711d72147efb839e53eb` was pushed to `main` and [its CI passed](https://github.com/NoNamad5196/JumZip/actions/runs/35468084847). The next integrated source now passes **595 tests / three explicit live skips**, whole TypeScript and lint, production build, 26 asset checks, public/source credential scans, six existing browser tests and four additional deletion-dialog fixture views. No skipped test counts as passed.
+
+Migration **202609190014** is applied and read back. It supplies an owner-scoped memory preview and atomic record-plus-selected-memory deletion. Default selection is empty. Consultation previews explicitly describe their actual conversation-level provenance; they do not invent consultation-level memory origins. Hosted RPC regression passed **28/28** with zero model/Edge calls, invalid/cross-owner selections rolled back, replays deleted no extra memory, and both disposable accounts plus fourteen owned tables were verified empty. The matching frontend build is being deployed separately.
+
+Persona v5 and Intent-v2 are implemented locally with exact input availability separated from calculation uncertainty. A frozen Gemma comparison produced 24/24 responses, no repair and **693.897848 measured neurons**. The sixteen-reply primary/independent means are 8.5625 and 8.9375, but both find the same two hard failures: reversed-Hermit meaning and erasure of a known B hour pillar. **This is a failed diagnostic run, not full acceptance.** Eight intent tools/modes match; one auxiliary choices slot is wrong. Production stays Qwen/v4 pending further improvements and real integration validation. Full84 preflight made zero requests and is not a test pass.
+
+Actual Supabase runtime logs now supply separate CPU evidence: fifty Saju Shutdown samples between 02:30–04:27 KST, mean123.86ms/p95 213ms/max250ms, all EarlyDrop. This is aggregate execution/isolate evidence from the hosted smoke window; it does not re-label earlier wall durations as CPU or certify every date/load. The original acceptance requires selected boundary fixtures and an Edge CPU smoke, not broad astronomical certification. Local Supabase/Edge/llama.cpp execution remains a real source requirement and is still unrun while Docker recovery is investigated.
+
+## Previous integration — 05:36 KST
 
 The latest source passes whole lint, TypeScript and **541 tests with three explicit live skips**. The production build, 26 canonical asset checks, source/public credential scans and six desktop/mobile Playwright tests pass. Nine PostgreSQL consent regressions cover forward-only OFF/ON boundaries, related-person creation/withdrawal/deletion/rename, stale work, alias retirement and account cascade. Registry dependency audits report zero advisories for both production and all build/test dependencies; this is a point-in-time advisory check, not proof of complete security.
 

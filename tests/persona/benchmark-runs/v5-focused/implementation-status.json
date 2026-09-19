@@ -1,0 +1,185 @@
+{
+  "status": "IMPLEMENTED_LOCAL_VALIDATION_COMPLETE_LIVE_NOT_RUN",
+  "promptVersion": "JumZipPersona-v5",
+  "intentPromptVersion": "JumZipIntent-v2",
+  "networkRequests": 0,
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "85a563f521612031be1c04cf037c7eaf652e432c9402f51492233aef46871d36",
+      "canonicalLF": "85a563f521612031be1c04cf037c7eaf652e432c9402f51492233aef46871d36"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "8c712de39f3bbbc2b51fd7a59c5b554cd79c98b99c834cf635f7024576f4332d",
+      "canonicalLF": "8c712de39f3bbbc2b51fd7a59c5b554cd79c98b99c834cf635f7024576f4332d"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47",
+      "canonicalLF": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+      "canonicalLF": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "beb8e77fde9e119b78a6ec949915c2a01cb34bcb561d64926e03dd5501d33153",
+      "canonicalLF": "beb8e77fde9e119b78a6ec949915c2a01cb34bcb561d64926e03dd5501d33153"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "canonicalLF": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "0ed032aafcf64a190897da7e06e5d9176126f32d9524e74ad581588f5d824edd",
+      "canonicalLF": "0ed032aafcf64a190897da7e06e5d9176126f32d9524e74ad581588f5d824edd"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "574552f18da4573090ff25be00d27fea7501de67878b4115b3316c7edcc9eb45",
+      "canonicalLF": "574552f18da4573090ff25be00d27fea7501de67878b4115b3316c7edcc9eb45"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/v5-focused-corpus.mts": {
+      "raw": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b",
+      "canonicalLF": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+    },
+    "tests/persona/v5-focused-runner.mts": {
+      "raw": "2e2b3adb66fdf0fd0605f86440e3ce7a0ef3f544b37ba97fa6e5d74f77f41b08",
+      "canonicalLF": "2e2b3adb66fdf0fd0605f86440e3ce7a0ef3f544b37ba97fa6e5d74f77f41b08"
+    }
+  },
+  "preflightFile": "preflight-JumZipPersona-v5-JumZipIntent-v2.json",
+  "sourceFrozen": true,
+  "actualModelQuality": "NOT_EVALUATED_V5; last full84 remains FAILED",
+  "productionProviderModelSwitch": false,
+  "fullAcceptanceEligible": false,
+  "changes": [
+    "Trusted calendar-date and clock-time presence metadata, with legacy NOT_RECORDED fallback",
+    "Computation uncertainty uses existing flags and correlated chart candidates without rule/score changes",
+    "Separate A/B presence context; no raw date/time/location in projections",
+    "Selected-direction Tarot SYMBOLIC_NOT_OBSERVED frame preserves actual subject role and references",
+    "Intent-v2 internal purpose/current-text evidence schema with existing external Recommendation and deterministic router"
+  ],
+  "checks": {
+    "domainPersonaInitial": {
+      "passed": 345,
+      "failed": 1,
+      "skippedLive": 2,
+      "failure": "provider metadata expectation still named v4"
+    },
+    "resolvedFailure": {
+      "file": "tests/persona/provider.test.ts",
+      "change": "Expected current prompt metadata changed to v5",
+      "targetedProviderTestsPassed": 13
+    },
+    "wholeTypeScript": "PASS",
+    "scopedESLint": "PASS",
+    "viteBuild": "PASS_WITH_EXISTING_CHUNK_SIZE_WARNING",
+    "harnessESLint": "PASS through repository TypeScript stdin configuration",
+    "preflight": "24 initial requests constructed; zero network; privacy canary absent",
+    "frozenCorpusAndExpectedFiles": "UNCHANGED"
+  },
+  "forecast": {
+    "source": "tests/persona/model-comparison-runs/gemma4-v4-full84/benchmark-baseline-manifest.json",
+    "priorReplySamples": 84,
+    "ratioMean": 0.22537653850882167,
+    "ratioMax": 0.23818171499914875,
+    "completionMean": 85.07142857142857,
+    "estimatedInitialRequestsNeurons": 742.6419922668633,
+    "estimatedInitialRequestsUsingPriorMaxRatio": 778.3885819554101,
+    "assumptions": [
+      "Input tokenization forecast uses previous reply model observations, not a bound",
+      "Intent has no same-corpus live sample; all350 output tokens are reserved in this forecast",
+      "Repairs add usage; each request retains byte-as-token reservation",
+      "Production v5 prompt/schema changes require a fresh zero-network preflight",
+      "800 is a hard stop, not a guarantee every entry fits; report pending IDs if stopped"
+    ],
+    "sumOfAllInitialConservativeReservations": 3260.66897,
+    "largestSingleReserve": 285.939223
+  },
+  "hardBudgetNeurons": 800,
+  "priorityIds": [
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG",
+    "v5-intent-pure-recall-no-profile"
+  ],
+  "reviewTemplate": "review-template.json",
+  "runState": "Awaiting Main final account-usage GO; source frozen during subsequent actual run; repairs/long responses may stop before all entries and must preserve pending IDs"
+}

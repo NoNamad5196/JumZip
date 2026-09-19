@@ -11,6 +11,11 @@ type Element = keyof typeof elementLabels;
 const elements = Object.keys(elementLabels) as Element[];
 const isRatio = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 1;
 const percent = (ratio: number): number => Math.round(ratio * 1_000) / 10;
+function inputAvailability(value: unknown, knownUnknownClock: boolean) {
+  const row = record(value);
+  return { calendarDate: row?.calendarDate === 'PROVIDED' ? 'PROVIDED' : 'NOT_RECORDED',
+    clockTime: row?.clockTime === 'PROVIDED' ? 'PROVIDED' : row?.clockTime === 'UNKNOWN' || knownUnknownClock ? 'UNKNOWN' : 'NOT_RECORDED' };
+}
 
 /** Descriptive arithmetic only: no notion of favorable, strong, weak or compatibility
  * is inferred here. Ties use original ratios; percentages are rounded for speech only. */
@@ -57,13 +62,15 @@ export function buildPersonaToolFacts(value: unknown): unknown {
       const card = value as TarotCard;
       const meaning = getTarotMeaning(card.cardId);
       if (!['UPRIGHT', 'REVERSED'].includes(card.orientation)) throw new RangeError('ORIENTATION_INVALID');
+      const subjectRole = card.positionKey === 'YOUR_ATTITUDE' ? 'USER' : card.positionKey === 'THEIR_ATTITUDE' ? 'OTHER_PERSON' : card.positionKey === 'RELATIONSHIP_DIRECTION' ? 'RELATIONSHIP' : 'QUESTION_CONTEXT';
       return { cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex, positionKey: card.positionKey,
         nameKo: meaning.nameKo, orientationLabel: card.orientation === 'UPRIGHT' ? '정방향' : '역방향', positionLabel: positionLabels[card.positionKey] ?? card.positionKey,
         activeMeaning: card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed,
+        symbolicFrame: { evidenceKind: 'SYMBOLIC_NOT_OBSERVED', subjectRole, meaningSource: 'activeMeaning', certainty: 'POSSIBILITY' },
         contextAdvice: meaning.guidance.advice, meaningVersion: TAROT_MEANING_VERSION };
     });
     return { ...tool, cards, requiredToolReferences: cards.map(({ cardId, orientation, positionIndex }) => ({ cardId, orientation, positionIndex })),
-      interpretationContract: '각 카드의 activeMeaning이 현재 방향의 핵심이다. contextAdvice는 보조 조언이며 핵심 뜻을 반대로 바꾸지 않는다. positionLabel의 인물을 바꾸지 않는다. 상대 태도도 실제 마음의 확정 사실이 아니다. 새 추첨 요청에 답할 때도 requiredToolReferences는 저장된 카드 그대로 복사한다.' };
+      interpretationContract: '현재 방향의 activeMeaning부터 해석한다. symbolicFrame의 대상과 가능성 수준을 유지한다. contextAdvice는 다음 행동을 검토하는 조언이지 현재 상태의 원인·필요를 입증하지 않는다. 상대의 욕구나 마음을 관찰한 사실처럼 말하지 않는다. requiredToolReferences는 재추첨 요청에도 저장된 카드 그대로 복사한다.' };
   }
   if (tool.kind !== 'SAJU' && tool.kind !== 'SAJU_COMPATIBILITY') return value;
   const annotate = (item: unknown): unknown => {
@@ -74,11 +81,20 @@ export function buildPersonaToolFacts(value: unknown): unknown {
     return copy;
   };
   const result = annotate(tool) as Record<string, unknown>;
+  const flags = Array.isArray(tool.uncertaintyFlags) ? tool.uncertaintyFlags : [];
+  if (tool.kind === 'SAJU') {
+    result.inputAvailability = inputAvailability(tool.inputAvailability, flags.includes('BIRTH_TIME_UNKNOWN'));
+    result.calculationUncertainty ??= null;
+  } else for (const [key, prefix] of [['personAInputContext', 'PERSON_A:'], ['personBInputContext', 'PERSON_B:']] as const) {
+    const source = record(tool[key]);
+    result[key] = { inputAvailability: inputAvailability(source?.inputAvailability, flags.includes(`${prefix}BIRTH_TIME_UNKNOWN`)), calculationUncertainty: source?.calculationUncertainty ?? null };
+  }
   const possibilities = record(result.possible_values);
   if (possibilities && Array.isArray(possibilities.score) && possibilities.score.every(item => typeof item === 'number')) {
     result.possible_values = { ...possibilities, score: [...possibilities.score].sort((a, b) => a - b) };
   }
   result.unconfirmedFields = Object.entries(result).filter(([, item]) => item === null).map(([key]) => key);
+  result.inputStatusContract = 'inputAvailability는 원자료 값이 아닌 입력 상태다. PROVIDED는 이미 제공됨, UNKNOWN은 시각 미상, NOT_RECORDED는 상태 기록이 없음이다. NOT_RECORDED를 사용자 미입력으로 단정하지 않는다. calculationUncertainty는 계산 경계·후보의 제한이며 날짜 입력의 유무와 다르다.';
   if (tool.kind === 'SAJU_COMPATIBILITY') {
     result.descriptiveElementFacts = describeCompatibility(tool.elementComplement);
     result.availableEvidence = ['dayMasterRelation: 두 일간의 관계', 'elementComplement: A와 B 각각의 실제 오행 비율 및 균형 역할', 'spousePalaceRelations/stemRelations/branchRelations: 위치가 표시된 관계', 'timing: 대운·연운·월운에 따른 관계 활성화 근거'];

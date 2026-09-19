@@ -1,0 +1,666 @@
+{
+  "scope": "FOCUSED_NOT_ACCEPTANCE",
+  "entries": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": {
+        "content": "응, 미안! 조금 더 쉽게 말해줄게. 너는 지금 관계를 위해 무언가 선택하고 싶어 하는 마음이 보이고, 상대방은 혼자만의 시간이 필요해서 조금 움츠러든 상태일 수 있어. 이 관계는 서로의 속도를 잘 맞추고 조율해 나가는 과정이 중요해 보여. 어떤 부분이 제일 답답하게 느껴져?",
+        "segments": [
+          "응, 미안!",
+          "조금 더 쉽게 말해줄게.",
+          "너는 지금 관계를 위해 무언가 선택하고 싶어 하는 마음이 보이고, 상대방은 혼자만의 시간이 필요해서 조금 움츠러든 상태일 수 있어.",
+          "이 관계는 서로의 속도를 잘 맞추고 조율해 나가는 과정이 중요해 보여.",
+          "어떤 부분이 제일 답답하게 느껴져?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:53:56.622Z",
+          "usage": {
+            "promptTokens": 3143,
+            "completionTokens": 137
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2295,
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "지금은 생년월일 정보만으로는 원국이 완전히 확정되지 않아서, 점수나 용신도 여러 후보로만 나타나고 있어요. 대운 역시 정확한 정보를 바탕으로 계산되지 않아 확정할 수 없는 상태고요. 혹시 태어난 시각까지 포함해서 다시 확인해 볼까요?",
+        "segments": [
+          "지금은 생년월일 정보만으로는 원국이 완전히 확정되지 않아서, 점수나 용신도 여러 후보로만 나타나고 있어요.",
+          "대운 역시 정확한 정보를 바탕으로 계산되지 않아 확정할 수 없는 상태고요.",
+          "혹시 태어난 시각까지 포함해서 다시 확인해 볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:53:58.582Z",
+          "usage": {
+            "promptTokens": 3990,
+            "completionTokens": 79
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1959,
+      "review": null
+    },
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "phase": "INTENT",
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "RECALL",
+        "intentEvidenceQuote": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1430,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": {
+        "content": "어려웠지? 미안. 네 마음은 관계에 집중하고 싶은 상태인 것 같고, 상대는 지금 좀 혼자 있고 싶어 하거나 상황을 피하려는 느낌이야. 관계의 흐름은 서로 속도를 맞춰가며 조율하는 과정이 필요해 보여.",
+        "segments": [
+          "어려웠지?",
+          "미안.",
+          "네 마음은 관계에 집중하고 싶은 상태인 것 같고, 상대는 지금 좀 혼자 있고 싶어 하거나 상황을 피하려는 느낌이야.",
+          "관계의 흐름은 서로 속도를 맞춰가며 조율하는 과정이 필요해 보여."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:02.165Z",
+          "usage": {
+            "promptTokens": 3135,
+            "completionTokens": 116
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2144,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": {
+        "content": "조금 더 편하게 말씀드릴게요. 본인은 관계에 대한 끌림이나 선택을 고민하고 있다면, 상대는 지금 혼자만의 시간이 필요하거나 상황을 피하고 싶은 상태일 수 있어요. 이 관계의 흐름은 서로의 속도를 조율하며 균형을 맞춰가는 과정이 필요해 보이네요. 어떤 부분이 가장 이해하기 어려웠나요?",
+        "segments": [
+          "조금 더 편하게 말씀드릴게요.",
+          "본인은 관계에 대한 끌림이나 선택을 고민하고 있다면, 상대는 지금 혼자만의 시간이 필요하거나 상황을 피하고 싶은 상태일 수 있어요.",
+          "이 관계의 흐름은 서로의 속도를 조율하며 균형을 맞춰가는 과정이 필요해 보이네요.",
+          "어떤 부분이 가장 이해하기 어려웠나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:04.238Z",
+          "usage": {
+            "promptTokens": 3154,
+            "completionTokens": 131
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2071,
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "아직은 정보가 부족해서 확실하게 정해진 건 없어. 점수나 용신도 여러 후보 중에서 결정되는 중이라 지금은 딱 하나로 말해줄 수 없거든. 대운도 정확한 생년월일시가 다 확인되어야 알 수 있어. 혹시 정확한 태어난 시간을 알고 있어?",
+        "segments": [
+          "아직은 정보가 부족해서 확실하게 정해진 건 없어.",
+          "점수나 용신도 여러 후보 중에서 결정되는 중이라 지금은 딱 하나로 말해줄 수 없거든.",
+          "대운도 정확한 생년월일시가 다 확인되어야 알 수 있어.",
+          "혹시 정확한 태어난 시간을 알고 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:06.019Z",
+          "usage": {
+            "promptTokens": 3979,
+            "completionTokens": 79
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1779,
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "지금은 정보가 부족해서 어느 하나를 확실하다고 말할 수 없는 상태야. 점수나 용신도 후보들만 나와 있고, 대운도 아직 정해지지 않았어. 정확한 걸 알고 싶으면 생년월일시를 다시 확인해 보는 게 좋을 것 같아.",
+        "segments": [
+          "지금은 정보가 부족해서 어느 하나를 확실하다고 말할 수 없는 상태야.",
+          "점수나 용신도 후보들만 나와 있고, 대운도 아직 정해지지 않았어.",
+          "정확한 걸 알고 싶으면 생년월일시를 다시 확인해 보는 게 좋을 것 같아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:07.875Z",
+          "usage": {
+            "promptTokens": 3970,
+            "completionTokens": 71
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1746,
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "응, 태어난 시간을 모르면 시주를 알 수 없어서 정확한 분석이 어려워. 대운 시작일도 태어난 시각에 따라 달라질 수 있어서 지금은 확실히 말해주기 힘들어. 혹시 나중에라도 시각을 알게 되면 다시 물어봐 줄래?",
+        "segments": [
+          "응, 태어난 시간을 모르면 시주를 알 수 없어서 정확한 분석이 어려워.",
+          "대운 시작일도 태어난 시각에 따라 달라질 수 있어서 지금은 확실히 말해주기 힘들어.",
+          "혹시 나중에라도 시각을 알게 되면 다시 물어봐 줄래?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:09.792Z",
+          "usage": {
+            "promptTokens": 3709,
+            "completionTokens": 75
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1883,
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "두 분은 일간이 같은 갑목(甲)이라 서로를 비견으로 마주하고 있네요. 닮은 점이 많아 동료처럼 편안함을 느낄 수 있는 구성이에요. 다만 A님은 목 기운이 매우 강하고, 민수님은 수 기운을 함께 가지고 있어 에너지가 흐르는 방식에 차이가 있을 수 있어요. 이 상징들이 실제 두 분의 관계와 어떻게 닮아 있는지 궁금하신가요?",
+        "segments": [
+          "두 분은 일간이 같은 갑목(甲)이라 서로를 비견으로 마주하고 있네요.",
+          "닮은 점이 많아 동료처럼 편안함을 느낄 수 있는 구성이에요.",
+          "다만 A님은 목 기운이 매우 강하고, 민수님은 수 기운을 함께 가지고 있어 에너지가 흐르는 방식에 차이가 있을 수 있어요.",
+          "이 상징들이 실제 두 분의 관계와 어떻게 닮아 있는지 궁금하신가요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:11.713Z",
+          "usage": {
+            "promptTokens": 4546,
+            "completionTokens": 109
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1920,
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "시주가 불확실하면 관계의 구체적인 흐름을 확정하기 어려워요. 그래서 결혼할 달처럼 단정적인 시기를 말씀드리는 건 불가능해요. 대신 지금 나타난 연결 패턴들을 통해 서로 어떤 방식으로 맞춰가면 좋을지 함께 살펴볼까요?",
+        "segments": [
+          "시주가 불확실하면 관계의 구체적인 흐름을 확정하기 어려워요.",
+          "그래서 결혼할 달처럼 단정적인 시기를 말씀드리는 건 불가능해요.",
+          "대신 지금 나타난 연결 패턴들을 통해 서로 어떤 방식으로 맞춰가면 좋을지 함께 살펴볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:13.149Z",
+          "usage": {
+            "promptTokens": 6780,
+            "completionTokens": 71
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1433,
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "결과를 숫자로 바꾸어 확정해 드릴 수는 없어요. 궁합은 두 사람의 흐름을 상징적으로 보여주는 자료일 뿐, 미래의 확률을 계산하는 도구는 아니거든요. 대신 두 분의 오행 구성이 어떻게 다른지 그 차이부터 살펴볼까요?",
+        "segments": [
+          "결과를 숫자로 바꾸어 확정해 드릴 수는 없어요.",
+          "궁합은 두 사람의 흐름을 상징적으로 보여주는 자료일 뿐, 미래의 확률을 계산하는 도구는 아니거든요.",
+          "대신 두 분의 오행 구성이 어떻게 다른지 그 차이부터 살펴볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:14.426Z",
+          "usage": {
+            "promptTokens": 4525,
+            "completionTokens": 73
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1276,
+      "review": null
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "너는 지금 관계에 대한 끌림이나 선택을 고민하고 있는 것 같아. 반면에 상대방은 혼자만의 시간을 가지며 깊이 생각하는 모습이고. 두 사람 사이에는 서로를 조율하며 균형을 찾아가는 과정이 필요해 보여. 어떤 부분이 제일 궁금해?",
+        "segments": [
+          "너는 지금 관계에 대한 끌림이나 선택을 고민하고 있는 것 같아.",
+          "반면에 상대방은 혼자만의 시간을 가지며 깊이 생각하는 모습이고.",
+          "두 사람 사이에는 서로를 조율하며 균형을 찾아가는 과정이 필요해 보여.",
+          "어떤 부분이 제일 궁금해?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:16.634Z",
+          "usage": {
+            "promptTokens": 3132,
+            "completionTokens": 179
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2206,
+      "review": null
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "너는 지금 스스로를 좀 고립시키거나 상황을 피하고 싶어 하는 모습이 보여. 반면에 상대는 너랑 연결되고 싶어 하거나 어떤 선택을 고민하는 흐름이네. 이 둘 사이에서 균형을 잡는 게 관건일 것 같아. 요즘 그 사람이랑 연락할 때 네가 먼저 피하게 되는 순간이 있어?",
+        "segments": [
+          "너는 지금 스스로를 좀 고립시키거나 상황을 피하고 싶어 하는 모습이 보여.",
+          "반면에 상대는 너랑 연결되고 싶어 하거나 어떤 선택을 고민하는 흐름이네.",
+          "이 둘 사이에서 균형을 잡는 게 관건일 것 같아.",
+          "요즘 그 사람이랑 연락할 때 네가 먼저 피하게 되는 순간이 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:18.790Z",
+          "usage": {
+            "promptTokens": 3136,
+            "completionTokens": 132
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2155,
+      "review": null
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "아니요, 입력 상태가 기록되지 않았다는 뜻이지 생년월일을 아예 안 넣었다는 뜻은 아니에요. 다만 정확한 사주 분석을 위해서는 생년월일과 태어난 시각이 모두 필요하거든요. 혹시 태어난 시각까지 알고 있다면 알려주시겠어요?",
+        "segments": [
+          "아니요, 입력 상태가 기록되지 않았다는 뜻이지 생년월일을 아예 안 넣었다는 뜻은 아니에요.",
+          "다만 정확한 사주 분석을 위해서는 생년월일과 태어난 시각이 모두 필요하거든요.",
+          "혹시 태어난 시각까지 알고 있다면 알려주시겠어요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:20.301Z",
+          "usage": {
+            "promptTokens": 3918,
+            "completionTokens": 77
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1510,
+      "review": null
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네. 민수는 태어난 시각을 몰라서 시주가 미상이고, 너도 시각 정보가 없어서 시주는 미상이야. 둘 다 금 기운은 없다는 게 눈에 띄네.",
+        "segments": [
+          "민수는 목 비중이 48.3%로 가장 많고, 너는 80%로 목 기운이 훨씬 강하네.",
+          "민수는 태어난 시각을 몰라서 시주가 미상이고, 너도 시각 정보가 없어서 시주는 미상이야.",
+          "둘 다 금 기운은 없다는 게 눈에 띄네."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:21.820Z",
+          "usage": {
+            "promptTokens": 4483,
+            "completionTokens": 88
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1518,
+      "review": null
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "당연히 기억하고 있지! 종이별 접기 말하는 거잖아. 꾸준히 만드는 걸 제일 좋아한다고 했었어. 요즘도 종이별 접고 있어?",
+        "segments": [
+          "당연히 기억하고 있지!",
+          "종이별 접기 말하는 거잖아.",
+          "꾸준히 만드는 걸 제일 좋아한다고 했었어.",
+          "요즘도 종이별 접고 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:24.241Z",
+          "usage": {
+            "promptTokens": 2636,
+            "completionTokens": 47
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2420,
+      "review": null
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "종이별을 꾸준히 접는 걸 좋아하신다고 했었죠. 그 정성이 참 예쁘네요. 이번 주 모임에서 먼저 인사를 건넬지 고민 중이시군요. 타로로 그 흐름을 한번 살펴볼까요?",
+        "segments": [
+          "종이별을 꾸준히 접는 걸 좋아하신다고 했었죠.",
+          "그 정성이 참 예쁘네요.",
+          "이번 주 모임에서 먼저 인사를 건넬지 고민 중이시군요.",
+          "타로로 그 흐름을 한번 살펴볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v5",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:54:25.401Z",
+          "usage": {
+            "promptTokens": 2675,
+            "completionTokens": 63
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1160,
+      "review": null
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "phase": "INTENT",
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "RECALL",
+        "intentEvidenceQuote": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1036,
+      "review": null
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "phase": "INTENT",
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "MEMORY_CONTROL",
+        "intentEvidenceQuote": "종이별을 좋아한다는 얘기는 이제 기억하지 마.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 2268,
+      "review": null
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "phase": "INTENT",
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "PREFERENCE_SHARING",
+        "intentEvidenceQuote": "나는 요즘 조용히 종이별 접는 시간이 제일 좋아.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1219,
+      "review": null
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "phase": "INTENT",
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "NATAL",
+            "reason": "타고난 성향은 원국의 구조를 바탕으로 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "내가 타고난 기질이나 성향을 이해하고 싶어.",
+        "intent": "natal_character",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1537,
+      "review": null
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "phase": "INTENT",
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "단기 관계 흐름과 다음 행동을 함께 살펴봐요.",
+            "missingSlots": [
+              "targetPerson"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "이번 주 모임에서 먼저 인사할지 타로로도 보고 싶어.",
+        "intent": "relationship_flow",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로도 보고 싶어.",
+        "targetPersonPresent": false,
+        "recentSituationPresent": true,
+        "periodPresent": true,
+        "choicesPresent": true,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 788,
+      "review": null
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "phase": "INTENT",
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "지금의 감정과 관계 태도는 관계 타로 세 장으로 살펴볼 수 있어요.",
+            "missingSlots": [
+              "recentSituation"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "그 사람이 나를 기억하는지 타로로 보고 싶어.",
+        "intent": "target_feelings",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로 보고 싶어.",
+        "targetPersonPresent": true,
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1504,
+      "review": null
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "phase": "INTENT",
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DAILY",
+            "reason": "오늘 필요한 조언을 한 장으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "오늘 운세는 타로로 보고 싶어.",
+        "intent": "daily_fortune",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "오늘 운세는 타로로 보고 싶어.",
+        "targetPersonPresent": false,
+        "recentSituationPresent": false,
+        "periodPresent": true,
+        "choicesPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "matchedExpected": true,
+      "latencyMs": 1711,
+      "review": null
+    }
+  ],
+  "neuronsAccounted": 693.8978480000001
+}

@@ -1,0 +1,265 @@
+{
+  "at": "2026-09-19T20:56:20.152Z",
+  "purpose": "Hosted migration014 history/memory selection RPC regression using disposable synthetic data only",
+  "authScope": "Admin-created identities with magic-link verifyOtp sessions; not public signup or CAPTCHA evidence",
+  "modelRequests": 0,
+  "edgeRequests": 0,
+  "maximumRpcRequests": 24,
+  "cases": [
+    "conversation-scoped previews for both history kinds",
+    "cross-owner previews and execution",
+    "empty selection preserves independent memories",
+    "subset selection and duplicate IDs delete only selected memories atomically",
+    "foreign/other-conversation/missing selections roll back all rows",
+    "identical and changed-selection replay cannot delete more memories",
+    "anonymous database role and malformed selection rejection",
+    "verified Auth and application cascade cleanup"
+  ],
+  "evidenceScope": "Real hosted RPCs and authenticated RLS. Service-role inserts create clearly labelled synthetic source rows; no generated replies, model calls, or public UI claims.",
+  "overallOutcome": "SUCCEEDED",
+  "rpcRequests": 18,
+  "transportRequests": 208,
+  "checks": [
+    {
+      "name": "conversation preview returns exactly its two memories",
+      "passed": true
+    },
+    {
+      "name": "consultation preview honestly uses the common conversation provenance",
+      "passed": true
+    },
+    {
+      "name": "consultation preview honestly uses the common conversation provenance",
+      "passed": true
+    },
+    {
+      "name": "another owner cannot preview a foreign conversation",
+      "passed": true
+    },
+    {
+      "name": "another owner cannot preview a foreign consultation",
+      "passed": true
+    },
+    {
+      "name": "empty selection deletes the conversation without deleting memories",
+      "passed": true
+    },
+    {
+      "name": "record-only deletion cascades conversation history",
+      "passed": true
+    },
+    {
+      "name": "both unselected independent memories remain owner-readable with cleared provenance",
+      "passed": true
+    },
+    {
+      "name": "foreign owner selection returns the defined selection conflict",
+      "passed": true
+    },
+    {
+      "name": "foreign owner selection rolls back all history, memory and consent state",
+      "passed": true
+    },
+    {
+      "name": "other conversation selection returns the defined selection conflict",
+      "passed": true
+    },
+    {
+      "name": "other conversation selection rolls back all history, memory and consent state",
+      "passed": true
+    },
+    {
+      "name": "missing row selection returns the defined selection conflict",
+      "passed": true
+    },
+    {
+      "name": "missing row selection rolls back all history, memory and consent state",
+      "passed": true
+    },
+    {
+      "name": "foreign record cannot authorize deletion of an otherwise owned memory",
+      "passed": true
+    },
+    {
+      "name": "missing record cannot authorize deletion of an otherwise owned memory",
+      "passed": true
+    },
+    {
+      "name": "subset deletion deduplicates IDs and deletes exactly one chosen memory",
+      "passed": true
+    },
+    {
+      "name": "selected memory and consultation history are both removed",
+      "passed": true
+    },
+    {
+      "name": "sibling consultation, unselected memory and unrelated owners remain",
+      "passed": true
+    },
+    {
+      "name": "the sibling consultation original message survives",
+      "passed": true
+    },
+    {
+      "name": "identical replay cannot remove any additional memory",
+      "passed": true
+    },
+    {
+      "name": "changed remaining-memory replay cannot remove any additional memory",
+      "passed": true
+    },
+    {
+      "name": "invalid kind is rejected without mutation",
+      "passed": true
+    },
+    {
+      "name": "too many selected IDs is rejected without mutation",
+      "passed": true
+    },
+    {
+      "name": "null selected ID is rejected without mutation",
+      "passed": true
+    },
+    {
+      "name": "anonymous database role cannot execute the deletion RPC",
+      "passed": true
+    },
+    {
+      "name": "disposable Auth identity and all owned application tables independently verified absent",
+      "passed": true
+    },
+    {
+      "name": "disposable Auth identity and all owned application tables independently verified absent",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "stage": "PREVIEW",
+      "rpc": "history_deletion_memories",
+      "httpStatus": 200,
+      "latencyMs": 74,
+      "code": null
+    },
+    {
+      "stage": "PREVIEW",
+      "rpc": "history_deletion_memories",
+      "httpStatus": 200,
+      "latencyMs": 22,
+      "code": null
+    },
+    {
+      "stage": "PREVIEW",
+      "rpc": "history_deletion_memories",
+      "httpStatus": 200,
+      "latencyMs": 21,
+      "code": null
+    },
+    {
+      "stage": "PREVIEW",
+      "rpc": "history_deletion_memories",
+      "httpStatus": 200,
+      "latencyMs": 50,
+      "code": null
+    },
+    {
+      "stage": "PREVIEW",
+      "rpc": "history_deletion_memories",
+      "httpStatus": 200,
+      "latencyMs": 26,
+      "code": null
+    },
+    {
+      "stage": "RECORD_ONLY",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 31,
+      "code": null
+    },
+    {
+      "stage": "INVALID_SELECTION",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 32,
+      "code": "MEMORY_SELECTION_CHANGED"
+    },
+    {
+      "stage": "INVALID_SELECTION",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 27,
+      "code": "MEMORY_SELECTION_CHANGED"
+    },
+    {
+      "stage": "INVALID_SELECTION",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 29,
+      "code": "MEMORY_SELECTION_CHANGED"
+    },
+    {
+      "stage": "OWNERSHIP",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 27,
+      "code": null
+    },
+    {
+      "stage": "OWNERSHIP",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 26,
+      "code": null
+    },
+    {
+      "stage": "SUBSET_DELETE",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 31,
+      "code": null
+    },
+    {
+      "stage": "LOST_SUCCESS_REPLAY",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 19,
+      "code": null
+    },
+    {
+      "stage": "LOST_SUCCESS_REPLAY",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 200,
+      "latencyMs": 20,
+      "code": null
+    },
+    {
+      "stage": "BOUNDARIES",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 19,
+      "code": "VALIDATION_ERROR"
+    },
+    {
+      "stage": "BOUNDARIES",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 33,
+      "code": "VALIDATION_ERROR"
+    },
+    {
+      "stage": "BOUNDARIES",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 400,
+      "latencyMs": 21,
+      "code": "VALIDATION_ERROR"
+    },
+    {
+      "stage": "BOUNDARIES",
+      "rpc": "delete_history_with_memories",
+      "httpStatus": 401,
+      "latencyMs": 24,
+      "code": "PERMISSION_DENIED"
+    }
+  ],
+  "pendingCleanupCount": 0
+}

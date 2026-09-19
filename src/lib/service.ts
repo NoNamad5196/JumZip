@@ -11,6 +11,8 @@ export type ReadingDetail = ReadingSummary & { question: string; tarot_draw_grou
 export type HistoryCursor = { createdAt: string; id: string };
 export type ConversationCursor = { lastMessageAt: string | null; id: string };
 export type HistoryPage<T, C = HistoryCursor> = { items: T[]; nextCursor: C | null };
+export type DeletionKind = 'CONSULTATION' | 'CONVERSATION';
+export type DeletionOptions = { memoryIds?: string[] };
 export type BirthInputValue = { calendarType: 'SOLAR' | 'LUNAR'; leapMonth: boolean; birthDate: string; birthTime?: string | null; birthTimeUnknown: boolean; location: { providerId?: string; name: string; country?: string; latitude: number; longitude: number; timezone: string; provider?: string }; gender?: string | null };
 export type BirthProfile = { id: string; owner_type: 'USER' | 'RELATED_PERSON'; related_person_id: string | null; calendar_type: 'SOLAR' | 'LUNAR'; leap_month: boolean; birth_date: string; birth_time: string | null; unknown_birth_time: boolean; city: string; country: string; latitude: number; longitude: number; timezone: string; location_provider_id: string | null; gender: string | null };
 export type RelatedPerson = { id: string; display_name: string; relation: string | null; gender: string | null; memory_opt_in: boolean };
@@ -117,7 +119,7 @@ export const service = {
   async getConversation(id: string): Promise<Conversation | null> { const { data, error } = await db().from('conversations').select('*').eq('id', id).maybeSingle(); check(error); return data; },
   async createConversation(characterId: CharacterId): Promise<Conversation> { const id = await userId(); const { data, error } = await db().from('conversations').insert({ user_id: id, character_id: characterId }).select().single(); check(error); await touch(); return data; },
   async updateConversation(id: string, patch: { title: string }) { const { error } = await db().from('conversations').update({ title: patch.title }).eq('id', id); check(error); },
-  async deleteConversation(id: string) { const { error } = await db().from('conversations').delete().eq('id', id); check(error); },
+  async deleteConversation(id: string, options: DeletionOptions = {}) { const { error } = await db().rpc('delete_history_with_memories', { p_kind: 'CONVERSATION', p_record_id: id, p_memory_ids: options.memoryIds ?? [] }); check(error); },
   async listMessages(conversationId: string): Promise<Message[]> { const { data, error } = await db().from('messages').select('*').eq('conversation_id', conversationId).order('created_at', { ascending: false }).order('id', { ascending: false }).limit(1000); check(error); return (data || []).reverse(); },
   async listMessagesPage(conversationId: string, before: HistoryCursor | null = null, pageSize = 100): Promise<HistoryPage<Message>> { return messagesPage('conversation_id', conversationId, before, pageSize); },
   async listConsultationMessages(consultationId: string): Promise<Message[]> {
@@ -138,7 +140,19 @@ export const service = {
     return datedPage<ReadingSummary>(data || [], limit);
   },
   async updateReadingTitle(id: string, title: string) { const { error } = await db().from('consultations').update({ title }).eq('id', id); check(error); },
-  async deleteReading(id: string) { const { error } = await db().from('consultations').delete().eq('id', id); check(error); },
+  async deleteReading(id: string, options: DeletionOptions = {}) { const { error } = await db().rpc('delete_history_with_memories', { p_kind: 'CONSULTATION', p_record_id: id, p_memory_ids: options.memoryIds ?? [] }); check(error); },
+  async getDeletionMemories(kind: DeletionKind, id: string): Promise<Memory[]> {
+    const items: Memory[] = []; let cursor: HistoryCursor | null = null;
+    do {
+      let query = db().rpc('history_deletion_memories', { p_kind: kind, p_record_id: id }).select('*')
+        .order('created_at', { ascending: false }).order('id', { ascending: false }).limit(201);
+      if (cursor) query = query.or(olderThan(cursor));
+      const { data, error } = await query; check(error);
+      const page = datedPage<Memory>(data || [], 200);
+      items.push(...page.items); cursor = page.nextCursor;
+    } while (cursor);
+    return items;
+  },
   async getReading(consultationId: string): Promise<ReadingDetail | null> { const { data, error } = await db().from('consultations').select('*,tarot_draw_groups(*,tarot_draws(*)),saju_readings(*),saju_compatibility_readings(*)').eq('id', consultationId).maybeSingle(); check(error); return data; },
   async listMemories(): Promise<Memory[]> { const { data, error } = await db().from('memories').select('*').order('created_at', { ascending: false }); check(error); return data || []; },
   async updateMemory(id: string, patch: { content?: string; disabled_at?: string | null }) { const { error } = await db().from('memories').update(patch).eq('id', id); check(error); },

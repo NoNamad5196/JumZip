@@ -1,0 +1,28 @@
+{
+  "observedAtKst": "2026-09-20T06:04:00+09:00",
+  "source": "Authenticated Supabase Dashboard Logs Explorer, actual saju Shutdown events",
+  "projectRef": "klhoarharlmliuynoezq",
+  "functionId": "c3e5259a-709e-4f5e-a8e5-96ee9a6329a3",
+  "queryWindowUtc": {"from": "2026-09-19T16:00:00Z", "to": "2026-09-19T21:00:00Z"},
+  "query": "SELECT count() AS shutdown_samples, min(toFloat64OrNull(log_attributes['cpu_time_used'])) AS cpu_min_ms, round(avg(toFloat64OrNull(log_attributes['cpu_time_used'])),2) AS cpu_mean_ms, quantileExact(0.95)(toFloat64OrNull(log_attributes['cpu_time_used'])) AS cpu_p95_ms, max(toFloat64OrNull(log_attributes['cpu_time_used'])) AS cpu_max_ms, groupUniqArray(log_attributes['reason']) AS shutdown_reasons, min(timestamp) AS earliest, max(timestamp) AS latest FROM logs WHERE source = 'function_logs' AND log_attributes['function_id'] = 'c3e5259a-709e-4f5e-a8e5-96ee9a6329a3' AND log_attributes['event_type'] = 'Shutdown' LIMIT 1",
+  "result": {
+    "shutdown_samples": 50,
+    "cpu_min_ms": 70,
+    "cpu_mean_ms": 123.86,
+    "cpu_p95_ms": 213,
+    "cpu_max_ms": 250,
+    "shutdown_reasons": ["EarlyDrop"],
+    "earliestUtc": "2026-09-19T17:30:03.777000Z",
+    "latestUtc": "2026-09-19T19:27:01.718000Z"
+  },
+  "measurement": "Supabase runtime cpu_time_used milliseconds; not HTTP wall duration or browser timing",
+  "resultScope": "Observed resource smoke on the hosted saju function during synthetic integration runs. No observed CPUTime shutdown in this window.",
+  "limitations": [
+    "Shutdown events measure execution/isolate CPU and are not claimed to map one-to-one to an individual test case or request.",
+    "The window includes different Saju actions, validation paths and successive deployments; this is not an isolated per-engine microbenchmark or a load test.",
+    "The observations do not guarantee worst-case latency for all valid dates, workloads, future versions, or cold starts.",
+    "Earlier 15-case engine smoke reported wall time; this new evidence supplies independently observed runtime CPU without relabelling those old measurements."
+  ],
+  "reference": "https://supabase.com/docs/guides/troubleshooting/edge-function-shutdown-reasons-explained",
+  "newModelCalls": 0
+}

@@ -1,4 +1,4 @@
-import type { FullSajuResult, FortuneOverlay } from './full-saju.ts';
+import { buildSajuInputContext, type FullSajuResult, type FortuneOverlay, type SajuInputAvailability, type SajuCalculationUncertainty } from './full-saju.ts';
 import { BRANCH_RELATIONS, control, ELEMENTS, gen, getTenGod, knownPositions, STEM_COMBINATIONS, stemElement } from './rules/constants.ts';
 import type { Element, NatalRuleResult, PillarPosition, RuleRelation, TenGod } from './rules/types.ts';
 
@@ -33,6 +33,7 @@ interface DerivedPerson {
   sewoon: FullSajuResult['sewoon']; monthlyFortune: FullSajuResult['monthlyFortune']; uncertaintyFlags: string[];
   timing?: FullSajuResult['timing']; possibleTiming?: FullSajuResult['possible_values']['timing'];
   chartLuck?: FullSajuResult['possible_values']['chartLuck']; possibleLuckTiming?: FullSajuResult['possible_values']['luckTiming'];
+  inputAvailability?: SajuInputAvailability; calculationUncertainty?: SajuCalculationUncertainty;
 }
 export interface SajuCompatibilityResult {
   kind: 'SAJU_COMPATIBILITY'; engineVersion: string; ruleVersion: string; conventionVersion: string;
@@ -103,7 +104,7 @@ function timing(a: FullSajuResult, b: FullSajuResult): CompatibilityTiming {
 }
 function derived(person: FullSajuResult): DerivedPerson {
   // Explicit projection: raw DOB/time/place cannot be persisted through an extra top-level input field.
-  return structuredClone({ engineVersion: person.engineVersion, ruleVersion: person.ruleVersion, conventionVersion: person.conventionVersion, status: person.status, charts: person.possible_values.charts, gongmang: person.gongmang, daewoon: person.daewoon, sewoon: person.sewoon, monthlyFortune: person.monthlyFortune, ...(person.timing ? { timing: person.timing } : {}), ...(person.possible_values.timing ? { possibleTiming: person.possible_values.timing } : {}), ...(person.possible_values.chartLuck ? { chartLuck: person.possible_values.chartLuck } : {}), ...(person.possible_values.luckTiming ? { possibleLuckTiming: person.possible_values.luckTiming } : {}), uncertaintyFlags: person.uncertaintyFlags });
+  return structuredClone({ engineVersion: person.engineVersion, ruleVersion: person.ruleVersion, conventionVersion: person.conventionVersion, status: person.status, ...buildSajuInputContext(person), charts: person.possible_values.charts, gongmang: person.gongmang, daewoon: person.daewoon, sewoon: person.sewoon, monthlyFortune: person.monthlyFortune, ...(person.timing ? { timing: person.timing } : {}), ...(person.possible_values.timing ? { possibleTiming: person.possible_values.timing } : {}), ...(person.possible_values.chartLuck ? { chartLuck: person.possible_values.chartLuck } : {}), ...(person.possible_values.luckTiming ? { possibleLuckTiming: person.possible_values.luckTiming } : {}), uncertaintyFlags: person.uncertaintyFlags });
 }
 export function calculateSajuCompatibility(input: { personA: FullSajuResult; personB: FullSajuResult }): SajuCompatibilityResult {
   const a = input.personA, b = input.personB;
@@ -132,12 +133,20 @@ export function calculateSajuCompatibility(input: { personA: FullSajuResult; per
 
 export function buildCompatibilityInterpretationData(result: SajuCompatibilityResult) {
   const s = result.summary;
+  const inputContext = (person: DerivedPerson) => ({
+    inputAvailability: {
+      calendarDate: person.inputAvailability?.calendarDate === 'PROVIDED' ? 'PROVIDED' as const : 'NOT_RECORDED' as const,
+      clockTime: person.inputAvailability?.clockTime === 'PROVIDED' ? 'PROVIDED' as const : person.inputAvailability?.clockTime === 'UNKNOWN' || person.uncertaintyFlags.includes('BIRTH_TIME_UNKNOWN') ? 'UNKNOWN' as const : 'NOT_RECORDED' as const,
+    },
+    calculationUncertainty: person.calculationUncertainty ?? null,
+  });
   const currentLuck = (person: DerivedPerson) => person.timing ? { conventionVersion: person.timing.conventionVersion,
     status: person.timing.activeDaewoonStatus, precision: person.timing.luck?.precision, currentPeriod: person.timing.luck?.currentPeriod ?? null,
     currentPillar: person.timing.luck?.currentPillar ?? null } : null;
   // Full eight-pillar cross-products stay in the saved snapshot. Show representative exact
   // evidence with explicit counts; avoid exceeding the Persona context budget on dense charts.
   return { kind: result.kind, engineVersion: result.engineVersion, ruleVersion: result.ruleVersion, conventionVersion: result.conventionVersion,
+    personAInputContext: inputContext(result.personA), personBInputContext: inputContext(result.personB),
     dayMasterRelation: s.dayMasterRelation, elementComplement: ELEMENTS.map(element => {
       const rows = s.elementComplement.filter(row => row.element === element);
       return { element, possiblePersonAProportions: unique(rows.map(row => row.personAProportion)), possiblePersonBProportions: unique(rows.map(row => row.personBProportion)), possiblePersonABalanceRoles: unique(rows.map(row => row.personABalanceRole)), possiblePersonBBalanceRoles: unique(rows.map(row => row.personBBalanceRole)) };

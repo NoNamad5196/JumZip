@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "mode": "PREFLIGHT",
+  "startedAt": "2026-09-19T20:49:25.712Z",
+  "completedAt": "2026-09-19T20:49:25.840Z",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "corpusVersion": "JumZipV5Focused-v1",
+  "promptVersion": "JumZipPersona-v5",
+  "intentPromptVersion": "JumZipIntent-v2",
+  "requiredLiveVersions": [
+    "JumZipPersona-v5",
+    "JumZipIntent-v2"
+  ],
+  "preparationUsesOldSource": false,
+  "networkRequests": 0,
+  "replyCount": 16,
+  "intentCount": 8,
+  "requests": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "sha256": "14bc48c0af814b40194ad57ea557bd8d2edbadca96bed9fc8c778585ce3c321c",
+      "bytes": 14141,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 153.101531,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "sha256": "de074828e2876ab1a7321460822a1e4638cc151766d573d08d99604ba3b15a95",
+      "bytes": 17780,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 186.18368,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "phase": "INTENT",
+      "sha256": "e20dddcbd61cf2045972f269c03711bacc09736fc08bbe7a49a5d2a96a648bfb",
+      "bytes": 4914,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.218724,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "sha256": "8581018197b6111401cf217e418c464b7e8e0759a24fbdd383a0acd37732b66d",
+      "bytes": 14022,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 152.019702,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "sha256": "e18ad075456522fc9334282cd9442b3289a1bbae97a14f8631ec14e717cf85aa",
+      "bytes": 14166,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 153.328806,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "phase": "REPLY",
+      "sha256": "75e29536834406b270e665218a638b51c74c3ef6114ba88adf8be488fff3efe7",
+      "bytes": 17755,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 185.956405,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "phase": "REPLY",
+      "sha256": "51aa7a6063ba70249208a549919fb882ede801a5ce27080300852b1e89498413",
+      "bytes": 17636,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 184.874576,
+      "canaryCount": 0
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "phase": "REPLY",
+      "sha256": "2b9786d6ccdc932ce9828a37ccb8bfa02b97f92252d4b41483eb3615b9a42b6f",
+      "bytes": 16308,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 172.801728,
+      "canaryCount": 0
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "phase": "REPLY",
+      "sha256": "7603319ac9224088f47cebdca7d086a935aef403043e4969fe1bc54e736422ea",
+      "bytes": 19297,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 199.974727,
+      "canaryCount": 0
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "phase": "REPLY",
+      "sha256": "9873cdf08cc189ff566c2f2d1efe298cb239dc8b5034a922882d79100c4201a2",
+      "bytes": 28753,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 285.939223,
+      "canaryCount": 0
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "phase": "REPLY",
+      "sha256": "c2bce7da93a5cab4f725cf9bee4899b19a29d4d542dc65f0b03381f915688d18",
+      "bytes": 19229,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 199.356539,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "sha256": "c459cabbc40e840ea15ca5d8bd3240661339af94401e115bf3bd2180d59200de",
+      "bytes": 14117,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 152.883347,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "sha256": "4cb29290b3712fff08a174fabb9071a74abd47a909510dd58d55218aa83c8b21",
+      "bytes": 14049,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 152.265159,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "phase": "REPLY",
+      "sha256": "f677bbe2417ef9b1a1c03a6320ec8802aac9503ef4281e6c8c6dad85b817d261",
+      "bytes": 17482,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 183.474562,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "sha256": "25b96fc90b7ee88b5cd456b2250aedc1b31c57c01f8ea9042360060de26a536f",
+      "bytes": 18993,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 197.211063,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "phase": "REPLY",
+      "sha256": "490bbfcf52016f1ef9b82ad2ce30d9baea242f2ca324d3c5d8bcc6e24d997657",
+      "bytes": 11949,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 133.174059,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "phase": "REPLY",
+      "sha256": "54e497b969442e4f8236d399c1119d68fbb825d6e66f0dd42059018af2b45654",
+      "bytes": 12095,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 134.501345,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "phase": "INTENT",
+      "sha256": "3ed802bf37dfc8cb5495e3760bafa2a025db830d910cbbe6cd745723b0a85d2e",
+      "bytes": 4913,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.209633,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "phase": "INTENT",
+      "sha256": "810dd7db1b907cf37581df96cc9db593291adb11c2868f936aaffe9ccba2c5fc",
+      "bytes": 4984,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.855094,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "phase": "INTENT",
+      "sha256": "1d0c5b2e9e3df16a8f2fb6d651cb73a87dbcf6d7098c60c795aab14f5643745f",
+      "bytes": 4891,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.009631,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "phase": "INTENT",
+      "sha256": "d7b8003c95ff6f6a58c3f2ec6a723c9d3dbed9a44f60bd4bec254610f2be3e36",
+      "bytes": 4886,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 53.964176,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "phase": "INTENT",
+      "sha256": "22b24eee7027a02d72aeae569285dbcb4cecb4ee0a49384fbfec125454c0114f",
+      "bytes": 4921,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.282361,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "phase": "INTENT",
+      "sha256": "a35525b50e5a68cbb9289bbd59aba0897cabd1f696db941a17aad64c89069995",
+      "bytes": 4887,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 53.973267,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "phase": "INTENT",
+      "sha256": "e3ff9c312074dd586d39628a30fe86b27056456745ee16d059f8b676efc8c1d8",
+      "bytes": 4902,
+      "maximumOutputTokens": 350,
+      "conservativeReserveNeurons": 54.109632,
+      "canaryCount": 0
+    }
+  ],
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "85a563f521612031be1c04cf037c7eaf652e432c9402f51492233aef46871d36",
+      "canonicalLF": "85a563f521612031be1c04cf037c7eaf652e432c9402f51492233aef46871d36"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "8c712de39f3bbbc2b51fd7a59c5b554cd79c98b99c834cf635f7024576f4332d",
+      "canonicalLF": "8c712de39f3bbbc2b51fd7a59c5b554cd79c98b99c834cf635f7024576f4332d"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47",
+      "canonicalLF": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+      "canonicalLF": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "beb8e77fde9e119b78a6ec949915c2a01cb34bcb561d64926e03dd5501d33153",
+      "canonicalLF": "beb8e77fde9e119b78a6ec949915c2a01cb34bcb561d64926e03dd5501d33153"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "canonicalLF": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "0ed032aafcf64a190897da7e06e5d9176126f32d9524e74ad581588f5d824edd",
+      "canonicalLF": "0ed032aafcf64a190897da7e06e5d9176126f32d9524e74ad581588f5d824edd"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "574552f18da4573090ff25be00d27fea7501de67878b4115b3316c7edcc9eb45",
+      "canonicalLF": "574552f18da4573090ff25be00d27fea7501de67878b4115b3316c7edcc9eb45"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/v5-focused-corpus.mts": {
+      "raw": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b",
+      "canonicalLF": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+    },
+    "tests/persona/v5-focused-runner.mts": {
+      "raw": "2e2b3adb66fdf0fd0605f86440e3ce7a0ef3f544b37ba97fa6e5d74f77f41b08",
+      "canonicalLF": "2e2b3adb66fdf0fd0605f86440e3ce7a0ef3f544b37ba97fa6e5d74f77f41b08"
+    }
+  },
+  "sourceFrozen": true,
+  "changedSources": [],
+  "destinationOrigin": "https://api.cloudflare.com",
+  "pathTemplate": "/client/v4/accounts/[configured-account]/ai/v1/chat/completions",
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "ceilingNeurons": 800,
+  "maximumAttempts": 48,
+  "thinking": {
+    "enable_thinking": false
+  },
+  "preservedExternalBudgets": {
+    "maintenanceCompletedNeurons": 47.48,
+    "maintenanceReservationReleased": true,
+    "edge": 400,
+    "reserve": 500,
+    "source": "Main task authorization; harness does not read account usage"
+  },
+  "forecast": {
+    "source": "tests/persona/model-comparison-runs/gemma4-v4-full84/benchmark-baseline-manifest.json",
+    "priorReplySamples": 84,
+    "ratioMean": 0.22537653850882167,
+    "ratioMax": 0.23818171499914875,
+    "completionMean": 85.07142857142857,
+    "estimatedInitialRequestsNeurons": 742.6419922668633,
+    "estimatedInitialRequestsUsingPriorMaxRatio": 778.3885819554101,
+    "assumptions": [
+      "Input tokenization forecast uses previous reply model observations, not a bound",
+      "Intent has no same-corpus live sample; all350 output tokens are reserved in this forecast",
+      "Repairs add usage; each request retains byte-as-token reservation",
+      "Production v5 prompt/schema changes require a fresh zero-network preflight",
+      "800 is a hard stop, not a guarantee every entry fits; report pending IDs if stopped"
+    ],
+    "sumOfAllInitialConservativeReservations": 3260.66897,
+    "largestSingleReserve": 285.939223
+  },
+  "completed": true,
+  "fullAcceptanceEligible": false,
+  "pricingSource": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+  "modelOptionsSource": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/"
+}

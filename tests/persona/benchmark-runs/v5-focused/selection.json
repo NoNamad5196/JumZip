@@ -1,0 +1,302 @@
+{
+  "corpusVersion": "JumZipV5Focused-v1",
+  "synthetic": true,
+  "fullAcceptanceEligible": false,
+  "doesNotReplaceOriginal84": true,
+  "executionOrder": [
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG",
+    "v5-intent-pure-recall-no-profile",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "s03-correlated-boundary:BOMI",
+    "s03-correlated-boundary:SANI",
+    "s02-unknown-hour:BOMI",
+    "s05-compatibility-evidence:ARANG",
+    "s06-compatibility-uncertain:ARANG",
+    "s07-no-invented-score:ARANG",
+    "v5-hermit-upright-contrast:BOMI",
+    "v5-reversed-owner-contrast:SANI",
+    "v5-legacy-provenance:ARANG",
+    "v5-ab-swapped-contrast:SANI",
+    "v5-pure-recall:BOMI",
+    "v5-recall-explicit-tarot:ARANG",
+    "v5-intent-pure-recall-has-profile",
+    "v5-intent-memory-control",
+    "v5-intent-current-preference",
+    "v5-intent-innate-character",
+    "v5-intent-recall-explicit-tarot",
+    "v5-intent-target-remembers",
+    "v5-intent-forget-and-tarot"
+  ],
+  "reply": [
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "3f440d03091a834709ef0ee98234ad0bc6b2c79523bcde796164e23738e9454a",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "2a1fdd9f7b8abdfbcfb9df6c7911a54511ffa69ebff5dd6ff0e11c8d0efeb6eb",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "1ee75615886dc3ab1ae71c21dc510bfcbc27f355b520a5092ba92c2c4749c15e",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "30b7c7ceff36aba8a3691706baa329b45e3bc3d20f77eda95012488569b71c2d",
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ]
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "8945a1eddcf513df9fab9875d6649db001c3f4f54121c95cc29ddaa881227216",
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ]
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "992cedbe93b9b5535f082781fd9e9bcd35ffe1f57d42fdc05f57816e81c636b0",
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ]
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "8415db49a6b58b0ce2c100cd50e5f7bd23cf2f6edb8570ba383ea5339062b9e3",
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "reviewChecks": [
+        "은둔자 정방향의 성찰/탐색을 역방향 회피로 단정하지 않음",
+        "상대 위치라도 실제 마음이나 욕구를 확정하지 않음",
+        "연인=나, 은둔자=상대, 절제=방향 보존"
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "reviewChecks": [
+        "은둔자 역방향은 이번에는 나의 위치이며 상대에게 옮기지 않음",
+        "상대 위치 연인도 실제 호감의 증명이 아님",
+        "회피/과도한 폐쇄를 건전한 고독 필요로 뒤집지 않음"
+      ]
+    },
+    {
+      "id": "v5-legacy-provenance:ARANG",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "38949710e61e5a6023c06fb447a8843e0b6fec438f95fc6b2dd417d4b16522e3",
+      "reviewChecks": [
+        "상태 기록이 없음과 사용자 입력이 없음을 구분",
+        "날짜 제공/미제공을 새로 확정하지 않음",
+        "기존 후보와 null을 유지하고 출생 원자료를 복원하지 않음"
+      ]
+    },
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "ead2d1f4be783d96d4a34b930c2c0b63d05a421bdca9be4617bbf54853e3dfb8",
+      "reviewChecks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "v5-pure-recall:BOMI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "1dd1b77724a04e3ae5bd46aab06398cb61bcee1c208362bfaefb37a58901b1d4",
+      "reviewChecks": [
+        "실제 제공된 종이별 접기 선호만 회상",
+        "새 사주/타로 결과나 도구 필요성을 만들지 않음",
+        "cards 없음에도 toolReferences 빈 배열을 정확히 반환"
+      ]
+    },
+    {
+      "id": "v5-recall-explicit-tarot:ARANG",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "a90b7df80704ab5f7f2976930b8457c5e72e7f4a5bfc3f94ea33061e16b29e9f",
+      "reviewChecks": [
+        "회상과 긍정적 타로 요청을 모두 존중",
+        "종이별 선호 외 실제 모임 사실을 창작하지 않음",
+        "아직 실행되지 않은 카드/방향/결과를 만들지 않음"
+      ]
+    }
+  ],
+  "intent": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "inputSha256": "1013ee5c065fc5540e7ce100e6dbc7a98ea924526cebab2f73e62c07ae6d0eef",
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "reviewChecks": [
+        "실제 Qwen 오분류 질문 그대로",
+        "취미 회상을 타고난 성향으로 바꾸지 않음",
+        "분류 실패로 null인 것을 정상 무추천으로 집계하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "inputSha256": "82446d9fb7c4d3eed16fb85f6def4142494f42eb68368fbb712e943f269e99b4",
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "reviewChecks": [
+        "프로필 존재 boolean만 바꿔도 회상 목적은 같음",
+        "birth-data 존재로 사주 추천을 강제하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "inputSha256": "9838c188133438ac85bf40408a22aff6c71160fc1660220358e6cd70957198a6",
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "reviewChecks": [
+        "기억 거부는 현재의 관리 요청",
+        "과거 assistant의 사주 제안을 현재 선택으로 승격하지 않음",
+        "삭제 실행 여부는 분류기가 주장하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "inputSha256": "2c54ddcc956abadd8486d63fe077355157c29a081fb51659c1db6219614fd1e9",
+      "expected": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "reviewChecks": [
+        "현재 선호 공유를 선천 성향 질문으로 확대하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "inputSha256": "4fbbc35065667dde03dc318285bd90e6bda185cc9ba836af2940d08155ad23d2",
+      "expected": {
+        "recommendation": "SAJU",
+        "modes": [
+          "NATAL"
+        ]
+      },
+      "reviewChecks": [
+        "선천적 성향에 대한 의미상 요청은 기존 natal 행렬로 연결",
+        "단순 회상과 구분하며 없는 원국을 계산했다고 하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "inputSha256": "6bc8d5f89de00a1f597aaccf925a113342c33a311e08c700d54f4e991a237163",
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "GENERAL_3",
+          "RELATIONSHIP_3",
+          "DECISION_3"
+        ]
+      },
+      "reviewChecks": [
+        "회상 단어가 있어도 현재 긍정적 타로 요청을 제거하지 않음",
+        "원문 근거를 보존하고 실행은 하지 않음",
+        "모임 질문의 세부 spread는 원래 행렬의 허용 범위로 검토"
+      ]
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "inputSha256": "a87e6c4867695d81e1e3dc70513276fb39804a4848e65301e0851d7c419c15ca",
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "reviewChecks": [
+        "그 사람의 기억/마음 질문을 내 메모리 회상과 구분",
+        "도구가 상대의 실제 마음을 증명한다는 해석은 생성하지 않음"
+      ]
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "inputSha256": "f84c21cde05857482cfb7b4055cf7e1c99ceee5f540104e72f887aa3a06d91c1",
+      "expected": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "reviewChecks": [
+        "저장 거부와 긍정적 타로 요청을 각각 존중",
+        "모든 기억 발화를 정규식으로 도구 금지하지 않음",
+        "현재 canonical API의 오늘 운세 모드는 DAILY이며 내부 한 장 spread와 구분"
+      ]
+    }
+  ]
+}

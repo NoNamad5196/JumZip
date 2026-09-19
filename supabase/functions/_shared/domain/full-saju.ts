@@ -6,6 +6,16 @@ import { calculateNatalRules } from './rules/natal.ts';
 import type { ElementDistribution, GyeokgukResult, HiddenStem, NatalRuleResult, PillarPosition, RulePillar, RuleRelation, ShinsalMatch, StrengthComponent, StrengthGrade, Element, TenGod } from './rules/types.ts';
 
 export const SAJU_RULE_VERSION = 'JumZipSajuRules-v1';
+/** Presence only: no date/time value or location. Optional on legacy snapshots. */
+export interface SajuInputAvailability {
+  calendarDate: 'PROVIDED' | 'NOT_RECORDED';
+  clockTime: 'PROVIDED' | 'UNKNOWN' | 'NOT_RECORDED';
+}
+export interface SajuCalculationUncertainty {
+  causes: ('UNKNOWN_CLOCK_TIME' | 'DST_AMBIGUITY' | 'BOUNDARY_VARIANTS' | 'CURRENT_PERIOD_UNRESOLVED' | 'CURRENT_PERIOD_OUTSIDE_RANGE' | 'LUCK_DIRECTION_INPUT_MISSING')[];
+  unresolvedPillars: PillarPosition[];
+  currentPeriodStatus: NonNullable<FullSajuResult['timing']>['activeDaewoonStatus'];
+}
 export interface FortuneOverlay {
   source: 'SEWOON' | 'MONTHLY'; year: number; month?: number; pillar: RulePillar;
   interactions: { type: RuleRelation['type']; participants: { source: 'NATAL' | 'DAEWOON' | 'SEWOON' | 'MONTHLY'; position: string; value: string }[]; transformedElement: Element | null; activatedBy: string[] }[];
@@ -15,6 +25,7 @@ export interface FortuneOverlay {
  */
 export interface FullSajuResult {
   status: 'COMPLETE' | 'LIMITED' | 'UNCERTAIN'; fullCalculationReady: true;
+  inputAvailability?: SajuInputAvailability;
   engineVersion: 'manseryeok-2.0.0'; ruleVersion: typeof SAJU_RULE_VERSION; conventionVersion: 'JumZipSajuConvention-v1';
   pillars: Record<PillarPosition, RulePillar | null>;
   hiddenStems: Record<PillarPosition, HiddenStem[] | null>;
@@ -71,6 +82,9 @@ export function calculateFullSaju(input: SajuBirthInput): FullSajuResult {
   const flags = unique([...foundation.uncertaintyFlags, ...variants.flatMap(v => v.uncertaintyFlags), ...(['score', 'grade', 'yongsin', 'heesin'] as const).filter(field => choices[field] === null).map(field => `${field.toUpperCase()}_UNCERTAIN`)]).sort();
   return {
     status: variants.length > 1 ? 'UNCERTAIN' : input.birthTimeUnknown || !input.gender ? 'LIMITED' : 'COMPLETE', fullCalculationReady: true,
+    // Foundation already validated the calendar input. Uncertain pillars do not
+    // erase that fact, and the original values do not cross this result boundary.
+    inputAvailability: { calendarDate: 'PROVIDED', clockTime: input.birthTimeUnknown ? 'UNKNOWN' : 'PROVIDED' },
     engineVersion: SAJU_ENGINE_VERSION, ruleVersion: SAJU_RULE_VERSION, conventionVersion: SAJU_CONVENTION_VERSION,
     pillars: byPillar((v, p) => v.pillars[p]), hiddenStems: byPillar((v, p) => v.hiddenStems[p]), tenGods: byPillar((v, p) => v.tenGods[p]),
     elements: common(variants.map(v => v.elements)), relations: variants[0]!.relations.filter(relation => variants.every(v => v.relations.some(other => JSON.stringify(other) === JSON.stringify(relation)))), gongmang: foundation.gongmang,
@@ -82,10 +96,30 @@ export function calculateFullSaju(input: SajuBirthInput): FullSajuResult {
   };
 }
 
+/** Trust explicit provenance only. A legacy null pillar does not prove missing input.
+ * Causes describe existing calculations; they never recompute or collapse candidates. */
+export function buildSajuInputContext(result: FullSajuResult): { inputAvailability: SajuInputAvailability; calculationUncertainty: SajuCalculationUncertainty } {
+  const flags = result.uncertaintyFlags;
+  const inputAvailability: SajuInputAvailability = {
+    calendarDate: result.inputAvailability?.calendarDate === 'PROVIDED' ? 'PROVIDED' : 'NOT_RECORDED',
+    clockTime: result.inputAvailability?.clockTime === 'PROVIDED' ? 'PROVIDED' : result.inputAvailability?.clockTime === 'UNKNOWN' || flags.includes('BIRTH_TIME_UNKNOWN') ? 'UNKNOWN' : 'NOT_RECORDED',
+  };
+  const currentPeriodStatus = result.timing?.activeDaewoonStatus ?? 'UNRESOLVED';
+  const causes: SajuCalculationUncertainty['causes'] = [];
+  if (inputAvailability.clockTime === 'UNKNOWN') causes.push('UNKNOWN_CLOCK_TIME');
+  if (flags.includes('DST_AMBIGUOUS_TIME')) causes.push('DST_AMBIGUITY');
+  if (result.possible_values.charts.length > 1) causes.push('BOUNDARY_VARIANTS');
+  if (['UNRESOLVED', 'UNCERTAIN'].includes(currentPeriodStatus)) causes.push('CURRENT_PERIOD_UNRESOLVED');
+  if (currentPeriodStatus === 'OUTSIDE_COMPUTED_RANGE') causes.push('CURRENT_PERIOD_OUTSIDE_RANGE');
+  if (flags.includes('DAEWOON_REQUIRES_GENDER')) causes.push('LUCK_DIRECTION_INPUT_MISSING');
+  return { inputAvailability, calculationUncertainty: { causes, unresolvedPillars: POSITIONS.filter(position => result.pillars[position] === null), currentPeriodStatus } };
+}
+
 /** Compact immutable facts for Persona; detailed proofs stay in the saved server snapshot. */
 export function buildSajuInterpretationData(result: FullSajuResult) {
   return {
     kind: 'SAJU', engineVersion: result.engineVersion, ruleVersion: result.ruleVersion, conventionVersion: result.conventionVersion,
+    ...buildSajuInputContext(result),
     status: result.status, pillars: result.pillars, tenGods: result.tenGods, elements: result.elements?.proportion ?? null,
     strength: { score: result.strength.score, grade: result.strength.grade, limited: result.strength.limited },
     gyeokguk: result.gyeokguk ? { primary: result.gyeokguk.primary, secondary: result.gyeokguk.secondary, monthCore: result.gyeokguk.monthCore, geonrok: result.gyeokguk.geonrok, yangin: result.gyeokguk.yangin, specialStructureCandidate: result.gyeokguk.specialStructureCandidate } : null,
