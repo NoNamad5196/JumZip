@@ -1,0 +1,111 @@
+{
+  "at": "2026-09-19T21:59:38.889Z",
+  "target": "local",
+  "disposableAccounts": 1,
+  "modelCalls": 0,
+  "edgeCalls": 0,
+  "scenarios": [
+    "record-only consultation deletion clears summary and rejects stale mixed-batch memory writes while preserving existing independent memory",
+    "completed Chat UUID replay returns NOT_FOUND after consultation deletion",
+    "pending and completed late complete/fail callbacks return NOT_FOUND with unchanged database state",
+    "cross-conversation DAILY reuse at begin-time and save-time retains one draw and remains completable/replayable"
+  ],
+  "authScope": "Privileged synthetic admin-created identity plus generated magic-link verification; not public signup/CAPTCHA evidence.",
+  "dataScope": "Only synthetic fixtures. The synthetic complete_execution calls test persistence; no generated text is represented as a model response.",
+  "cleanup": "Immediate target-bound ledger, finally deletion, Auth404 plus fifteen owned tables independently checked empty.",
+  "rpcCalls": 26,
+  "checks": [
+    {
+      "name": "record-only consultation deletion preserves explicit empty memory selection",
+      "passed": true
+    },
+    {
+      "name": "deletion clears derived summary and advances privacy revision and both source floors",
+      "passed": true
+    },
+    {
+      "name": "stale mixed batch cannot publish through a surviving consultation message",
+      "passed": true
+    },
+    {
+      "name": "existing unselected independent memory remains and no stale candidate is inserted",
+      "passed": true
+    },
+    {
+      "name": "unrelated surviving consultation message remains",
+      "passed": true
+    },
+    {
+      "name": "PENDING consultation is deleted before late callback checks",
+      "passed": true
+    },
+    {
+      "name": "PENDING original request UUID replay returns typed NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "PENDING late completion returns NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "PENDING late failure returns NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "PENDING replay and callbacks leave all authoritative record state unchanged",
+      "passed": true
+    },
+    {
+      "name": "SUCCEEDED consultation is deleted before late callback checks",
+      "passed": true
+    },
+    {
+      "name": "SUCCEEDED original request UUID replay returns typed NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "SUCCEEDED late completion returns NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "SUCCEEDED late failure returns NOT_FOUND",
+      "passed": true
+    },
+    {
+      "name": "SUCCEEDED replay and callbacks leave all authoritative record state unchanged",
+      "passed": true
+    },
+    {
+      "name": "EXISTING_DRAW DAILY completion retains the original authoritative parent and cards",
+      "passed": true
+    },
+    {
+      "name": "EXISTING_DRAW DAILY original UUID replays the canonical draw",
+      "passed": true
+    },
+    {
+      "name": "EXISTING_DRAW DAILY race never creates an additional draw or card",
+      "passed": true
+    },
+    {
+      "name": "RACING_SAVE DAILY completion retains the original authoritative parent and cards",
+      "passed": true
+    },
+    {
+      "name": "RACING_SAVE DAILY original UUID replays the canonical draw",
+      "passed": true
+    },
+    {
+      "name": "RACING_SAVE DAILY race never creates an additional draw or card",
+      "passed": true
+    },
+    {
+      "name": "synthetic identity plus fifteen owned tables independently absent",
+      "passed": true
+    }
+  ],
+  "observations": [],
+  "failure": null,
+  "pendingCleanupCount": 0,
+  "passed": true
+}

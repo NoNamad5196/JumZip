@@ -140,11 +140,18 @@ export function createActionExecutor(dependencies: ExecutorDependencies) {
     } catch (error) {
       const failure = safeFailure(error);
       if (saved) {
+        // A durable result can disappear while inference is running. Authority
+        // loss takes precedence over returning our previously read snapshot.
+        if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(failure.code)) throw failure;
         const partialError = { code: endpoint === 'compatibility' ? 'COMPATIBILITY_INTERPRETATION_FAILED' : 'TAROT_INTERPRETATION_FAILED', message: '카드는 저장됐지만 해석을 받지 못했습니다.', retryable: true,
           details: { drawGroupId: saved.drawGroupId, reason: failure.code } };
         // TX B already committed PARTIAL + its resource pointer. Never hide those cards merely
         // because the follow-up failure-status write is unavailable.
-        const cached = await repo.fail(claim.executionId, partialError, 200).catch(() => null);
+        const cached = await repo.fail(claim.executionId, partialError, 200).catch(writeError => {
+          const writeFailure = safeFailure(writeError);
+          if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(writeFailure.code)) throw writeFailure;
+          return null;
+        });
         return { data: cached ?? { ...dataFromDraw(saved), executionStatus: 'PARTIAL', interpretation: null, partialError }, status: 200 };
       }
       await repo.fail(claim.executionId, failure.toJSON(), failure.status).catch(() => null);

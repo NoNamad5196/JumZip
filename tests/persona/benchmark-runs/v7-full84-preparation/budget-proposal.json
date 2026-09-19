@@ -1,0 +1,833 @@
+{
+  "status": "PREPARATION_ONLY_NO_LIVE_AUTHORIZATION",
+  "networkRequests": 0,
+  "proposedHardCapNeurons": 3500,
+  "requiresResetIndependentReviewAndMainGo": true,
+  "sourcePreflightSha256": "40cf6af087aaee85de50e26b8d065510252112988246c0c2e5c1ba4a3b74c19f",
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47",
+      "canonicalLF": "f6216bf177a9dec03ad238005929a378a9e8b4b647b28c7c8ef8d5c1bcf1bd47"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+      "canonicalLF": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "dcf07a17da42e500df6c6380d47df5c841190d87b467172dda2ad259edebef3f",
+      "canonicalLF": "dcf07a17da42e500df6c6380d47df5c841190d87b467172dda2ad259edebef3f"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "canonicalLF": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "e02503beb1d034f5ce5bc3a5135741faf067f2180673f1b0f3b38a73d1064827",
+      "canonicalLF": "e02503beb1d034f5ce5bc3a5135741faf067f2180673f1b0f3b38a73d1064827"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/saju-benchmark-runner.ts": {
+      "raw": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5",
+      "canonicalLF": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5"
+    },
+    "tests/persona/v7-full84-preflight.mts": {
+      "raw": "03867731cb6669902e6604c6df978081f74a38ed6a44b5197010681d3439a00f",
+      "canonicalLF": "79d747249de26073339e9d094de7dc1137dad5e36af1bbbee3cdcd8118f07ac6"
+    },
+    "tests/persona/v7-full84-runner.mts": {
+      "raw": "028f8ec2f599d6367415b0c5013c33307ebc785bdff965cb3241ec3285123075",
+      "canonicalLF": "028f8ec2f599d6367415b0c5013c33307ebc785bdff965cb3241ec3285123075"
+    }
+  },
+  "forecast": {
+    "sameEntryPriorInputRatioAndOutput": 2731.1701993427682,
+    "largestPriorRatioAndMeanPriorOutput": 2862.3685256850345,
+    "planningWith20PercentHeadroom": 3277.404239211322,
+    "all900OutputAtLargestPriorInputRatio": 4729.314467685034,
+    "sumOfByteBasedInitialReservations": 13261.168974000002,
+    "priorFull84ActualNeuronsIncludingRepair": 2504.0523129999983,
+    "priorFull84HttpAttempts": 85,
+    "assumptions": [
+      "Uses the same model previous fixed-case token/byte and output observations, not a tokenizer or usage bound",
+      "Prompt changes can change response length, repair incidence and tokenizer ratio",
+      "Repairs are additional; any future live run needs a separate hard budget and pre-call reservation",
+      "No cached-input discount assumed",
+      "No final full84 live run is authorized by this file; Main must confirm account usage and budget"
+    ]
+  },
+  "sequential": [
+    {
+      "id": "01-first-meeting:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 0,
+      "reserve": 132.628599,
+      "estimatedAggregateRequired": 132.628599,
+      "estimatedAfter": 25.64399360201602
+    },
+    {
+      "id": "01-first-meeting:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 25.64399360201602,
+      "reserve": 131.54677,
+      "estimatedAggregateRequired": 157.19076360201603,
+      "estimatedAfter": 51.12583171810044
+    },
+    {
+      "id": "01-first-meeting:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 51.12583171810044,
+      "reserve": 132.855874,
+      "estimatedAggregateRequired": 183.98170571810044,
+      "estimatedAfter": 77.02719770409182
+    },
+    {
+      "id": "02-small-talk:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 77.02719770409182,
+      "reserve": 132.783146,
+      "estimatedAggregateRequired": 209.8103437040918,
+      "estimatedAfter": 102.62778538507672
+    },
+    {
+      "id": "02-small-talk:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 102.62778538507672,
+      "reserve": 131.701317,
+      "estimatedAggregateRequired": 234.3291023850767,
+      "estimatedAfter": 127.85777285778087
+    },
+    {
+      "id": "02-small-talk:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 127.85777285778087,
+      "reserve": 133.010421,
+      "estimatedAggregateRequired": 260.86819385778085,
+      "estimatedAfter": 153.88908718558505
+    },
+    {
+      "id": "03-late-reply:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 153.88908718558505,
+      "reserve": 132.892238,
+      "estimatedAggregateRequired": 286.78132518558505,
+      "estimatedAfter": 179.45098145057608
+    },
+    {
+      "id": "03-late-reply:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 179.45098145057608,
+      "reserve": 131.810409,
+      "estimatedAggregateRequired": 311.2613904505761,
+      "estimatedAfter": 205.05133313662998
+    },
+    {
+      "id": "03-late-reply:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 205.05133313662998,
+      "reserve": 133.119513,
+      "estimatedAggregateRequired": 338.17084613662996,
+      "estimatedAfter": 230.95241207724797
+    },
+    {
+      "id": "04-no-tool:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 230.952412077248,
+      "reserve": 133.00133,
+      "estimatedAggregateRequired": 363.95374207724797,
+      "estimatedAfter": 256.0956985930299
+    },
+    {
+      "id": "04-no-tool:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 256.0956985930299,
+      "reserve": 131.919501,
+      "estimatedAggregateRequired": 388.01519959302993,
+      "estimatedAfter": 281.36897687473027
+    },
+    {
+      "id": "04-no-tool:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 281.36897687473027,
+      "reserve": 133.228605,
+      "estimatedAggregateRequired": 414.5975818747303,
+      "estimatedAfter": 307.2429917836504
+    },
+    {
+      "id": "05-decision:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 307.2429917836504,
+      "reserve": 133.164968,
+      "estimatedAggregateRequired": 440.40795978365037,
+      "estimatedAfter": 333.0051017664615
+    },
+    {
+      "id": "05-decision:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 333.0051017664615,
+      "reserve": 132.083139,
+      "estimatedAggregateRequired": 465.08824076646147,
+      "estimatedAfter": 358.86018710950736
+    },
+    {
+      "id": "05-decision:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 358.86018710950736,
+      "reserve": 133.392243,
+      "estimatedAggregateRequired": 492.2524301095074,
+      "estimatedAfter": 384.9711965218343
+    },
+    {
+      "id": "06-one-card:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 384.9711965218343,
+      "reserve": 146.18328,
+      "estimatedAggregateRequired": 531.1544765218343,
+      "estimatedAfter": 414.71903195449073
+    },
+    {
+      "id": "06-one-card:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 414.71903195449073,
+      "reserve": 145.101451,
+      "estimatedAggregateRequired": 559.8204829544907,
+      "estimatedAfter": 444.84887527995534
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 444.84887527995534,
+      "reserve": 146.410555,
+      "estimatedAggregateRequired": 591.2594302799553,
+      "estimatedAfter": 475.35666588003807
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 475.35666588003807,
+      "reserve": 164.228915,
+      "estimatedAggregateRequired": 639.585580880038,
+      "estimatedAfter": 511.5168747906418
+    },
+    {
+      "id": "07-general-three:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 511.5168747906418,
+      "reserve": 163.147086,
+      "estimatedAggregateRequired": 674.6639607906418,
+      "estimatedAfter": 548.280297154129
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 548.280297154129,
+      "reserve": 164.45619,
+      "estimatedAggregateRequired": 712.736487154129,
+      "estimatedAfter": 584.9969921379065
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 584.9969921379065,
+      "reserve": 164.492554,
+      "estimatedAggregateRequired": 749.4895461379066,
+      "estimatedAfter": 621.6654228860809
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 621.6654228860809,
+      "reserve": 163.410725,
+      "estimatedAggregateRequired": 785.0761478860809,
+      "estimatedAfter": 658.188910340309
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 658.188910340309,
+      "reserve": 164.719829,
+      "estimatedAggregateRequired": 822.908739340309,
+      "estimatedAfter": 695.3101674838566
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 695.3101674838566,
+      "reserve": 164.392553,
+      "estimatedAggregateRequired": 859.7027204838566,
+      "estimatedAfter": 730.3992481633023
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 730.3992481633023,
+      "reserve": 163.310724,
+      "estimatedAggregateRequired": 893.7099721633024,
+      "estimatedAfter": 767.181549292896
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 767.181549292896,
+      "reserve": 164.619828,
+      "estimatedAggregateRequired": 931.801377292896,
+      "estimatedAfter": 803.9177647986202
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 803.9177647986202,
+      "reserve": 164.247097,
+      "estimatedAggregateRequired": 968.1648617986202,
+      "estimatedAfter": 840.4268559541432
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 840.4268559541432,
+      "reserve": 163.165268,
+      "estimatedAggregateRequired": 1003.5921239541432,
+      "estimatedAfter": 875.072987009107
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 875.072987009107,
+      "reserve": 164.474372,
+      "estimatedAggregateRequired": 1039.547359009107,
+      "estimatedAfter": 911.554738069536
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 911.554738069536,
+      "reserve": 146.019642,
+      "estimatedAggregateRequired": 1057.5743800695361,
+      "estimatedAfter": 939.633888269835
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 939.633888269835,
+      "reserve": 144.937813,
+      "estimatedAggregateRequired": 1084.571701269835,
+      "estimatedAfter": 968.8760020722337
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 968.8760020722337,
+      "reserve": 146.246917,
+      "estimatedAggregateRequired": 1115.1229190722338,
+      "estimatedAfter": 997.5514939291162
+    },
+    {
+      "id": "12-injection:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 997.5514939291162,
+      "reserve": 133.328606,
+      "estimatedAggregateRequired": 1130.880099929116,
+      "estimatedAfter": 1022.6214248027308
+    },
+    {
+      "id": "12-injection:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1022.6214248027308,
+      "reserve": 132.246777,
+      "estimatedAggregateRequired": 1154.8682018027307,
+      "estimatedAfter": 1047.6206613151528
+    },
+    {
+      "id": "12-injection:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1047.6206613151528,
+      "reserve": 133.555881,
+      "estimatedAggregateRequired": 1181.1765423151528,
+      "estimatedAfter": 1072.9031239099982
+    },
+    {
+      "id": "13-no-saju-data:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1072.9031239099982,
+      "reserve": 132.874056,
+      "estimatedAggregateRequired": 1205.7771799099983,
+      "estimatedAfter": 1098.348387256739
+    },
+    {
+      "id": "13-no-saju-data:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1098.348387256739,
+      "reserve": 131.792227,
+      "estimatedAggregateRequired": 1230.140614256739,
+      "estimatedAfter": 1123.8691326892647
+    },
+    {
+      "id": "13-no-saju-data:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1123.8691326892647,
+      "reserve": 133.101331,
+      "estimatedAggregateRequired": 1256.9704636892648,
+      "estimatedAfter": 1149.9905783334464
+    },
+    {
+      "id": "14-high-stakes:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1149.9905783334464,
+      "reserve": 132.874056,
+      "estimatedAggregateRequired": 1282.8646343334462,
+      "estimatedAfter": 1176.1605816198532
+    },
+    {
+      "id": "14-high-stakes:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1176.1605816198532,
+      "reserve": 131.792227,
+      "estimatedAggregateRequired": 1307.9528086198532,
+      "estimatedAfter": 1202.0320248146986
+    },
+    {
+      "id": "14-high-stakes:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1202.0320248146986,
+      "reserve": 133.101331,
+      "estimatedAggregateRequired": 1335.1333558146987,
+      "estimatedAfter": 1228.1593934941754
+    },
+    {
+      "id": "15-shared-memory:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1228.1593934941754,
+      "reserve": 133.555881,
+      "estimatedAggregateRequired": 1361.7152744941754,
+      "estimatedAfter": 1254.0186339475777
+    },
+    {
+      "id": "15-shared-memory:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1254.0186339475777,
+      "reserve": 132.474052,
+      "estimatedAggregateRequired": 1386.4926859475777,
+      "estimatedAfter": 1280.0253217287207
+    },
+    {
+      "id": "15-shared-memory:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1280.0253217287207,
+      "reserve": 133.783156,
+      "estimatedAggregateRequired": 1413.8084777287206,
+      "estimatedAfter": 1305.6061758294504
+    },
+    {
+      "id": "16-private-memory:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1305.6061758294504,
+      "reserve": 133.264969,
+      "estimatedAggregateRequired": 1438.8711448294505,
+      "estimatedAfter": 1331.3921155654311
+    },
+    {
+      "id": "16-private-memory:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1331.3921155654311,
+      "reserve": 132.18314,
+      "estimatedAggregateRequired": 1463.5752555654312,
+      "estimatedAfter": 1357.025525526921
+    },
+    {
+      "id": "16-private-memory:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1357.025525526921,
+      "reserve": 133.54679,
+      "estimatedAggregateRequired": 1490.572315526921,
+      "estimatedAfter": 1383.3426099580663
+    },
+    {
+      "id": "17-related-people:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1383.3426099580663,
+      "reserve": 134.319525,
+      "estimatedAggregateRequired": 1517.6621349580664,
+      "estimatedAfter": 1409.3415815902695
+    },
+    {
+      "id": "17-related-people:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1409.3415815902695,
+      "reserve": 133.237696,
+      "estimatedAggregateRequired": 1542.5792775902694,
+      "estimatedAfter": 1435.7509593625007
+    },
+    {
+      "id": "17-related-people:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1435.7509593625007,
+      "reserve": 134.5468,
+      "estimatedAggregateRequired": 1570.2977593625008,
+      "estimatedAfter": 1462.798173031817
+    },
+    {
+      "id": "18-forget:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1462.798173031817,
+      "reserve": 132.928602,
+      "estimatedAggregateRequired": 1595.726775031817,
+      "estimatedAfter": 1488.168592497359
+    },
+    {
+      "id": "18-forget:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1488.168592497359,
+      "reserve": 131.846773,
+      "estimatedAggregateRequired": 1620.015365497359,
+      "estimatedAfter": 1513.0865452406697
+    },
+    {
+      "id": "18-forget:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1513.0865452406697,
+      "reserve": 133.155877,
+      "estimatedAggregateRequired": 1646.2424222406696,
+      "estimatedAfter": 1538.8604198872808
+    },
+    {
+      "id": "19-summary-context:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1538.8604198872808,
+      "reserve": 134.228615,
+      "estimatedAggregateRequired": 1673.0890348872808,
+      "estimatedAfter": 1564.7303766278674
+    },
+    {
+      "id": "19-summary-context:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1564.7303766278674,
+      "reserve": 133.219514,
+      "estimatedAggregateRequired": 1697.9498906278673,
+      "estimatedAfter": 1590.5108599133005
+    },
+    {
+      "id": "19-summary-context:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1590.5108599133005,
+      "reserve": 134.801348,
+      "estimatedAggregateRequired": 1725.3122079133004,
+      "estimatedAfter": 1616.5663867855471
+    },
+    {
+      "id": "20-boundary:BOMI",
+      "phase": "CORE",
+      "estimatedBefore": 1616.5663867855471,
+      "reserve": 132.81951,
+      "estimatedAggregateRequired": 1749.3858967855472,
+      "estimatedAfter": 1642.7372361502614
+    },
+    {
+      "id": "20-boundary:SANI",
+      "phase": "CORE",
+      "estimatedBefore": 1642.7372361502614,
+      "reserve": 131.964956,
+      "estimatedAggregateRequired": 1774.7021921502615,
+      "estimatedAfter": 1668.282527756712
+    },
+    {
+      "id": "20-boundary:ARANG",
+      "phase": "CORE",
+      "estimatedBefore": 1668.282527756712,
+      "reserve": 133.528608,
+      "estimatedAggregateRequired": 1801.811135756712,
+      "estimatedAfter": 1694.2199633510027
+    },
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1694.2199633510027,
+      "reserve": 169.265329,
+      "estimatedAggregateRequired": 1863.4852923510027,
+      "estimatedAfter": 1729.2022775465027
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1729.2022775465027,
+      "reserve": 168.1835,
+      "estimatedAggregateRequired": 1897.3857775465028,
+      "estimatedAfter": 1763.745488053049
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1763.745488053049,
+      "reserve": 169.492604,
+      "estimatedAggregateRequired": 1933.238092053049,
+      "estimatedAfter": 1799.2167560412436
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1799.2167560412436,
+      "reserve": 180.301803,
+      "estimatedAggregateRequired": 1979.5185590412436,
+      "estimatedAfter": 1836.8330263439075
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1836.8330263439075,
+      "reserve": 179.219974,
+      "estimatedAggregateRequired": 2016.0530003439076,
+      "estimatedAfter": 1873.8723584681877
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1873.8723584681877,
+      "reserve": 180.529078,
+      "estimatedAggregateRequired": 2054.4014364681875,
+      "estimatedAfter": 1911.5134347509838
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1911.5134347509838,
+      "reserve": 193.429207,
+      "estimatedAggregateRequired": 2104.942641750984,
+      "estimatedAfter": 1951.3937291329346
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1951.3937291329346,
+      "reserve": 192.347378,
+      "estimatedAggregateRequired": 2143.7411071329348,
+      "estimatedAfter": 1991.1756724474546
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 1991.1756724474546,
+      "reserve": 193.656482,
+      "estimatedAggregateRequired": 2184.8321544474547,
+      "estimatedAfter": 2031.4792694334983
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2031.4792694334985,
+      "reserve": 180.283621,
+      "estimatedAggregateRequired": 2211.7628904334983,
+      "estimatedAfter": 2069.08953614674
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2069.08953614674,
+      "reserve": 179.201792,
+      "estimatedAggregateRequired": 2248.29132814674,
+      "estimatedAfter": 2106.613806376314
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2106.613806376314,
+      "reserve": 180.510896,
+      "estimatedAggregateRequired": 2287.1247023763144,
+      "estimatedAfter": 2144.767061828689
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2144.767061828689,
+      "reserve": 208.338447,
+      "estimatedAggregateRequired": 2353.105508828689,
+      "estimatedAfter": 2190.770023647291
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2190.770023647291,
+      "reserve": 207.256618,
+      "estimatedAggregateRequired": 2398.026641647291,
+      "estimatedAfter": 2237.3702724455998
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2237.3702724455998,
+      "reserve": 208.565722,
+      "estimatedAggregateRequired": 2445.9359944455996,
+      "estimatedAfter": 2283.8614872955295
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2283.8614872955295,
+      "reserve": 294.293852,
+      "estimatedAggregateRequired": 2578.1553392955293,
+      "estimatedAfter": 2350.1211172919902
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2350.1211172919902,
+      "reserve": 293.212023,
+      "estimatedAggregateRequired": 2643.3331402919903,
+      "estimatedAfter": 2415.834421103032
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2415.834421103032,
+      "reserve": 294.521127,
+      "estimatedAggregateRequired": 2710.355548103032,
+      "estimatedAfter": 2482.7165685717614
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2482.7165685717614,
+      "reserve": 207.720259,
+      "estimatedAggregateRequired": 2690.4368275717616,
+      "estimatedAfter": 2527.5678489044344
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2527.5678489044344,
+      "reserve": 206.63843,
+      "estimatedAggregateRequired": 2734.2062789044344,
+      "estimatedAfter": 2572.634647200794
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2572.634647200794,
+      "reserve": 207.947534,
+      "estimatedAggregateRequired": 2780.582181200794,
+      "estimatedAfter": 2618.328763052351
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2618.328763052351,
+      "reserve": 180.110892,
+      "estimatedAggregateRequired": 2798.439655052351,
+      "estimatedAfter": 2655.8175118293602
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2655.8175118293602,
+      "reserve": 179.029063,
+      "estimatedAggregateRequired": 2834.84657482936,
+      "estimatedAfter": 2693.54754293618
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "phase": "SUPPLEMENT",
+      "estimatedBefore": 2693.54754293618,
+      "reserve": 180.338167,
+      "estimatedAggregateRequired": 2873.88570993618,
+      "estimatedAfter": 2731.1701993427682
+    }
+  ],
+  "largestSingleReserve": 294.521127,
+  "largestEstimatedAggregateRequired": 2873.88570993618,
+  "forecastCanCompleteWithinProposedCap": true,
+  "caveats": [
+    "This completion forecast is not guaranteed; it uses prior same-entry observations.",
+    "Initial and repair calls reserve request bytes as input tokens plus900 output before I/O.",
+    "Missing usage keeps the entire reserve;429 or transport failure stops.",
+    "All84 original inputs and original order are unchanged; no prompt fixes while a future run is active.",
+    "No current remaining allowance is consumed by this preparation."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "FAILED",
+  "sourceResultSha256": "594688b92a49ed380091c598af2f755ae906724440b99c8cb7867020d2a1008c",
+  "primary": {
+    "average": 9,
+    "hardFailCount": 0,
+    "binding": {
+      "path": "tests/persona/benchmark-runs/v7-micro8/primary-ai-review.json",
+      "sha256": "8c6b62308c6e7439c5c3dacdf56ba69560ac2482089bda464b7a343a58aa1639"
+    }
+  },
+  "independent": {
+    "average": 9.25,
+    "hardFailCount": 1,
+    "hardFailIds": [
+      "10-retry-same-draw:SANI"
+    ],
+    "binding": {
+      "path": "tests/persona/benchmark-runs/v7-micro8/independent-ai-review.json",
+      "sha256": "301a93186ad9c5ad0b34ec04dab21ab9c1cc0c7f94dba78c6a6c868bba80b0c2"
+    }
+  },
+  "resolution": "Main instructed FAILED while preserving both direct AI judgments; no score/expectation relaxation.",
+  "disagreement": "Primary penalizes the mixed solitude-need/avoidance alternative without a definite HF, consistently with earlier conservative reviews; independent counts the need alternative as an opposite-direction assertion even alongside avoidance.",
+  "fullAcceptanceEligible": false,
+  "full84": "PREPARED_ONLY_NOT_RUN; knownHFpreventsapproval",
+  "additionalNetworkRequests": 0
+}

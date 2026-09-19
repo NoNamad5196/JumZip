@@ -3,6 +3,7 @@ import { createSajuActionExecutor, type SajuDependencies } from '../../supabase/
 import type { FullSajuResult } from '../../supabase/functions/_shared/domain/full-saju.ts';
 import type { SajuRequest } from '../../supabase/functions/_shared/validation/requests.ts';
 import type { SajuSnapshot, SajuClaim } from '../../supabase/functions/_shared/persistence/saju.ts';
+import { ApiFailure } from '../../supabase/functions/_shared/http/errors.ts';
 
 const id = '30000000-0000-4000-8000-000000000001';
 const birth = { calendarType: 'SOLAR' as const, leapMonth: false, birthDate: '1999-03-14', birthTime: null, birthTimeUnknown: true,
@@ -28,6 +29,15 @@ function fixture() {
   return { deps, execute: createSajuActionExecutor(deps) };
 }
 describe('Saju immutable snapshot orchestration', () => {
+  it.each(['complete', 'fail'] as const)('never returns a deleted Saju snapshot when the %s RPC reports NOT_FOUND', async phase => {
+    const { deps, execute } = fixture();
+    const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
+    vi.mocked(deps.executions[phase]).mockRejectedValue(gone);
+    if (phase === 'fail') vi.mocked(deps.generate).mockRejectedValue({ code: 'LLM_TIMEOUT' });
+    await expect(execute(request, user)).rejects.toBe(gone);
+    if (phase === 'complete') expect(deps.executions.fail).not.toHaveBeenCalled();
+    else expect(deps.executions.complete).not.toHaveBeenCalled();
+  });
   it('validates provenance, calculates once and persists before requesting interpretation', async () => {
     const { deps, execute } = fixture(); const response = await execute(request, user);
     const calls = [deps.readings.begin, deps.verifyLocation!, deps.calculate, deps.readings.save, deps.generate].map(fn => vi.mocked(fn).mock.invocationCallOrder[0]!);

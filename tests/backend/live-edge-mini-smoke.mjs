@@ -3,6 +3,10 @@ import { createClient } from '@supabase/supabase-js';
 import { randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
+const reportName = process.argv.find(argument => argument.startsWith('--report-name='))?.slice('--report-name='.length);
+if (reportName !== undefined && !/^[a-z0-9-]{1,50}$/.test(reportName)) throw new Error('INVALID_REPORT_NAME');
+const reportSuffix = reportName ? `-${reportName}` : '';
+
 const plan = { maximumUserRequests: 4, operations: ['Chat SEND', 'identical request replay', 'ONE_CARD DRAW', 'same-draw RETRY_INTERPRETATION'],
   model: '@cf/qwen/qwen3-30b-a3b-fp8', reservedNeurons: 400, measuredNeurons: null,
   costScope: 'Reservation is an estimate, not a measured cap: Edge does not normally expose provider usage. At most6 reply attempts at900 tokens plus2 intent attempts at350 tokens (6100 output tokens total), with input costs included in the400-neuron reservation.',
@@ -124,8 +128,8 @@ async function live() {
     }
     const report = { at: new Date().toISOString(), ...plan, overallOutcome: outcome, userRequests, checks, observations, pendingCleanupCount: ids.size };
     mkdirSync('test-results', { recursive: true }); mkdirSync('docs/evidence', { recursive: true });
-    writeFileSync('test-results/edge-mini-smoke.json', JSON.stringify(report, null, 2));
-    writeFileSync('docs/evidence/backend-edge-mini-smoke.json', JSON.stringify(report, null, 2));
+    writeFileSync(`test-results/edge-mini-smoke${reportSuffix}.json`, JSON.stringify(report, null, 2));
+    writeFileSync(`docs/evidence/backend-edge-mini-smoke${reportSuffix}.json`, JSON.stringify(report, null, 2));
     console.log(JSON.stringify({ overallOutcome: outcome, checksPassed: checks.filter(check => check.passed).length, checksFailed: checks.filter(check => !check.passed).length, userRequests, pendingCleanupCount: ids.size }));
   }
 }

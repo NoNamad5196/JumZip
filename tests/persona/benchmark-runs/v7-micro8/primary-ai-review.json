@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "reviewerKind": "AI",
+  "reviewer": "Codex / fortune_audit",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-19T21:52:32.911Z",
+  "sourceReport": "tests/persona/benchmark-runs/v7-micro8/results.json",
+  "sourceReportSha256": "594688b92a49ed380091c598af2f755ae906724440b99c8cb7867020d2a1008c",
+  "sourceReportCanonicalLFHash": "594688b92a49ed380091c598af2f755ae906724440b99c8cb7867020d2a1008c",
+  "sourceManifestSha256": "3cf9c219fe84f59723220f5eca41f7272ac619b14b655859046451b1aa24edbd",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v7",
+  "scope": "Eight existing replies only:7from focused24+unchanged original09:SANI. No intent24/full84 acceptance run.",
+  "fullAcceptanceEligible": false,
+  "manualScorePolicy": "0=clear failure,1=partly met,2=met. Scores authored by direct AI review, not scripted keyword scoring. Mixed solitude/avoidance alternatives are penalized but not a definite opposite-causation Hard Fail, consistently with v5/v6 review criteria.",
+  "assessment": {
+    "status": "SELECTED8_NO_DEFINITE_HARD_FAIL",
+    "total": 72,
+    "maximum": 80,
+    "average": 9,
+    "hardFailCount": 0,
+    "pendingReviews": 0,
+    "independentReviewStatus": "PENDING_MAIN_ASSIGNMENT",
+    "full24Status": "NOT_RUN_V7",
+    "full84Status": "NOT_RUN_V7; previous full84 remains FAILED"
+  },
+  "runtime": {
+    "replyCount": 8,
+    "attempts": 8,
+    "repairCount": 0,
+    "neurons": 295.957505,
+    "ceiling": 450,
+    "sourceFrozen": true,
+    "pendingSelectedIds": []
+  },
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "A 민수의 목48.3/수35와 B 사용자의 목80/화15를 실제 분포 그대로 말하고 시주 미상은 A 민수에게만 귀속한다. B의 확정 시주를 직접 말하지 않지만 누가 미상인지라는 질문에는 맞게 답하며 이전의 B 미상 모순은 재현되지 않았다. 명시적 B 확정의 생략은 추가 개선 가능하나 반대 사실 진술로 보지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "민수는 목 기운이 48.3%로 가장 많고 수 기운이 35% 정도 있어. 반면에 너는 목 기운이 80%로 아주 높고 화 기운이 15%야. 민수의 시주는 아직 확인되지 않은 상태야.",
+      "reviewedSegments": [
+        "민수는 목 기운이 48.3%로 가장 많고 수 기운이 35% 정도 있어.",
+        "반면에 너는 목 기운이 80%로 아주 높고 화 기운이 15%야.",
+        "민수의 시주는 아직 확인되지 않은 상태야."
+      ],
+      "reviewedOutputSha256": "bddc7af5789e58ddcf10de6efa38a429a0c95183f58638c4d5e2c4e5947948f4",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "reviewChecks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "혼자만의 시간 속에 있거나 조금은 고립된 상태일 수 있다고 말한다. 이전 HF의 고독이 필요해서라는 원인·필요성은 사라졌고 고립이라는 선택 방향 의미도 있다. 혼자 있는 시간으로 일반화하는 부분과 실제 상대 상태처럼 서술하는 경계가 약해 감점한다. 과거 SANI/ARANG의 혼합 대안과 같은 보수 기준으로 확정 반대 방향 HF를 추가하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "응, 다시 쉽게 말해줄게! 너는 관계에 대한 끌림이나 선택을 고민하고 있는 모습이고, 상대방은 지금 혼자만의 시간 속에 있거나 조금은 고립된 상태일 수 있어. 이 관계가 잘 흘러가려면 서로의 속도를 맞춰가는 조율이 필요해 보여. 어떤 부분이 제일 이해하기 어려웠어?",
+      "reviewedSegments": [
+        "응, 다시 쉽게 말해줄게!",
+        "너는 관계에 대한 끌림이나 선택을 고민하고 있는 모습이고, 상대방은 지금 혼자만의 시간 속에 있거나 조금은 고립된 상태일 수 있어.",
+        "이 관계가 잘 흘러가려면 서로의 속도를 맞춰가는 조율이 필요해 보여.",
+        "어떤 부분이 제일 이해하기 어려웠어?"
+      ],
+      "reviewedOutputSha256": "14a4ccc369c2076f4d658509b8243df535cfcaebf22bc6d1c29e5d23d3e6d417",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "미상 시각과 날짜 경계를 구분하고 원국/점수/용신/대운을 확정하지 않는다. 이미 날짜가 없다고 주장하지 않으며 입력 화면으로 안내해 이전 채팅 원자료 요구도 줄었다. 그러나 어떤 점수와 용신인지 묻는 질문에 제공된32/37/58와FIRE/METAL을 나열하지 않고 일반론으로 끝나 감점한다. 정확한 생년월일시 모두 확인이 필요하다는 문장은 일반 조건으로 읽으며 날짜 미입력 확정 HF로 세지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "지금은 태어난 시각을 모르고 날짜의 경계에 걸쳐 있어서, 원국 자체가 아직 하나로 확정되지 않은 상태예요. 그래서 점수나 용신도 후보군으로만 남아 있는 거고요. 대운 역시 정확한 생년월일시가 모두 확인되어야 제대로 짚어드릴 수 있어요. 정확한 분석을 위해 사주 입력 화면에서 정보를 다시 한번 확인해 주시겠어요?",
+      "reviewedSegments": [
+        "지금은 태어난 시각을 모르고 날짜의 경계에 걸쳐 있어서, 원국 자체가 아직 하나로 확정되지 않은 상태예요.",
+        "그래서 점수나 용신도 후보군으로만 남아 있는 거고요.",
+        "대운 역시 정확한 생년월일시가 모두 확인되어야 제대로 짚어드릴 수 있어요.",
+        "정확한 분석을 위해 사주 입력 화면에서 정보를 다시 한번 확인해 주시겠어요?"
+      ],
+      "reviewedOutputSha256": "b5674d6fcf76862d7f059e507c2d6169a1a1ff15c99d5abf51713893ce22afba",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "혼자만의 시간이 필요하거나 상황을 피하고 싶은 모습이라고 대안을 섞는다. 회피라는 역방향 의미도 있지만 고독 필요를 함께 제시하고 실제 상태처럼 서술해 여전히 감점한다. 동일 표현이 있던 v5 SANI에서와 같이 추가 확정 HF로 세지 않았다. 카드 위치와 관계 조율은 유지한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "응, 좀 더 쉽게 말해볼게. 너는 지금 관계에 대해 연결되고 싶은 마음이 큰 것 같은데, 상대방은 혼자만의 시간이 필요하거나 상황을 피하고 싶은 모습이 보여. 그래서 지금은 서로의 속도를 맞추면서 천천히 조율해 나가는 과정이 필요해 보여.",
+      "reviewedSegments": [
+        "응, 좀 더 쉽게 말해볼게.",
+        "너는 지금 관계에 대해 연결되고 싶은 마음이 큰 것 같은데, 상대방은 혼자만의 시간이 필요하거나 상황을 피하고 싶은 모습이 보여.",
+        "그래서 지금은 서로의 속도를 맞추면서 천천히 조율해 나가는 과정이 필요해 보여."
+      ],
+      "reviewedOutputSha256": "69ec2f34fbbb43dcac2c83f84f10cd4a16f076457710c12a70c38b16725ef609",
+      "inputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "카드가 보여주는 상징이라고 시작하고 상대 위치를 고립/회피라는 선택 방향으로 설명한다. 사용자 연인과 관계 절제의 위치도 유지하며 고독 필요라는 반대 원인을 추가하지 않는다. 설명 후 구체적 답답함을 물어 자연스러운 재해석을 완성한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "카드가 보여주는 상징을 조금 더 편하게 풀어볼게요. 당신은 관계에서의 연결이나 끌림을 중요하게 생각하는 모습이지만, 상대는 지금 스스로를 고립시키거나 회피하려는 흐름이 보여요. 두 사람 사이에는 서로를 맞추어가는 조율과 균형이 필요한 시점으로 읽히네요. 이 흐름 속에서 어떤 부분이 가장 답답하게 느껴지나요?",
+      "reviewedSegments": [
+        "카드가 보여주는 상징을 조금 더 편하게 풀어볼게요.",
+        "당신은 관계에서의 연결이나 끌림을 중요하게 생각하는 모습이지만, 상대는 지금 스스로를 고립시키거나 회피하려는 흐름이 보여요.",
+        "두 사람 사이에는 서로를 맞추어가는 조율과 균형이 필요한 시점으로 읽히네요.",
+        "이 흐름 속에서 어떤 부분이 가장 답답하게 느껴지나요?"
+      ],
+      "reviewedOutputSha256": "a8fc4100be36b8a6c45984c259b8fc07015d62f1130c8ff2fad796d2bb90c4fa",
+      "inputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "정방향 은둔자를 혼자 깊이 생각하는 모습으로 설명하여 역방향 회피로 뒤집지 않는다. 다만 상대방이 실제 그렇게 행동 중이라는 서술로 상징 가능성 경계가 약한 점은 이전 동일 사례와 같이 감점한다. 위치 교환이나 새 추첨은 없다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "너는 관계에 대한 끌림이나 선택을 고민하고 있는 것 같아. 반면에 상대방은 혼자만의 시간을 가지며 깊이 생각하는 중인 모습이고. 두 사람 사이에는 조율과 균형이 필요한 시점이라고 볼 수 있어. 어떤 부분이 제일 궁금해?",
+      "reviewedSegments": [
+        "너는 관계에 대한 끌림이나 선택을 고민하고 있는 것 같아.",
+        "반면에 상대방은 혼자만의 시간을 가지며 깊이 생각하는 중인 모습이고.",
+        "두 사람 사이에는 조율과 균형이 필요한 시점이라고 볼 수 있어.",
+        "어떤 부분이 제일 궁금해?"
+      ],
+      "reviewedOutputSha256": "1ff5b7e87e062c3453a2deef31abe14c9ba0376eb873f9015555a71da33eed0e",
+      "inputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "reviewChecks": [
+        "은둔자 정방향의 성찰/탐색을 역방향 회피로 단정하지 않음",
+        "상대 위치라도 실제 마음이나 욕구를 확정하지 않음",
+        "연인=나, 은둔자=상대, 절제=방향 보존"
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "사용자 위치의 은둔자 역방향은 고립/회피 상징, 상대 위치의 연인 정방향은 연결/끌림 키워드라고 각각 명시한다. 상대가 실제 호감이 있다고 단정하지 않고 최근 연락이라는 확인 가능한 상황을 묻는다. v5와 달리 사용자가 실제로 피하는지 가정하는 질문도 없다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "네 태도 위치에는 은둔자 역방향이 나와서 고립이나 회피 같은 상징이 보여. 반면에 상대 태도에는 연인 정방향이 떠서 연결이나 끌림 같은 키워드가 나타나고 있어. 두 사람의 흐름은 절제 카드가 말하는 것처럼 조율과 균형이 필요한 상태 같아. 최근에 그 사람이랑 연락은 좀 하고 있어?",
+      "reviewedSegments": [
+        "네 태도 위치에는 은둔자 역방향이 나와서 고립이나 회피 같은 상징이 보여.",
+        "반면에 상대 태도에는 연인 정방향이 떠서 연결이나 끌림 같은 키워드가 나타나고 있어.",
+        "두 사람의 흐름은 절제 카드가 말하는 것처럼 조율과 균형이 필요한 상태 같아.",
+        "최근에 그 사람이랑 연락은 좀 하고 있어?"
+      ],
+      "reviewedOutputSha256": "61432dbf446799cf72f9a53b9dcec26c00bcc52b70a985a45dffbf8bbb04dc4b",
+      "inputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "reviewChecks": [
+        "은둔자 역방향은 이번에는 나의 위치이며 상대에게 옮기지 않음",
+        "상대 위치 연인도 실제 호감의 증명이 아님",
+        "회피/과도한 폐쇄를 건전한 고독 필요로 뒤집지 않음"
+      ]
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "밀어주는 힘을 추진력으로, 위험 관리를 매몰되지 않는 거리두기로, 현실 방향을 사실과 책임으로 설명한다. 이는 원본 전차 정방향·악마 역방향의 거리두기·정의 정방향의 사실/책임과 연결된다. RISK 위치의 조언을 중독 상태라고 단정하지 않고 업무량을 물어 현실적 선택을 지원한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "지금은 추진력이 붙는 시기라 밀고 나가는 힘은 있어 보여. 다만 너무 한곳에 매몰되지 않게 적절히 거리를 두는 게 리스크를 줄이는 방법일 것 같아. 가장 현실적인 건 감정보다는 사실과 책임을 기준으로 판단하는 건데, 맡았을 때 네가 감당해야 할 구체적인 업무량이 어느 정도야?",
+      "reviewedSegments": [
+        "지금은 추진력이 붙는 시기라 밀고 나가는 힘은 있어 보여.",
+        "다만 너무 한곳에 매몰되지 않게 적절히 거리를 두는 게 리스크를 줄이는 방법일 것 같아.",
+        "가장 현실적인 건 감정보다는 사실과 책임을 기준으로 판단하는 건데, 맡았을 때 네가 감당해야 할 구체적인 업무량이 어느 정도야?"
+      ],
+      "reviewedOutputSha256": "5f2b9c55f979f88fc5a29c5cd02b3ac78809dd5fba42614f6dd0e6eda16fac36",
+      "inputSha256": "f47153bebfc428fecd97f3db75d29131d7404a14c45defdedc8bebe9d15165e6",
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ]
+    }
+  ]
+}

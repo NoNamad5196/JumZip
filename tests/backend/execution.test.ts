@@ -25,6 +25,23 @@ function fixture() {
 }
 
 describe('authoritative execution ordering and recovery', () => {
+  it.each(['tarot', 'compatibility'] as const)('propagates authoritative deletion during %s completion instead of returning a stale partial snapshot', async endpoint => {
+    const { repo, execute } = fixture();
+    const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
+    vi.mocked(repo.complete).mockRejectedValue(gone);
+    const input = endpoint === 'tarot' ? drawRequest : { schemaVersion: 1 as const, requestId: uuid, action: 'DRAW_TAROT' as const, conversationId: uuid, consultationId: null, question: '질문', targetPersonAlias: '합성 상대' };
+    await expect(execute(endpoint, input, user)).rejects.toBe(gone);
+    expect(repo.fail).not.toHaveBeenCalled();
+  });
+  it.each(['tarot', 'compatibility'] as const)('propagates authoritative deletion detected by the %s failure-status write', async endpoint => {
+    const { repo, generate, execute } = fixture();
+    generate.mockRejectedValue({ code: 'LLM_TIMEOUT' });
+    const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
+    vi.mocked(repo.fail).mockRejectedValue(gone);
+    const input = endpoint === 'tarot' ? drawRequest : { schemaVersion: 1 as const, requestId: uuid, action: 'DRAW_TAROT' as const, conversationId: uuid, consultationId: null, question: '질문', targetPersonAlias: '합성 상대' };
+    await expect(execute(endpoint, input, user)).rejects.toBe(gone);
+    expect(repo.complete).not.toHaveBeenCalled();
+  });
   it('passes recommendation as choice guidance and stores it without executing any suggested tool', async () => {
     const { repo, generate } = fixture();
     const recommendation = { recommendedTools: [{ tool: 'SAJU' as const, mode: 'NATAL' as const, reason: '성향을 살펴볼 수 있어요', missingSlots: ['본인 출생 정보'] }] };

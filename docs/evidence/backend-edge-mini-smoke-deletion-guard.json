@@ -1,0 +1,135 @@
+{
+  "at": "2026-09-19T22:03:08.933Z",
+  "maximumUserRequests": 4,
+  "operations": [
+    "Chat SEND",
+    "identical request replay",
+    "ONE_CARD DRAW",
+    "same-draw RETRY_INTERPRETATION"
+  ],
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "reservedNeurons": 400,
+  "measuredNeurons": null,
+  "costScope": "Reservation is an estimate, not a measured cap: Edge does not normally expose provider usage. At most6 reply attempts at900 tokens plus2 intent attempts at350 tokens (6100 output tokens total), with input costs included in the400-neuron reservation.",
+  "hiddenWork": "Owner memory is explicitly OFF. Conversation title is manually fixed before SEND. The first Chat consultation has only2 eligible messages and Tarot uses a separate consultation. Tarot actions do not schedule afterReply. This prevents delayed title maintenance becoming eligible after the later draws.",
+  "authScope": "Two disposable synthetic accounts via admin-generated magic-link verification; no public signup or CAPTCHA assertion.",
+  "overallOutcome": "SUCCEEDED",
+  "userRequests": 4,
+  "checks": [
+    {
+      "name": "manual conversation title prevents delayed background title generation",
+      "passed": true
+    },
+    {
+      "name": "latest deployed Chat produces a durable real response",
+      "passed": true
+    },
+    {
+      "name": "Chat provenance links the persisted original user message",
+      "passed": true
+    },
+    {
+      "name": "Chat uses the configured Qwen model and Persona-v4",
+      "passed": true
+    },
+    {
+      "name": "identical request UUID returns the same canonical Chat data and assistant ID",
+      "passed": true
+    },
+    {
+      "name": "replay adds no message or execution; cached branch returns before inference",
+      "passed": true
+    },
+    {
+      "name": "another authenticated owner cannot read the Chat message through RLS",
+      "passed": true
+    },
+    {
+      "name": "first Chat consultation remains below the three-message AI-title threshold",
+      "passed": true
+    },
+    {
+      "name": "latest deployed Tarot persists a real completed interpretation",
+      "passed": true
+    },
+    {
+      "name": "Tarot uses a separate consultation from the delayed Chat-title target",
+      "passed": true
+    },
+    {
+      "name": "Tarot reload preserves content, provenance and draw linkage",
+      "passed": true
+    },
+    {
+      "name": "authoritative card, orientation and position survive reload",
+      "passed": true
+    },
+    {
+      "name": "another authenticated owner cannot read the draw through RLS",
+      "passed": true
+    },
+    {
+      "name": "explicit Tarot retry creates a new durable interpretation",
+      "passed": true
+    },
+    {
+      "name": "retry keeps the same draw group and immutable cards",
+      "passed": true
+    },
+    {
+      "name": "retry provenance and persisted snapshot identify the same authoritative draw",
+      "passed": true
+    },
+    {
+      "name": "exactly three authoritative executions finish successfully",
+      "passed": true
+    },
+    {
+      "name": "memory OFF and manual-title safeguards remain in force after all operations",
+      "passed": true
+    },
+    {
+      "name": "verified disposable Edge-mini identity and rows cleanup",
+      "passed": true
+    },
+    {
+      "name": "verified disposable Edge-mini identity and rows cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "stage": "CHAT_SEND",
+      "httpStatus": 201,
+      "latencyMs": 4710,
+      "executionStatus": "SUCCEEDED",
+      "code": null,
+      "exposedUsage": []
+    },
+    {
+      "stage": "CHAT_REPLAY",
+      "httpStatus": 200,
+      "latencyMs": 457,
+      "executionStatus": "SUCCEEDED",
+      "code": null,
+      "exposedUsage": []
+    },
+    {
+      "stage": "TAROT_DRAW",
+      "httpStatus": 201,
+      "latencyMs": 4124,
+      "executionStatus": "SUCCEEDED",
+      "code": null,
+      "exposedUsage": []
+    },
+    {
+      "stage": "TAROT_RETRY",
+      "httpStatus": 200,
+      "latencyMs": 3310,
+      "executionStatus": "SUCCEEDED",
+      "code": null,
+      "exposedUsage": []
+    }
+  ],
+  "pendingCleanupCount": 0
+}

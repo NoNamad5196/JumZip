@@ -1,0 +1,207 @@
+{
+  "checkedAt": "2026-09-19T22:11:49.016Z",
+  "baseCommit": "b3124e2",
+  "deployment": "Main-confirmed 2026-09-20 07:09 KST candidate with 631-test batch",
+  "mode": "PUBLIC_GUEST_READ_ONLY_DELETION_GUARDS_DEPLOY",
+  "origin": "https://jumzip.pages.dev",
+  "sourceModified": false,
+  "formInteracted": false,
+  "captchaInteracted": false,
+  "captchaTokenRead": false,
+  "authenticationAttempted": false,
+  "modelCalls": 0,
+  "build": {
+    "index": {
+      "path": "/index.html",
+      "type": "HTML",
+      "status": 200,
+      "localSha256": "1c9ffabb4c63bd815ab8e90d22d466c0b4079ea32ed241544ee15703b49e420a",
+      "publicSha256": "1c9ffabb4c63bd815ab8e90d22d466c0b4079ea32ed241544ee15703b49e420a",
+      "match": true
+    },
+    "assets": [
+      {
+        "path": "/assets/AccountPages-Bl0yoxhC.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "833725ff3de306df65fbe791072d3ac2861bf6aa7e56390cf43a31367dfbdd7e",
+        "publicSha256": "833725ff3de306df65fbe791072d3ac2861bf6aa7e56390cf43a31367dfbdd7e",
+        "match": true
+      },
+      {
+        "path": "/assets/Chat-CDs2NIl1.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "5ae8ac47e18eb036ffadc0a18aabe5a4c10304f3b82a6656c0d99b62b122dc89",
+        "publicSha256": "5ae8ac47e18eb036ffadc0a18aabe5a4c10304f3b82a6656c0d99b62b122dc89",
+        "match": true
+      },
+      {
+        "path": "/assets/CompatibilitySnapshot-D48t3f1q.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "7e1a7a6b2e64b48e530512c519302f4b7dd2fd2047cce0836ea881aa3105a1e9",
+        "publicSha256": "7e1a7a6b2e64b48e530512c519302f4b7dd2fd2047cce0836ea881aa3105a1e9",
+        "match": true
+      },
+      {
+        "path": "/assets/ConnectionState-BN90R9Ki.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "5cb81cce4a7f11660b8f92b393841d7b1e1c6f940972bbaeb67663d0a345c1b7",
+        "publicSha256": "5cb81cce4a7f11660b8f92b393841d7b1e1c6f940972bbaeb67663d0a345c1b7",
+        "match": true
+      },
+      {
+        "path": "/assets/Reading-Cukgp41J.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "646504ae4576e78350eea075fdd152d3200311db124063ac7b7e5d672f70acdc",
+        "publicSha256": "646504ae4576e78350eea075fdd152d3200311db124063ac7b7e5d672f70acdc",
+        "match": true
+      },
+      {
+        "path": "/assets/es-D4THWdz3.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "match": true
+      },
+      {
+        "path": "/assets/index-Cv2Nn-15.css",
+        "type": "CSS",
+        "status": 200,
+        "localSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "publicSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "match": true
+      },
+      {
+        "path": "/assets/index-QjNgSNRp.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "7ff608aa1eba888c7f3732f044aacad6f80cf2af1384f5d7943890bc4742961c",
+        "publicSha256": "7ff608aa1eba888c7f3732f044aacad6f80cf2af1384f5d7943890bc4742961c",
+        "match": true
+      },
+      {
+        "path": "/assets/pagination-CVUZBXxo.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "02a0292569b0b0d8b00d67321685120b9669046e8db314802e1c0faf4083bb0e",
+        "publicSha256": "02a0292569b0b0d8b00d67321685120b9669046e8db314802e1c0faf4083bb0e",
+        "match": true
+      }
+    ]
+  },
+  "routes": [
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "width": 360,
+      "scrollWidth": 360,
+      "title": "뭐라고 불러주면좋을까요?",
+      "brokenImages": 0,
+      "csp": [],
+      "submitDisabled": true,
+      "sdkLoaded": true,
+      "challengeFrameCount": 0,
+      "guestStartLinkPresent": false,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        }
+      ],
+      "assetErrors": []
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "width": 360,
+      "scrollWidth": 360,
+      "title": "아랑ARANG",
+      "brokenImages": 0,
+      "csp": [],
+      "submitDisabled": true,
+      "sdkLoaded": false,
+      "challengeFrameCount": 0,
+      "guestStartLinkPresent": true,
+      "errors": [],
+      "failures": [],
+      "assetErrors": []
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "title": "뭐라고 불러주면좋을까요?",
+      "brokenImages": 0,
+      "csp": [],
+      "submitDisabled": true,
+      "sdkLoaded": true,
+      "challengeFrameCount": 0,
+      "guestStartLinkPresent": false,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        }
+      ],
+      "assetErrors": []
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "status": 200,
+      "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "title": "아랑ARANG",
+      "brokenImages": 0,
+      "csp": [],
+      "submitDisabled": true,
+      "sdkLoaded": false,
+      "challengeFrameCount": 0,
+      "guestStartLinkPresent": true,
+      "errors": [],
+      "failures": [],
+      "assetErrors": []
+    }
+  ],
+  "blockedMutations": [],
+  "initialSandboxAttempt": "Network EACCES before public HTTP response; not an application error.",
+  "summary": {
+    "renderChecks": 4,
+    "viewportCount": 2,
+    "jsAssetCount": 8,
+    "cssAssetCount": 1,
+    "buildHashMatches": true,
+    "allHttp200": true,
+    "overflowCount": 0,
+    "cspViolationCount": 0,
+    "pageErrorCount": 0,
+    "assetErrorCount": 0,
+    "challengeNetworkFailures": 2,
+    "otherNetworkFailures": 0,
+    "blockedMutations": 0
+  },
+  "passed": true,
+  "limits": [
+    "This checks deployed hashes and isolated public guest render only. Terminal-404/deletion races are covered by separate local mocked regression tests, not authenticated public mutations.",
+    "No existing IAB/browser profile, user-entered field, token field/value, credential, challenge body, or storage content was read. No form/widget/checkbox/submit control was changed or clicked.",
+    "Turnstile may make automatic requests during passive page loading. Challenge-only DNS failures are explicitly separated; actual CAPTCHA completion, signup and model generation remain unverified here.",
+    "No source or prior report was changed; this new report is the sole written artifact."
+  ]
+}

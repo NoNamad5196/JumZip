@@ -76,8 +76,13 @@ export function createSajuActionExecutor(dependencies: SajuDependencies) {
     } catch (error) {
       const failure = sajuCalculationFailure(error);
       if (saved) {
+        if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(failure.code)) throw failure;
         const partialError = { code: 'SAJU_INTERPRETATION_FAILED', message: '사주 원국은 저장됐지만 해석을 받지 못했습니다.', retryable: true, details: { readingId: saved.readingId, reason: failure.code } };
-        const cached = await dependencies.executions.fail(claim.executionId, partialError, 200).catch(() => null);
+        const cached = await dependencies.executions.fail(claim.executionId, partialError, 200).catch(writeError => {
+          const writeFailure = safeFailure(writeError);
+          if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(writeFailure.code)) throw writeFailure;
+          return null;
+        });
         const completed = cached as { executionStatus?: string; interpretation?: SajuSnapshot['interpretation'] } | null;
         if (completed?.executionStatus === 'SUCCEEDED' && completed.interpretation) return { data: sajuInlineResult({ ...saved, interpretation: completed.interpretation }), status: 200 };
         return { data: { ...sajuInlineResult(saved), executionStatus: 'PARTIAL', interpretation: null, partialError }, status: 200 };

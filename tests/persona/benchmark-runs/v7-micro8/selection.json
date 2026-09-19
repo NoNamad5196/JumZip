@@ -1,0 +1,139 @@
+{
+  "partialScope": {
+    "selectedCount": 8,
+    "selectedFromFocused24": 7,
+    "additionalUnchangedOriginalCoreIds": [
+      "09-decision-three:SANI"
+    ],
+    "originalFocusedCount": 24,
+    "executionOrder": [
+      "v5-ab-swapped-contrast:SANI",
+      "10-retry-same-draw:BOMI",
+      "s03-correlated-boundary:ARANG",
+      "10-retry-same-draw:SANI",
+      "10-retry-same-draw:ARANG",
+      "v5-hermit-upright-contrast:BOMI",
+      "v5-reversed-owner-contrast:SANI",
+      "09-decision-three:SANI"
+    ],
+    "orderReason": "The large A/B payload runs first; the known Tarot failure and Saju regression follow. Existing inputs, expectations and rubric remain unchanged.",
+    "unselectedIds": [
+      "v5-intent-pure-recall-no-profile",
+      "s03-correlated-boundary:BOMI",
+      "s03-correlated-boundary:SANI",
+      "s02-unknown-hour:BOMI",
+      "s05-compatibility-evidence:ARANG",
+      "s06-compatibility-uncertain:ARANG",
+      "s07-no-invented-score:ARANG",
+      "v5-legacy-provenance:ARANG",
+      "v5-pure-recall:BOMI",
+      "v5-recall-explicit-tarot:ARANG",
+      "v5-intent-pure-recall-has-profile",
+      "v5-intent-memory-control",
+      "v5-intent-current-preference",
+      "v5-intent-innate-character",
+      "v5-intent-recall-explicit-tarot",
+      "v5-intent-target-remembers",
+      "v5-intent-forget-and-tarot"
+    ],
+    "inputExpectedRubricUnchanged": true,
+    "parentAuthorization": "Main authorized v7 implementation and zero-network micro8 preparation only. No live authorization or current account balance;450 is a proposed hard cap and may stop early."
+  },
+  "corpusVersion": "JumZipV7Micro8Selection-v1",
+  "sourceCorpusVersions": [
+    "JumZipV5Focused-v1",
+    "JumZipPersonaBenchmark-v1"
+  ],
+  "synthetic": true,
+  "fullAcceptanceEligible": false,
+  "doesNotReplaceOriginal84": true,
+  "executionOrder": [
+    "v5-ab-swapped-contrast:SANI",
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "v5-hermit-upright-contrast:BOMI",
+    "v5-reversed-owner-contrast:SANI",
+    "09-decision-three:SANI"
+  ],
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "reviewChecks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "reviewChecks": [
+        "은둔자 정방향의 성찰/탐색을 역방향 회피로 단정하지 않음",
+        "상대 위치라도 실제 마음이나 욕구를 확정하지 않음",
+        "연인=나, 은둔자=상대, 절제=방향 보존"
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "origin": "NEW_CONTRAST",
+      "inputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "reviewChecks": [
+        "은둔자 역방향은 이번에는 나의 위치이며 상대에게 옮기지 않음",
+        "상대 위치 연인도 실제 호감의 증명이 아님",
+        "회피/과도한 폐쇄를 건전한 고독 필요로 뒤집지 않음"
+      ]
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "origin": "ORIGINAL_CORE",
+      "inputSha256": "f47153bebfc428fecd97f3db75d29131d7404a14c45defdedc8bebe9d15165e6",
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ]
+    }
+  ],
+  "intent": []
+}

@@ -1,0 +1,88 @@
+{
+  "at": "2026-09-19T22:12:10.327Z",
+  "target": "hosted",
+  "disposableAccounts": 1,
+  "maximumEdgeCalls": 2,
+  "modelCalls": 0,
+  "scenario": "RPC-seeded successful Chat, owner consultation deletion, identical original SEND UUID submitted twice to the actual Chat Edge route.",
+  "authScope": "Admin-created synthetic identity and generated magic-link verification; no public signup or CAPTCHA claim.",
+  "inferenceScope": "Synthetic complete_execution seed is a persistence fixture, not an LLM response. Zero model calls follows the reviewed beginChat rejection before recommendation/generation/maintenance; remote provider usage is not directly metered.",
+  "cleanup": "Immediate owner ledger, finally hard deletion, independent Auth404 and fifteen owned tables empty.",
+  "sourceProof": {
+    "reviewedStage": "supabase/.temp/edge-hotfix-v4-015/supabase/functions/_shared/",
+    "executeSha256": "96f8568d408d374c0ecac0d3759d51e34d78405bf381a4af360c00f881955dff",
+    "validationSha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+    "boundary": "beginChat/replay precedes context, recommend, generate and afterReply",
+    "remoteProviderUsageMetered": false
+  },
+  "edgeCalls": 2,
+  "rpcCalls": 3,
+  "responses": [
+    {
+      "attempt": 1,
+      "status": 404,
+      "ok": false,
+      "code": "NOT_FOUND",
+      "retryable": false,
+      "requestIdMatches": true,
+      "schemaVersion": 1,
+      "hasData": false
+    },
+    {
+      "attempt": 2,
+      "status": 404,
+      "ok": false,
+      "code": "NOT_FOUND",
+      "retryable": false,
+      "requestIdMatches": true,
+      "schemaVersion": 1,
+      "hasData": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "owned RPC fixture is successful with the exact original request payload hash",
+      "passed": true
+    },
+    {
+      "name": "deleted successful request has the authoritative NOT_FOUND tombstone before any Edge call",
+      "passed": true
+    },
+    {
+      "name": "original consultation is absent before inference entry",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 1 returns HTTP404 NOT_FOUND and non-retryable error",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 1 preserves request envelope and returns no deleted result",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 1 creates no execution, message, rate charge or maintenance state",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 2 returns HTTP404 NOT_FOUND and non-retryable error",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 2 preserves request envelope and returns no deleted result",
+      "passed": true
+    },
+    {
+      "name": "actual Edge replay 2 creates no execution, message, rate charge or maintenance state",
+      "passed": true
+    },
+    {
+      "name": "synthetic Auth identity and fifteen owned tables independently absent",
+      "passed": true
+    }
+  ],
+  "failedStage": null,
+  "failure": null,
+  "pendingCleanupCount": 0,
+  "passed": true
+}

@@ -1,9 +1,10 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Chat from '../../src/features/Chat';
+import { ServiceError } from '../../src/lib/service';
 import { webcrypto } from 'node:crypto';
 import { clearRequestIntents } from '../../src/features/request-intent';
 
@@ -13,10 +14,34 @@ vi.mock('../../src/features/session', () => ({ useSession: () => ({ session: moc
 vi.mock('../../src/lib/Captcha', () => ({ Captcha: () => null }));
 const group={executionStatus:'PARTIAL',consultationId:'reading-1',drawGroupId:'draw-1',spreadType:'ONE_CARD',mode:'NORMAL',cards:[{cardId:0,orientation:'UPRIGHT',positionIndex:0,positionKey:'ADVICE'}],interpretation:null};
 const message=(patch:object)=>({id:'message-1',conversation_id:'conversation-1',consultation_id:'reading-1',sender:'SYSTEM',content:'',type:'TAROT_DRAW',metadata:{},created_at:'2026-09-20T00:00:00Z',...patch});
-function mount(path='/chat/bomi?conversation=conversation-1',extra?:React.ReactNode){const client=new QueryClient({defaultOptions:{queries:{retry:false},mutations:{retry:false}}});return render(<QueryClientProvider client={client}><MemoryRouter initialEntries={[path]}>{extra}<Routes><Route path="/chat/:characterId" element={<Chat/>}/></Routes></MemoryRouter></QueryClientProvider>);}
+function mount(path='/chat/bomi?conversation=conversation-1',extra?:React.ReactNode){const client=new QueryClient({defaultOptions:{queries:{retry:false},mutations:{retry:false}}});return render(<QueryClientProvider client={client}><MemoryRouter initialEntries={[path]}>{extra}<Routes><Route path="/chat/:characterId" element={<Chat/>}/><Route path="/history" element={<h1>기록 화면</h1>}/></Routes></MemoryRouter></QueryClientProvider>);}
 beforeEach(()=>{vi.stubGlobal('crypto',webcrypto);clearRequestIntents();mocked.session={user:{id:'user-1'}};mocked.execute.mockReset();mocked.messages.mockReset();mocked.pages.mockReset();mocked.providers.google=false;mocked.providers.email=false;mocked.create.mockReset();mocked.conversation.mockReset();mocked.conversation.mockResolvedValue({id:'conversation-1',character_id:'BOMI'});mocked.messages.mockResolvedValue([]);sessionStorage.clear();Element.prototype.scrollTo=vi.fn();HTMLDialogElement.prototype.showModal=vi.fn();HTMLDialogElement.prototype.close=vi.fn();window.matchMedia=vi.fn().mockImplementation(()=>({matches:true,addListener:vi.fn(),removeListener:vi.fn(),addEventListener:vi.fn(),removeEventListener:vi.fn()}));});
 afterEach(()=>{cleanup();vi.unstubAllGlobals();});
 describe('real chat interaction contract',()=>{
+  it('ignores a late daily result after leaving chat for the history/delete flow',async()=>{
+    let complete!:(value:unknown)=>void;mocked.execute.mockReturnValue(new Promise(resolve=>{complete=resolve;}));
+    mocked.conversation.mockImplementation(async(id:string)=>({id,character_id:'BOMI'}));
+    mount();fireEvent.click(screen.getByRole('button',{name:'오늘의 한 장'}));fireEvent.click(screen.getByText('오늘의 카드 만나기'));
+    await waitFor(()=>expect(mocked.execute).toHaveBeenCalledTimes(1));fireEvent.click(screen.getByRole('link',{name:'나의 기록'}));
+    await screen.findByRole('heading',{name:'기록 화면'});
+    await act(async()=>{complete({ok:true,data:{...group,conversationId:'original-conversation',mode:'DAILY'}});});
+    expect(screen.getByRole('heading',{name:'기록 화면'})).toBeTruthy();expect(mocked.conversation).not.toHaveBeenCalledWith('original-conversation');
+  });
+  it('preserves a NOT_FOUND draft but stops retrying a deleted consultation until a new story is explicitly chosen',async()=>{
+    mocked.execute.mockRejectedValueOnce(Object.assign(new ServiceError('NOT_FOUND','삭제된 상담이에요.',false),{code:'NOT_FOUND'})).mockResolvedValueOnce({ok:true,data:{conversationId:'fresh-conversation',consultationId:'fresh-reading',assistantMessage:{id:'fresh-answer',content:'fixture only'}}});
+    mocked.create.mockResolvedValue({id:'fresh-conversation',character_id:'BOMI'});
+    mount('/chat/bomi?conversation=conversation-1&consultation=deleted-reading');
+    const input=screen.getByRole('textbox',{name:'보미에게 보낼 이야기'}) as HTMLTextAreaElement;
+    fireEvent.change(input,{target:{value:'사라지면 안 되는 초안'}});fireEvent.click(screen.getByRole('button',{name:'이야기 보내기'}));
+    await waitFor(()=>expect(mocked.execute).toHaveBeenCalledTimes(1));await waitFor(()=>expect(screen.queryByRole('status')).toBeNull());
+    expect(input.value).toBe('사라지면 안 되는 초안');expect((screen.getByRole('button',{name:'이야기 보내기'}) as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.keyDown(input,{key:'Enter'});expect(mocked.execute).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByRole('button',{name:'새 이야기로 이어가기'}));
+    await waitFor(()=>expect((screen.getByRole('button',{name:'이야기 보내기'}) as HTMLButtonElement).disabled).toBe(false));expect(input.value).toBe('사라지면 안 되는 초안');
+    fireEvent.click(screen.getByRole('button',{name:'이야기 보내기'}));await waitFor(()=>expect(mocked.execute).toHaveBeenCalledTimes(2));
+    expect(mocked.execute.mock.calls[1][1]).toMatchObject({conversationId:'fresh-conversation',consultationId:null,message:'사라지면 안 되는 초안'});expect(mocked.execute.mock.calls[1][1].requestId).not.toBe(mocked.execute.mock.calls[0][1].requestId);
+  });
+
   it('switches explicit reading context without replaying an unresolved request into the former consultation',async()=>{
     mocked.execute.mockRejectedValueOnce(Object.assign(new Error('A 응답 유실'),{code:'NETWORK_ERROR'})).mockResolvedValueOnce({ok:true,data:{consultationId:'reading-b',assistantMessage:{id:'reply-b',content:'fixture response'}}});
     mount('/chat/bomi?conversation=conversation-1&consultation=reading-a',<Link to="/chat/bomi?conversation=conversation-1&consultation=reading-b">상담 B 선택</Link>);

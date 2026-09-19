@@ -7,6 +7,30 @@ const lost=()=>Object.assign(new Error('response lost'),{code:'NETWORK_ERROR'});
 beforeEach(()=>{vi.stubGlobal('crypto',webcrypto);clearRequestIntents();sessionStorage.clear();});
 afterEach(()=>vi.unstubAllGlobals());
 describe('uncertain request transport continuity',()=>{
+ it('cancels preparation after the account scope is cleared and does not recreate private pending state',async()=>{
+  let complete!:(value:ArrayBuffer)=>void;const digest=vi.fn(()=>new Promise<ArrayBuffer>(resolve=>{complete=resolve;}));
+  vi.stubGlobal('crypto',{randomUUID:webcrypto.randomUUID.bind(webcrypto),subtle:{digest}});
+  const send=vi.fn().mockResolvedValue({});const request=executeIntent('user-1','chat',{action:'SEND',message:'old account draft'},send);
+  clearRequestIntents('user-1');complete(new ArrayBuffer(32));
+  await expect(request).rejects.toMatchObject({code:'REQUEST_CANCELLED'});expect(send).not.toHaveBeenCalled();expect(Object.keys(sessionStorage)).toEqual([]);
+ });
+ it('does not let an old account request erase the newer retry intent after signing back in',async()=>{
+  let complete!:(value:unknown)=>void;const body={action:'SEND',message:'same draft'};
+  const oldSend=vi.fn(()=>new Promise(resolve=>{complete=resolve;}));const oldRequest=executeIntent('user-1','chat',body,oldSend);
+  await vi.waitFor(()=>expect(oldSend).toHaveBeenCalledTimes(1));clearRequestIntents('user-1');
+  const currentSend=vi.fn().mockRejectedValueOnce(lost()).mockResolvedValueOnce({});
+  await expect(executeIntent('user-1','chat',body,currentSend)).rejects.toThrow();complete({});await oldRequest;
+  await executeIntent('user-1','chat',body,currentSend);
+  expect(currentSend.mock.calls[1][0].requestId).toBe(currentSend.mock.calls[0][0].requestId);
+ });
+ it('releases a replay request after terminal NOT_FOUND instead of retaining a retryable transport intent',async()=>{
+  const body={action:'SEND',conversationId:'conversation-1',consultationId:'deleted-reading',message:'retained draft'};
+  const send=vi.fn().mockRejectedValueOnce(lost()).mockRejectedValueOnce(Object.assign(new Error('deleted'),{code:'NOT_FOUND',retryable:false})).mockResolvedValueOnce({});
+  await expect(executeIntent('user-1','chat',body,send)).rejects.toThrow();await expect(executeIntent('user-1','chat',body,send)).rejects.toMatchObject({code:'NOT_FOUND'});
+  expect(Object.keys(sessionStorage)).toEqual([]);await executeIntent('user-1','chat',body,send);
+  expect(send.mock.calls[1][0].requestId).toBe(send.mock.calls[0][0].requestId);expect(send.mock.calls[2][0].requestId).not.toBe(send.mock.calls[1][0].requestId);
+ });
+
  it.each([['tarot','DRAW'],['saju','CALCULATE'],['compatibility','DRAW_TAROT']])('replays %s after lost responses without creating a second resource, then allows a new explicit request',async(endpoint,action)=>{
   const resources=new Map<string,string>();const transportIds:string[]=[];let lose=true;
   const transport=async(payload:Record<string,unknown>)=>{const id=String(payload.requestId);transportIds.push(id);if(!resources.has(id))resources.set(id,`saved-${resources.size+1}`);if(lose)throw lost();return resources.get(id);};

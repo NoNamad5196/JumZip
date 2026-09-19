@@ -10,6 +10,8 @@ Local Supabase applied migrations001–014. Actual anonymous Auth, RLS, five Edg
 
 The local Vector collector uses `DOCKER_HOST=http://host.docker.internal:2375`, without a Unix socket mount. This Windows host has no2375/2376 listener, and `/_ping` from the same Docker network returns connection refused. The working Docker CLI uses `npipe:////./pipe/dockerDesktopLinuxEngine`. Thus centralized log collection is unavailable while the tested DB/Auth/Edge/native-provider paths work. No Docker TCP exposure or security setting was enabled.
 
+After confirming the exact `jumzip` project/workdir labels and28 restarts, Main normally stopped only `supabase_vector_jumzip` at06:43KST to end its failed restart loop. It is retained in exited state. The other eleven local Supabase containers remained running, with health checks healthy where provided. No container or volume was removed.
+
 For a future planned local start, the [official CLI exclusion option](https://supabase.com/docs/reference/cli/start) permits `supabase start -x vector`; direct container/serve logs remain usable. Restoring aggregate logs requires a separately tested Linux/WSL/dev-container Unix-socket or authenticated TLS configuration supported by [Vector](https://vector.dev/docs/reference/configuration/sources/docker_logs/#docker_host). These alternatives have not been executed. Do not enable unauthenticated2375 as an automatic workaround; see [Docker remote access](https://docs.docker.com/engine/daemon/remote-access/).
 
 ## Docker failure and recovery result

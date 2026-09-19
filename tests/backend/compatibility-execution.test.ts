@@ -30,6 +30,15 @@ function fixture() {
   return { deps, execute: createCompatibilityActionExecutor(deps) };
 }
 describe('compatibility snapshot and partner birth privacy', () => {
+  it.each(['complete', 'fail'] as const)('never returns a deleted compatibility snapshot when the %s RPC reports NOT_FOUND', async phase => {
+    const { deps, execute } = fixture();
+    const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
+    vi.mocked(deps.executions[phase]).mockRejectedValue(gone);
+    if (phase === 'fail') vi.mocked(deps.generate).mockRejectedValue({ code: 'LLM_TIMEOUT' });
+    await expect(execute(request, user)).rejects.toBe(gone);
+    if (phase === 'complete') expect(deps.executions.fail).not.toHaveBeenCalled();
+    else expect(deps.executions.complete).not.toHaveBeenCalled();
+  });
   it('persists only derived charts by default and commits before interpretation', async () => {
     const { deps, execute } = fixture(); const response = await execute(request, user);
     expect(deps.readings.save).toHaveBeenCalledWith({ executionId: 'execution', result, personAProfileInput: null, personBProfileInput: null, personBAlias: null, relatedPersonId: null });

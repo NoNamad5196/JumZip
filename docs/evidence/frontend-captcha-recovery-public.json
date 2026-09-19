@@ -1,0 +1,215 @@
+{
+  "checkedAt": "2026-09-19T21:42:19.991Z",
+  "commit": "b3124e2",
+  "mode": "PUBLIC_GUEST_READ_ONLY_CAPTCHA_RECOVERY_DEPLOY",
+  "origin": "https://jumzip.pages.dev",
+  "sourceModified": false,
+  "formInteracted": false,
+  "captchaInteracted": false,
+  "captchaTokenRead": false,
+  "authenticationAttempted": false,
+  "modelCalls": 0,
+  "build": {
+    "assets": [
+      {
+        "path": "/assets/AccountPages-B8g4C9FF.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "5296b6ccd4c2258c9e9d5a335b09e402db78b73d9dc030a1193779d32b3897eb",
+        "publicSha256": "5296b6ccd4c2258c9e9d5a335b09e402db78b73d9dc030a1193779d32b3897eb",
+        "match": true
+      },
+      {
+        "path": "/assets/Chat-Evbvik9p.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "f9813dc874ff14e95f1545f2499ca55cc0f05ab5e6d3dfa0ec3b0c543b824567",
+        "publicSha256": "f9813dc874ff14e95f1545f2499ca55cc0f05ab5e6d3dfa0ec3b0c543b824567",
+        "match": true
+      },
+      {
+        "path": "/assets/CompatibilitySnapshot-dwlgE5gs.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "48bd9ad04865cfaaa89f32e4d5d77843f9c69c9f45b9df44f3dce121301d59dd",
+        "publicSha256": "48bd9ad04865cfaaa89f32e4d5d77843f9c69c9f45b9df44f3dce121301d59dd",
+        "match": true
+      },
+      {
+        "path": "/assets/ConnectionState-DrOmdg_C.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "580dd69a774a2a6f1e0bdcad5e757087bd444ed014769405432c5feafcfad66a",
+        "publicSha256": "580dd69a774a2a6f1e0bdcad5e757087bd444ed014769405432c5feafcfad66a",
+        "match": true
+      },
+      {
+        "path": "/assets/es-D4THWdz3.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "match": true
+      },
+      {
+        "path": "/assets/index-Cv2Nn-15.css",
+        "type": "CSS",
+        "status": 200,
+        "localSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "publicSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "match": true
+      },
+      {
+        "path": "/assets/index-CYH0mH87.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "f85f13fbc277e603e5c9060949c25f837c9ec0557b7ab8f913fd6f53ae2b125e",
+        "publicSha256": "f85f13fbc277e603e5c9060949c25f837c9ec0557b7ab8f913fd6f53ae2b125e",
+        "match": true
+      },
+      {
+        "path": "/assets/pagination-DJPq6GvY.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "09be37136e52baf273a015bcb6faa286b27b38c0cbe6d01f3159c54cf67f5040",
+        "publicSha256": "09be37136e52baf273a015bcb6faa286b27b38c0cbe6d01f3159c54cf67f5040",
+        "match": true
+      },
+      {
+        "path": "/assets/Reading-BGblzDdj.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "5713256599a09ab18db5e3c3625cae90ec9d1f8729fa71eaf7718d627e02c565",
+        "publicSha256": "5713256599a09ab18db5e3c3625cae90ec9d1f8729fa71eaf7718d627e02c565",
+        "match": true
+      }
+    ],
+    "index": {
+      "status": 200,
+      "localSha256": "bd33d8b7df38206830c4aa69ed22c7d450bcec93304cf7bc5cb30a779d9208ca",
+      "publicSha256": "bd33d8b7df38206830c4aa69ed22c7d450bcec93304cf7bc5cb30a779d9208ca",
+      "match": true
+    }
+  },
+  "routes": [
+    {
+      "path": "/onboarding?character=arang",
+      "width": 360,
+      "views": [
+        {
+          "phase": "initial",
+          "status": 200,
+          "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+          "width": 360,
+          "scrollWidth": 360,
+          "title": "뭐라고 불러주면좋을까요?",
+          "brokenImages": 0,
+          "csp": [],
+          "submitDisabled": true,
+          "appAlertText": [],
+          "sdkLoaded": true,
+          "challengeFrameCount": 1
+        },
+        {
+          "phase": "reload",
+          "status": 200,
+          "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+          "width": 360,
+          "scrollWidth": 360,
+          "title": "뭐라고 불러주면좋을까요?",
+          "brokenImages": 0,
+          "csp": [],
+          "submitDisabled": true,
+          "appAlertText": [],
+          "sdkLoaded": true,
+          "challengeFrameCount": 1
+        }
+      ],
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        },
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        }
+      ],
+      "assetErrors": []
+    },
+    {
+      "path": "/onboarding?character=arang",
+      "width": 1440,
+      "views": [
+        {
+          "phase": "initial",
+          "status": 200,
+          "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "title": "뭐라고 불러주면좋을까요?",
+          "brokenImages": 0,
+          "csp": [],
+          "submitDisabled": true,
+          "appAlertText": [],
+          "sdkLoaded": true,
+          "challengeFrameCount": 1
+        },
+        {
+          "phase": "reload",
+          "status": 200,
+          "cspHeader": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "title": "뭐라고 불러주면좋을까요?",
+          "brokenImages": 0,
+          "csp": [],
+          "submitDisabled": true,
+          "appAlertText": [],
+          "sdkLoaded": true,
+          "challengeFrameCount": 1
+        }
+      ],
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        },
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED",
+          "challenge": true
+        }
+      ],
+      "assetErrors": []
+    }
+  ],
+  "blockedMutations": [],
+  "summary": {
+    "viewportCount": 2,
+    "renderChecks": 4,
+    "jsAssetCount": 8,
+    "cssAssetCount": 1,
+    "buildHashMatches": true,
+    "allHttp200": true,
+    "overflowCount": 0,
+    "cspViolationCount": 0,
+    "pageErrorCount": 0,
+    "assetErrorCount": 0,
+    "challengeNetworkFailures": 4,
+    "otherNetworkFailures": 0,
+    "blockedMutations": 0
+  },
+  "passed": true,
+  "limits": [
+    "This verifies public deployed assets, guest form render and strict CSP only. It does not verify actual CAPTCHA completion, Auth signup, account linking or model quality.",
+    "No token field, response body, storage credential or secret was inspected. Challenge paths are generalized and queries removed.",
+    "Automatic SDK challenge requests may occur while the public page loads. No checkbox, widget interaction, form field or submit button was touched.",
+    "Challenge-only DNS failures are reported separately and are not proof of an application/CSP failure."
+  ]
+}

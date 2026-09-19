@@ -63,9 +63,13 @@ export function buildPersonaToolFacts(value: unknown): unknown {
       const meaning = getTarotMeaning(card.cardId);
       if (!['UPRIGHT', 'REVERSED'].includes(card.orientation)) throw new RangeError('ORIENTATION_INVALID');
       const subjectRole = card.positionKey === 'YOUR_ATTITUDE' ? 'USER' : card.positionKey === 'THEIR_ATTITUDE' ? 'OTHER_PERSON' : card.positionKey === 'RELATIONSHIP_DIRECTION' ? 'RELATIONSHIP' : 'QUESTION_CONTEXT';
+      const orientationLabel = card.orientation === 'UPRIGHT' ? '정방향' : '역방향';
+      const positionLabel = positionLabels[card.positionKey] ?? card.positionKey;
+      const activeMeaning = card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed;
       return { cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex, positionKey: card.positionKey,
-        nameKo: meaning.nameKo, orientationLabel: card.orientation === 'UPRIGHT' ? '정방향' : '역방향', positionLabel: positionLabels[card.positionKey] ?? card.positionKey,
-        activeMeaning: card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed,
+        nameKo: meaning.nameKo, orientationLabel, positionLabel, activeMeaning,
+        meaningProvenance: { meaningVersion: TAROT_MEANING_VERSION, cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex, positionKey: card.positionKey },
+        selectedDirectionBasisKo: `“${positionLabel}” 위치의 ${meaning.nameKo} ${orientationLabel}에 주어진 상징 키워드는 ${activeMeaning.join(', ')}입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다.`,
         symbolicFrame: { evidenceKind: 'SYMBOLIC_NOT_OBSERVED', subjectRole, meaningSource: 'activeMeaning', certainty: 'POSSIBILITY' },
         meaningVersion: TAROT_MEANING_VERSION };
     });
