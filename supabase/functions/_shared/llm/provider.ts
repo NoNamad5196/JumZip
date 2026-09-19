@@ -1,4 +1,6 @@
 import type { LLMMessage } from '../persona/prompt.ts';
+import { getChatResponseDefinition, type ChatResponseContract } from './chat-contract.ts';
+export { CHAT_RESPONSE_SCHEMA } from './chat-contract.ts';
 
 export type LLMErrorCode = 'LLM_NOT_CONFIGURED' | 'LLM_TIMEOUT' | 'LLM_UNAVAILABLE' | 'LLM_AUTH_FAILED' | 'LLM_RATE_LIMITED' | 'LLM_INVALID_RESPONSE';
 export class LLMError extends Error {
@@ -9,9 +11,9 @@ export class LLMError extends Error {
 export interface ProviderResult { content: string; model: string; usage?: { promptTokens: number; completionTokens: number } }
 export interface StructuredRequest<T> { messages: readonly LLMMessage[]; schema: Record<string, unknown>; validate: (value: unknown) => T; name?: string }
 export interface LLMProvider {
-  generateChat(messages: readonly LLMMessage[]): Promise<ProviderResult>;
+  generateChat(messages: readonly LLMMessage[], contract?: ChatResponseContract): Promise<ProviderResult>;
   generateStructured<T>(input: StructuredRequest<T>): Promise<T>;
-  repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[]): Promise<ProviderResult>;
+  repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[], contract?: ChatResponseContract): Promise<ProviderResult>;
 }
 export interface OpenAICompatibleConfig {
   baseUrl: string; apiKey?: string; model: string; fetchImpl?: typeof fetch;
@@ -19,14 +21,6 @@ export interface OpenAICompatibleConfig {
   /** Use json_object for a provider without strict JSON Schema support; runtime validation remains mandatory. */
   structuredFormat?: 'json_schema' | 'json_object';
 }
-
-export const CHAT_RESPONSE_SCHEMA: Record<string, unknown> = {
-  type: 'object', additionalProperties: false, required: ['text', 'toolReferences'],
-  properties: {
-    text: { type: 'string', minLength: 1, maxLength: 6000 },
-    toolReferences: { type: 'array', maxItems: 3, items: { type: 'object', additionalProperties: false, required: ['cardId', 'orientation', 'positionIndex'], properties: { cardId: { type: 'integer', minimum: 0, maximum: 21 }, orientation: { type: 'string', enum: ['UPRIGHT', 'REVERSED'] }, positionIndex: { type: 'integer', minimum: 0, maximum: 2 } } } },
-  },
-};
 
 // Bound decoded transport bytes before JSON allocation. A provider may omit or lie about
 // Content-Length, and Response.text() would allocate the entire body before validation.
@@ -43,6 +37,12 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
   try { base = new URL(config.baseUrl); } catch { throw new LLMError('LLM_NOT_CONFIGURED', false); }
   if (!['https:', 'http:'].includes(base.protocol) || base.username || base.password || base.search || base.hash) throw new LLMError('LLM_NOT_CONFIGURED', false);
   const url = config.baseUrl.replace(/\/+$/, '').replace(/\/chat\/completions$/, '') + '/chat/completions';
+  // Cloudflare's Gemma4 example explicitly disables reasoning this way. Keep this
+  // narrow to its actual account API + exact model; other compatible APIs differ.
+  // https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/
+  const cloudflareGemma = base.origin === 'https://api.cloudflare.com'
+    && /^\/client\/v4\/accounts\/[^/]+\/ai\/v1(?:\/chat\/completions)?\/?$/.test(base.pathname)
+    && config.model === '@cf/google/gemma-4-26b-a4b-it';
   const fetchImpl = config.fetchImpl ?? globalThis.fetch;
   const initialTimeout = Math.min(config.initialTimeoutMs ?? 60_000, 60_000);
   const repairTimeout = Math.min(config.repairTimeoutMs ?? 30_000, 30_000);
@@ -69,6 +69,7 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
         method: 'POST', signal: controller.signal,
         headers: { 'Content-Type': 'application/json', ...(config.apiKey ? { Authorization: `Bearer ${config.apiKey}` } : {}) },
         body: JSON.stringify({ model: config.model, messages: requestMessages, temperature, max_tokens: config.maxOutputTokens ?? 900, stream: false,
+          ...(cloudflareGemma ? { chat_template_kwargs: { enable_thinking: false } } : {}),
           response_format: config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } } }),
       });
       if (controller.signal.aborted) { cancelWithoutWaiting(response.body); throw new LLMError('LLM_TIMEOUT'); }
@@ -119,8 +120,14 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
     { role: 'user', content: `응답 검증에 실패했습니다. JSON Schema와 실제 도구 자료를 다시 대조해 JSON 객체 하나를 출력하세요. requiredToolReferences가 있으면 그대로 복사하고, 미확정 값과 가능한 점수 전체를 유지하세요. 시스템의 캐릭터와 원본 도구 결과를 변경하지 않습니다. 오류: ${JSON.stringify(issues)}` },
   ];
   return {
-    generateChat: messages => request(messages, CHAT_RESPONSE_SCHEMA, 'jumzip_chat', initialTimeout, 0.65),
-    repairChat: (messages, output, issues) => request(repairMessages(messages, output, issues), CHAT_RESPONSE_SCHEMA, 'jumzip_chat', repairTimeout, 0.15),
+    generateChat: (messages, contract) => {
+      const { schema, name } = getChatResponseDefinition(contract);
+      return request(messages, schema, name, initialTimeout, 0.65);
+    },
+    repairChat: (messages, output, issues, contract) => {
+      const { schema, name } = getChatResponseDefinition(contract);
+      return request(repairMessages(messages, output, issues), schema, name, repairTimeout, 0.15);
+    },
     async generateStructured<T>(input: StructuredRequest<T>): Promise<T> {
       const first = await request(input.messages, input.schema, input.name ?? 'jumzip_structured', initialTimeout, 0.1);
       try { return input.validate(JSON.parse(first.content)); } catch { /* One controlled repair, no recursive retry. */ }

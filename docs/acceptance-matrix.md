@@ -4,6 +4,12 @@ Checkpoint: 2026-09-20 07:12 KST. **Core v1 and authenticated public-release acc
 
 Source: [Engineering](https://app.notion.com/p/3df7cdef782d81d7b3a6d28b604f050f), [API](https://app.notion.com/p/3e07cdef782d8132bd82f38ad9a171c9), [Acceptance](https://app.notion.com/p/3e07cdef782d81da92ecf20053a3bff9). User-approved M7.5 and M9 conventions are recorded in their rule documents.
 
+Follow-up: the631-test deletion-race checkpoint is now `b731b5595d9e694e7d66021439fde8906a422f37`, pushed with [actual CI success](https://github.com/NoNamad5196/JumZip/actions/runs/35472752404). Its public bundle verification also passed; new Persona-v8 work remains a separate candidate.
+
+07:49 candidate update: **717 unit/component tests, TypeScript, lint, build, asset/credential scans and6 browser regressions pass;3 live tests remain skipped.** The font-export correction passed actual PNG inspection and32 populated fixture views at the four exact required sizes with normal/reduced motion. [Actual local lifecycle](evidence/frontend-local-authenticated-lifecycle.json) adds6 database/RLS checks and4 explicitly synthetic transport/session-event checks, with complete identity cleanup. These narrow M13/M16/M17 gaps are verified locally; public Auth, Google linking and full semantic release acceptance remain open. Persona-v8/Intent-v3 have no live result or production deployment yet.
+
+The font-export frontend received Pages Success at approximately07:52 KST; [public byte/render verification](evidence/frontend-variable-font-public.json) confirms all10 build files and4 guest views. This deploys the frontend correction only. The server remains Qwen/Persona-v4/Intent-v1; challenge DNS failures and successful public signup remain unresolved.
+
 | Milestone | Implemented and verified evidence | Remaining acceptance |
 | --- | --- | --- |
 | M0 Bootstrap | React/Vite/TS, pnpm lock, lint, CI; b3124e2 actual CI passed with604 tests /3 live skips and6 browser tests; Docker recovered, local001–015/Edge/native provider exercised | Next checkpoint CI; local Vector log collector is stopped until a supported endpoint is configured |

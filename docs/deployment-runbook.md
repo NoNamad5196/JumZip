@@ -33,6 +33,8 @@ The v5–v7 and Intent-v2 source checkpoints are benchmark candidates, not an in
 
 The deletion hotfix release was reconstructed from commit `ea3d0a4797a2ec19acfb711d72147efb839e53eb` in an isolated ignored staging directory, with only `orchestration/execute.ts`, `saju.ts` and `compatibility.ts` overlaid. All53 staged files were compared with the baseline and its TypeScript check passed. The [release manifest](evidence/edge-deletion-guard-release.json) records every file hash. Five functions were deployed and the [actual post-deploy flow](evidence/backend-edge-mini-smoke-deletion-guard.json) passed20/20. Reproduce an intended release from that manifest, or accept and verify a new candidate explicitly before replacing it.
 
+`node scripts/prepare-verified-edge-release.mjs --check` verifies that manifest against committed Git objects without writing a stage. Omit `--check` to reconstruct all53 exact files in a new ignored `supabase/.temp/verified-edge-*` directory and read back their SHA-256 values. It checks the complete baseline file tree, allowed paths, unique entries, changed-file list and prompt versions; candidate working files are never copied. It does not deploy or contact any service. A shallow checkout lacking the recorded baseline/overlay objects must fetch the required history before this can work. Use the printed stage as `--workdir` and its absolute `supabase/functions/deno.json` as `--import-map` when intentionally redeploying that same accepted release.
+
 Deploy with:
 
 ```powershell

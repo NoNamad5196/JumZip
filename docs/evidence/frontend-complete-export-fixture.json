@@ -1,0 +1,493 @@
+{
+  "checkedAt": "2026-09-19T22:45:33.301Z",
+  "mode": "LOCAL_PRODUCTION_BUILD_INTERCEPTED_FIXTURE",
+  "realAuth": false,
+  "realBackendWrites": false,
+  "modelCalls": 0,
+  "externalRequestsAllowed": false,
+  "indexSha256": "0257a82ff14a3531e9338250847381cbd0ded45d97ff3f3dfa7f84e7579a6c65",
+  "csp": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+  "messageCount": 1005,
+  "cases": [
+    {
+      "kind": "tarot",
+      "messageCount": 1005,
+      "completeOnly": true,
+      "failedPageThenRecovered": true,
+      "errors": [],
+      "failureScreenshot": "tests/ui/artifacts/acceptance-v1/export-tarot-middle-page-error.png",
+      "domScreenshot": "tests/ui/artifacts/acceptance-v1/export-tarot-source-dom.png",
+      "heroScreenshot": "tests/ui/artifacts/acceptance-v1/export-tarot-source-hero.png",
+      "clipboardEqualsExportDOMAfterPlatformNewlineNormalization": true,
+      "birthCanariesHiddenByDefault": true,
+      "latestInterpretationsComplete": true,
+      "image": {
+        "path": "tests/ui/artifacts/acceptance-v1/export-tarot-default.png",
+        "width": 640,
+        "height": 6258,
+        "bytes": 3773867,
+        "sha256": "06b17e09840a93f3574785ddc178fe0b8f7763405a7f9cd7885f03abdc744150",
+        "generationMs": 2541,
+        "reviewCaptures": [
+          "tests/ui/artifacts/acceptance-v1/export-tarot-default-top.png",
+          "tests/ui/artifacts/acceptance-v1/export-tarot-default-middle.png",
+          "tests/ui/artifacts/acceptance-v1/export-tarot-default-bottom.png"
+        ]
+      },
+      "pages": [
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 1005,
+          "phase": "hold"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 805,
+          "phase": "hold"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "hold"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 1005,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 805,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "fail"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 1005,
+          "phase": "success"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 805,
+          "phase": "success"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 605,
+          "phase": "success"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 405,
+          "phase": "success"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 205,
+          "phase": "success"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009002",
+          "remaining": 5,
+          "phase": "success"
+        }
+      ],
+      "geometry": {
+        "width": 360,
+        "height": 800,
+        "scrollWidth": 360,
+        "csp": [],
+        "brokenImages": 0,
+        "clippedCells": []
+      }
+    },
+    {
+      "kind": "saju",
+      "messageCount": 1005,
+      "completeOnly": true,
+      "failedPageThenRecovered": false,
+      "errors": [],
+      "domScreenshot": "tests/ui/artifacts/acceptance-v1/export-saju-source-dom.png",
+      "heroScreenshot": "tests/ui/artifacts/acceptance-v1/export-saju-source-hero.png",
+      "shinsalDomScreenshot": "tests/ui/artifacts/acceptance-v1/export-saju-shinsal-source-dom.png",
+      "shinsalGeometry": [
+        {
+          "heading": {
+            "x": 47,
+            "y": 111.296875,
+            "width": 69.5625,
+            "height": 27,
+            "top": 111.296875,
+            "right": 116.5625,
+            "bottom": 138.296875,
+            "left": 47
+          },
+          "badge": {
+            "x": 130.5625,
+            "y": 113.046875,
+            "width": 39.34375,
+            "height": 23.5,
+            "top": 113.046875,
+            "right": 169.90625,
+            "bottom": 136.546875,
+            "left": 130.5625
+          },
+          "paragraph": {
+            "x": 47,
+            "y": 150.296875,
+            "width": 266,
+            "height": 20.390625,
+            "top": 150.296875,
+            "right": 313,
+            "bottom": 170.6875,
+            "left": 47
+          }
+        },
+        {
+          "heading": {
+            "x": 47,
+            "y": 237.6875,
+            "width": 69.5625,
+            "height": 27,
+            "top": 237.6875,
+            "right": 116.5625,
+            "bottom": 264.6875,
+            "left": 47
+          },
+          "badge": {
+            "x": 130.5625,
+            "y": 239.4375,
+            "width": 39.34375,
+            "height": 23.5,
+            "top": 239.4375,
+            "right": 169.90625,
+            "bottom": 262.9375,
+            "left": 130.5625
+          },
+          "paragraph": {
+            "x": 47,
+            "y": 276.6875,
+            "width": 266,
+            "height": 20.390625,
+            "top": 276.6875,
+            "right": 313,
+            "bottom": 297.078125,
+            "left": 47
+          }
+        },
+        {
+          "heading": {
+            "x": 47,
+            "y": 364.078125,
+            "width": 34.78125,
+            "height": 27,
+            "top": 364.078125,
+            "right": 81.78125,
+            "bottom": 391.078125,
+            "left": 47
+          },
+          "badge": {
+            "x": 95.78125,
+            "y": 365.828125,
+            "width": 39.34375,
+            "height": 23.5,
+            "top": 365.828125,
+            "right": 135.125,
+            "bottom": 389.328125,
+            "left": 95.78125
+          },
+          "paragraph": {
+            "x": 47,
+            "y": 403.078125,
+            "width": 266,
+            "height": 20.390625,
+            "top": 403.078125,
+            "right": 313,
+            "bottom": 423.46875,
+            "left": 47
+          }
+        },
+        {
+          "heading": {
+            "x": 47,
+            "y": 490.46875,
+            "width": 34.78125,
+            "height": 27,
+            "top": 490.46875,
+            "right": 81.78125,
+            "bottom": 517.46875,
+            "left": 47
+          },
+          "badge": {
+            "x": 95.78125,
+            "y": 492.21875,
+            "width": 39.34375,
+            "height": 23.5,
+            "top": 492.21875,
+            "right": 135.125,
+            "bottom": 515.71875,
+            "left": 95.78125
+          },
+          "paragraph": {
+            "x": 47,
+            "y": 529.46875,
+            "width": 266,
+            "height": 20.390625,
+            "top": 529.46875,
+            "right": 313,
+            "bottom": 549.859375,
+            "left": 47
+          }
+        },
+        {
+          "heading": {
+            "x": 47,
+            "y": 616.859375,
+            "width": 69.5625,
+            "height": 27,
+            "top": 616.859375,
+            "right": 116.5625,
+            "bottom": 643.859375,
+            "left": 47
+          },
+          "badge": {
+            "x": 130.5625,
+            "y": 618.609375,
+            "width": 39.34375,
+            "height": 23.5,
+            "top": 618.609375,
+            "right": 169.90625,
+            "bottom": 642.109375,
+            "left": 130.5625
+          },
+          "paragraph": {
+            "x": 47,
+            "y": 655.859375,
+            "width": 266,
+            "height": 20.390625,
+            "top": 655.859375,
+            "right": 313,
+            "bottom": 676.25,
+            "left": 47
+          }
+        }
+      ],
+      "clipboardEqualsExportDOMAfterPlatformNewlineNormalization": true,
+      "birthCanariesHiddenByDefault": true,
+      "latestInterpretationsComplete": true,
+      "image": {
+        "path": "tests/ui/artifacts/acceptance-v1/export-saju-default.png",
+        "width": 640,
+        "height": 12542,
+        "bytes": 783122,
+        "sha256": "e094c351e1dedfef118fe9b02d4da27f4196824139f5fb79bb89e93bbb9fab69",
+        "generationMs": 2270,
+        "reviewCaptures": [
+          "tests/ui/artifacts/acceptance-v1/export-saju-default-top.png",
+          "tests/ui/artifacts/acceptance-v1/export-saju-default-middle.png",
+          "tests/ui/artifacts/acceptance-v1/export-saju-default-bottom.png"
+        ]
+      },
+      "explicitBirthOnly": true,
+      "includingBirthImage": {
+        "path": "tests/ui/artifacts/acceptance-v1/export-saju-explicit-birth.png",
+        "width": 640,
+        "height": 13158,
+        "bytes": 825753,
+        "sha256": "c54efd20f66b5edbcb1f5535a41233fb260690f5ccfde8e4360bff6208195b8f",
+        "generationMs": 1946
+      },
+      "pages": [
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 1005,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 805,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 605,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 405,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 205,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009003",
+          "remaining": 5,
+          "phase": "none"
+        }
+      ],
+      "geometry": {
+        "width": 360,
+        "height": 800,
+        "scrollWidth": 360,
+        "csp": [],
+        "brokenImages": 0,
+        "clippedCells": []
+      }
+    },
+    {
+      "kind": "compatibility",
+      "messageCount": 1005,
+      "completeOnly": true,
+      "failedPageThenRecovered": false,
+      "errors": [],
+      "domScreenshot": "tests/ui/artifacts/acceptance-v1/export-compatibility-source-dom.png",
+      "heroScreenshot": "tests/ui/artifacts/acceptance-v1/export-compatibility-source-hero.png",
+      "clipboardEqualsExportDOMAfterPlatformNewlineNormalization": true,
+      "birthCanariesHiddenByDefault": true,
+      "latestInterpretationsComplete": true,
+      "image": {
+        "path": "tests/ui/artifacts/acceptance-v1/export-compatibility-default.png",
+        "width": 532,
+        "height": 16384,
+        "bytes": 998178,
+        "sha256": "55260615880ebd99d99ca4041b3d5842a8510a0f9878c14d49c17a8caa1bd5af",
+        "generationMs": 2473,
+        "reviewCaptures": [
+          "tests/ui/artifacts/acceptance-v1/export-compatibility-default-top.png",
+          "tests/ui/artifacts/acceptance-v1/export-compatibility-default-middle.png",
+          "tests/ui/artifacts/acceptance-v1/export-compatibility-default-bottom.png"
+        ]
+      },
+      "pages": [
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 1005,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 805,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 605,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 405,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 205,
+          "phase": "none"
+        },
+        {
+          "consultation": "22222222-2222-4222-8222-000000009005",
+          "remaining": 5,
+          "phase": "none"
+        }
+      ],
+      "geometry": {
+        "width": 360,
+        "height": 800,
+        "scrollWidth": 360,
+        "csp": [],
+        "brokenImages": 0,
+        "clippedCells": []
+      }
+    }
+  ],
+  "unexpectedRequests": [],
+  "passed": true,
+  "passScope": "AUTOMATED_CHECKS_AND_REVIEWED_PNG_REGIONS",
+  "visualReview": {
+    "status": "PASS_WITH_OBSERVATIONS",
+    "reviewerKind": "AI",
+    "reviewer": "Codex / contracts_audit",
+    "scope": "All three default PNG top/middle/bottom regions plus explicit-birth footer were directly inspected; source DOM crops compared. This is not pixel-level inspection of every row.",
+    "files": [
+      "tests/ui/artifacts/acceptance-v1/export-tarot-default-top.png",
+      "tests/ui/artifacts/acceptance-v1/export-tarot-default-middle.png",
+      "tests/ui/artifacts/acceptance-v1/export-tarot-default-bottom.png",
+      "tests/ui/artifacts/acceptance-v1/export-saju-default-top.png",
+      "tests/ui/artifacts/acceptance-v1/export-saju-default-middle.png",
+      "tests/ui/artifacts/acceptance-v1/export-saju-default-bottom.png",
+      "tests/ui/artifacts/acceptance-v1/export-compatibility-default-top.png",
+      "tests/ui/artifacts/acceptance-v1/export-compatibility-default-middle.png",
+      "tests/ui/artifacts/acceptance-v1/export-compatibility-default-bottom.png",
+      "tests/ui/artifacts/acceptance-v1/export-saju-explicit-birth-bottom.png",
+      "tests/ui/artifacts/acceptance-v1/export-saju-shinsal-source-dom.png",
+      "tests/ui/artifacts/acceptance-v1/export-compatibility-source-hero.png"
+    ],
+    "resolved": [
+      "Saju names/badges retain their correct embedded variable font; no wrapping into the description in reviewed rows.",
+      "Tarot final paragraph and footer no longer overlap."
+    ],
+    "observations": [
+      "The Korean title word 가능한 wraps across lines identically in source DOM and PNG; no clipping/overlap. It was not changed as an export defect.",
+      "Very long compatibility image is proportionally downscaled by the library to 16384px height; reviewed text is legible when opened at its natural size.",
+      "One earlier full-batch first export timed out; isolated reruns succeeded. Latest generation durations are per case; no claim that intermittent timeout root cause is established."
+    ]
+  },
+  "diagnosticHistory": [
+    {
+      "issue": "Variable-font src removed by preferredFontFormat woff2, causing fallback-font wrapping and overlap in exported PNG only.",
+      "correction": "Removed exact-format restriction in Reading.tsx download; woff2-variations sources are embedded."
+    },
+    {
+      "issue": "One initial full-batch export timed out after 120000 ms following the font correction.",
+      "reproduction": "Subsequent isolated exports completed. Intermittent delay cause not established; rerun durations are recorded without claiming the initial timeout did not occur."
+    }
+  ],
+  "limits": [
+    "Synthetic authenticated state and mocked backend only; no public Auth, OAuth, CAPTCHA, real DB mutation or model inference was exercised.",
+    "This test does not replace original full Persona benchmark or authenticated public end-to-end acceptance.",
+    "Only public build files, synthetic test data and local screenshots/downloads are recorded; no real credential or session is used."
+  ],
+  "includingBirthReview": {
+    "status": "PASS",
+    "file": "tests/ui/artifacts/acceptance-v1/export-saju-explicit-birth-bottom.png",
+    "description": "Explicitly included synthetic date, time and city are visible; coordinates omitted."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-09-19T22:28:08.359Z",
+  "scope": "LOCAL_SYNTHETIC_UI_FIXTURE_SETUP_AND_CLEANUP",
+  "callbackCompleted": true,
+  "counts": {
+    "authRequests": 12,
+    "restRequests": 54,
+    "blockedDestinations": 0
+  },
+  "cleanup": [
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "credentialsPersisted": false,
+  "publicSignupTested": false,
+  "fixtureModelRequests": 0,
+  "browserModelRequests": "Caller must record its separate network guard."
+}

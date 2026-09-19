@@ -1,0 +1,702 @@
+{
+  "version": "JumZipIntentV3Eval-v1",
+  "synthetic": true,
+  "source": "Engineering §11/11.1 and unchanged original v5 inputs/tool expectations",
+  "cases": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "RECALL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "실제 Qwen 오분류 질문 그대로",
+        "취미 회상을 타고난 성향으로 바꾸지 않음",
+        "분류 실패로 null인 것을 정상 무추천으로 집계하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "1013ee5c065fc5540e7ce100e6dbc7a98ea924526cebab2f73e62c07ae6d0eef"
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "RECALL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "프로필 존재 boolean만 바꿔도 회상 목적은 같음",
+        "birth-data 존재로 사주 추천을 강제하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "82446d9fb7c4d3eed16fb85f6def4142494f42eb68368fbb712e943f269e99b4"
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "종이별을 좋아한다는 얘기는 이제 기억하지 마.",
+        "recentMessages": [
+          {
+            "role": "assistant",
+            "content": "타고난 성향을 사주로 살펴볼 수도 있어."
+          }
+        ],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "MEMORY_CONTROL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "기억 거부는 현재의 관리 요청",
+        "과거 assistant의 사주 제안을 현재 선택으로 승격하지 않음",
+        "삭제 실행 여부는 분류기가 주장하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "9838c188133438ac85bf40408a22aff6c71160fc1660220358e6cd70957198a6"
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "나는 요즘 조용히 종이별 접는 시간이 제일 좋아.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "PREFERENCE_SHARING"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "현재 선호 공유를 선천 성향 질문으로 확대하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "2c54ddcc956abadd8486d63fe077355157c29a081fb51659c1db6219614fd1e9"
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 타고난 기질이나 성향을 이해하고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "NATAL"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "natal_character"
+        ],
+        "explicitTool": null,
+        "missingSlots": [
+          "ownBirthData"
+        ],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "선천적 성향에 대한 의미상 요청은 기존 natal 행렬로 연결",
+        "단순 회상과 구분하며 없는 원국을 계산했다고 하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "4fbbc35065667dde03dc318285bd90e6bda185cc9ba836af2940d08155ad23d2"
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내 취미 기억해? 이번 주 모임에서 먼저 인사할지 타로로도 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "GENERAL_3",
+          "RELATIONSHIP_3",
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "general_concern",
+          "relationship_flow",
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "missingByIntent": {
+          "general_concern": [],
+          "relationship_flow": [
+            "targetPerson"
+          ],
+          "career_decision": [
+            "choices"
+          ]
+        },
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "회상 단어가 있어도 현재 긍정적 타로 요청을 제거하지 않음",
+        "원문 근거를 보존하고 실행은 하지 않음",
+        "모임 질문의 세부 spread는 원래 행렬의 허용 범위로 검토",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "6bc8d5f89de00a1f597aaccf925a113342c33a311e08c700d54f4e991a237163"
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "그 사람이 나를 기억하는지 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "target_feelings"
+        ],
+        "explicitTool": "TAROT",
+        "missingSlots": [
+          "targetPerson",
+          "recentSituation"
+        ],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "그 사람의 기억/마음 질문을 내 메모리 회상과 구분",
+        "도구가 상대의 실제 마음을 증명한다는 해석은 생성하지 않음",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "a87e6c4867695d81e1e3dc70513276fb39804a4848e65301e0851d7c419c15ca"
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "그 얘기는 기억하지 말고, 오늘 운세는 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "daily_fortune"
+        ],
+        "explicitTool": "TAROT",
+        "missingSlots": [],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      },
+      "reviewChecks": [
+        "저장 거부와 긍정적 타로 요청을 각각 존중",
+        "모든 기억 발화를 정규식으로 도구 금지하지 않음",
+        "현재 canonical API의 오늘 운세 모드는 DAILY이며 내부 한 장 spread와 구분",
+        "선택지 둘을 암묵적으로 만들지 않음; 관련 원문 대안만 근거로 인정",
+        "대상 언급을 별칭 확보로 바꾸지 않음; alias는 사용자 source에서 확인",
+        "정상 NONE과 검증 실패 null을 별도 집계"
+      ],
+      "inputSha256": "f84c21cde05857482cfb7b4055cf7e1c99ceee5f540104e72f887aa3a06d91c1"
+    },
+    {
+      "id": "v3-yearly-missing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "올해 전체 흐름이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "SEWOON"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "yearly_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:SEWOON"
+        ],
+        "missingSlots": [
+          "ownBirthData"
+        ]
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "5f9bfea0ff867e5b618eecc4ddae9838260240f42fc67fe5c0c72fa6b9e4fcb6"
+    },
+    {
+      "id": "v3-monthly-existing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "다음 달 흐름을 살펴보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "MONTHLY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "monthly_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:MONTHLY"
+        ],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "802c32b8b036600e59c614bb3fe39e0f20b04b8a18981856de20ba1a37e92beb"
+    },
+    {
+      "id": "v3-long-compatibility-missing-partner",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "달새와 삼 년째 만나고 있어. 장기적인 궁합이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "COMPATIBILITY",
+        "modes": [
+          "SAJU"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "long_term_compatibility"
+        ],
+        "explicitTool": null,
+        "aliasState": "ALIAS",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "COMPATIBILITY:SAJU",
+          "COMPATIBILITY:TAROT"
+        ],
+        "missingSlots": [
+          "partnerBirthData"
+        ]
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "f4bf7df8deafac90b2e1851040acc9be9e892c0d06898f02b6b1ebfde1f1ded1"
+    },
+    {
+      "id": "v3-long-compatibility-complete-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "우리의 장기적인 궁합이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": true
+      },
+      "expectedRecommendation": {
+        "recommendation": "COMPATIBILITY",
+        "modes": [
+          "SAJU"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "long_term_compatibility"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "COMPATIBILITY:SAJU"
+        ],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "670f9145ab89e814f00bee26f3f649dcba88571747d5c77c72d109c79d2b3238"
+    },
+    {
+      "id": "v3-decision-missing-context",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "진로 선택을 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:DECISION_3"
+        ],
+        "missingSlots": [
+          "choices",
+          "recentSituation"
+        ]
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "809032d6b9f18f256fe181ab33f538a72adeaf7c184d375cca7ad0f6910257b9"
+    },
+    {
+      "id": "v3-decision-two-real-choices",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "계약 갱신을 앞두고 있어. 직장을 유지할지 대학원에 진학할지 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 2,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:DECISION_3"
+        ],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "9575fa3164102a296d4afde8bf5138da2f652b28e9bc979564e196748946d173"
+    },
+    {
+      "id": "v3-relationship-resolved-alias-period",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "달새와 다음 달 관계가 어떻게 흘러갈지 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "relationship_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "ALIAS",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:RELATIONSHIP_3"
+        ],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "4e27a8c9b04367a3bddcfd6ebfb7207147f1df24bb6edd10024f754aebd40817"
+    },
+    {
+      "id": "v3-explicit-saju-daily",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "오늘 운세는 사주로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "daily_fortune"
+        ],
+        "explicitTool": "SAJU",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:DAILY"
+        ],
+        "missingSlots": [
+          "ownBirthData"
+        ]
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "87edb03827a11ce3f1f0afa5fdf20d8218cf3eeed64e55c04870dc6efaa4b5b8"
+    },
+    {
+      "id": "v3-general-concern",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "요즘 마음이 복잡해서 그냥 이야기하고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "GENERAL_CHAT"
+        ],
+        "intents": [
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "401198caed63854782fdc6dcff0c05c33f0f41eff086066ff235e0b324a7f44f"
+    },
+    {
+      "id": "v3-small-talk",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "안녕, 오늘은 가볍게 수다 떨고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "GENERAL_CHAT"
+        ],
+        "intents": [
+          "small_talk"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [],
+        "missingSlots": []
+      },
+      "reviewChecks": [
+        "Engineering §11.1 의도·도구·필요 슬롯 매핑",
+        "선택지/별칭 인용의 출처뿐 아니라 실제 의미와 문맥 관련성 검토",
+        "출생자료 값은 입력하지 않으며 availability boolean만 사용"
+      ],
+      "inputSha256": "e860401d0b9b2caf58c50c476fc2ac0c54bb7b92b1eb682bac242bf6529e3656"
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "checkedAt": "2026-09-19T22:36:48.353Z",
+  "mode": "LOCAL_PRODUCTION_BUILD_INTERCEPTED_FIXTURE",
+  "realAuth": false,
+  "realBackendWrites": false,
+  "modelCalls": 0,
+  "externalRequestsAllowed": false,
+  "indexSha256": "0257a82ff14a3531e9338250847381cbd0ded45d97ff3f3dfa7f84e7579a6c65",
+  "csp": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1280,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      360,
+      800
+    ]
+  ],
+  "motionModes": [
+    "no-preference",
+    "reduce"
+  ],
+  "views": [
+    {
+      "name": "chat",
+      "motion": "no-preference",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-1440x900-no-preference.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "no-preference",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-1440x900-no-preference.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "no-preference",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-1440x900-no-preference.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "no-preference",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-1440x900-no-preference.png"
+    },
+    {
+      "name": "chat",
+      "motion": "reduce",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-1440x900-reduce.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "reduce",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-1440x900-reduce.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "reduce",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-1440x900-reduce.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "reduce",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-1440x900-reduce.png"
+    },
+    {
+      "name": "chat",
+      "motion": "no-preference",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-1280x800-no-preference.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "no-preference",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-1280x800-no-preference.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "no-preference",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-1280x800-no-preference.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "no-preference",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-1280x800-no-preference.png"
+    },
+    {
+      "name": "chat",
+      "motion": "reduce",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-1280x800-reduce.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "reduce",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-1280x800-reduce.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "reduce",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-1280x800-reduce.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "reduce",
+      "width": 1280,
+      "height": 800,
+      "scrollWidth": 1280,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-1280x800-reduce.png"
+    },
+    {
+      "name": "chat",
+      "motion": "no-preference",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-390x844-no-preference.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "no-preference",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-390x844-no-preference.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "no-preference",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-390x844-no-preference.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "no-preference",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-390x844-no-preference.png"
+    },
+    {
+      "name": "chat",
+      "motion": "reduce",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-390x844-reduce.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "reduce",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-390x844-reduce.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "reduce",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-390x844-reduce.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "reduce",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-390x844-reduce.png"
+    },
+    {
+      "name": "chat",
+      "motion": "no-preference",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-360x800-no-preference.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "no-preference",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-360x800-no-preference.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "no-preference",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-360x800-no-preference.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "no-preference",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-360x800-no-preference.png"
+    },
+    {
+      "name": "chat",
+      "motion": "reduce",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "completeVisibleReply": true,
+        "partialRetryAvailable": true,
+        "detailLink": true,
+        "keyboardEscapeFocusReturn": true,
+        "syntheticChatRequests": 1
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/chat-360x800-reduce.png"
+    },
+    {
+      "name": "saju-known",
+      "motion": "reduce",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "knownPillarsVisible": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-known-360x800-reduce.png"
+    },
+    {
+      "name": "saju-unknown",
+      "motion": "reduce",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "unknownHourPreserved": true,
+        "candidateSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/saju-unknown-360x800-reduce.png"
+    },
+    {
+      "name": "compatibility",
+      "motion": "reduce",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "clippedCells": [],
+      "checks": {
+        "bothPeopleVisible": true,
+        "uncertainPairSelectionUsable": true
+      },
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/acceptance-v1/compatibility-360x800-reduce.png"
+    }
+  ],
+  "unexpectedRequests": [],
+  "passed": true,
+  "limits": [
+    "Synthetic authenticated state and mocked backend only; no public Auth, OAuth, CAPTCHA, real DB mutation or model inference was exercised.",
+    "This test does not replace original full Persona benchmark or authenticated public end-to-end acceptance.",
+    "Only public build files, synthetic test data and local screenshots/downloads are recorded; no real credential or session is used."
+  ],
+  "passScope": "32_AUTOMATED_VIEWS_WITH_REPRESENTATIVE_VISUAL_REVIEW",
+  "visualReview": {
+    "status": "PASS",
+    "reviewerKind": "AI",
+    "reviewer": "Codex / contracts_audit",
+    "scope": "All 32 views captured and geometry/CSP checked; representative full screenshots and six natural-width source crops directly inspected across all four viewport widths. No claim of visual inspection of every pixel.",
+    "files": [
+      "tests/ui/artifacts/acceptance-v1/chat-1440x900-no-preference.png",
+      "tests/ui/artifacts/acceptance-v1/chat-360x800-reduce.png",
+      "tests/ui/artifacts/acceptance-v1/review-compatibility-1280x800-no-preference-1600.png",
+      "tests/ui/artifacts/acceptance-v1/review-compatibility-390x844-reduce-500.png",
+      "tests/ui/artifacts/acceptance-v1/review-saju-known-1440x900-no-preference-1300.png",
+      "tests/ui/artifacts/acceptance-v1/review-saju-known-390x844-no-preference-3550.png",
+      "tests/ui/artifacts/acceptance-v1/review-saju-unknown-360x800-reduce-3200.png",
+      "tests/ui/artifacts/acceptance-v1/review-saju-unknown-360x800-reduce-530.png"
+    ],
+    "observations": [
+      "Mobile known and unknown pillars, candidate-specific details and current luck date rows fit without clipping in reviewed crops.",
+      "Full-length mobile screenshots are too tall for automatic scaled previews, so natural-width crops were separately reviewed.",
+      "Ordinary Korean syllable wrapping remains in prose and the long title; it does not cover adjacent content."
+    ]
+  }
+}

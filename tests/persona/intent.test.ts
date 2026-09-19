@@ -7,7 +7,8 @@ const output = (intent: Intent, extra: Record<string, unknown> = {}) => ({
   requestPurpose: ['small_talk', 'general_concern'].includes(intent) ? 'GENERAL_CHAT' : 'FORTUNE_EXPLORATION',
   intentEvidenceQuote: '우리 관계가 궁금해.',
   intent, explicitTool: null, explicitToolQuote: null,
-  targetPersonPresent: false, recentSituationPresent: false, periodPresent: false, choicesPresent: false, highStakes: false, ...extra,
+  targetAliasEvidence: { state: 'UNRESOLVED', source: null, quote: null }, choicesEvidence: [],
+  recentSituationPresent: false, periodPresent: false, highStakes: false, ...extra,
 });
 const input = (extra: Partial<IntentInput> = {}): IntentInput => ({ currentMessage: '우리 관계가 궁금해.', hasOwnBirthData: false, hasPartnerBirthData: false, ...extra });
 function testProvider(value: unknown): LLMProvider & { requests: StructuredRequest<unknown>[] } {
@@ -36,7 +37,9 @@ describe('M11 structured intent → deterministic recommendation matrix', () => 
   });
 
   it('uses server birth availability and offers Tarot compatibility when partner data is missing', async () => {
-    const result = await extractToolRecommendation(testProvider(output('long_term_compatibility', { targetPersonPresent: true, recentSituationPresent: true })), input({ hasOwnBirthData: true }));
+    const result = await extractToolRecommendation(testProvider(output('long_term_compatibility', {
+      targetAliasEvidence: { state: 'ALIAS', source: -1, quote: '달새' }, recentSituationPresent: true,
+    })), input({ currentMessage: '상대 별칭은 달새야. 우리 관계가 궁금해.', hasOwnBirthData: true }));
     expect(result?.recommendedTools).toEqual([
       expect.objectContaining({ tool: 'COMPATIBILITY', mode: 'SAJU', missingSlots: ['partnerBirthData'] }),
       expect.objectContaining({ tool: 'COMPATIBILITY', mode: 'TAROT', missingSlots: [] }),
@@ -61,9 +64,13 @@ describe('M11 structured intent → deterministic recommendation matrix', () => 
   });
 
   it('requests only slots the structured input did not establish', async () => {
-    const relation = await extractToolRecommendation(testProvider(output('target_feelings', { targetPersonPresent: true })), input());
+    const relation = await extractToolRecommendation(testProvider(output('target_feelings', {
+      intentEvidenceQuote: '마음이 궁금해.', targetAliasEvidence: { state: 'ALIAS', source: -1, quote: '달새' },
+    })), input({ currentMessage: '달새의 마음이 궁금해.' }));
     expect(relation?.recommendedTools[0]?.missingSlots).toEqual(['recentSituation']);
-    const choices = await extractToolRecommendation(testProvider(output('career_decision', { choicesPresent: true })), input());
+    const choices = await extractToolRecommendation(testProvider(output('career_decision', {
+      intentEvidenceQuote: '직장을 유지할지 대학원에 진학할지', choicesEvidence: [{ source: -1, quote: '직장을 유지할지' }, { source: -1, quote: '대학원에 진학할지' }],
+    })), input({ currentMessage: '직장을 유지할지 대학원에 진학할지 고민이야.' }));
     expect(choices?.recommendedTools[0]?.missingSlots).toEqual(['recentSituation']);
   });
 

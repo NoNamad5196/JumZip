@@ -1,0 +1,29 @@
+{
+  "mode": "ZERO_NETWORK_BUDGET_PREPARATION",
+  "networkRequests": 0,
+  "preflightSha256": "141220d67f013be6c5aa4a7a8dba2394289f5c6aaaee101fecc61db182d6e57d",
+  "sameInputsOrderAndReviewChecksAsV7": true,
+  "forecast": {
+    "sameEntryPriorInputRatioAndOutput": 2786.346599587105,
+    "largestPriorRatioAndMeanPriorOutput": 2921.2606262778495,
+    "planningWith20PercentHeadroom": 3343.615919504526,
+    "all900OutputAtLargestPriorInputRatio": 4788.206568277849,
+    "sumOfByteBasedInitialReservations": 13508.425991999999,
+    "priorFull84ActualNeuronsIncludingRepair": 2504.0523129999983,
+    "priorFull84HttpAttempts": 85,
+    "assumptions": [
+      "Uses the same model previous fixed-case token/byte and output observations, not a tokenizer or usage bound",
+      "Previous outputs contain no v8 evidence: prior-output forecasts and their20percent headroom are optimistic scenarios, not validated v8 output estimates",
+      "Prompt changes can change response length, repair incidence and tokenizer ratio",
+      "Repairs are additional; any future live run needs a separate hard budget and pre-call reservation",
+      "No cached-input discount assumed",
+      "No final full84 live run is authorized by this file; Main must confirm account usage and budget"
+    ]
+  },
+  "peakSequentialReserveWithPriorOutput": 2929.062110180517,
+  "largestSingleReserve": 294.521127,
+  "tarotEvidenceRequests": 18,
+  "defaultRequests": 66,
+  "proposedHardCap": 3500,
+  "liveAuthorized": false
+}

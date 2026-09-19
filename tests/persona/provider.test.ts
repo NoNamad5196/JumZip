@@ -19,7 +19,7 @@ describe('OpenAI-compatible provider', () => {
     const body = JSON.parse(fetchImpl.mock.calls[0]![1]!.body as string);
     expect(fetchImpl.mock.calls[0]![0]).toBe('https://inference.example/v1/chat/completions');
     expect(body).toMatchObject({ model: 'selected-by-env', stream: false, response_format: { type: 'json_schema' } });
-    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v7' });
+    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v8' });
     expect(reply.segments).toHaveLength(2); expect(reply.repaired).toBe(false);
   });
   it('repairs malformed content exactly once and does not generate extra user messages', async () => {
@@ -94,13 +94,13 @@ describe('OpenAI-compatible provider', () => {
 describe('immutable tool validation', () => {
   const cards = drawTarot('ONE_CARD', () => 0);
   it('rejects changed card identity/orientation, added cards and unrequested calculations', () => {
-    expect(validateChatOutput(JSON.stringify({ text: '카드를 보자.', toolReferences: [{ cardId: 1, orientation: 'UPRIGHT', positionIndex: 0 }] }), { characterId: 'SANI', expectedCards: cards })).toMatchObject({ ok: false, issues: ['TOOL_RESULT_CHANGED'] });
+    expect(validateChatOutput(JSON.stringify({ text: '카드를 보자.', toolReferences: [{ cardId: 1, orientation: 'UPRIGHT', positionIndex: 0 }], interpretationEvidence: [] }), { characterId: 'SANI', expectedCards: cards })).toMatchObject({ ok: false, issues: ['TOOL_RESULT_CHANGED'] });
     expect(validateChatOutput(JSON.stringify({ text: '카드를 보자.', toolReferences: [{ cardId: 0, orientation: 'REVERSED', positionIndex: 0 }] }), { characterId: 'SANI', expectedCards: cards }).ok).toBe(false);
     expect(validateChatOutput(JSON.stringify({ text: '안녕', toolReferences: [], saju: { score: 99 } }), { characterId: 'SANI' }).ok).toBe(false);
   });
   it('passes the same authoritative draw through one interpretation repair', async () => {
     const original = JSON.stringify(cards);
-    const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(completion(good('카드가 바뀌었어.'))).mockResolvedValueOnce(completion(JSON.stringify({ text: '광대는 새 출발의 가능성을 보여줘. 준비할 것부터 보자.', toolReferences: [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0 }] })));
+    const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(completion(good('카드가 바뀌었어.'))).mockResolvedValueOnce(completion(JSON.stringify({ text: '광대는 새 출발의 가능성을 보여줘. 준비할 것부터 보자.', toolReferences: [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0 }], interpretationEvidence: [{ positionIndex: 0, keywordIndices: [0, 2], textEvidence: '새 출발의 가능성' }] })));
     const reply = await generatePersonaReply(createOpenAICompatibleProvider({ baseUrl: 'https://example.test/v1', model: 'model', fetchImpl }), { characterId: 'SANI', currentMessage: '이 카드 알려줘', toolResult: { cards: buildTarotInterpretationData(cards) } });
     expect(reply.repaired).toBe(true); expect(JSON.stringify(cards)).toBe(original); expect(reply.content).toContain('광대');
   });

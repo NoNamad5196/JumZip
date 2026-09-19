@@ -1,10 +1,37 @@
 import type { CharacterId } from '../persona/config.ts';
-import type { TarotCard } from '../domain/tarot.ts';
+import { getTarotMeaning, type TarotCard } from '../domain/tarot.ts';
+import { TAROT_EVIDENCE_SPAN_MAX_LENGTH } from './chat-contract.ts';
 export interface ToolReference { cardId: number; orientation: 'UPRIGHT' | 'REVERSED'; positionIndex: number }
 export interface ValidatedReply { text: string; toolReferences: ToolReference[] }
 export type ValidationResult = { ok: true; value: ValidatedReply } | { ok: false; issues: string[] };
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
 export interface ChatValidationOptions { characterId: CharacterId; expectedCards?: readonly TarotCard[]; toolResult?: unknown; currentMessage?: string }
+
+/** Lexical provenance only: this cannot prove meaning, negate claims, or detect empty-array evasion. */
+function tarotEvidenceIssues(value: Record<string, unknown>, text: string, cards: readonly TarotCard[]): string[] {
+  if (!Object.hasOwn(value, 'interpretationEvidence')) return ['TAROT_EVIDENCE_REQUIRED'];
+  const evidence = value.interpretationEvidence;
+  if (!Array.isArray(evidence) || evidence.length > 3) return ['TAROT_EVIDENCE_SHAPE_INVALID'];
+  const issues: string[] = [], positions = new Set<number>();
+  for (const item of evidence) {
+    if (!object(item) || Object.keys(item).some(key => !['positionIndex', 'keywordIndices', 'textEvidence'].includes(key)) || !Number.isInteger(item.positionIndex) || !Array.isArray(item.keywordIndices) || item.keywordIndices.length < 1 || item.keywordIndices.length > 5 || typeof item.textEvidence !== 'string' || !item.textEvidence.trim() || item.textEvidence.length > TAROT_EVIDENCE_SPAN_MAX_LENGTH) {
+      issues.push('TAROT_EVIDENCE_SHAPE_INVALID'); continue;
+    }
+    const position = item.positionIndex as number;
+    const card = cards.find(card => card.positionIndex === position);
+    if (!card || positions.has(position)) { issues.push('TAROT_EVIDENCE_POSITION_INVALID'); continue; }
+    positions.add(position);
+    const meaning = getTarotMeaning(card.cardId);
+    const keywords = card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed;
+    if (new Set(item.keywordIndices).size !== item.keywordIndices.length || item.keywordIndices.some(index => !Number.isInteger(index) || index < 0 || index >= keywords.length)) {
+      issues.push('TAROT_EVIDENCE_KEYWORD_INVALID'); continue;
+    }
+    const span = item.textEvidence;
+    if (!text.includes(span)) issues.push('TAROT_EVIDENCE_SPAN_MISSING');
+    if (item.keywordIndices.some(index => !span.includes(keywords[index]!))) issues.push('TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN');
+  }
+  return issues;
+}
 
 /** Deliberately narrow factual checks. These detect unsupported numerical claims observed
  * in the actual baseline; they do not certify natural-language semantics or persona quality. */
@@ -39,7 +66,9 @@ function groundedNumberIssues(text: string, options: ChatValidationOptions): str
 export function validateChatOutput(raw: string, options: ChatValidationOptions): ValidationResult {
   let value: unknown;
   try { value = JSON.parse(raw); } catch { return { ok: false, issues: ['JSON_REQUIRED'] }; }
-  if (!object(value) || Object.keys(value).some(key => !['text', 'toolReferences'].includes(key))) return { ok: false, issues: ['RESPONSE_SCHEMA_INVALID'] };
+  const expectsTarotEvidence = (options.expectedCards?.length ?? 0) > 0;
+  const allowedKeys = expectsTarotEvidence ? ['text', 'toolReferences', 'interpretationEvidence'] : ['text', 'toolReferences'];
+  if (!object(value) || Object.keys(value).some(key => !allowedKeys.includes(key))) return { ok: false, issues: ['RESPONSE_SCHEMA_INVALID'] };
   if (typeof value.text !== 'string' || value.text.trim().length < 1 || value.text.length > 6000 || !Array.isArray(value.toolReferences)) return { ok: false, issues: ['RESPONSE_SCHEMA_INVALID'] };
   const text = value.text.trim();
   const issues: string[] = [];
@@ -57,6 +86,7 @@ export function validateChatOutput(raw: string, options: ChatValidationOptions):
   }
   const expected = options.expectedCards ?? [];
   if (references.length !== expected.length || expected.some((card, index) => card.cardId !== references[index]?.cardId || card.orientation !== references[index]?.orientation || card.positionIndex !== references[index]?.positionIndex)) issues.push('TOOL_RESULT_CHANGED');
+  if (expectsTarotEvidence) issues.push(...tarotEvidenceIssues(value, text, expected));
   return issues.length ? { ok: false, issues: [...new Set(issues)] } : { ok: true, value: { text, toolReferences: references } };
 }
 

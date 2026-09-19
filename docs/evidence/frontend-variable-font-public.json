@@ -1,0 +1,329 @@
+{
+  "checkedAt": "2026-09-19T22:52:46.187Z",
+  "deployment": "Main-confirmed 717-test candidate; variable-font export fix",
+  "mode": "PUBLIC_GUEST_READ_ONLY_VARIABLE_FONT_DEPLOY",
+  "origin": "https://jumzip.pages.dev",
+  "sourceModified": false,
+  "formInteracted": false,
+  "captchaInteracted": false,
+  "captchaTokenRead": false,
+  "authenticationAttempted": false,
+  "modelCalls": 0,
+  "build": {
+    "index": {
+      "path": "/index.html",
+      "type": "HTML",
+      "status": 200,
+      "localSha256": "0257a82ff14a3531e9338250847381cbd0ded45d97ff3f3dfa7f84e7579a6c65",
+      "publicSha256": "0257a82ff14a3531e9338250847381cbd0ded45d97ff3f3dfa7f84e7579a6c65",
+      "match": true
+    },
+    "assets": [
+      {
+        "path": "/assets/AccountPages-CqZnzeAY.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "d534ec053ef0a5741404213825679a8f44c4973acc5f10578454bd735882a23b",
+        "publicSha256": "d534ec053ef0a5741404213825679a8f44c4973acc5f10578454bd735882a23b",
+        "match": true
+      },
+      {
+        "path": "/assets/Chat-5MzPyNx-.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "7d7a59ff0dff4572deb6a7506f5b44b7df12a285a4542d8bf3a8295101cc4873",
+        "publicSha256": "7d7a59ff0dff4572deb6a7506f5b44b7df12a285a4542d8bf3a8295101cc4873",
+        "match": true
+      },
+      {
+        "path": "/assets/CompatibilitySnapshot-BiaKKVU5.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "4730b310d0af3494e6bc41ae343e6617b935fd33b5436bfbfc3c1eb7b7858d57",
+        "publicSha256": "4730b310d0af3494e6bc41ae343e6617b935fd33b5436bfbfc3c1eb7b7858d57",
+        "match": true
+      },
+      {
+        "path": "/assets/ConnectionState-CG8KOMpa.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "96a270edb684715da70b24118f40964a267c6e4c7f53fb5dd519a96de5dc1f4c",
+        "publicSha256": "96a270edb684715da70b24118f40964a267c6e4c7f53fb5dd519a96de5dc1f4c",
+        "match": true
+      },
+      {
+        "path": "/assets/Reading-ur3mnGPB.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "ed279f100218272fcb0cb535e83d5845c8aa2576f12b1ba8288b4472fb4ca104",
+        "publicSha256": "ed279f100218272fcb0cb535e83d5845c8aa2576f12b1ba8288b4472fb4ca104",
+        "match": true
+      },
+      {
+        "path": "/assets/es-D4THWdz3.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+        "match": true
+      },
+      {
+        "path": "/assets/index-BWrAurif.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "464e6792c588c655b032c8616dd7423eb007199b9b57134452f2fe5117ceedd8",
+        "publicSha256": "464e6792c588c655b032c8616dd7423eb007199b9b57134452f2fe5117ceedd8",
+        "match": true
+      },
+      {
+        "path": "/assets/index-Cv2Nn-15.css",
+        "type": "CSS",
+        "status": 200,
+        "localSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "publicSha256": "2c54724c95f1c7098246eb06e5e117d784785f469d9e0d8135b7b3ae8f60b8cd",
+        "match": true
+      },
+      {
+        "path": "/assets/pagination-CaXgYgdm.js",
+        "type": "JS",
+        "status": 200,
+        "localSha256": "00429f219fe1bb8336f411f40e9185dda3061030d899bfcff0519a4698f6dd51",
+        "publicSha256": "00429f219fe1bb8336f411f40e9185dda3061030d899bfcff0519a4698f6dd51",
+        "match": true
+      }
+    ]
+  },
+  "routes": [
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [],
+      "submitDisabled": true,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/variable-font-public/onboarding-360.png",
+      "lightDomTurnstileIframeCount": 0
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "아랑ARANG",
+      "imageErrors": [],
+      "csp": [],
+      "submitDisabled": true,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/variable-font-public/chat-360.png",
+      "lightDomTurnstileIframeCount": 0
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [],
+      "submitDisabled": true,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/variable-font-public/onboarding-1440.png",
+      "lightDomTurnstileIframeCount": 0
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "아랑ARANG",
+      "imageErrors": [],
+      "csp": [],
+      "submitDisabled": true,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/variable-font-public/chat-1440.png",
+      "lightDomTurnstileIframeCount": 0
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://jumzip.pages.dev/assets/index-Cv2Nn-15.css",
+      "type": "stylesheet",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/index-BWrAurif.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/AccountPages-CqZnzeAY.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/ConnectionState-CG8KOMpa.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/pagination-CaXgYgdm.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-normal-BOwq7MWX.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/arang/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/fonts/PretendardVariable.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-116-wght-normal-CEgGIndr.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-113-wght-normal-D3cwdMxZ.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-latin-wght-normal-DdBYjaA7.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-118-wght-normal-C4j1xH6l.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-119-wght-normal-B8lslVpp.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-117-wght-normal-Kx6LOXtf.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/Chat-5MzPyNx-.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/CompatibilitySnapshot-BiaKKVU5.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/bomi/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/sani/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-114-wght-normal-BR9tFfOX.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-110-wght-normal-XwNdx1GB.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-italic-DmbndNpe.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-112-wght-normal-DOhh2iwR.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-115-wght-normal-CD3J_hkm.woff2",
+      "type": "font",
+      "status": 200
+    }
+  ],
+  "blockedMutations": [],
+  "summary": {
+    "routeCount": 4,
+    "buildFiles": 10,
+    "jsFiles": 8,
+    "cssFiles": 1,
+    "buildHashMatch": true,
+    "overflowCount": 0,
+    "routeErrorCount": 0,
+    "pageErrorCount": 0,
+    "cspViolationCount": 0,
+    "assetErrorCount": 0,
+    "brokenImageCount": 0,
+    "blockedMutationCount": 0,
+    "challengeNetworkFailureCount": 2,
+    "otherNetworkFailureCount": 0,
+    "guestRenderingPass": true
+  },
+  "limits": [
+    "Public guest rendering and exact deployed byte comparison only. The export feature itself was tested separately in local synthetic authenticated fixtures, not via public authenticated access.",
+    "No nickname input, form submit, CAPTCHA interaction/token inspection, account creation, session injection or model call.",
+    "Challenge network errors are recorded separately and mean Turnstile token issuance is NOT validated; they do not establish a client SDK defect or bot classification.",
+    "Sandbox public fetch initially received EACCES; the read-only QA then ran with approved network escalation. No challenge URL query/path token bytes were retained."
+  ],
+  "visualReview": {
+    "reviewerKind": "AI",
+    "reviewer": "Codex / contracts_audit",
+    "status": "PASS_FOR_GUEST_RENDERING",
+    "screenshotsReviewed": 4,
+    "observations": [
+      "All four screenshots directly inspected. Onboarding form and guest chat are readable at 360 and 1440 widths.",
+      "Turnstile checkbox UI is visibly rendered but untouched; light-DOM iframe count excludes shadow DOM and is not a widget visibility or completion assertion.",
+      "Onboarding remained disabled with the name field untouched. This is not a proof of disabled-until-token behavior after valid form input."
+    ]
+  }
+}

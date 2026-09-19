@@ -9,7 +9,8 @@ const input = (currentMessage = recall, extra: Partial<IntentInput> = {}): Inten
 const output = (currentMessage = recall, extra: Record<string, unknown> = {}) => ({
   requestPurpose: 'RECALL', intentEvidenceQuote: currentMessage,
   intent: 'general_concern', explicitTool: null, explicitToolQuote: null,
-  targetPersonPresent: false, recentSituationPresent: false, periodPresent: false, choicesPresent: false, highStakes: false,
+  targetAliasEvidence: { state: 'UNRESOLVED', source: null, quote: null }, choicesEvidence: [],
+  recentSituationPresent: false, periodPresent: false, highStakes: false,
   ...extra,
 });
 function classifier(value: unknown) {
@@ -27,13 +28,13 @@ function classifier(value: unknown) {
 }
 const completion = (value: unknown) => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(value) }, finish_reason: 'stop' }] }));
 
-describe('Intent v2 purpose and current utterance evidence', () => {
+describe('Intent v3 preserves the frozen purpose and current utterance evidence cases', () => {
   it('versions the internal structured contract while retaining the public recommendation shape', async () => {
-    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v2');
+    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v3');
     expect(INTENT_RESPONSE_SCHEMA).toMatchObject({ additionalProperties: false, required: expect.arrayContaining(['requestPurpose', 'intentEvidenceQuote']) });
     const source = classifier(output());
     expect(await extractToolRecommendation(source.provider, input())).toBeNull();
-    expect(source.requests[0]?.name).toBe('jumzip_intent_v2');
+    expect(source.requests[0]?.name).toBe('jumzip_intent_v3');
     expect(source.validated).toHaveLength(1);
     expect(source.errors).toHaveLength(0);
     const payload = JSON.parse(source.requests[0]!.messages[1]!.content);

@@ -1,0 +1,46 @@
+{
+  "at": "2026-09-19T22:23:08.060Z",
+  "checks": [
+    {
+      "name": "unverified status",
+      "passed": true,
+      "expectedError": "UNVERIFIED_RELEASE_MANIFEST"
+    },
+    {
+      "name": "traversal path",
+      "passed": true,
+      "expectedError": "INVALID_RELEASE_ENTRY"
+    },
+    {
+      "name": "missing file",
+      "passed": true,
+      "expectedError": "BASE_RELEASE_TREE_MISMATCH"
+    },
+    {
+      "name": "duplicate file",
+      "passed": true,
+      "expectedError": "INVALID_RELEASE_ENTRY"
+    },
+    {
+      "name": "changed blob hash",
+      "passed": true,
+      "expectedError": "RELEASE_CONTENT_HASH_MISMATCH"
+    },
+    {
+      "name": "wrong prompt version",
+      "passed": true,
+      "expectedError": "RELEASE_VERSION_MISMATCH"
+    }
+  ],
+  "checksPassed": 6,
+  "checksFailed": 0,
+  "validRelease": {
+    "filesVerified": 53,
+    "readbackPassed": true,
+    "stage": "supabase/.temp/verified-edge-IYbtLn",
+    "promptVersion": "JumZipPersona-v4",
+    "intentVersion": "JumZipIntent-v1"
+  },
+  "networkRequests": 0,
+  "deployments": 0
+}

@@ -1,0 +1,118 @@
+{
+  "mode": "ZERO_NETWORK_BUDGET_PREPARATION",
+  "networkRequests": 0,
+  "preflightSha256": "20d5cc18e66fbcf49d8b79cd19deaac3401d312e2a059aed9b3f914a5a96e591",
+  "priorMeasurementSha256": "3cf9c219fe84f59723220f5eca41f7272ac619b14b655859046451b1aa24edbd",
+  "sameInputsAndReviewChecksAsV7": true,
+  "priorActualNeurons": 295.957505,
+  "rows": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "responseContract": "DEFAULT",
+      "priorOutputTokens": 73,
+      "estimatedInputTokens": 4689,
+      "priorOutputScenarioNeurons": 44.618628,
+      "tarotAt900ScenarioNeurons": 44.618628,
+      "all900ScenarioNeurons": 67.173399,
+      "conservativeReservationNeurons": 205.802058,
+      "cumulativePriorOutputScenario": 44.618628,
+      "reserveNeededBeforeRequest": 205.802058
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 131,
+      "estimatedInputTokens": 3782.640203032472,
+      "priorOutputScenarioNeurons": 37.9607450857682,
+      "tarotAt900ScenarioNeurons": 58.9336820857682,
+      "all900ScenarioNeurons": 58.9336820857682,
+      "conservativeReservationNeurons": 177.983598,
+      "cumulativePriorOutputScenario": 82.5793730857682,
+      "reserveNeededBeforeRequest": 222.602226
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "responseContract": "DEFAULT",
+      "priorOutputTokens": 101,
+      "estimatedInputTokens": 4161,
+      "priorOutputScenarioNeurons": 40.582224000000004,
+      "tarotAt900ScenarioNeurons": 40.582224000000004,
+      "all900ScenarioNeurons": 62.373351,
+      "conservativeReservationNeurons": 193.656482,
+      "cumulativePriorOutputScenario": 123.1615970857682,
+      "reserveNeededBeforeRequest": 276.2358550857682
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 123,
+      "estimatedInputTokens": 3775.3911988457503,
+      "priorOutputScenarioNeurons": 37.676660388706715,
+      "tarotAt900ScenarioNeurons": 58.86778138870672,
+      "all900ScenarioNeurons": 58.86778138870672,
+      "conservativeReservationNeurons": 176.901769,
+      "cumulativePriorOutputScenario": 160.83825747447491,
+      "reserveNeededBeforeRequest": 300.06336608576817
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 206,
+      "estimatedInputTokens": 3794.170023388773,
+      "priorOutputScenarioNeurons": 40.111037682627334,
+      "tarotAt900ScenarioNeurons": 59.03849968262733,
+      "all900ScenarioNeurons": 59.03849968262733,
+      "conservativeReservationNeurons": 178.210873,
+      "cumulativePriorOutputScenario": 200.94929515710226,
+      "reserveNeededBeforeRequest": 339.0491304744749
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 115,
+      "estimatedInputTokens": 3763.7274269311065,
+      "priorOutputScenarioNeurons": 37.35244103823069,
+      "tarotAt900ScenarioNeurons": 58.76174603823068,
+      "all900ScenarioNeurons": 58.76174603823068,
+      "conservativeReservationNeurons": 177.629049,
+      "cumulativePriorOutputScenario": 238.30173619533295,
+      "reserveNeededBeforeRequest": 378.57834415710226
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 142,
+      "estimatedInputTokens": 3776.98736497545,
+      "priorOutputScenarioNeurons": 38.20935813499182,
+      "tarotAt900ScenarioNeurons": 58.882292134991815,
+      "all900ScenarioNeurons": 58.882292134991815,
+      "conservativeReservationNeurons": 177.147226,
+      "cumulativePriorOutputScenario": 276.5110943303248,
+      "reserveNeededBeforeRequest": 415.4489621953329
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "priorOutputTokens": 139,
+      "estimatedInputTokens": 3756.3515461215934,
+      "priorOutputScenarioNeurons": 37.93993890579141,
+      "tarotAt900ScenarioNeurons": 58.6946919057914,
+      "all900ScenarioNeurons": 58.6946919057914,
+      "conservativeReservationNeurons": 177.047225,
+      "cumulativePriorOutputScenario": 314.4510332361162,
+      "reserveNeededBeforeRequest": 453.5583193303248
+    }
+  ],
+  "priorOutputScenarioNeurons": 314.4510332361162,
+  "tarotAt900ScenarioNeurons": 438.37954523611614,
+  "all900ScenarioNeurons": 482.7254432361161,
+  "peakSequentialReserveWithPriorOutput": 453.5583193303248,
+  "proposedHardCap": 600,
+  "liveAuthorized": false,
+  "limitations": [
+    "Source input ratios are previous same-case observations, not guaranteed tokenization",
+    "Prior output omits evidence and is an optimistic scenario, not measured v8 quality or cost",
+    "900-output scenarios still estimate input; repairs are extra",
+    "The pre-call reserve can stop the run before all8 even if total measured cost would have fit"
+  ]
+}

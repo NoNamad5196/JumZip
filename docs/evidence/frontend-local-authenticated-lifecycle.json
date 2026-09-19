@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-09-19T22:45:17.425Z",
+  "mode": "LOCAL_SYNTHETIC_IDENTITIES_REAL_AUTH_REST_WITH_SEPARATE_MOCK_EDGE",
+  "publicSignupTested": false,
+  "oauthTested": false,
+  "captchaTested": false,
+  "modelCalls": 0,
+  "credentialsRecorded": false,
+  "actualDatabaseChecks": [
+    {
+      "name": "consultation-default-selection-zero-and-record-only-delete",
+      "memoriesRetained": 4,
+      "consultationsRetained": 3
+    },
+    {
+      "name": "consultation-selected-memory-only-delete-and-reload",
+      "memoriesRetained": 3,
+      "siblingRetained": true,
+      "screenshot": "tests/ui/artifacts/local-lifecycle/consultation-after-deletion.png"
+    },
+    {
+      "name": "conversation-selected-memory-delete-cascade-and-unselected-memory-detachment",
+      "conversationsRetained": 1,
+      "consultationsRetained": 1,
+      "messagesRetained": 1,
+      "memoriesRetained": 2,
+      "screenshot": "tests/ui/artifacts/local-lifecycle/memory-after-deletion.png"
+    },
+    {
+      "name": "deleted-reading-reload-does-not-reappear",
+      "screenshot": "tests/ui/artifacts/local-lifecycle/deleted-reading.png"
+    },
+    {
+      "name": "owner-B-real-rls-history-memory-empty-after-sdk-transition",
+      "foreignRows": 0,
+      "screenshot": "tests/ui/artifacts/local-lifecycle/owner-B-empty-history.png"
+    },
+    {
+      "name": "profile-owner-B-retrieved-after-A-unsaved-form",
+      "screenshot": "tests/ui/artifacts/local-lifecycle/owner-B-profile.png"
+    }
+  ],
+  "mockedTransportChecks": [
+    {
+      "name": "terminal-404-retains-draft-blocks-retry-and-explicit-new-context",
+      "response": "synthetic NOT_FOUND, not an Edge/model call"
+    },
+    {
+      "name": "late-response-after-unmount-does-not-navigate-back",
+      "response": "held synthetic success; no persisted assistant message"
+    },
+    {
+      "name": "A-to-B-sdk-event-during-held-request-clears-draft-intent-and-late-response",
+      "authTransition": "synthetic SDK cross-tab event with actual local B session"
+    },
+    {
+      "name": "unsaved-profile-form-resets-on-UID-change",
+      "authTransition": "synthetic SDK event; profiles loaded from actual local RLS"
+    }
+  ],
+  "errors": [],
+  "network": {
+    "localAuth": 0,
+    "localRest": 51,
+    "mockedEdge": 3,
+    "blockedExternal": 0
+  },
+  "passed": true,
+  "localBuildIndexSha256": "94bca2557bce43ffda55936ecd8d0dc64173fd622308878e00596e1059f0755f",
+  "buildOutput": "test-results/local-ui-lifecycle-dist",
+  "cspNote": "Production directives preserved except connect-src restricted to self and the actual local Auth/REST origin.",
+  "cleanup": {
+    "callbackCompleted": true,
+    "pendingCleanupCount": 0,
+    "identities": [
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      },
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      }
+    ],
+    "credentialsPersisted": false
+  },
+  "limits": [
+    "Actual local synthetic Auth/RLS/database UI only; no public signup, CAPTCHA or OAuth approval exercised.",
+    "Slow success and terminal 404 branches are explicitly mocked Edge transport, never counted as real backend/model execution.",
+    "The source .env.local and public dist were not overwritten; separate temporary build and independent browser context were used."
+  ]
+}
