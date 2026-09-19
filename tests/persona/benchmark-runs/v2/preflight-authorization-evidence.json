@@ -1,0 +1,524 @@
+{
+  "mode": "READ_ONLY_NO_NETWORK",
+  "destination": {
+    "protocol": "https:",
+    "hostname": "api.cloudflare.com",
+    "model": "@cf/qwen/qwen3-30b-a3b-fp8"
+  },
+  "providerVerified": true,
+  "caseCount": 84,
+  "syntheticCorpusDeclarations": {
+    "core": "Synthetic fixed fixtures in persona/benchmark.ts",
+    "supplement": "SYNTHETIC_ACCEPTED_RULE_FIXTURE in saju-benchmark-corpus.ts"
+  },
+  "forbiddenCanaryOccurrences": 0,
+  "rawBirthFieldOccurrences": 0,
+  "runCeilingNeurons": 2500,
+  "includesRealCustomerRecords": false,
+  "entries": [
+    {
+      "id": "01-first-meeting:BOMI",
+      "promptSha256": "f49533d640f000ebf90da815eeedd1c970a331223d5da6d9402e0daed808839d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "01-first-meeting:SANI",
+      "promptSha256": "ce05524fc20b464ef7d51379296e7f019d049b857ab79631c2e1e07f58570937",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "01-first-meeting:ARANG",
+      "promptSha256": "1d09f8e3e0031adb2d3c1050c40d60ebd756362cca08ef7e0ea7e4e711048569",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "02-small-talk:BOMI",
+      "promptSha256": "80dccd48d644b7d34ad8ac720341922522054bf0bd8d7c19713be91b39c9d30d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "02-small-talk:SANI",
+      "promptSha256": "1b9f062a87562ca34f04b9868ef7bdeb3977a1fafcba08bb7a33234e74c587ac",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "02-small-talk:ARANG",
+      "promptSha256": "b6cc3cfd22c49b5ffe4239111de5c604f203aea43068670351bfb85f3fdef1fa",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "03-late-reply:BOMI",
+      "promptSha256": "bd5b838603b75c25fe8c9bcab0efc8053041f26aef16dec95c87d21a39b14cb4",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "03-late-reply:SANI",
+      "promptSha256": "4a8d3871c61b005aa24456a37a58b4b008a006b5b5ff57959dd920967861c4eb",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "03-late-reply:ARANG",
+      "promptSha256": "f1e1c191ce917025490eec2444c741e9c50c970051c93fe816a650ed715a1738",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "04-no-tool:BOMI",
+      "promptSha256": "a15353879bd4cac5b4e5a2903fb2e7c4c27e782278fb3ab7c46f9b46bd9bea3d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "04-no-tool:SANI",
+      "promptSha256": "bfdebd51bf1bee9550edc226a3f859c4ddf1ee1038651cc5ef729e983399d57c",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "04-no-tool:ARANG",
+      "promptSha256": "70548a1c450a4df0c8a98b9d163910e7c0b35f65759916ad2b4bdcc3b15ac497",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "05-decision:BOMI",
+      "promptSha256": "a646f3c4767f6ff9efc2eb00c35c615aad51d424f7c5e7f95c81481fbde4b7c0",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "05-decision:SANI",
+      "promptSha256": "422ae3dc25470f6383a624657f867df266e5ca764a83e1804534f89186efad2e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "05-decision:ARANG",
+      "promptSha256": "89fec6d6eb109637155c9d8c33654a33837df4a105e6d02b1250c45b1ee0c508",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "06-one-card:BOMI",
+      "promptSha256": "9a9bc5daba5bf4826e05fbd91df6d70b60e369d905c3795f33cd9576ee92217f",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "06-one-card:SANI",
+      "promptSha256": "3328c531df4a9570a6976e9fffcab79e633b11bdae7fac9d561ff3b1285f9615",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "promptSha256": "0503524fd0643705f4155709a02297d165190c668bc51ce406019fb80d3bc4bd",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "promptSha256": "758628715913d3ab8aeb90e383f1ba27892480aeb9b1a8c4855ee9473cf805c2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "07-general-three:SANI",
+      "promptSha256": "84bccbeeed1b6dc298b3885a22c993bbc1c35d9125114bedccc2b31e23eb49fc",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "promptSha256": "e523d97d63e000967c75a131cbca7087a1c97f9672e089bc9110ca87a6d78c41",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "promptSha256": "14cec2baac3df2f72986fdde707806e04af4fd785f46bf5b7156da4a914b9349",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "promptSha256": "2913c91a38516a983525af50879781cb9bbc4bb33b58f39c3f66171dc7302eb1",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "promptSha256": "2d88c1b1d077f95f800eff96f75fa1bd0d9c30fa1ae5c615ce56a45c38a1e2b7",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "promptSha256": "ba27bd253c3e3c279f8c51a36eabbbf9b4adfd0c646fb3725def8141dc74b882",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "promptSha256": "cfd6597af0fdf6fa78c7b5e4a7ce33df9dbfd4b9afd0a99ec294a7aebb9a50aa",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "promptSha256": "67ac9c9ff89cead70808961cf6444ca34a250b47774be0bfb9be3906b33a1ff7",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "promptSha256": "63b2e052c9f6f505c4ef484a5557c47569cb6c6234742473f97fb426d1d82e92",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "promptSha256": "d126f14977b6504a0b4c63ac9a309cd59d9d6f0b64e7539090c33114b8f80ec6",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "promptSha256": "469a44161f187200ff064a5fc74955c80ee065e19719f8b9224ece0e5d55767e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "promptSha256": "e932d47765974de0f7a1cf9565460704d822fc271693b97051a3af3613ea0ef6",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "promptSha256": "c9bf151c4726760604bfabebb200701d8f61f8b3ab0900109e02f4e345904f12",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "promptSha256": "5908ccbae2353136f045bf038306e0c2c72304a3ea6103a55b4fa0ca52d09ec2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "12-injection:BOMI",
+      "promptSha256": "21f6841e6329e3d9884c7b64d782e55479d03c32a4aa4ff571e0bccfe7c5860e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "12-injection:SANI",
+      "promptSha256": "5e71567486bc4ad3cd7cb90bcdb3db400f70216dba866b609ef001173eb6c03c",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "12-injection:ARANG",
+      "promptSha256": "c62cf0fa8513593eeddfd5181fa334d4a3a10f01ad4d85b98beb2632d6e5bb52",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "13-no-saju-data:BOMI",
+      "promptSha256": "ca56e6e2d47a946309111b5d3f9263770194bb6c07938d51a4e248a25c543399",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "13-no-saju-data:SANI",
+      "promptSha256": "6ee6bf98e01fa16aa4a1632c6cdaa11c6a8b6b1ec49a939e74b15eea07eed6d9",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "13-no-saju-data:ARANG",
+      "promptSha256": "dfc73db10fae51c87473e5444af508d78ef302cbfc85465a854e2822728cbdc6",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "14-high-stakes:BOMI",
+      "promptSha256": "974631b66948a139b99096edff081c001a62f705929036f6c7ba4b41d46a8a3e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "14-high-stakes:SANI",
+      "promptSha256": "5c6ae85f3ed69108e4291694e2851fb46c2cc822f0fb6f8111efdeba935ec55d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "14-high-stakes:ARANG",
+      "promptSha256": "c9c944d02d55e0fc3da370b8dd5b49b5adbd86a516ca5e17dcfd3e536202286c",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "15-shared-memory:BOMI",
+      "promptSha256": "7852444dc5f756c5136ee31467779330cc83f1022959edb5e13af59b9830784c",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "15-shared-memory:SANI",
+      "promptSha256": "ae294c065789340ac48017f0a7b28a12c4c7d41cc312b8a654995118a83ae6ad",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "15-shared-memory:ARANG",
+      "promptSha256": "36537b72f747a6088c73c3032b5d33bae23b130c12f9c605d71a2c0a8d8be508",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "16-private-memory:BOMI",
+      "promptSha256": "2a6c81c53091996407bb8d4432e6fbf7de4232087777fde454e4eeb8ad73d0e2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "16-private-memory:SANI",
+      "promptSha256": "9f0168621a7abd1b8ecb7fb4ece91886fea5fc1e95e58d5aa0562d2eadff5be8",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "16-private-memory:ARANG",
+      "promptSha256": "e679f28dd35c5a70789fd28adecd8970e0f39616e529b0d1689b55f3b80bf399",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "17-related-people:BOMI",
+      "promptSha256": "0a23b5be3d0504514340b5a2d2d8f152a534710d6b84e1de4fd866250452e28c",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "17-related-people:SANI",
+      "promptSha256": "c12346d18ba54885ae07a2db371569dfec85832b6f89a4c57a5112f7e4a75afe",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "17-related-people:ARANG",
+      "promptSha256": "0de73a27ed7bc7810c16c42a35b1b7cf674122695fe681b6997771c1374ce8c6",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "18-forget:BOMI",
+      "promptSha256": "a25497b70e59ada66324d3e7c066ef1325d1e23196834282f57c7e235d93e070",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "18-forget:SANI",
+      "promptSha256": "b5670b347949aff93824a098cfb2d429da121de1312822cde14906c23986870d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "18-forget:ARANG",
+      "promptSha256": "01151d3436be2d9f0b3a9f7559da579c546239ff7c9011e977bdace17daf62f0",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "19-summary-context:BOMI",
+      "promptSha256": "1aa60a576848bf41c957b26ac57f5f90b0279d60c5110b0a480129903f6edb0d",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "19-summary-context:SANI",
+      "promptSha256": "96079f68eac78524f7a2d6b85af22170ec4e77fb3c55020bc008224701765284",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "19-summary-context:ARANG",
+      "promptSha256": "542b2086f520824740d1155c9b9775856e39d0b0a6dc46a72ee6e11e64bb2977",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "20-boundary:BOMI",
+      "promptSha256": "48f2f63ab96e4b5cf359c41be8cbbe4838aba66b04ee04259f6836882fc19ccb",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "20-boundary:SANI",
+      "promptSha256": "89c89b1373cf5d6488b21cb1eaf5f91f14a04804e275a1710a694f31053300e2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "20-boundary:ARANG",
+      "promptSha256": "97732485ae51e4517c67b9bd00d7362a2cf50807402fab165fbd8a8b8314156a",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "promptSha256": "67d362461df348ac37f5d605ba91dfee485a91a4cd3e4e4904b7b430720c0666",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "promptSha256": "1d2ccf4e3270b26b14417eac8a1718b781a1c850ccd6ed724afe4708d9d50b69",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "promptSha256": "1f1cc867c919599235bffae69b94ed16649f561970703d515210631738d05e68",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "promptSha256": "49d9572642f67a4b4c9b15d047d803175eac0195cfdde9fcd2fb411f114a82b2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "promptSha256": "56f10eac213ed958c415965411554e60cb2e424ea73958034c3f7490ea2d9777",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "promptSha256": "b85205b02b4351c4470917f4958ea64d85f036753db1e5c87516f918257eae5e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "promptSha256": "b03b993a8faa28e8ae05ba8c2883e56b56d4c499783b8eb61c12e8152b68d9d5",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "promptSha256": "726d7b13046c5f12159539fdd275ac207699adce1594ebb338934d27d682b602",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "promptSha256": "de9beb4931e926ee5187fdad31d20827a0439e47c9354e9f48ab44f802fe7b37",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "promptSha256": "e5915c3984715bd1ad1b58c9f5c706d15a1ef46b6bb968368cbcb72ea47a3d9b",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "promptSha256": "76c241031e2127422479025e0ad396545990b317e7866df67e75637f4425df23",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "promptSha256": "694d92c57351acc378d47d843baca1ad5a37c6a14b3d5c7276d2239db71a1daa",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "promptSha256": "fb14871fa8f42c39a4b5b2187edc4821da3c215d75166a8562b1af84dce75dc2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "promptSha256": "ec72741333468608dc9b49ad3485ad81dea7e6112894f9f41684200983657106",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "promptSha256": "da956492cb46010d9a3a873a0c836bff6a69bbe4c479f206855ce1f8a13973d2",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "promptSha256": "678030d793079271ccd356619070f5e74ce7915d9d5539ee486bc05b448fa572",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "promptSha256": "8706bf9981dd7375b70bcb90e988e5aaafbacdf4ac0f243999df39554d8daf2a",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "promptSha256": "3891d16543c04d091f05de84d1fb44d70315d869d07a4be65496597155668f93",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "promptSha256": "47d8ffb19cb4575b638d48e3680cd0e04afbe6d4df5dcb4d8d0b0a15476a46f8",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "promptSha256": "b330a83d31e1594c304897f764c06a53e4a824a8a53bf0926bcb9d3374ed8359",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "promptSha256": "56f661fa2c2f614806e123494657d9339d862253c0d0faf00c348efd51b9e9cf",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "promptSha256": "e9b6a9d37b47383c74e07ccde4a113de1e969f760cde2210f8a2b94e03cca68f",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "promptSha256": "fd824e35037a7ba7dc23f1faaca5fa505fccf3f55f0dfcbfe9eb06f00fd5c84e",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "promptSha256": "1318ee48e9887fd3abcfbc218f46d46cbf5f7d1e9ffed0344c88e580740b8dba",
+      "canaryOccurrences": 0,
+      "rawBirthFields": false
+    }
+  ]
+}

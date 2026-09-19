@@ -1,0 +1,55 @@
+{
+  "project": "JumZip",
+  "package": "major-arcana-08-14",
+  "status": "FINAL",
+  "cards": [
+    {
+      "id": "08",
+      "title": "Strength",
+      "path": "tarot/major/08_Strength.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "09",
+      "title": "The Hermit",
+      "path": "tarot/major/09_The_Hermit.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "10",
+      "title": "Wheel of Fortune",
+      "path": "tarot/major/10_Wheel_of_Fortune.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "11",
+      "title": "Justice",
+      "path": "tarot/major/11_Justice.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "12",
+      "title": "The Hanged Man",
+      "path": "tarot/major/12_The_Hanged_Man.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "13",
+      "title": "Death",
+      "path": "tarot/major/13_Death.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "14",
+      "title": "Temperance",
+      "path": "tarot/major/14_Temperance.png",
+      "status": "FINAL"
+    }
+  ],
+  "rules": [
+    "These PNG files are canonical Major Arcana illustrations.",
+    "Keep stable card ids and filenames.",
+    "Do not regenerate, redraw, recolor, or use mockup tarot art as replacement.",
+    "WebP derivatives are allowed for runtime optimization; preserve PNG masters."
+  ]
+}

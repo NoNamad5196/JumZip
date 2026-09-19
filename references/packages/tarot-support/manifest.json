@@ -1,0 +1,30 @@
+{
+  "project": "JumZip",
+  "package": "jumzip-tarot-support-assets",
+  "packageType": "TAROT SUPPORT / FINAL",
+  "description": "Shared Tarot support asset used by selection/reveal UI.",
+  "referencePriority": [
+    "Technical Spec FINAL rules",
+    "Canonical runtime assets (characters, Tarot, brand finals)",
+    "Brand / Typography / Design tokens",
+    "CANONICAL SCREEN",
+    "IMPLEMENTATION REFERENCE",
+    "STATE REFERENCE",
+    "SYSTEM REFERENCE",
+    "CONCEPT ONLY"
+  ],
+  "files": [
+    {
+      "originalFilename": "tarot_back.png",
+      "packagePath": "tarot/back.png",
+      "status": "FINAL",
+      "bytes": 2607678,
+      "sha256": "3ed93e615c3b475813bb453fe9c0191bbe9868eda29bd6812f8c9dc958c2cc38"
+    }
+  ],
+  "rules": [
+    "Use this Tarot Back asset instead of generating a new card back.",
+    "Do not redraw or recolor without explicit approval.",
+    "Runtime WebP conversion is allowed; preserve the PNG master."
+  ]
+}

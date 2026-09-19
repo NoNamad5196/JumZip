@@ -1,0 +1,55 @@
+{
+  "project": "JumZip",
+  "package": "major-arcana-15-21",
+  "status": "FINAL",
+  "cards": [
+    {
+      "id": "15",
+      "title": "The Devil",
+      "path": "tarot/major/15_The_Devil.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "16",
+      "title": "The Tower",
+      "path": "tarot/major/16_The_Tower.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "17",
+      "title": "The Star",
+      "path": "tarot/major/17_The_Star.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "18",
+      "title": "The Moon",
+      "path": "tarot/major/18_The_Moon.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "19",
+      "title": "The Sun",
+      "path": "tarot/major/19_The_Sun.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "20",
+      "title": "Judgement",
+      "path": "tarot/major/20_Judgement.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "21",
+      "title": "The World",
+      "path": "tarot/major/21_The_World.png",
+      "status": "FINAL"
+    }
+  ],
+  "rules": [
+    "These PNG files are canonical Major Arcana illustrations.",
+    "Keep stable card ids and filenames.",
+    "Do not regenerate, redraw, recolor, or use mockup tarot art as replacement.",
+    "WebP derivatives are allowed for runtime optimization; preserve PNG masters."
+  ]
+}

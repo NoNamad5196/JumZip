@@ -1,0 +1,44 @@
+{
+  "project": "JumZip",
+  "package": "character-assets",
+  "status": "FINAL masters + REFERENCE sheets",
+  "canonicalMasters": [
+    {
+      "characterId": "bomi",
+      "path": "characters/bomi/master.png",
+      "status": "FINAL"
+    },
+    {
+      "characterId": "sani",
+      "path": "characters/sani/master.png",
+      "status": "FINAL"
+    },
+    {
+      "characterId": "arang",
+      "path": "characters/arang/master.png",
+      "status": "FINAL"
+    }
+  ],
+  "referenceSheets": [
+    {
+      "characterId": "bomi",
+      "path": "characters/bomi/reference-sheet.png",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "characterId": "sani",
+      "path": "characters/sani/reference-sheet.png",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "characterId": "arang",
+      "path": "characters/arang/reference-sheet.png",
+      "status": "REFERENCE_ONLY"
+    }
+  ],
+  "rules": [
+    "Master PNGs are canonical. Do not redraw or regenerate.",
+    "Allowed: crop, scale, mask, position, opacity, non-destructive format conversion.",
+    "Reference sheets are for composition/crop guidance only."
+  ]
+}

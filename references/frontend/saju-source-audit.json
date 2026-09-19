@@ -1,0 +1,33 @@
+{
+  "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+  "zipDownloadName": "Jumzip_Saju_Contract.zip",
+  "zipUiLabel": "Jumzip_Saju_references.zip",
+  "zipSha256": "80c1dd88d6b4b196afaf75ad425b8b8fdbb9c76a7740c7ca93cd2ba116549f77",
+  "readmeInsideZip": false,
+  "contractSidecarsReadViaAuthenticatedBrowser": [
+    "CODEX_SAJU_VISUAL_CONTRACT_GUIDE.md",
+    "jumzip-saju-visual-contract-manifest.json"
+  ],
+  "screens": [
+    {
+      "path": "references/frontend/saju-1-Jumzip_Saju_Compatibility_Desktop__CANONICAL_VISUAL_REFERENCE.png",
+      "sha256": "551c4c2128e3a2ae4e2c0840f437fdb0f7d1004e4f038b553e5cb268fb9b5544"
+    },
+    {
+      "path": "references/frontend/saju-2-Jumzip_saju_mobile_chat.png",
+      "sha256": "a8ab95fe203de03b294f5e2b9f720d575ce150032bd9f16239815ed2432ee347"
+    },
+    {
+      "path": "references/frontend/saju-3-Jumzip_Saju_Detail_Desktop.png",
+      "sha256": "54af003700490ce3045cb3faa49e7e8e8cda970d3c40aabf7ae78766d2360c0d"
+    },
+    {
+      "path": "references/frontend/saju-4-Jumzip_Saju_input.png",
+      "sha256": "ea6e458808164f9417a3acf52a14b48955c168fc6e8620fdad998f2a3bf22b3f"
+    },
+    {
+      "path": "references/frontend/saju-5-Jumzip_desktop_chat.png",
+      "sha256": "43b3ea6eb221619a6f07f02043d7a82a9893efb70a37a67bcb5ea71d755cb3d4"
+    }
+  ]
+}

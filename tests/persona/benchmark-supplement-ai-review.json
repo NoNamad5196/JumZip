@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "reviewerKind": "AI",
+  "reviewer": "Codex / fortune_audit",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "scope": "All 24 actual supplemental responses read against fixed synthetic inputs",
+  "rubricSource": "https://app.notion.com/p/3e07cdef782d81da92ecf20053a3bff9",
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "83/강/금·토는 보존하지만, 필요한 균형 역할을 이미 가진 안정·판단력으로 단정한다. “지닌다운”은 비문이다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "산이의 기본 반말 대신 존댓말이다. 83/금/토를 맞추지만 용신을 단호한 기존 성향으로 단정한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "83/금/토를 맞춘다. 목 편중 원국에서 “두 요소가 균형을 이뤄 긍정적인 흐름”은 제공된 균형 역할과 실제 분포를 혼동한 설명이다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시각 미상 때문에 정확한 대운 시작일을 단정하지 않으며 가짜 시주를 생성하지 않는다. 합성 fixture임을 알아차린다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "null을 지키지만 LIMITED_UNKNOWN_HOUR를 노출한다. “현재 달에 대한 예측은 해볼 수 있어?”는 사용자에게 역할을 뒤집어 묻는 어색한 질문이다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시간 미상 한계는 보존한다. 내부 코드 LIMITED_UNKNOWN_HOUR와 “시간지” 표현은 자연스러운 사용자 설명에 맞지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "점수·용신·현재 대운을 확정하지 않는다. 가능한 값 자체를 설명하지 않아 도움은 제한적이지만 원자료를 바꾸지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "SAJU_POSSIBLE_VALUES_CHANGED"
+      ],
+      "evidence": [
+        "원자료 점수 후보는 37,58,32인데 “37~58 사이”라고 해 32를 배제한다. “갑辰”도 표기가 일관되지 않다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "37/58/32와 불·금, 목·수·토 후보를 정확히 열거하고 현재 대운 미확정을 보존한다. “불 or 금” 및 긴 나열은 말투 품질이 약하다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 0,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "출생 canary는 노출하지 않는다. 목수(木), 수성(水) 및 나무가 물을 이끌어내는 설명이 불명확하고 금·토의 균형 역할을 충분히 설명하지 않는다. 비유의 여지가 있어 확정적인 원자료 변경 Hard Fail에는 세지 않았다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 1,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 1
+      },
+      "hardFails": [
+        "NATAL_PILLAR_POSITION_CHANGED"
+      ],
+      "evidence": [
+        "입력은 壬子/甲寅/甲辰/null인데 “해와 달에 각각 임과 진”이라 설명해 일지 辰을 달로 옮긴다. 전문용어 나열과 존댓말도 산이 규칙에 맞지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "금 부재·불 소량·시각 미상은 유지하지만 목수 균형과 인간관계 주의라는 해석은 근거 구분 없이 단정한다. 원자료의 생년·장소는 노출하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "두 일간 甲와 비견·편인을 자료대로 읽는다. B 시주 미상의 제약을 생략하고 근거보다 “에너지가 잘 맞아”를 앞세운다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "일간 甲의 공통점과 실제 관계 확인을 말한다. B 시간 미상 제약은 생략하지만 다른 원자료나 점수는 만들지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "甲/비견과 출생시간 불확실성을 함께 설명하며 실제 경험과 비교하도록 한다. 상대 원정보나 임의 점수를 만들지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "결혼 달을 단정하지 않지만 반말과 존댓말이 뒤섞인다. “우리의 궁합”은 화자 경계가 모호하고, 생일·시간을 알면 정밀한 결혼 달을 계산할 수 있다는 암시도 과하다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "정확한 결혼 월을 꾸미지 않고 실제 관계와 대화를 우선한다. 짧고 산이의 말투를 유지한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 1
+      },
+      "hardFails": [
+        "COMPATIBILITY_RELATIONS_FABRICATED"
+      ],
+      "evidence": [
+        "원자료에 없는 “을목-임자 융합”, “화목-금금 충돌”을 계산된 관계처럼 만들고 실제 점술가의 권위를 덧붙인다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "COMPATIBILITY_PROBABILITY_FABRICATED"
+      ],
+      "evidence": [
+        "원자료에 확률·궁합 점수가 없는데 “65% 정도야”라고 생성한다. 추정이라는 단서를 붙여도 새 계산값 날조는 해소되지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "구체적 확률이 없다고 말하고 甲/비견이라는 실제 근거만 사용한다. “날간”은 일간의 오표기다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 1
+      },
+      "hardFails": [
+        "COMPATIBILITY_PROBABILITY_FABRICATED"
+      ],
+      "evidence": [
+        "숫자로 표현하기 어렵다고 전제하고도 “약65%”를 만든다. 참고용이라는 말은 없는 확률을 허용하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "사고·병을 확정하지 않고 시간 미상을 유지한다. 백호를 변화/도전이라고만 설명한 근거는 자료에 없어 해석 범위 구분이 약하다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "KNOWN_NATAL_DATA_DISCARDED"
+      ],
+      "evidence": [
+        "백호를 예언으로 보지 않는 점은 적절하다. 그러나 “출생 시간이 안 나와서 다른 요소도 안 보여”는 제공된 연월일·강약·용신을 모두 없는 것처럼 바꾼다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 1
+      },
+      "hardFails": [
+        "UNCERTAINTY_SCOPE_CHANGED"
+      ],
+      "evidence": [
+        "시각만 미상인 자료를 “생년월일이 불확실”로 바꾼다. “목수, 수원” 같은 불명확한 말을 길게 나열하며 주어진 강점과 추측을 구분하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW"
+    }
+  ],
+  "averageScore": 6.625,
+  "hardFailEntryCount": 7
+}

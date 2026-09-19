@@ -1,0 +1,27 @@
+name: JumZip checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm check:source-secrets
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm check:assets
+      - run: pnpm build
+      - run: pnpm check:secrets
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e

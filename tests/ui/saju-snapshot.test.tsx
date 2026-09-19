@@ -1,0 +1,15 @@
+// @vitest-environment jsdom
+import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { SajuSnapshot } from '../../src/features/SajuSnapshot';
+import { withFortuneTiming } from '../../supabase/functions/_shared/domain/fortune-timing';
+import { calculateFullSaju, type FullSajuResult } from '../../supabase/functions/_shared/domain/full-saju';
+const birth={calendarType:'SOLAR' as const,leapMonth:false,birthDate:'1992-10-24',birthTime:'05:30',birthTimeUnknown:false,location:{name:'Seoul',latitude:37.5665,longitude:126.978,timezone:'Asia/Seoul'},gender:'MALE' as const,trueSolarTime:false};
+const full=calculateFullSaju(birth);const second=calculateFullSaju({...birth,birthDate:'1992-10-25'});
+afterEach(cleanup);
+describe('Saju uncertainty display',()=>{
+ it('labels the saved civil month independently from the solar-term month number',()=>{const result=withFortuneTiming(full,new Date('2026-09-20T00:00:00Z'));expect(result.monthlyFortune?.month).toBe(8);render(<SajuSnapshot result={result}/>);expect(screen.getByText('2026년 9월 · 절기 기준')).toBeTruthy();expect(screen.queryByText('2026년 8월')).toBeNull();expect(screen.getByText(/현재 대운의 적용 시점은 확정하지 않았어요/)).toBeTruthy();});
+ it('preserves an unknown hour instead of rendering a default hour pillar',()=>{const result={...full,pillars:{...full.pillars,hour:null},tenGods:{...full.tenGods,hour:null},hiddenStems:{...full.hiddenStems,hour:null},twelveStages:{...full.twelveStages,hour:null},uncertaintyFlags:['BIRTH_TIME_UNKNOWN']};render(<SajuSnapshot result={result}/>);expect(screen.getByLabelText('시주 미확정')).toBeTruthy();expect(screen.getByText('출생시간을 몰라 시주는 확정하지 않았어요.')).toBeTruthy();});
+ it('does not turn uncertain strength and balance into zeroes or single answers',()=>{const result:FullSajuResult={...full,status:'UNCERTAIN',elements:null,strength:{...full.strength,score:null,grade:null},yongsin:{element:null,reasonCodes:[]},heesin:{element:null,reasonCodes:[]},uncertaintyFlags:['SCORE_UNCERTAIN','YONGSIN_UNCERTAIN']};render(<SajuSnapshot result={result}/>);expect(screen.getByText('하나의 점수로 정하지 않아요')).toBeTruthy();expect(screen.queryByText('0점')).toBeNull();expect(screen.getAllByText('미확정').length).toBeGreaterThanOrEqual(3);expect(screen.getByText(/하나의 비율로 합치지 않았어요/)).toBeTruthy();});
+ it('switches whole correlated chart candidates together',()=>{const result={...full,status:'UNCERTAIN' as const,possible_values:{...full.possible_values,charts:[full.possible_values.charts[0],second.possible_values.charts[0]]}};render(<SajuSnapshot result={result}/>);const summary=screen.getByText('가능한 원국을 각각 살펴보기 · 2가지');fireEvent.click(summary);const details=summary.closest('details')!;fireEvent.change(within(details).getByLabelText('살펴볼 가능성'),{target:{value:'1'}});const secondChart=second.possible_values.charts[0];expect(within(details).getByLabelText(`일주 ${secondChart.pillars.day.heavenlyStem}${secondChart.pillars.day.earthlyBranch}`)).toBeTruthy();expect(within(details).getByText(`${secondChart.strength.score}점`)).toBeTruthy();});
+});

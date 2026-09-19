@@ -1,0 +1,5 @@
+{
+  "imports": { "zod": "npm:zod@4.6.5", "@supabase/supabase-js": "npm:@supabase/supabase-js@2.116.0", "manseryeok": "npm:manseryeok@2.0.0" },
+  "compilerOptions": { "strict": true },
+  "nodeModulesDir": "auto"
+}

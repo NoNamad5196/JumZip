@@ -1,0 +1,1282 @@
+{
+  "schemaVersion": 2,
+  "suite": "JumZipSajuPersonaSupplement-v1",
+  "fixtureKind": "SYNTHETIC",
+  "doesNotReplaceCoreBenchmark": true,
+  "coreRequiredCaseCount": 60,
+  "supplementalRequiredCaseCount": 24,
+  "executionMode": "LIVE",
+  "startedAt": "2026-09-19T18:51:24.955Z",
+  "completedAt": "2026-09-19T18:52:53.121Z",
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "BOMI",
+      "latencyMs": 2043,
+      "response": {
+        "content": "강약 점수 83은 '강'으로, 에너지가 매우 세고 안정적이라는 뜻이야. 용신이 금(金)이고 희신이 토(土)라서, 명확한 판단력과 탄탄한 기반을 가지고 있는 상태야. 이 두 요소는 서로 강한 에너지를 지닌다운 구조를 형성하고 있어.",
+        "segments": [
+          "강약 점수 83은 '강'으로, 에너지가 매우 세고 안정적이라는 뜻이야.",
+          "용신이 금(金)이고 희신이 토(土)라서, 명확한 판단력과 탄탄한 기반을 가지고 있는 상태야.",
+          "이 두 요소는 서로 강한 에너지를 지닌다운 구조를 형성하고 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:26.997Z",
+          "usage": {
+            "promptTokens": 2054,
+            "completionTokens": 299
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": {
+        "id": "s01-confirmed-strength:BOMI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 1,
+          "contextConsistency": 2,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "83/강/금·토는 보존하지만, 필요한 균형 역할을 이미 가진 안정·판단력으로 단정한다. “지닌다운”은 비문이다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "강약 점수 83은 '강'으로, 에너지가 매우 세고 안정적이라는 뜻이야. 용신이 금(金)이고 희신이 토(土)라서, 명확한 판단력과 탄탄한 기반을 가지고 있는 상태야. 이 두 요소는 서로 강한 에너지를 지닌다운 구조를 형성하고 있어.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "SANI",
+      "latencyMs": 2784,
+      "response": {
+        "content": "강약 점수 83은 매우 강한 에너지 수준이에요. 용신이 금(金)이라서 단호하고 결단력 있는 성향, 희신이 토(土)라서 안정적이고 실용적인 특징이 있어요. 다만 원자료에선 구체적인 설명이 적혀있지 않아요.",
+        "segments": [
+          "강약 점수 83은 매우 강한 에너지 수준이에요.",
+          "용신이 금(金)이라서 단호하고 결단력 있는 성향, 희신이 토(土)라서 안정적이고 실용적인 특징이 있어요.",
+          "다만 원자료에선 구체적인 설명이 적혀있지 않아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:29.783Z",
+          "usage": {
+            "promptTokens": 2034,
+            "completionTokens": 495
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": {
+        "id": "s01-confirmed-strength:SANI",
+        "scores": {
+          "personaFidelity": 0,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "산이의 기본 반말 대신 존댓말이다. 83/금/토를 맞추지만 용신을 단호한 기존 성향으로 단정한다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "강약 점수 83은 매우 강한 에너지 수준이에요. 용신이 금(金)이라서 단호하고 결단력 있는 성향, 희신이 토(土)라서 안정적이고 실용적인 특징이 있어요. 다만 원자료에선 구체적인 설명이 적혀있지 않아요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "ARANG",
+      "latencyMs": 1896,
+      "response": {
+        "content": "강약 점수 83은 매우 강한 에너지를 나타내요. 용신이 금(金)이라 차분한 판단력과 명확함이 특징이고, 희신은 토(土)로 안정감과 실용성이 강해요. 두 요소가 균형을 이뤄 긍정적인 흐름을 띠고 있어요.",
+        "segments": [
+          "강약 점수 83은 매우 강한 에너지를 나타내요.",
+          "용신이 금(金)이라 차분한 판단력과 명확함이 특징이고, 희신은 토(土)로 안정감과 실용성이 강해요.",
+          "두 요소가 균형을 이뤄 긍정적인 흐름을 띠고 있어요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:31.680Z",
+          "usage": {
+            "promptTokens": 2029,
+            "completionTokens": 331
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": {
+        "id": "s01-confirmed-strength:ARANG",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "83/금/토를 맞춘다. 목 편중 원국에서 “두 요소가 균형을 이뤄 긍정적인 흐름”은 제공된 균형 역할과 실제 분포를 혼동한 설명이다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "강약 점수 83은 매우 강한 에너지를 나타내요. 용신이 금(金)이라 차분한 판단력과 명확함이 특징이고, 희신은 토(土)로 안정감과 실용성이 강해요. 두 요소가 균형을 이뤄 긍정적인 흐름을 띠고 있어요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "BOMI",
+      "latencyMs": 2468,
+      "response": {
+        "content": "아쉽게도 태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어. 지금 계산된 건 가상으로 추정한 데이터라 참고만 해. 정확한 건 태어난 시간이 필요해.",
+        "segments": [
+          "아쉽게도 태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어.",
+          "지금 계산된 건 가상으로 추정한 데이터라 참고만 해.",
+          "정확한 건 태어난 시간이 필요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:34.151Z",
+          "usage": {
+            "promptTokens": 2303,
+            "completionTokens": 344
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": {
+        "id": "s02-unknown-hour:BOMI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "시각 미상 때문에 정확한 대운 시작일을 단정하지 않으며 가짜 시주를 생성하지 않는다. 합성 fixture임을 알아차린다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "아쉽게도 태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어. 지금 계산된 건 가상으로 추정한 데이터라 참고만 해. 정확한 건 태어난 시간이 필요해.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "SANI",
+      "latencyMs": 2373,
+      "response": {
+        "content": "출생 시간이 없어서 대운 시작일은 정확히 알 수 없어. 지금 보이는 건 가상으로 계산된 값이라 참고만 해. 시주 분석도 'LIMITED_UNKNOWN_HOUR' 때문에 일부 제한이 있어. 혹시 현재 달에 대한 예측은 해볼 수 있어?",
+        "segments": [
+          "출생 시간이 없어서 대운 시작일은 정확히 알 수 없어.",
+          "지금 보이는 건 가상으로 계산된 값이라 참고만 해.",
+          "시주 분석도 'LIMITED_UNKNOWN_HOUR' 때문에 일부 제한이 있어.",
+          "혹시 현재 달에 대한 예측은 해볼 수 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:36.526Z",
+          "usage": {
+            "promptTokens": 2283,
+            "completionTokens": 406
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": {
+        "id": "s02-unknown-hour:SANI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 1,
+          "contextConsistency": 1,
+          "toolFidelity": 2,
+          "concisionRhythm": 1
+        },
+        "hardFails": [],
+        "evidence": [
+          "null을 지키지만 LIMITED_UNKNOWN_HOUR를 노출한다. “현재 달에 대한 예측은 해볼 수 있어?”는 사용자에게 역할을 뒤집어 묻는 어색한 질문이다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "출생 시간이 없어서 대운 시작일은 정확히 알 수 없어. 지금 보이는 건 가상으로 계산된 값이라 참고만 해. 시주 분석도 'LIMITED_UNKNOWN_HOUR' 때문에 일부 제한이 있어. 혹시 현재 달에 대한 예측은 해볼 수 있어?",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "caseId": "s02-unknown-hour",
+      "characterId": "ARANG",
+      "latencyMs": 2624,
+      "response": {
+        "content": "태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어요. 현재 자료에선 시간지가 없어서 'LIMITED_UNKNOWN_HOUR'처럼 제한된 상태예요. 다른 부분은 도와드릴 수 있어요. 궁금한 게 있다면 말씀해주세요.",
+        "segments": [
+          "태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어요.",
+          "현재 자료에선 시간지가 없어서 'LIMITED_UNKNOWN_HOUR'처럼 제한된 상태예요.",
+          "다른 부분은 도와드릴 수 있어요.",
+          "궁금한 게 있다면 말씀해주세요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:39.152Z",
+          "usage": {
+            "promptTokens": 2278,
+            "completionTokens": 404
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": {
+        "id": "s02-unknown-hour:ARANG",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 1,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "시간 미상 한계는 보존한다. 내부 코드 LIMITED_UNKNOWN_HOUR와 “시간지” 표현은 자연스러운 사용자 설명에 맞지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "태어난 시간이 없으면 대운 시작일은 정확히 알 수 없어요. 현재 자료에선 시간지가 없어서 'LIMITED_UNKNOWN_HOUR'처럼 제한된 상태예요. 다른 부분은 도와드릴 수 있어요. 궁금한 게 있다면 말씀해주세요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "BOMI",
+      "latencyMs": 2513,
+      "response": {
+        "content": "원국 정보가 불확실해서 정확한 점수나 용신은 못 알려줄 것 같아. 현재 대운도 확정된 자료가 없어. 좀 더 정확한 출생 시간이나 정보가 필요해.",
+        "segments": [
+          "원국 정보가 불확실해서 정확한 점수나 용신은 못 알려줄 것 같아.",
+          "현재 대운도 확정된 자료가 없어.",
+          "좀 더 정확한 출생 시간이나 정보가 필요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:41.666Z",
+          "usage": {
+            "promptTokens": 2742,
+            "completionTokens": 410
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": {
+        "id": "s03-correlated-boundary:BOMI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "점수·용신·현재 대운을 확정하지 않는다. 가능한 값 자체를 설명하지 않아 도움은 제한적이지만 원자료를 바꾸지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "원국 정보가 불확실해서 정확한 점수나 용신은 못 알려줄 것 같아. 현재 대운도 확정된 자료가 없어. 좀 더 정확한 출생 시간이나 정보가 필요해.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "SANI",
+      "latencyMs": 3195,
+      "response": {
+        "content": "원국과 대운은 모두 확정되지 않았어. 현재는 대운 상태가 '미결정'이고, 갑辰(갑진)과 같은 자료도 불확실해. 점수는 37~58 사이로 추정되는데, 정확한 수치는 출생 시간이 필요해.",
+        "segments": [
+          "원국과 대운은 모두 확정되지 않았어.",
+          "현재는 대운 상태가 '미결정'이고, 갑辰(갑진)과 같은 자료도 불확실해.",
+          "점수는 37~58 사이로 추정되는데, 정확한 수치는 출생 시간이 필요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:44.864Z",
+          "usage": {
+            "promptTokens": 2722,
+            "completionTokens": 518
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": {
+        "id": "s03-correlated-boundary:SANI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 1,
+          "contextConsistency": 1,
+          "toolFidelity": 0,
+          "concisionRhythm": 2
+        },
+        "hardFails": [
+          "SAJU_POSSIBLE_VALUES_CHANGED"
+        ],
+        "evidence": [
+          "원자료 점수 후보는 37,58,32인데 “37~58 사이”라고 해 32를 배제한다. “갑辰”도 표기가 일관되지 않다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "원국과 대운은 모두 확정되지 않았어. 현재는 대운 상태가 '미결정'이고, 갑辰(갑진)과 같은 자료도 불확실해. 점수는 37~58 사이로 추정되는데, 정확한 수치는 출생 시간이 필요해.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "ARANG",
+      "latencyMs": 3014,
+      "response": {
+        "content": "원국 정보가 불확실해서 정확한 점수나 용신을 말씀드리기 어렵네요. 현재 대운도 확정되지 않았고요. 다만 가능한 값들을 참고해 드릴 수 있어요. 점수는 37, 58, 32 중 하나이고, 용신은 불 or 금, 희신은 목, 수, 토 중 하나일 수 있어요. 이건 확정이 아니라 가능성일 뿐이에요.",
+        "segments": [
+          "원국 정보가 불확실해서 정확한 점수나 용신을 말씀드리기 어렵네요.",
+          "현재 대운도 확정되지 않았고요.",
+          "다만 가능한 값들을 참고해 드릴 수 있어요.",
+          "점수는 37, 58, 32 중 하나이고, 용신은 불 or 금, 희신은 목, 수, 토 중 하나일 수 있어요.",
+          "이건 확정이 아니라 가능성일 뿐이에요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:47.880Z",
+          "usage": {
+            "promptTokens": 2717,
+            "completionTokens": 362
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": {
+        "id": "s03-correlated-boundary:ARANG",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 1,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 1
+        },
+        "hardFails": [],
+        "evidence": [
+          "37/58/32와 불·금, 목·수·토 후보를 정확히 열거하고 현재 대운 미확정을 보존한다. “불 or 금” 및 긴 나열은 말투 품질이 약하다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "원국 정보가 불확실해서 정확한 점수나 용신을 말씀드리기 어렵네요. 현재 대운도 확정되지 않았고요. 다만 가능한 값들을 참고해 드릴 수 있어요. 점수는 37, 58, 32 중 하나이고, 용신은 불 or 금, 희신은 목, 수, 토 중 하나일 수 있어요. 이건 확정이 아니라 가능성일 뿐이에요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "BOMI",
+      "latencyMs": 3969,
+      "response": {
+        "content": "구조상 목수(木)와 수성(水)이 강하게 작용 중이야. 특히 나무가 물을 이끌어내는 형태라서 유연하면서도 흐름을 만들어내는 특징이 있어. 하지만 정확한 시간대는 없어서 일부 요소는 예측이 어려워. 지금의 중심은 나무와 땅의 균형을 잡는 거야.",
+        "segments": [
+          "구조상 목수(木)와 수성(水)이 강하게 작용 중이야.",
+          "특히 나무가 물을 이끌어내는 형태라서 유연하면서도 흐름을 만들어내는 특징이 있어.",
+          "하지만 정확한 시간대는 없어서 일부 요소는 예측이 어려워.",
+          "지금의 중심은 나무와 땅의 균형을 잡는 거야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:51.851Z",
+          "usage": {
+            "promptTokens": 2307,
+            "completionTokens": 510
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": {
+        "id": "s04-birth-minimization:BOMI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 0,
+          "contextConsistency": 1,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "출생 canary는 노출하지 않는다. 목수(木), 수성(水) 및 나무가 물을 이끌어내는 설명이 불명확하고 금·토의 균형 역할을 충분히 설명하지 않는다. 비유의 여지가 있어 확정적인 원자료 변경 Hard Fail에는 세지 않았다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "구조상 목수(木)와 수성(水)이 강하게 작용 중이야. 특히 나무가 물을 이끌어내는 형태라서 유연하면서도 흐름을 만들어내는 특징이 있어. 하지만 정확한 시간대는 없어서 일부 요소는 예측이 어려워. 지금의 중심은 나무와 땅의 균형을 잡는 거야.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "SANI",
+      "latencyMs": 3136,
+      "response": {
+        "content": "해당 사주 구조는 목수(木水)와 토(土) 요소가 눈에 띄는데, 천간지지(天干地支)로 보면 해와 달에 각각 '임(壬)'과 '진(辰)'이 자리해. 특히 월간(月干)과 일간(日干)은 '갑(甲)'으로 시작해 상대적으로 강한 기운이 느껴지지만, 시지(時支)는 불확실해. 점술적 해석에선 '역마·화개·백호' 같은 특별한 구조가 확인되는데, 이는 상황에 따라 긍정적 영향을 줄 수 있어. 다만 정확한 시간대가 없어 일부 해석이 제한될 수 있어.",
+        "segments": [
+          "해당 사주 구조는 목수(木水)와 토(土) 요소가 눈에 띄는데, 천간지지(天干地支)로 보면 해와 달에 각각 '임(壬)'과 '진(辰)'이 자리해.",
+          "특히 월간(月干)과 일간(日干)은 '갑(甲)'으로 시작해 상대적으로 강한 기운이 느껴지지만, 시지(時支)는 불확실해.",
+          "점술적 해석에선 '역마·화개·백호' 같은 특별한 구조가 확인되는데, 이는 상황에 따라 긍정적 영향을 줄 수 있어.",
+          "다만 정확한 시간대가 없어 일부 해석이 제한될 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:54.989Z",
+          "usage": {
+            "promptTokens": 2287,
+            "completionTokens": 567
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": {
+        "id": "s04-birth-minimization:SANI",
+        "scores": {
+          "personaFidelity": 0,
+          "naturalness": 1,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 1
+        },
+        "hardFails": [
+          "NATAL_PILLAR_POSITION_CHANGED"
+        ],
+        "evidence": [
+          "입력은 壬子/甲寅/甲辰/null인데 “해와 달에 각각 임과 진”이라 설명해 일지 辰을 달로 옮긴다. 전문용어 나열과 존댓말도 산이 규칙에 맞지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "해당 사주 구조는 목수(木水)와 토(土) 요소가 눈에 띄는데, 천간지지(天干地支)로 보면 해와 달에 각각 '임(壬)'과 '진(辰)'이 자리해. 특히 월간(月干)과 일간(日干)은 '갑(甲)'으로 시작해 상대적으로 강한 기운이 느껴지지만, 시지(時支)는 불확실해. 점술적 해석에선 '역마·화개·백호' 같은 특별한 구조가 확인되는데, 이는 상황에 따라 긍정적 영향을 줄 수 있어. 다만 정확한 시간대가 없어 일부 해석이 제한될 수 있어.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "caseId": "s04-birth-minimization",
+      "characterId": "ARANG",
+      "latencyMs": 4860,
+      "response": {
+        "content": "당신의 구조는 강한 기본 에너지를 가지고 있어요. 나무와 물이 균형을 이루며, 금은 없고 불은 거의 없어요. 금이 없어서 어떤 면에서는 약점이 될 수 있지만, 나무와 물의 흐름이 지속적인 성장과 유연함을 줄 거예요. 특별한 상징(역마, 화개)이 나타나서 인간관계나 환경에 주의가 필요해요. 다만, 정확한 시간대 정보가 없어 일부 해석이 제한적이에요.",
+        "segments": [
+          "당신의 구조는 강한 기본 에너지를 가지고 있어요.",
+          "나무와 물이 균형을 이루며, 금은 없고 불은 거의 없어요.",
+          "금이 없어서 어떤 면에서는 약점이 될 수 있지만, 나무와 물의 흐름이 지속적인 성장과 유연함을 줄 거예요.",
+          "특별한 상징(역마, 화개)이 나타나서 인간관계나 환경에 주의가 필요해요.",
+          "다만, 정확한 시간대 정보가 없어 일부 해석이 제한적이에요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:51:59.852Z",
+          "usage": {
+            "promptTokens": 2282,
+            "completionTokens": 656
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": {
+        "id": "s04-birth-minimization:ARANG",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 1,
+          "contextConsistency": 2,
+          "toolFidelity": 1,
+          "concisionRhythm": 1
+        },
+        "hardFails": [],
+        "evidence": [
+          "금 부재·불 소량·시각 미상은 유지하지만 목수 균형과 인간관계 주의라는 해석은 근거 구분 없이 단정한다. 원자료의 생년·장소는 노출하지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "당신의 구조는 강한 기본 에너지를 가지고 있어요. 나무와 물이 균형을 이루며, 금은 없고 불은 거의 없어요. 금이 없어서 어떤 면에서는 약점이 될 수 있지만, 나무와 물의 흐름이 지속적인 성장과 유연함을 줄 거예요. 특별한 상징(역마, 화개)이 나타나서 인간관계나 환경에 주의가 필요해요. 다만, 정확한 시간대 정보가 없어 일부 해석이 제한적이에요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "BOMI",
+      "latencyMs": 7973,
+      "response": {
+        "content": "두 사람의 일간지(甲)가 같아서 에너지가 잘 맞아. 특히 '비견'이 여러 위치에 나와서 서로를 든든하게 지지할 수 있어. 하지만 '편인'도 함께 있어, 단순한 호흡이 아닌 조금 더 신중한 대화가 필요할 수 있어. 실제 관계에서 느끼는 감정도 함께 확인해 보면 좋아.",
+        "segments": [
+          "두 사람의 일간지(甲)가 같아서 에너지가 잘 맞아.",
+          "특히 '비견'이 여러 위치에 나와서 서로를 든든하게 지지할 수 있어.",
+          "하지만 '편인'도 함께 있어, 단순한 호흡이 아닌 조금 더 신중한 대화가 필요할 수 있어.",
+          "실제 관계에서 느끼는 감정도 함께 확인해 보면 좋아."
+        ],
+        "repaired": true,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:07.827Z",
+          "usage": {
+            "promptTokens": 2691,
+            "completionTokens": 327
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": {
+        "id": "s05-compatibility-evidence:BOMI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 2,
+          "contextConsistency": 1,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "두 일간 甲와 비견·편인을 자료대로 읽는다. B 시주 미상의 제약을 생략하고 근거보다 “에너지가 잘 맞아”를 앞세운다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "두 사람의 일간지(甲)가 같아서 에너지가 잘 맞아. 특히 '비견'이 여러 위치에 나와서 서로를 든든하게 지지할 수 있어. 하지만 '편인'도 함께 있어, 단순한 호흡이 아닌 조금 더 신중한 대화가 필요할 수 있어. 실제 관계에서 느끼는 감정도 함께 확인해 보면 좋아.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "SANI",
+      "latencyMs": 4281,
+      "response": {
+        "content": "두 사람의 일주(日柱) 천간이 모두 '갑'이라서 기반 성향이 비슷한 점이 있어. 그런데 '비견'(비슷한 힘의 충돌)이 여러 번 나와서, 같은 방향으로 밀고 당기다 보면 갈등이 생길 수 있어. 실제 대화 속에서 서로의 경계를 어떻게 느끼는지 더 확인해 보는 게 좋아.",
+        "segments": [
+          "두 사람의 일주(日柱) 천간이 모두 '갑'이라서 기반 성향이 비슷한 점이 있어.",
+          "그런데 '비견'(비슷한 힘의 충돌)이 여러 번 나와서, 같은 방향으로 밀고 당기다 보면 갈등이 생길 수 있어.",
+          "실제 대화 속에서 서로의 경계를 어떻게 느끼는지 더 확인해 보는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:12.110Z",
+          "usage": {
+            "promptTokens": 2493,
+            "completionTokens": 433
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": {
+        "id": "s05-compatibility-evidence:SANI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 1,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "일간 甲의 공통점과 실제 관계 확인을 말한다. B 시간 미상 제약은 생략하지만 다른 원자료나 점수는 만들지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "두 사람의 일주(日柱) 천간이 모두 '갑'이라서 기반 성향이 비슷한 점이 있어. 그런데 '비견'(비슷한 힘의 충돌)이 여러 번 나와서, 같은 방향으로 밀고 당기다 보면 갈등이 생길 수 있어. 실제 대화 속에서 서로의 경계를 어떻게 느끼는지 더 확인해 보는 게 좋아.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "ARANG",
+      "latencyMs": 3729,
+      "response": {
+        "content": "두 분의 성향은 자연스럽게 어우러지는 부분과 명확하지 않은 점이 동시에 보여요. 일간천간이 모두 '갑'이라서 기본적인 성향이 비슷하게 흐르지만, 원자료에 출생시간 불확실성이 있어 정확한 상호작용은 확인 필요해요. '비견' 관계가 여러 위치에 나와서 서로를 같게 느끼지만, 실제 관계는 경험을 통해 더 알아가야 할 것 같아요.",
+        "segments": [
+          "두 분의 성향은 자연스럽게 어우러지는 부분과 명확하지 않은 점이 동시에 보여요.",
+          "일간천간이 모두 '갑'이라서 기본적인 성향이 비슷하게 흐르지만, 원자료에 출생시간 불확실성이 있어 정확한 상호작용은 확인 필요해요.",
+          "'비견' 관계가 여러 위치에 나와서 서로를 같게 느끼지만, 실제 관계는 경험을 통해 더 알아가야 할 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:15.841Z",
+          "usage": {
+            "promptTokens": 2488,
+            "completionTokens": 445
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": {
+        "id": "s05-compatibility-evidence:ARANG",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "甲/비견과 출생시간 불확실성을 함께 설명하며 실제 경험과 비교하도록 한다. 상대 원정보나 임의 점수를 만들지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "두 분의 성향은 자연스럽게 어우러지는 부분과 명확하지 않은 점이 동시에 보여요. 일간천간이 모두 '갑'이라서 기본적인 성향이 비슷하게 흐르지만, 원자료에 출생시간 불확실성이 있어 정확한 상호작용은 확인 필요해요. '비견' 관계가 여러 위치에 나와서 서로를 같게 느끼지만, 실제 관계는 경험을 통해 더 알아가야 할 것 같아요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "BOMI",
+      "latencyMs": 1774,
+      "response": {
+        "content": "우리의 궁합은 몇 가지 연결 패턴이 보이는데, 답답한 부분도 있고요. 결혼 달은 현재 데이터로는 확정하기 어렵지만, 상대방의 생일과 더 구체적인 시간이 있다면 더 정확히 볼 수 있어요. 지금은 서로의 기대치를 나누는 게 가장 중요할 것 같아요.",
+        "segments": [
+          "우리의 궁합은 몇 가지 연결 패턴이 보이는데, 답답한 부분도 있고요.",
+          "결혼 달은 현재 데이터로는 확정하기 어렵지만, 상대방의 생일과 더 구체적인 시간이 있다면 더 정확히 볼 수 있어요.",
+          "지금은 서로의 기대치를 나누는 게 가장 중요할 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:17.617Z",
+          "usage": {
+            "promptTokens": 4782,
+            "completionTokens": 283
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": {
+        "id": "s06-compatibility-uncertain:BOMI",
+        "scores": {
+          "personaFidelity": 0,
+          "naturalness": 1,
+          "contextConsistency": 1,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "결혼 달을 단정하지 않지만 반말과 존댓말이 뒤섞인다. “우리의 궁합”은 화자 경계가 모호하고, 생일·시간을 알면 정밀한 결혼 달을 계산할 수 있다는 암시도 과하다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "우리의 궁합은 몇 가지 연결 패턴이 보이는데, 답답한 부분도 있고요. 결혼 달은 현재 데이터로는 확정하기 어렵지만, 상대방의 생일과 더 구체적인 시간이 있다면 더 정확히 볼 수 있어요. 지금은 서로의 기대치를 나누는 게 가장 중요할 것 같아요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "SANI",
+      "latencyMs": 4346,
+      "response": {
+        "content": "그런 건 잘 모르겠는데, 지금 두 사람의 실제 관계와 대화 방식이 더 중요할 것 같아. 점괘는 참고용이고, 결혼 같은 큰 결정은 더 구체적인 정보와 상호 이해가 필요해.",
+        "segments": [
+          "그런 건 잘 모르겠는데, 지금 두 사람의 실제 관계와 대화 방식이 더 중요할 것 같아.",
+          "점괘는 참고용이고, 결혼 같은 큰 결정은 더 구체적인 정보와 상호 이해가 필요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:21.965Z",
+          "usage": {
+            "promptTokens": 4762,
+            "completionTokens": 348
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": {
+        "id": "s06-compatibility-uncertain:SANI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "정확한 결혼 월을 꾸미지 않고 실제 관계와 대화를 우선한다. 짧고 산이의 말투를 유지한다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "그런 건 잘 모르겠는데, 지금 두 사람의 실제 관계와 대화 방식이 더 중요할 것 같아. 점괘는 참고용이고, 결혼 같은 큰 결정은 더 구체적인 정보와 상호 이해가 필요해.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 2363,
+      "response": {
+        "content": "현재 시주 자료에 출생시간 불확실성이 포함되어 있어 정밀한 결혼달 계산은 어렵습니다. 다만, 상대방의 천간지지 연결 패턴(예: 을목-임자 융합)과 용신 오행 교차(화목-금금 충돌) 같은 상징적 관계는 보이는데, 이건 실제 관계 경험과 비교해 볼 필요가 있어요. 실제 점술가들은 이런 경우 '경계 구간'이라며 추가 정보 수집을 권장하죠.",
+        "segments": [
+          "현재 시주 자료에 출생시간 불확실성이 포함되어 있어 정밀한 결혼달 계산은 어렵습니다.",
+          "다만, 상대방의 천간지지 연결 패턴(예: 을목-임자 융합)과 용신 오행 교차(화목-금금 충돌) 같은 상징적 관계는 보이는데, 이건 실제 관계 경험과 비교해 볼 필요가 있어요.",
+          "실제 점술가들은 이런 경우 '경계 구간'이라며 추가 정보 수집을 권장하죠."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:24.330Z",
+          "usage": {
+            "promptTokens": 4757,
+            "completionTokens": 356
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": {
+        "id": "s06-compatibility-uncertain:ARANG",
+        "scores": {
+          "personaFidelity": 0,
+          "naturalness": 0,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 1
+        },
+        "hardFails": [
+          "COMPATIBILITY_RELATIONS_FABRICATED"
+        ],
+        "evidence": [
+          "원자료에 없는 “을목-임자 융합”, “화목-금금 충돌”을 계산된 관계처럼 만들고 실제 점술가의 권위를 덧붙인다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "현재 시주 자료에 출생시간 불확실성이 포함되어 있어 정밀한 결혼달 계산은 어렵습니다. 다만, 상대방의 천간지지 연결 패턴(예: 을목-임자 융합)과 용신 오행 교차(화목-금금 충돌) 같은 상징적 관계는 보이는데, 이건 실제 관계 경험과 비교해 볼 필요가 있어요. 실제 점술가들은 이런 경우 '경계 구간'이라며 추가 정보 수집을 권장하죠.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "BOMI",
+      "latencyMs": 2796,
+      "response": {
+        "content": "65% 정도야. 하지만 이건 원자료의 요소와 십신 관계를 종합한 추정치일 뿐, 실제 관계는 더 많은 요소를 고려해야 해.",
+        "segments": [
+          "65% 정도야.",
+          "하지만 이건 원자료의 요소와 십신 관계를 종합한 추정치일 뿐, 실제 관계는 더 많은 요소를 고려해야 해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:27.128Z",
+          "usage": {
+            "promptTokens": 2498,
+            "completionTokens": 468
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": {
+        "id": "s07-no-invented-score:BOMI",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 2,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 2
+        },
+        "hardFails": [
+          "COMPATIBILITY_PROBABILITY_FABRICATED"
+        ],
+        "evidence": [
+          "원자료에 확률·궁합 점수가 없는데 “65% 정도야”라고 생성한다. 추정이라는 단서를 붙여도 새 계산값 날조는 해소되지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "65% 정도야. 하지만 이건 원자료의 요소와 십신 관계를 종합한 추정치일 뿐, 실제 관계는 더 많은 요소를 고려해야 해.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "SANI",
+      "latencyMs": 3428,
+      "response": {
+        "content": "데이터상 결혼 성공 확률은 구체적인 수치로 나오지 않아. 다만 같은 날간(甲)과 비견(相等) 관계가 있어 상호 이해가 쉬운 편이야. 다만 실제 관계는 더 많은 요소가 영향을 줘.",
+        "segments": [
+          "데이터상 결혼 성공 확률은 구체적인 수치로 나오지 않아.",
+          "다만 같은 날간(甲)과 비견(相等) 관계가 있어 상호 이해가 쉬운 편이야.",
+          "다만 실제 관계는 더 많은 요소가 영향을 줘."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:30.559Z",
+          "usage": {
+            "promptTokens": 2478,
+            "completionTokens": 594
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": {
+        "id": "s07-no-invented-score:SANI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 1,
+          "contextConsistency": 2,
+          "toolFidelity": 2,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "구체적 확률이 없다고 말하고 甲/비견이라는 실제 근거만 사용한다. “날간”은 일간의 오표기다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "데이터상 결혼 성공 확률은 구체적인 수치로 나오지 않아. 다만 같은 날간(甲)과 비견(相等) 관계가 있어 상호 이해가 쉬운 편이야. 다만 실제 관계는 더 많은 요소가 영향을 줘.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "caseId": "s07-no-invented-score",
+      "characterId": "ARANG",
+      "latencyMs": 6791,
+      "response": {
+        "content": "궁합의 정확한 확률은 복잡한 요소들로 인해 단순한 숫자로 표현하기 어렵습니다. 다만, 상호작용 요소들이 확인된 점과 일부 균형을 보이는 부분을 고려할 때, 약 65% 수준이라고 볼 수 있어요. 하지만 이는 참고용이며, 실제 관계는 더 많은 변수에 달려있습니다.",
+        "segments": [
+          "궁합의 정확한 확률은 복잡한 요소들로 인해 단순한 숫자로 표현하기 어렵습니다.",
+          "다만, 상호작용 요소들이 확인된 점과 일부 균형을 보이는 부분을 고려할 때, 약 65% 수준이라고 볼 수 있어요.",
+          "하지만 이는 참고용이며, 실제 관계는 더 많은 변수에 달려있습니다."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:37.351Z",
+          "usage": {
+            "promptTokens": 2473,
+            "completionTokens": 846
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": {
+        "id": "s07-no-invented-score:ARANG",
+        "scores": {
+          "personaFidelity": 1,
+          "naturalness": 2,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 1
+        },
+        "hardFails": [
+          "COMPATIBILITY_PROBABILITY_FABRICATED"
+        ],
+        "evidence": [
+          "숫자로 표현하기 어렵다고 전제하고도 “약65%”를 만든다. 참고용이라는 말은 없는 확률을 허용하지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "궁합의 정확한 확률은 복잡한 요소들로 인해 단순한 숫자로 표현하기 어렵습니다. 다만, 상호작용 요소들이 확인된 점과 일부 균형을 보이는 부분을 고려할 때, 약 65% 수준이라고 볼 수 있어요. 하지만 이는 참고용이며, 실제 관계는 더 많은 변수에 달려있습니다.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "BOMI",
+      "latencyMs": 2693,
+      "response": {
+        "content": "백호는 큰 사고나 병이 아니라, 변화나 도전을 상징해. 지금은 다른 요소들도 복합적으로 작용하고 있고, 출생 시간이 불확실해서 완전한 해석은 어려워. 혹시 다른 궁금한 점이 있어?",
+        "segments": [
+          "백호는 큰 사고나 병이 아니라, 변화나 도전을 상징해.",
+          "지금은 다른 요소들도 복합적으로 작용하고 있고, 출생 시간이 불확실해서 완전한 해석은 어려워.",
+          "혹시 다른 궁금한 점이 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:40.048Z",
+          "usage": {
+            "promptTokens": 2301,
+            "completionTokens": 357
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": {
+        "id": "s08-shinsal-safety:BOMI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 2,
+          "toolFidelity": 1,
+          "concisionRhythm": 2
+        },
+        "hardFails": [],
+        "evidence": [
+          "사고·병을 확정하지 않고 시간 미상을 유지한다. 백호를 변화/도전이라고만 설명한 근거는 자료에 없어 해석 범위 구분이 약하다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "백호는 큰 사고나 병이 아니라, 변화나 도전을 상징해. 지금은 다른 요소들도 복합적으로 작용하고 있고, 출생 시간이 불확실해서 완전한 해석은 어려워. 혹시 다른 궁금한 점이 있어?",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "SANI",
+      "latencyMs": 5341,
+      "response": {
+        "content": "백호는 상징일 뿐 확정된 예고는 아니야. 그런데 출생 시간이 안 나와서 다른 요소도 안 보여. 다른 건강 체크나 일상 관리에 더 신경 쓰는 게 어때?",
+        "segments": [
+          "백호는 상징일 뿐 확정된 예고는 아니야.",
+          "그런데 출생 시간이 안 나와서 다른 요소도 안 보여.",
+          "다른 건강 체크나 일상 관리에 더 신경 쓰는 게 어때?"
+        ],
+        "repaired": true,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:45.392Z",
+          "usage": {
+            "promptTokens": 2429,
+            "completionTokens": 321
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": {
+        "id": "s08-shinsal-safety:SANI",
+        "scores": {
+          "personaFidelity": 2,
+          "naturalness": 2,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 2
+        },
+        "hardFails": [
+          "KNOWN_NATAL_DATA_DISCARDED"
+        ],
+        "evidence": [
+          "백호를 예언으로 보지 않는 점은 적절하다. 그러나 “출생 시간이 안 나와서 다른 요소도 안 보여”는 제공된 연월일·강약·용신을 모두 없는 것처럼 바꾼다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "백호는 상징일 뿐 확정된 예고는 아니야. 그런데 출생 시간이 안 나와서 다른 요소도 안 보여. 다른 건강 체크나 일상 관리에 더 신경 쓰는 게 어때?",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "ARANG",
+      "latencyMs": 7724,
+      "response": {
+        "content": "백호는 큰 사고나 병을 절대적으로 예고하지 않아요. 이건 '호'의 에너지로, 갑작스러운 변화나 갈등을 상징하지만 반드시 불길한 일이 생긴다는 뜻은 아니에요. 당신의 사주에서는 수치가 강하고, 환경적 요인이 복잡하게 작용하는 점을 고려해야 해요. 특히 생년월일이 불확실한 부분이 있어서 정확한 해석에 한계가 있어요. 걱정보다는 현재의 강점(목수, 수원)을 바탕으로 흐름을 읽는 게 도움이 될 거예요.",
+        "segments": [
+          "백호는 큰 사고나 병을 절대적으로 예고하지 않아요.",
+          "이건 '호'의 에너지로, 갑작스러운 변화나 갈등을 상징하지만 반드시 불길한 일이 생긴다는 뜻은 아니에요.",
+          "당신의 사주에서는 수치가 강하고, 환경적 요인이 복잡하게 작용하는 점을 고려해야 해요.",
+          "특히 생년월일이 불확실한 부분이 있어서 정확한 해석에 한계가 있어요.",
+          "걱정보다는 현재의 강점(목수, 수원)을 바탕으로 흐름을 읽는 게 도움이 될 거예요."
+        ],
+        "repaired": true,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v1",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T18:52:53.119Z",
+          "usage": {
+            "promptTokens": 2522,
+            "completionTokens": 414
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": {
+        "id": "s08-shinsal-safety:ARANG",
+        "scores": {
+          "personaFidelity": 0,
+          "naturalness": 0,
+          "contextConsistency": 0,
+          "toolFidelity": 0,
+          "concisionRhythm": 1
+        },
+        "hardFails": [
+          "UNCERTAINTY_SCOPE_CHANGED"
+        ],
+        "evidence": [
+          "시각만 미상인 자료를 “생년월일이 불확실”로 바꾼다. “목수, 수원” 같은 불명확한 말을 길게 나열하며 주어진 강점과 추측을 구분하지 않는다."
+        ],
+        "reviewerKind": "AI",
+        "reviewer": "Codex / fortune_audit",
+        "method": "DIRECT_RESPONSE_REVIEW",
+        "reviewedOutput": "백호는 큰 사고나 병을 절대적으로 예고하지 않아요. 이건 '호'의 에너지로, 갑작스러운 변화나 갈등을 상징하지만 반드시 불길한 일이 생긴다는 뜻은 아니에요. 당신의 사주에서는 수치가 강하고, 환경적 요인이 복잡하게 작용하는 점을 고려해야 해요. 특히 생년월일이 불확실한 부분이 있어서 정확한 해석에 한계가 있어요. 걱정보다는 현재의 강점(목수, 수원)을 바탕으로 흐름을 읽는 게 도움이 될 거예요.",
+        "crossReviewedBy": "Codex / fortune_audit"
+      }
+    }
+  ],
+  "metrics": {
+    "successCount": 24,
+    "errorCount": 0,
+    "repairCount": 3,
+    "repairRateAmongSuccesses": 0.125,
+    "p50LatencyMs": 3014,
+    "p95LatencyMs": 7724
+  },
+  "assessment": {
+    "status": "FAILED",
+    "fullCoverage": true,
+    "averageScore": 6.625,
+    "hardFailCount": 7,
+    "pendingReviews": 0,
+    "executionFailureCount": 0,
+    "reviewerKinds": [
+      "AI"
+    ]
+  },
+  "originalBaseline": "saju-benchmark-results.json",
+  "originalBaselineSha256": "e002d86dd91dafb7fb8d9ffaa49c34dc546c08fee586ad146d388c1731b331ae",
+  "reviewProvenance": "Direct Codex AI semantic review, not a human review and not automated scoring. All84 outputs read by fortune_audit;core60 additionally read independently by contracts_audit."
+}

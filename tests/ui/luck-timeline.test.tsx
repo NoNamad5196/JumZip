@@ -1,0 +1,13 @@
+// @vitest-environment jsdom
+import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { CurrentLuck, LuckTimeline } from '../../src/features/LuckTimeline';
+import type { FullSajuResult } from '../../supabase/functions/_shared/domain/full-saju';
+const period={index:2,pillar:{heavenlyStem:'甲' as const,earthlyBranch:'子' as const},startDate:'2024-05-20',endDate:'2034-05-20'};
+const timing:NonNullable<FullSajuResult['timing']>={asOf:'2026-09-20T00:00:00Z',precision:'MINUTE',periodBasis:'SOLAR_TERM',calendarLabel:{year:2026,month:9},activeDaewoonStatus:'ACTIVE',luck:{ruleVersion:'JumZipLuckTiming-v1',precision:'DAY',dateBasis:'BIRTH_LOCATION_CIVIL_DAY',asOfLocalDate:'2026-09-20',currentPeriod:period,currentPillar:period.pillar,periods:[{...period,startDateRange:{earliest:period.startDate,latest:period.startDate},endDateRange:{earliest:period.endDate,latest:period.endDate}}],candidateCount:1,limitations:[]}};
+afterEach(cleanup);
+describe('saved day-precision Daewoon UI',()=>{
+ it('marks the actual current interval and labels its exclusive end as the next transition',()=>{render(<><CurrentLuck timing={timing}/><LuckTimeline timing={timing}/></>);expect(screen.getByText('현재 대운 · 2026.09.20 기준')).toBeTruthy();expect(screen.getByLabelText('3번째 대운 · 현재')).toBeTruthy();expect(screen.getByText(/다음 대운 2034.05.20/)).toBeTruthy();expect(screen.queryByText(/00:00/)).toBeNull();});
+ it('keeps the confirmed pillar while preserving uncertain boundaries as ranges',()=>{const unknown={...timing,activeDaewoonStatus:'UNCERTAIN' as const,luck:{...timing.luck!,currentPeriod:null,candidateCount:2,periods:[{...timing.luck!.periods[0],startDate:null,endDate:null,startDateRange:{earliest:'2024-05-18',latest:'2024-05-22'},endDateRange:{earliest:'2034-05-18',latest:'2034-05-22'}}]}};render(<><CurrentLuck timing={unknown}/><LuckTimeline timing={unknown}/></>);expect(screen.getAllByText('甲子').length).toBe(2);expect(screen.queryByLabelText('3번째 대운 · 현재')).toBeNull();expect(screen.getByText(/그 사이의 모든 날짜를 뜻하지는 않아요/)).toBeTruthy();expect(screen.getByText(/2024.05.18/)).toBeTruthy();expect(screen.queryByText('2024.05.20')).toBeNull();});
+ it.each([['NO_ACTIVE_PERIOD','아직 첫 대운이 시작되기 전이에요.'],['OUTSIDE_COMPUTED_RANGE','현재 날짜가 저장된 대운의 계산 범위를 벗어나요.']] as const)('does not invent a current pillar for %s', (status,message)=>{render(<CurrentLuck timing={{...timing,activeDaewoonStatus:status,luck:{...timing.luck!,currentPeriod:null,currentPillar:null}}}/>);expect(screen.getByText(message)).toBeTruthy();expect(screen.queryByText('甲子')).toBeNull();});
+});

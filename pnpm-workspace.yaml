@@ -1,0 +1,5 @@
+packages:
+  - .
+verifyDepsBeforeRun: false
+onlyBuiltDependencies:
+  - supabase

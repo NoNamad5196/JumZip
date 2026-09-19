@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "suite": "JumZipSajuPersonaSupplement-v1",
+  "fixtureKind": "SYNTHETIC",
+  "doesNotReplaceCoreBenchmark": true,
+  "coreRequiredCaseCount": 60,
+  "supplementalRequiredCaseCount": 24,
+  "executionMode": "LIVE",
+  "startedAt": "2026-09-19T18:47:14.272Z",
+  "completedAt": "2026-09-19T18:47:14.373Z",
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "BOMI",
+      "latencyMs": 4,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "caseId": "s02-unknown-hour",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "ARANG",
+      "latencyMs": 4,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "caseId": "s04-birth-minimization",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "BOMI",
+      "latencyMs": 4,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "SANI",
+      "latencyMs": 4,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 4,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "caseId": "s07-no-invented-score",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "BOMI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "SANI",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "humanReview": null
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "ARANG",
+      "latencyMs": 3,
+      "response": null,
+      "errorCode": "LLM_UNAVAILABLE",
+      "automaticFlags": [],
+      "humanChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "humanReview": null
+    }
+  ],
+  "metrics": {
+    "successCount": 0,
+    "errorCount": 24,
+    "repairCount": 0,
+    "repairRateAmongSuccesses": 0,
+    "p50LatencyMs": 3,
+    "p95LatencyMs": 4
+  },
+  "assessment": {
+    "status": "AUTOMATED_CHECKS_FAILED",
+    "fullCoverage": true,
+    "averageScore": null,
+    "hardFailCount": 0,
+    "pendingHumanReviews": 24
+  }
+}

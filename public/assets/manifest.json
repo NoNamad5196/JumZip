@@ -1,0 +1,297 @@
+{
+  "project": "JumZip",
+  "assetCount": 26,
+  "rules": [
+    "Preserve original PNGs.",
+    "No regeneration, redraw, or recoloring.",
+    "Use CSS crop, position, scale and mask for responsive layouts."
+  ],
+  "files": [
+    {
+      "path": "public/assets/characters/bomi/master.png",
+      "url": "/assets/characters/bomi/master.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-character-assets.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 1796477,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "cebdec345e25bcc6bf19dc651e835f35d4c203b43beefae808dd70fd873e64c1"
+    },
+    {
+      "path": "public/assets/characters/sani/master.png",
+      "url": "/assets/characters/sani/master.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-character-assets.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 1637806,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "bf0f4d5f96c6f8c9c71cc94771ea34ad2cd17ce0af6b054251482914f63df689"
+    },
+    {
+      "path": "public/assets/characters/arang/master.png",
+      "url": "/assets/characters/arang/master.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-character-assets.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 1783675,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "4a1fcdd30492a7e00b2dd65a1b2f0ae9489ff07d0adfeeaf2b78d611baef72ba"
+    },
+    {
+      "path": "public/assets/tarot/major/00_The_Fool.png",
+      "url": "/assets/tarot/major/00_The_Fool.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2159126,
+      "width": 971,
+      "height": 1619,
+      "sha256": "d0ee6ee3d96d3421105330298d4886fd75edb6013241eaecad82440d72165122"
+    },
+    {
+      "path": "public/assets/tarot/major/01_The_Magician.png",
+      "url": "/assets/tarot/major/01_The_Magician.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2165570,
+      "width": 971,
+      "height": 1619,
+      "sha256": "751191bd4d7371867dd33b40385291990704550aec2e441d17d79b212e7f1bf6"
+    },
+    {
+      "path": "public/assets/tarot/major/02_The_High_Priestess.png",
+      "url": "/assets/tarot/major/02_The_High_Priestess.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2146773,
+      "width": 971,
+      "height": 1620,
+      "sha256": "eebdc430a71763fae62d2c653ed3e46205bc74f1f36850217d17b0133dd31a5e"
+    },
+    {
+      "path": "public/assets/tarot/major/03_The_Empress.png",
+      "url": "/assets/tarot/major/03_The_Empress.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2419729,
+      "width": 971,
+      "height": 1620,
+      "sha256": "626a4b5d13c18c722d62976d19b0cf3584204b8cf7d7267976949cbcae8486ce"
+    },
+    {
+      "path": "public/assets/tarot/major/04_The_Emperor.png",
+      "url": "/assets/tarot/major/04_The_Emperor.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2136440,
+      "width": 971,
+      "height": 1619,
+      "sha256": "6a5641826dce213c888d11ca637b23b1d69140b924d45b6ca25e4414c33f411d"
+    },
+    {
+      "path": "public/assets/tarot/major/05_The_Hierophant.png",
+      "url": "/assets/tarot/major/05_The_Hierophant.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2168115,
+      "width": 971,
+      "height": 1620,
+      "sha256": "89219eec60c6670875c0c7c42f59bdf68868c2e3751034c628e7e08dd881fd4c"
+    },
+    {
+      "path": "public/assets/tarot/major/06_The_Lovers.png",
+      "url": "/assets/tarot/major/06_The_Lovers.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2432712,
+      "width": 971,
+      "height": 1620,
+      "sha256": "4ed715e00c26d36fb64dcf6a2c67479a4b232748e469ab93c6bd0d99b91c4f96"
+    },
+    {
+      "path": "public/assets/tarot/major/07_The_Chariot.png",
+      "url": "/assets/tarot/major/07_The_Chariot.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-00-07.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2379372,
+      "width": 971,
+      "height": 1620,
+      "sha256": "8b4950b12cc60b8a2c3b4d4fe6dd4c43cfb1f6a59869906a88d7bd7f1d5947ce"
+    },
+    {
+      "path": "public/assets/tarot/major/08_Strength.png",
+      "url": "/assets/tarot/major/08_Strength.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2311732,
+      "width": 971,
+      "height": 1620,
+      "sha256": "e2c6624cb9dece7f85f0858bd04ac70b29e9fa9a1e5014bf5437109e2c159c91"
+    },
+    {
+      "path": "public/assets/tarot/major/09_The_Hermit.png",
+      "url": "/assets/tarot/major/09_The_Hermit.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2254622,
+      "width": 971,
+      "height": 1619,
+      "sha256": "92ce21354c7eefd2efae76031e18ffd83a40a5de74fdae1bf82e3477854e428e"
+    },
+    {
+      "path": "public/assets/tarot/major/10_Wheel_of_Fortune.png",
+      "url": "/assets/tarot/major/10_Wheel_of_Fortune.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2510647,
+      "width": 971,
+      "height": 1620,
+      "sha256": "914bf528c8a555e96f3fcdab33f37f20e244c57ebcf8c43e7c221e931c11aa51"
+    },
+    {
+      "path": "public/assets/tarot/major/11_Justice.png",
+      "url": "/assets/tarot/major/11_Justice.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2358268,
+      "width": 971,
+      "height": 1619,
+      "sha256": "6629b8fa2bf2b08964f52df94b4a4b712b6b7d5529cef161173681813aacb4de"
+    },
+    {
+      "path": "public/assets/tarot/major/12_The_Hanged_Man.png",
+      "url": "/assets/tarot/major/12_The_Hanged_Man.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2217619,
+      "width": 971,
+      "height": 1619,
+      "sha256": "8401bd188192104b1ef5411ba6ba7dfc19603c520c5b0c8cabb7602fa9e0d7f2"
+    },
+    {
+      "path": "public/assets/tarot/major/13_Death.png",
+      "url": "/assets/tarot/major/13_Death.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2332011,
+      "width": 971,
+      "height": 1619,
+      "sha256": "3cf9dc32a5d163dac009390d3de668c19b22667045aff8fc913a9d1c09f27993"
+    },
+    {
+      "path": "public/assets/tarot/major/14_Temperance.png",
+      "url": "/assets/tarot/major/14_Temperance.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-08-14.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2284647,
+      "width": 971,
+      "height": 1619,
+      "sha256": "cbe2fbb2beb02fe22e89e6a669711376d143238e2553ea42a16ca0f2ee9bd4f5"
+    },
+    {
+      "path": "public/assets/tarot/major/15_The_Devil.png",
+      "url": "/assets/tarot/major/15_The_Devil.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2376948,
+      "width": 971,
+      "height": 1620,
+      "sha256": "b5186c2a615905a11be73b2114fb03c1e10743505a0b16e61e047168fd87a0cd"
+    },
+    {
+      "path": "public/assets/tarot/major/16_The_Tower.png",
+      "url": "/assets/tarot/major/16_The_Tower.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2210236,
+      "width": 971,
+      "height": 1619,
+      "sha256": "de6a1584f5af90250628c46bbdb5814bd704a27fa28fbd7318ffd1e0e28cd92f"
+    },
+    {
+      "path": "public/assets/tarot/major/17_The_Star.png",
+      "url": "/assets/tarot/major/17_The_Star.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2191485,
+      "width": 971,
+      "height": 1620,
+      "sha256": "402384154ec9f41d4b7174f776d25ca0141fcea04eb84fc56e1c14e00108f0cd"
+    },
+    {
+      "path": "public/assets/tarot/major/18_The_Moon.png",
+      "url": "/assets/tarot/major/18_The_Moon.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2197837,
+      "width": 971,
+      "height": 1620,
+      "sha256": "bd74b15d765feae19721079c197a7b404f1405470b5a4a4d9581942cc25c796a"
+    },
+    {
+      "path": "public/assets/tarot/major/19_The_Sun.png",
+      "url": "/assets/tarot/major/19_The_Sun.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2319817,
+      "width": 971,
+      "height": 1619,
+      "sha256": "f085b11769ab0cea9bd293a462ded8e4450c4a48e784c97296cf0235fba331df"
+    },
+    {
+      "path": "public/assets/tarot/major/20_Judgement.png",
+      "url": "/assets/tarot/major/20_Judgement.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2284786,
+      "width": 971,
+      "height": 1619,
+      "sha256": "54956cc2df28a3a1632157246fdaa527f622717270c4139f8630c7bcffc066c1"
+    },
+    {
+      "path": "public/assets/tarot/major/21_The_World.png",
+      "url": "/assets/tarot/major/21_The_World.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-major-15-21.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2532191,
+      "width": 971,
+      "height": 1620,
+      "sha256": "ff5ae0bfc1b28cf5b00fe567fea268ede9f9bd58ac5b661cdff0668d4299cf96"
+    },
+    {
+      "path": "public/assets/tarot/back.png",
+      "url": "/assets/tarot/back.png",
+      "status": "FINAL",
+      "sourcePackage": "jumzip-tarot-support-assets.zip",
+      "sourcePage": "https://www.notion.so/3e07cdef782d81ca9502c0f1ca17074e",
+      "bytes": 2607678,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "3ed93e615c3b475813bb453fe9c0191bbe9868eda29bd6812f8c9dc958c2cc38"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "path": "references/frontend/38-1-desktop-main-hero.png",
+    "section": "38.1 Desktop Main Hero",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-3-mobile-main-hero.png",
+    "section": "38.3 Mobile Main Hero",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-6-desktop-chat-sani.png",
+    "section": "38.6 Desktop Chat — Sani",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-8-mobile-chat.png",
+    "section": "38.8 Mobile Chat",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-8-mobile-chat-2.png",
+    "section": "38.8 Mobile Chat",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-9-tarot-selection-ui.png",
+    "section": "38.9 Tarot Selection UI",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-10-tarot-result-ui.png",
+    "section": "38.10 Tarot Result UI",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-13-consultation-history-memory.png",
+    "section": "38.13 Consultation History / Memory",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "CANONICAL_SCREEN"
+  },
+  {
+    "path": "references/frontend/38-14-ornament-ui-graphic-system.png",
+    "section": "38.14 Ornament / UI Graphic System",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/38-15-ui-design-system.png",
+    "section": "38.15 UI Design System",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/38-16-responsive-design-board.png",
+    "section": "38.16 Responsive Design Board",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/39-1-logo-icon-style-reference.png",
+    "section": "39.1 Logo / Icon Style Reference",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/40-1-onboarding-first-setup.png",
+    "section": "40.1 Onboarding / First Setup",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/40-2-login-guest-entry.png",
+    "section": "40.2 Login / Guest Entry",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/40-4-loading-empty-error-states.png",
+    "section": "40.4 Loading / Empty / Error States",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/40-5-settings-memory-control.png",
+    "section": "40.5 Settings / Memory Control",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/41-1-bomi-crop-usage-reference.png",
+    "section": "41.1 Bomi — Crop Usage Reference",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/41-2-sani-crop-usage-reference.png",
+    "section": "41.2 Sani — Crop Usage Reference",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  },
+  {
+    "path": "references/frontend/41-3-arang-crop-usage-reference.png",
+    "section": "41.3 Arang — Crop Usage Reference",
+    "sourcePage": "https://www.notion.so/3df7cdef782d812d943bf132a3dc743b",
+    "classification": "REFERENCE_ONLY"
+  }
+]

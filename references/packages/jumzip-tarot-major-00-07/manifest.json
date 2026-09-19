@@ -1,0 +1,61 @@
+{
+  "project": "JumZip",
+  "package": "major-arcana-00-07",
+  "status": "FINAL",
+  "cards": [
+    {
+      "id": "00",
+      "title": "The Fool",
+      "path": "tarot/major/00_The_Fool.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "01",
+      "title": "The Magician",
+      "path": "tarot/major/01_The_Magician.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "02",
+      "title": "The High Priestess",
+      "path": "tarot/major/02_The_High_Priestess.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "03",
+      "title": "The Empress",
+      "path": "tarot/major/03_The_Empress.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "04",
+      "title": "The Emperor",
+      "path": "tarot/major/04_The_Emperor.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "05",
+      "title": "The Hierophant",
+      "path": "tarot/major/05_The_Hierophant.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "06",
+      "title": "The Lovers",
+      "path": "tarot/major/06_The_Lovers.png",
+      "status": "FINAL"
+    },
+    {
+      "id": "07",
+      "title": "The Chariot",
+      "path": "tarot/major/07_The_Chariot.png",
+      "status": "FINAL"
+    }
+  ],
+  "rules": [
+    "These PNG files are canonical Major Arcana illustrations.",
+    "Keep stable card ids and filenames.",
+    "Do not regenerate, redraw, recolor, or use mockup tarot art as replacement.",
+    "WebP derivatives are allowed for runtime optimization; preserve PNG masters."
+  ]
+}
