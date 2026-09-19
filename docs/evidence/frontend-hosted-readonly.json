@@ -1,0 +1,744 @@
+{
+  "checkedAt": "2026-09-19T23:44:47.022Z",
+  "mode": "PUBLIC_AUTHENTICATED_SYNTHETIC_FIXTURE_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "publicSignupTested": false,
+  "captchaTested": false,
+  "oauthTested": false,
+  "credentialsRecorded": false,
+  "dataProvenance": "Backend helper: synthetic identities, deterministic engine/RPC records and TEST_DOUBLE interpretation text. No Persona quality claim.",
+  "modelCalls": 0,
+  "browserMutationsSent": 0,
+  "build": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "localSha256": "757a5c80bfe2eb8896f306dc6c96684eec4f85d96cef2faba68d5f1cc559ef90",
+      "publicSha256": "757a5c80bfe2eb8896f306dc6c96684eec4f85d96cef2faba68d5f1cc559ef90",
+      "match": true
+    },
+    {
+      "path": "/assets/AccountPages-CmjPlcy8.js",
+      "status": 200,
+      "localSha256": "5a29d0d481a55e0278c49c053514f1030a1868953fad04d18115d2a437ca1ca0",
+      "publicSha256": "5a29d0d481a55e0278c49c053514f1030a1868953fad04d18115d2a437ca1ca0",
+      "match": true
+    },
+    {
+      "path": "/assets/Chat-ldOgM8IM.js",
+      "status": 200,
+      "localSha256": "44d24f82531c44b780cdb7d3de1c33920bd61e42fa44e4711fd18b88132b2dcf",
+      "publicSha256": "44d24f82531c44b780cdb7d3de1c33920bd61e42fa44e4711fd18b88132b2dcf",
+      "match": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-DJE6eONh.js",
+      "status": 200,
+      "localSha256": "44905f0789385eedecd7ee1b025baa06f90c2b52a77214e075f7c6e61c99cc21",
+      "publicSha256": "44905f0789385eedecd7ee1b025baa06f90c2b52a77214e075f7c6e61c99cc21",
+      "match": true
+    },
+    {
+      "path": "/assets/ConnectionState-BgyXbVNw.js",
+      "status": 200,
+      "localSha256": "f891ad85ecc04e8daf00b78cdb05f4648c9e6712da0597341fdf7bbc3ef3d1f1",
+      "publicSha256": "f891ad85ecc04e8daf00b78cdb05f4648c9e6712da0597341fdf7bbc3ef3d1f1",
+      "match": true
+    },
+    {
+      "path": "/assets/Reading-BRg_IwJu.js",
+      "status": 200,
+      "localSha256": "7967c0a50546736c6076492f0d8d510be84f053be1d6441ee908ba2333de6682",
+      "publicSha256": "7967c0a50546736c6076492f0d8d510be84f053be1d6441ee908ba2333de6682",
+      "match": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-ByszkonX.js",
+      "status": 200,
+      "localSha256": "3169b51c37c91ba71b47d73fb3fd5da3473d20c7943824c548a8962951d27679",
+      "publicSha256": "3169b51c37c91ba71b47d73fb3fd5da3473d20c7943824c548a8962951d27679",
+      "match": true
+    },
+    {
+      "path": "/assets/index-CRTEWzWi.css",
+      "status": 200,
+      "localSha256": "60642f0f03a67555dd5d6fd61bca711340a4263afb606fafc07619bf522aff47",
+      "publicSha256": "60642f0f03a67555dd5d6fd61bca711340a4263afb606fafc07619bf522aff47",
+      "match": true
+    },
+    {
+      "path": "/assets/pagination-DlEnJobJ.js",
+      "status": 200,
+      "localSha256": "fe7ce353fb54a0e7118e5cdfccaa8513d94d9eb5e84a381606cd567661f84a9d",
+      "publicSha256": "fe7ce353fb54a0e7118e5cdfccaa8513d94d9eb5e84a381606cd567661f84a9d",
+      "match": true
+    }
+  ],
+  "views": [
+    {
+      "owner": "A",
+      "kind": "history",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-history-360.png"
+    },
+    {
+      "owner": "A",
+      "kind": "tarot",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-tarot-360.png"
+    },
+    {
+      "owner": "A",
+      "kind": "sajuKnown",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuKnown-360.png"
+    },
+    {
+      "owner": "A",
+      "kind": "sajuUnknown",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuUnknown-360.png"
+    },
+    {
+      "owner": "A",
+      "kind": "compatibility",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-compatibility-360.png"
+    },
+    {
+      "owner": "A",
+      "kind": "history",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-history-1440.png"
+    },
+    {
+      "owner": "A",
+      "kind": "tarot",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-tarot-1440.png"
+    },
+    {
+      "owner": "A",
+      "kind": "sajuKnown",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuKnown-1440.png"
+    },
+    {
+      "owner": "A",
+      "kind": "sajuUnknown",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuUnknown-1440.png"
+    },
+    {
+      "owner": "A",
+      "kind": "compatibility",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-compatibility-1440.png"
+    },
+    {
+      "owner": "B",
+      "kind": "history",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/B-history-1440.png"
+    },
+    {
+      "owner": "B",
+      "kind": "tarot",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/B-tarot-1440.png"
+    },
+    {
+      "owner": "B",
+      "kind": "sajuKnown",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/B-sajuKnown-1440.png"
+    },
+    {
+      "owner": "B",
+      "kind": "sajuUnknown",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/B-sajuUnknown-1440.png"
+    },
+    {
+      "owner": "B",
+      "kind": "compatibility",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "csp": [],
+      "brokenImages": 0,
+      "pageErrors": [],
+      "failedReads": [],
+      "apiResponses": [
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        },
+        {
+          "type": "REST",
+          "status": 200,
+          "corsOrigin": "https://jumzip.pages.dev"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/B-compatibility-1440.png"
+    }
+  ],
+  "exports": [
+    {
+      "kind": "tarot",
+      "path": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot.png",
+      "width": 640,
+      "height": 5020,
+      "bytes": 3647147,
+      "sha256": "98eac815e145789e921180ae7b1e45a65d8e215da6c37960d0e8bbc7a2aa0a06",
+      "generationMs": 3308,
+      "structuredBirthHiddenInExportDOM": true,
+      "reviewCaptures": [
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-top.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-middle.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-bottom.png"
+      ]
+    },
+    {
+      "kind": "sajuKnown",
+      "path": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown.png",
+      "width": 640,
+      "height": 12758,
+      "bytes": 836357,
+      "sha256": "ca2b81ac3674208c32b025224decfd05e82174c67e97c667a53dbba5143a1e10",
+      "generationMs": 3441,
+      "structuredBirthHiddenInExportDOM": true,
+      "reviewCaptures": [
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-top.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-middle.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-bottom.png"
+      ]
+    },
+    {
+      "kind": "sajuUnknown",
+      "path": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown.png",
+      "width": 640,
+      "height": 13278,
+      "bytes": 1087012,
+      "sha256": "fce480857ffd0ce3da09ec991ff11a184bbe4659768f4ee64f03fc3dca03f1dc",
+      "generationMs": 2567,
+      "structuredBirthHiddenInExportDOM": true,
+      "reviewCaptures": [
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-top.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-middle.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-bottom.png"
+      ]
+    },
+    {
+      "kind": "compatibility",
+      "path": "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility.png",
+      "width": 640,
+      "height": 13774,
+      "bytes": 905707,
+      "sha256": "73596ec2e97c7667213b4e79f2270402b9a20554edcb8da9d72eb345ed7cffff",
+      "generationMs": 2102,
+      "structuredBirthHiddenInExportDOM": true,
+      "reviewCaptures": [
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-top.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-middle.png",
+        "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-bottom.png"
+      ]
+    }
+  ],
+  "network": {
+    "allowedRestReads": 54,
+    "allowedAuthReads": 0,
+    "preflightRequests": 0,
+    "blockedRpc": 0,
+    "blockedEdge": 0,
+    "blockedMutations": 0,
+    "blockedExternal": 0,
+    "failedReads": 0
+  },
+  "passed": true,
+  "visualReview": {
+    "status": "PASS",
+    "required": true,
+    "reviewerKind": "AI",
+    "reviewer": "Codex / contracts_audit",
+    "reviewedAt": "2026-09-19T23:49:35.383Z",
+    "method": "Direct view_image inspection of all twelve recorded PNG top/middle/bottom captures, the complete Tarot PNG, and five recorded 360px owner-A page screenshots. No browser/network/model calls were made during this review.",
+    "scope": "Visual review of actual public-app exports and captured mobile rendering from synthetic hosted records; separate from the existing automated build/CORS/RLS/privacy assertions.",
+    "reviewedImages": [
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-top.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-middle.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot-bottom.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-top.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-middle.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuKnown-bottom.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-top.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-middle.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-sajuUnknown-bottom.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-top.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-middle.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-compatibility-bottom.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/export-tarot.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-history-360.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-tarot-360.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuKnown-360.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-sajuUnknown-360.png",
+      "tests/ui/artifacts/hosted-readonly-2026-09-19T23-44-47-021Z/A-compatibility-360.png"
+    ],
+    "exportBindings": [
+      {
+        "kind": "tarot",
+        "sha256": "98eac815e145789e921180ae7b1e45a65d8e215da6c37960d0e8bbc7a2aa0a06",
+        "finding": "Complete image shows The Chariot upright, Strength reversed and The Star reversed, with artwork rotation matching each English/Korean orientation label. Three spread positions, card names, TEST_DOUBLE final sentence and footer remain readable."
+      },
+      {
+        "kind": "sajuKnown",
+        "sha256": "ca2b81ac3674208c32b025224decfd05e82174c67e97c667a53dbba5143a1e10",
+        "finding": "Known-time title is distinct; mobile chart shows an available hour pillar. Reviewed PNG badges, shinsal names, relation rows and footer have no observed overlap or truncation."
+      },
+      {
+        "kind": "sajuUnknown",
+        "sha256": "fce480857ffd0ce3da09ec991ff11a184bbe4659768f4ee64f03fc3dca03f1dc",
+        "finding": "Unknown-time title, unresolved pillar marks, three-candidate control and possibility labels remain distinct from confirmed data. Reviewed PNG possibility badges and annual/monthly flow/footer are legible. Mobile timing uses date ranges and unresolved values rather than a fabricated exact current period."
+      },
+      {
+        "kind": "compatibility",
+        "sha256": "73596ec2e97c7667213b4e79f2270402b9a20554edcb8da9d72eb345ed7cffff",
+        "finding": "Mobile view separates 나의 원국/상대의 원국, 나/상대 element bars and timing. Reviewed PNG relation rows retain subject/position labels, practical-advice sentences and footer without observed overlap or clipping."
+      }
+    ],
+    "observations": [
+      "No actionable clipping, text overlap, broken artwork or title/control collision was observed in the reviewed images. Natural multiline mobile title/button wrapping is readable.",
+      "All four default export layouts omit the separate raw birth-details section; the five mobile screenshots show the birth-details switch off. No raw clock or QA city canary was visually observed. Exact full-export DOM canary assertions are the separate automated evidence already recorded above.",
+      "The unknown-time mobile timeline includes a derived range boundary displayed as 2024.02.04, coinciding with the synthetic birth date. The privacy conclusion is that separately entered birth fields are hidden by default; it is not a claim that derived results cannot contain matching dates or support inference.",
+      "The black/gold known-versus-possible status badges and A/B subject labels remain distinguishable. TEST_DOUBLE provenance is visible and is not presented here as model quality evidence.",
+      "The history view shows four separate records and a readable 새 이야기 control at 360px."
+    ],
+    "actionableDefects": [],
+    "limitations": [
+      "This is AI visual review, not human review or a full accessibility audit.",
+      "Long Saju and compatibility PNGs were inspected at the recorded top/middle/bottom captures, with full mobile screenshots as context; every pixel of the long exports was not separately magnified.",
+      "Some crop boundaries cut a continuing section by design; those viewport crop boundaries are not evidence of truncation in the full saved PNG.",
+      "The three long mobile screenshots were resized by the viewing tool; fine-text conclusions rely on the full-size PNG crops where available.",
+      "No public signup, CAPTCHA, OAuth, model response quality, independent Saju correctness or extra application interaction was tested by this review."
+    ]
+  },
+  "cleanup": {
+    "status": "PASS",
+    "sourceFrozen": true,
+    "pendingCleanupCount": 0,
+    "callbackCompleted": true,
+    "credentialsPersisted": false,
+    "identities": [
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      },
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      }
+    ]
+  },
+  "passScope": "AUTOMATED_READ_ONLY_CHECKS_ONLY_UNTIL_SEPARATE_VISUAL_REVIEW",
+  "limits": [
+    "Synthetic hosted Auth identities and admin-seeded test records; not public signup, anonymous signup, CAPTCHA or OAuth validation.",
+    "Browser GET responses came from the actual hosted service with RLS and CORS. No fixture API response interception; forbidden writes/Edge requests were aborted.",
+    "PNG birth privacy assertions cover structured fixture fields. User-authored titles/interpretation may contain personal information and are not automatically scrubbed.",
+    "Raw session/credentials/account identifiers and traces/HAR/video are never written to reports. Only synthetic page screenshots and exports are saved."
+  ]
+}

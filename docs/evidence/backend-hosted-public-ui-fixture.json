@@ -1,0 +1,134 @@
+{
+  "runId": "e07801ae-79e5-447a-aaef-4701d2e6fae5",
+  "at": "2026-09-19T23:45:52.413Z",
+  "mode": "HOSTED_ADMIN_SYNTHETIC_UI_FIXTURE_SETUP_AND_CLEANUP",
+  "target": "https://klhoarharlmliuynoezq.supabase.co",
+  "status": "PASS",
+  "authScope": "Admin-created synthetic accounts and generated-link verifyOtp sessions. Not public signup, CAPTCHA, email delivery or OAuth evidence.",
+  "callbackCompleted": true,
+  "cleanupOnly": false,
+  "sourceHashes": {
+    "supabase/migrations/202609190001_core.sql": "9dcde35110e20f06e8650d4af9deeb955c1df113d896a149920be3ddc1dffbfb",
+    "supabase/migrations/202609190002_execution_rpcs.sql": "251ef4f6a93fc34d1a428a27e44f3cc9030f2eb01ea8e616bf714ab028c21503",
+    "supabase/migrations/202609190003_lifecycle.sql": "836204014eea3b6026f04ed44554e410275f6e45fe14951e338061a89e3e95c5",
+    "supabase/migrations/202609190004_birth_dates.sql": "990135dba0faba5335eb63173e89f838ad4517a6977c541e3365a73ed6e8037b",
+    "supabase/migrations/202609190005_saju_persistence.sql": "ccc17b99c0f64530cdd87922dc91f64ae6796e0fa9b48fc9e5a61b82833da24b",
+    "supabase/migrations/202609190006_compatibility_persistence.sql": "1865a89a21644d55463a1c68faaecaa0c99856d86a9295286b17ed92d4ea19f0",
+    "supabase/migrations/202609190007_execution_guards.sql": "8d0870a4fab76f1966358fe50c7ab84a2e295c21e4d701ebe0d086c7f54f5c5f",
+    "supabase/migrations/202609190008_titles_and_relationship.sql": "c0b4b534eff7f3a4dfe2909a508d809fdc5fb02d4a4ce9d26031dab5469fb3c3",
+    "supabase/migrations/202609190009_location_cache.sql": "81b4aa87d12af27c6f6cafee25fed11fab48ebcf5ed1b6b124a525b84d0d9ced",
+    "supabase/migrations/202609190010_consultation_lifecycle.sql": "10fc6361e291f5ae40f1eeeeaac649cfa19b061a9a5b8cfb3aa098c1b8ea0396",
+    "supabase/migrations/202609190011_account_cascade.sql": "f5d456f3faf32ae4be8d77629473f6d0308e19ccbb835812152d3b26c4b754e9",
+    "supabase/migrations/202609190012_saju_timing_projection.sql": "11075373e26af38c484232caab923cb70f58b8c59f925bc23c23d52126f998be",
+    "supabase/migrations/202609190013_memory_consent_boundaries.sql": "5568aba43b5e1ea3957e7bd9f142a7f5b1db016092ef2630b243b28855075693",
+    "supabase/migrations/202609190014_history_memory_selection.sql": "5d357b1352bbe591194bd026daaa397758e7b329d80d43e6d2874dd7f15e65c1",
+    "supabase/migrations/202609190015_deleted_consultation_guards.sql": "f3095a46f43c0a38168f80f7d7db961a67bd0d6441869dbda5c45eeaf5068113",
+    "supabase/functions/_shared/domain/fortune-timing.ts": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+    "supabase/functions/_shared/domain/full-saju.ts": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+    "supabase/functions/_shared/domain/index.ts": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+    "supabase/functions/_shared/domain/router.ts": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+    "supabase/functions/_shared/domain/rules/balance.ts": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+    "supabase/functions/_shared/domain/rules/constants.ts": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+    "supabase/functions/_shared/domain/rules/index.ts": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+    "supabase/functions/_shared/domain/rules/natal.ts": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+    "supabase/functions/_shared/domain/rules/rational.ts": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+    "supabase/functions/_shared/domain/rules/relations.ts": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+    "supabase/functions/_shared/domain/rules/shinsal.ts": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+    "supabase/functions/_shared/domain/rules/strength.ts": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+    "supabase/functions/_shared/domain/rules/types.ts": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+    "supabase/functions/_shared/domain/saju-compatibility.ts": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+    "supabase/functions/_shared/domain/saju.ts": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+    "supabase/functions/_shared/domain/tarot.ts": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+    "tests/backend/hosted-public-ui-fixture.mjs": "16550524861bcacf175420dfdad90a7968751bb3bc7c8bc6bfe5587ab424a567"
+  },
+  "sourceFrozen": true,
+  "counts": {
+    "authRequests": 14,
+    "restRequests": 56,
+    "seedRPC": 12,
+    "blockedDestinations": 0,
+    "workRequests": 34,
+    "cleanupRequests": 36
+  },
+  "checks": [
+    {
+      "name": "compatibility domain output contains no raw partner birth canaries",
+      "passed": true
+    },
+    {
+      "name": "synthetic 가 session verified by actual hosted Auth",
+      "passed": true
+    },
+    {
+      "name": "synthetic 나 session verified by actual hosted Auth",
+      "passed": true
+    },
+    {
+      "name": "real Tarot RPC snapshot retains three distinct domain cards",
+      "passed": true
+    },
+    {
+      "name": "all four completed records have canonical UUIDs",
+      "passed": true
+    },
+    {
+      "name": "owner can read all four records through hosted authenticated RLS",
+      "passed": true
+    },
+    {
+      "name": "second owner cannot read the first owner records through hosted RLS",
+      "passed": true
+    },
+    {
+      "name": "all interpretation records explicitly declare TEST_DOUBLE provenance",
+      "passed": true
+    },
+    {
+      "name": "no separate birth_profiles fixture was stored",
+      "passed": true
+    },
+    {
+      "name": "no separate related_people fixture was stored",
+      "passed": true
+    },
+    {
+      "name": "no separate memories fixture was stored",
+      "passed": true
+    },
+    {
+      "name": "persisted compatibility has derived snapshots without raw partner birth",
+      "passed": true
+    }
+  ],
+  "cleanup": [
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "failure": null,
+  "cleanupFailed": false,
+  "credentialsPersisted": false,
+  "sessionsOrCredentialsPersisted": false,
+  "serviceKeyPassedToCallback": false,
+  "publicSignupTested": false,
+  "captchaTested": false,
+  "oauthTested": false,
+  "fixtureEdgeRequests": 0,
+  "fixtureModelRequests": 0,
+  "browserModelRequests": "Caller must separately report its browser network guard.",
+  "modelProvenance": "TEST_DOUBLE_HOSTED_PUBLIC_UI",
+  "promptProvenance": "TEST_DOUBLE_UI_FIXTURE_V1",
+  "deterministicAsOf": "2026-09-20T00:00:00.000Z",
+  "limitations": [
+    "The admin-created sessions bypass the public entry flow; signup/CAPTCHA/OAuth remain outside scope.",
+    "The helper seeds actual engine results with synthetic interpretation text; no real model or independent astronomical oracle was tested.",
+    "Only separate browser evidence can establish public render/CORS/History/Reading/PNG success.",
+    "Own synthetic Saju birth snapshots exist for the default-hidden export check; no partner raw birth or standalone profile is saved."
+  ]
+}
