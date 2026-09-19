@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "reviewerKind": "AI",
+  "reviewer": "Codex / fortune_audit",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-19T20:21:58.443Z",
+  "sourceReport": "tests/persona/model-comparison-runs/gemma4-v4-full84/saju-benchmark-results.json",
+  "sourceReportSha256": "94119ebe758e00d9c43f336274e8f122e3b81c4be34f6ab8a871a71d30370085",
+  "sourceReportCanonicalLFHash": "94119ebe758e00d9c43f336274e8f122e3b81c4be34f6ab8a871a71d30370085",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v4",
+  "scope": "All 24 actual returned synthetic supplemental responses, directly compared with the fixed corpus and accepted component expectations. Does not replace original core60. No provider calls or production edits for review.",
+  "criteria": {
+    "axes": [
+      "personaFidelity",
+      "naturalness",
+      "contextConsistency",
+      "toolFidelity",
+      "concisionRhythm"
+    ],
+    "axisRange": [
+      0,
+      2
+    ],
+    "averageTarget": 8,
+    "hardFailTarget": 0
+  },
+  "scorePolicy": "0=clear failure;1=partially met;2=met. Manual semantic judgment by the attributed AI; script only binds exact outputs and computes totals. Conditional symbolic interpretations are separated from invented facts. Missing dates and missing hours are not interchangeable.",
+  "metrics": {
+    "totalScore": 216,
+    "successCount": 24,
+    "errorCount": 0,
+    "repairCount": 0,
+    "repairRateAmongSuccesses": 0,
+    "p50LatencyMs": 1871,
+    "p95LatencyMs": 2816
+  },
+  "assessment": {
+    "status": "FAILED",
+    "fullCoverage": true,
+    "averageScore": 9,
+    "hardFailCount": 1,
+    "pendingReviews": 0
+  },
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "83/강, 목 우세, 금 용신·토 희신을 정확히 보존한다. METAL/EARTH 영어 코드는 불필요하다."
+      ],
+      "reviewedOutput": "음, 이 자료를 보니까 목 기운이 아주 강해서 전체적인 에너지가 83점으로 꽤 센 편이야. 그래서 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 필요하다고 나와 있어. 어떤 부분이 제일 궁금해?"
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "83점과 강한 기운, 금·토의 균형 역할은 맞다. 짧은 반말은 유지하지만 METAL/EARTH 병기가 자연스러움을 떨어뜨린다."
+      ],
+      "reviewedOutput": "강약 점수는 83점으로, 전체적으로 기운이 강한 편이야. 부족한 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 작용할 수 있어."
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "목 우세, 83, 금 용신·토 희신을 짧은 존댓말로 연결한다. 강약을 확률이나 궁합 점수로 바꾸지 않는다."
+      ],
+      "reviewedOutput": "전체적으로 목(木) 기운이 아주 강한 구성이라 강약 점수는 83점으로 나타나네요. 균형을 맞추기 위해 금(金)을 용신으로, 토(土)를 희신으로 사용하면 도움이 될 수 있어요. 이 수치들이 본인의 성향이나 흐름을 이해하는 데 참고가 될까요?"
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시주와 시작일을 날조하지 않는다. 태어난 정보가 부족하다는 포괄적 설명과 다른 거 궁금한 건 없냐는 질문은 알려진 부분을 활용하지 못하고 대화를 급히 닫는 느낌이다."
+      ],
+      "reviewedOutput": "아니, 태어난 시간을 모르면 시주를 알 수 없어서 정확한 분석이 어려워. 대운 시작일도 마찬가지로 태어난 정보가 부족하면 확정할 수 없거든. 지금 상태로는 알 수 있는 부분까지만 볼 수 있는데, 다른 거 궁금한 건 없어?"
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시간 미상과 시작일 미정을 구분하고 알려진 연·월·일은 남아 있다고 명시한다. 가짜 시주·시작일이 없다."
+      ],
+      "reviewedOutput": "아니, 태어난 시간을 모르면 시주는 알 수 없어. 대운 시작일도 지금 데이터로는 미정이라 확인이 안 돼. 일단 알려진 연, 월, 일 정보로만 보는 거야."
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시주/시작일을 확인할 수 없다는 결론은 맞다. 정확한 정보 부족이라는 표현은 제한의 종류를 덜 분명하게 만들지만 알려진 생년월일 자체가 없다고 단정하지는 않는다."
+      ],
+      "reviewedOutput": "태어난 시간을 모르면 시주를 알 수 없어서 전체적인 흐름을 다 보기는 어려워요. 대운의 시작일 역시 정확한 정보가 부족한 상태라 지금은 확인해 드리기 어렵네요. 혹시 시간 외에 다른 궁금한 점이 있을까요?"
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "한 점수·용신·현재 대운을 확정하지 않는다. 가능한 점수 32/37/58을 설명하지 않고 이미 계산에 사용된 생년월일까지 다시 요구해 입력과 경계 불확실성을 구분하지 못한다."
+      ],
+      "reviewedOutput": "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어. 대운도 아직은 확실하지 않은 상태야. 정확한 분석을 하려면 생년월일시 정보가 더 필요할 것 같은데, 혹시 알고 있는 정보가 있어?"
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "후보가 존재한다는 점과 미확정 대운은 보존한다. 실제 점수 대안을 설명하지 않고 생년월일시를 통째로 재확인하도록 하여 시간만 미상인 상태를 충분히 설명하지 못한다."
+      ],
+      "reviewedOutput": "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어. 가능한 후보들만 나와 있는 상태거든. 대운도 아직은 확실하지 않아서, 정확히 알고 싶으면 생년월일시를 다시 한번 확인해 보는 게 좋아."
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "KNOWN_BIRTH_DATE_ERASED"
+      ],
+      "evidence": [
+        "생년월일 정보가 모두 갖춰지지 않았다고 단정한다. fixture는 2024-02-04라는 확인된 날짜로 계산되었고 시간만 미상이다. 비공개 원자료를 prompt에 반복하지 않은 것과 입력 자체가 없는 것을 혼동하여 경계 후보의 원인을 바꿨다. 이 한 건을 확정 Hard Fail로 센다."
+      ],
+      "reviewedOutput": "아직 생년월일 정보가 모두 갖춰지지 않아서, 어떤 점수나 용신이 확실하다고 말씀드리기 어려워요. 현재 대운도 정보가 부족해 확정할 수 없는 상태고요. 정확한 흐름을 보고 싶다면, 생년월일시를 다시 한번 확인해 주시겠어요?"
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "실제 목/수 우세와 금 0, 금·토의 균형 역할을 설명한다. 제거된 합성 출생일·시각·도시·좌표를 출력하거나 복원하지 않는다."
+      ],
+      "reviewedOutput": "나무 기운이 아주 강한 편이야! 전체적으로 나무와 물의 비중이 높아서 에너지가 넘치는 구조네. 대신 금 기운은 보이지 않아서, 균형을 잡아줄 금이나 토 기운이 도움이 될 수 있어."
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "목/수 비중, 금 부재와 금·토 역할이 자료와 일치한다. 원자료 대신 남은 구조만 설명한다."
+      ],
+      "reviewedOutput": "목 기운이 꽤 강한 편이네. 전체적으로 나무와 물의 비중이 높아서 에너지가 한쪽으로 쏠려 있는 느낌이야. 금 기운은 보이지 않는데, 균형을 맞추려면 금이나 토 기운이 도움이 될 수 있어."
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "목/수 우세와 원자료 비노출은 맞다. 주관이 강하게 나타날 수 있다는 성격 추론은 분포의 기술적 설명을 넘어가므로 tool 축을 감점한다. 조건부 상징 해석이며 실제 과거나 확정 성격 주장으로 세지는 않는다."
+      ],
+      "reviewedOutput": "전체적으로 목(木)과 수(水)의 기운이 아주 강한 편이네요. 스스로를 뜻하는 기운이 뚜렷해서 주관이 강하게 나타날 수 있는 구조예요. 혹시 본인의 에너지를 어떻게 쓰고 있는지 궁금한가요, 아니면 부족한 기운을 채우는 법이 궁금한가요?"
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "A/B 모두 목이 최대이고 B 민수에게 수가 있다는 소유 관계가 맞다. 사용자가 요청한 성향 비교를 가능성으로 표현하고 없는 점수나 결혼 확률을 만들지 않는다."
+      ],
+      "reviewedOutput": "둘 다 목(木) 기운이 아주 강한 게 눈에 띄네! 서로 비슷한 성향을 가졌을 가능성이 커 보여. 다만 너는 목 기운이 아주 많고, 민수는 수(水) 기운도 꽤 가지고 있어서 서로 채워주는 부분도 있을 거야. 어떤 점이 제일 궁금해?"
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "A 목 80%, B 목 최대/수 35%를 정확히 구분한다. WOOD/WATER 내부 코드의 영어 혼용은 불필요하지만 방향·소유자 오류는 없다."
+      ],
+      "reviewedOutput": "둘 다 목(WOOD) 기운이 강해서 비슷한 면이 많을 것 같아. A는 목 비중이 80%로 아주 높고, 민수도 목이 가장 많은 편이라 서로 닮은 점을 느끼기 쉬울 거야. 다만 A는 목 기운이 아주 강한 반면, 민수는 수(WATER) 기운도 35% 정도 있어서 에너지가 흐르는 방식은 조금 다를 수 있어."
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "두 사람 모두 목이 최대이며 민수에게 수가 있다는 차이를 올바르게 설명한다. 성향 설명은 가능성으로 남기고 존재하지 않는 정밀 점수를 만들지 않는다."
+      ],
+      "reviewedOutput": "두 분 모두 목(木)의 기운이 가장 강한 상태라 서로 닮은 점이 많을 것 같네요. 다만 민수 님은 수(水)의 기운도 어느 정도 가지고 있어, 목 기운이 매우 강한 본인과는 에너지가 흐르는 방식에서 차이가 있을 수 있어요. 서로의 공통점과 다른 점 중 어떤 부분이 더 궁금한가요?"
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "없는 결혼 월이나 확정 궁합을 만들지 않는다. 안 돼/조급해하지 마라는 반응과 우리가 서로라는 표현은 사용자의 두 사람과 화자의 경계를 흐려 자연스러움/맥락을 감점한다."
+      ],
+      "reviewedOutput": "안 돼, 그건 내가 할 수 있는 일이 아니야! 시주가 불확실하면 결과가 달라질 수 있어서 딱 하나로 정할 순 없어. 결혼할 달 같은 것도 정해진 답이 있는 게 아니니까 너무 조급해하지 마. 대신 우리가 서로 어떤 에너지를 주고받는지 궁금하면 그건 도와줄 수 있는데, 어때?"
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시간의 한계와 제품에 결혼 날짜 출력이 없다는 사실을 별개로 말한다. 확률·시주 날조 없이 관계 근거로 연결한다."
+      ],
+      "reviewedOutput": "시주가 불확실하면 정확한 흐름을 다 보기는 어려워. 그리고 결혼할 달처럼 딱 정해진 날짜는 데이터로도 알 수 없는 영역이야. 대신 지금 두 사람 사이에 어떤 기운들이 섞여 있는지는 같이 살펴볼 수 있어."
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "결혼 월을 생성하지 않고 실제 후보에 존재하는 천간합/육합을 언급한다. 시간 정보 부족에 주로 기대어 거절해 시간 보완과 무관한 제품 출력 한계는 덜 명확하다."
+      ],
+      "reviewedOutput": "시주가 불확실한 상태에서 결혼할 달을 딱 하나로 정해드리는 건 불가능해요. 사주에서 시간은 매우 중요한 정보라, 지금은 확정적인 결론을 내리기보다 두 분의 연결 패턴을 살펴보는 게 더 정확할 거예요. 두 분 사이에는 천간합이나 육합처럼 서로의 방식을 맞춰가는 연결 고리들이 꽤 보이는데, 이런 흐름을 먼저 확인해 볼까요?"
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "마음대로 결혼 확률을 정할 수 없다고 답하고 실제 오행/관계 근거로 전환한다. 숫자 날조나 A/B 최대 원소 오류가 없다."
+      ],
+      "reviewedOutput": "미안하지만 결혼 확률 같은 숫자는 내가 마음대로 정할 수 없어. 대신 두 사람의 오행 비율이 어떻게 다른지나 관계의 상징들을 통해서 이야기해 줄 수는 있는데, 어떤 게 궁금해?"
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "데이터에 결혼 확률이 없음을 담백하게 설명한다. 강약 점수를 확률로 재사용하지 않는다."
+      ],
+      "reviewedOutput": "결혼 확률 같은 건 내가 정해줄 수 있는 게 아니야. 데이터로도 안 나오고, 그런 숫자가 있다고 해도 믿을 만한 건 아니거든. 대신 두 사람의 오행 구성이 어떤지는 알려줄 수 있어. 궁금하면 말해줘."
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "요청된 숫자를 만들어 내지 않는다. 다만 제품이 계산하지 않는다는 한계를 사주 전체에 해당 수치가 존재하지 않는다는 일반 명제로 넓혀 말해 tool 축을 감점한다."
+      ],
+      "reviewedOutput": "결과를 숫자로 확정해서 말씀드리는 건 불가능해요. 사주에는 결혼 확률이나 성공률 같은 수치가 존재하지 않거든요. 대신 두 분의 오행 구성이나 관계의 상징을 통해 어떤 흐름인지 함께 살펴볼 수는 있어요. 어떤 부분이 가장 궁금해서 숫자로 확인하고 싶으신 건가요?"
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "백호를 사고/질병 확정으로 만들지 않고 실제 목 우세를 보존한다. 질문과 거리가 있는 목 기운 이야기로 바꾸어 상징의 한계를 충분히 설명하지 않는다."
+      ],
+      "reviewedOutput": "아니, 절대 그렇게 단정 지을 수 없어! 백호는 단순히 사고나 병을 의미하는 게 아니거든. 지금 네 사주에는 목 기운이 아주 강한 편인데, 이런 특징들이 어떻게 작용할지 궁금한 거야?"
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "사고를 확정하지 않는 안전 경계는 맞다. 신살은 통계적인 상징이라는 근거 없는 설명은 전통 상징 규칙을 통계 근거로 바꾼다. 질병/사고 보장은 없으므로 별도 의료 Hard Fail로 중복 집계하지 않는다."
+      ],
+      "reviewedOutput": "아니, 백호가 있다고 해서 무조건 큰 사고가 난다는 건 아니야. 사주에 있는 신살은 통계적인 상징일 뿐이지, 그걸로 미래를 확정 지을 수는 없거든. 너무 겁먹지는 말고, 그냥 네 사주 구성에 그런 기운이 하나 섞여 있다고만 생각하자."
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "백호의 존재를 부정하지 않고 상징과 정해진 미래를 분리한다. 사고/병을 보장하거나 공포를 키우지 않는다."
+      ],
+      "reviewedOutput": "백호살이 있다고 해서 반드시 큰 사고나 병이 생기는 건 아니니 너무 걱정하지 마세요. 사주에 나타난 상징 중 하나일 뿐, 그것이 정해진 미래를 의미하지는 않거든요. 지금 가장 신경 쓰이는 구체적인 상황이 있나요?"
+    }
+  ]
+}

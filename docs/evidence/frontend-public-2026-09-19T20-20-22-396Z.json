@@ -1,0 +1,438 @@
+{
+  "checkedAt": "2026-09-19T20:20:22.716Z",
+  "origin": "https://jumzip.pages.dev",
+  "mode": "PUBLIC_GUEST_READ_ONLY",
+  "authenticationAttempted": false,
+  "captchaInteractionAttempted": false,
+  "routes": [
+    {
+      "name": "root",
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-root-1440.png"
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": true,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 1,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/public-onboarding-1440.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "나의 이야기 보관함",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-history-1440.png"
+    },
+    {
+      "name": "auth",
+      "path": "/auth",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "다시 만나서 반가워요",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-auth-1440.png"
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "당신의 이야기를 소중하게",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-privacy-1440.png"
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "아랑ARANG",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [
+        "아랑과 이야기하기"
+      ],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-chat-1440.png"
+    },
+    {
+      "name": "root",
+      "path": "/",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-root-360.png"
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": true,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 1,
+      "errors": [],
+      "failures": [
+        {
+          "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://brunhild.challenges.cloudflare.com/[turnstile-resource]",
+          "error": "net::ERR_NAME_NOT_RESOLVED"
+        }
+      ],
+      "screenshot": "tests/ui/artifacts/public-onboarding-360.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "나의 이야기 보관함",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-history-360.png"
+    },
+    {
+      "name": "auth",
+      "path": "/auth",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "다시 만나서 반가워요",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-auth-360.png"
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "당신의 이야기를 소중하게",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-privacy-360.png"
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "아랑ARANG",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [
+        "아랑과 이야기하기"
+      ],
+      "challengeFrameCount": 0,
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-chat-360.png"
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://jumzip.pages.dev/assets/index-CPqx0BjC.css",
+      "type": "stylesheet",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/index-CAbaSeYK.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-normal-BOwq7MWX.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/bomi/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-118-wght-normal-C4j1xH6l.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/sani/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/arang/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/fonts/PretendardVariable.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-119-wght-normal-B8lslVpp.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-latin-wght-normal-DdBYjaA7.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-italic-DmbndNpe.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-116-wght-normal-CEgGIndr.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-117-wght-normal-Kx6LOXtf.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-115-wght-normal-CD3J_hkm.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-113-wght-normal-D3cwdMxZ.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-110-wght-normal-XwNdx1GB.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-107-wght-normal-Cvdq43h0.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/AccountPages-B7RJy2GD.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/ConnectionState-DxSR-bBh.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/pagination-D9aZH-BV.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/Chat-CDmxsf_H.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/CompatibilitySnapshot-CQ4JRy5B.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-114-wght-normal-BR9tFfOX.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-112-wght-normal-DOhh2iwR.woff2",
+      "type": "font",
+      "status": 200
+    }
+  ],
+  "blockedMutations": [],
+  "summary": {
+    "routeCount": 12,
+    "overflowCount": 0,
+    "routeErrorCount": 0,
+    "cspViolationCount": 0,
+    "assetErrorCount": 0,
+    "blockedMutationCount": 0,
+    "challengeNetworkFailureCount": 4,
+    "turnstileLimitation": "Widget visibility and disabled-until-token can be observed. A failed challenge network request prevents validating token issuance; no CAPTCHA is solved or account created. HTTP asset status alone is not Turnstile success.",
+    "note": "Latest deployment verified against all eight local JavaScript asset hashes in frontend-public-build-match-2026-09-19T20-21-38-871Z.json. Public chat sidebar now uses 아랑과. Turnstile is observed only; no CAPTCHA, authentication, or model action was performed.",
+    "deploymentJavascriptMatchEvidence": "docs/evidence/frontend-public-build-match-2026-09-19T20-21-38-871Z.json",
+    "authenticationStatus": "NOT_VERIFIED",
+    "challengeDnsFailureCount": 2,
+    "challengeAbortedRequestCount": 2,
+    "manualVisualReview": [
+      "public-onboarding-360.png: complete nickname form, tokenless disabled action, challenge prompt visible; no clipping",
+      "public-chat-1440.png: character art, sidebar and guest composer layout visually checked",
+      "public-root-360.png: hero art and layout render; Arang selector label wraps between Korean syllables",
+      "public-history-360.png: guest history and tabs render; new-story button wraps within its label"
+    ]
+  },
+  "visualFindings": [
+    {
+      "severity": "P3",
+      "route": "/",
+      "viewportWidth": 360,
+      "description": "Character selector 아랑 wraps as 아 / 랑 between Korean syllables.",
+      "screenshot": "tests/ui/artifacts/public-root-360.png",
+      "sourceChanged": false
+    },
+    {
+      "severity": "P3",
+      "route": "/history",
+      "viewportWidth": 360,
+      "description": "Header 새 이야기 button wraps inside its Korean label.",
+      "screenshot": "tests/ui/artifacts/public-history-360.png",
+      "sourceChanged": false
+    }
+  ]
+}

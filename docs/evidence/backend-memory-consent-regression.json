@@ -1,0 +1,34 @@
+{
+  "verifiedAtKst": "2026-09-20 05:21",
+  "scope": "Local backend, structured-memory helper and PostgreSQL-compatible persistence regressions. No model calls, remote data writes, public Auth claims or browser operations.",
+  "testFiles": [
+    "tests/db/memory-consent.test.ts",
+    "tests/db/persistence.test.ts",
+    "tests/backend/memory.test.ts",
+    "tests/persona/memory.test.ts",
+    "tests/backend/context.test.ts",
+    "tests/backend/maintenance.test.ts",
+    "tests/backend/execution.test.ts"
+  ],
+  "testsPassed": 96,
+  "typescript": "PASS",
+  "scopedEslint": "PASS",
+  "changes": [
+    "Global memory OFF and ON use matching forward-only extraction and summary consent floors.",
+    "Related-person consent and alias changes invalidate in-flight revision snapshots and old derived summaries.",
+    "Related-person withdrawal or deletion leaves a content-free suppression even when no structured memory existed.",
+    "Initial related-person registration invalidates old derived context without blocking later future opt-in.",
+    "Extraction and summary receive current allowed and blocked related-person lists; blocked known-alias turns and assistant echoes are excluded before model requests.",
+    "Structured output that reintroduces a blocked known alias is rejected or omitted.",
+    "Reply context excludes current known blocked aliases even from pre-existing USER-attributed memories, without deleting those rows or ordinary raw conversation.",
+    "The privacy RPC supplies the complete aggregated blocked-person list; missing or failed privacy metadata fails closed.",
+    "Account cascade does not recreate a tombstone after the Auth owner is gone.",
+    "Before a non-consenting alias leaves the blocked set through deletion, rename or opt-in, exact normalized alias matches in derived memory rows are retired; unrelated USER rows and original messages remain. NFKC and case normalization are tested."
+  ],
+  "deploymentOrder": "Apply migration 202609190013_memory_consent_boundaries.sql before deploying the changed Edge context reader.",
+  "limitations": [
+    "Alias exclusion is conservative matching of known registered non-consenting people, not a claim of recognizing all unknown people or implicit references.",
+    "Any durable forgetting suppression conservatively prevents summary reconstruction; retiring an alias-matched USER row also creates that row's ordinary scope/subject suppression.",
+    "The bounded real-provider maintenance suite remains pending migration deployment and stable-provider selection."
+  ]
+}

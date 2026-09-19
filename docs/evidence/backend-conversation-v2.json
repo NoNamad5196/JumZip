@@ -1,0 +1,57 @@
+{
+  "at": "2026-09-19T19:27:32.423Z",
+  "operationCount": 2,
+  "checks": [
+    {
+      "name": "synthetic owner explicitly enables memory",
+      "passed": true
+    },
+    {
+      "name": "preference seed receives a real durable Chat response",
+      "passed": true
+    },
+    {
+      "name": "preference seed background extraction cursor commits",
+      "passed": false
+    },
+    {
+      "name": "actual extraction stores the explicit harmless preference",
+      "passed": false
+    },
+    {
+      "name": "Chat stores model provenance and its original user-message link",
+      "passed": true
+    },
+    {
+      "name": "explicit Tarot recommendation receives a real durable Chat response",
+      "passed": false
+    },
+    {
+      "name": "verified disposable conversation account cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "preference seed",
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "name": "explicit Tarot recommendation",
+      "status": "FAILED",
+      "code": "LLM_INVALID_RESPONSE"
+    },
+    {
+      "name": "failure",
+      "reason": "explicit Tarot recommendation receives a real durable Chat response"
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "scope": "Real model using an admin-created synthetic identity and admin-generated magic-link verification. No public signup/CAPTCHA or >16-turn summary-compaction claim. No assistant results seeded by service role.",
+  "modelBatch": "JumZipPersona-v2",
+  "usage": {
+    "measuredNeurons": null,
+    "note": "Edge envelopes do not expose provider usage; only2of12 allowed operations ran."
+  }
+}

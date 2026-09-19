@@ -1,0 +1,416 @@
+{
+  "checkedAt": "2026-09-19T19:37:30.309Z",
+  "origin": "https://jumzip.pages.dev",
+  "mode": "PUBLIC_GUEST_READ_ONLY",
+  "authenticationAttempted": false,
+  "captchaInteractionAttempted": false,
+  "routes": [
+    {
+      "name": "root",
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-root-1440.png"
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-onboarding-1440.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-history-1440.png"
+    },
+    {
+      "name": "auth",
+      "path": "/auth",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-auth-1440.png"
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-privacy-1440.png"
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 1440,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 1440,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-chat-1440.png"
+    },
+    {
+      "name": "root",
+      "path": "/",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "오늘은 누구랑이야기해볼까요?",
+      "imageErrors": [],
+      "csp": [],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-root-360.png"
+    },
+    {
+      "name": "onboarding",
+      "path": "/onboarding?character=arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "title": "뭐라고 불러주면좋을까요?",
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": true,
+      "turnstileTokenPresent": false,
+      "submitDisabled": true,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-onboarding-360.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-history-360.png"
+    },
+    {
+      "name": "auth",
+      "path": "/auth",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-auth-360.png"
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-privacy-360.png"
+    },
+    {
+      "name": "chat",
+      "path": "/chat/arang",
+      "width": 360,
+      "status": 200,
+      "reloadStatus": 200,
+      "scrollWidth": 360,
+      "imageErrors": [],
+      "csp": [
+        {
+          "directive": "script-src",
+          "blockedURI": "eval"
+        }
+      ],
+      "turnstileIframeCount": 0,
+      "turnstileInputPresent": false,
+      "turnstileTokenPresent": false,
+      "submitDisabled": null,
+      "sidebarArangLabels": [],
+      "errors": [],
+      "failures": [],
+      "screenshot": "tests/ui/artifacts/public-chat-360.png"
+    }
+  ],
+  "resources": [
+    {
+      "url": "https://jumzip.pages.dev/assets/index-CVKqsIBg.css",
+      "type": "stylesheet",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/index-Vzt10zym.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-normal-BOwq7MWX.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/sani/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-118-wght-normal-C4j1xH6l.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-119-wght-normal-B8lslVpp.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-latin-wght-normal-DdBYjaA7.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/bomi/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/characters/arang/master.png",
+      "type": "image",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/fonts/PretendardVariable.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/playfair-display-latin-wght-italic-DmbndNpe.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-116-wght-normal-CEgGIndr.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-115-wght-normal-CD3J_hkm.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-117-wght-normal-Kx6LOXtf.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-113-wght-normal-D3cwdMxZ.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-110-wght-normal-XwNdx1GB.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/noto-serif-kr-107-wght-normal-Cvdq43h0.woff2",
+      "type": "font",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/AccountPages-D5E6t5Ni.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/ConnectionState-8pIE9Oci.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/BirthInput-BX6dDEye.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+      "type": "script",
+      "status": 302
+    },
+    {
+      "url": "https://challenges.cloudflare.com/[turnstile-resource]",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/CompatibilitySnapshot-DRX1CVPS.js",
+      "type": "script",
+      "status": 200
+    },
+    {
+      "url": "https://jumzip.pages.dev/assets/Chat-B9LrVTT8.js",
+      "type": "script",
+      "status": 200
+    }
+  ],
+  "blockedMutations": [],
+  "summary": {
+    "routeCount": 12,
+    "overflowCount": 0,
+    "routeErrorCount": 0,
+    "cspViolationCount": 10,
+    "assetErrorCount": 0,
+    "blockedMutationCount": 0,
+    "note": "Production may still show the previously deployed sidebar particle. Local correction uses withName; this check does not deploy it. Turnstile is observed only; automatic token issuance, if any, is not a CAPTCHA interaction or an account creation.",
+    "challengeNetworkFailureCount": 0,
+    "turnstileLimitation": "Widget/iframe visibility and submit disabled without token were observed. Challenge DNS request failure (net::ERR_NAME_NOT_RESOLVED) prevents token issuance validation; no CAPTCHA was solved and no Auth account created. HTTP asset statuses are not a Turnstile pass."
+  },
+  "validity": "INCOMPLETE_LAZY_RENDER_WAIT",
+  "supersededBy": "docs/evidence/frontend-public-2026-09-19T19-41-49-148Z.json",
+  "limitation": "Some routes were captured during Suspense loading. HTTP results are valid, but this run does not establish final route visual acceptance."
+}

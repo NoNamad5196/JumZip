@@ -1,0 +1,139 @@
+{
+  "at": "2026-09-19T19:35:04.745Z",
+  "scope": "One exact synthetic memory input; baseline then diagnostic schema hint. No production prompt/provider changes, no Auth identities or database writes.",
+  "attempts": 3,
+  "measuredNeurons": 15.68455457687378,
+  "allAttemptsReportNeurons": true,
+  "reports": [
+    {
+      "variant": "CONFIGURED_BASELINE",
+      "outcome": "FAILED",
+      "code": "LLM_INVALID_RESPONSE",
+      "observations": [
+        {
+          "httpStatus": 200,
+          "latencyMs": 1254,
+          "responseFormat": "json_object",
+          "schemaInResponseFormat": false,
+          "schemaInMessages": false,
+          "finishReason": "stop",
+          "contentPresent": true,
+          "usage": {
+            "prompt_tokens": 361,
+            "completion_tokens": 83,
+            "total_tokens": 444,
+            "neurons": 4.198880195617676
+          },
+          "shape": {
+            "validJson": true,
+            "topKeys": [
+              "candidates"
+            ],
+            "candidates": [
+              {
+                "keys": [
+                  "type",
+                  "evidence",
+                  "importance",
+                  "sensitivity"
+                ],
+                "missingKeys": [
+                  "scope",
+                  "category",
+                  "subject",
+                  "content"
+                ],
+                "category": null,
+                "subject": null
+              }
+            ]
+          }
+        },
+        {
+          "httpStatus": 200,
+          "latencyMs": 734,
+          "responseFormat": "json_object",
+          "schemaInResponseFormat": false,
+          "schemaInMessages": false,
+          "finishReason": "stop",
+          "contentPresent": true,
+          "usage": {
+            "prompt_tokens": 507,
+            "completion_tokens": 83,
+            "total_tokens": 590,
+            "neurons": 4.874068737030029
+          },
+          "shape": {
+            "validJson": true,
+            "topKeys": [
+              "candidates"
+            ],
+            "candidates": [
+              {
+                "keys": [
+                  "type",
+                  "evidence",
+                  "importance",
+                  "sensitivity"
+                ],
+                "missingKeys": [
+                  "scope",
+                  "category",
+                  "subject",
+                  "content"
+                ],
+                "category": null,
+                "subject": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "variant": "SCHEMA_IN_SYSTEM_DIAGNOSTIC",
+      "outcome": "SUCCEEDED",
+      "candidateCount": 1,
+      "expectedPreferencePresent": true,
+      "observations": [
+        {
+          "httpStatus": 200,
+          "latencyMs": 1021,
+          "responseFormat": "json_object",
+          "schemaInResponseFormat": false,
+          "schemaInMessages": true,
+          "finishReason": "stop",
+          "contentPresent": true,
+          "usage": {
+            "prompt_tokens": 573,
+            "completion_tokens": 130,
+            "total_tokens": 703,
+            "neurons": 6.611605644226074
+          },
+          "shape": {
+            "validJson": true,
+            "topKeys": [
+              "candidates"
+            ],
+            "candidates": [
+              {
+                "keys": [
+                  "scope",
+                  "category",
+                  "subject",
+                  "content",
+                  "importance",
+                  "sensitivity",
+                  "evidence"
+                ],
+                "missingKeys": [],
+                "category": "PREFERENCE",
+                "subject": "USER"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

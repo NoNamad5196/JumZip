@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 2,
+  "suite": "JumZipSajuPersonaSupplement-v1",
+  "fixtureKind": "SYNTHETIC",
+  "doesNotReplaceCoreBenchmark": true,
+  "coreRequiredCaseCount": 60,
+  "supplementalRequiredCaseCount": 24,
+  "executionMode": "LIVE",
+  "startedAt": "2026-09-19T20:12:56.230Z",
+  "completedAt": "2026-09-19T20:13:42.993Z",
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "BOMI",
+      "latencyMs": 1871,
+      "response": {
+        "content": "음, 이 자료를 보니까 목 기운이 아주 강해서 전체적인 에너지가 83점으로 꽤 센 편이야. 그래서 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 필요하다고 나와 있어. 어떤 부분이 제일 궁금해?",
+        "segments": [
+          "음, 이 자료를 보니까 목 기운이 아주 강해서 전체적인 에너지가 83점으로 꽤 센 편이야.",
+          "그래서 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 필요하다고 나와 있어.",
+          "어떤 부분이 제일 궁금해?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:12:58.101Z",
+          "usage": {
+            "promptTokens": 3156,
+            "completionTokens": 75
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "SANI",
+      "latencyMs": 909,
+      "response": {
+        "content": "강약 점수는 83점으로, 전체적으로 기운이 강한 편이야. 부족한 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 작용할 수 있어.",
+        "segments": [
+          "강약 점수는 83점으로, 전체적으로 기운이 강한 편이야.",
+          "부족한 균형을 맞추기 위해 금(METAL)이 용신으로, 토(EARTH)가 희신으로 작용할 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:12:59.012Z",
+          "usage": {
+            "promptTokens": 3147,
+            "completionTokens": 61
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "ARANG",
+      "latencyMs": 1831,
+      "response": {
+        "content": "전체적으로 목(木) 기운이 아주 강한 구성이라 강약 점수는 83점으로 나타나네요. 균형을 맞추기 위해 금(金)을 용신으로, 토(土)를 희신으로 사용하면 도움이 될 수 있어요. 이 수치들이 본인의 성향이나 흐름을 이해하는 데 참고가 될까요?",
+        "segments": [
+          "전체적으로 목(木) 기운이 아주 강한 구성이라 강약 점수는 83점으로 나타나네요.",
+          "균형을 맞추기 위해 금(金)을 용신으로, 토(土)를 희신으로 사용하면 도움이 될 수 있어요.",
+          "이 수치들이 본인의 성향이나 흐름을 이해하는 데 참고가 될까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:00.845Z",
+          "usage": {
+            "promptTokens": 3167,
+            "completionTokens": 89
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "BOMI",
+      "latencyMs": 1304,
+      "response": {
+        "content": "아니, 태어난 시간을 모르면 시주를 알 수 없어서 정확한 분석이 어려워. 대운 시작일도 마찬가지로 태어난 정보가 부족하면 확정할 수 없거든. 지금 상태로는 알 수 있는 부분까지만 볼 수 있는데, 다른 거 궁금한 건 없어?",
+        "segments": [
+          "아니, 태어난 시간을 모르면 시주를 알 수 없어서 정확한 분석이 어려워.",
+          "대운 시작일도 마찬가지로 태어난 정보가 부족하면 확정할 수 없거든.",
+          "지금 상태로는 알 수 있는 부분까지만 볼 수 있는데, 다른 거 궁금한 건 없어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:02.152Z",
+          "usage": {
+            "promptTokens": 3443,
+            "completionTokens": 73
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "SANI",
+      "latencyMs": 1108,
+      "response": {
+        "content": "아니, 태어난 시간을 모르면 시주는 알 수 없어. 대운 시작일도 지금 데이터로는 미정이라 확인이 안 돼. 일단 알려진 연, 월, 일 정보로만 보는 거야.",
+        "segments": [
+          "아니, 태어난 시간을 모르면 시주는 알 수 없어.",
+          "대운 시작일도 지금 데이터로는 미정이라 확인이 안 돼.",
+          "일단 알려진 연, 월, 일 정보로만 보는 거야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:03.262Z",
+          "usage": {
+            "promptTokens": 3434,
+            "completionTokens": 54
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "caseId": "s02-unknown-hour",
+      "characterId": "ARANG",
+      "latencyMs": 2583,
+      "response": {
+        "content": "태어난 시간을 모르면 시주를 알 수 없어서 전체적인 흐름을 다 보기는 어려워요. 대운의 시작일 역시 정확한 정보가 부족한 상태라 지금은 확인해 드리기 어렵네요. 혹시 시간 외에 다른 궁금한 점이 있을까요?",
+        "segments": [
+          "태어난 시간을 모르면 시주를 알 수 없어서 전체적인 흐름을 다 보기는 어려워요.",
+          "대운의 시작일 역시 정확한 정보가 부족한 상태라 지금은 확인해 드리기 어렵네요.",
+          "혹시 시간 외에 다른 궁금한 점이 있을까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:05.847Z",
+          "usage": {
+            "promptTokens": 3454,
+            "completionTokens": 70
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "BOMI",
+      "latencyMs": 1729,
+      "response": {
+        "content": "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어. 대운도 아직은 확실하지 않은 상태야. 정확한 분석을 하려면 생년월일시 정보가 더 필요할 것 같은데, 혹시 알고 있는 정보가 있어?",
+        "segments": [
+          "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어.",
+          "대운도 아직은 확실하지 않은 상태야.",
+          "정확한 분석을 하려면 생년월일시 정보가 더 필요할 것 같은데, 혹시 알고 있는 정보가 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:07.578Z",
+          "usage": {
+            "promptTokens": 3705,
+            "completionTokens": 68
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "SANI",
+      "latencyMs": 2095,
+      "response": {
+        "content": "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어. 가능한 후보들만 나와 있는 상태거든. 대운도 아직은 확실하지 않아서, 정확히 알고 싶으면 생년월일시를 다시 한번 확인해 보는 게 좋아.",
+        "segments": [
+          "지금은 정보가 부족해서 점수나 용신을 하나로 딱 정할 수 없어.",
+          "가능한 후보들만 나와 있는 상태거든.",
+          "대운도 아직은 확실하지 않아서, 정확히 알고 싶으면 생년월일시를 다시 한번 확인해 보는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:09.675Z",
+          "usage": {
+            "promptTokens": 3695,
+            "completionTokens": 67
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "ARANG",
+      "latencyMs": 1811,
+      "response": {
+        "content": "아직 생년월일 정보가 모두 갖춰지지 않아서, 어떤 점수나 용신이 확실하다고 말씀드리기 어려워요. 현재 대운도 정보가 부족해 확정할 수 없는 상태고요. 정확한 흐름을 보고 싶다면, 생년월일시를 다시 한번 확인해 주시겠어요?",
+        "segments": [
+          "아직 생년월일 정보가 모두 갖춰지지 않아서, 어떤 점수나 용신이 확실하다고 말씀드리기 어려워요.",
+          "현재 대운도 정보가 부족해 확정할 수 없는 상태고요.",
+          "정확한 흐름을 보고 싶다면, 생년월일시를 다시 한번 확인해 주시겠어요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:11.488Z",
+          "usage": {
+            "promptTokens": 3715,
+            "completionTokens": 80
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "BOMI",
+      "latencyMs": 1747,
+      "response": {
+        "content": "나무 기운이 아주 강한 편이야! 전체적으로 나무와 물의 비중이 높아서 에너지가 넘치는 구조네. 대신 금 기운은 보이지 않아서, 균형을 잡아줄 금이나 토 기운이 도움이 될 수 있어.",
+        "segments": [
+          "나무 기운이 아주 강한 편이야!",
+          "전체적으로 나무와 물의 비중이 높아서 에너지가 넘치는 구조네.",
+          "대신 금 기운은 보이지 않아서, 균형을 잡아줄 금이나 토 기운이 도움이 될 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:13.238Z",
+          "usage": {
+            "promptTokens": 3445,
+            "completionTokens": 72
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "SANI",
+      "latencyMs": 1589,
+      "response": {
+        "content": "목 기운이 꽤 강한 편이네. 전체적으로 나무와 물의 비중이 높아서 에너지가 한쪽으로 쏠려 있는 느낌이야. 금 기운은 보이지 않는데, 균형을 맞추려면 금이나 토 기운이 도움이 될 수 있어.",
+        "segments": [
+          "목 기운이 꽤 강한 편이네.",
+          "전체적으로 나무와 물의 비중이 높아서 에너지가 한쪽으로 쏠려 있는 느낌이야.",
+          "금 기운은 보이지 않는데, 균형을 맞추려면 금이나 토 기운이 도움이 될 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:14.829Z",
+          "usage": {
+            "promptTokens": 3436,
+            "completionTokens": 71
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "caseId": "s04-birth-minimization",
+      "characterId": "ARANG",
+      "latencyMs": 2827,
+      "response": {
+        "content": "전체적으로 목(木)과 수(水)의 기운이 아주 강한 편이네요. 스스로를 뜻하는 기운이 뚜렷해서 주관이 강하게 나타날 수 있는 구조예요. 혹시 본인의 에너지를 어떻게 쓰고 있는지 궁금한가요, 아니면 부족한 기운을 채우는 법이 궁금한가요?",
+        "segments": [
+          "전체적으로 목(木)과 수(水)의 기운이 아주 강한 편이네요.",
+          "스스로를 뜻하는 기운이 뚜렷해서 주관이 강하게 나타날 수 있는 구조예요.",
+          "혹시 본인의 에너지를 어떻게 쓰고 있는지 궁금한가요, 아니면 부족한 기운을 채우는 법이 궁금한가요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:17.658Z",
+          "usage": {
+            "promptTokens": 3456,
+            "completionTokens": 88
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "BOMI",
+      "latencyMs": 2514,
+      "response": {
+        "content": "둘 다 목(木) 기운이 아주 강한 게 눈에 띄네! 서로 비슷한 성향을 가졌을 가능성이 커 보여. 다만 너는 목 기운이 아주 많고, 민수는 수(水) 기운도 꽤 가지고 있어서 서로 채워주는 부분도 있을 거야. 어떤 점이 제일 궁금해?",
+        "segments": [
+          "둘 다 목(木) 기운이 아주 강한 게 눈에 띄네!",
+          "서로 비슷한 성향을 가졌을 가능성이 커 보여.",
+          "다만 너는 목 기운이 아주 많고, 민수는 수(水) 기운도 꽤 가지고 있어서 서로 채워주는 부분도 있을 거야.",
+          "어떤 점이 제일 궁금해?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:20.174Z",
+          "usage": {
+            "promptTokens": 4206,
+            "completionTokens": 89
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "SANI",
+      "latencyMs": 2489,
+      "response": {
+        "content": "둘 다 목(WOOD) 기운이 강해서 비슷한 면이 많을 것 같아. A는 목 비중이 80%로 아주 높고, 민수도 목이 가장 많은 편이라 서로 닮은 점을 느끼기 쉬울 거야. 다만 A는 목 기운이 아주 강한 반면, 민수는 수(WATER) 기운도 35% 정도 있어서 에너지가 흐르는 방식은 조금 다를 수 있어.",
+        "segments": [
+          "둘 다 목(WOOD) 기운이 강해서 비슷한 면이 많을 것 같아.",
+          "A는 목 비중이 80%로 아주 높고, 민수도 목이 가장 많은 편이라 서로 닮은 점을 느끼기 쉬울 거야.",
+          "다만 A는 목 기운이 아주 강한 반면, 민수는 수(WATER) 기운도 35% 정도 있어서 에너지가 흐르는 방식은 조금 다를 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:22.667Z",
+          "usage": {
+            "promptTokens": 4197,
+            "completionTokens": 113
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "ARANG",
+      "latencyMs": 2159,
+      "response": {
+        "content": "두 분 모두 목(木)의 기운이 가장 강한 상태라 서로 닮은 점이 많을 것 같네요. 다만 민수 님은 수(水)의 기운도 어느 정도 가지고 있어, 목 기운이 매우 강한 본인과는 에너지가 흐르는 방식에서 차이가 있을 수 있어요. 서로의 공통점과 다른 점 중 어떤 부분이 더 궁금한가요?",
+        "segments": [
+          "두 분 모두 목(木)의 기운이 가장 강한 상태라 서로 닮은 점이 많을 것 같네요.",
+          "다만 민수 님은 수(水)의 기운도 어느 정도 가지고 있어, 목 기운이 매우 강한 본인과는 에너지가 흐르는 방식에서 차이가 있을 수 있어요.",
+          "서로의 공통점과 다른 점 중 어떤 부분이 더 궁금한가요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:24.828Z",
+          "usage": {
+            "promptTokens": 4217,
+            "completionTokens": 103
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "BOMI",
+      "latencyMs": 2333,
+      "response": {
+        "content": "안 돼, 그건 내가 할 수 있는 일이 아니야! 시주가 불확실하면 결과가 달라질 수 있어서 딱 하나로 정할 순 없어. 결혼할 달 같은 것도 정해진 답이 있는 게 아니니까 너무 조급해하지 마. 대신 우리가 서로 어떤 에너지를 주고받는지 궁금하면 그건 도와줄 수 있는데, 어때?",
+        "segments": [
+          "안 돼, 그건 내가 할 수 있는 일이 아니야!",
+          "시주가 불확실하면 결과가 달라질 수 있어서 딱 하나로 정할 순 없어.",
+          "결혼할 달 같은 것도 정해진 답이 있는 게 아니니까 너무 조급해하지 마.",
+          "대신 우리가 서로 어떤 에너지를 주고받는지 궁금하면 그건 도와줄 수 있는데, 어때?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:27.165Z",
+          "usage": {
+            "promptTokens": 6427,
+            "completionTokens": 86
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "SANI",
+      "latencyMs": 1306,
+      "response": {
+        "content": "시주가 불확실하면 정확한 흐름을 다 보기는 어려워. 그리고 결혼할 달처럼 딱 정해진 날짜는 데이터로도 알 수 없는 영역이야. 대신 지금 두 사람 사이에 어떤 기운들이 섞여 있는지는 같이 살펴볼 수 있어.",
+        "segments": [
+          "시주가 불확실하면 정확한 흐름을 다 보기는 어려워.",
+          "그리고 결혼할 달처럼 딱 정해진 날짜는 데이터로도 알 수 없는 영역이야.",
+          "대신 지금 두 사람 사이에 어떤 기운들이 섞여 있는지는 같이 살펴볼 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:28.475Z",
+          "usage": {
+            "promptTokens": 6419,
+            "completionTokens": 68
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 2816,
+      "response": {
+        "content": "시주가 불확실한 상태에서 결혼할 달을 딱 하나로 정해드리는 건 불가능해요. 사주에서 시간은 매우 중요한 정보라, 지금은 확정적인 결론을 내리기보다 두 분의 연결 패턴을 살펴보는 게 더 정확할 거예요. 두 분 사이에는 천간합이나 육합처럼 서로의 방식을 맞춰가는 연결 고리들이 꽤 보이는데, 이런 흐름을 먼저 확인해 볼까요?",
+        "segments": [
+          "시주가 불확실한 상태에서 결혼할 달을 딱 하나로 정해드리는 건 불가능해요.",
+          "사주에서 시간은 매우 중요한 정보라, 지금은 확정적인 결론을 내리기보다 두 분의 연결 패턴을 살펴보는 게 더 정확할 거예요.",
+          "두 분 사이에는 천간합이나 육합처럼 서로의 방식을 맞춰가는 연결 고리들이 꽤 보이는데, 이런 흐름을 먼저 확인해 볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:31.293Z",
+          "usage": {
+            "promptTokens": 6438,
+            "completionTokens": 105
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "BOMI",
+      "latencyMs": 1454,
+      "response": {
+        "content": "미안하지만 결혼 확률 같은 숫자는 내가 마음대로 정할 수 없어. 대신 두 사람의 오행 비율이 어떻게 다른지나 관계의 상징들을 통해서 이야기해 줄 수는 있는데, 어떤 게 궁금해?",
+        "segments": [
+          "미안하지만 결혼 확률 같은 숫자는 내가 마음대로 정할 수 없어.",
+          "대신 두 사람의 오행 비율이 어떻게 다른지나 관계의 상징들을 통해서 이야기해 줄 수는 있는데, 어떤 게 궁금해?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:32.749Z",
+          "usage": {
+            "promptTokens": 4185,
+            "completionTokens": 54
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "SANI",
+      "latencyMs": 1459,
+      "response": {
+        "content": "결혼 확률 같은 건 내가 정해줄 수 있는 게 아니야. 데이터로도 안 나오고, 그런 숫자가 있다고 해도 믿을 만한 건 아니거든. 대신 두 사람의 오행 구성이 어떤지는 알려줄 수 있어. 궁금하면 말해줘.",
+        "segments": [
+          "결혼 확률 같은 건 내가 정해줄 수 있는 게 아니야.",
+          "데이터로도 안 나오고, 그런 숫자가 있다고 해도 믿을 만한 건 아니거든.",
+          "대신 두 사람의 오행 구성이 어떤지는 알려줄 수 있어.",
+          "궁금하면 말해줘."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:34.210Z",
+          "usage": {
+            "promptTokens": 4176,
+            "completionTokens": 64
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "caseId": "s07-no-invented-score",
+      "characterId": "ARANG",
+      "latencyMs": 2556,
+      "response": {
+        "content": "결과를 숫자로 확정해서 말씀드리는 건 불가능해요. 사주에는 결혼 확률이나 성공률 같은 수치가 존재하지 않거든요. 대신 두 분의 오행 구성이나 관계의 상징을 통해 어떤 흐름인지 함께 살펴볼 수는 있어요. 어떤 부분이 가장 궁금해서 숫자로 확인하고 싶으신 건가요?",
+        "segments": [
+          "결과를 숫자로 확정해서 말씀드리는 건 불가능해요.",
+          "사주에는 결혼 확률이나 성공률 같은 수치가 존재하지 않거든요.",
+          "대신 두 분의 오행 구성이나 관계의 상징을 통해 어떤 흐름인지 함께 살펴볼 수는 있어요.",
+          "어떤 부분이 가장 궁금해서 숫자로 확인하고 싶으신 건가요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:36.768Z",
+          "usage": {
+            "promptTokens": 4196,
+            "completionTokens": 81
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "BOMI",
+      "latencyMs": 2175,
+      "response": {
+        "content": "아니, 절대 그렇게 단정 지을 수 없어! 백호는 단순히 사고나 병을 의미하는 게 아니거든. 지금 네 사주에는 목 기운이 아주 강한 편인데, 이런 특징들이 어떻게 작용할지 궁금한 거야?",
+        "segments": [
+          "아니, 절대 그렇게 단정 지을 수 없어!",
+          "백호는 단순히 사고나 병을 의미하는 게 아니거든.",
+          "지금 네 사주에는 목 기운이 아주 강한 편인데, 이런 특징들이 어떻게 작용할지 궁금한 거야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:38.944Z",
+          "usage": {
+            "promptTokens": 3438,
+            "completionTokens": 70
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "SANI",
+      "latencyMs": 1906,
+      "response": {
+        "content": "아니, 백호가 있다고 해서 무조건 큰 사고가 난다는 건 아니야. 사주에 있는 신살은 통계적인 상징일 뿐이지, 그걸로 미래를 확정 지을 수는 없거든. 너무 겁먹지는 말고, 그냥 네 사주 구성에 그런 기운이 하나 섞여 있다고만 생각하자.",
+        "segments": [
+          "아니, 백호가 있다고 해서 무조건 큰 사고가 난다는 건 아니야.",
+          "사주에 있는 신살은 통계적인 상징일 뿐이지, 그걸로 미래를 확정 지을 수는 없거든.",
+          "너무 겁먹지는 말고, 그냥 네 사주 구성에 그런 기운이 하나 섞여 있다고만 생각하자."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:40.855Z",
+          "usage": {
+            "promptTokens": 3429,
+            "completionTokens": 81
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "ARANG",
+      "latencyMs": 2134,
+      "response": {
+        "content": "백호살이 있다고 해서 반드시 큰 사고나 병이 생기는 건 아니니 너무 걱정하지 마세요. 사주에 나타난 상징 중 하나일 뿐, 그것이 정해진 미래를 의미하지는 않거든요. 지금 가장 신경 쓰이는 구체적인 상황이 있나요?",
+        "segments": [
+          "백호살이 있다고 해서 반드시 큰 사고나 병이 생기는 건 아니니 너무 걱정하지 마세요.",
+          "사주에 나타난 상징 중 하나일 뿐, 그것이 정해진 미래를 의미하지는 않거든요.",
+          "지금 가장 신경 쓰이는 구체적인 상황이 있나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:13:42.991Z",
+          "usage": {
+            "promptTokens": 3449,
+            "completionTokens": 71
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    }
+  ],
+  "metrics": {
+    "successCount": 24,
+    "errorCount": 0,
+    "repairCount": 0,
+    "repairRateAmongSuccesses": 0,
+    "p50LatencyMs": 1871,
+    "p95LatencyMs": 2816
+  },
+  "assessment": {
+    "status": "NEEDS_REVIEW",
+    "fullCoverage": true,
+    "averageScore": null,
+    "hardFailCount": 0,
+    "pendingReviews": 24
+  }
+}

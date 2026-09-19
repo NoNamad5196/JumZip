@@ -1,0 +1,252 @@
+{
+  "at": "2026-09-19T20:30:17.493Z",
+  "scope": "Real structured extraction/summary plus remote owner consent/persistence; synthetic USER fixture rows only. No Chat reply, intent, title, public signup or background-hook claim.",
+  "userFixtureCount": 17,
+  "expectedInitialCalls": 6,
+  "maximumInitialCalls": 7,
+  "maximumHttpCallsIncludingRepair": 14,
+  "maximumAccountedNeurons": 250,
+  "providerLimits": {
+    "initialTimeoutMs": 8000,
+    "repairTimeoutMs": 3000,
+    "maxOutputTokens": 900
+  },
+  "stages": [
+    "three extraction batches, with real summary after seventeen USER turns",
+    "private turn: zero provider calls",
+    "profile OFF: zero provider calls and empty derived reply context",
+    "disable/delete an actually extracted USER memory, repeat preference, inspect suppression",
+    "related-person opt-in and real extraction",
+    "related-person withdrawal and repeat: blocked before provider",
+    "verified cleanup"
+  ],
+  "reserveBasis": "Before each HTTP request reserve complete serialized UTF-8 body bytes as input tokens plus configured maximum output tokens, at official model neuron/token rates. Missing usage retains the reserve; no unaccounted retry.",
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "httpCalls": 6,
+  "initialCalls": 6,
+  "accountedNeurons": 47.479450000000014,
+  "measuredNeurons": 47.47734594345093,
+  "allUsageMeasured": true,
+  "checks": [
+    {
+      "name": "remote consent-state contract is available",
+      "passed": true
+    },
+    {
+      "name": "real extraction batch 1 commits its source cursor",
+      "passed": true
+    },
+    {
+      "name": "summary is not compacted before seventeen USER turns (batch 1)",
+      "passed": true
+    },
+    {
+      "name": "real extraction batch 2 commits its source cursor",
+      "passed": true
+    },
+    {
+      "name": "summary is not compacted before seventeen USER turns (batch 2)",
+      "passed": true
+    },
+    {
+      "name": "real extraction batch 3 commits its source cursor",
+      "passed": true
+    },
+    {
+      "name": "real model produces a persisted grounded seventeen-turn summary",
+      "passed": true
+    },
+    {
+      "name": "summary cursor is persisted",
+      "passed": true
+    },
+    {
+      "name": "actual extractor persists the synthetic preference",
+      "passed": true
+    },
+    {
+      "name": "summary compaction preserves every original USER row without a seeded assistant",
+      "passed": true
+    },
+    {
+      "name": "private turn advances cursor without any provider call",
+      "passed": true
+    },
+    {
+      "name": "private source is absent from memory",
+      "passed": true
+    },
+    {
+      "name": "profile OFF does no provider work and clears summary",
+      "passed": true
+    },
+    {
+      "name": "profile OFF excludes derived context without depending on recall response",
+      "passed": true
+    },
+    {
+      "name": "withdrawal test uses actual extracted rows",
+      "passed": true
+    },
+    {
+      "name": "disabled actual memory is excluded from reply context",
+      "passed": true
+    },
+    {
+      "name": "fresh repeated preference cannot revive deleted USER memory or old summary",
+      "passed": true
+    },
+    {
+      "name": "related memory opt-in does not grant birth-data storage consent",
+      "passed": true
+    },
+    {
+      "name": "actual extractor persists the consenting related-person preference",
+      "passed": true
+    },
+    {
+      "name": "related withdrawal immediately removes their structured memory",
+      "passed": true
+    },
+    {
+      "name": "known withdrawn alias is excluded before provider and cannot be re-extracted",
+      "passed": true
+    },
+    {
+      "name": "actual provider work stays within approved call and neuron limits",
+      "passed": true
+    },
+    {
+      "name": "verified disposable maintenance account cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "stage": "SUMMARY_BATCH_1",
+      "attempt": 1,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 838,
+      "reservedNeurons": 42.51425,
+      "chargedNeurons": 3.8883,
+      "measuredNeurons": 3.8879685401916504,
+      "estimated": false,
+      "promptTokens": 788,
+      "completionTokens": 8,
+      "finishReason": "stop"
+    },
+    {
+      "stage": "SUMMARY_BATCH_2",
+      "attempt": 2,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 1841,
+      "reservedNeurons": 42.389375,
+      "chargedNeurons": 11.18925,
+      "measuredNeurons": 11.18886947631836,
+      "estimated": false,
+      "promptTokens": 772,
+      "completionTokens": 250,
+      "finishReason": "stop"
+    },
+    {
+      "stage": "SUMMARY_BATCH_3",
+      "attempt": 3,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 1190,
+      "reservedNeurons": 40.285,
+      "chargedNeurons": 6.135925,
+      "measuredNeurons": 6.135630130767822,
+      "estimated": false,
+      "promptTokens": 648,
+      "completionTokens": 103,
+      "finishReason": "stop"
+    },
+    {
+      "stage": "SUMMARY_BATCH_3",
+      "attempt": 4,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 1107,
+      "reservedNeurons": 45.728625,
+      "chargedNeurons": 8.354675,
+      "measuredNeurons": 8.354242324829102,
+      "estimated": false,
+      "promptTokens": 963,
+      "completionTokens": 128,
+      "finishReason": "stop"
+    },
+    {
+      "stage": "DELETE_MEMORY",
+      "attempt": 5,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 1095,
+      "reservedNeurons": 40.160125,
+      "chargedNeurons": 7.559,
+      "measuredNeurons": 7.558695316314697,
+      "estimated": false,
+      "promptTokens": 646,
+      "completionTokens": 150,
+      "finishReason": "stop"
+    },
+    {
+      "stage": "RELATED_OPT_IN",
+      "attempt": 6,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 1788,
+      "reservedNeurons": 40.8215,
+      "chargedNeurons": 10.3523,
+      "measuredNeurons": 10.351940155029297,
+      "estimated": false,
+      "promptTokens": 736,
+      "completionTokens": 228,
+      "finishReason": "stop"
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "overallOutcome": "SUCCEEDED",
+  "cleanupVerified": true,
+  "outputShapes": [
+    {
+      "stage": "SUMMARY_BATCH_1",
+      "finishReason": "stop",
+      "candidateCount": 0,
+      "summaryCharacters": null
+    },
+    {
+      "stage": "SUMMARY_BATCH_2",
+      "finishReason": "stop",
+      "candidateCount": 3,
+      "summaryCharacters": null
+    },
+    {
+      "stage": "SUMMARY_BATCH_3",
+      "finishReason": "stop",
+      "candidateCount": 1,
+      "summaryCharacters": null
+    },
+    {
+      "stage": "SUMMARY_BATCH_3",
+      "finishReason": "stop",
+      "candidateCount": null,
+      "summaryCharacters": 181
+    },
+    {
+      "stage": "DELETE_MEMORY",
+      "finishReason": "stop",
+      "candidateCount": 2,
+      "summaryCharacters": null
+    },
+    {
+      "stage": "RELATED_OPT_IN",
+      "finishReason": "stop",
+      "candidateCount": 2,
+      "summaryCharacters": null
+    }
+  ],
+  "comparison": "Same original17 USER fixture as backend-maintenance-qwen-batch-cap-failure.json; candidate maximum3/content160/evidence160 and shared900-token maintenance budget are now deployed."
+}

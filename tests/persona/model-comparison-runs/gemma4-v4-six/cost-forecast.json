@@ -1,0 +1,31 @@
+{
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "diagnostic": {
+    "requests": 6,
+    "inputTokens": 19830,
+    "outputTokens": 513,
+    "neurons": 194.265579,
+    "minTokenPerByte": 0.2209547950992818,
+    "meanTokenPerByte": 0.22853647636372842,
+    "maxTokenPerByte": 0.2374331550802139
+  },
+  "full84Projection": {
+    "requests": 84,
+    "totalRequestBytes": 1108764,
+    "estimatedNeuronsUsingMeanObservedRatio": 2499.470609719361,
+    "estimatedNeuronsUsingLargestObservedRatio": 2589.147116297326,
+    "planningWith20PercentHeadroom": 3106.9765395567915,
+    "all900OutputAtObservedMaxInputRatio": 4455.111230297326
+  },
+  "assumptions": [
+    "Estimated from only6synthetic requests; input tokenizer behavior and response length may differ",
+    "No caching discount assumed",
+    "Repair attempts addusage; localreservation remainsbyte-as-token+900output",
+    "Not a formaltokenizerbound or providerquotareading"
+  ],
+  "networkRequests": 0
+}

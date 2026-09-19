@@ -1,0 +1,266 @@
+{
+  "runId": "v4",
+  "scope": "FOCUSED_12_X_3",
+  "destinationOrigin": "https://api.cloudflare.com",
+  "pathTemplate": "/client/v4/accounts/[configured-account]/ai/v1/chat/completions",
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "credentialPresent": true,
+  "networkRequests": 0,
+  "inputKind": "Fixed synthetic corpus only; no actual customer data",
+  "approvedCeilingNeurons": 800,
+  "requestCount": 36,
+  "requests": [
+    {
+      "requestSha256": "2e3940392fe2af954431bc92aadaa48e873f6597b80b057d1fbdc40f38054440",
+      "bytes": 12110,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "46fd4621ea1ef23f36b899ab4bde1c5facd99c77c00f3f40ef2caeb2666a1602",
+      "bytes": 11991,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "94db5bbb23131c2ca747ad6bfa5829e4a076d2ae5a70ba7d02f22e40ef681d04",
+      "bytes": 12135,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "548361d1bd5dfa0e66817ed3ca82669a44ea86db4e9894705aa018bd5d2f289c",
+      "bytes": 12965,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "9cfb64a8f50348b225eccf25d34c7d59a13fe8b67c03b51adf8787150f5ac3ff",
+      "bytes": 12846,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "d7ebdc9af4bfa4a56ee2b1c69e445f81688583995be968cb99c98e8465b7ddc7",
+      "bytes": 12990,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "325246f6f55a2e8cbc16ab7183971bce9aa6b0592d2582e760253091a9c096d6",
+      "bytes": 13054,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "ccec26295d2a9b7bf10a5fbd71edd4649196f0638eadf9553391c0a5e69a8b57",
+      "bytes": 12935,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "1a5beea90f5a8eb2550a437a986a0ea676ca23394708ba97327d7072f5175c75",
+      "bytes": 13079,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "f856b5ae87f8a902df50232369eef9eb68fd8f33f31bea86071d6414746490eb",
+      "bytes": 13035,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "3ebeb5e0fb0d7c77642eb444e0382f75d984d6a60b063054f2716a1823f54272",
+      "bytes": 12916,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "71020bba83466a14ac0ff03a96b2ee6633da0c17174fa1f56e22256455d4bb45",
+      "bytes": 13060,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "a3ee31944539b4d8f478fa8db3846df1815f7bbcd61761a0d89a9a36eb43bc6d",
+      "bytes": 13027,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "c64d223532b58dd57ac74b1695d463db877fc8fbb472f2e4a14356fc06662f54",
+      "bytes": 12908,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "84bfea7f7110d805d8397fc99a4012cb10621f45b88af994fc059024342b6388",
+      "bytes": 13052,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "1f170966d4a02ed839745cb87c24639fef474a515632bf15ab7cbe7e746a1264",
+      "bytes": 12087,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "9cab896f6927e0d514adcefe1b6869fd0ca1e5b06dc874159886c45cdbf33231",
+      "bytes": 11968,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "dc888c9ed5dd305f08ba27416a8ca50ccc97ed7da7fdef568d600042e8923d0d",
+      "bytes": 12112,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "efa925b33039f30a7debcaa574a68a9fbb6fae571c666fd38dbe2485ddb75eef",
+      "bytes": 13912,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "48e8af547cbc2d9067a703c41c91ee2683e81ad7c4bb86e9914b3d0fb0ab0439",
+      "bytes": 13793,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "152ad36daec10462821d6c35c28d7baae23d68bdf16f6a050680fcb148548607",
+      "bytes": 13937,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "b08cee309a0c385976e74cddc2d6534aa4c66c2fd4e59a1301d3d65d64e36d7d",
+      "bytes": 15098,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "287d6f5b60dbf0d66d196e8fa958b3f33d46ec76cd2d0371dc6d210e9a7465bb",
+      "bytes": 14979,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "53560a8ab2d175596fe89fe7423d5872f60bf5b80caae1c6f431172959d4e1a7",
+      "bytes": 15123,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "138f078428497433c62e78d62e9433f6d9d0c7b6a9709b672d1a050cfe607acb",
+      "bytes": 16500,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "ec76ae475572108c0b924577a190badce758998be99ac1f55698b225c5fe59e2",
+      "bytes": 16381,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "d61bb7a60b8d16032f6a2b6e2b2bafd4d9fa398b91f770412247627e8aa6d2af",
+      "bytes": 16525,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "70fdcc585e91d10f34c379b35e5ded971a8f834b40249b253ab846d5e46a6e4f",
+      "bytes": 17785,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "9145270f83a2fd1575777454077ef18bc553124e6fa3a9a4448a808b0f105668",
+      "bytes": 17666,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "c09a19e2efac1c84e7f015cf688b8843123ca37cef05b67cceaeb9f0f004d364",
+      "bytes": 17810,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "77042aa9d909df36a4fb4f84e66970676f638190856732c05c31ce43fdc74826",
+      "bytes": 27170,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "0cccd6261414db07ab523c1eac39441c517a56bf9f1fb1e6073942c767b5361e",
+      "bytes": 27051,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "5adf633166f2aafbd4c6fc700e18b6e4641ccc1ac0b7e15178dbb95f1c5091a4",
+      "bytes": 27195,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "5a51848d287385bee54baf931e5295254cd92dbeff0950eab47e1b1ec1119053",
+      "bytes": 17717,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "9a4b7d86496c6e7155707820d91526a8d278d3edc8d2d588ad9f200d0733c7cc",
+      "bytes": 17598,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    },
+    {
+      "requestSha256": "807e8b0c6da2a26517e1c06c2d4ddc58068033dc700a923cfc7255aa623ecf56",
+      "bytes": 17742,
+      "privacyCanaryCount": 0,
+      "rawBirthKeyPresent": false,
+      "schemaIncluded": true
+    }
+  ]
+}

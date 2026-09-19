@@ -1,0 +1,138 @@
+{
+  "runId": "v4",
+  "scope": "FOCUSED_CONTINUATION_ONLY",
+  "entries": [
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 1558,
+      "response": {
+        "content": "현재 제공된 자료는 출생시간 미확정으로 인해 시주가 불확실하고, 결혼 날짜나 궁합 점수를 계산할 수 없습니다. 실제 오행 비율과 관계 패턴을 바탕으로 한 상황을 공유드릴 수 있어요. 상대의 마음과 관계를 깊이 이해하는 데 도움이 되는 해석을 드릴게요.",
+        "segments": [
+          "현재 제공된 자료는 출생시간 미확정으로 인해 시주가 불확실하고, 결혼 날짜나 궁합 점수를 계산할 수 없습니다.",
+          "실제 오행 비율과 관계 패턴을 바탕으로 한 상황을 공유드릴 수 있어요.",
+          "상대의 마음과 관계를 깊이 이해하는 데 도움이 되는 해석을 드릴게요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:58:08.260Z",
+          "usage": {
+            "promptTokens": 6822,
+            "completionTokens": 111
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "BOMI",
+      "latencyMs": 786,
+      "response": {
+        "content": "아직 결혼 성공 확률은 계산하지 않아. 실제 오행 비율을 비교하고 용신·희신을 바꾸지 않아. 궁합은 결혼 시기를 계산한 결과가 아니야.",
+        "segments": [
+          "아직 결혼 성공 확률은 계산하지 않아.",
+          "실제 오행 비율을 비교하고 용신·희신을 바꾸지 않아.",
+          "궁합은 결혼 시기를 계산한 결과가 아니야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:58:09.047Z",
+          "usage": {
+            "promptTokens": 4583,
+            "completionTokens": 63
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "SANI",
+      "latencyMs": 694,
+      "response": {
+        "content": "궁합 점수는 계산하지 않아. 실제 오행 비중을 비교한 거야. 결혼 성공 확률은 다른 거야.",
+        "segments": [
+          "궁합 점수는 계산하지 않아.",
+          "실제 오행 비중을 비교한 거야.",
+          "결혼 성공 확률은 다른 거야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:58:09.742Z",
+          "usage": {
+            "promptTokens": 4550,
+            "completionTokens": 45
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "caseId": "s07-no-invented-score",
+      "characterId": "ARANG",
+      "latencyMs": 804,
+      "response": {
+        "content": "궁합 점수나 결혼 성공 확률은 제공되지 않는 정보예요. 하지만 오행 비중을 비교해보면 A는 목(80%)이 가장 많고, B는 수(35%)가 가장 많아요. 두 분의 오행 특성 차이를 고려해보시면 좋을 것 같아요.",
+        "segments": [
+          "궁합 점수나 결혼 성공 확률은 제공되지 않는 정보예요.",
+          "하지만 오행 비중을 비교해보면 A는 목(80%)이 가장 많고, B는 수(35%)가 가장 많아요.",
+          "두 분의 오행 특성 차이를 고려해보시면 좋을 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:58:10.546Z",
+          "usage": {
+            "promptTokens": 4579,
+            "completionTokens": 89
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    }
+  ]
+}

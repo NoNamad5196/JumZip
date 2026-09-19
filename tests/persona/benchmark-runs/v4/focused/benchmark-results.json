@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 2,
+  "corpusVersion": "JumZipPersonaBenchmark-v1",
+  "promptVersion": "JumZipPersona-v4",
+  "executionMode": "LIVE",
+  "startedAt": "2026-09-19T19:54:55.917Z",
+  "completedAt": "2026-09-19T19:55:16.910Z",
+  "configuredCaseCount": 6,
+  "entries": [
+    {
+      "id": "06-one-card:BOMI",
+      "caseId": "06-one-card",
+      "characterId": "BOMI",
+      "latencyMs": 1661,
+      "response": {
+        "content": "광대 정방향이 뽑혔네. 지금은 새로운 시작이나 자유로운 선택이 중요한 시기 같아. 무언가를 시도하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아. 무언가를 시작하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아.",
+        "segments": [
+          "광대 정방향이 뽑혔네.",
+          "지금은 새로운 시작이나 자유로운 선택이 중요한 시기 같아.",
+          "무언가를 시도하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아.",
+          "무언가를 시작하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:57.579Z",
+          "usage": {
+            "promptTokens": 3070,
+            "completionTokens": 121
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "06-one-card:SANI",
+      "caseId": "06-one-card",
+      "characterId": "SANI",
+      "latencyMs": 904,
+      "response": {
+        "content": "광대 정방향이야. 새 출발이나 자유 같은 뜻이 있는 거 같아. 그냥 막연하게 두려워하지 말고, 준비도 안 된 상태에서 뛰지는 말자는 뜻이겠지.",
+        "segments": [
+          "광대 정방향이야.",
+          "새 출발이나 자유 같은 뜻이 있는 거 같아.",
+          "그냥 막연하게 두려워하지 말고, 준비도 안 된 상태에서 뛰지는 말자는 뜻이겠지."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:58.486Z",
+          "usage": {
+            "promptTokens": 3037,
+            "completionTokens": 81
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "caseId": "06-one-card",
+      "characterId": "ARANG",
+      "latencyMs": 826,
+      "response": {
+        "content": "광대의 정방향은 새로운 시작과 자유를 상징해요. 지금은 어떤 방향으로 나아가고 싶은지 고민해보는 시간이 좋을 것 같아요. 두려움을 넘어서는 용기와 준비된 마음이 필요하죠.",
+        "segments": [
+          "광대의 정방향은 새로운 시작과 자유를 상징해요.",
+          "지금은 어떤 방향으로 나아가고 싶은지 고민해보는 시간이 좋을 것 같아요.",
+          "두려움을 넘어서는 용기와 준비된 마음이 필요하죠."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:59.313Z",
+          "usage": {
+            "promptTokens": 3066,
+            "completionTokens": 90
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "caseId": "07-general-three",
+      "characterId": "BOMI",
+      "latencyMs": 1093,
+      "response": {
+        "content": "현재 상황은 '힘' 카드가 정방향으로 나왔어. 용기와 자기통제가 필요할 때야. 그런데 핵심 변수는 '매달린 사람'이 역방향이래. 지연이나 집착이 걸림돌이 될 수 있어. 앞으로는 '별' 카드가 희망을 줄 거야. 구체적인 행동으로 연결해보는 게 좋아.",
+        "segments": [
+          "현재 상황은 '힘' 카드가 정방향으로 나왔어.",
+          "용기와 자기통제가 필요할 때야.",
+          "그런데 핵심 변수는 '매달린 사람'이 역방향이래.",
+          "지연이나 집착이 걸림돌이 될 수 있어.",
+          "앞으로는 '별' 카드가 희망을 줄 거야.",
+          "구체적인 행동으로 연결해보는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:00.408Z",
+          "usage": {
+            "promptTokens": 3281,
+            "completionTokens": 156
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:SANI",
+      "caseId": "07-general-three",
+      "characterId": "SANI",
+      "latencyMs": 1054,
+      "response": {
+        "content": "현재 상황에선 힘을 긍정적으로 써보는 게 좋을 것 같아. 하지만 핵심 변수가 걸림돌이 되고 있거든. 그걸 해결하려면 좀 더 유연하게 접근해보는 게 어때?",
+        "segments": [
+          "현재 상황에선 힘을 긍정적으로 써보는 게 좋을 것 같아.",
+          "하지만 핵심 변수가 걸림돌이 되고 있거든.",
+          "그걸 해결하려면 좀 더 유연하게 접근해보는 게 어때?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:01.463Z",
+          "usage": {
+            "promptTokens": 3248,
+            "completionTokens": 120
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "caseId": "07-general-three",
+      "characterId": "ARANG",
+      "latencyMs": 1228,
+      "response": {
+        "content": "현재 상황은 '힘'의 카드로, 용기와 자기통제가 필요해요. 핵심 변수는 '매달린 사람'이 역방향이라, 지연이나 집착이 걸림돌이 될 수 있겠어요. 앞으로의 방향은 '별'이 희망을 안겨주는데, 구체적인 행동으로 연결해보는 게 좋아요.",
+        "segments": [
+          "현재 상황은 '힘'의 카드로, 용기와 자기통제가 필요해요.",
+          "핵심 변수는 '매달린 사람'이 역방향이라, 지연이나 집착이 걸림돌이 될 수 있겠어요.",
+          "앞으로의 방향은 '별'이 희망을 안겨주는데, 구체적인 행동으로 연결해보는 게 좋아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:02.692Z",
+          "usage": {
+            "promptTokens": 3277,
+            "completionTokens": 150
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "caseId": "08-relationship-three",
+      "characterId": "BOMI",
+      "latencyMs": 1205,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드가 나타내는 선택과 연결이 중요해. 상대는 '은둔자' 역방향으로 고립이나 회피 같은 감정을 가지고 있을 수 있어. 관계의 흐름은 '절제'로 균형을 잡는 게 좋아. 지금 가장 궁금한 건 뭐야?",
+        "segments": [
+          "사용자의 마음은 '연인' 카드가 나타내는 선택과 연결이 중요해.",
+          "상대는 '은둔자' 역방향으로 고립이나 회피 같은 감정을 가지고 있을 수 있어.",
+          "관계의 흐름은 '절제'로 균형을 잡는 게 좋아.",
+          "지금 가장 궁금한 건 뭐야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:03.899Z",
+          "usage": {
+            "promptTokens": 3303,
+            "completionTokens": 142
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "caseId": "08-relationship-three",
+      "characterId": "SANI",
+      "latencyMs": 915,
+      "response": {
+        "content": "카드에선 서로의 태도 차이가 보여. 너는 끌림을 느끼고 있고, 상대는 고립감을 느끼고 있던 것 같아. 관계는 조율이 필요할 수 있어.",
+        "segments": [
+          "카드에선 서로의 태도 차이가 보여.",
+          "너는 끌림을 느끼고 있고, 상대는 고립감을 느끼고 있던 것 같아.",
+          "관계는 조율이 필요할 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:04.815Z",
+          "usage": {
+            "promptTokens": 3270,
+            "completionTokens": 112
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "caseId": "08-relationship-three",
+      "characterId": "ARANG",
+      "latencyMs": 1104,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드로 나타나요. 선택과 연결이 중요한 시기 같아요. 상대의 태도는 '은둔자' 카드로, 고립이나 회피 같은 느낌이 있어요. 관계의 흐름은 '절제'로, 균형을 찾는 과정 같아요. 현재 상황에 대해 한 가지 더 말해줄 수 있나요?",
+        "segments": [
+          "사용자의 마음은 '연인' 카드로 나타나요.",
+          "선택과 연결이 중요한 시기 같아요.",
+          "상대의 태도는 '은둔자' 카드로, 고립이나 회피 같은 느낌이 있어요.",
+          "관계의 흐름은 '절제'로, 균형을 찾는 과정 같아요.",
+          "현재 상황에 대해 한 가지 더 말해줄 수 있나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:05.921Z",
+          "usage": {
+            "promptTokens": 3299,
+            "completionTokens": 158
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "caseId": "09-decision-three",
+      "characterId": "BOMI",
+      "latencyMs": 1389,
+      "response": {
+        "content": "전차가 정방향으로 나와서 방향을 정하고 나서 움직이는 게 좋을 것 같아. 균형을 잡는 정의가 현실적인 방향이야. 악마가 역방향이라면 지금은 중독처럼 빠지지 않게 조심해야 해. 뭘 선택할지 고민이야?",
+        "segments": [
+          "전차가 정방향으로 나와서 방향을 정하고 나서 움직이는 게 좋을 것 같아.",
+          "균형을 잡는 정의가 현실적인 방향이야.",
+          "악마가 역방향이라면 지금은 중독처럼 빠지지 않게 조심해야 해.",
+          "뭘 선택할지 고민이야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:07.311Z",
+          "usage": {
+            "promptTokens": 3294,
+            "completionTokens": 142
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "caseId": "09-decision-three",
+      "characterId": "SANI",
+      "latencyMs": 1461,
+      "response": {
+        "content": "전차가 정방향으로 떠오르는 걸 보면 지금은 집중하고 밀어붙일 때야. 하지만 악마가 역방향으로 놓여있으니, 중독되거나 고정된 생각에 매몰되지 않도록 조심해야 해. 정의가 마지막에 놓여있는데, 현실적인 방향은 공정하고 사실을 바탕으로 결정하는 거야.",
+        "segments": [
+          "전차가 정방향으로 떠오르는 걸 보면 지금은 집중하고 밀어붙일 때야.",
+          "하지만 악마가 역방향으로 놓여있으니, 중독되거나 고정된 생각에 매몰되지 않도록 조심해야 해.",
+          "정의가 마지막에 놓여있는데, 현실적인 방향은 공정하고 사실을 바탕으로 결정하는 거야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:08.773Z",
+          "usage": {
+            "promptTokens": 3261,
+            "completionTokens": 153
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "caseId": "09-decision-three",
+      "characterId": "ARANG",
+      "latencyMs": 1545,
+      "response": {
+        "content": "현재 선택을 밀어주는 힘은 '전차'입니다. 추진과 통제의 에너지가 당신을 이끌고 있어요. 다만 '악마' 카드가 주의해야 할 리스크를 알리고 있어요. 중독이나 과도한 집착이 방해가 될 수 있어요. 가장 현실적인 방향은 '정의'입니다. 균형과 책임을 바탕으로 결정하는 게 좋을 것 같아요.",
+        "segments": [
+          "현재 선택을 밀어주는 힘은 '전차'입니다.",
+          "추진과 통제의 에너지가 당신을 이끌고 있어요.",
+          "다만 '악마' 카드가 주의해야 할 리스크를 알리고 있어요.",
+          "중독이나 과도한 집착이 방해가 될 수 있어요.",
+          "가장 현실적인 방향은 '정의'입니다.",
+          "균형과 책임을 바탕으로 결정하는 게 좋을 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:10.320Z",
+          "usage": {
+            "promptTokens": 3290,
+            "completionTokens": 165
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "caseId": "10-retry-same-draw",
+      "characterId": "BOMI",
+      "latencyMs": 1880,
+      "response": {
+        "content": "그래, 알겠어. 내가 좀 더 쉽게 설명해줄게. 첫 번째 카드는 '연인'이야. 정방향이라면 선택과 연결, 서로의 가치가 일치할 때 생기는 관계를 뜻해. 두 번째는 '은둔자'인데, 역방향이라서 고립이나 회피 같은 느낌이 있어. 상대가 좀 외로워하거나 방향을 잃은 듯해. 세 번째 '절제'는 균형과 인내, 중간지점을 찾는 걸 의미해. 관계의 흐름을 조율하는 거야. 어때, 더 이해가 되었어?",
+        "segments": [
+          "그래, 알겠어.",
+          "내가 좀 더 쉽게 설명해줄게.",
+          "첫 번째 카드는 '연인'이야.",
+          "정방향이라면 선택과 연결, 서로의 가치가 일치할 때 생기는 관계를 뜻해.",
+          "두 번째는 '은둔자'인데, 역방향이라서 고립이나 회피 같은 느낌이 있어.",
+          "상대가 좀 외로워하거나 방향을 잃은 듯해.",
+          "세 번째 '절제'는 균형과 인내, 중간지점을 찾는 걸 의미해.",
+          "관계의 흐름을 조율하는 거야.",
+          "어때, 더 이해가 되었어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:12.201Z",
+          "usage": {
+            "promptTokens": 3295,
+            "completionTokens": 210
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "caseId": "10-retry-same-draw",
+      "characterId": "SANI",
+      "latencyMs": 943,
+      "response": {
+        "content": "연인은 선택과 연결이 핵심이야. 상대가 은둔자 카드로 고립 같은 느낌을 받고 있으면, 관계가 조율 필요해. 절제 카드는 극단보다는 중간지점을 찾는 게 좋아.",
+        "segments": [
+          "연인은 선택과 연결이 핵심이야.",
+          "상대가 은둔자 카드로 고립 같은 느낌을 받고 있으면, 관계가 조율 필요해.",
+          "절제 카드는 극단보다는 중간지점을 찾는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:13.146Z",
+          "usage": {
+            "promptTokens": 3262,
+            "completionTokens": 121
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "caseId": "10-retry-same-draw",
+      "characterId": "ARANG",
+      "latencyMs": 1138,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드로, 선택과 연결이 중요해요. 상대는 '은둔자' 역방향으로 고립이나 회피의 경향이 보여요. 관계의 흐름은 '절제'로 균형을 찾는 게 좋을 것 같아요.",
+        "segments": [
+          "사용자의 마음은 '연인' 카드로, 선택과 연결이 중요해요.",
+          "상대는 '은둔자' 역방향으로 고립이나 회피의 경향이 보여요.",
+          "관계의 흐름은 '절제'로 균형을 찾는 게 좋을 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:14.285Z",
+          "usage": {
+            "promptTokens": 3291,
+            "completionTokens": 132
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "caseId": "11-redraw-request",
+      "characterId": "BOMI",
+      "latencyMs": 883,
+      "response": {
+        "content": "탑이 마음에 안 들어? 아, 그건 좀 신경 쓰이네. 재추첨하고 싶다니, 혹시 지금 중요한 결정이 있는 건가?",
+        "segments": [
+          "탑이 마음에 안 들어?",
+          "아, 그건 좀 신경 쓰이네.",
+          "재추첨하고 싶다니, 혹시 지금 중요한 결정이 있는 건가?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:15.169Z",
+          "usage": {
+            "promptTokens": 3064,
+            "completionTokens": 67
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "caseId": "11-redraw-request",
+      "characterId": "SANI",
+      "latencyMs": 1021,
+      "response": {
+        "content": "탑이 마음에 안 들어? 그건 좀 애매하다. 재추첨할 건가?",
+        "segments": [
+          "탑이 마음에 안 들어?",
+          "그건 좀 애매하다.",
+          "재추첨할 건가?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:16.191Z",
+          "usage": {
+            "promptTokens": 3031,
+            "completionTokens": 50
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "caseId": "11-redraw-request",
+      "characterId": "ARANG",
+      "latencyMs": 716,
+      "response": {
+        "content": "정말 마음에 안 드시다니요. 지금의 카드가 마음에 들지 않는다면, 다른 카드를 뽑아보는 것도 좋을 것 같아요. 원하시면 다시 뽑아드릴게요.",
+        "segments": [
+          "정말 마음에 안 드시다니요.",
+          "지금의 카드가 마음에 들지 않는다면, 다른 카드를 뽑아보는 것도 좋을 것 같아요.",
+          "원하시면 다시 뽑아드릴게요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:16.909Z",
+          "usage": {
+            "promptTokens": 3060,
+            "completionTokens": 84
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    }
+  ],
+  "metrics": {
+    "successCount": 18,
+    "errorCount": 0,
+    "repairCount": 0,
+    "repairRateAmongSuccesses": 0,
+    "p50LatencyMs": 1093,
+    "p95LatencyMs": 1880
+  },
+  "assessment": {
+    "status": "INCOMPLETE",
+    "fullCoverage": false,
+    "averageScore": null,
+    "hardFailCount": 0,
+    "pendingReviews": 18
+  }
+}

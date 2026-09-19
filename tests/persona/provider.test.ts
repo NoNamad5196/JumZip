@@ -19,7 +19,7 @@ describe('OpenAI-compatible provider', () => {
     const body = JSON.parse(fetchImpl.mock.calls[0]![1]!.body as string);
     expect(fetchImpl.mock.calls[0]![0]).toBe('https://inference.example/v1/chat/completions');
     expect(body).toMatchObject({ model: 'selected-by-env', stream: false, response_format: { type: 'json_schema' } });
-    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v2' });
+    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v4' });
     expect(reply.segments).toHaveLength(2); expect(reply.repaired).toBe(false);
   });
   it('repairs malformed content exactly once and does not generate extra user messages', async () => {

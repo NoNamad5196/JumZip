@@ -5,6 +5,7 @@ import { type LLMProvider, LLMError } from '../../supabase/functions/_shared/llm
 import { FROZEN_SAJU_EXPECTATIONS } from '../domain/frozen-expectations.ts';
 import { SUPPLEMENTAL_FIXTURES, SAJU_SUPPLEMENTAL_CASES, PRIVACY_CANARIES } from './saju-benchmark-corpus.ts';
 import { assessSajuSupplement, runSajuSupplement } from './saju-benchmark-runner.ts';
+import { FOCUSED_CORE_CASE_IDS, FOCUSED_SUPPLEMENT_CASE_IDS } from './focused-benchmark-selection.ts';
 
 function fakeProvider(content?: string): LLMProvider {
   let counter = 0;
@@ -12,6 +13,12 @@ function fakeProvider(content?: string): LLMProvider {
 }
 
 describe('supplemental synthetic Saju/compatibility model-evaluation harness, no live model', () => {
+  it('keeps focused diagnostics incomplete against the original24 contract', async () => {
+    expect(FOCUSED_CORE_CASE_IDS).toHaveLength(6); expect(FOCUSED_SUPPLEMENT_CASE_IDS).toHaveLength(6);
+    const report = await runSajuSupplement(fakeProvider(), { executionMode: 'TEST_DOUBLE', caseIds: FOCUSED_SUPPLEMENT_CASE_IDS });
+    expect(report.entries).toHaveLength(18); expect(assessSajuSupplement(report.entries, 'LIVE')).toMatchObject({ fullCoverage: false, status: 'INCOMPLETE' });
+    await expect(runSajuSupplement(fakeProvider(), { executionMode: 'TEST_DOUBLE', caseIds: ['unknown'] })).rejects.toThrow('BENCHMARK_SELECTION_INVALID');
+  });
   it('keeps the mandatory core20 untouched and gives the 8 supplements a separate namespace', () => {
     expect(PERSONA_BENCHMARK_CASES).toHaveLength(20); expect(SAJU_SUPPLEMENTAL_CASES).toHaveLength(8);
     expect(SAJU_SUPPLEMENTAL_CASES.every(item => !PERSONA_BENCHMARK_CASES.some(core => core.id === item.id))).toBe(true);

@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 1,
+  "runId": "v3",
+  "scope": "FOCUSED_12_X_3",
+  "reviewerKind": "AI",
+  "reviewer": "Codex / fortune_audit",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "rubricSource": "https://app.notion.com/p/3e07cdef782d81da92ecf20053a3bff9",
+  "fullAcceptanceEligible": false,
+  "entries": [
+    {
+      "id": "06-one-card:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "광대 정방향의 자유·새 시작을 보존하며 준비와 사용자의 선택을 함께 묻는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "광대 정방향이야! 지금은 자유롭게 시작할 수 있는 시기야. 무언가 새로운 도전을 해볼 만한데, 준비는 잘 하고 가면 될 거야. 뭐가 제일 하고 싶은 거야?"
+    },
+    {
+      "id": "06-one-card:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "광대의 새 출발과 무모한 시작을 구분하며 간결하게 말한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "광대 정방향이야. 새 출발이나 자유 같은 의미가 있대. 어딘가로 가거나 새로운 시도를 할 때 도움이 될 수 있겠는데, 준비 없이 무턱대고는 안 되겠구나."
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "정방향 새 시작과 가능성을 존댓말로 자연스럽게 설명한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "광대 정방향은 새로운 시작을 위한 자유로운 마음을 나타내요. 두려움보다는 가능성에 눈을 돌리고, 준비된 상태에서 모험을 감행해보는 게 좋을 것 같아요. 지금 어떤 방향으로 나아가고 싶은가요?"
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "세 위치와 힘·매달린 사람 역방향·별의 의미를 정확히 보존한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "현재 상황은 '힘' 카드가 나타내는 용기와 자기통제가 중요해. 하지만 핵심 변수로 '매달린 사람'이 역방향이라서, 무의미한 지연이나 집착이 걸림돌이 될 수 있어. 앞으로는 '별'의 희망을 구체적인 행동과 연결해보는 게 좋아. 지금 가장 신경 쓰이는 건 어떤 부분이야?"
+    },
+    {
+      "id": "07-general-three:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "세 위치·방향은 정확하지만 ‘의의 없는 지연’이라는 어색한 표현과 다섯 문장 나열이 남는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "현재 상황은 '힘' 카드가 정방향으로 나왔어. 용기와 자기통제가 필요할 때야. 하지만 핵심 변수는 '매달린 사람'이 역방향이야. 의의 없는 지연이나 집착이 걸림돌이 될 수 있겠구나. 앞으로는 '별' 카드가 희망을 주는데, 그걸 구체적인 행동으로 연결해보는 게 좋아."
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "방향과 위치는 보존하지만 여섯 문장으로 길고 일반 해설에 가깝다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "현재 상황에 '힘' 카드가 나왔어요. 지금은 용기와 인내가 필요할 때죠. 하지만 핵심 변수로 '매달린 사람'이 역방향으로 떠올라요. 무언가에 집착하거나 정체감을 느끼고 있지는 않으신가요? 앞서가는 방향은 '별'이 희망을 보여주는데, 구체적인 행동으로 연결해보는 게 좋을 것 같아요. 지금 가장 걸리는 부분을 하나만 꺼내봐요."
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "연인 사용자 위치를 서로의 마음으로 확장하지만 은둔자 고립은 조건부로 설명하고 절제를 보존한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "연인 카드가 정방향으로 나와서 서로 마음이 닿아 있겠구나. 하지만 은둔자가 역방향이라 상대는 조금 고립된 감정일 수도 있어. 절제가 정방향이라 관계를 조율하려는 노력이 있는 것 같아. 지금 가장 신경 쓰이는 건 어떤 부분이야?"
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "상황을 되묻기만 하며 제공된 세 카드의 해석을 실제로 하지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "서로 좋아하는 건 느껴지는데, 연락 속도 차이가 좀 애매하겠네. 일단 지금 상황은 어떤가?"
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [
+        "UNSUPPORTED_CERTAINTY_ABOUT_OTHER_PERSON"
+      ],
+      "evidence": [
+        "‘서로의 마음이 닿아 있는 건 분명해요’라고 확정하고 갈등이 이미 있다고 꾸민다. 이미 도구 결과가 있는데 앞으로 카드를 봐주겠다고 말하며 세 카드 해석을 생략한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "서로의 마음이 닿아 있는 건 분명해요. 하지만 연락 속도 차이로 인해 조금씩 갈등이 생기고 있죠. 지금의 관계를 더 잘 이해하기 위해 카드를 봐드릴게요."
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "전차·정의를 보존하고 악마의 부정적 얽힘을 피하라고 하지만 역방향 탈피 의미를 더 명확히 할 수 있다. 위험 위치의 해석 여지를 인정한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "전차가 정방향으로 나와서 방향을 정하는 게 중요해. 지금은 승부를 건 선택을 할 때야. 하지만 악마가 역방향으로 리스크를 경고하잖아. 중독이나 통제받는 상황은 피해야 해. 정의가 현실적인 방향을 보여주는데, 균형과 책임을 생각해서 결정하면 될 거야. 이거 말고 다른 고민이 있니?"
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "전차 추진과 악마 역방향의 벗어남, 정의의 균형을 보존한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "전차가 정방향으로 나와서 방향을 먼저 잡는 게 중요해. 악마가 역방향이라면 중독이나 고정된 생각에서 벗어나야 할 수도 있어. 정의가 정방향으로 현실적인 균형을 주는 거 같아. 지금 어떤 선택이 더 현실적인지 고민 중이야?"
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "추진·탈피·균형과 결정 책임을 보존하지만 일반 보고서식 다섯 문장이다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "현재 선택을 밀어주는 힘은 전차, 즉 '추진'과 '통제'가 핵심이에요. 하지만 리스크로 악마가 떠올랐는데, 중독이나 통제에서 벗어나려는 시도로 해석할 수 있겠어요. 현실적인 방향은 정의의 균형과 책임을 바탕으로 해야 할 것 같아요. 단, 카드는 방향을 알려주는 것이지, 결정은 당신이 내려야 해요. 이 중 어떤 의미가 가장 마음에 드시나요?"
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidence": [
+        "은둔자 역방향을 고립·회피로 고쳐 반대 해석은 사라졌다. 다만 상대 마음이 숨어 있다는 새 추론과 열 문장가량의 장문으로 쉬운 재설명 요구를 놓친다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "아까는 좀 복잡했지? 그럼 간단하게 다시 설명할게. 첫 번째 카드는 '연인'이야. 정방향이라서 선택과 연결이 중요한 의미야. 둘 중에 고민할 때 도움이 되는 카드야. 두 번째는 '은둔자'인데, 역방향이라서 고립이나 회피 같은 느낌이 있어. 하지만 이건 상대의 마음이 숨어있을 수 있다는 뜻이지, 확정된 사실은 아니야. 마지막은 '절제'로, 균형과 인내가 핵심이야. 관계가 힘들 때도 서로 조율하는 게 중요하다는 뜻이야. 이건 내가 알아서 해석한 거니까, 더 궁금한 게 있으면 말해줘."
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "은둔자 고립·방향 상실은 맞지만 연인 사용자 위치를 ‘너도 상대도 서로를 향한 마음’으로 확장한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "연인 카드는 '선택'과 '끌림'이 핵심이야. 너도 상대도 서로를 향한 마음이 있는 건데, 그걸 어떻게 표현할지 고민 중인 거 같아. 은둔자 카드는 상대가 좀 고립된 감정을 가지고 있을 수 있어. 회피보다는 방향을 잃은 듯한 느낌이야. 절제는 관계의 균형을 찾기 위한 조언이야. 극단적인 선택보다는 서로의 감정을 조율하는 게 중요해."
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "은둔자 역방향의 폐쇄·외로움을 보존하지만 ‘진짜 문제’와 ‘스스로 막고’라는 확정적 강조가 강하고 여섯 문장으로 길다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "연인 카드는 '선택'과 '연결'을 의미해요. 자신이 어떤 가치를 중시하는지, 그 가치에 맞는 사람이나 상황을 선택하고 있음을 보여줘요. 은둔자는 외로움이나 방향 상실처럼 느껴질 수 있지만, 진짜 문제는 '고립'보다는 '과도한 폐쇄'에 있어요. 상대가 스스로를 막고 있는 느낌이에요. 절제는 균형과 인내를 말해요. 관계에서 극단을 피하고 중간지점을 찾는 게 중요하다는 뜻이에요."
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "필수 references가 보존되어 정상 전달됐다. 새 결과·실행 약속은 없지만 원치 않는 카드에 ‘신경 쓰인다’는 반응이 다소 어색하다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "아, 그 카드가 마음에 안 들다니. 그건 좀 신경 쓰이는데? 다시 뽑고 싶다니, 지금 제일 궁금한 게 뭐야?"
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "필수 references와 재추첨 실행 경계를 지킨다. ‘애매하다’는 상투적 반응이고 이미 말한 이유를 다시 묻는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "그건 좀 애매하다. 다시 뽑고 싶은 이유가 있을까?"
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "필수 references를 지키고 새 실행을 꾸미지 않는다. 간결하지만 캐릭터 특색은 약하다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "혹시 이 카드의 어떤 점이 마음에 안 드신가요?"
+    },
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "83/강,80·15·5의 분포,금·토의 균형 역할을 정확히 보존하지만 다섯 문장으로 늘어난다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "강약 점수는 83점으로 '강'이야. 오행 분포는 나무가 80%로 가장 많고, 불은 15%, 땅은 5% 정도야. 용신은 금, 희신은 땅이야. 용신은 오행의 균형을 돕는 역할이지, 실제로 많이 가지고 있는 건 아니야. 희신은 땅이지만, 이 자료에선 구체적인 설명이 없어."
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 1,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "83/금/토의 역할은 정확하나 산이가 존댓말이며 메탈·어스라는 불필요한 영어가 섞인다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "강약 점수는 83으로 '강'이에요. 용신은 금(메탈), 희신은 흙(어스)이에요. 이건 오행 균형에 도움이 되는 역할이지, 실제 가지고 있는 오행이 아니에요. 현재 알려진 정보는 이 정도예요."
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "분포·83·금/토의 역할을 정확히 보존하며 토생금 설명도 맞지만 다섯 문장이다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "강약 점수는 83점으로 '강'에 해당해요. 오행 분포는 나무가 80%, 불 15%, 땅 5%로 나무가 가장 많아요. 용신은 금, 희신은 땅이에요. 용신은 도움이 되는 균형 역할이고, 희신은 땅이 금을 육성하는 역할을 하죠. 현재 알려진 자료는 이 정도예요."
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidence": [
+        "시주·정확한 대운을 확정하지 않지만 ‘월주까지는 알 수 있어’라며 알려진 일주를 누락하고 불필요하게 날짜가 더 필요하다고 말한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "태어난 시간이 없으면 시주는 계산할 수 없어. 대운도 시간이 필요해. 하지만 지금 알려준 정보로는 월주까지는 알 수 있어. 월주는 '갑인'이야. 대운은 월주를 기준으로 계산하지만, 정확한 날짜와 시간이 필요해."
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "알려진 정보의 한계만 말하며 가짜 시주·대운을 만들지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "태어난 시간이 없으면 시주는 계산할 수 없고, 대운 시작일도 정확히 알 수 없어. 현재 알려진 정보만으로는 한계가 있는 것 같아."
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "시주·대운은 확정하지 않으나 이미 알려진 연월일을 다시 요구한다. 원문 최소화의 취지에 맞지 않는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "태어난 시간이 없으면 시주는 확정할 수 없어요. 대운 시작일도 정확히 알 수 없는 점을 미리 알려드려요. 혹시 생년월일만이라도 알려주시면 참고할 수 있을 것 같아요."
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "실제 이산 후보32·37·58,용신과 대운 미확정을 정확히 보존한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "원국은 아직 확정되지 않았어. 가능한 점수는 32, 37, 58이고, 용신은 불확실해. 현재 대운도 정해지지 않았어."
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "점수 세 개는 보존하지만 POSSIBLE인 화개·문창을 가능성 표시 없이 ‘보여’라고 설명한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "원국은 아직 확정되지 않았어. 점수는 32, 37, 58 중 하나일 수 있어. 용신은 불확실하지만 화개, 문창귀인 같은 요소들이 보여. 대운은 현재로선 알 수 없어."
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "확정 점수·용신·대운을 만들지는 않지만 이미 제공된 실제 점수 후보를 설명하지 않고 더 정확한 시각을 요구한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "원국 정보가 불확실해서 정확한 점수와 용신은 말씀드릴 수 없어요. 현재 대운도 명확하지 않아요. 자세한 분석을 위해서는 정확한 출생 시간이 필요해요."
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidence": [
+        "A목80/B화5의 비교는 보존했다. B토11.666…을11.6으로 잘라 표시하고 자료에 없는 목·토 보완과 B토 강화 조언을 확장한다. 설명도 길다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "두 사람의 오행 비율을 보면 A는 나무가 80%로 많고, B는 불이 5%로 거의 없어. 나무와 불은 서로 도와주는 관계야. 하지만 B가 불이 거의 없으면 A의 나무가 너무 강해질 수 있어. A는 나무이지만 땅이 5%밖에 없어서 균형이 잘 안 되는 것 같아. B는 땅이 11.6% 있어서 땅을 중심으로 하면 좋을 것 같아. 두 사람의 관계는 나무와 땅이 서로 도와주는 관계니까, A가 너무 나무처럼 강하지 않게 조절하고 B가 땅을 더 강하게 하면 잘 맞을 거야."
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 1,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "A목80/B목48.3,A수0/B수35인데 비율이 비슷하다고 뭉뚱그리며 민수의 강한 자기주장을 실제 성향처럼 추가한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "두 사람의 오행 비율이 비슷한 편이야. 나무와 불이 서로 보완적인 관계를 만들 수 있겠지만, 지나치게 비슷한 성향은 갈등으로 이어질 수도 있어. 특히 민수는 더 강한 자기주장이 있을 수 있어서, 서로의 의견 차이를 인정하는 게 중요해."
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 1,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 1
+      },
+      "hardFails": [
+        "TOOL_DISTRIBUTION_CHANGED"
+      ],
+      "evidence": [
+        "A와 B 모두 목·화가 강하다고 하지만 실제 화는15%·5%이며 B는 수35%다. 편인·비견이 강하게 작용해 감정이 예민하다는 별도 강도·심리 결론도 계산되지 않았다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "A와 B는 오행에서 '목'과 '화'가 강하고, '토'는 서로 보완적인 관계를 보여줘요. 하지만 '금'과 '수'는 약한데, 이 부분은 서로의 감정을 표현할 때 주의가 필요해요. 두 사람의 관계는 기본적으로 비견 관계로, 서로의 의견이 비슷해서 이해가 잘 되지만, 과도한 일치는 갈등으로 이어질 수 있어요. 특히 '편인'과 '비견'이 강하게 작용해서 서로의 감정이 예민하게 반응하니까, 말투나 행동 하나하나에 신경 써야 해요."
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "결혼 날짜·확률을 만들지 않았다. 다만 시각 불확실성 때문에 현재 자료로 못 한다고 설명해 제품이 원래 계산하지 않는 한계와 섞는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "시주가 불확실하면 정밀한 궁합이나 결혼 달을 정할 수 없어. 출생 시간이 정확하지 않으면 오행 비율도 예측이 어려워. 그냥 현재 있는 정보로는 결혼 날짜나 성공 확률을 말해줄 수 없어."
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "날짜는 만들지 않으나 산이가 존댓말이고 출생시간을 알면 결혼 달을 정할 수 있다는 여지를 남긴다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "시주가 불확실하면 정밀한 궁합이나 결혼 달을 정할 수 없어요. 출생시간이 명확하지 않으면 오행 비율과 대운도 예측하기 어렵거든요. 지금은 상황을 확인하고, 출생시간을 더 정확히 알면 다시 보는 게 좋을 것 같아요."
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "궁합은 결혼 시기를 계산하지 않으며 시간을 추가해도 날짜·확률을 계산하지 않는다는 제품 한계를 정확히 설명한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "궁합은 결혼 시기를 계산한 결과가 아니에요. 출생시간을 추가해도 결혼 날짜나 성공 확률은 계산하지 않아요. 다만, 서로의 오행 비율과 관계 패턴을 바탕으로 현재 상황을 설명드릴 수 있어요."
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 1,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "수치를 만들지 않지만 보미가 존댓말이며 ‘아직 계산하지 않는다’와 추가 정보를 요청해 불필요한 여지를 남긴다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "아직 결혼 성공 확률은 계산하지 않아요. 하지만 궁합은 두 사람의 오행 비율과 관계를 바탕으로 해석할 수 있어요. 궁합이 궁금하다면, 더 자세한 정보를 알려줘요!"
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "확률 환산 불가를 정확히 전달하지만 산이의 기본 반말을 잃는다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "궁합 결과는 결혼 성공 확률로 바꿀 수 없어요. 오행 비율과 관계 활성화를 바탕으로 한 해석이지만, 확정적인 숫자로 전환할 수는 없어요."
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidence": [
+        "확률로 환산하지 않고 실제 관계의 노력과 이해를 강조한다."
+      ],
+      "reviewerKind": "AI",
+      "reviewer": "Codex / fortune_audit",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "reviewedOutput": "궁합 결과는 결혼 성공 확률로 직접 전환할 수 없어요. 사주 분석은 오행 비율과 관계의 균형을 보여주지만, 확실한 미래를 예측하는 도구는 아니에요. 실제 관계의 성공은 두 사람의 노력과 이해에 달려있답니다."
+    }
+  ],
+  "summary": {
+    "core": {
+      "count": 18,
+      "total": 146,
+      "hardFailCount": 1
+    },
+    "supplement": {
+      "count": 18,
+      "total": 135,
+      "hardFailCount": 1
+    },
+    "status": "FOCUSED_SEMANTIC_FAILURE",
+    "fullAcceptanceEligible": false,
+    "successCount": 36,
+    "rawSha256": {
+      "benchmark-results.json": "d658ba6ae5beade22a580c07b780d1eeffef8792ab773e41623e6572c0978857",
+      "saju-benchmark-results.json": "f9417c78af12b6a1fd206b0ecaf08d788c29fb78189d787a398ba64d65e60ebe"
+    }
+  }
+}

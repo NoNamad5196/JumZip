@@ -1,0 +1,274 @@
+{
+  "at": "2026-09-19T19:25:51.342Z",
+  "checks": [
+    {
+      "name": "allowed CORS preflight needs no user token",
+      "passed": true
+    },
+    {
+      "name": "untrusted origin receives no CORS access",
+      "passed": true
+    },
+    {
+      "name": "missing bearer token is rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid bearer token is rejected",
+      "passed": true
+    },
+    {
+      "name": "non-JSON requests are rejected",
+      "passed": true
+    },
+    {
+      "name": "strict schema rejects browser-supplied owner fields",
+      "passed": true
+    },
+    {
+      "name": "request body above 32 KiB is rejected",
+      "passed": true
+    },
+    {
+      "name": "Edge error envelope is versioned and not cacheable",
+      "passed": true
+    },
+    {
+      "name": "browser cannot execute service-only rate or compatibility RPCs",
+      "passed": true
+    },
+    {
+      "name": "real Auth creates owned profile",
+      "passed": true
+    },
+    {
+      "name": "RLS prevents cross-account reads",
+      "passed": true
+    },
+    {
+      "name": "browser cannot forge assistant rows",
+      "passed": true
+    },
+    {
+      "name": "deployed Edge commits three cards",
+      "passed": true
+    },
+    {
+      "name": "persisted draw has no duplicate cards",
+      "passed": true
+    },
+    {
+      "name": "partial/success draw restores after page reload",
+      "passed": true
+    },
+    {
+      "name": "same request replays same persisted group",
+      "passed": true
+    },
+    {
+      "name": "changed payload conflicts",
+      "passed": true
+    },
+    {
+      "name": "interpretation retry never redraws",
+      "passed": true
+    },
+    {
+      "name": "foreign retry is rejected",
+      "passed": true
+    },
+    {
+      "name": "Daily Tarot is unique across characters",
+      "passed": true
+    },
+    {
+      "name": "real model Chat response stored",
+      "passed": true
+    },
+    {
+      "name": "deployed location resolver supplies authoritative timezone",
+      "passed": true
+    },
+    {
+      "name": "actual full Saju engine persists its versioned result",
+      "passed": true
+    },
+    {
+      "name": "Saju detail preserves component evidence",
+      "passed": true
+    },
+    {
+      "name": "Saju retry uses identical persisted calculation",
+      "passed": true
+    },
+    {
+      "name": "Saju idempotent replay projects canonical inline result",
+      "passed": true
+    },
+    {
+      "name": "Saju retry enforces ownership",
+      "passed": true
+    },
+    {
+      "name": "Saju reload metadata excludes raw birth date",
+      "passed": true
+    },
+    {
+      "name": "disposable oversized-context failure probe is prepared",
+      "passed": true
+    },
+    {
+      "name": "disposable context failure probe is removed",
+      "passed": true
+    },
+    {
+      "name": "compatibility calculation returns canonical persisted result",
+      "passed": true
+    },
+    {
+      "name": "compatibility calculation exposes partial-result retry",
+      "passed": true
+    },
+    {
+      "name": "compatibility preserves deterministic result when interpretation cannot start",
+      "passed": true
+    },
+    {
+      "name": "compatibility API exposes versioned inline result",
+      "passed": true
+    },
+    {
+      "name": "compatibility detail reload retains both derived charts",
+      "passed": true
+    },
+    {
+      "name": "compatibility partial snapshot survives page reload",
+      "passed": true
+    },
+    {
+      "name": "without save consent compatibility creates no birth profiles or related people",
+      "passed": true
+    },
+    {
+      "name": "raw partner birth fields are absent from derived readings and durable message/execution snapshots",
+      "passed": true
+    },
+    {
+      "name": "same compatibility request replays saved result",
+      "passed": true
+    },
+    {
+      "name": "changed compatibility payload conflicts with reused request ID",
+      "passed": true
+    },
+    {
+      "name": "RLS hides another user compatibility reading",
+      "passed": true
+    },
+    {
+      "name": "compatibility retry enforces resource ownership",
+      "passed": true
+    },
+    {
+      "name": "disposable active resource lease is prepared",
+      "passed": true
+    },
+    {
+      "name": "live resource lease blocks overlapping retry",
+      "passed": true
+    },
+    {
+      "name": "disposable active resource lease is removed",
+      "passed": true
+    },
+    {
+      "name": "compatibility retry returns canonical persisted result",
+      "passed": true
+    },
+    {
+      "name": "compatibility retry includes persisted interpretation message ID",
+      "passed": true
+    },
+    {
+      "name": "compatibility retry never recalculates or replaces immutable derived result",
+      "passed": true
+    },
+    {
+      "name": "explicit partner-save compatibility returns canonical persisted result",
+      "passed": true
+    },
+    {
+      "name": "explicit partner-save compatibility includes persisted interpretation message ID",
+      "passed": true
+    },
+    {
+      "name": "explicit partner birth save retains provider provenance without enabling memory consent",
+      "passed": true
+    },
+    {
+      "name": "explicit profile consent does not expose raw birth fields in compatibility response",
+      "passed": true
+    },
+    {
+      "name": "disposable location daily ceiling is prepared",
+      "passed": true
+    },
+    {
+      "name": "location lookup enforces daily limit with Retry-After",
+      "passed": true
+    },
+    {
+      "name": "location lookup creates no fortune execution",
+      "passed": true
+    },
+    {
+      "name": "account endpoint deletes disposable account",
+      "passed": true
+    },
+    {
+      "name": "deleted account token is rejected by server getUser",
+      "passed": true
+    },
+    {
+      "name": "account deletion cascades tarot_draw_groups",
+      "passed": true
+    },
+    {
+      "name": "account deletion cascades saju_readings",
+      "passed": true
+    },
+    {
+      "name": "account deletion cascades saju_compatibility_readings",
+      "passed": true
+    },
+    {
+      "name": "account deletion cascades request_executions",
+      "passed": true
+    },
+    {
+      "name": "disposable user cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "compatibility partial probe",
+      "requestedFailure": "OVERSIZED_DISPOSABLE_CONTEXT",
+      "observedReason": "INTERNAL_ERROR",
+      "attribution": "Interpretation failed under an oversized test context; this does not claim a provider outage."
+    }
+  ],
+  "scope": "Admin-created disposable identities with admin-generated magic-link token verification. Public anonymous signup/CAPTCHA is not covered.",
+  "pendingCleanupCount": 0,
+  "modelBatch": "JumZipPersona-v2",
+  "usage": {
+    "measuredNeurons": null,
+    "note": "Edge envelopes do not expose provider usage. Authorized bounded smoke reserve."
+  },
+  "cleanupVerification": {
+    "pendingLedgerCount": 0,
+    "remainingMatchedDisposableAuthUsers": 0,
+    "at": "2026-09-19T19:29:43.313Z",
+    "scope": "Auth absence rechecked after cleanup; account endpoint already verified its four named cascades."
+  }
+}

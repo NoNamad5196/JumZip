@@ -11,7 +11,7 @@ import { extractToolRecommendation, type Recommendation } from '../llm/intent.ts
 import type { PersonaPromptInput } from '../persona/prompt.ts';
 import { resolveLocation } from './location.ts';
 import { hasMemoryOptOut } from './privacy.ts';
-import { createMemoryMaintenance, maintainMemory } from './memory.ts';
+import { createMemoryMaintenance, maintainMemory, MEMORY_PROVIDER_LIMITS } from './memory.ts';
 import { createTitleMaintenance, maintainTitles } from './titles.ts';
 import { scheduleReplyMaintenance, type MaintenanceTask, type BackgroundRuntime } from './maintenance.ts';
 import { buildSajuInterpretationData } from '../domain/full-saju.ts';
@@ -212,7 +212,7 @@ export function createExecutor(client: SupabaseClient, environment: (name: strin
       const work: MaintenanceTask[] = [];
       if (environment('MEMORY_MAINTENANCE_ENABLED') !== 'false') {
         work.push({ task: 'MEMORY', run: async () => {
-          const provider = createOpenAICompatibleProvider({ ...providerConfig(), initialTimeoutMs: 8_000, repairTimeoutMs: 3_000, maxOutputTokens: 500 });
+          const provider = createOpenAICompatibleProvider({ ...providerConfig(), ...MEMORY_PROVIDER_LIMITS });
           await maintainMemory(createMemoryMaintenance(client, provider), user.id, claim.conversationId, claim.characterId);
         } });
       }

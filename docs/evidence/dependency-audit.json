@@ -1,0 +1,19 @@
+{
+  "checkedAtKst": "2026-09-20 05:30 (minute precision)",
+  "source": "pnpm registry advisory audit for the installed lockfile",
+  "production": {
+    "command": "pnpm audit --prod --json",
+    "exitCode": 0,
+    "reportedDependencies": 31,
+    "advisories": {},
+    "vulnerabilities": { "info": 0, "low": 0, "moderate": 0, "high": 0, "critical": 0 }
+  },
+  "allDependencies": {
+    "command": "pnpm audit --json",
+    "exitCode": 0,
+    "reportedDependencies": 349,
+    "advisories": {},
+    "vulnerabilities": { "info": 0, "low": 0, "moderate": 0, "high": 0, "critical": 0 }
+  },
+  "limitations": "No registry advisories were reported at this check. This does not establish the absence of unknown vulnerabilities or replace Auth/RLS/application testing. No dependencies were changed."
+}

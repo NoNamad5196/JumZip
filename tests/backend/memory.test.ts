@@ -22,7 +22,7 @@ describe('memory lifecycle privacy and fault isolation', () => {
   });
   it('extracts only fresh raw messages, never the previous summary, and commits against the captured revision', async () => {
     const deps = fixture(); await maintainMemory(deps, 'owner', 'conversation', 'SANI');
-    expect(deps.extract).toHaveBeenCalledWith({ characterId: 'SANI', messages: [fresh], allowedRelatedPeople: [], suppressions: [] });
+    expect(deps.extract).toHaveBeenCalledWith({ characterId: 'SANI', messages: [fresh], allowedRelatedPeople: [], blockedRelatedPeople: [], suppressions: [] });
     expect(deps.store.apply).toHaveBeenCalledWith({ userId: 'owner', conversationId: 'conversation', expectedRevision: 3, throughMessageId: fresh.id, candidates: [candidate], summary: null });
     expect(deps.summarize).not.toHaveBeenCalled();
   });
@@ -57,9 +57,35 @@ describe('memory lifecycle privacy and fault isolation', () => {
     expect(deps.store.apply).toHaveBeenCalledTimes(1); expect(deps.extract).toHaveBeenCalledTimes(1);
   });
   it('normalizes null database summary and optional arrays before use', async () => {
-    const rpc = vi.fn().mockResolvedValue({ data: { ...state, summary: null, suppressions: null, allowedRelatedPeople: null }, error: null });
+    const rpc = vi.fn().mockResolvedValue({ data: { ...state, summary: null, suppressions: null, allowedRelatedPeople: null, blockedRelatedPeople: null }, error: null });
     const store = createMemoryStore({ rpc } as unknown as SupabaseClient);
-    expect(await store.state('owner', 'conversation')).toMatchObject({ summary: '', suppressions: [], allowedRelatedPeople: [] });
+    expect(await store.state('owner', 'conversation')).toMatchObject({ summary: '', suppressions: [], allowedRelatedPeople: [], blockedRelatedPeople: [] });
+  });
+  it('passes the same current related-person consent snapshot to extraction and summary', async () => {
+    const deps = fixture();
+    const allowedRelatedPeople = [{ id: 'allowed-person', alias: '솔새' }];
+    const blockedRelatedPeople = [{ id: 'blocked-person', alias: '물새' }];
+    vi.mocked(deps.store.state).mockResolvedValue({ ...state, allowedRelatedPeople, blockedRelatedPeople });
+    vi.mocked(deps.store.summaryMessages).mockResolvedValue(Array.from({ length: 17 }, (_, index) => ({ ...fresh, id: `source-${index}` })));
+    await maintainMemory(deps, 'owner', 'conversation', 'SANI');
+    for (const work of [deps.extract, deps.summarize]) expect(work).toHaveBeenCalledWith(expect.objectContaining({ allowedRelatedPeople, blockedRelatedPeople, suppressions: [] }));
+  });
+  it('does not compact retained pre-consent messages across a database summary boundary', async () => {
+    const boundary = '2026-09-20T00:00:00Z';
+    const source = [
+      { id: 'old', sender: 'USER', content: '기억을 껐던 기간의 내용', created_at: '2026-09-19T23:59:59Z' },
+      { id: 'boundary', sender: 'USER', content: '동의 경계와 같은 시각', created_at: boundary },
+      { id: 'new', sender: 'USER', content: '다시 동의한 뒤의 내용', created_at: '2026-09-20T00:00:01Z' },
+    ];
+    let selected = source;
+    const query = { select: vi.fn(), eq: vi.fn(), in: vi.fn(), lte: vi.fn(), order: vi.fn(), limit: vi.fn(),
+      gt: vi.fn((_column: string, value: string) => { selected = selected.filter(row => row.created_at > value); return query; }),
+      then: (resolve: (result: unknown) => unknown) => Promise.resolve({ data: selected, error: null }).then(resolve) };
+    for (const method of [query.select, query.eq, query.in, query.lte, query.order, query.limit]) method.mockReturnValue(query);
+    const store = createMemoryStore({ from: vi.fn().mockReturnValue(query) } as unknown as SupabaseClient);
+    const result = await store.summaryMessages('owner', 'conversation', { ...state, summary: '', summaryCursorAt: boundary }, { ...fresh, createdAt: source[2]!.created_at });
+    expect(query.gt).toHaveBeenCalledWith('created_at', boundary);
+    expect(result.map(message => message.id)).toEqual(['new']);
   });
   it('reads at most the extractor batch size using a stable timestamp-and-id cursor', async () => {
     const query = { select: vi.fn(), eq: vi.fn(), order: vi.fn(), limit: vi.fn(), or: vi.fn(), gt: vi.fn(), then: (resolve: (result: unknown) => unknown) => Promise.resolve({ data: [], error: null }).then(resolve) };

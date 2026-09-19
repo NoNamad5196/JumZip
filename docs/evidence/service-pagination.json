@@ -1,0 +1,15 @@
+{
+  "at": "2026-09-19T19:48:05.344Z",
+  "status": "PASSED",
+  "scope": "Actual hosted PostgREST through production service methods; one admin-created synthetic identity, 7 conversations, 8 readings, 1,005 messages. No model calls. Does not test public signup.",
+  "checks": [
+    "same disposable identity authenticated without email delivery",
+    "all seven conversations retained across equal timestamps and four null dates",
+    "eight readings retain deterministic ID ordering across timestamp ties",
+    "literal quote/comma/parenthesis/percent/underscore/regex/backslash search combines with type and continuation",
+    "all 1,005 conversation messages preserved chronologically across six pages",
+    "consultation detail/export includes all 1,005 messages beyond the hosted row cap",
+    "disposable Auth identity deleted and independently verified absent"
+  ],
+  "pendingCleanup": 0
+}

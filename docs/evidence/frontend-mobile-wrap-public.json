@@ -1,0 +1,153 @@
+{
+  "checkedAt": "2026-09-19T20:37:03.421Z",
+  "mode": "PUBLIC_GUEST_READ_ONLY_TARGETED_MOBILE",
+  "origin": "https://jumzip.pages.dev",
+  "authenticationAttempted": false,
+  "captchaInteractionAttempted": false,
+  "modelCalls": 0,
+  "backendRequests": 0,
+  "entryMatches": true,
+  "rows": [
+    {
+      "name": "root",
+      "path": "/",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "labels": [
+        {
+          "label": "산이",
+          "lines": 1
+        },
+        {
+          "label": "보미",
+          "lines": 1
+        },
+        {
+          "label": "아랑",
+          "lines": 1
+        }
+      ],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/mobile-wrap-public-root-360.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "labels": [
+        {
+          "label": "새 이야기",
+          "lines": 1
+        }
+      ],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/mobile-wrap-public-history-360.png"
+    },
+    {
+      "name": "root",
+      "path": "/",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 390,
+      "labels": [
+        {
+          "label": "산이",
+          "lines": 1
+        },
+        {
+          "label": "보미",
+          "lines": 1
+        },
+        {
+          "label": "아랑",
+          "lines": 1
+        }
+      ],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/mobile-wrap-public-root-390.png"
+    },
+    {
+      "name": "history",
+      "path": "/history",
+      "status": 200,
+      "width": 390,
+      "scrollWidth": 390,
+      "labels": [
+        {
+          "label": "새 이야기",
+          "lines": 1
+        }
+      ],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/mobile-wrap-public-history-390.png"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/assets/AccountPages-DTwBYLll.js",
+      "status": 200,
+      "sha256": "421929008771b4af4cd6176946fd6392dd1d967a923941c0a9b75d6ae4bf931b",
+      "matches": true
+    },
+    {
+      "path": "/assets/Chat-DxjOPZ4g.js",
+      "status": 200,
+      "sha256": "23540a7a5919475282908d21100a559ac6ac6bd7be6846852912ed8ba6b2dce9",
+      "matches": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-BE_kuBQo.js",
+      "status": 200,
+      "sha256": "d8204935d05c119bcf0deb0f6ab5023aa9799cdd12a21907e3a58d0b19abdb2c",
+      "matches": true
+    },
+    {
+      "path": "/assets/ConnectionState-Ba34-7V1.js",
+      "status": 200,
+      "sha256": "7f5af5510835e72535bbf1dd74e35afe33a0c9dc4bf2ad667b034b4493373048",
+      "matches": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "sha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "matches": true
+    },
+    {
+      "path": "/assets/index-Cnesm5R9.js",
+      "status": 200,
+      "sha256": "ca31a36dda75aa5d5bbbb40ac16f7372e5401313a51046b126f205fd60b590f2",
+      "matches": true
+    },
+    {
+      "path": "/assets/index-DeiqRtTm.css",
+      "status": 200,
+      "sha256": "e03e810ad660c00a7dff853f92d1323b908347eababf1adb58ff25d930915f87",
+      "matches": true
+    },
+    {
+      "path": "/assets/pagination-1ofSQRVt.js",
+      "status": 200,
+      "sha256": "72ad237465ce3f04c818301235cda7112c60eff3808a7185c90e2b1ead7f66a8",
+      "matches": true
+    },
+    {
+      "path": "/assets/Reading-Ct08clxi.js",
+      "status": 200,
+      "sha256": "92c7d3f3718cd2a72cb9e589f555a5fbaf6f699f9425932f3ab144f77755619d",
+      "matches": true
+    }
+  ],
+  "summary": {
+    "viewCount": 4,
+    "overflowCount": 0,
+    "wrappedLabelCount": 0,
+    "pageErrorCount": 0,
+    "assetCount": 9,
+    "assetMismatchCount": 0
+  },
+  "passed": true
+}

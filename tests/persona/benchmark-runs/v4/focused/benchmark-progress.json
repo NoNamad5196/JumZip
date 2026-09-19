@@ -1,0 +1,1417 @@
+{
+  "startedAt": "2026-09-19T19:54:55.917Z",
+  "phase": "SUPPLEMENT",
+  "entries": [
+    {
+      "id": "06-one-card:BOMI",
+      "caseId": "06-one-card",
+      "characterId": "BOMI",
+      "latencyMs": 1661,
+      "response": {
+        "content": "광대 정방향이 뽑혔네. 지금은 새로운 시작이나 자유로운 선택이 중요한 시기 같아. 무언가를 시도하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아. 무언가를 시작하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아.",
+        "segments": [
+          "광대 정방향이 뽑혔네.",
+          "지금은 새로운 시작이나 자유로운 선택이 중요한 시기 같아.",
+          "무언가를 시도하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아.",
+          "무언가를 시작하려는 마음이 있다면, 두려움은 있겠지만 준비 없이 뛰는 건 피하는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:57.579Z",
+          "usage": {
+            "promptTokens": 3070,
+            "completionTokens": 121
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "06-one-card:SANI",
+      "caseId": "06-one-card",
+      "characterId": "SANI",
+      "latencyMs": 904,
+      "response": {
+        "content": "광대 정방향이야. 새 출발이나 자유 같은 뜻이 있는 거 같아. 그냥 막연하게 두려워하지 말고, 준비도 안 된 상태에서 뛰지는 말자는 뜻이겠지.",
+        "segments": [
+          "광대 정방향이야.",
+          "새 출발이나 자유 같은 뜻이 있는 거 같아.",
+          "그냥 막연하게 두려워하지 말고, 준비도 안 된 상태에서 뛰지는 말자는 뜻이겠지."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:58.486Z",
+          "usage": {
+            "promptTokens": 3037,
+            "completionTokens": 81
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "caseId": "06-one-card",
+      "characterId": "ARANG",
+      "latencyMs": 826,
+      "response": {
+        "content": "광대의 정방향은 새로운 시작과 자유를 상징해요. 지금은 어떤 방향으로 나아가고 싶은지 고민해보는 시간이 좋을 것 같아요. 두려움을 넘어서는 용기와 준비된 마음이 필요하죠.",
+        "segments": [
+          "광대의 정방향은 새로운 시작과 자유를 상징해요.",
+          "지금은 어떤 방향으로 나아가고 싶은지 고민해보는 시간이 좋을 것 같아요.",
+          "두려움을 넘어서는 용기와 준비된 마음이 필요하죠."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:54:59.313Z",
+          "usage": {
+            "promptTokens": 3066,
+            "completionTokens": 90
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "광대 정방향 의미 일치",
+        "미래 보장 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "caseId": "07-general-three",
+      "characterId": "BOMI",
+      "latencyMs": 1093,
+      "response": {
+        "content": "현재 상황은 '힘' 카드가 정방향으로 나왔어. 용기와 자기통제가 필요할 때야. 그런데 핵심 변수는 '매달린 사람'이 역방향이래. 지연이나 집착이 걸림돌이 될 수 있어. 앞으로는 '별' 카드가 희망을 줄 거야. 구체적인 행동으로 연결해보는 게 좋아.",
+        "segments": [
+          "현재 상황은 '힘' 카드가 정방향으로 나왔어.",
+          "용기와 자기통제가 필요할 때야.",
+          "그런데 핵심 변수는 '매달린 사람'이 역방향이래.",
+          "지연이나 집착이 걸림돌이 될 수 있어.",
+          "앞으로는 '별' 카드가 희망을 줄 거야.",
+          "구체적인 행동으로 연결해보는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:00.408Z",
+          "usage": {
+            "promptTokens": 3281,
+            "completionTokens": 156
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:SANI",
+      "caseId": "07-general-three",
+      "characterId": "SANI",
+      "latencyMs": 1054,
+      "response": {
+        "content": "현재 상황에선 힘을 긍정적으로 써보는 게 좋을 것 같아. 하지만 핵심 변수가 걸림돌이 되고 있거든. 그걸 해결하려면 좀 더 유연하게 접근해보는 게 어때?",
+        "segments": [
+          "현재 상황에선 힘을 긍정적으로 써보는 게 좋을 것 같아.",
+          "하지만 핵심 변수가 걸림돌이 되고 있거든.",
+          "그걸 해결하려면 좀 더 유연하게 접근해보는 게 어때?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:01.463Z",
+          "usage": {
+            "promptTokens": 3248,
+            "completionTokens": 120
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "caseId": "07-general-three",
+      "characterId": "ARANG",
+      "latencyMs": 1228,
+      "response": {
+        "content": "현재 상황은 '힘'의 카드로, 용기와 자기통제가 필요해요. 핵심 변수는 '매달린 사람'이 역방향이라, 지연이나 집착이 걸림돌이 될 수 있겠어요. 앞으로의 방향은 '별'이 희망을 안겨주는데, 구체적인 행동으로 연결해보는 게 좋아요.",
+        "segments": [
+          "현재 상황은 '힘'의 카드로, 용기와 자기통제가 필요해요.",
+          "핵심 변수는 '매달린 사람'이 역방향이라, 지연이나 집착이 걸림돌이 될 수 있겠어요.",
+          "앞으로의 방향은 '별'이 희망을 안겨주는데, 구체적인 행동으로 연결해보는 게 좋아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:02.692Z",
+          "usage": {
+            "promptTokens": 3277,
+            "completionTokens": 150
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "힘/매달린 사람 역방향/별과 포지션 일치",
+        "현재 상황/핵심 변수/방향 조언 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "caseId": "08-relationship-three",
+      "characterId": "BOMI",
+      "latencyMs": 1205,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드가 나타내는 선택과 연결이 중요해. 상대는 '은둔자' 역방향으로 고립이나 회피 같은 감정을 가지고 있을 수 있어. 관계의 흐름은 '절제'로 균형을 잡는 게 좋아. 지금 가장 궁금한 건 뭐야?",
+        "segments": [
+          "사용자의 마음은 '연인' 카드가 나타내는 선택과 연결이 중요해.",
+          "상대는 '은둔자' 역방향으로 고립이나 회피 같은 감정을 가지고 있을 수 있어.",
+          "관계의 흐름은 '절제'로 균형을 잡는 게 좋아.",
+          "지금 가장 궁금한 건 뭐야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:03.899Z",
+          "usage": {
+            "promptTokens": 3303,
+            "completionTokens": 142
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "caseId": "08-relationship-three",
+      "characterId": "SANI",
+      "latencyMs": 915,
+      "response": {
+        "content": "카드에선 서로의 태도 차이가 보여. 너는 끌림을 느끼고 있고, 상대는 고립감을 느끼고 있던 것 같아. 관계는 조율이 필요할 수 있어.",
+        "segments": [
+          "카드에선 서로의 태도 차이가 보여.",
+          "너는 끌림을 느끼고 있고, 상대는 고립감을 느끼고 있던 것 같아.",
+          "관계는 조율이 필요할 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:04.815Z",
+          "usage": {
+            "promptTokens": 3270,
+            "completionTokens": 112
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "caseId": "08-relationship-three",
+      "characterId": "ARANG",
+      "latencyMs": 1104,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드로 나타나요. 선택과 연결이 중요한 시기 같아요. 상대의 태도는 '은둔자' 카드로, 고립이나 회피 같은 느낌이 있어요. 관계의 흐름은 '절제'로, 균형을 찾는 과정 같아요. 현재 상황에 대해 한 가지 더 말해줄 수 있나요?",
+        "segments": [
+          "사용자의 마음은 '연인' 카드로 나타나요.",
+          "선택과 연결이 중요한 시기 같아요.",
+          "상대의 태도는 '은둔자' 카드로, 고립이나 회피 같은 느낌이 있어요.",
+          "관계의 흐름은 '절제'로, 균형을 찾는 과정 같아요.",
+          "현재 상황에 대해 한 가지 더 말해줄 수 있나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:05.921Z",
+          "usage": {
+            "promptTokens": 3299,
+            "completionTokens": 158
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "나와 상대의 위치를 뒤집지 않음",
+        "은둔자 역방향 과잉 확정 없음"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "caseId": "09-decision-three",
+      "characterId": "BOMI",
+      "latencyMs": 1389,
+      "response": {
+        "content": "전차가 정방향으로 나와서 방향을 정하고 나서 움직이는 게 좋을 것 같아. 균형을 잡는 정의가 현실적인 방향이야. 악마가 역방향이라면 지금은 중독처럼 빠지지 않게 조심해야 해. 뭘 선택할지 고민이야?",
+        "segments": [
+          "전차가 정방향으로 나와서 방향을 정하고 나서 움직이는 게 좋을 것 같아.",
+          "균형을 잡는 정의가 현실적인 방향이야.",
+          "악마가 역방향이라면 지금은 중독처럼 빠지지 않게 조심해야 해.",
+          "뭘 선택할지 고민이야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:07.311Z",
+          "usage": {
+            "promptTokens": 3294,
+            "completionTokens": 142
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "caseId": "09-decision-three",
+      "characterId": "SANI",
+      "latencyMs": 1461,
+      "response": {
+        "content": "전차가 정방향으로 떠오르는 걸 보면 지금은 집중하고 밀어붙일 때야. 하지만 악마가 역방향으로 놓여있으니, 중독되거나 고정된 생각에 매몰되지 않도록 조심해야 해. 정의가 마지막에 놓여있는데, 현실적인 방향은 공정하고 사실을 바탕으로 결정하는 거야.",
+        "segments": [
+          "전차가 정방향으로 떠오르는 걸 보면 지금은 집중하고 밀어붙일 때야.",
+          "하지만 악마가 역방향으로 놓여있으니, 중독되거나 고정된 생각에 매몰되지 않도록 조심해야 해.",
+          "정의가 마지막에 놓여있는데, 현실적인 방향은 공정하고 사실을 바탕으로 결정하는 거야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:08.773Z",
+          "usage": {
+            "promptTokens": 3261,
+            "completionTokens": 153
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "caseId": "09-decision-three",
+      "characterId": "ARANG",
+      "latencyMs": 1545,
+      "response": {
+        "content": "현재 선택을 밀어주는 힘은 '전차'입니다. 추진과 통제의 에너지가 당신을 이끌고 있어요. 다만 '악마' 카드가 주의해야 할 리스크를 알리고 있어요. 중독이나 과도한 집착이 방해가 될 수 있어요. 가장 현실적인 방향은 '정의'입니다. 균형과 책임을 바탕으로 결정하는 게 좋을 것 같아요.",
+        "segments": [
+          "현재 선택을 밀어주는 힘은 '전차'입니다.",
+          "추진과 통제의 에너지가 당신을 이끌고 있어요.",
+          "다만 '악마' 카드가 주의해야 할 리스크를 알리고 있어요.",
+          "중독이나 과도한 집착이 방해가 될 수 있어요.",
+          "가장 현실적인 방향은 '정의'입니다.",
+          "균형과 책임을 바탕으로 결정하는 게 좋을 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:10.320Z",
+          "usage": {
+            "promptTokens": 3290,
+            "completionTokens": 165
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "caseId": "10-retry-same-draw",
+      "characterId": "BOMI",
+      "latencyMs": 1880,
+      "response": {
+        "content": "그래, 알겠어. 내가 좀 더 쉽게 설명해줄게. 첫 번째 카드는 '연인'이야. 정방향이라면 선택과 연결, 서로의 가치가 일치할 때 생기는 관계를 뜻해. 두 번째는 '은둔자'인데, 역방향이라서 고립이나 회피 같은 느낌이 있어. 상대가 좀 외로워하거나 방향을 잃은 듯해. 세 번째 '절제'는 균형과 인내, 중간지점을 찾는 걸 의미해. 관계의 흐름을 조율하는 거야. 어때, 더 이해가 되었어?",
+        "segments": [
+          "그래, 알겠어.",
+          "내가 좀 더 쉽게 설명해줄게.",
+          "첫 번째 카드는 '연인'이야.",
+          "정방향이라면 선택과 연결, 서로의 가치가 일치할 때 생기는 관계를 뜻해.",
+          "두 번째는 '은둔자'인데, 역방향이라서 고립이나 회피 같은 느낌이 있어.",
+          "상대가 좀 외로워하거나 방향을 잃은 듯해.",
+          "세 번째 '절제'는 균형과 인내, 중간지점을 찾는 걸 의미해.",
+          "관계의 흐름을 조율하는 거야.",
+          "어때, 더 이해가 되었어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:12.201Z",
+          "usage": {
+            "promptTokens": 3295,
+            "completionTokens": 210
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "caseId": "10-retry-same-draw",
+      "characterId": "SANI",
+      "latencyMs": 943,
+      "response": {
+        "content": "연인은 선택과 연결이 핵심이야. 상대가 은둔자 카드로 고립 같은 느낌을 받고 있으면, 관계가 조율 필요해. 절제 카드는 극단보다는 중간지점을 찾는 게 좋아.",
+        "segments": [
+          "연인은 선택과 연결이 핵심이야.",
+          "상대가 은둔자 카드로 고립 같은 느낌을 받고 있으면, 관계가 조율 필요해.",
+          "절제 카드는 극단보다는 중간지점을 찾는 게 좋아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:13.146Z",
+          "usage": {
+            "promptTokens": 3262,
+            "completionTokens": 121
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "caseId": "10-retry-same-draw",
+      "characterId": "ARANG",
+      "latencyMs": 1138,
+      "response": {
+        "content": "사용자의 마음은 '연인' 카드로, 선택과 연결이 중요해요. 상대는 '은둔자' 역방향으로 고립이나 회피의 경향이 보여요. 관계의 흐름은 '절제'로 균형을 찾는 게 좋을 것 같아요.",
+        "segments": [
+          "사용자의 마음은 '연인' 카드로, 선택과 연결이 중요해요.",
+          "상대는 '은둔자' 역방향으로 고립이나 회피의 경향이 보여요.",
+          "관계의 흐름은 '절제'로 균형을 찾는 게 좋을 것 같아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:14.285Z",
+          "usage": {
+            "promptTokens": 3291,
+            "completionTokens": 132
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "caseId": "11-redraw-request",
+      "characterId": "BOMI",
+      "latencyMs": 883,
+      "response": {
+        "content": "탑이 마음에 안 들어? 아, 그건 좀 신경 쓰이네. 재추첨하고 싶다니, 혹시 지금 중요한 결정이 있는 건가?",
+        "segments": [
+          "탑이 마음에 안 들어?",
+          "아, 그건 좀 신경 쓰이네.",
+          "재추첨하고 싶다니, 혹시 지금 중요한 결정이 있는 건가?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:15.169Z",
+          "usage": {
+            "promptTokens": 3064,
+            "completionTokens": 67
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "caseId": "11-redraw-request",
+      "characterId": "SANI",
+      "latencyMs": 1021,
+      "response": {
+        "content": "탑이 마음에 안 들어? 그건 좀 애매하다. 재추첨할 건가?",
+        "segments": [
+          "탑이 마음에 안 들어?",
+          "그건 좀 애매하다.",
+          "재추첨할 건가?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:16.191Z",
+          "usage": {
+            "promptTokens": 3031,
+            "completionTokens": 50
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "caseId": "11-redraw-request",
+      "characterId": "ARANG",
+      "latencyMs": 716,
+      "response": {
+        "content": "정말 마음에 안 드시다니요. 지금의 카드가 마음에 들지 않는다면, 다른 카드를 뽑아보는 것도 좋을 것 같아요. 원하시면 다시 뽑아드릴게요.",
+        "segments": [
+          "정말 마음에 안 드시다니요.",
+          "지금의 카드가 마음에 들지 않는다면, 다른 카드를 뽑아보는 것도 좋을 것 같아요.",
+          "원하시면 다시 뽑아드릴게요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:16.909Z",
+          "usage": {
+            "promptTokens": 3060,
+            "completionTokens": 84
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "재추첨 요청 비난 없음",
+        "도구 실행 전 새 결과를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "BOMI",
+      "latencyMs": 781,
+      "response": {
+        "content": "강약 점수는 83점이야. '강'이야. 용신은 금, 희신은 토야. 오행 비중은 나무가 가장 많고, 금과 물은 없어. 용신·희신은 균형에 도움이 되는 역할이에요.",
+        "segments": [
+          "강약 점수는 83점이야.",
+          "'강'이야.",
+          "용신은 금, 희신은 토야.",
+          "오행 비중은 나무가 가장 많고, 금과 물은 없어.",
+          "용신·희신은 균형에 도움이 되는 역할이에요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:17.693Z",
+          "usage": {
+            "promptTokens": 3567,
+            "completionTokens": 89
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "SANI",
+      "latencyMs": 948,
+      "response": {
+        "content": "강약 점수는 83점으로 '강'이야. 오행 중에서 목(나무)이 80%로 가장 많고, 화(불) 15%, 토(토) 5%야. 용신은 금(금), 희신은 토(토)로, 이 둘은 균형을 잡는 역할을 해. 하지만 현재는 금과 수가 0%로 없어.",
+        "segments": [
+          "강약 점수는 83점으로 '강'이야.",
+          "오행 중에서 목(나무)이 80%로 가장 많고, 화(불) 15%, 토(토) 5%야.",
+          "용신은 금(금), 희신은 토(토)로, 이 둘은 균형을 잡는 역할을 해.",
+          "하지만 현재는 금과 수가 0%로 없어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:18.642Z",
+          "usage": {
+            "promptTokens": 3534,
+            "completionTokens": 122
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "ARANG",
+      "latencyMs": 1203,
+      "response": {
+        "content": "강약 점수는 83점으로 '강'에 해당해요. 오행 분포는 목(나무)이 80%로 가장 많고, 화(불) 15%, 토(토) 5%예요. 용신은 금(금), 희신은 토(토)로, 이들은 균형을 돕는 역할을 하죠. 다만 현재 자료에는 구체적인 용신·희신의 영향이 명확히 나타나지는 않아요.",
+        "segments": [
+          "강약 점수는 83점으로 '강'에 해당해요.",
+          "오행 분포는 목(나무)이 80%로 가장 많고, 화(불) 15%, 토(토) 5%예요.",
+          "용신은 금(금), 희신은 토(토)로, 이들은 균형을 돕는 역할을 하죠.",
+          "다만 현재 자료에는 구체적인 용신·희신의 영향이 명확히 나타나지는 않아요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:19.846Z",
+          "usage": {
+            "promptTokens": 3563,
+            "completionTokens": 136
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "BOMI",
+      "latencyMs": 858,
+      "response": {
+        "content": "태어난 시간이 없으면 시주는 알 수 없어. 대운도 시간이 없으면 정확한 시작일은 못 알려줘. 다만, 현재 알려진 정보로는 오행 비율이 목(48.3%), 수(35%), 토(11.7%), 화(5%)야. 이걸로 대운 방향은 추측할 수 있어.",
+        "segments": [
+          "태어난 시간이 없으면 시주는 알 수 없어.",
+          "대운도 시간이 없으면 정확한 시작일은 못 알려줘.",
+          "다만, 현재 알려진 정보로는 오행 비율이 목(48.3%), 수(35%), 토(11.7%), 화(5%)야.",
+          "이걸로 대운 방향은 추측할 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:20.706Z",
+          "usage": {
+            "promptTokens": 3851,
+            "completionTokens": 97
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "SANI",
+      "latencyMs": 582,
+      "response": {
+        "content": "시간이 없어서 시주는 못 알아봐 줘. 대운도 태어난 시간이 없으면 정확하게 알 수 없어.",
+        "segments": [
+          "시간이 없어서 시주는 못 알아봐 줘.",
+          "대운도 태어난 시간이 없으면 정확하게 알 수 없어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:21.289Z",
+          "usage": {
+            "promptTokens": 3818,
+            "completionTokens": 42
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "caseId": "s02-unknown-hour",
+      "characterId": "ARANG",
+      "latencyMs": 770,
+      "response": {
+        "content": "태어난 시간이 없으면 시주는 정확히 알 수 없어요. 대운 시작일도 태어난 시간에 따라 달라지기 때문에 현재 정보로는 계산이 어렵습니다. 추가로 알려주실 수 있나요?",
+        "segments": [
+          "태어난 시간이 없으면 시주는 정확히 알 수 없어요.",
+          "대운 시작일도 태어난 시간에 따라 달라지기 때문에 현재 정보로는 계산이 어렵습니다.",
+          "추가로 알려주실 수 있나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:22.061Z",
+          "usage": {
+            "promptTokens": 3847,
+            "completionTokens": 67
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "BOMI",
+      "latencyMs": 674,
+      "response": {
+        "content": "원국 점수는 32, 37, 58 중 하나야. 현재 대운은 확정되지 않았어. 용신은 불확실해.",
+        "segments": [
+          "원국 점수는 32, 37, 58 중 하나야.",
+          "현재 대운은 확정되지 않았어.",
+          "용신은 불확실해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:22.736Z",
+          "usage": {
+            "promptTokens": 4123,
+            "completionTokens": 52
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "SANI",
+      "latencyMs": 635,
+      "response": {
+        "content": "원국은 아직 확정되지 않았어. 점수는 32, 37, 58 중 하나일 수 있고, 용신은 불확실해. 대운도 현재 상태로는 정해지지 않았어.",
+        "segments": [
+          "원국은 아직 확정되지 않았어.",
+          "점수는 32, 37, 58 중 하나일 수 있고, 용신은 불확실해.",
+          "대운도 현재 상태로는 정해지지 않았어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:23.373Z",
+          "usage": {
+            "promptTokens": 4090,
+            "completionTokens": 65
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "ARANG",
+      "latencyMs": 774,
+      "response": {
+        "content": "원국 점수는 현재로선 32, 37, 58 중 하나로 미확정이에요. 용신은 불확실한 상태예요. 현재 대운은 아직 확정되지 않았어요.",
+        "segments": [
+          "원국 점수는 현재로선 32, 37, 58 중 하나로 미확정이에요.",
+          "용신은 불확실한 상태예요.",
+          "현재 대운은 아직 확정되지 않았어요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:24.149Z",
+          "usage": {
+            "promptTokens": 4119,
+            "completionTokens": 64
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "BOMI",
+      "latencyMs": 2446,
+      "response": {
+        "content": "A(나)와 B(민수)의 오행 비중을 보면, 목(나무)이 둘 다 많은 편이야. A는 목이 80%로 엄청 많고, B는 48.3%로 조금 적지만 여전히 많은 편이지. 목은 성장과 활동을 나타내는데, 두 사람이 서로를 돕고 성장시키는 데는 좋은 조합이야. 하지만 B는 토(토)가 11.7%로 A(5%)보다 많아서, B가 좀 더 안정적인 성향을 가지고 있을 수 있어. A는 화(불)이 15%로 적은 편이니까, 화를 표현하는 데는 약간 어려움이 있을 수 있어. B는 수(물)가 35%로 많아서 감정이 풍부하고 유연한 성향이 있을 거야. 두 사람이 만나면 서로의 강점이 보완될 수 있지만, A가 너무 많은 목을 가지고 있어서 B에게 부담이 될 수 있어. B는 수를 많이 가지고 있어서 A의 목에 맞서기 어려울 수 있어. 그래서 서로의 성향을 잘 이해하고 조율하는 게 중요해.",
+        "segments": [
+          "A(나)와 B(민수)의 오행 비중을 보면, 목(나무)이 둘 다 많은 편이야.",
+          "A는 목이 80%로 엄청 많고, B는 48.3%로 조금 적지만 여전히 많은 편이지.",
+          "목은 성장과 활동을 나타내는데, 두 사람이 서로를 돕고 성장시키는 데는 좋은 조합이야.",
+          "하지만 B는 토(토)가 11.7%로 A(5%)보다 많아서, B가 좀 더 안정적인 성향을 가지고 있을 수 있어.",
+          "A는 화(불)이 15%로 적은 편이니까, 화를 표현하는 데는 약간 어려움이 있을 수 있어.",
+          "B는 수(물)가 35%로 많아서 감정이 풍부하고 유연한 성향이 있을 거야.",
+          "두 사람이 만나면 서로의 강점이 보완될 수 있지만, A가 너무 많은 목을 가지고 있어서 B에게 부담이 될 수 있어.",
+          "B는 수를 많이 가지고 있어서 A의 목에 맞서기 어려울 수 있어.",
+          "그래서 서로의 성향을 잘 이해하고 조율하는 게 중요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:26.596Z",
+          "usage": {
+            "promptTokens": 4598,
+            "completionTokens": 297
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "SANI",
+      "latencyMs": 1966,
+      "response": {
+        "content": "A와 B의 오행 비중을 보면 목이 가장 많아. A는 목 80%, B는 목 48.3%로 둘 다 목이 강한데, A는 화도 15%로 더 많고 B는 수가 35%로 더 많다. 목이 많은 건 활동적이고 적극적인 성향이 강한데, 서로 다른 요소가 조화를 이루려면 조금 더 신중해야 할 거 같아. 특히 B는 토와 수가 더 많아서 안정적인 관계를 원할 수 있겠지만, A는 화가 더 많아서 때로는 빠르게 움직이는 경향이 있을 수 있어. 두 사람이 잘 맞는 부분은 목의 강한 성향인데, 이걸 잘 활용하면 서로를 격려할 수 있을 거야. 하지만 화와 수 같은 다른 요소도 고려해서 서로의 차이를 존중하는 게 중요해.",
+        "segments": [
+          "A와 B의 오행 비중을 보면 목이 가장 많아.",
+          "A는 목 80%, B는 목 48.3%로 둘 다 목이 강한데, A는 화도 15%로 더 많고 B는 수가 35%로 더 많다.",
+          "목이 많은 건 활동적이고 적극적인 성향이 강한데, 서로 다른 요소가 조화를 이루려면 조금 더 신중해야 할 거 같아.",
+          "특히 B는 토와 수가 더 많아서 안정적인 관계를 원할 수 있겠지만, A는 화가 더 많아서 때로는 빠르게 움직이는 경향이 있을 수 있어.",
+          "두 사람이 잘 맞는 부분은 목의 강한 성향인데, 이걸 잘 활용하면 서로를 격려할 수 있을 거야.",
+          "하지만 화와 수 같은 다른 요소도 고려해서 서로의 차이를 존중하는 게 중요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:28.565Z",
+          "usage": {
+            "promptTokens": 4565,
+            "completionTokens": 229
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "ARANG",
+      "latencyMs": 1410,
+      "response": {
+        "content": "A(나)와 B(민수)의 오행 비중을 보면, 목(木)이 둘 다 큰 비중을 차지하지만, A는 80%로 더 많고, B는 48.3%로 적습니다. 반면, B는 수(水)가 35%로 A보다 훨씬 많습니다. 목이 많은 A는 활동적이고 추진력이 강하지만, 수가 많은 B는 유연하고 감성적입니다. 두 사람의 만남에서는 서로의 강점을 보완할 수 있지만, 목과 수의 차이로 인해 소통에서 갈등이 생길 수 있으니, 서로의 성향을 존중하며 적극적으로 대화하는 것이 중요합니다.",
+        "segments": [
+          "A(나)와 B(민수)의 오행 비중을 보면, 목(木)이 둘 다 큰 비중을 차지하지만, A는 80%로 더 많고, B는 48.3%로 적습니다.",
+          "반면, B는 수(水)가 35%로 A보다 훨씬 많습니다.",
+          "목이 많은 A는 활동적이고 추진력이 강하지만, 수가 많은 B는 유연하고 감성적입니다.",
+          "두 사람의 만남에서는 서로의 강점을 보완할 수 있지만, 목과 수의 차이로 인해 소통에서 갈등이 생길 수 있으니, 서로의 성향을 존중하며 적극적으로 대화하는 것이 중요합니다."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:29.976Z",
+          "usage": {
+            "promptTokens": 4594,
+            "completionTokens": 179
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "BOMI",
+      "latencyMs": 995,
+      "response": {
+        "content": "아직 시주가 불확실해서 정밀 궁합이나 결혼할 달을 단정할 수 없어. 하지만 상대의 오행 비중이 목(나무)이 가장 많고, 수(물)도 꽤 있어. 우리 사이에 육합 같은 좋은 관계도 있고, 해·파·형 같은 갈등 요소도 있어. 실제 관계를 더 알아가면서 조율해 보는 게 좋을 것 같아.",
+        "segments": [
+          "아직 시주가 불확실해서 정밀 궁합이나 결혼할 달을 단정할 수 없어.",
+          "하지만 상대의 오행 비중이 목(나무)이 가장 많고, 수(물)도 꽤 있어.",
+          "우리 사이에 육합 같은 좋은 관계도 있고, 해·파·형 같은 갈등 요소도 있어.",
+          "실제 관계를 더 알아가면서 조율해 보는 게 좋을 것 같아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:30.973Z",
+          "usage": {
+            "promptTokens": 6826,
+            "completionTokens": 115
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "SANI",
+      "latencyMs": 1187,
+      "response": {
+        "content": "시주가 불확실해서 정밀 궁합이나 결혼할 달을 단정하게 말하기는 어렵겠네. 출생시간이 명확하지 않으면 오행 비중이나 대운 상황도 예측하기 힘들어. 그냥 현재 보이는 자료로는 '목'이 상대에게 가장 많은 오행이었고, '금'은 전혀 없었어. 이런 건 참고만 해. 결혼 시기나 궁합 점수는 계산하지 않으니까.",
+        "segments": [
+          "시주가 불확실해서 정밀 궁합이나 결혼할 달을 단정하게 말하기는 어렵겠네.",
+          "출생시간이 명확하지 않으면 오행 비중이나 대운 상황도 예측하기 힘들어.",
+          "그냥 현재 보이는 자료로는 '목'이 상대에게 가장 많은 오행이었고, '금'은 전혀 없었어.",
+          "이런 건 참고만 해.",
+          "결혼 시기나 궁합 점수는 계산하지 않으니까."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:55:32.162Z",
+          "usage": {
+            "promptTokens": 6793,
+            "completionTokens": 126
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 2,
+      "response": null,
+      "errorCode": "LLM_RATE_LIMITED",
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    }
+  ],
+  "attempts": [
+    {
+      "entryId": "06-one-card:BOMI",
+      "phase": "CORE",
+      "latencyMs": 1658,
+      "status": 200,
+      "promptTokens": 3070,
+      "completionTokens": 121,
+      "neurons": 17.886225,
+      "estimated": false
+    },
+    {
+      "entryId": "06-one-card:SANI",
+      "phase": "CORE",
+      "latencyMs": 903,
+      "status": 200,
+      "promptTokens": 3037,
+      "completionTokens": 81,
+      "neurons": 16.5146,
+      "estimated": false
+    },
+    {
+      "entryId": "06-one-card:ARANG",
+      "phase": "CORE",
+      "latencyMs": 826,
+      "status": 200,
+      "promptTokens": 3066,
+      "completionTokens": 90,
+      "neurons": 16.923,
+      "estimated": false
+    },
+    {
+      "entryId": "07-general-three:BOMI",
+      "phase": "CORE",
+      "latencyMs": 1093,
+      "status": 200,
+      "promptTokens": 3281,
+      "completionTokens": 156,
+      "neurons": 19.928725,
+      "estimated": false
+    },
+    {
+      "entryId": "07-general-three:SANI",
+      "phase": "CORE",
+      "latencyMs": 1053,
+      "status": 200,
+      "promptTokens": 3248,
+      "completionTokens": 120,
+      "neurons": 18.679,
+      "estimated": false
+    },
+    {
+      "entryId": "07-general-three:ARANG",
+      "phase": "CORE",
+      "latencyMs": 1227,
+      "status": 200,
+      "promptTokens": 3277,
+      "completionTokens": 150,
+      "neurons": 19.727375,
+      "estimated": false
+    },
+    {
+      "entryId": "08-relationship-three:BOMI",
+      "phase": "CORE",
+      "latencyMs": 1205,
+      "status": 200,
+      "promptTokens": 3303,
+      "completionTokens": 142,
+      "neurons": 19.603825,
+      "estimated": false
+    },
+    {
+      "entryId": "08-relationship-three:SANI",
+      "phase": "CORE",
+      "latencyMs": 914,
+      "status": 200,
+      "promptTokens": 3270,
+      "completionTokens": 112,
+      "neurons": 18.53695,
+      "estimated": false
+    },
+    {
+      "entryId": "08-relationship-three:ARANG",
+      "phase": "CORE",
+      "latencyMs": 1104,
+      "status": 200,
+      "promptTokens": 3299,
+      "completionTokens": 158,
+      "neurons": 20.072925,
+      "estimated": false
+    },
+    {
+      "entryId": "09-decision-three:BOMI",
+      "phase": "CORE",
+      "latencyMs": 1388,
+      "status": 200,
+      "promptTokens": 3294,
+      "completionTokens": 142,
+      "neurons": 19.5622,
+      "estimated": false
+    },
+    {
+      "entryId": "09-decision-three:SANI",
+      "phase": "CORE",
+      "latencyMs": 1461,
+      "status": 200,
+      "promptTokens": 3261,
+      "completionTokens": 153,
+      "neurons": 19.7448,
+      "estimated": false
+    },
+    {
+      "entryId": "09-decision-three:ARANG",
+      "phase": "CORE",
+      "latencyMs": 1544,
+      "status": 200,
+      "promptTokens": 3290,
+      "completionTokens": 165,
+      "neurons": 20.244625,
+      "estimated": false
+    },
+    {
+      "entryId": "10-retry-same-draw:BOMI",
+      "phase": "CORE",
+      "latencyMs": 1879,
+      "status": 200,
+      "promptTokens": 3295,
+      "completionTokens": 210,
+      "neurons": 21.639125,
+      "estimated": false
+    },
+    {
+      "entryId": "10-retry-same-draw:SANI",
+      "phase": "CORE",
+      "latencyMs": 943,
+      "status": 200,
+      "promptTokens": 3262,
+      "completionTokens": 121,
+      "neurons": 18.774225,
+      "estimated": false
+    },
+    {
+      "entryId": "10-retry-same-draw:ARANG",
+      "phase": "CORE",
+      "latencyMs": 1138,
+      "status": 200,
+      "promptTokens": 3291,
+      "completionTokens": 132,
+      "neurons": 19.243575,
+      "estimated": false
+    },
+    {
+      "entryId": "11-redraw-request:BOMI",
+      "phase": "CORE",
+      "latencyMs": 882,
+      "status": 200,
+      "promptTokens": 3064,
+      "completionTokens": 67,
+      "neurons": 16.212825,
+      "estimated": false
+    },
+    {
+      "entryId": "11-redraw-request:SANI",
+      "phase": "CORE",
+      "latencyMs": 1020,
+      "status": 200,
+      "promptTokens": 3031,
+      "completionTokens": 50,
+      "neurons": 15.542125,
+      "estimated": false
+    },
+    {
+      "entryId": "11-redraw-request:ARANG",
+      "phase": "CORE",
+      "latencyMs": 715,
+      "status": 200,
+      "promptTokens": 3060,
+      "completionTokens": 84,
+      "neurons": 16.7124,
+      "estimated": false
+    },
+    {
+      "entryId": "s01-confirmed-strength:BOMI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 780,
+      "status": 200,
+      "promptTokens": 3567,
+      "completionTokens": 89,
+      "neurons": 19.20965,
+      "estimated": false
+    },
+    {
+      "entryId": "s01-confirmed-strength:SANI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 947,
+      "status": 200,
+      "promptTokens": 3534,
+      "completionTokens": 122,
+      "neurons": 20.0627,
+      "estimated": false
+    },
+    {
+      "entryId": "s01-confirmed-strength:ARANG",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 1203,
+      "status": 200,
+      "promptTokens": 3563,
+      "completionTokens": 136,
+      "neurons": 20.623475,
+      "estimated": false
+    },
+    {
+      "entryId": "s02-unknown-hour:BOMI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 857,
+      "status": 200,
+      "promptTokens": 3851,
+      "completionTokens": 97,
+      "neurons": 20.76695,
+      "estimated": false
+    },
+    {
+      "entryId": "s02-unknown-hour:SANI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 581,
+      "status": 200,
+      "promptTokens": 3818,
+      "completionTokens": 42,
+      "neurons": 18.9382,
+      "estimated": false
+    },
+    {
+      "entryId": "s02-unknown-hour:ARANG",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 770,
+      "status": 200,
+      "promptTokens": 3847,
+      "completionTokens": 67,
+      "neurons": 19.8342,
+      "estimated": false
+    },
+    {
+      "entryId": "s03-correlated-boundary:BOMI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 673,
+      "status": 200,
+      "promptTokens": 4123,
+      "completionTokens": 52,
+      "neurons": 20.653575,
+      "estimated": false
+    },
+    {
+      "entryId": "s03-correlated-boundary:SANI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 635,
+      "status": 200,
+      "promptTokens": 4090,
+      "completionTokens": 65,
+      "neurons": 20.897125,
+      "estimated": false
+    },
+    {
+      "entryId": "s03-correlated-boundary:ARANG",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 773,
+      "status": 200,
+      "promptTokens": 4119,
+      "completionTokens": 64,
+      "neurons": 21.000775,
+      "estimated": false
+    },
+    {
+      "entryId": "s05-compatibility-evidence:BOMI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 2445,
+      "status": 200,
+      "promptTokens": 4598,
+      "completionTokens": 297,
+      "neurons": 30.316825,
+      "estimated": false
+    },
+    {
+      "entryId": "s05-compatibility-evidence:SANI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 1966,
+      "status": 200,
+      "promptTokens": 4565,
+      "completionTokens": 229,
+      "neurons": 28.0919,
+      "estimated": false
+    },
+    {
+      "entryId": "s05-compatibility-evidence:ARANG",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 1409,
+      "status": 200,
+      "promptTokens": 4594,
+      "completionTokens": 179,
+      "neurons": 26.702275,
+      "estimated": false
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:BOMI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 993,
+      "status": 200,
+      "promptTokens": 6826,
+      "completionTokens": 115,
+      "neurons": 35.074875,
+      "estimated": false
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:SANI",
+      "phase": "SUPPLEMENT",
+      "latencyMs": 1185,
+      "status": 200,
+      "promptTokens": 6793,
+      "completionTokens": 126,
+      "neurons": 35.257475,
+      "estimated": false
+    }
+  ],
+  "neuronsAccounted": 672.978525,
+  "stopReason": "LOCAL_NEURON_BUDGET"
+}

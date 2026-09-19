@@ -1,0 +1,120 @@
+{
+  "at": "2026-09-19T19:58:55.036Z",
+  "scope": "Controlled analogous recall with the original synthetic question and a previously validated synthetic preference; not an exact replay of the cleaned-up v3 runtime context. No Auth or database writes.",
+  "promptVersion": "JumZipPersona-v4",
+  "sourceHashes": {
+    "llm/provider.ts": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+    "llm/reply.ts": "773f1536106ca9873088d412a6d39a6952fbc67c5ed48435dc7db11dc542f4b5",
+    "llm/intent.ts": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+    "llm/validator.ts": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+    "persona/prompt.ts": "040661052ddf8cd7ebd66d4683c144ac407034c895de3fdb19355cf9f9f75b78",
+    "persona/tool-facts.ts": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+    "persona/config.ts": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+    "persona/context.ts": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+  },
+  "unchangedSources": true,
+  "currentMessage": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+  "memorySource": "Successful schema-controlled synthetic extraction from backend-memory-schema-probe",
+  "toolResult": null,
+  "relationshipState": "FIRST_MEETING",
+  "historicalMessageCount": 0,
+  "summaryPresent": false,
+  "recommendation": {
+    "tools": [
+      {
+        "tool": "SAJU",
+        "mode": "NATAL",
+        "missingSlotCount": 1
+      }
+    ]
+  },
+  "outcome": "FAILED",
+  "failureCode": "LLM_INVALID_RESPONSE",
+  "replyRepaired": null,
+  "recallsPreference": null,
+  "attempts": 3,
+  "measuredNeurons": 36.915892124176025,
+  "allAttemptsReportNeurons": true,
+  "observations": [
+    {
+      "phase": "INTENT",
+      "httpStatus": 200,
+      "latencyMs": 1175,
+      "finishReason": "stop",
+      "contentPresent": true,
+      "usage": {
+        "prompt_tokens": 724,
+        "completion_tokens": 50,
+        "total_tokens": 774,
+        "neurons": 4.8719353675842285
+      },
+      "validation": null,
+      "outputKeys": [
+        "intent",
+        "explicitTool",
+        "explicitToolQuote",
+        "targetPersonPresent",
+        "recentSituationPresent",
+        "periodPresent",
+        "choicesPresent",
+        "highStakes"
+      ]
+    },
+    {
+      "phase": "RECALL",
+      "httpStatus": 200,
+      "latencyMs": 795,
+      "finishReason": "stop",
+      "contentPresent": true,
+      "usage": {
+        "prompt_tokens": 3022,
+        "completion_tokens": 56,
+        "total_tokens": 3078,
+        "neurons": 15.682071685791016
+      },
+      "validation": {
+        "ok": false,
+        "issues": [
+          "RESPONSE_SCHEMA_INVALID"
+        ]
+      },
+      "outputKeys": [
+        "text"
+      ],
+      "requiredKeysMissing": [
+        "toolReferences"
+      ],
+      "recallsSyntheticPreference": true
+    },
+    {
+      "phase": "RECALL",
+      "httpStatus": 200,
+      "latencyMs": 784,
+      "finishReason": "stop",
+      "contentPresent": true,
+      "usage": {
+        "prompt_tokens": 3169,
+        "completion_tokens": 56,
+        "total_tokens": 3225,
+        "neurons": 16.36188507080078
+      },
+      "validation": {
+        "ok": false,
+        "issues": [
+          "RESPONSE_SCHEMA_INVALID"
+        ]
+      },
+      "outputKeys": [
+        "text"
+      ],
+      "requiredKeysMissing": [
+        "toolReferences"
+      ],
+      "recallsSyntheticPreference": true
+    }
+  ],
+  "conclusionLimit": "This explains the captured analogous v4 failure only; the original v3 emitted JSON was not retained and its exact mechanism is unproven.",
+  "structuredFormat": "json_object",
+  "observedMechanism": "Initial and repair recalled the synthetic preference but both omitted required toolReferences; the unchanged validator rejected both with RESPONSE_SCHEMA_INVALID. The provider already included CHAT_RESPONSE_SCHEMA in its json_object system prompt. This is observed model schema noncompliance, not absent schema propagation.",
+  "intentFinding": "A pure memory-recall question was classified as natal_character and produced SAJU/NATAL guidance, despite no request for a reading."
+}

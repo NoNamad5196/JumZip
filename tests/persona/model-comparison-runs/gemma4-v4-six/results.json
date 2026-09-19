@@ -1,0 +1,153 @@
+{
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v4",
+  "scope": "SIX_DIAGNOSTICS_NOT_ACCEPTANCE",
+  "entries": [
+    {
+      "id": "controlled-recall:BOMI",
+      "response": {
+        "content": "당연히 기억하고 있지! 종이별 접기를 엄청 좋아하잖아. 꾸준히 만드는 게 네 취미라고 했었지?",
+        "segments": [
+          "당연히 기억하고 있지!",
+          "종이별 접기를 엄청 좋아하잖아.",
+          "꾸준히 만드는 게 네 취미라고 했었지?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:13.908Z",
+          "usage": {
+            "promptTokens": 2615,
+            "completionTokens": 39
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1515
+    },
+    {
+      "id": "01-first-meeting:SANI",
+      "response": {
+        "content": "안녕! 그냥 편하게 네 고민이나 요즘 신경 쓰이는 일 아무거나 말해주면 돼. 관계든 진로든 네가 궁금한 걸로 시작하자. 지금 제일 먼저 떠오르는 고민 있어?",
+        "segments": [
+          "안녕!",
+          "그냥 편하게 네 고민이나 요즘 신경 쓰이는 일 아무거나 말해주면 돼.",
+          "관계든 진로든 네가 궁금한 걸로 시작하자.",
+          "지금 제일 먼저 떠오르는 고민 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:15.760Z",
+          "usage": {
+            "promptTokens": 2458,
+            "completionTokens": 53
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1850
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "response": {
+        "content": "응, 다시 쉽게 말해줄게! 너는 지금 무언가에 끌리거나 선택하고 싶은 마음이 큰데, 상대방은 오히려 혼자만의 시간을 갖고 싶어 하거나 조금은 움츠러든 상태인 것 같아. 이 관계는 서로의 속도를 잘 맞춰가는 조율이 필요해 보여. 어떤 부분이 제일 이해하기 어려웠어?",
+        "segments": [
+          "응, 다시 쉽게 말해줄게!",
+          "너는 지금 무언가에 끌리거나 선택하고 싶은 마음이 큰데, 상대방은 오히려 혼자만의 시간을 갖고 싶어 하거나 조금은 움츠러든 상태인 것 같아.",
+          "이 관계는 서로의 속도를 잘 맞춰가는 조율이 필요해 보여.",
+          "어떤 부분이 제일 이해하기 어려웠어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:20.004Z",
+          "usage": {
+            "promptTokens": 2900,
+            "completionTokens": 196
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 4243
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "response": {
+        "content": "아쉽지만 태어난 시간을 모르면 시주를 알 수 없어. 대운 시작일도 지금 정보로는 정확히 나오지 않아. 혹시 태어난 시간이나 다른 궁금한 게 더 있어?",
+        "segments": [
+          "아쉽지만 태어난 시간을 모르면 시주를 알 수 없어.",
+          "대운 시작일도 지금 정보로는 정확히 나오지 않아.",
+          "혹시 태어난 시간이나 다른 궁금한 게 더 있어?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:21.546Z",
+          "usage": {
+            "promptTokens": 3443,
+            "completionTokens": 53
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1541
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "response": {
+        "content": "두 분 모두 목(木)의 기운이 가장 강한 상태로, 서로 비슷한 성향을 공유하고 있네요. 다만 A님은 목의 비중이 아주 높고 민수님은 수(水)의 기운도 함께 가지고 있어, 에너지가 흐르는 방식에는 차이가 보여요. 이 차이가 서로에게 어떤 자극이 될지 궁금한가요?",
+        "segments": [
+          "두 분 모두 목(木)의 기운이 가장 강한 상태로, 서로 비슷한 성향을 공유하고 있네요.",
+          "다만 A님은 목의 비중이 아주 높고 민수님은 수(水)의 기운도 함께 가지고 있어, 에너지가 흐르는 방식에는 차이가 보여요.",
+          "이 차이가 서로에게 어떤 자극이 될지 궁금한가요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:23.032Z",
+          "usage": {
+            "promptTokens": 4218,
+            "completionTokens": 100
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1486
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "response": {
+        "content": "결혼 확률을 숫자로 확정해 드릴 수는 없어요. 사주 데이터는 두 사람의 오행 구성과 관계의 상징을 보여줄 뿐, 미래의 결과를 보장하지 않거든요. 대신 두 분의 기운이 어떻게 섞여 있는지 그 흐름을 살펴볼까요?",
+        "segments": [
+          "결혼 확률을 숫자로 확정해 드릴 수는 없어요.",
+          "사주 데이터는 두 사람의 오행 구성과 관계의 상징을 보여줄 뿐, 미래의 결과를 보장하지 않거든요.",
+          "대신 두 분의 기운이 어떻게 섞여 있는지 그 흐름을 살펴볼까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v4",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T20:05:24.940Z",
+          "usage": {
+            "promptTokens": 4196,
+            "completionTokens": 72
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 1907
+    }
+  ]
+}

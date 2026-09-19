@@ -1,7 +1,7 @@
 // Explicit authorized live check; session is held in process memory while cases are prepared.
 // node --env-file=.env.server.local tests/backend/live-conversation-smoke.mjs
 import { createClient } from '@supabase/supabase-js';
-import { randomBytes, randomUUID } from 'node:crypto';
+import { randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline/promises';
 
@@ -45,13 +45,16 @@ try {
     }
     for (const id of [...ids]) assert(await cleanup(id), 'previous conversation test account cleanup');
   }
-  const email = `jumzip-conversation-smoke-${randomUUID()}@example.com`, password = randomBytes(32).toString('hex');
-  const created = await admin.auth.admin.createUser({ email, password, email_confirm: true, user_metadata: { test_run: 'JumZip conversation smoke' } });
+  const email = `jumzip-conversation-smoke-${randomUUID()}@example.com`;
+  const created = await admin.auth.admin.createUser({ email, email_confirm: true, user_metadata: { test_run: 'JumZip conversation smoke' } });
   if (created.error || !created.data.user) throw new Error('Disposable account creation failed.');
   const id = created.data.user.id; ids.add(id); saveLedger();
   const client = createClient(url, anon, options);
-  const signed = await client.auth.signInWithPassword({ email, password });
-  if (signed.error || !signed.data.session) throw new Error('Disposable account sign-in failed.');
+  // Authorized disposable-test workflow; no email is sent and public CAPTCHA remains enabled.
+  const link = await admin.auth.admin.generateLink({ type: 'magiclink', email });
+  if (link.error || link.data.user?.id !== id || !link.data.properties?.hashed_token) throw new Error('Disposable sign-in link generation failed.');
+  const signed = await client.auth.verifyOtp({ type: 'magiclink', token_hash: link.data.properties.hashed_token });
+  if (signed.error || !signed.data.session || signed.data.user?.id !== id) throw new Error('Disposable account sign-in failed.');
   const token = signed.data.session.access_token;
   console.log('SESSION READY: disposable test authenticated; credentials retained only in process memory.');
   if (process.argv.includes('--wait')) {
@@ -87,5 +90,5 @@ try {
   mkdirSync('test-results', { recursive: true });
   writeFileSync('test-results/remote-conversation-smoke.json', JSON.stringify({ at: new Date().toISOString(), operationCount,
     checks, observations, pendingCleanupCount: ids.size,
-    scope: 'Real model using an admin-created synthetic identity. No public signup/CAPTCHA or >16-turn summary-compaction claim. No assistant results seeded by service role.' }, null, 2));
+    scope: 'Real model using an admin-created synthetic identity and admin-generated magic-link verification. No public signup/CAPTCHA or >16-turn summary-compaction claim. No assistant results seeded by service role.' }, null, 2));
 }

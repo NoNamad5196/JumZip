@@ -2,14 +2,18 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { CharacterId } from '../contracts/index.ts';
 import type { ContextMessage } from '../persona/context.ts';
 import type { LLMProvider } from '../llm/provider.ts';
-import { extractMemoryCandidates, summarizeConversation, type MemoryCandidate } from '../persona/memory.ts';
+import { extractMemoryCandidates, summarizeConversation, type MemoryCandidate, type MemoryExtractionInput, type MemorySummaryInput } from '../persona/memory.ts';
 import { hasMemoryOptOut } from './privacy.ts';
+
+/** Shared by production maintenance and the real-provider integration harness. */
+export const MEMORY_PROVIDER_LIMITS = Object.freeze({ initialTimeoutMs: 8_000, repairTimeoutMs: 3_000, maxOutputTokens: 900 });
 
 export interface MemoryState {
   memoryEnabled: boolean; revision: number; summary: string; lastExtractedAt: string | null;
   lastExtractedMessageId: string | null; summaryCursorAt: string | null;
   suppressions: { scope: 'GLOBAL' | 'CHARACTER'; characterId?: CharacterId | null; subject: string }[];
   allowedRelatedPeople?: { id: string; alias: string }[];
+  blockedRelatedPeople?: { id: string; alias: string }[];
 }
 export type MemoryMessage = ContextMessage & { id: string; createdAt: string };
 export interface MemoryStore {
@@ -20,8 +24,8 @@ export interface MemoryStore {
 }
 export interface MemoryMaintenance {
   store: MemoryStore;
-  extract(input: { characterId: CharacterId; messages: ContextMessage[]; allowedRelatedPeople: { id: string; alias: string }[]; suppressions: MemoryState['suppressions'] }): Promise<MemoryCandidate[]>;
-  summarize(input: { characterId: CharacterId; messages: ContextMessage[]; previousSummary: string }): Promise<string>;
+  extract(input: MemoryExtractionInput): Promise<MemoryCandidate[]>;
+  summarize(input: MemorySummaryInput): Promise<string>;
 }
 
 /** This is best-effort maintenance. Failure never deletes messages or overwrites the previous summary. */
@@ -33,12 +37,13 @@ export async function maintainMemory(dependencies: MemoryMaintenance, userId: st
   if (!through) return;
   const privateTurn = messages.some(message => hasMemoryOptOut(message.content));
   // Extraction receives only new raw USER messages; old summaries never feed the extractor.
-  const candidates = privateTurn ? [] : await dependencies.extract({ characterId, messages, allowedRelatedPeople: state.allowedRelatedPeople ?? [], suppressions: state.suppressions });
+  const consent = { allowedRelatedPeople: state.allowedRelatedPeople ?? [], blockedRelatedPeople: state.blockedRelatedPeople ?? [], suppressions: state.suppressions };
+  const candidates = privateTurn ? [] : await dependencies.extract({ characterId, messages, ...consent });
   let summary: string | null = null;
   if (!privateTurn && state.suppressions.length === 0) {
     const raw = await dependencies.store.summaryMessages(userId, conversationId, state, through);
     if (raw.filter(message => message.role === 'user').length > 16 || raw.reduce((sum, message) => sum + message.content.length, state.summary.length) > 14_400) {
-      try { summary = await dependencies.summarize({ characterId, messages: raw, previousSummary: state.summary }); }
+      try { summary = await dependencies.summarize({ characterId, messages: raw, previousSummary: state.summary, ...consent }); }
       catch { summary = null; }
     }
   }
@@ -54,7 +59,7 @@ export function createMemoryStore(client: SupabaseClient): MemoryStore {
       const { data, error } = await client.rpc('memory_context_state', { p_user_id: userId, p_conversation_id: conversationId });
       if (error || !data) throw new Error('MEMORY_STATE_UNAVAILABLE');
       const state = data as MemoryState;
-      return { ...state, summary: state.summary ?? '', suppressions: state.suppressions ?? [], allowedRelatedPeople: state.allowedRelatedPeople ?? [] };
+      return { ...state, summary: state.summary ?? '', suppressions: state.suppressions ?? [], allowedRelatedPeople: state.allowedRelatedPeople ?? [], blockedRelatedPeople: state.blockedRelatedPeople ?? [] };
     },
     async newMessages(userId, conversationId, state) {
       let query = client.from('messages').select('id,sender,content,created_at').eq('user_id', userId).eq('conversation_id', conversationId).eq('sender', 'USER').order('created_at', { ascending: true }).order('id', { ascending: true }).limit(8);

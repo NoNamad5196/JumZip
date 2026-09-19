@@ -8,6 +8,7 @@ function fixture(memoryEnabled = true) {
   const results: Record<string, Result[]> = {
     profiles: [{ data: { memory_enabled: memoryEnabled }, error: null }],
     conversations: [{ data: { summary: '기존 요약' }, error: null }],
+    memory_context_state: [{ data: { blockedRelatedPeople: [] }, error: null }],
     messages: [{ data: [{ created_at: '2026-09-20T00:00:00Z' }], error: null },
       { data: [{ id: 'message', sender: 'USER', content: '이 카드에 대해 더 이야기해 줘' }], error: null },
       { data: [{ metadata: { tarot: { drawGroupId: 'stored-draw', spreadType: 'ONE_CARD', cards: [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0, positionKey: 'CORE_MESSAGE' }] } } }], error: null }],
@@ -25,7 +26,8 @@ function fixture(memoryEnabled = true) {
       then: (resolve: (value: Result) => unknown) => Promise.resolve(result).then(resolve) };
     return builder;
   });
-  return { repo: createRepository({ from } as unknown as SupabaseClient), queries, results };
+  const rpc = vi.fn(async () => results.memory_context_state![0]!);
+  return { repo: createRepository({ from, rpc } as unknown as SupabaseClient), queries, results, rpc };
 }
 describe('persisted context selection', () => {
   it('restores ascending order from the bounded latest-message query', async () => {
@@ -56,5 +58,28 @@ describe('persisted context selection', () => {
     const { repo, queries } = fixture(); const context = await repo.context('owner', claim);
     expect(context.toolResult).toMatchObject({ drawGroupId: 'stored-draw', cards: [{ cardId: 0, orientation: 'UPRIGHT' }] });
     expect(queries.filter(query => query.table === 'messages').at(-1)?.filters).toEqual([['user_id', 'owner'], ['conversation_id', 'conversation'], ['consultation_id', 'consultation']]);
+  });
+  it('excludes known blocked aliases even in USER memories while retaining raw current conversation', async () => {
+    const { repo, results, rpc } = fixture();
+    results.memory_context_state![0]!.data = { blockedRelatedPeople: [{ id: 'blocked', alias: '솔새' }] };
+    results.conversations![0]!.data = { summary: '솔새와 종이접기 이야기를 나눴다.' };
+    results.messages![1]!.data = [{ id: 'current', sender: 'USER', content: '지금 솔새와 나눈 이야기를 듣고 싶어.' }];
+    results.memories![0]!.data = [
+      { id: 'misattributed', scope: 'GLOBAL', subject: 'USER', content: '솔새의 취미는 종이접기다.' },
+      { id: 'subject', scope: 'GLOBAL', subject: 'RELATED_PERSON:blocked', content: '그 사람의 취미는 그림이다.' },
+      { id: 'safe', scope: 'GLOBAL', subject: 'USER', content: '사용자는 짧은 답을 선호한다.' },
+    ];
+    const context = await repo.context('owner', claim);
+    expect(context.summary).toBe(''); expect(context.memories.map(memory => memory.id)).toEqual(['safe', 'character']);
+    expect(context.recentMessages).toEqual([{ id: 'current', role: 'user', content: '지금 솔새와 나눈 이야기를 듣고 싶어.' }]);
+    expect(rpc).toHaveBeenCalledWith('memory_context_state', { p_user_id: 'owner', p_conversation_id: 'conversation' });
+  });
+  it('fails closed if current related-person consent cannot be read', async () => {
+    const { repo, results } = fixture(); results.memory_context_state![0]!.error = { message: 'unavailable' };
+    await expect(repo.context('owner', claim)).rejects.toMatchObject({ code: 'INTERNAL_ERROR' });
+  });
+  it('fails closed on an outdated privacy RPC lacking the complete blocked-person list', async () => {
+    const { repo, results } = fixture(); results.memory_context_state![0]!.data = {};
+    await expect(repo.context('owner', claim)).rejects.toMatchObject({ code: 'INTERNAL_ERROR' });
   });
 });

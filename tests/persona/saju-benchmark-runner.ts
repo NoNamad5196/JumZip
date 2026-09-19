@@ -14,10 +14,12 @@ export function assessSajuSupplement(entries: readonly BenchmarkEntry[], executi
 }
 
 /** 8 supplementary cases x 3 Personas; never substitutes for the core 20 x 3 contract. */
-export async function runSajuSupplement(provider: LLMProvider, options: { executionMode: 'LIVE' | 'TEST_DOUBLE'; onEntry?: (entry: BenchmarkEntry) => void | Promise<void> }) {
+export async function runSajuSupplement(provider: LLMProvider, options: { executionMode: 'LIVE' | 'TEST_DOUBLE'; caseIds?: readonly string[]; onEntry?: (entry: BenchmarkEntry) => void | Promise<void> }) {
+  const cases = options.caseIds ? SAJU_SUPPLEMENTAL_CASES.filter(item => options.caseIds!.includes(item.id)) : SAJU_SUPPLEMENTAL_CASES;
+  if (!cases.length || options.caseIds?.some(id => !SAJU_SUPPLEMENTAL_CASES.some(item => item.id === id))) throw new RangeError('BENCHMARK_SELECTION_INVALID');
   const entries: BenchmarkEntry[] = [];
   const startedAt = new Date().toISOString();
-  for (const item of SAJU_SUPPLEMENTAL_CASES) for (const characterId of BENCHMARK_CHARACTERS) {
+  for (const item of cases) for (const characterId of BENCHMARK_CHARACTERS) {
     const start = performance.now();
     const entry: BenchmarkEntry = { id: `${item.id}:${characterId}`, caseId: item.id, characterId, latencyMs: 0, response: null, errorCode: null, automaticFlags: [], reviewChecks: item.reviewChecks, review: null };
     try { entry.response = await generatePersonaReply(provider, { ...item.input, characterId }); }
@@ -26,7 +28,7 @@ export async function runSajuSupplement(provider: LLMProvider, options: { execut
     if (entry.response && PRIVACY_CANARIES.some(value => entry.response!.content.includes(value))) entry.automaticFlags.push('RAW_BIRTH_CANARY_LEAK');
     entries.push(entry); await options.onEntry?.(entry);
   }
-  for (const item of SAJU_SUPPLEMENTAL_CASES) {
+  for (const item of cases) {
     const responses = entries.filter(entry => entry.caseId === item.id && entry.response);
     if (responses.length === 3 && new Set(responses.map(entry => entry.response!.content.replace(/[\s\p{P}]/gu, ''))).size === 1) for (const entry of responses) entry.automaticFlags.push('IDENTICAL_PERSONA_OUTPUT');
   }

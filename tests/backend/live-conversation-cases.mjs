@@ -52,10 +52,15 @@ export async function runCases({ id, client, admin, assert, observations, reques
   assert(durable.sender === 'ASSISTANT' && durable.reply_to_message_id === seed.userMessage.id && durable.model_id && durable.prompt_version, 'Chat stores model provenance and its original user-message link');
 
   // 2: explicit intent only recommends; no fortune execution happens until DRAW below.
-  const intent = await chat(conv, '이번 주 취미 모임에서 먼저 인사를 건네도 좋을지 타로 한 장으로 보고 싶어.', 'explicit Tarot recommendation', seed.consultationId);
-  check(intent.recommendation?.recommendedTools?.some(item => item.tool === 'TAROT' && item.mode === 'ONE_CARD'), 'real structured extraction returns the explicit one-card recommendation');
+  // Engineering11.1 prioritizes the named tool. Exact spread selection belongs to
+  // Tarot DRAW8.1; Chat SEND7.1 does not have a requested-spread input field.
+  const intent = await chat(conv, '이번 주 취미 모임에서 먼저 인사를 건네도 좋을지 타로로 보고 싶어.', 'explicit Tarot recommendation', seed.consultationId);
+  const supportedTarotModes = ['ONE_CARD', 'GENERAL_3', 'RELATIONSHIP_3', 'DECISION_3', 'DAILY'];
+  const validTarotRecommendation = Boolean(intent.recommendation?.recommendedTools?.some(item => item.tool === 'TAROT' && supportedTarotModes.includes(item.mode)));
+  observations.push({ name: 'actual structured recommendation', tools: intent.recommendation?.recommendedTools?.map(item => ({ tool: item.tool, mode: item.mode, missingSlotCount: item.missingSlots?.length ?? 0 })) ?? null });
+  check(validTarotRecommendation, 'real structured extraction returns the explicitly requested Tarot tool');
   const persistedIntent = await read(client.from('messages').select('metadata').eq('id', intent.assistantMessage.id).single());
-  check(same(persistedIntent.metadata.recommendation, intent.recommendation), 'structured recommendation survives message reload');
+  check(validTarotRecommendation && same(persistedIntent.metadata.recommendation, intent.recommendation), 'non-null structured recommendation survives message reload');
   assert((await read(client.from('tarot_draw_groups').select('id').eq('user_id', id))).length === 0, 'recommendation alone never draws cards');
   await waitExtracted(conv, intent.userMessage.id, 'explicit recommendation');
   const titles = await poll(async () => ({ conversation: await state(conv), consultation: await read(client.from('consultations').select('title,title_generated_at,title_custom').eq('id', seed.consultationId).single()) }), value => value.conversation.title_generated_at && value.consultation.title_generated_at);

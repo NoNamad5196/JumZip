@@ -1,0 +1,23 @@
+{
+  "at": "2026-09-19T19:53:20.443Z",
+  "sources": [
+    {
+      "url": "https://app.notion.com/p/3df7cdef782d81d7b3a6d28b604f050f",
+      "sections": [
+        "11.1 Recommendation Router Matrix",
+        "12 Tarot Engine"
+      ]
+    },
+    {
+      "url": "https://app.notion.com/p/3e07cdef782d8132bd82f38ad9a171c9",
+      "sections": [
+        "7.1 Chat SEND",
+        "8.1 Tarot DRAW"
+      ]
+    }
+  ],
+  "finding": "Chat SEND accepts message but no requested-spread input. Router priority explicitly names tool choice; exact DRAW spreadType is selected at execution. Engineering defaults ordinary counseling to3cards and quick/daily questions to1. Existing structured intent has no spread slot.",
+  "originalProbe": "Required ONE_CARD from natural-language request for onecard. Original v3failure evidence is preserved and does not reveal whether mode differed or recommendation wasnull.",
+  "correction": "Use a plain Tarot request and require a non-null valid TAROT recommendation. Record actual tool/mode and verify non-null persisted recommendation. Exact ONE_CARD remains tested on explicit DRAW.",
+  "limitation": "This test correction does not claim textual spread-selection parsing is implemented or that the original onecard request was honored."
+}

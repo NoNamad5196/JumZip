@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-09-19T20:21:38.870Z",
+  "mode": "PUBLIC_STATIC_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "localEntry": "/assets/index-CAbaSeYK.js",
+  "remoteEntry": "/assets/index-CAbaSeYK.js",
+  "entryMatches": true,
+  "csp": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+  "unsafeEvalAllowed": false,
+  "scriptCount": 8,
+  "scriptMismatchCount": 0,
+  "files": [
+    {
+      "path": "/assets/AccountPages-B7RJy2GD.js",
+      "status": 200,
+      "localSha256": "eb9ea1a94ac4173bad202cd34a6317509d46b4043743d3c150215d58546c70fa",
+      "publicSha256": "eb9ea1a94ac4173bad202cd34a6317509d46b4043743d3c150215d58546c70fa",
+      "matches": true
+    },
+    {
+      "path": "/assets/Chat-CDmxsf_H.js",
+      "status": 200,
+      "localSha256": "200422210deb79a43c393772ed11b389a922af933e2b4494b6e7bdd11c01a239",
+      "publicSha256": "200422210deb79a43c393772ed11b389a922af933e2b4494b6e7bdd11c01a239",
+      "matches": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-CQ4JRy5B.js",
+      "status": 200,
+      "localSha256": "8cebb4e9c9efb043b7f0b67d936ab7eda06f9eab30212b8120c08e13f195f447",
+      "publicSha256": "8cebb4e9c9efb043b7f0b67d936ab7eda06f9eab30212b8120c08e13f195f447",
+      "matches": true
+    },
+    {
+      "path": "/assets/ConnectionState-DxSR-bBh.js",
+      "status": 200,
+      "localSha256": "626627fcc606abbf61ed2bbbc82180ced2478bcf615c1ee81375ea972a4487a6",
+      "publicSha256": "626627fcc606abbf61ed2bbbc82180ced2478bcf615c1ee81375ea972a4487a6",
+      "matches": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "matches": true
+    },
+    {
+      "path": "/assets/index-CAbaSeYK.js",
+      "status": 200,
+      "localSha256": "f1646bd9bab402bb7cbadc77f98397a6bb2b2fa7a4af512b9746e5f822f5f5aa",
+      "publicSha256": "f1646bd9bab402bb7cbadc77f98397a6bb2b2fa7a4af512b9746e5f822f5f5aa",
+      "matches": true
+    },
+    {
+      "path": "/assets/pagination-D9aZH-BV.js",
+      "status": 200,
+      "localSha256": "37bd80fa599ddeffe18d9a2f934c472e93b2cd3c75aacd6fdc9bdfb10f8f839e",
+      "publicSha256": "37bd80fa599ddeffe18d9a2f934c472e93b2cd3c75aacd6fdc9bdfb10f8f839e",
+      "matches": true
+    },
+    {
+      "path": "/assets/Reading-DVocnMWZ.js",
+      "status": 200,
+      "localSha256": "c61336d36cb6ec5d48297729946012b51e8a47e61a8fc2ca0806a19043373162",
+      "publicSha256": "c61336d36cb6ec5d48297729946012b51e8a47e61a8fc2ca0806a19043373162",
+      "matches": true
+    }
+  ],
+  "authenticationAttempted": false,
+  "modelCalls": 0
+}

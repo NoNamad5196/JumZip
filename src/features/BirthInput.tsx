@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { z } from '../lib/form-validation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { service } from '../lib/service';
 import { Icon, Notice, Toggle } from '../components/ui';

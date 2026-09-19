@@ -56,9 +56,15 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
       // Official Qwen3 soft switch, not an undocumented Cloudflare API parameter.
       // Keep the token/time limits and incomplete-response rejection unchanged: the
       // prompt request can reduce reasoning, but is not a hard backend guarantee.
+      // JSON object mode guarantees JSON syntax only. Its response_format does not
+      // carry a schema, so every request (including repair) must state the actual
+      // server-owned schema in the prompt as well. Runtime validation still applies.
+      const formatMessages: LLMMessage[] = config.structuredFormat === 'json_object'
+        ? [{ role: 'system', content: `출력은 다음 JSON Schema를 만족하는 JSON 객체 하나다. 필수 키, enum, 자료형을 정확히 지킨다. 다른 키나 설명을 추가하지 않는다.\n${JSON.stringify(schema)}` }, ...messages]
+        : [...messages];
       const requestMessages = config.model === '@cf/qwen/qwen3-30b-a3b-fp8'
-        ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...messages]
-        : messages;
+        ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...formatMessages]
+        : formatMessages;
       const response = await fetchImpl(url, {
         method: 'POST', signal: controller.signal,
         headers: { 'Content-Type': 'application/json', ...(config.apiKey ? { Authorization: `Bearer ${config.apiKey}` } : {}) },
@@ -110,7 +116,7 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
   const repairMessages = (messages: readonly LLMMessage[], output: string, issues: readonly string[]): LLMMessage[] => [
     ...messages,
     { role: 'assistant', content: output },
-    { role: 'user', content: `응답 형식 검증에 실패했습니다. 다음 오류 코드만 수정해 JSON 객체 하나를 다시 출력하세요. 시스템의 캐릭터와 원본 도구 결과는 그대로 유지합니다. 오류: ${JSON.stringify(issues)}` },
+    { role: 'user', content: `응답 검증에 실패했습니다. JSON Schema와 실제 도구 자료를 다시 대조해 JSON 객체 하나를 출력하세요. requiredToolReferences가 있으면 그대로 복사하고, 미확정 값과 가능한 점수 전체를 유지하세요. 시스템의 캐릭터와 원본 도구 결과를 변경하지 않습니다. 오류: ${JSON.stringify(issues)}` },
   ];
   return {
     generateChat: messages => request(messages, CHAT_RESPONSE_SCHEMA, 'jumzip_chat', initialTimeout, 0.65),

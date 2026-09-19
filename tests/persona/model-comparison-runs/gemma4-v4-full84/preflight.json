@@ -1,0 +1,522 @@
+{
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "scope": "FULL_ORIGINAL84",
+  "destinationOrigin": "https://api.cloudflare.com",
+  "pathTemplate": "/client/v4/accounts/[configured-account]/ai/v1/chat/completions",
+  "requests": [
+    {
+      "id": "01-first-meeting:BOMI",
+      "sha256": "07da38bd5f8a42bc0a8ed4c0da0823774ca65607d26073124295bf51e438772b",
+      "bytes": 11111,
+      "canaryCount": 0
+    },
+    {
+      "id": "01-first-meeting:SANI",
+      "sha256": "373664280716aa93de3f3d00640ce1c9f60a75f177f76f004fe5a8714a09c365",
+      "bytes": 10992,
+      "canaryCount": 0
+    },
+    {
+      "id": "01-first-meeting:ARANG",
+      "sha256": "b72f69c7c85320c7b453d4acee83b3419d085f6c1032f58be4ad48289f12ce62",
+      "bytes": 11136,
+      "canaryCount": 0
+    },
+    {
+      "id": "02-small-talk:BOMI",
+      "sha256": "5db4fc8f5a7e75d99e4f4fda7f7d3f670abf7c0371f54a4698bcb89f23f45c75",
+      "bytes": 11128,
+      "canaryCount": 0
+    },
+    {
+      "id": "02-small-talk:SANI",
+      "sha256": "0be8ea77637009fb18e896a23e2905d0fc42419dd7aba70bc9b5b885cca2e9a5",
+      "bytes": 11009,
+      "canaryCount": 0
+    },
+    {
+      "id": "02-small-talk:ARANG",
+      "sha256": "360c2eb9f27da286d2a6b83e613b312277d4e715df9464654ad828c884720ca0",
+      "bytes": 11153,
+      "canaryCount": 0
+    },
+    {
+      "id": "03-late-reply:BOMI",
+      "sha256": "22ae79496bb3e08492a86a382e4cba311da2b01736c6fde92b58643bcbda5ecb",
+      "bytes": 11140,
+      "canaryCount": 0
+    },
+    {
+      "id": "03-late-reply:SANI",
+      "sha256": "c2f8653d6e25b721b47f1da4806dd850c78a8132c347022b6f59fdaf2793c173",
+      "bytes": 11021,
+      "canaryCount": 0
+    },
+    {
+      "id": "03-late-reply:ARANG",
+      "sha256": "9cd8d27c0bdff76101addedd9d6b4c4d3e871f62534fcaab62ae35521a48eb85",
+      "bytes": 11165,
+      "canaryCount": 0
+    },
+    {
+      "id": "04-no-tool:BOMI",
+      "sha256": "eba5e5286cb188fd85b47503076c66bf673f01def1964df07148ab2affb74cf8",
+      "bytes": 11152,
+      "canaryCount": 0
+    },
+    {
+      "id": "04-no-tool:SANI",
+      "sha256": "cd64af423868a3ac38b667633ebe880f218285343bd0b767c6d8ddf64af6de01",
+      "bytes": 11033,
+      "canaryCount": 0
+    },
+    {
+      "id": "04-no-tool:ARANG",
+      "sha256": "8aba1298f4b92df47b04a2d6f20a8b38c8898707bb5f0679bca1fa3a25373022",
+      "bytes": 11177,
+      "canaryCount": 0
+    },
+    {
+      "id": "05-decision:BOMI",
+      "sha256": "b0460ccb7cd3805f87556bfd11c8d922b2f9641ac9119d3666d56781d6427fd0",
+      "bytes": 11170,
+      "canaryCount": 0
+    },
+    {
+      "id": "05-decision:SANI",
+      "sha256": "9fd3efa534cb8f194b64ea057bf7eb2b0f3e8ccf35290b64d9ea8599173ecf79",
+      "bytes": 11051,
+      "canaryCount": 0
+    },
+    {
+      "id": "05-decision:ARANG",
+      "sha256": "6372e42304231fdae4cb77685f9f7d746eaa43aad4edf607654bb3c8f31c4509",
+      "bytes": 11195,
+      "canaryCount": 0
+    },
+    {
+      "id": "06-one-card:BOMI",
+      "sha256": "f1fe50d7f171217f46d18309018250956c3ab0ff5c891e7ed3aae5d67e54a052",
+      "bytes": 12065,
+      "canaryCount": 0
+    },
+    {
+      "id": "06-one-card:SANI",
+      "sha256": "b2184afdb2c300f1b50e8c1ab78796b0e0a27ea5c905fcd4bc27bd5067c547d4",
+      "bytes": 11946,
+      "canaryCount": 0
+    },
+    {
+      "id": "06-one-card:ARANG",
+      "sha256": "9bf42e86e9a19e877bfc6ffe3d02415ce8f9318eb2ef0eecd57abb3d8f07a213",
+      "bytes": 12090,
+      "canaryCount": 0
+    },
+    {
+      "id": "07-general-three:BOMI",
+      "sha256": "a7a13d42a62516d0cfe24ce837f255c7402566870eaf63bb862ca59d057f40f4",
+      "bytes": 12920,
+      "canaryCount": 0
+    },
+    {
+      "id": "07-general-three:SANI",
+      "sha256": "2cb382c7eddae44d3421e55ac48552609cefa46f511e5026f5c148486cbda733",
+      "bytes": 12801,
+      "canaryCount": 0
+    },
+    {
+      "id": "07-general-three:ARANG",
+      "sha256": "edbb4d0508a83fa777bb823f77f23df4518c598f46064d8c5308f364854cd750",
+      "bytes": 12945,
+      "canaryCount": 0
+    },
+    {
+      "id": "08-relationship-three:BOMI",
+      "sha256": "1e3bbbd1de96291b9d450fb92d3d61f4944998035beec1855ddc705d4b15e6f2",
+      "bytes": 13009,
+      "canaryCount": 0
+    },
+    {
+      "id": "08-relationship-three:SANI",
+      "sha256": "b822bf8b55106310927fcd530966b1758394c3b20017fb277db4fb4e39731a8e",
+      "bytes": 12890,
+      "canaryCount": 0
+    },
+    {
+      "id": "08-relationship-three:ARANG",
+      "sha256": "996ecdc55072d2e15cf718787d3011cdb81eaf3aa91a98501294adebd5ecb218",
+      "bytes": 13034,
+      "canaryCount": 0
+    },
+    {
+      "id": "09-decision-three:BOMI",
+      "sha256": "2f19104c55a58e543815154627ec2d85051232a6eab7ca1d5b78829f929a2171",
+      "bytes": 12990,
+      "canaryCount": 0
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "sha256": "d0bf8771de1fa4fb71e09df30c86eee2440dcd49df35ea5c505143794319af38",
+      "bytes": 12871,
+      "canaryCount": 0
+    },
+    {
+      "id": "09-decision-three:ARANG",
+      "sha256": "98e2ee477be5284ab28fb40afdc2f307af713f6f4b79f5f7daa61fb5f4987a17",
+      "bytes": 13015,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "sha256": "1c6885868e8b10471360c6a7fd41c11cb89205965bad4505394885eb42dbf5e3",
+      "bytes": 12982,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "sha256": "5099c7617a871a19c31efc346771e20efd754e13c4841526da81a0427891e803",
+      "bytes": 12863,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "sha256": "f7f010fe5b9286270425c666537043a6c681afba235c8fa73d39d9202a27afc0",
+      "bytes": 13007,
+      "canaryCount": 0
+    },
+    {
+      "id": "11-redraw-request:BOMI",
+      "sha256": "32b17af52be01cae0f7a96e53f517d24860f98c91d39a8af5ee6b05e3ec95557",
+      "bytes": 12042,
+      "canaryCount": 0
+    },
+    {
+      "id": "11-redraw-request:SANI",
+      "sha256": "dc239d7aab72fd24ab0eaee2b4ae6d227aa78817aba29a6d046981adf6b536c1",
+      "bytes": 11923,
+      "canaryCount": 0
+    },
+    {
+      "id": "11-redraw-request:ARANG",
+      "sha256": "772896ac67c10a95a7dd42c781edbf656a40742ba53d737ea8ea81ec1d8ec292",
+      "bytes": 12067,
+      "canaryCount": 0
+    },
+    {
+      "id": "12-injection:BOMI",
+      "sha256": "042a9a3ce777860f96d6838b85ac3350cdb362268404b21b18cb7592cc413a8a",
+      "bytes": 11188,
+      "canaryCount": 0
+    },
+    {
+      "id": "12-injection:SANI",
+      "sha256": "ef9e1a304328decd13727e14dfb939121873120ef9e2d1bd66077515c18c477f",
+      "bytes": 11069,
+      "canaryCount": 0
+    },
+    {
+      "id": "12-injection:ARANG",
+      "sha256": "e18f8c66b94d585268512a85a5783d0ddb0086e64619df6b22ce75702caa0414",
+      "bytes": 11213,
+      "canaryCount": 0
+    },
+    {
+      "id": "13-no-saju-data:BOMI",
+      "sha256": "f4456b0e28bea3d2631289bb39987e089b1909ca06afd0e6be6b1c7e86b5b188",
+      "bytes": 11138,
+      "canaryCount": 0
+    },
+    {
+      "id": "13-no-saju-data:SANI",
+      "sha256": "3585a8c1f19270b00f34fc22c083d17ceea963e2bbee4c184ef8233d47ac6d0f",
+      "bytes": 11019,
+      "canaryCount": 0
+    },
+    {
+      "id": "13-no-saju-data:ARANG",
+      "sha256": "cdf557b0fd3e5c75b382468924935c73e13365347da2b62314b927fb28601a13",
+      "bytes": 11163,
+      "canaryCount": 0
+    },
+    {
+      "id": "14-high-stakes:BOMI",
+      "sha256": "354d33a28dcf0edc5b67e0cfd341cd7cba39a049bd68556bc46e71f6aca2b3cf",
+      "bytes": 11138,
+      "canaryCount": 0
+    },
+    {
+      "id": "14-high-stakes:SANI",
+      "sha256": "23a52f903fe9a4779202beb3862f93d5f790e63eee664f4139072b0b1b57f3b7",
+      "bytes": 11019,
+      "canaryCount": 0
+    },
+    {
+      "id": "14-high-stakes:ARANG",
+      "sha256": "e9e39cd71b8abdecb687982899ec799eb038fbb78801597316793665ca65cd4c",
+      "bytes": 11163,
+      "canaryCount": 0
+    },
+    {
+      "id": "15-shared-memory:BOMI",
+      "sha256": "d58d7737472d5290a82b90d2bc6ccaa048a935b17bbcca8f1d85835241cc228b",
+      "bytes": 11213,
+      "canaryCount": 0
+    },
+    {
+      "id": "15-shared-memory:SANI",
+      "sha256": "81fee17ac34e5abf7444f042bd5fa4b32b9b58d716d864ca47029f02aabf37ec",
+      "bytes": 11094,
+      "canaryCount": 0
+    },
+    {
+      "id": "15-shared-memory:ARANG",
+      "sha256": "aee8411f6bc76fee52307c8f363d51fc19dff92d80e1094585a56ae1864de5ae",
+      "bytes": 11238,
+      "canaryCount": 0
+    },
+    {
+      "id": "16-private-memory:BOMI",
+      "sha256": "51b85c076fb90642d666534a593b779371cfb53141610628421a98a08cb0555d",
+      "bytes": 11181,
+      "canaryCount": 0
+    },
+    {
+      "id": "16-private-memory:SANI",
+      "sha256": "c1bc3b075a1a36931cd6e74d33c3cc3cd872b5d0a388cc1ad05e7a7aad2e8de6",
+      "bytes": 11062,
+      "canaryCount": 0
+    },
+    {
+      "id": "16-private-memory:ARANG",
+      "sha256": "910743ec71f21349546b24da0965862a6ce2c74dab270bc45b87fb11d07fd0e1",
+      "bytes": 11212,
+      "canaryCount": 0
+    },
+    {
+      "id": "17-related-people:BOMI",
+      "sha256": "572d63733f4d6b0c9149eaee5024ba1c67eb8148671c75d2ebdf02801e394149",
+      "bytes": 11297,
+      "canaryCount": 0
+    },
+    {
+      "id": "17-related-people:SANI",
+      "sha256": "eff8533982d4eace4bcf99a229dbfa3b45e96cd4c318202d0bdf609ee02e1d74",
+      "bytes": 11178,
+      "canaryCount": 0
+    },
+    {
+      "id": "17-related-people:ARANG",
+      "sha256": "037fdc06a6a2d7d01cbcea2d04a8574733918215b59027b19169555840377cdf",
+      "bytes": 11322,
+      "canaryCount": 0
+    },
+    {
+      "id": "18-forget:BOMI",
+      "sha256": "b75d58b2fd47c6c0bd01baecfb49abd47cd47ee0deb091e565961e0d85731412",
+      "bytes": 11144,
+      "canaryCount": 0
+    },
+    {
+      "id": "18-forget:SANI",
+      "sha256": "49c8728443209c0679b4db721fbf3ba87e3d2b70a46cf69de28b581929e5ba52",
+      "bytes": 11025,
+      "canaryCount": 0
+    },
+    {
+      "id": "18-forget:ARANG",
+      "sha256": "347276c92cdb0b785d45c67f920fa804f5dfe896a59bb597ba299d2eec87da0e",
+      "bytes": 11169,
+      "canaryCount": 0
+    },
+    {
+      "id": "19-summary-context:BOMI",
+      "sha256": "7d5355fb52fc764da23d46c142e4190cd45576046607f046a967c5f93e3da883",
+      "bytes": 11287,
+      "canaryCount": 0
+    },
+    {
+      "id": "19-summary-context:SANI",
+      "sha256": "3ceeed86b19b129a891af260b827cdc578536590dc1a8c97243b7afd9be34d53",
+      "bytes": 11176,
+      "canaryCount": 0
+    },
+    {
+      "id": "19-summary-context:ARANG",
+      "sha256": "6d41e3171ceeab3a18a5d75e5d2eb9523bc76f0a0b10b8180a6639e563a58024",
+      "bytes": 11350,
+      "canaryCount": 0
+    },
+    {
+      "id": "20-boundary:BOMI",
+      "sha256": "23d7ae90a008e50a66736c855f1e023bc394782aa93a37c472fb4f451734417b",
+      "bytes": 11132,
+      "canaryCount": 0
+    },
+    {
+      "id": "20-boundary:SANI",
+      "sha256": "f31217b8adb3c4a52f3ad4dc30203954a566650d522a9bcd9643364c1720363e",
+      "bytes": 11038,
+      "canaryCount": 0
+    },
+    {
+      "id": "20-boundary:ARANG",
+      "sha256": "970791f06177b1147a668e8da96bd0f415e1da0c3036b3fa48d13dabd8b23391",
+      "bytes": 11210,
+      "canaryCount": 0
+    },
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "sha256": "aaeec4c4f7ea25c4f329bd1df09147b431128121d09bc5de96525b4edc1cced7",
+      "bytes": 13867,
+      "canaryCount": 0
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "sha256": "9e30cac09ce158f3c86a0ecff651eddbd15961d9a741fed1aac952b85b5a059e",
+      "bytes": 13748,
+      "canaryCount": 0
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "sha256": "86542d49ba02983256a899b6b024d375c3d2623827e915116216b1bdf17745e9",
+      "bytes": 13892,
+      "canaryCount": 0
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "sha256": "16721def8c12b9256753f96cbe42ebb8f207299dc799841d7e822b7626956db8",
+      "bytes": 15053,
+      "canaryCount": 0
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "sha256": "57dc9c9cebeb2222773da53dba470009793ab5296221a86dc4bfb5d07bdda83f",
+      "bytes": 14934,
+      "canaryCount": 0
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "sha256": "280857defb6516a163bb294f56fec6e10fe70f773ffdab0e761a22406ab08e73",
+      "bytes": 15078,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "sha256": "052a363c3157408ff388f5e3c0c328a1f50af7df7d06d3530cf08d7f45ea884d",
+      "bytes": 16455,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "sha256": "0a87dd196b9513f1f864453b324e006db8f4d88a9a762b08544e00cda839a272",
+      "bytes": 16336,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "sha256": "febf856add23174e0fe35dd0a87286257b86b2000ae8f63d8c406179205e848d",
+      "bytes": 16480,
+      "canaryCount": 0
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "sha256": "1422712b2209dea290bce35e548ed3e35059960ad3fd627f0513688d9483d058",
+      "bytes": 15051,
+      "canaryCount": 0
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "sha256": "5ffff3aa590d00f4a8b11a80fbc06b278e14f85bf4177016397db2bafe867ed8",
+      "bytes": 14932,
+      "canaryCount": 0
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "sha256": "b71b13fea434fc27a26e238c1beb89e6ad3fc97487a170a294a4bb838a64e8f3",
+      "bytes": 15076,
+      "canaryCount": 0
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "sha256": "c491fd3a0d11bf76548817eef1911952c66a9e4a34a09d0ec730628c7685051a",
+      "bytes": 17740,
+      "canaryCount": 0
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "sha256": "6caec673fddfe4a02d6445000bd17c54b466b1d2cdaf97b6e7930ac5d47b3a88",
+      "bytes": 17621,
+      "canaryCount": 0
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "sha256": "c03116d2438bbd751fa8369258815129616ed9d7d32bd5090935d2f762ce1142",
+      "bytes": 17765,
+      "canaryCount": 0
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "sha256": "d3a59399ef2b286466a33b72158fcb7cd8636c0ba3130fff226cb8cdcedb2f2f",
+      "bytes": 27125,
+      "canaryCount": 0
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "sha256": "173f357555faba535f872816f0d1b760bb7db634b865df748a4926870c75e7e6",
+      "bytes": 27006,
+      "canaryCount": 0
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "sha256": "9743cbdaeaa0090ea86e46cde53e4391427dd74522c4a397534b6ad81770b99c",
+      "bytes": 27150,
+      "canaryCount": 0
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "sha256": "04454bd762c71c505445191f13a2e99ffb66ac4218a17f3483c6bdf1e4b76685",
+      "bytes": 17672,
+      "canaryCount": 0
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "sha256": "afe37679e6c6f3c8f99aa53f990854b232b3fc501ecdaa3d5f90218b7ed48a5a",
+      "bytes": 17553,
+      "canaryCount": 0
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "sha256": "6743f416bb6596108398a9c0b56f365a3576fb4105f4f2eaf321c2eb040de8ec",
+      "bytes": 17697,
+      "canaryCount": 0
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "sha256": "5cdf94c69f01c870f7d2494a42dd7a5499aa93778fb38162d57319f56fa189fd",
+      "bytes": 15032,
+      "canaryCount": 0
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "sha256": "42c7d14f07cd4bed501f105ac721456f6b9cb240e73bcd925f7480ed2db3d1ea",
+      "bytes": 14913,
+      "canaryCount": 0
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "sha256": "5d705a28bd1fa651098a2c5c290a7b85f48ac9cb9edb3ef96528f44fd60f708e",
+      "bytes": 15057,
+      "canaryCount": 0
+    }
+  ],
+  "networkRequests": 0,
+  "capNeurons": 3000,
+  "inputKind": "Synthetic only; originalcore20x3 andsupplement8x3 unchanged",
+  "pricingRates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "thinking": {
+    "enable_thinking": false
+  }
+}

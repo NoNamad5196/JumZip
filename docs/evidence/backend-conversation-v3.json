@@ -1,0 +1,135 @@
+{
+  "at": "2026-09-19T19:48:17.560Z",
+  "operationCount": 6,
+  "checks": [
+    {
+      "name": "synthetic owner explicitly enables memory",
+      "passed": true
+    },
+    {
+      "name": "preference seed receives a real durable Chat response",
+      "passed": true
+    },
+    {
+      "name": "preference seed background extraction cursor commits",
+      "passed": true
+    },
+    {
+      "name": "actual extraction stores the explicit harmless preference",
+      "passed": true
+    },
+    {
+      "name": "Chat stores model provenance and its original user-message link",
+      "passed": true
+    },
+    {
+      "name": "explicit Tarot recommendation receives a real durable Chat response",
+      "passed": true
+    },
+    {
+      "name": "real structured extraction returns the explicit one-card recommendation",
+      "passed": false
+    },
+    {
+      "name": "structured recommendation survives message reload",
+      "passed": true
+    },
+    {
+      "name": "recommendation alone never draws cards",
+      "passed": true
+    },
+    {
+      "name": "explicit recommendation background extraction cursor commits",
+      "passed": true
+    },
+    {
+      "name": "actual model generates a conversation title after at least three messages",
+      "passed": true
+    },
+    {
+      "name": "actual model generates the consultation title",
+      "passed": true
+    },
+    {
+      "name": "actual model completes Chat reinterpretation",
+      "passed": true
+    },
+    {
+      "name": "Chat retry reuses one user-message ID and creates a new assistant message",
+      "passed": true
+    },
+    {
+      "name": "Chat retry creates no duplicate user message",
+      "passed": true
+    },
+    {
+      "name": "Chat retry does not inflate completed relationship turns",
+      "passed": true
+    },
+    {
+      "name": "subsequent real replies preserve both manually edited titles",
+      "passed": true
+    },
+    {
+      "name": "actual model completes and persists the Tarot interpretation",
+      "passed": true
+    },
+    {
+      "name": "Tarot reload preserves the authoritative card and orientation",
+      "passed": true
+    },
+    {
+      "name": "Tarot interpretation reload includes the same persisted draw",
+      "passed": true
+    },
+    {
+      "name": "actual Tarot retry generates a new durable interpretation",
+      "passed": true
+    },
+    {
+      "name": "Tarot retry preserves cards and never redraws",
+      "passed": true
+    },
+    {
+      "name": "fresh-conversation memory recall receives a real durable Chat response",
+      "passed": false
+    },
+    {
+      "name": "verified disposable conversation account cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "name": "preference seed",
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "name": "explicit Tarot recommendation",
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "name": "Tarot interpretation",
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "name": "fresh-conversation memory recall",
+      "status": "FAILED",
+      "code": "LLM_INVALID_RESPONSE"
+    },
+    {
+      "name": "failure",
+      "reason": "fresh-conversation memory recall receives a real durable Chat response"
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "scope": "Real model using an admin-created synthetic identity and admin-generated magic-link verification. No public signup/CAPTCHA or >16-turn summary-compaction claim. No assistant results seeded by service role.",
+  "modelBatch": "JumZipPersona-v3",
+  "usage": {
+    "measuredNeurons": null,
+    "note": "Edge envelopes do not expose provider usage;6of12 allowed operations ran."
+  }
+}

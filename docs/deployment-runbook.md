@@ -19,6 +19,8 @@ The approved model trial is Cloudflare Workers AI `@cf/qwen/qwen3-30b-a3b-fp8`, 
 4. Inspect the pending migration files and apply the generated transaction using `node node_modules/supabase/dist/supabase.js db query --linked --project-ref <project-ref> --file supabase/.temp/pending-migrations.sql`.
 5. Read back the migration history and run the relevant remote smoke. Never edit an applied migration to represent a new deployment.
 
+Migration 013 adds forward-only extraction/summary consent floors and the aggregated `blockedRelatedPeople` RPC field. Apply it before the updated Edge context reader, which fails closed when this privacy metadata is absent. Related-person deletion, or removal of an old blocked alias by rename/re-consent, retires only matching derived memory rows; raw messages are preserved. This follows the existing conservative forgetting policy: a scope/subject suppression can prevent future extraction for that subject, and any suppression prevents summary reconstruction. It is not a complete detector for unknown people or indirect references.
+
 Without `--after`, the preparation script writes `initial-migrations.sql` for an empty JumZip project only; its guard rejects existing history or a `profiles` table. Do not use it for updates. A SQL transaction failure rolls back the batch. After commit, use a reviewed forward migration to correct a problem; do not reset the hosted database.
 
 ## Edge release
@@ -51,7 +53,9 @@ These scripts create disposable, clearly marked accounts and remove them after c
 5. Run a real browser sequence: anonymous onboarding → conversation → model reply → persisted Tarot → reload → interpretation retry → Daily reuse → History/detail/export → account linking and restored records on a second session → deletion. Confirm a deleted token fails and all owned records are removed.
 6. Check mobile/desktop, keyboard navigation, reduced motion, actual CSP, cache headers, missing-route reload, CAPTCHA failure and network loss on the public URL. Fixture screenshots supplement, but never replace, this sequence.
 
-Cloudflare email verification is complete. Pages project `jumzip` reserves `jumzip.pages.dev`; a project hostname is not a verified public deployment. Turnstile and hosted anonymous/manual linking are enabled. The user chose Google login; Google Cloud currently requires the owner to enable two-step verification before OAuth provisioning can continue.
+Cloudflare email verification is complete. [jumzip.pages.dev](https://jumzip.pages.dev) is publicly deployed from the initial checked build; root render and desktop/mobile guest route reloads were actually inspected. This is not yet authenticated release acceptance. For direct upload, select the entire `dist` folder so its hierarchy is preserved. A ZIP uploaded as a single asset exceeds the 25 MB file limit for this build; folder upload succeeded with 174 files. Retain the previous deployment when publishing another revision.
+
+Turnstile and hosted anonymous/manual linking are enabled. Missing/invalid CAPTCHA requests actually fail; public success is still unverified. The user chose Google login; Google Cloud currently requires the owner to enable two-step verification before OAuth provisioning can continue. The frontend exposes a provider only after its public availability flag is enabled; no GitHub OAuth app was created.
 
 ## Retention and operational checks
 

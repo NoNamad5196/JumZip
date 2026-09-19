@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-09-19T19:56:12.031Z",
+  "mode": "LOCAL_PRODUCTION_BUILD_STRICT_CSP_FIXTURE",
+  "csp": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+  "realAuth": false,
+  "realBackendWrites": false,
+  "mockedActivityTouches": 2,
+  "routes": [
+    {
+      "name": "onboarding-invalid-nickname",
+      "width": 1440,
+      "validationVisible": true,
+      "events": [],
+      "errors": []
+    },
+    {
+      "name": "birth-input-invalid-date",
+      "width": 1440,
+      "validationVisible": true,
+      "events": [],
+      "errors": []
+    },
+    {
+      "name": "onboarding-invalid-nickname",
+      "width": 360,
+      "validationVisible": true,
+      "events": [],
+      "errors": []
+    },
+    {
+      "name": "birth-input-invalid-date",
+      "width": 360,
+      "validationVisible": true,
+      "events": [],
+      "errors": []
+    }
+  ],
+  "mutations": [],
+  "passed": true
+}

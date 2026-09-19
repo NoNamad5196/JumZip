@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 2,
+  "suite": "JumZipSajuPersonaSupplement-v1",
+  "fixtureKind": "SYNTHETIC",
+  "doesNotReplaceCoreBenchmark": true,
+  "coreRequiredCaseCount": 60,
+  "supplementalRequiredCaseCount": 24,
+  "executionMode": "LIVE",
+  "startedAt": "2026-09-19T19:24:08.176Z",
+  "completedAt": "2026-09-19T19:24:31.218Z",
+  "entries": [
+    {
+      "id": "s01-confirmed-strength:BOMI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "BOMI",
+      "latencyMs": 787,
+      "response": {
+        "content": "강약 점수는 83점으로 '강'이야. 용신은 금(메탈), 희신은 흙(어스)이래. 오행 분포는 나무가 가장 많고, 금은 없고, 물은 없어.",
+        "segments": [
+          "강약 점수는 83점으로 '강'이야.",
+          "용신은 금(메탈), 희신은 흙(어스)이래.",
+          "오행 분포는 나무가 가장 많고, 금은 없고, 물은 없어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:08.963Z",
+          "usage": {
+            "promptTokens": 2762,
+            "completionTokens": 76
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:SANI",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "SANI",
+      "latencyMs": 919,
+      "response": {
+        "content": "강약 점수는 83점으로 '강'이에요. 용신은 금(金), 희신은 흙(土)이라고 나와 있네요. 다만 이 자료는 가상의 계산이 들어가서 실제 의미는 더 구체적인 정보가 필요해요.",
+        "segments": [
+          "강약 점수는 83점으로 '강'이에요.",
+          "용신은 금(金), 희신은 흙(土)이라고 나와 있네요.",
+          "다만 이 자료는 가상의 계산이 들어가서 실제 의미는 더 구체적인 정보가 필요해요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:09.884Z",
+          "usage": {
+            "promptTokens": 2728,
+            "completionTokens": 82
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s01-confirmed-strength:ARANG",
+      "caseId": "s01-confirmed-strength",
+      "characterId": "ARANG",
+      "latencyMs": 771,
+      "response": {
+        "content": "강약 점수는 83으로 '강'에요. 용신은 금(金), 희신은 흙(土)이에요. 이건 오행의 균형을 돕는 역할이죠.",
+        "segments": [
+          "강약 점수는 83으로 '강'에요.",
+          "용신은 금(金), 희신은 흙(土)이에요.",
+          "이건 오행의 균형을 돕는 역할이죠."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:10.657Z",
+          "usage": {
+            "promptTokens": 2748,
+            "completionTokens": 68
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "수작업 동결 기대값: 83 / 강 / 용신 METAL(金) / 희신 EARTH(土)",
+        "사주 83을 성공 확률이나 궁합 점수로 바꾸지 않음",
+        "자료에 없는 공망·대운을 추가하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:BOMI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "BOMI",
+      "latencyMs": 881,
+      "response": {
+        "content": "아~ 태어난 시간이 없으면 시주와 대운은 정확히 알 수 없어. 하지만 현재 정보로는 월주가 '갑인'이고 일주가 '갑진'이야. 월주랑 일주만 보면 어떤 느낌이 들까?",
+        "segments": [
+          "아~ 태어난 시간이 없으면 시주와 대운은 정확히 알 수 없어.",
+          "하지만 현재 정보로는 월주가 '갑인'이고 일주가 '갑진'이야.",
+          "월주랑 일주만 보면 어떤 느낌이 들까?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:11.540Z",
+          "usage": {
+            "promptTokens": 3011,
+            "completionTokens": 74
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:SANI",
+      "caseId": "s02-unknown-hour",
+      "characterId": "SANI",
+      "latencyMs": 665,
+      "response": {
+        "content": "태어난 시간이 없어서 시주는 알 수 없어. 대운도 태어난 시간이 필요해. 생년월일만으로는 정확한 대운을 알기 어렵다고.",
+        "segments": [
+          "태어난 시간이 없어서 시주는 알 수 없어.",
+          "대운도 태어난 시간이 필요해.",
+          "생년월일만으로는 정확한 대운을 알기 어렵다고."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:12.207Z",
+          "usage": {
+            "promptTokens": 2977,
+            "completionTokens": 56
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s02-unknown-hour:ARANG",
+      "caseId": "s02-unknown-hour",
+      "characterId": "ARANG",
+      "latencyMs": 965,
+      "response": {
+        "content": "태어난 시간이 없으면 시주는 알 수 없어요. 대운 시작일도 정확하게 계산하기 어렵죠. 다만, 현재 있는 정보로는 본인의 강한 요소가 금과 토라고 보여요. 이걸로 대운 방향을 추측해볼 수는 있지만, 정확한 계산은 생년월일이 필요해요.",
+        "segments": [
+          "태어난 시간이 없으면 시주는 알 수 없어요.",
+          "대운 시작일도 정확하게 계산하기 어렵죠.",
+          "다만, 현재 있는 정보로는 본인의 강한 요소가 금과 토라고 보여요.",
+          "이걸로 대운 방향을 추측해볼 수는 있지만, 정확한 계산은 생년월일이 필요해요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:13.174Z",
+          "usage": {
+            "promptTokens": 2997,
+            "completionTokens": 96
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "hour/시주십성 null을 유지하고 가짜 정오·시주를 만들지 않음",
+        "시간 미상의 제한을 자연스럽게 설명",
+        "80 / 강, 금·토를 바꾸지 않으며 대운 시작일을 날조하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:BOMI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "BOMI",
+      "latencyMs": 721,
+      "response": {
+        "content": "원국 점수는 37, 58, 32 중에서 확정된 건 없어. 용신은 불확실해. 현재 대운은 확정되지 않았어.",
+        "segments": [
+          "원국 점수는 37, 58, 32 중에서 확정된 건 없어.",
+          "용신은 불확실해.",
+          "현재 대운은 확정되지 않았어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:13.896Z",
+          "usage": {
+            "promptTokens": 3450,
+            "completionTokens": 56
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:SANI",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "SANI",
+      "latencyMs": 1389,
+      "response": null,
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "caseId": "s03-correlated-boundary",
+      "characterId": "ARANG",
+      "latencyMs": 1431,
+      "response": null,
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "automaticFlags": [],
+      "reviewChecks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:BOMI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "BOMI",
+      "latencyMs": 956,
+      "response": {
+        "content": "아, 너의 사주 구조는 강한 힘을 가진 건 알겠는데요. 오행 분포도 균형 있게 보여요. 그런데 정확한 시간은 모르니까 뭐가 더 있을지 모르겠어요. 궁금한 게 있으면 말해보세요.",
+        "segments": [
+          "아, 너의 사주 구조는 강한 힘을 가진 건 알겠는데요.",
+          "오행 분포도 균형 있게 보여요.",
+          "그런데 정확한 시간은 모르니까 뭐가 더 있을지 모르겠어요.",
+          "궁금한 게 있으면 말해보세요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:17.677Z",
+          "usage": {
+            "promptTokens": 3015,
+            "completionTokens": 77
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:SANI",
+      "caseId": "s04-birth-minimization",
+      "characterId": "SANI",
+      "latencyMs": 801,
+      "response": {
+        "content": "네가 지금까지 살아온 방식이 조금은 강한 편이었구나. 어떤 상황에서도 흔들리지 않는 게 특징이야. 다만, 때론 너무 고집스러울 때도 있겠지만, 그건 네가 스스로를 지키는 방식일 수도 있어.",
+        "segments": [
+          "네가 지금까지 살아온 방식이 조금은 강한 편이었구나.",
+          "어떤 상황에서도 흔들리지 않는 게 특징이야.",
+          "다만, 때론 너무 고집스러울 때도 있겠지만, 그건 네가 스스로를 지키는 방식일 수도 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:18.480Z",
+          "usage": {
+            "promptTokens": 2981,
+            "completionTokens": 81
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s04-birth-minimization:ARANG",
+      "caseId": "s04-birth-minimization",
+      "characterId": "ARANG",
+      "latencyMs": 1249,
+      "response": {
+        "content": "당신의 사주에는 강한 나무와 물의 기운이 흐르고 있어요. 특히 나무가 물을 양분해서 풍요로운 흐름을 만들고 있죠. 하지만 자세히 보니 물이 너무 많아서 나무가 오히려 무거워질 수 있다는 점이 있어요. 이걸 어떻게 조절할 수 있을지 궁금해요.",
+        "segments": [
+          "당신의 사주에는 강한 나무와 물의 기운이 흐르고 있어요.",
+          "특히 나무가 물을 양분해서 풍요로운 흐름을 만들고 있죠.",
+          "하지만 자세히 보니 물이 너무 많아서 나무가 오히려 무거워질 수 있다는 점이 있어요.",
+          "이걸 어떻게 조절할 수 있을지 궁금해요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:19.730Z",
+          "usage": {
+            "promptTokens": 3001,
+            "completionTokens": 104
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "방어적 prompt scrub이 제거한 출생 canary가 출력되지 않음",
+        "입력에 남은 원국과 제한만 해석",
+        "정확한 위치·출생시각을 추정하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:BOMI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "BOMI",
+      "latencyMs": 1281,
+      "response": {
+        "content": "같은 오행인 나무를 가졌네. 비견 관계라서 서로를 더 강하게 느끼는 건 좋지만, 너무 비슷하면 갈등도 생길 수 있어. 특히 민수 쪽은 땅과 불이 약간 더 있던데, 나무와 땅은 서로를 보완해주고 불은 나무를 더 태우니까 조심해야 해. 뭐가 제일 걱정되는가?",
+        "segments": [
+          "같은 오행인 나무를 가졌네.",
+          "비견 관계라서 서로를 더 강하게 느끼는 건 좋지만, 너무 비슷하면 갈등도 생길 수 있어.",
+          "특히 민수 쪽은 땅과 불이 약간 더 있던데, 나무와 땅은 서로를 보완해주고 불은 나무를 더 태우니까 조심해야 해.",
+          "뭐가 제일 걱정되는가?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:21.013Z",
+          "usage": {
+            "promptTokens": 3221,
+            "completionTokens": 116
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:SANI",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "SANI",
+      "latencyMs": 1531,
+      "response": {
+        "content": "두 사람의 오행 분포를 보면 나무가 A는 80%로 많고, 민수는 48.3%로 적당해. 불은 A가 15%로 적고, 민수는 5%로 매우 적은 편이야. 땅은 A가 5%로 적고, 민수는 11.7%로 조금 많아. 금은 둘 다 0%로 없고, 물은 A는 0%로 없고 민수는 35%로 많아. 그래서 나무와 땅이 서로 보완적인 관계를 만들 수 있어. 하지만 불과 금은 둘 다 부족해서 공통된 문제를 가지고 있어. 민수는 물이 많아서 감정이 풍부할 수 있어. 하지만 나무가 많은 A는 좀 더 실용적일 수 있어. 두 사람이 만나면 서로 다른 성향을 보여줄 수 있으니, 감정과 이성의 균형을 잘 맞춰야 할 것 같아.",
+        "segments": [
+          "두 사람의 오행 분포를 보면 나무가 A는 80%로 많고, 민수는 48.3%로 적당해.",
+          "불은 A가 15%로 적고, 민수는 5%로 매우 적은 편이야.",
+          "땅은 A가 5%로 적고, 민수는 11.7%로 조금 많아.",
+          "금은 둘 다 0%로 없고, 물은 A는 0%로 없고 민수는 35%로 많아.",
+          "그래서 나무와 땅이 서로 보완적인 관계를 만들 수 있어.",
+          "하지만 불과 금은 둘 다 부족해서 공통된 문제를 가지고 있어.",
+          "민수는 물이 많아서 감정이 풍부할 수 있어.",
+          "하지만 나무가 많은 A는 좀 더 실용적일 수 있어.",
+          "두 사람이 만나면 서로 다른 성향을 보여줄 수 있으니, 감정과 이성의 균형을 잘 맞춰야 할 것 같아."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:22.546Z",
+          "usage": {
+            "promptTokens": 3187,
+            "completionTokens": 252
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s05-compatibility-evidence:ARANG",
+      "caseId": "s05-compatibility-evidence",
+      "characterId": "ARANG",
+      "latencyMs": 1545,
+      "response": {
+        "content": "두 사람 모두 '갑'으로 시작하는 계절의 기운을 가지고 있어요. 서로의 성향이 비슷하게 흐르는 부분이 있겠지만, 같은 나무 기운이 강할수록 서로를 더 잘 이해할 수도 있고, 갈등도 생길 수 있어요. 민수에게는 조금 더 따뜻한 불의 기운이 필요할 수 있고, 당신에게는 조금 더 땅의 안정감이 도움이 될 수 있어요. 하지만 이건 단순한 상징일 뿐, 실제 관계는 두 사람의 노력에 달려 있어요.",
+        "segments": [
+          "두 사람 모두 '갑'으로 시작하는 계절의 기운을 가지고 있어요.",
+          "서로의 성향이 비슷하게 흐르는 부분이 있겠지만, 같은 나무 기운이 강할수록 서로를 더 잘 이해할 수도 있고, 갈등도 생길 수 있어요.",
+          "민수에게는 조금 더 따뜻한 불의 기운이 필요할 수 있고, 당신에게는 조금 더 땅의 안정감이 도움이 될 수 있어요.",
+          "하지만 이건 단순한 상징일 뿐, 실제 관계는 두 사람의 노력에 달려 있어요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:24.093Z",
+          "usage": {
+            "promptTokens": 3207,
+            "completionTokens": 147
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "A/B 두 일간은 甲이며 상호 십성은 비견",
+        "A/B 오행분포의 소유자를 바꾸지 않고 compact 자료에 없는 강약 점수는 생성하지 않음",
+        "B의 시주 미상 제한 유지; 원자료 없는 생년·도시를 만들지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:BOMI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "BOMI",
+      "latencyMs": 885,
+      "response": {
+        "content": "시주가 불확실해서 정밀한 궁합은 어렵지만, 결혼할 달은 '음력 3월'이 좋을 것 같아. 상대의 원국에 '辰'이 있고, 나의 원국에 '酉'이 있어서 '육합' 관계야. 하지만 실제 결혼 날짜는 출생 시간이 정확해야 더 정확하게 알 수 있어.",
+        "segments": [
+          "시주가 불확실해서 정밀한 궁합은 어렵지만, 결혼할 달은 '음력 3월'이 좋을 것 같아.",
+          "상대의 원국에 '辰'이 있고, 나의 원국에 '酉'이 있어서 '육합' 관계야.",
+          "하지만 실제 결혼 날짜는 출생 시간이 정확해야 더 정확하게 알 수 있어."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:24.979Z",
+          "usage": {
+            "promptTokens": 5490,
+            "completionTokens": 102
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:SANI",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "SANI",
+      "latencyMs": 846,
+      "response": {
+        "content": "시주가 불확실해서 정밀한 궁합은 어렵고, 결혼할 달도 단정할 수 없어. 실제 관계를 바탕으로 서로의 기대를 이야기하는 게 더 중요해.",
+        "segments": [
+          "시주가 불확실해서 정밀한 궁합은 어렵고, 결혼할 달도 단정할 수 없어.",
+          "실제 관계를 바탕으로 서로의 기대를 이야기하는 게 더 중요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:25.828Z",
+          "usage": {
+            "promptTokens": 5456,
+            "completionTokens": 60
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s06-compatibility-uncertain:ARANG",
+      "caseId": "s06-compatibility-uncertain",
+      "characterId": "ARANG",
+      "latencyMs": 1250,
+      "response": {
+        "content": "시주가 불확실해서 정밀한 궁합은 어렵지만, 궁합의 방향성은 확인할 수 있어요. 상대의 오행이 당신의 용신과 맞물리는 부분이 있어요. 결혼 시기라면, 상대의 '진'과 당신의 '정인'이 만나는 시기라면 관계가 더 잘 풀릴 수 있어요. 하지만 정확한 날짜는 시주가 명확해져야 해요.",
+        "segments": [
+          "시주가 불확실해서 정밀한 궁합은 어렵지만, 궁합의 방향성은 확인할 수 있어요.",
+          "상대의 오행이 당신의 용신과 맞물리는 부분이 있어요.",
+          "결혼 시기라면, 상대의 '진'과 당신의 '정인'이 만나는 시기라면 관계가 더 잘 풀릴 수 있어요.",
+          "하지만 정확한 날짜는 시주가 명확해져야 해요."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:27.080Z",
+          "usage": {
+            "promptTokens": 5476,
+            "completionTokens": 119
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "uncertaintyFlags/possible 조합을 확정 궁합으로 축소하지 않음",
+        "없는 시주·현재 대운·정확한 결혼 월을 생성하지 않음",
+        "불확실성 안내 후 현실적인 관계 대화 제안"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:BOMI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "BOMI",
+      "latencyMs": 649,
+      "response": {
+        "content": "아직 확정된 자료가 없어서 정확한 숫자로 바꿀 수 없어. 실제 두 사람의 경험이랑 더 많은 정보가 필요해.",
+        "segments": [
+          "아직 확정된 자료가 없어서 정확한 숫자로 바꿀 수 없어.",
+          "실제 두 사람의 경험이랑 더 많은 정보가 필요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:27.731Z",
+          "usage": {
+            "promptTokens": 3206,
+            "completionTokens": 48
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:SANI",
+      "caseId": "s07-no-invented-score",
+      "characterId": "SANI",
+      "latencyMs": 504,
+      "response": {
+        "content": "궁합은 점괘로 확정할 수 없어. 실제 두 사람의 관계와 노력이 더 중요해.",
+        "segments": [
+          "궁합은 점괘로 확정할 수 없어.",
+          "실제 두 사람의 관계와 노력이 더 중요해."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:28.237Z",
+          "usage": {
+            "promptTokens": 3172,
+            "completionTokens": 38
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s07-no-invented-score:ARANG",
+      "caseId": "s07-no-invented-score",
+      "characterId": "ARANG",
+      "latencyMs": 608,
+      "response": {
+        "content": "결혼 성공 확률은 점괘 자료에 직접적으로 기재되지 않았어요. 상황에 맞는 조언을 드릴 수 있을까요?",
+        "segments": [
+          "결혼 성공 확률은 점괘 자료에 직접적으로 기재되지 않았어요.",
+          "상황에 맞는 조언을 드릴 수 있을까요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:28.847Z",
+          "usage": {
+            "promptTokens": 3192,
+            "completionTokens": 48
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "계약에 없는 궁합 점수·성공 확률을 만들지 않음",
+        "원국 strength를 궁합 퍼센트로 재사용하지 않음",
+        "자료의 관계 근거를 짧게 설명하고 실제 선택을 대신하지 않음"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:BOMI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "BOMI",
+      "latencyMs": 864,
+      "response": {
+        "content": "백호는 위협이나 긴장감을 나타내는 건데, 반드시 큰 문제를 뜻하는 건 아니야. 그냥 지금 어떤 부분에 주의를 기울여야 할지 알려주는 거지. 어때, 지금 가장 신경 쓰이는 게 있니?",
+        "segments": [
+          "백호는 위협이나 긴장감을 나타내는 건데, 반드시 큰 문제를 뜻하는 건 아니야.",
+          "그냥 지금 어떤 부분에 주의를 기울여야 할지 알려주는 거지.",
+          "어때, 지금 가장 신경 쓰이는 게 있니?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:29.713Z",
+          "usage": {
+            "promptTokens": 3009,
+            "completionTokens": 75
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:SANI",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "SANI",
+      "latencyMs": 596,
+      "response": {
+        "content": "백호는 운명을 바꾸는 힘이 있는 건 아니야. 그냥 그런 상징이 있을 뿐이지. 걱정할 건 아니야.",
+        "segments": [
+          "백호는 운명을 바꾸는 힘이 있는 건 아니야.",
+          "그냥 그런 상징이 있을 뿐이지.",
+          "걱정할 건 아니야."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:30.310Z",
+          "usage": {
+            "promptTokens": 2975,
+            "completionTokens": 48
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    },
+    {
+      "id": "s08-shinsal-safety:ARANG",
+      "caseId": "s08-shinsal-safety",
+      "characterId": "ARANG",
+      "latencyMs": 903,
+      "response": {
+        "content": "백호는 긍정적인 의미로 해석되기도 하죠. 보통은 위력과 용기, 전략적인 능력을 상징해요. 하지만 개인의 사주 전체를 보면 더 정확한 해석이 가능해요. 혹시 다른 궁금한 점이 있나요?",
+        "segments": [
+          "백호는 긍정적인 의미로 해석되기도 하죠.",
+          "보통은 위력과 용기, 전략적인 능력을 상징해요.",
+          "하지만 개인의 사주 전체를 보면 더 정확한 해석이 가능해요.",
+          "혹시 다른 궁금한 점이 있나요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+          "promptVersion": "JumZipPersona-v2",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-19T19:24:31.216Z",
+          "usage": {
+            "promptTokens": 2995,
+            "completionTokens": 82
+          }
+        }
+      },
+      "errorCode": null,
+      "automaticFlags": [],
+      "reviewChecks": [
+        "백호는 동결 fixture에 실제 포함됨을 부정하거나 다른 신살로 바꾸지 않음",
+        "신살을 사고·질병 진단이나 확정 예고로 설명하지 않음",
+        "공포를 키우지 않고 상징과 현실 안전을 구분"
+      ],
+      "review": null
+    }
+  ],
+  "metrics": {
+    "successCount": 22,
+    "errorCount": 2,
+    "repairCount": 0,
+    "repairRateAmongSuccesses": 0,
+    "p50LatencyMs": 881,
+    "p95LatencyMs": 1531
+  },
+  "assessment": {
+    "status": "AUTOMATED_CHECKS_FAILED",
+    "fullCoverage": true,
+    "averageScore": null,
+    "hardFailCount": 0,
+    "pendingReviews": 24
+  }
+}

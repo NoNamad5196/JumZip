@@ -1,0 +1,69 @@
+{
+  "at": "2026-09-19T20:24:06.015Z",
+  "scope": "Real structured extraction/summary plus remote owner consent/persistence; synthetic USER fixture rows only. No Chat reply, intent, title, public signup or background-hook claim.",
+  "userFixtureCount": 17,
+  "expectedInitialCalls": 6,
+  "maximumInitialCalls": 7,
+  "maximumHttpCallsIncludingRepair": 14,
+  "maximumAccountedNeurons": 250,
+  "stages": [
+    "three extraction batches, with real summary after seventeen USER turns",
+    "private turn: zero provider calls",
+    "profile OFF: zero provider calls and empty derived reply context",
+    "disable/delete an actually extracted USER memory, repeat preference, inspect suppression",
+    "related-person opt-in and real extraction",
+    "related-person withdrawal and repeat: blocked before provider",
+    "verified cleanup"
+  ],
+  "reserveBasis": "Before each HTTP request reserve complete serialized UTF-8 body bytes as input tokens plus configured maximum output tokens, at official model neuron/token rates. Missing usage retains the reserve; no unaccounted retry.",
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "httpCalls": 1,
+  "initialCalls": 1,
+  "accountedNeurons": 18.512,
+  "measuredNeurons": 18.51158905029297,
+  "allUsageMeasured": true,
+  "checks": [
+    {
+      "name": "remote consent-state contract is available",
+      "passed": true
+    },
+    {
+      "name": "verified disposable maintenance account cleanup",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "stage": "SUMMARY_BATCH_1",
+      "attempt": 1,
+      "repair": false,
+      "httpStatus": 200,
+      "latencyMs": 3543,
+      "reservedNeurons": 29.117125,
+      "chargedNeurons": 18.512,
+      "measuredNeurons": 18.51158905029297,
+      "estimated": false,
+      "promptTokens": 708,
+      "completionTokens": 500,
+      "finishReason": "length"
+    },
+    {
+      "stage": "SUMMARY_BATCH_1",
+      "outcome": "FAILED",
+      "code": "LLM_INVALID_RESPONSE",
+      "failedCheck": null
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "overallOutcome": "FAILED",
+  "observedFailure": "The initial eight-user-message extraction attempted six candidates and exhausted the500-token output cap, truncating the sixth evidence string. finish_reason=length correctly blocked persistence; this was output length, not hidden reasoning or schema omission.",
+  "unexecutedGates": [
+    "structured preference persistence",
+    "seventeen-turn summary",
+    "private source no-call",
+    "profile OFF no-call",
+    "disabled/deleted memory non-resurrection",
+    "related-person opt-in/withdrawal"
+  ],
+  "cleanupVerified": true
+}

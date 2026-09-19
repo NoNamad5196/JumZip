@@ -2,6 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { CharacterId, ApiError, SpreadType, TarotCard } from '../contracts/index.ts';
 import type { ContextMessage, ContextMemory } from '../persona/context.ts';
 import type { RelationshipState } from '../persona/config.ts';
+import { hasBlockedRelatedAlias } from '../persona/memory.ts';
 import { buildTarotInterpretationData } from '../domain/tarot.ts';
 import { buildSajuInterpretationData, type FullSajuResult } from '../domain/full-saju.ts';
 import { buildCompatibilityInterpretationData, type SajuCompatibilityResult } from '../domain/saju-compatibility.ts';
@@ -100,12 +101,17 @@ export function createRepository(client: SupabaseClient): Repository {
     fail: (executionId, error, httpStatus) => rpc('fail_execution', { p_execution_id: executionId, p_error: error, p_http_status: httpStatus }),
     async context(userId, claim) {
       // These service-role reads have explicit owner and fixed conversation filters.
-      const [turns, conversation, profile] = await Promise.all([
+      const [turns, conversation, profile, memoryPrivacy] = await Promise.all([
         client.from('messages').select('created_at').eq('user_id', userId).eq('conversation_id', claim.conversationId).eq('sender', 'USER').order('created_at', { ascending: false }).order('id', { ascending: false }).limit(17),
         client.from('conversations').select('summary,relationship_state').eq('user_id', userId).eq('id', claim.conversationId).single(),
         client.from('profiles').select('memory_enabled').eq('id', userId).single(),
+        // RPC aggregation supplies the complete owner-scoped list without the
+        // PostgREST table row cap silently dropping a known blocked identity.
+        client.rpc('memory_context_state', { p_user_id: userId, p_conversation_id: claim.conversationId }),
       ]);
-      if (turns.error || conversation.error || profile.error) throw new ApiFailure('INTERNAL_ERROR', 500, '대화 맥락을 불러오지 못했습니다.', true);
+      if (turns.error || conversation.error || profile.error || memoryPrivacy.error || !Array.isArray(memoryPrivacy.data?.blockedRelatedPeople)) throw new ApiFailure('INTERNAL_ERROR', 500, '대화 맥락을 불러오지 못했습니다.', true);
+      const blocked = memoryPrivacy.data.blockedRelatedPeople as { id: string; alias: string }[];
+      const blockedSubjects = new Set(blocked.map(person => `RELATED_PERSON:${person.id}`));
       let messageQuery = client.from('messages').select('id,sender,content,created_at').eq('user_id', userId).eq('conversation_id', claim.conversationId).order('created_at', { ascending: false }).order('id', { ascending: false });
       const earliest = turns.data?.at(-1)?.created_at;
       if (earliest) messageQuery = messageQuery.gte('created_at', earliest);
@@ -141,8 +147,12 @@ export function createRepository(client: SupabaseClient): Repository {
       return {
         relationshipState: parseRelationshipStage(conversation.data?.relationship_state),
         recentMessages: [...(messages.data ?? [])].reverse().filter(row => ['USER', 'ASSISTANT'].includes(row.sender)).map(row => ({ id: row.id, role: row.sender.toLowerCase() as 'user' | 'assistant', content: row.content })),
-        summary: profile.data?.memory_enabled ? conversation.data?.summary ?? '' : '',
-        memories: [...(globalMemories.data ?? []), ...(characterMemories.data ?? [])].map(row => ({ id: row.id, scope: row.scope, characterId: row.character_id, content: row.content, category: row.category, subject: row.subject, importance: row.importance, updatedAt: row.updated_at, disabled: Boolean(row.disabled_at) })),
+        summary: profile.data?.memory_enabled && !hasBlockedRelatedAlias(conversation.data?.summary ?? '', blocked) ? conversation.data?.summary ?? '' : '',
+        // A pre-existing row may have been attributed to USER before this alias
+        // became a known non-consenting person. Exclude it without deleting it.
+        memories: [...(globalMemories.data ?? []), ...(characterMemories.data ?? [])]
+          .filter(row => !blockedSubjects.has(row.subject) && !hasBlockedRelatedAlias(row.content, blocked))
+          .map(row => ({ id: row.id, scope: row.scope, characterId: row.character_id, content: row.content, category: row.category, subject: row.subject, importance: row.importance, updatedAt: row.updated_at, disabled: Boolean(row.disabled_at) })),
         ...(toolResult ? { toolResult } : {}),
       };
     },
