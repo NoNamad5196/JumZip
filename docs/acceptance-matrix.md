@@ -10,6 +10,10 @@ Follow-up: the631-test deletion-race checkpoint is now `b731b5595d9e694e7d660214
 
 The font-export frontend received Pages Success at approximately07:52 KST; [public byte/render verification](evidence/frontend-variable-font-public.json) confirms all10 build files and4 guest views. This deploys the frontend correction only. The server remains Qwen/Persona-v4/Intent-v1; challenge DNS failures and successful public signup remain unresolved.
 
+That checkpoint is now pushed as `944baa52062ccaffa5af308c9c03033a616d4807` with [actual CI success](https://github.com/NoNamad5196/JumZip/actions/runs/35474690936). A newly found Saju retry-focus omission is being corrected in a separate batch; its results must not be attributed to this checkpoint.
+
+The Saju retry-focus correction subsequently passes744 tests/3 live skips and67 actual local Auth/DB/RPC checks with generator doubles. It preserves all five original question types and immutable result/asOf, rejects invalid context and retains replay semantics. Owned cleanup is complete. [Evidence and limits](saju-retry-focus.md); no deployed-Edge or semantic-model pass is claimed by this local test.
+
 | Milestone | Implemented and verified evidence | Remaining acceptance |
 | --- | --- | --- |
 | M0 Bootstrap | React/Vite/TS, pnpm lock, lint, CI; b3124e2 actual CI passed with604 tests /3 live skips and6 browser tests; Docker recovered, local001–015/Edge/native provider exercised | Next checkpoint CI; local Vector log collector is stopped until a supported endpoint is configured |

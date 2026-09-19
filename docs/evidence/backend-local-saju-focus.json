@@ -1,0 +1,463 @@
+{
+  "status": "PASS",
+  "startupAttempts": [
+    {
+      "executionEnvironment": "workspace sandbox",
+      "outcome": "LOCAL_STATUS_UNAVAILABLE",
+      "diagnostic": "Supabase CLI status failed with EPERM during local file access; raw stdout/stderr were not printed or persisted.",
+      "syntheticUsersCreated": 0,
+      "authRequests": 0,
+      "restRequests": 0,
+      "modelRequests": 0,
+      "externalRequests": 0
+    },
+    {
+      "executionEnvironment": "approved elevated local CLI access",
+      "outcome": "PASS",
+      "sourceChangedBetweenAttempts": false,
+      "scopeChangedBetweenAttempts": false
+    }
+  ],
+  "at": "2026-09-19T23:05:01.758Z",
+  "target": "http://127.0.0.1:54321",
+  "stage": "FOCUS_QUERY_BOUNDARIES",
+  "scope": "LOCAL_DATABASE_INTEGRATION_WITH_GENERATOR_DOUBLE",
+  "modelValidation": "NOT_TESTED_GENERATOR_DOUBLE",
+  "actualEdgeHTTP": false,
+  "hostedDatabase": false,
+  "syntheticOnly": true,
+  "credentialsOrSessionsPersisted": false,
+  "rawIdentitiesReported": false,
+  "sourceHashes": {
+    "tests/backend/live-local-saju-focus-smoke.mts": "5148fa40ebcba013951229fec0bed15e4bed702502d088c4f08e1391e99df31e",
+    "supabase/functions/_shared/orchestration/saju.ts": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+    "supabase/functions/_shared/persistence/saju.ts": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+    "supabase/functions/_shared/persistence/repository.ts": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+    "supabase/functions/_shared/domain/full-saju.ts": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+    "supabase/functions/_shared/domain/fortune-timing.ts": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+    "supabase/functions/_shared/validation/requests.ts": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+    "supabase/migrations/202609190001_core.sql": "9dcde35110e20f06e8650d4af9deeb955c1df113d896a149920be3ddc1dffbfb",
+    "supabase/migrations/202609190002_execution_rpcs.sql": "251ef4f6a93fc34d1a428a27e44f3cc9030f2eb01ea8e616bf714ab028c21503",
+    "supabase/migrations/202609190003_lifecycle.sql": "836204014eea3b6026f04ed44554e410275f6e45fe14951e338061a89e3e95c5",
+    "supabase/migrations/202609190004_birth_dates.sql": "990135dba0faba5335eb63173e89f838ad4517a6977c541e3365a73ed6e8037b",
+    "supabase/migrations/202609190005_saju_persistence.sql": "ccc17b99c0f64530cdd87922dc91f64ae6796e0fa9b48fc9e5a61b82833da24b",
+    "supabase/migrations/202609190006_compatibility_persistence.sql": "1865a89a21644d55463a1c68faaecaa0c99856d86a9295286b17ed92d4ea19f0",
+    "supabase/migrations/202609190007_execution_guards.sql": "8d0870a4fab76f1966358fe50c7ab84a2e295c21e4d701ebe0d086c7f54f5c5f",
+    "supabase/migrations/202609190008_titles_and_relationship.sql": "c0b4b534eff7f3a4dfe2909a508d809fdc5fb02d4a4ce9d26031dab5469fb3c3",
+    "supabase/migrations/202609190009_location_cache.sql": "81b4aa87d12af27c6f6cafee25fed11fab48ebcf5ed1b6b124a525b84d0d9ced",
+    "supabase/migrations/202609190010_consultation_lifecycle.sql": "10fc6361e291f5ae40f1eeeeaac649cfa19b061a9a5b8cfb3aa098c1b8ea0396",
+    "supabase/migrations/202609190011_account_cascade.sql": "f5d456f3faf32ae4be8d77629473f6d0308e19ccbb835812152d3b26c4b754e9",
+    "supabase/migrations/202609190012_saju_timing_projection.sql": "11075373e26af38c484232caab923cb70f58b8c59f925bc23c23d52126f998be",
+    "supabase/migrations/202609190013_memory_consent_boundaries.sql": "5568aba43b5e1ea3957e7bd9f142a7f5b1db016092ef2630b243b28855075693",
+    "supabase/migrations/202609190014_history_memory_selection.sql": "5d357b1352bbe591194bd026daaa397758e7b329d80d43e6d2874dd7f15e65c1",
+    "supabase/migrations/202609190015_deleted_consultation_guards.sql": "f3095a46f43c0a38168f80f7d7db961a67bd0d6441869dbda5c45eeaf5068113"
+  },
+  "sourceFrozen": true,
+  "checks": [
+    {
+      "name": "GENERAL: initial generator double yields stored PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: actual owned DB focus matches exactly",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: actual snapshot preserves supplied server asOf",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: actual retry RPC completes original reading",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: original and retry prompt keep exact focus",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: retry tool projection equals the initial persisted projection",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: generated context omits raw birth date and coordinates",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: retry never recalculates, rereads birth profile, resaves or changes asOf",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: identical request UUID replays without application work",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: DB deterministic snapshot is byte-canonically unchanged",
+      "passed": true
+    },
+    {
+      "name": "GENERAL: one explicitly labeled double message after replay",
+      "passed": true
+    },
+    {
+      "name": "CAREER: initial generator double yields stored PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "CAREER: actual owned DB focus matches exactly",
+      "passed": true
+    },
+    {
+      "name": "CAREER: actual snapshot preserves supplied server asOf",
+      "passed": true
+    },
+    {
+      "name": "CAREER: actual retry RPC completes original reading",
+      "passed": true
+    },
+    {
+      "name": "CAREER: original and retry prompt keep exact focus",
+      "passed": true
+    },
+    {
+      "name": "CAREER: retry tool projection equals the initial persisted projection",
+      "passed": true
+    },
+    {
+      "name": "CAREER: generated context omits raw birth date and coordinates",
+      "passed": true
+    },
+    {
+      "name": "CAREER: retry never recalculates, rereads birth profile, resaves or changes asOf",
+      "passed": true
+    },
+    {
+      "name": "CAREER: identical request UUID replays without application work",
+      "passed": true
+    },
+    {
+      "name": "CAREER: DB deterministic snapshot is byte-canonically unchanged",
+      "passed": true
+    },
+    {
+      "name": "CAREER: one explicitly labeled double message after replay",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: initial generator double yields stored PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: actual owned DB focus matches exactly",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: actual snapshot preserves supplied server asOf",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: actual retry RPC completes original reading",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: original and retry prompt keep exact focus",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: retry tool projection equals the initial persisted projection",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: generated context omits raw birth date and coordinates",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: retry never recalculates, rereads birth profile, resaves or changes asOf",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: identical request UUID replays without application work",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: DB deterministic snapshot is byte-canonically unchanged",
+      "passed": true
+    },
+    {
+      "name": "RELATIONSHIP: one explicitly labeled double message after replay",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: initial generator double yields stored PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: actual owned DB focus matches exactly",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: actual snapshot preserves supplied server asOf",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: actual retry RPC completes original reading",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: original and retry prompt keep exact focus",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: retry tool projection equals the initial persisted projection",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: generated context omits raw birth date and coordinates",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: retry never recalculates, rereads birth profile, resaves or changes asOf",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: identical request UUID replays without application work",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: DB deterministic snapshot is byte-canonically unchanged",
+      "passed": true
+    },
+    {
+      "name": "YEAR_FLOW: one explicitly labeled double message after replay",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: initial generator double yields stored PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: actual owned DB focus matches exactly",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: actual snapshot preserves supplied server asOf",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: actual retry RPC completes original reading",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: original and retry prompt keep exact focus",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: retry tool projection equals the initial persisted projection",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: generated context omits raw birth date and coordinates",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: retry never recalculates, rereads birth profile, resaves or changes asOf",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: identical request UUID replays without application work",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: DB deterministic snapshot is byte-canonically unchanged",
+      "passed": true
+    },
+    {
+      "name": "MONTH_FLOW: one explicitly labeled double message after replay",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects another owner through actual service-role filters",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects a wrong conversation through actual DB query",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects a missing consultation",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects the wrong fortune type",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects empty focus without GENERAL fallback",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects lowercase focus without GENERAL fallback",
+      "passed": true
+    },
+    {
+      "name": "readFocus rejects whitespace focus without GENERAL fallback",
+      "passed": true
+    },
+    {
+      "name": "identity 1: real quota unchanged by same-UUID replay",
+      "passed": true
+    },
+    {
+      "name": "identity 2: real quota unchanged by same-UUID replay",
+      "passed": true
+    },
+    {
+      "name": "identity 3: real quota unchanged by same-UUID replay",
+      "passed": true
+    },
+    {
+      "name": "scoped source and migration hashes remain frozen throughout integration",
+      "passed": true
+    },
+    {
+      "name": "no code attempted external, model or Edge requests",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "focus": "GENERAL",
+      "storedFocus": "GENERAL",
+      "initialStatus": "PARTIAL",
+      "retryStatus": "SUCCEEDED",
+      "replayStatus": "SUCCEEDED",
+      "calls": {
+        "calculate": 1,
+        "generate": 2,
+        "readFocus": 1,
+        "readProfile": 1,
+        "save": 1,
+        "context": 2,
+        "now": 1
+      },
+      "snapshotSha256": "29cb46f188c782c319906c36d53fdc404d62c53a30ee4038c967547e01cb60ad",
+      "persistedAsOf": "2026-09-20T00:00:00.000Z",
+      "engineVersion": "manseryeok-2.0.0",
+      "ruleVersion": "JumZipSajuRules-v1",
+      "conventionVersion": "JumZipSajuConvention-v1"
+    },
+    {
+      "focus": "CAREER",
+      "storedFocus": "CAREER",
+      "initialStatus": "PARTIAL",
+      "retryStatus": "SUCCEEDED",
+      "replayStatus": "SUCCEEDED",
+      "calls": {
+        "calculate": 1,
+        "generate": 2,
+        "readFocus": 1,
+        "readProfile": 1,
+        "save": 1,
+        "context": 2,
+        "now": 1
+      },
+      "snapshotSha256": "29cb46f188c782c319906c36d53fdc404d62c53a30ee4038c967547e01cb60ad",
+      "persistedAsOf": "2026-09-20T00:00:00.000Z",
+      "engineVersion": "manseryeok-2.0.0",
+      "ruleVersion": "JumZipSajuRules-v1",
+      "conventionVersion": "JumZipSajuConvention-v1"
+    },
+    {
+      "focus": "RELATIONSHIP",
+      "storedFocus": "RELATIONSHIP",
+      "initialStatus": "PARTIAL",
+      "retryStatus": "SUCCEEDED",
+      "replayStatus": "SUCCEEDED",
+      "calls": {
+        "calculate": 1,
+        "generate": 2,
+        "readFocus": 1,
+        "readProfile": 1,
+        "save": 1,
+        "context": 2,
+        "now": 1
+      },
+      "snapshotSha256": "29cb46f188c782c319906c36d53fdc404d62c53a30ee4038c967547e01cb60ad",
+      "persistedAsOf": "2026-09-20T00:00:00.000Z",
+      "engineVersion": "manseryeok-2.0.0",
+      "ruleVersion": "JumZipSajuRules-v1",
+      "conventionVersion": "JumZipSajuConvention-v1"
+    },
+    {
+      "focus": "YEAR_FLOW",
+      "storedFocus": "YEAR_FLOW",
+      "initialStatus": "PARTIAL",
+      "retryStatus": "SUCCEEDED",
+      "replayStatus": "SUCCEEDED",
+      "calls": {
+        "calculate": 1,
+        "generate": 2,
+        "readFocus": 1,
+        "readProfile": 1,
+        "save": 1,
+        "context": 2,
+        "now": 1
+      },
+      "snapshotSha256": "29cb46f188c782c319906c36d53fdc404d62c53a30ee4038c967547e01cb60ad",
+      "persistedAsOf": "2026-09-20T00:00:00.000Z",
+      "engineVersion": "manseryeok-2.0.0",
+      "ruleVersion": "JumZipSajuRules-v1",
+      "conventionVersion": "JumZipSajuConvention-v1"
+    },
+    {
+      "focus": "MONTH_FLOW",
+      "storedFocus": "MONTH_FLOW",
+      "initialStatus": "PARTIAL",
+      "retryStatus": "SUCCEEDED",
+      "replayStatus": "SUCCEEDED",
+      "calls": {
+        "calculate": 1,
+        "generate": 2,
+        "readFocus": 1,
+        "readProfile": 1,
+        "save": 1,
+        "context": 2,
+        "now": 1
+      },
+      "snapshotSha256": "29cb46f188c782c319906c36d53fdc404d62c53a30ee4038c967547e01cb60ad",
+      "persistedAsOf": "2026-09-20T00:00:00.000Z",
+      "engineVersion": "manseryeok-2.0.0",
+      "ruleVersion": "JumZipSajuRules-v1",
+      "conventionVersion": "JumZipSajuConvention-v1"
+    }
+  ],
+  "counts": {
+    "authRequests": 21,
+    "restRequests": 203,
+    "blockedDestinations": 0,
+    "modelRequests": 0,
+    "externalRequests": 0,
+    "edgeRequests": 0
+  },
+  "cleanup": [
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "failure": null,
+  "limitations": [
+    "This is real local Supabase/Postgres integration, not a deployed Edge or LLM test.",
+    "The model timeout and success are explicit generator doubles; semantic response quality is not evaluated.",
+    "Synthetic verified-location profile seeding avoids external location-provider calls.",
+    "Calculation equality verifies retry immutability; it is not an independent astronomical oracle."
+  ]
+}

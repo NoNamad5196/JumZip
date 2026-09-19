@@ -3,7 +3,7 @@ import type { FullSajuResult } from '../domain/full-saju.ts';
 import type { ClaimedRequest } from './repository.ts';
 import { databaseFailure } from './repository.ts';
 import { ApiFailure } from '../http/errors.ts';
-import { birthInputSchema, type BirthInput } from '../validation/requests.ts';
+import { birthInputSchema, sajuRequestSchema, type BirthInput, type SajuRequest } from '../validation/requests.ts';
 import { verifyLocation } from '../orchestration/location.ts';
 
 export interface SajuSnapshot {
@@ -12,6 +12,7 @@ export interface SajuSnapshot {
   interpretation: { messageId: string; content: string; segments?: string[] } | null;
 }
 export interface SajuClaim extends Omit<ClaimedRequest, 'resource' | 'source'> { resource?: SajuSnapshot }
+export type SajuFocus = NonNullable<Extract<SajuRequest, { action: 'CALCULATE' }>['focus']>;
 export interface SajuBeginParams {
   user_id: string; operation: string; request_id: string; payload_hash: string; conversation_id: string;
   consultation_id?: string | null; reading_id?: string; target_type: 'SAJU'; focus?: string;
@@ -20,6 +21,7 @@ export interface SajuRepository {
   begin(params: SajuBeginParams): Promise<SajuClaim>;
   save(input: { executionId: string; result: FullSajuResult; birthSnapshot: BirthInput; profileInput: BirthInput | null }): Promise<SajuSnapshot>;
   readUserBirthProfile(userId: string, profileId: string): Promise<BirthInput>;
+  readFocus(userId: string, snapshot: Pick<SajuSnapshot, 'consultationId' | 'conversationId'>): Promise<SajuFocus>;
 }
 export function parseStoredBirthProfile(data: Record<string, unknown>): BirthInput {
   const time = data.birth_time;
@@ -64,6 +66,18 @@ export function createSajuRepository(client: SupabaseClient, verify: typeof veri
       if (error) throw databaseFailure(error);
       if (!data) throw new ApiFailure('NOT_FOUND', 404, '저장된 출생 정보를 찾지 못했습니다.');
       return verifiedStoredBirthProfile(client, userId, data, verify);
+    },
+    async readFocus(userId, snapshot) {
+      const { data, error } = await client.from('consultations').select('question')
+        .eq('id', snapshot.consultationId).eq('user_id', userId)
+        .eq('conversation_id', snapshot.conversationId).eq('fortune_type', 'SAJU').maybeSingle();
+      if (error) throw databaseFailure(error);
+      if (!data) throw new ApiFailure('NOT_FOUND', 404, '저장된 사주 상담을 찾지 못했습니다.');
+      // Every supported CALCULATE path has persisted an exact focus since migration005.
+      // Missing or corrupt context must not silently become a different consultation.
+      const focus = sajuRequestSchema.options[1].shape.focus.unwrap().safeParse(data.question);
+      if (!focus.success) throw new ApiFailure('SAJU_INPUT_INCOMPLETE', 422, '저장된 사주 상담의 질문 유형을 확인하지 못했습니다.');
+      return focus.data;
     },
   };
 }

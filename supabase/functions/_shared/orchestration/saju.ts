@@ -3,7 +3,7 @@ import type { SajuBirthInput } from '../domain/saju.ts';
 import type { PersonaReply } from '../llm/reply.ts';
 import type { PersonaPromptInput } from '../persona/prompt.ts';
 import type { Repository, ClaimedRequest } from '../persistence/repository.ts';
-import type { SajuRepository, SajuSnapshot, SajuClaim } from '../persistence/saju.ts';
+import type { SajuRepository, SajuSnapshot, SajuClaim, SajuFocus } from '../persistence/saju.ts';
 import type { AuthenticatedUser, ActionOutput } from '../http/handler.ts';
 import { ApiFailure, safeFailure } from '../http/errors.ts';
 import { payloadHash, type SajuRequest } from '../validation/requests.ts';
@@ -52,10 +52,14 @@ export function createSajuActionExecutor(dependencies: SajuDependencies) {
     }
     let saved: SajuSnapshot | undefined;
     try {
+      let focus: SajuFocus;
       if (input.action === 'RETRY_INTERPRETATION') {
         if (!claim.resource) throw new ApiFailure('NOT_FOUND', 404, '저장된 사주 원국을 찾지 못했습니다.');
+        // Resolve the owned original focus before enabling the saved-result fallback.
+        focus = await dependencies.readings.readFocus(user.id, { consultationId: claim.resource.consultationId, conversationId: claim.resource.conversationId });
         saved = claim.resource;
       } else {
+        focus = input.focus ?? 'GENERAL';
         const verified = input.subject.birthProfileId
           ? await dependencies.readings.readUserBirthProfile(user.id, input.subject.birthProfileId)
           : { ...input.subject.input!, location: await (dependencies.verifyLocation ?? verifyLocation)(input.subject.input!.location) };
@@ -67,7 +71,7 @@ export function createSajuActionExecutor(dependencies: SajuDependencies) {
       }
       const context = await dependencies.executions.context(user.id, { ...claim, resource: undefined } as ClaimedRequest);
       const reply = await dependencies.generate({ ...context, characterId: claim.characterId,
-        currentMessage: input.action === 'CALCULATE' ? `사주 상담: ${input.focus ?? 'GENERAL'}` : '저장된 사주 원국의 해석을 다시 요청합니다.',
+        currentMessage: `사주 상담: ${focus}`,
         currentTask: '저장된 사주 계산 자료만 해석한다. 불확실한 기둥이나 결과를 확정하지 않고, 점술의 상징적 참고임을 유지하며 다음 행동을 제안한다.',
         toolResult: dependencies.interpretationData(saved.result) });
       const data = { ...sajuInlineResult(saved), executionStatus: 'SUCCEEDED', interpretation: { content: reply.content, segments: reply.segments } };

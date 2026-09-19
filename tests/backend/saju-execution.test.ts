@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { createSajuActionExecutor, type SajuDependencies } from '../../supabase/functions/_shared/orchestration/saju.ts';
 import type { FullSajuResult } from '../../supabase/functions/_shared/domain/full-saju.ts';
 import type { SajuRequest } from '../../supabase/functions/_shared/validation/requests.ts';
-import type { SajuSnapshot, SajuClaim } from '../../supabase/functions/_shared/persistence/saju.ts';
+import type { SajuSnapshot, SajuClaim, SajuFocus } from '../../supabase/functions/_shared/persistence/saju.ts';
 import { ApiFailure } from '../../supabase/functions/_shared/http/errors.ts';
 
 const id = '30000000-0000-4000-8000-000000000001';
@@ -20,15 +20,62 @@ const request: Extract<SajuRequest, { action: 'CALCULATE' }> = { schemaVersion: 
 const user = { id: 'owner', isAnonymous: true };
 function fixture() {
   const deps: SajuDependencies = {
-    readings: { begin: vi.fn().mockResolvedValue(claim), save: vi.fn().mockResolvedValue(snapshot), readUserBirthProfile: vi.fn().mockResolvedValue(birth) },
+    readings: { begin: vi.fn().mockResolvedValue(claim), save: vi.fn().mockResolvedValue(snapshot), readUserBirthProfile: vi.fn().mockResolvedValue(birth), readFocus: vi.fn().mockResolvedValue('GENERAL') },
     executions: { complete: vi.fn().mockImplementation(async input => input.data), fail: vi.fn().mockResolvedValue(null), context: vi.fn().mockResolvedValue({ recentMessages: [], memories: [], summary: '' }) },
     calculate: vi.fn().mockReturnValue(result), interpretationData: vi.fn().mockReturnValue({ pillars: result.pillars, uncertaintyFlags: result.uncertaintyFlags }),
     generate: vi.fn().mockResolvedValue({ content: '저장된 원국에 대한 해석', segments: ['저장된 원국에 대한 해석'], metadata: { model: 'configured', promptVersion: 'persona-v1' }, repaired: false }),
-    verifyLocation: vi.fn().mockResolvedValue({ ...birth.location, providerId: '1835848' }), now: () => new Date('2026-09-20T00:00:00Z'),
+    verifyLocation: vi.fn().mockResolvedValue({ ...birth.location, providerId: '1835848' }), now: vi.fn(() => new Date('2026-09-20T00:00:00Z')),
   };
   return { deps, execute: createSajuActionExecutor(deps) };
 }
 describe('Saju immutable snapshot orchestration', () => {
+  it.each<SajuFocus>(['GENERAL', 'YEAR_FLOW', 'MONTH_FLOW', 'CAREER', 'RELATIONSHIP'])('preserves the original %s focus from a partial calculation through interpretation retry', async focus => {
+    const { deps, execute } = fixture();
+    const timing = { asOf: '2026-09-19T00:00:00.000Z', precision: 'MINUTE' as const, periodBasis: 'SOLAR_TERM' as const,
+      calendarLabel: { year: 2026, month: 9 }, activeDaewoonStatus: 'UNRESOLVED' as const };
+    const persisted = { ...snapshot, result: { ...result, timing } };
+    vi.mocked(deps.calculate).mockReturnValue(persisted.result);
+    vi.mocked(deps.readings.save).mockResolvedValue(persisted);
+    vi.mocked(deps.generate).mockRejectedValueOnce({ code: 'LLM_TIMEOUT' });
+    const first = await execute({ ...request, focus }, user);
+    expect(first.data).toMatchObject({ executionStatus: 'PARTIAL', readingId: persisted.readingId });
+    expect(deps.readings.begin).toHaveBeenCalledWith(expect.objectContaining({ focus }));
+    expect(deps.readings.readFocus).not.toHaveBeenCalled();
+    const originalPrompt = vi.mocked(deps.generate).mock.calls[0]![0];
+    expect(originalPrompt.currentMessage).toBe(`사주 상담: ${focus}`);
+    const unchanged = JSON.stringify(persisted);
+    vi.clearAllMocks();
+    vi.mocked(deps.readings.begin).mockResolvedValue({ ...claim, resource: persisted });
+    vi.mocked(deps.readings.readFocus).mockResolvedValue(focus);
+    const retry = await execute({ schemaVersion: 1, requestId: '30000000-0000-4000-8000-000000000002', action: 'RETRY_INTERPRETATION', conversationId: id, readingId: persisted.readingId }, user);
+    expect(retry.status).toBe(200);
+    expect(retry.data).toMatchObject({ executionStatus: 'SUCCEEDED', inlineResult: { currentFlow: { timing } } });
+    expect(deps.readings.readFocus).toHaveBeenCalledExactlyOnceWith(user.id, { consultationId: persisted.consultationId, conversationId: persisted.conversationId });
+    expect(deps.generate).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({ currentMessage: originalPrompt.currentMessage, currentTask: originalPrompt.currentTask, toolResult: originalPrompt.toolResult }));
+    expect(deps.interpretationData).toHaveBeenCalledExactlyOnceWith(persisted.result);
+    for (const fn of [deps.calculate, deps.verifyLocation!, deps.now!, deps.readings.readUserBirthProfile, deps.readings.save]) expect(fn).not.toHaveBeenCalled();
+    expect(JSON.stringify(persisted)).toBe(unchanged);
+  });
+  it.each([
+    ['invalid focus', new ApiFailure('SAJU_INPUT_INCOMPLETE', 422, '저장된 상담 주제를 확인해 주세요.')],
+    ['deleted consultation', new ApiFailure('NOT_FOUND', 404, '상담을 찾지 못했습니다.')],
+    ['another owner', new ApiFailure('NOT_FOUND', 404, '상담을 찾지 못했습니다.')],
+    ['database read failure', new ApiFailure('INTERNAL_ERROR', 500, '요청을 처리하지 못했습니다.', true)],
+  ] as const)('fails explicitly before inference when focus lookup reports %s', async (_reason, failure) => {
+    const { deps, execute } = fixture();
+    vi.mocked(deps.readings.begin).mockResolvedValue({ ...claim, resource: snapshot });
+    vi.mocked(deps.readings.readFocus).mockRejectedValue(failure);
+    await expect(execute({ schemaVersion: 1, requestId: id, action: 'RETRY_INTERPRETATION', conversationId: id, readingId: snapshot.readingId }, user)).rejects.toBe(failure);
+    expect(deps.executions.fail).toHaveBeenCalledExactlyOnceWith(claim.executionId, failure.toJSON(), failure.status);
+    for (const fn of [deps.generate, deps.executions.context, deps.executions.complete, deps.calculate, deps.now!, deps.verifyLocation!, deps.readings.readUserBirthProfile, deps.readings.save]) expect(fn).not.toHaveBeenCalled();
+  });
+  it('returns a completed retry replay before reading focus or invoking inference', async () => {
+    const { deps, execute } = fixture();
+    const data = { readingId: snapshot.readingId, executionStatus: 'SUCCEEDED' };
+    vi.mocked(deps.readings.begin).mockResolvedValue({ ...claim, replay: { data, httpStatus: 200 } });
+    expect(await execute({ schemaVersion: 1, requestId: id, action: 'RETRY_INTERPRETATION', conversationId: id, readingId: snapshot.readingId }, user)).toEqual({ data, status: 200 });
+    for (const fn of [deps.readings.readFocus, deps.generate, deps.executions.context, deps.calculate, deps.now!, deps.verifyLocation!]) expect(fn).not.toHaveBeenCalled();
+  });
   it.each(['complete', 'fail'] as const)('never returns a deleted Saju snapshot when the %s RPC reports NOT_FOUND', async phase => {
     const { deps, execute } = fixture();
     const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
@@ -43,6 +90,8 @@ describe('Saju immutable snapshot orchestration', () => {
     const calls = [deps.readings.begin, deps.verifyLocation!, deps.calculate, deps.readings.save, deps.generate].map(fn => vi.mocked(fn).mock.invocationCallOrder[0]!);
     expect(calls).toEqual([...calls].sort((a, b) => a - b));
     expect(deps.readings.save).toHaveBeenCalledWith(expect.objectContaining({ result, profileInput: null }));
+    expect(deps.readings.begin).toHaveBeenCalledWith(expect.objectContaining({ focus: 'GENERAL' }));
+    expect(deps.generate).toHaveBeenCalledWith(expect.objectContaining({ currentMessage: '사주 상담: GENERAL' }));
     expect(response.status).toBe(201); expect(response.data).toMatchObject({ readingId: snapshot.readingId, inlineResult: { dayMaster: '甲木', pillars: { hour: null } }, uncertaintyFlags: ['BIRTH_TIME_UNKNOWN'] });
     expect(response.data).not.toHaveProperty('result'); expect(response.data).not.toHaveProperty('birthProfileSnapshot');
     expect(JSON.stringify(vi.mocked(deps.generate).mock.calls)).not.toContain(birth.birthDate);
@@ -90,7 +139,7 @@ describe('Saju immutable snapshot orchestration', () => {
   it('replays a completed request without any external work', async () => {
     const { deps, execute } = fixture(); vi.mocked(deps.readings.begin).mockResolvedValue({ ...claim, replay: { data: { readingId: 'original' }, httpStatus: 201 } });
     expect(await execute(request, user)).toEqual({ data: { readingId: 'original' }, status: 201 });
-    expect(deps.calculate).not.toHaveBeenCalled(); expect(deps.generate).not.toHaveBeenCalled(); expect(deps.verifyLocation).not.toHaveBeenCalled();
+    expect(deps.calculate).not.toHaveBeenCalled(); expect(deps.generate).not.toHaveBeenCalled(); expect(deps.verifyLocation).not.toHaveBeenCalled(); expect(deps.readings.readFocus).not.toHaveBeenCalled();
   });
   it('does not persist rejected civil-time or unresolved location inputs', async () => {
     const { deps, execute } = fixture(); vi.mocked(deps.calculate).mockImplementation(() => { throw { code: 'SAJU_CONVENTION_UNSUPPORTED', reason: 'NONEXISTENT_CIVIL_TIME' }; });
@@ -100,6 +149,6 @@ describe('Saju immutable snapshot orchestration', () => {
   it('rejects missing retry resources and never silently recalculates', async () => {
     const { deps, execute } = fixture();
     await expect(execute({ schemaVersion: 1, requestId: id, action: 'RETRY_INTERPRETATION', conversationId: id, readingId: 'missing' }, user)).rejects.toMatchObject({ code: 'NOT_FOUND' });
-    expect(deps.calculate).not.toHaveBeenCalled(); expect(deps.generate).not.toHaveBeenCalled();
+    expect(deps.calculate).not.toHaveBeenCalled(); expect(deps.generate).not.toHaveBeenCalled(); expect(deps.readings.readFocus).not.toHaveBeenCalled();
   });
 });

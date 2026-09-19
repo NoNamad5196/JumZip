@@ -22,6 +22,10 @@ M7.5 A–G and the separate M9 civil-date convention were explicitly approved. B
 
 ## Current integration — 07:12 KST
 
+The following717-test/variable-font checkpoint is committed and pushed as `944baa52062ccaffa5af308c9c03033a616d4807`; [GitHub Actions passed](https://github.com/NoNamad5196/JumZip/actions/runs/35474690936). The subsequent Saju retry-focus correction is a separate active batch, not part of this verified release.
+
+The retry-focus source is now verified separately: **744 tests /three live skips**, TypeScript, lint and build pass. [Actual local Auth/DB/RPC integration](evidence/backend-local-saju-focus.json) passes67 checks for all five focuses, immutable result/asOf, owner/type boundaries and no-work replay. The interpretation generator is a double, with zero real model/Edge/external calls. Three synthetic accounts were removed, Auth404 and15 empty owned tables each. See [fix and release boundary](saju-retry-focus.md); production Edge promotion remains separate.
+
 07:49 KST candidate update: the next batch passes **717 tests /three explicit live skips**, TypeScript, whole lint, production build,26 asset checks, source/public credential scans and six browser regressions. The PNG exporter now preserves variable-font sources instead of filtering them out as plain `woff2`; actual generated Saju badges and Tarot footer no longer overlap. The build index SHA-256 is `0257a82ff14a3531e9338250847381cbd0ded45d97ff3f3dfa7f84e7579a6c65`. Four exact required viewport sizes with both motion settings passed32 populated fixture views. These are local browser fixtures, not public Auth/model success.
 
 At approximately07:52 KST Pages returned Success after174/174 files. [Independent public verification](evidence/frontend-variable-font-public.json) matched the index plus8 JavaScript files and1 stylesheet, with4 guest views free of overflow/CSP/page/asset errors. Two challenge DNS failures remain separately recorded; no CAPTCHA, form submission or model call was performed. Actual local PNG generation after the correction took about2.3–2.5seconds; one earlier120-second timeout remains disclosed as an unreproduced timing failure.
