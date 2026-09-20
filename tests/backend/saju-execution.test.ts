@@ -29,6 +29,14 @@ function fixture() {
   return { deps, execute: createSajuActionExecutor(deps) };
 }
 describe('Saju immutable snapshot orchestration', () => {
+  it('keeps provider rate limiting distinct after a chart is safely saved', async () => {
+    const { deps, execute } = fixture();
+    vi.mocked(deps.generate).mockRejectedValue({ code: 'LLM_RATE_LIMITED' });
+    const response = await execute(request, user);
+    expect(response.status).toBe(200);
+    expect(response.data).toMatchObject({ executionStatus: 'PARTIAL', readingId: snapshot.readingId, interpretation: null, partialError: { details: { readingId: snapshot.readingId, reason: 'LLM_RATE_LIMITED' } } });
+    expect(deps.executions.complete).not.toHaveBeenCalled();
+  });
   it.each<SajuFocus>(['GENERAL', 'YEAR_FLOW', 'MONTH_FLOW', 'CAREER', 'RELATIONSHIP'])('preserves the original %s focus from a partial calculation through interpretation retry', async focus => {
     const { deps, execute } = fixture();
     const timing = { asOf: '2026-09-19T00:00:00.000Z', precision: 'MINUTE' as const, periodBasis: 'SOLAR_TERM' as const,

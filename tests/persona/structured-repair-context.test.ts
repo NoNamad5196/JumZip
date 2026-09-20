@@ -199,7 +199,7 @@ describe('Title and ordinary Chat retain their own target and validator', () => 
 
   it('repairs ordinary Chat while keeping contextual data as data and the exact current user last', async () => {
     const invalid = 'INVALID_CHAT_OUTPUT_CANARY';
-    const source = setup([invalid, { text: '발표가 끝나면 잠깐 쉬고 그려도 좋겠다. 어떤 그림부터 그리고 싶어?', toolReferences: [] }], 900);
+    const source = setup([invalid, { text: '발표가 끝나면 잠깐 쉬고 그려도 좋겠다. 어떤 그림부터 그리고 싶어?' }], 900);
     const input = freeze({ characterId: 'SANI' as const, currentMessage: 'USER_CHAT_CANARY 오늘 발표가 끝나면 그림을 그리고 싶어.', summary: 'CONTEXT_CHAT_CANARY 사용자는 그림을 좋아한다고 말했다.', recentMessages: [{ role: 'assistant' as const, content: 'RECENT_CHAT_CANARY 어떤 취미가 있어?' }] });
     const before = JSON.stringify(input);
     const reply = await generatePersonaReply(source.provider, input);

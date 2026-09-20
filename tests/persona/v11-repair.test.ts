@@ -89,7 +89,7 @@ describe('v11 canonical Tarot tables never synthesize model evidence', () => {
     const repaired = { text: `이 카드의 ${item}을 현실의 작은 행동과 연결해 보자.`, toolReferences: cards.map(ref), interpretationEvidence: [{ positionIndex: cards[0]!.positionIndex, keywordIndices: [0], textEvidence: item }] };
     fetchImpl.mockResolvedValueOnce(completion({ ...repaired, toolReferences: [] })).mockResolvedValueOnce(completion(repaired));
     const result = await generatePersonaReply(provider, { characterId: 'SANI', currentMessage: '첫 카드만 설명해 줘.', toolResult: { cards } });
-    expect(result.content).toBe(repaired.text); expect(result.repaired).toBe(true); expect(result.metadata.promptVersion).toBe('JumZipPersona-v11');
+    expect(result.content).toBe(repaired.text); expect(result.repaired).toBe(true); expect(result.metadata.promptVersion).toBe('JumZipPersona-v12');
     expect(JSON.stringify(result)).not.toContain('interpretationEvidence'); expect(fetchImpl).toHaveBeenCalledTimes(2);
     expect(validateChatOutput(JSON.stringify({ text: '다른 이야기를 해 보자.', toolReferences: cards.map(ref), interpretationEvidence: [] }), { characterId: 'SANI', expectedCards: cards }).ok).toBe(true);
   });

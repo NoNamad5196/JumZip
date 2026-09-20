@@ -7,7 +7,7 @@ import type { Repository, ClaimedRequest } from '../persistence/repository.ts';
 import type { SajuRepository } from '../persistence/saju.ts';
 import type { CompatibilityRepository, CompatibilitySnapshot } from '../persistence/compatibility.ts';
 import type { AuthenticatedUser, ActionOutput } from '../http/handler.ts';
-import { ApiFailure, safeFailure } from '../http/errors.ts';
+import { ApiFailure, safeFailure, partialFailureDetails } from '../http/errors.ts';
 import { sajuCalculationFailure } from './saju.ts';
 import { payloadHash, type CompatibilityRequest } from '../validation/requests.ts';
 import { verifyLocation } from './location.ts';
@@ -80,7 +80,7 @@ export function createCompatibilityActionExecutor(dependencies: CompatibilityDep
       if (saved) {
         if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(failure.code)) throw failure;
         const partialError = { code: 'COMPATIBILITY_INTERPRETATION_FAILED', message: '궁합 결과는 저장됐지만 해석을 받지 못했습니다.', retryable: true,
-          details: { compatibilityReadingId: saved.compatibilityReadingId, reason: failure.code } };
+          details: { compatibilityReadingId: saved.compatibilityReadingId, ...partialFailureDetails(failure) } };
         const cached = await dependencies.executions.fail(claim.executionId, partialError, 200).catch(writeError => {
           const writeFailure = safeFailure(writeError);
           if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(writeFailure.code)) throw writeFailure;

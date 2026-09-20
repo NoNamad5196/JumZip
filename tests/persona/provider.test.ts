@@ -5,7 +5,7 @@ import { validateChatOutput } from '../../supabase/functions/_shared/llm/validat
 import { drawTarot, buildTarotInterpretationData } from '../../supabase/functions/_shared/domain/tarot.ts';
 
 const completion = (content: string) => new Response(JSON.stringify({ choices: [{ message: { content }, finish_reason: 'stop' }], model: 'configured-model', usage: { prompt_tokens: 12, completion_tokens: 20 } }), { status: 200 });
-const good = (text = '그건 좀 애매하다. 대화 분위기도 달라졌어?') => JSON.stringify({ text, toolReferences: [] });
+const good = (text = '그건 좀 애매하다. 대화 분위기도 달라졌어?') => JSON.stringify({ text });
 afterEach(() => vi.useRealTimers());
 
 describe('OpenAI-compatible provider', () => {
@@ -19,7 +19,7 @@ describe('OpenAI-compatible provider', () => {
     const body = JSON.parse(fetchImpl.mock.calls[0]![1]!.body as string);
     expect(fetchImpl.mock.calls[0]![0]).toBe('https://inference.example/v1/chat/completions');
     expect(body).toMatchObject({ model: 'selected-by-env', stream: false, response_format: { type: 'json_schema' } });
-    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v11' });
+    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v12' });
     expect(reply.segments).toHaveLength(2); expect(reply.repaired).toBe(false);
   });
   it('repairs malformed content once and replays the original final user message', async () => {

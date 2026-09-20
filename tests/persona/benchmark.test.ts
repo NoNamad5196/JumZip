@@ -3,7 +3,7 @@ import { assessPersonaBenchmark, BENCHMARK_CHARACTERS, PERSONA_BENCHMARK_CASES, 
 import { LLMError, type LLMProvider } from '../../supabase/functions/_shared/llm/provider.ts';
 import { TAROT_SPREADS, type TarotCard } from '../../supabase/functions/_shared/domain/tarot.ts';
 
-const provider = (): LLMProvider => ({ generateChat: vi.fn(async () => ({ content: '{"text":"오늘은 어떤 일이 있었어?","toolReferences":[]}', model: 'TEST_DOUBLE' })), repairChat: vi.fn(), generateStructured: vi.fn() });
+const provider = (): LLMProvider => ({ generateChat: vi.fn(async () => ({ content: '{"text":"오늘은 어떤 일이 있었어?"}', model: 'TEST_DOUBLE' })), repairChat: vi.fn(), generateStructured: vi.fn() });
 const fullEntries = (): BenchmarkEntry[] => PERSONA_BENCHMARK_CASES.flatMap(c => BENCHMARK_CHARACTERS.map(characterId => ({
   id: `${c.id}:${characterId}`, caseId: c.id, characterId, latencyMs: 1, response: { content: '평가 로직 테스트용 입력', segments: [], repaired: false, metadata: { model: 'ASSESSMENT_TEST_FIXTURE', promptVersion: 'test', provider: 'openai-compatible' as const, generatedAt: '2026-09-20T00:00:00Z' } }, errorCode: null, automaticFlags: [], reviewChecks: c.reviewChecks, review: null,
 })));
@@ -27,7 +27,7 @@ describe('persona benchmark harness (test doubles, not model evaluation)', () =>
   });
   it('records sanitized errors while continuing other cases', async () => {
     const mock = provider();
-    mock.generateChat = vi.fn().mockRejectedValueOnce(new LLMError('LLM_TIMEOUT')).mockResolvedValue({ content: '{"text":"다음 이야기를 들어보자.","toolReferences":[]}', model: 'TEST_DOUBLE' });
+    mock.generateChat = vi.fn().mockRejectedValueOnce(new LLMError('LLM_TIMEOUT')).mockResolvedValue({ content: '{"text":"다음 이야기를 들어보자."}', model: 'TEST_DOUBLE' });
     const report = await runPersonaBenchmark(mock, { executionMode: 'TEST_DOUBLE', caseIds: ['01-first-meeting', '02-small-talk'], characters: ['SANI'] });
     expect(report.metrics).toMatchObject({ errorCount: 1, successCount: 1 });
     expect(report.entries[0]!.errorCode).toBe('LLM_TIMEOUT');

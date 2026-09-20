@@ -11,6 +11,16 @@ function canonical(value: unknown): string {
   return JSON.stringify(value) ?? 'null';
 }
 function forget(key: string, requestId: string) { if (pending.get(key)?.requestId !== requestId) return; pending.delete(key); try { sessionStorage.removeItem(key); } catch { /* Memory still protects retries in this tab. */ } }
+/** Call only after owned persisted rows confirm this exact request succeeded. */
+export function confirmRequestIntent(userId:string,endpoint:string,requestId:string) {
+  const scope=`${prefix}${userId}:${endpoint}:`;
+  for(const [key,intent] of pending)if(key.startsWith(scope)&&intent.requestId===requestId)forget(key,requestId);
+  try {
+    for(const key of Object.keys(sessionStorage))if(key.startsWith(scope)){
+      try{const stored=JSON.parse(sessionStorage.getItem(key)||'null') as Intent|null;if(stored?.requestId===requestId)sessionStorage.removeItem(key);}catch{/* Ignore an unrelated damaged entry. */}
+    }
+  }catch{/* Disabled storage does not prevent confirming the in-memory intent. */}
+}
 export function clearRequestIntents(userId?: string) {
   if (userId) userRevisions.set(userId, (userRevisions.get(userId) ?? 0) + 1);
   else { clearRevision += 1; userRevisions.clear(); }
@@ -20,7 +30,7 @@ export function clearRequestIntents(userId?: string) {
 }
 
 /** Resume an uncertain transport outcome; confirmed outcomes release the next explicit request. */
-export async function executeIntent<T>(userId: string, endpoint: string, body: Record<string, unknown>, send: (payload: Record<string, unknown>) => Promise<T>, semanticContext?: string | null): Promise<T> {
+export async function executeIntent<T>(userId: string, endpoint: string, body: Record<string, unknown>, send: (payload: Record<string, unknown>) => Promise<T>, semanticContext?: string | null, onPrepared?: (payload: Record<string, unknown>) => void): Promise<T> {
   const revision = clearRevision, userRevision = userRevisions.get(userId) ?? 0;
   // A restored server message may add a consultation ID after the original response was lost.
   // Match the user's intent without that routing change, then replay its original routing value.
@@ -40,6 +50,6 @@ export async function executeIntent<T>(userId: string, endpoint: string, body: R
   pending.set(key, intent);
   try { sessionStorage.setItem(key, JSON.stringify(intent)); } catch { /* Retain the in-memory request if storage is disabled. */ }
   const payload = { ...body, ...('consultationId' in intent ? { consultationId: intent.consultationId } : {}), requestId: intent.requestId };
-  try { const result = await send(payload); forget(key, intent.requestId); return result; }
+  try { onPrepared?.(payload); const result = await send(payload); forget(key, intent.requestId); return result; }
   catch (error) { if (!uncertainCodes.has(String((error as { code?: string } | null)?.code))) forget(key, intent.requestId); throw error; }
 }

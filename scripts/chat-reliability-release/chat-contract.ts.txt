@@ -1,0 +1,21 @@
+/** Narrow v4.1 contract: all existing tool results keep the deployed v4 schema. */
+export type ChatResponseContract = 'DEFAULT' | 'TEXT_ONLY_V1';
+export const TEXT_ONLY_RESPONSE_SCHEMA: Record<string, unknown> = {
+  type: 'object', additionalProperties: false, required: ['text'],
+  properties: { text: { type: 'string', minLength: 1, maxLength: 6000 } },
+};
+export const CHAT_RESPONSE_SCHEMA: Record<string, unknown> = {
+  type: 'object', additionalProperties: false, required: ['text', 'toolReferences'],
+  properties: {
+    text: { type: 'string', minLength: 1, maxLength: 6000 },
+    toolReferences: { type: 'array', maxItems: 3, items: { type: 'object', additionalProperties: false, required: ['cardId', 'orientation', 'positionIndex'], properties: { cardId: { type: 'integer', minimum: 0, maximum: 21 }, orientation: { type: 'string', enum: ['UPRIGHT', 'REVERSED'] }, positionIndex: { type: 'integer', minimum: 0, maximum: 2 } } } },
+  },
+};
+
+
+export function selectChatResponseContract(toolResult: unknown): ChatResponseContract {
+  return toolResult === null || toolResult === undefined ? 'TEXT_ONLY_V1' : 'DEFAULT';
+}
+export function getChatResponseDefinition(contract: ChatResponseContract = 'DEFAULT'): { schema: Record<string, unknown>; name: string } {
+  return contract === 'TEXT_ONLY_V1' ? { schema: TEXT_ONLY_RESPONSE_SCHEMA, name: 'jumzip_text_only_v1' } : { schema: CHAT_RESPONSE_SCHEMA, name: 'jumzip_chat' };
+}

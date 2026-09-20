@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-09-20T05:01:35.3585417Z",
+  "status": "LOCAL_VALIDATION_PASSED_PUBLIC_DEPLOYMENT_PENDING",
+  "typecheck": "PASSED",
+  "lint": "PASSED",
+  "vitest": {
+    "passed": 1066,
+    "skipped": 3,
+    "failed": 0
+  },
+  "playwright": {
+    "passed": 10,
+    "skipped": 2,
+    "failed": 0,
+    "transport": "SYNTHETIC",
+    "report": "test-results/chat-experience-playwright.json"
+  },
+  "productionBuild": {
+    "passed": true,
+    "files": 174,
+    "indexSha256": "c3ba50e1e4dfc8dc5799f5c0d31789b028660a78dd2d1532b31263c06826b74f"
+  },
+  "publicCredentialScan": {
+    "passed": true,
+    "textFiles": 15
+  },
+  "canonicalAssets": {
+    "passed": true,
+    "count": 26
+  },
+  "isolatedRelease": {
+    "promptVersion": "JumZipPersona-v4.1",
+    "intentVersion": "JumZipIntent-v1",
+    "files": 54,
+    "offlineGroupsPassed": 15,
+    "manifestSha256": "9c37649998d8b5efe4411497c9a5c46d19d5a40cd48d50ffb2c19ff4aa1a5978",
+    "deployed": false
+  },
+  "liveProbe": {
+    "report": "test-results/chat-reliability-live/v4-1-92744b65-7813-4503-aa5e-5ae1ff9ad331/result.json",
+    "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+    "actualHTTPAttempts": 1,
+    "httpStatus": 429,
+    "completedCases": 0,
+    "stopReason": "PROVIDER_RATE_LIMITED",
+    "cause": "UNKNOWN",
+    "ceilingNeurons": 500,
+    "conservativeReservationNeurons": 75.559875,
+    "observedUsage": null,
+    "rawErrorBodiesPersisted": false,
+    "userDataSent": false,
+    "hostedDbOrAccountOperations": 0,
+    "sourceFrozen": true
+  },
+  "publicFrontend": {
+    "deployed": false,
+    "readOnlyComparison": "docs/evidence/frontend-chat-experience-public-pending.json",
+    "blockingStep": "Folder selection returned without populating Cloudflare upload; owner manual selection requested."
+  },
+  "limitations": [
+    "Local browser fixtures are not authenticated production acceptance.",
+    "No fresh valid model reply or semantic quality score was obtained.",
+    "Neither v12 nor isolated v4.1 was deployed."
+  ]
+}

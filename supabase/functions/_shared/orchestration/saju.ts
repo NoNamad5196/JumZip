@@ -5,7 +5,7 @@ import type { PersonaPromptInput } from '../persona/prompt.ts';
 import type { Repository, ClaimedRequest } from '../persistence/repository.ts';
 import type { SajuRepository, SajuSnapshot, SajuClaim, SajuFocus } from '../persistence/saju.ts';
 import type { AuthenticatedUser, ActionOutput } from '../http/handler.ts';
-import { ApiFailure, safeFailure } from '../http/errors.ts';
+import { ApiFailure, safeFailure, partialFailureDetails } from '../http/errors.ts';
 import { payloadHash, type SajuRequest } from '../validation/requests.ts';
 import { verifyLocation } from './location.ts';
 
@@ -81,7 +81,7 @@ export function createSajuActionExecutor(dependencies: SajuDependencies) {
       const failure = sajuCalculationFailure(error);
       if (saved) {
         if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(failure.code)) throw failure;
-        const partialError = { code: 'SAJU_INTERPRETATION_FAILED', message: '사주 원국은 저장됐지만 해석을 받지 못했습니다.', retryable: true, details: { readingId: saved.readingId, reason: failure.code } };
+        const partialError = { code: 'SAJU_INTERPRETATION_FAILED', message: '사주 원국은 저장됐지만 해석을 받지 못했습니다.', retryable: true, details: { readingId: saved.readingId, ...partialFailureDetails(failure) } };
         const cached = await dependencies.executions.fail(claim.executionId, partialError, 200).catch(writeError => {
           const writeFailure = safeFailure(writeError);
           if (['NOT_FOUND', 'AUTH_REQUIRED', 'AUTH_EXPIRED', 'FORBIDDEN'].includes(writeFailure.code)) throw writeFailure;

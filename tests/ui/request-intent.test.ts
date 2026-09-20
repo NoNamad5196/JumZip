@@ -1,12 +1,32 @@
 // @vitest-environment jsdom
 import { webcrypto } from 'node:crypto';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { clearRequestIntents, executeIntent } from '../../src/features/request-intent';
+import { clearRequestIntents, confirmRequestIntent, executeIntent } from '../../src/features/request-intent';
 import { clearDrafts } from '../../src/features/drafts';
 const lost=()=>Object.assign(new Error('response lost'),{code:'NETWORK_ERROR'});
 beforeEach(()=>{vi.stubGlobal('crypto',webcrypto);clearRequestIntents();sessionStorage.clear();});
 afterEach(()=>vi.unstubAllGlobals());
 describe('uncertain request transport continuity',()=>{
+ it('releases only the owned endpoint and exact confirmed UUID after a persisted success',async()=>{
+  const send=vi.fn().mockRejectedValue(lost()),body={action:'SEND',message:'same question'};
+  await expect(executeIntent('user-1','chat',body,send)).rejects.toThrow();
+  await expect(executeIntent('user-2','chat',body,send)).rejects.toThrow();
+  await expect(executeIntent('user-1','tarot',body,send)).rejects.toThrow();
+  const [first,otherOwner,otherEndpoint]=send.mock.calls.map(([payload])=>payload.requestId);
+  confirmRequestIntent('user-1','chat',first);
+  const next=vi.fn().mockResolvedValue({});
+  await executeIntent('user-1','chat',body,next);await executeIntent('user-2','chat',body,next);await executeIntent('user-1','tarot',body,next);
+  expect(next.mock.calls[0][0].requestId).not.toBe(first);expect(next.mock.calls[1][0].requestId).toBe(otherOwner);expect(next.mock.calls[2][0].requestId).toBe(otherEndpoint);
+ });
+ it('exposes the exact prepared identity before transport and repeats it for an unknown outcome',async()=>{
+  const order:string[]=[],identities:unknown[]=[];
+  const prepared=vi.fn((payload)=>{order.push('prepared');identities.push(payload.requestId);});
+  const send=vi.fn(async(payload)=>{order.push('transport');expect(payload.requestId).toBe(identities.at(-1));if(identities.length===1)throw lost();return {ok:true};});
+  const body={action:'SEND',conversationId:'conversation-1',consultationId:null,message:'original'};
+  await expect(executeIntent('user-1','chat',body,send,null,prepared)).rejects.toThrow();
+  await executeIntent('user-1','chat',body,send,null,prepared);
+  expect(order).toEqual(['prepared','transport','prepared','transport']);expect(identities[0]).toBe(identities[1]);expect(body).not.toHaveProperty('requestId');
+ });
  it('cancels preparation after the account scope is cleared and does not recreate private pending state',async()=>{
   let complete!:(value:ArrayBuffer)=>void;const digest=vi.fn(()=>new Promise<ArrayBuffer>(resolve=>{complete=resolve;}));
   vi.stubGlobal('crypto',{randomUUID:webcrypto.randomUUID.bind(webcrypto),subtle:{digest}});

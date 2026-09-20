@@ -25,6 +25,15 @@ function fixture() {
 }
 
 describe('authoritative execution ordering and recovery', () => {
+  it.each(['tarot', 'compatibility'] as const)('preserves the actual provider limit reason in a saved %s result', async endpoint => {
+    const { repo, generate, execute } = fixture();
+    generate.mockRejectedValue({ code: 'LLM_RATE_LIMITED' });
+    const input = endpoint === 'tarot' ? drawRequest : { schemaVersion: 1 as const, requestId: uuid, action: 'DRAW_TAROT' as const, conversationId: uuid, consultationId: null, question: '질문', targetPersonAlias: '합성 상대' };
+    const result = await execute(endpoint, input, user);
+    expect(result.status).toBe(200);
+    expect(result.data).toMatchObject({ executionStatus: 'PARTIAL', cards: draw.cards, interpretation: null, partialError: { details: { drawGroupId: draw.drawGroupId, reason: 'LLM_RATE_LIMITED' } } });
+    expect(repo.complete).not.toHaveBeenCalled();
+  });
   it.each(['tarot', 'compatibility'] as const)('propagates authoritative deletion during %s completion instead of returning a stale partial snapshot', async endpoint => {
     const { repo, execute } = fixture();
     const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');

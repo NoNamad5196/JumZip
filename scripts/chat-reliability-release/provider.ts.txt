@@ -1,0 +1,166 @@
+import type { LLMMessage } from '../persona/prompt.ts';
+import { getChatResponseDefinition, type ChatResponseContract } from './chat-contract.ts';
+export { CHAT_RESPONSE_SCHEMA } from './chat-contract.ts';
+
+export type LLMErrorCode = 'LLM_NOT_CONFIGURED' | 'LLM_TIMEOUT' | 'LLM_UNAVAILABLE' | 'LLM_AUTH_FAILED' | 'LLM_RATE_LIMITED' | 'LLM_INVALID_RESPONSE';
+const VALIDATION_ISSUES = ['JSON_REQUIRED', 'RESPONSE_SCHEMA_INVALID', 'RESPONSE_CONTRACT_MISMATCH', 'MODEL_CONTROL_TEXT', 'PERSONA_BREAK', 'FORBIDDEN_CERTAINTY_OR_DEPENDENCY', 'BOMI_RELATIONSHIP_BOUNDARY', 'TOOL_REFERENCE_INVALID', 'TOOL_RESULT_CHANGED', 'UNSUPPORTED_PROBABILITY', 'TOOL_SCORE_CHANGED', 'TOOL_SCORE_POSSIBILITIES_CHANGED', 'STRUCTURED_VALIDATION_FAILED', 'RESPONSE_VALIDATION_FAILED', 'REPAIR_USER_MESSAGE_MISSING'] as const;
+const DIAGNOSTIC_ISSUES = [...VALIDATION_ISSUES, 'HTTP_AUTH_FAILED', 'HTTP_RATE_LIMITED', 'HTTP_UNAVAILABLE', 'NETWORK_ERROR', 'REQUEST_TIMEOUT', 'RESPONSE_BODY_MISSING', 'RESPONSE_BODY_TOO_LARGE', 'RESPONSE_ENVELOPE_JSON_INVALID', 'RESPONSE_ENVELOPE_INVALID', 'RESPONSE_CONTENT_MISSING', 'RESPONSE_INCOMPLETE'] as const;
+export type LLMFailureStage = 'TRANSPORT' | 'ENVELOPE' | 'PARSE' | 'VALIDATION';
+export type LLMFinishReason = 'stop' | 'length' | 'content_filter' | 'tool_calls' | 'function_call' | 'OTHER';
+export interface LLMDiagnostic { stage: LLMFailureStage; issues: readonly typeof DIAGNOSTIC_ISSUES[number][]; attempts: 1 | 2; finishReason: LLMFinishReason | null }
+const knownDiagnosticIssues = new Set<string>(DIAGNOSTIC_ISSUES);
+export function safeFinishReason(value: unknown): LLMFinishReason | null {
+  if (value === null || value === undefined) return null;
+  return typeof value === 'string' && ['stop', 'length', 'content_filter', 'tool_calls', 'function_call'].includes(value) ? value as LLMFinishReason : 'OTHER';
+}
+/** Reapply this projection at public boundaries too. Never spread a provider/error object. */
+export function safeLLMDiagnostic(value: unknown): LLMDiagnostic | undefined {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const record = value as Record<string, unknown>;
+  if (typeof record.stage !== 'string' || !['TRANSPORT', 'ENVELOPE', 'PARSE', 'VALIDATION'].includes(record.stage) || ![1, 2].includes(record.attempts as number)) return undefined;
+  const issues = Array.isArray(record.issues) ? [...new Set(record.issues.filter((issue): issue is typeof DIAGNOSTIC_ISSUES[number] => typeof issue === 'string' && knownDiagnosticIssues.has(issue)))].slice(0, 16) : [];
+  return Object.freeze({ stage: record.stage as LLMFailureStage, issues: Object.freeze(issues), attempts: record.attempts as 1 | 2, finishReason: safeFinishReason(record.finishReason) });
+}
+export class LLMError extends Error {
+  readonly code: LLMErrorCode;
+  readonly retryable: boolean;
+  readonly diagnostic?: LLMDiagnostic;
+  constructor(code: LLMErrorCode, retryable = true, diagnostic?: unknown) { super(code); this.name = 'LLMError'; this.code = code; this.retryable = retryable; this.diagnostic = safeLLMDiagnostic(diagnostic); }
+}
+export interface ProviderResult { content: string; model: string; finishReason?: LLMFinishReason | null; usage?: { promptTokens: number; completionTokens: number } }
+export interface StructuredRequest<T> { messages: readonly LLMMessage[]; schema: Record<string, unknown>; validate: (value: unknown) => T; name?: string }
+export interface LLMProvider {
+  generateChat(messages: readonly LLMMessage[], contract?: ChatResponseContract): Promise<ProviderResult>;
+  generateStructured<T>(input: StructuredRequest<T>): Promise<T>;
+  repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[], contract?: ChatResponseContract): Promise<ProviderResult>;
+}
+export interface OpenAICompatibleConfig {
+  baseUrl: string; apiKey?: string; model: string; fetchImpl?: typeof fetch;
+  initialTimeoutMs?: number; repairTimeoutMs?: number; maxOutputTokens?: number;
+  /** Use json_object for a provider without strict JSON Schema support; runtime validation remains mandatory. */
+  structuredFormat?: 'json_schema' | 'json_object';
+}
+
+// Bound decoded transport bytes before JSON allocation. A provider may omit or lie about
+// Content-Length, and Response.text() would allocate the entire body before validation.
+const MAX_RESPONSE_BYTES = 128_000;
+function cancelWithoutWaiting(stream: { cancel: () => Promise<unknown> } | null): void {
+  // A hostile/custom stream can return a never-settling cancel promise or throw.
+  try { void stream?.cancel().catch(() => {}); } catch { /* Best effort cleanup. */ }
+}
+
+/** No mock fallback. Missing endpoint/model fails before making a request. */
+export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): LLMProvider {
+  if (!config.baseUrl?.trim() || !config.model?.trim()) throw new LLMError('LLM_NOT_CONFIGURED', false);
+  let base: URL;
+  try { base = new URL(config.baseUrl); } catch { throw new LLMError('LLM_NOT_CONFIGURED', false); }
+  if (!['https:', 'http:'].includes(base.protocol) || base.username || base.password || base.search || base.hash) throw new LLMError('LLM_NOT_CONFIGURED', false);
+  const url = config.baseUrl.replace(/\/+$/, '').replace(/\/chat\/completions$/, '') + '/chat/completions';
+  const fetchImpl = config.fetchImpl ?? globalThis.fetch;
+  const initialTimeout = Math.min(config.initialTimeoutMs ?? 60_000, 60_000);
+  const repairTimeout = Math.min(config.repairTimeoutMs ?? 30_000, 30_000);
+  if (initialTimeout <= 0 || repairTimeout <= 0 || !Number.isFinite(initialTimeout + repairTimeout)) throw new LLMError('LLM_NOT_CONFIGURED', false);
+
+  const request = async (messages: readonly LLMMessage[], schema: Record<string, unknown>, name: string, timeoutMs: number, temperature: number, attempts: 1 | 2 = 1): Promise<ProviderResult> => {
+    const controller = new AbortController();
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let activeReader: ReadableStreamDefaultReader<Uint8Array> | null = null;
+    let stage: LLMFailureStage = 'TRANSPORT';
+    let finishReason: LLMFinishReason | null = null;
+    const failure = (code: LLMErrorCode, issue: typeof DIAGNOSTIC_ISSUES[number], retryable = true) => new LLMError(code, retryable, { stage, issues: [issue], attempts, finishReason });
+    const execute = async (): Promise<ProviderResult> => {
+      // Official Qwen3 soft switch, not an undocumented Cloudflare API parameter.
+      // Keep the token/time limits and incomplete-response rejection unchanged: the
+      // prompt request can reduce reasoning, but is not a hard backend guarantee.
+      // JSON object mode guarantees JSON syntax only. Its response_format does not
+      // carry a schema, so every request (including repair) must state the actual
+      // server-owned schema in the prompt as well. Runtime validation still applies.
+      const formatMessages: LLMMessage[] = config.structuredFormat === 'json_object'
+        ? [{ role: 'system', content: `출력은 다음 JSON Schema를 만족하는 JSON 객체 하나다. 필수 키, enum, 자료형을 정확히 지킨다. 다른 키나 설명을 추가하지 않는다.\n${JSON.stringify(schema)}` }, ...messages]
+        : [...messages];
+      const requestMessages = config.model === '@cf/qwen/qwen3-30b-a3b-fp8'
+        ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...formatMessages]
+        : formatMessages;
+      const response = await fetchImpl(url, {
+        method: 'POST', signal: controller.signal,
+        headers: { 'Content-Type': 'application/json', ...(config.apiKey ? { Authorization: `Bearer ${config.apiKey}` } : {}) },
+        body: JSON.stringify({ model: config.model, messages: requestMessages, temperature, max_tokens: config.maxOutputTokens ?? 900, stream: false,
+          response_format: config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } } }),
+      });
+      if (controller.signal.aborted) { cancelWithoutWaiting(response.body); throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
+      if (!response.ok) {
+        cancelWithoutWaiting(response.body);
+        if (response.status === 401 || response.status === 403) throw failure('LLM_AUTH_FAILED', 'HTTP_AUTH_FAILED', false);
+        if (response.status === 429) throw failure('LLM_RATE_LIMITED', 'HTTP_RATE_LIMITED');
+        throw failure('LLM_UNAVAILABLE', 'HTTP_UNAVAILABLE', response.status >= 500 || response.status === 408);
+      }
+      stage = 'ENVELOPE';
+      if (!response.body) throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_BODY_MISSING');
+      const reader = response.body.getReader(); activeReader = reader;
+      const decoder = new TextDecoder();
+      const chunks: string[] = [];
+      let size = 0;
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (controller.signal.aborted) throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT');
+          if (done) break;
+          size += value.byteLength;
+          if (size > MAX_RESPONSE_BYTES) { cancelWithoutWaiting(reader); throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_BODY_TOO_LARGE'); }
+          chunks.push(decoder.decode(value, { stream: true }));
+        }
+        chunks.push(decoder.decode());
+      } finally { activeReader = null; reader.releaseLock(); }
+      const raw = chunks.join('');
+      let value: unknown;
+      try { value = JSON.parse(raw); } catch { throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_ENVELOPE_JSON_INVALID'); }
+      if (!value || typeof value !== 'object' || Array.isArray(value)) throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_ENVELOPE_INVALID');
+      const body = value as { choices?: { message?: { content?: unknown }; finish_reason?: string }[]; model?: unknown; usage?: { prompt_tokens?: unknown; completion_tokens?: unknown } };
+      const choice = Array.isArray(body.choices) ? body.choices[0] : undefined;
+      finishReason = safeFinishReason(choice?.finish_reason);
+      if (choice?.finish_reason === 'length') throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_INCOMPLETE');
+      if (typeof choice?.message?.content !== 'string' || choice.message.content.length === 0) throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_CONTENT_MISSING');
+      return { content: choice.message.content, model: typeof body.model === 'string' ? body.model : config.model, finishReason,
+        ...(typeof body.usage?.prompt_tokens === 'number' && typeof body.usage.completion_tokens === 'number' ? { usage: { promptTokens: body.usage.prompt_tokens, completionTokens: body.usage.completion_tokens } } : {}) };
+    };
+    try {
+      return await Promise.race([execute(), new Promise<never>((_, reject) => { timer = setTimeout(() => { controller.abort(); cancelWithoutWaiting(activeReader); reject(failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT')); }, timeoutMs); })]);
+    } catch (error) {
+      if (controller.signal.aborted) throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT');
+      if (error instanceof LLMError) throw error;
+      // Never return response bodies, raw prompts, keys, or network stack details to the caller.
+      throw failure('LLM_UNAVAILABLE', 'NETWORK_ERROR');
+    } finally { if (timer !== undefined) clearTimeout(timer); }
+  };
+  const knownIssues = new Set<string>(VALIDATION_ISSUES);
+  const repairMessages = (messages: readonly LLMMessage[], output: string, issues: readonly string[]): LLMMessage[] => {
+    const originalUser = messages.at(-1);
+    if (originalUser?.role !== 'user') throw new LLMError('LLM_INVALID_RESPONSE', false, { stage: 'VALIDATION', issues: ['REPAIR_USER_MESSAGE_MISSING'], attempts: 1, finishReason: null });
+    const safeIssues = [...new Set(issues.map(issue => knownIssues.has(issue) ? issue : 'RESPONSE_VALIDATION_FAILED'))];
+    const guidance = `응답 검증에 실패했습니다. 원래 마지막 사용자 요청에 대한 응답을 수리하세요. 수리 안내 자체를 새 사용자 질문이나 대화 자료로 해석하지 않습니다. JSON Schema와 실제 도구 자료를 다시 대조해 JSON 객체 하나를 출력하세요. requiredToolReferences가 있으면 그대로 복사하고, 미확정 값과 가능한 점수 전체를 유지하세요. 시스템의 캐릭터와 원본 도구 결과를 변경하지 않습니다. 오류: ${JSON.stringify(safeIssues)}`;
+    const cloned = messages.map(message => ({ ...message }));
+    if (cloned[0]?.role === 'system') cloned[0].content += `\n\n${guidance}`;
+    else cloned.unshift({ role: 'system', content: guidance });
+    return [...cloned, { role: 'assistant', content: output }, { ...originalUser }];
+  };
+  return {
+    generateChat: (messages, contract) => {
+      const { schema, name } = getChatResponseDefinition(contract);
+      return request(messages, schema, name, initialTimeout, 0.65);
+    },
+    repairChat: async (messages, output, issues, contract) => {
+      const { schema, name } = getChatResponseDefinition(contract);
+      return request(repairMessages(messages, output, issues), schema, name, repairTimeout, 0.15, 2);
+    },
+    async generateStructured<T>(input: StructuredRequest<T>): Promise<T> {
+      const first = await request(input.messages, input.schema, input.name ?? 'jumzip_structured', initialTimeout, 0.1);
+      try { return input.validate(JSON.parse(first.content)); } catch { /* One repair, unchanged generic structured guidance. */ }
+      const repaired = await request(repairMessages(input.messages, first.content, ['STRUCTURED_VALIDATION_FAILED']), input.schema, input.name ?? 'jumzip_structured', repairTimeout, 0.1, 2);
+      let value: unknown;
+      try { value = JSON.parse(repaired.content); }
+      catch { throw new LLMError('LLM_INVALID_RESPONSE', true, { stage: 'PARSE', issues: ['JSON_REQUIRED'], attempts: 2, finishReason: repaired.finishReason }); }
+      try { return input.validate(value); }
+      catch { throw new LLMError('LLM_INVALID_RESPONSE', true, { stage: 'VALIDATION', issues: ['STRUCTURED_VALIDATION_FAILED'], attempts: 2, finishReason: repaired.finishReason }); }
+    },
+  };
+}

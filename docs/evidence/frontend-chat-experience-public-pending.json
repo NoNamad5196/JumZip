@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-09-20T04:56:27.606Z",
+  "mode": "PUBLIC_BUILD_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "modelRequests": 0,
+  "authRequests": 0,
+  "mutations": 0,
+  "files": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "localSha256": "c3ba50e1e4dfc8dc5799f5c0d31789b028660a78dd2d1532b31263c06826b74f",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/AccountPages-waH1LJpg.js",
+      "status": 200,
+      "localSha256": "8471cc3a026de48cbee554c0cba772a1c961bab14d719f8a787ef9558aea16d8",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/Chat-D_eFrkpI.js",
+      "status": 200,
+      "localSha256": "8b8da0f53623d40517204008490436f1b1dc14932ada6d6e68830430b4fe16f7",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-APQomPLd.js",
+      "status": 200,
+      "localSha256": "15a03e9b7e26967add77fefe3e13a20de2d00663cde6cad19af6d483a7fca7af",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/ConnectionState-evQ8gMC_.js",
+      "status": 200,
+      "localSha256": "bcad317a365926d5c908eec9ae566837886769257430e70c4d0913081c2a1ad4",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/Reading-BTdz7WK0.js",
+      "status": 200,
+      "localSha256": "f03c00e3e540602c8f7735f744207b890fddc67281b76e1f52a898a1d56f803c",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-CL3jaKy3.css",
+      "status": 200,
+      "localSha256": "2d3c751488f0d2e6b9c376900da4c0322523fce346e4d0a19cbe0107e1e739d8",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/index-Dd5hyUKv.js",
+      "status": 200,
+      "localSha256": "bcbb3d603371920fec62adfe2aced1cc0b1e505d92345a428f0ce704f41c0832",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    },
+    {
+      "path": "/assets/pagination-CuxhClMO.js",
+      "status": 200,
+      "localSha256": "19da0238a9639ccd555fbe40fb99cc7f3856e9ded67ea4180499661e5f23ed41",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": false
+    }
+  ],
+  "passed": false,
+  "limits": [
+    "Byte equality verifies publication only. Browser behavior and authenticated backend/LLM acceptance require separate evidence."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "source": "test-results/recall-probe-v4-synthetic-responses.json",
+  "sourceSha256": "21aeb8d8bdb62134448df9d7d66315c3eff320b8fb473cc340def985e947bd8c",
+  "synthetic": true,
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "promptVersion": "JumZipPersona-v4",
+  "responses": [
+    {
+      "content": "{\"text\":\"종이별 접기! 그거 진짜 오래 했었지. 요즘도 꾸준히 만드는 거 같아서 기분 좋다. 요즘은 또 어떤 걸 만들고 있어?\"}",
+      "finishReason": "stop",
+      "contentSha256": "27562226b58d95fe1e4d3bf7cd9e28cab8d277fb92590b3436597a81921179bc"
+    },
+    {
+      "content": "{\"text\":\"종이별 접기! 그거 진짜 오래 했었지. 요즘도 꾸준히 만드는 거 같아서 기분 좋다. 요즘은 또 어떤 걸 만들고 있어?\"}",
+      "finishReason": "stop",
+      "contentSha256": "27562226b58d95fe1e4d3bf7cd9e28cab8d277fb92590b3436597a81921179bc"
+    }
+  ]
+}

@@ -49,6 +49,45 @@
 .auth-options{display:grid;gap:24px}.auth-provider .birth-form-note{margin-bottom:0}.auth-options>.button{justify-self:center}.auth-divider{display:flex;align-items:center;gap:16px;margin:4px 0 28px;color:var(--muted);font-size:12px}.auth-divider:before,.auth-divider:after{content:'';height:1px;background:var(--line);flex:1}.auth-divider span{white-space:nowrap}
 .older-messages,.history-more{display:flex;justify-content:center;padding:20px 0}.older-messages{padding-top:0;padding-bottom:24px}
 
+/* Pending replies occupy the same place as the eventual character message. */
+.chat-messages .message-assistant .message-text{display:table;max-width:100%;padding:14px 18px;border:1px solid var(--line);border-radius:4px 14px 14px;background:var(--surface)}
+.chat-messages .message-user .message-body{border-radius:14px 4px 14px 14px}
+.message-pending .message-body{flex:initial;max-width:85%}
+.typing-bubble{display:flex;align-items:center;gap:12px;min-width:64px;min-height:44px;padding:14px 18px;border:1px solid var(--line);border-radius:4px 14px 14px;background:var(--surface);color:var(--muted);font-size:12px;line-height:1.7}
+.typing-bubble .loading-dots{gap:5px}
+.typing-bubble .loading-dots i{width:5px;height:5px}
+.pending-long-wait{display:block;margin-top:8px;color:var(--muted);font-size:12px;line-height:1.7}
+.message-delivery{display:block;margin-top:8px;color:var(--muted);font-size:11px;line-height:1.6}
+.message-local-actions{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px}
+.message-local-actions button{min-height:44px;color:var(--gold);font-size:12px;text-align:left}
+.message-local-actions button:disabled{opacity:.5}
+
+/* Compact chat results preserve a single glance at all three positions. */
+.tarot-inline-chat .tarot-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:10px;max-width:440px;margin:20px auto}
+.tarot-inline-chat .tarot-card{width:100%;max-width:none;min-width:0}
+.tarot-inline-chat .tarot-card>small{display:flex;align-items:center;justify-content:center;min-height:36px;margin:0 0 8px;font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.tarot-inline-chat .tarot-card>img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain}
+.tarot-inline-chat .tarot-card h4{font-size:13px;line-height:1.45;margin:8px 0 0;overflow-wrap:anywhere}
+.tarot-inline-chat .tarot-card>span{font-size:10px;line-height:1.5;margin-top:4px}
+.tarot-inline-chat .tarot-cards.single{grid-template-columns:minmax(0,160px);justify-content:center}
+.tarot-inline-chat .tarot-cards.single .tarot-card{width:100%;max-width:160px}
+.tarot-basic-meanings{margin:16px 0;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.tarot-basic-meanings h4{font-size:13px;font-weight:500;margin:0 0 8px}
+.tarot-basic-meanings p{font-size:12px;line-height:1.75;color:var(--muted);margin:8px 0}
+.tarot-basic-meaning{margin-top:12px}
+.tarot-basic-meaning h5{font-size:12px;font-weight:500;line-height:1.7;color:var(--gold)}
+.tarot-basic-meaning .tarot-basic-keywords{margin:4px 0 0;color:var(--ivory)}
+.tarot-basic-meanings .tarot-basic-disclaimer{font-size:11px;margin:8px 0 0}
+@media(max-width:767px){
+  .tarot-inline-chat .tarot-cards{gap:8px;margin:16px auto}
+  .tarot-inline-chat .tarot-card>small{font-size:10px;min-height:42px;margin-bottom:6px}
+  .tarot-inline-chat .tarot-card h4{font-size:12px;margin-top:8px}
+  .tarot-inline-chat .tarot-card>span{font-size:10px}
+  .tarot-inline-chat .tarot-inline-heading{align-items:flex-start;gap:8px}
+  .tarot-inline-chat .tarot-inline-heading>span{display:none}
+  .tarot-basic-meanings{padding:12px}
+}
+
 .history-new-story{white-space:nowrap;flex-shrink:0}
 
 .deletion-record-title{margin:20px 0;color:var(--gold)}.deletion-memory-section{border-top:1px solid var(--line);padding-top:24px;margin-top:24px}.deletion-memory-section h3{font-size:15px;font-weight:500;margin-bottom:12px}.deletion-memory-section>p{font-size:12px;line-height:1.8;color:var(--muted);margin-bottom:16px}.deletion-memory-list{border:0;padding:0;margin:20px 0;max-height:280px;overflow:auto}.deletion-memory-choice{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}.deletion-memory-choice>input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--orange)}.deletion-memory-choice>span{min-width:0}.deletion-memory-choice strong{display:block;font-size:13px;font-weight:400;line-height:1.7;overflow-wrap:anywhere}.deletion-memory-choice small{display:block;font-size:10px;color:var(--muted);margin-top:6px}.deletion-memory-note{font-size:11px!important}.deletion-memory-section>.text-link{font-size:12px}.deletion-actions{flex-wrap:wrap}.deletion-actions .button{white-space:nowrap}@media(max-width:479px){.deletion-actions .button{padding:12px 16px;font-size:12px}}

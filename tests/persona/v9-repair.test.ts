@@ -29,7 +29,7 @@ describe('v9 Tarot-only repair feedback without validation relaxation', () => {
     fetchImpl.mockResolvedValueOnce(completion(invalid())).mockResolvedValueOnce(completion(valid()));
     const output = await generatePersonaReply(provider, { characterId: 'SANI', currentMessage: '이 카드 하나를 설명해 줘.', toolResult: { cards: [card] } });
     expect(output.repaired).toBe(true); expect(output.content).toBe(valid().text);
-    expect(output.metadata.promptVersion).toBe('JumZipPersona-v11');
+    expect(output.metadata.promptVersion).toBe('JumZipPersona-v12');
     expect(JSON.stringify(output)).not.toContain('interpretationEvidence');
     expect(fetchImpl).toHaveBeenCalledTimes(2);
     const initial = bodyAt(fetchImpl, 0), repair = bodyAt(fetchImpl, 1);

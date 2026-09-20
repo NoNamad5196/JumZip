@@ -4,8 +4,7 @@ import { LLMError, type LLMProvider } from './provider.ts';
 import { segmentReply, validateChatOutput } from './validator.ts';
 import { selectChatResponseContract } from './chat-contract.ts';
 
-// v12 declares text-only output for no-tool dialogue; tool contracts stay intact.
-export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v12';
+export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v4.1';
 export interface PersonaReply {
   content: string; segments: string[]; repaired: boolean;
   metadata: { model: string; promptVersion: string; provider: 'openai-compatible'; generatedAt: string; usage?: { promptTokens: number; completionTokens: number } };
@@ -23,14 +22,12 @@ export async function generatePersonaReply(provider: LLMProvider, input: Persona
   let repaired = false;
   if (!initial.ok) {
     repaired = true;
-    const context = contract === 'TAROT_EVIDENCE_V1' && expectedCards
-      ? { expectedCards: expectedCards.map(({ cardId, orientation, positionIndex }) => ({ cardId, orientation, positionIndex })) } : undefined;
-    output = await provider.repairChat(messages, first.content, initial.issues, contract, context);
+    output = await provider.repairChat(messages, first.content, initial.issues, contract);
     validated = validateChatOutput(output.content, validationOptions);
   }
   if (!validated.ok) throw new LLMError('LLM_INVALID_RESPONSE', true, {
-    stage: validated.issues.includes('JSON_REQUIRED') ? 'PARSE' : 'VALIDATION',
-    issues: validated.issues, attempts: repaired ? 2 : 1, finishReason: output.finishReason ?? null,
+    stage: validated.issues.includes('JSON_REQUIRED') ? 'PARSE' : 'VALIDATION', issues: validated.issues,
+    attempts: repaired ? 2 : 1, finishReason: output.finishReason ?? null,
   });
   return { content: validated.value.text, segments: segmentReply(validated.value.text), repaired,
     metadata: { model: output.model, promptVersion: PERSONA_PROMPT_VERSION, provider: 'openai-compatible', generatedAt: new Date().toISOString(), ...(output.usage ? { usage: output.usage } : {}) } };

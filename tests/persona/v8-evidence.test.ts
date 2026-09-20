@@ -68,8 +68,11 @@ describe('Tarot internal evidence is lexical provenance, not semantic certificat
     const directReviewFixture = { hardFails: ['TOOL_MEANING_CHANGED'], evidence: knownSemanticHardFail };
     expect(directReviewFixture.hardFails).toHaveLength(1);
   });
-  it('keeps general chat and Saju on the exact two-key contract; merely asking Tarot does not enable evidence', () => {
-    for (const toolResult of [undefined, { kind: 'SAJU', strength: { score: 83 } }, { cards: [] }]) {
+  it('keeps Saju and nonempty DEFAULT snapshots on the two-key contract; merely asking Tarot does not enable evidence', () => {
+    expect(selectChatResponseContract(undefined)).toBe('TEXT_ONLY_V1');
+    // Direct legacy validator callers still default to the original two-key shape.
+    expect(validateChatOutput(JSON.stringify({ text: '이야기부터 들어보자.', toolReferences: [] }), { characterId: 'SANI' }).ok).toBe(true);
+    for (const toolResult of [{ kind: 'SAJU', strength: { score: 83 } }, { cards: [] }]) {
       expect(selectChatResponseContract(toolResult)).toBe('DEFAULT');
       expect(validateChatOutput(JSON.stringify({ text: '이야기부터 들어보자.', toolReferences: [] }), { characterId: 'SANI', toolResult }).ok).toBe(true);
       expect(validateChatOutput(JSON.stringify({ text: '이야기부터 들어보자.', toolReferences: [], interpretationEvidence: [] }), { characterId: 'SANI', toolResult })).toMatchObject({ ok: false, issues: ['RESPONSE_SCHEMA_INVALID'] });

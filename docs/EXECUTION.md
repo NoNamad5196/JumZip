@@ -2,6 +2,14 @@
 
 Deadline: 2026-09-20 23:59 Asia/Seoul. User approved M0–M17 implementation. A working Tarot release is a checkpoint; independent Core v1 work continues until acceptance or a concrete external blocker.
 
+## Latest update — 14:02 KST: chat experience repair
+
+The [chat repair batch](chat-experience-repair.md) implements immediate user bubbles, character typing feedback, immediate validated answers, safe retry reconciliation, compact mobile Tarot and labelled basic meanings when AI interpretation fails. Whole TypeScript/lint and 1,066 tests pass (three opt-in live skips); local browser regression passes ten cases (two intentional duplicate skips); production build and public credential/asset checks pass. These local checks do not certify live AI quality.
+
+Frontend publication is **pending**: the browser upload tool did not populate the Cloudflare folder upload. The [public byte comparison](evidence/frontend-chat-experience-public-pending.json) confirms the previous build is still served. The owner was asked to select `C:\Users\nonam\Documents\JumZip\dist` in the prepared upload screen; final deployment and verification can follow that selection.
+
+Production remains Qwen/Persona-v4/Intent-v1. Current Persona-v12 is a candidate; a separate 54-file v4.1 stage narrowly removes the ordinary-chat tool-reference requirement and improves safe error diagnostics while preserving deployed tool contracts. Its offline verification passes. The bounded direct Qwen probe received HTTP429 on the first request and stopped with zero completed cases. Its quota/capacity cause remains unknown; no backend deployment, model switch or paid upgrade followed. [Validation summary](evidence/chat-experience-validation.json).
+
 ## Source order
 
 1. [Engineering](https://app.notion.com/p/3df7cdef782d81d7b3a6d28b604f050f)

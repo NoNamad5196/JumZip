@@ -30,6 +30,14 @@ function fixture() {
   return { deps, execute: createCompatibilityActionExecutor(deps) };
 }
 describe('compatibility snapshot and partner birth privacy', () => {
+  it('keeps provider rate limiting distinct after the compatibility result is saved', async () => {
+    const { deps, execute } = fixture();
+    vi.mocked(deps.generate).mockRejectedValue({ code: 'LLM_RATE_LIMITED' });
+    const response = await execute(request, user);
+    expect(response.status).toBe(200);
+    expect(response.data).toMatchObject({ executionStatus: 'PARTIAL', compatibilityReadingId: snapshot.compatibilityReadingId, interpretation: null, partialError: { details: { compatibilityReadingId: snapshot.compatibilityReadingId, reason: 'LLM_RATE_LIMITED' } } });
+    expect(deps.executions.complete).not.toHaveBeenCalled();
+  });
   it.each(['complete', 'fail'] as const)('never returns a deleted compatibility snapshot when the %s RPC reports NOT_FOUND', async phase => {
     const { deps, execute } = fixture();
     const gone = new ApiFailure('NOT_FOUND', 404, '삭제된 상담입니다.');
