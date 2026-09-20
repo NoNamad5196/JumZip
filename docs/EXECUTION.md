@@ -2,7 +2,13 @@
 
 Deadline: 2026-09-20 23:59 Asia/Seoul. User approved M0–M17 implementation. A working Tarot release is a checkpoint; independent Core v1 work continues until acceptance or a concrete external blocker.
 
-## Latest update — 17:18 KST: frontend published, AI availability blocked
+## Latest update — 17:47 KST: Cloudflare-first Gemini fallback enabled
+
+The [Gemini fallback release](gemini-fallback.md) is deployed and enabled after owner confirmation of Free Tier and approval of the stated Google data transfer. Cloudflare remains primary; only HTTP429 switches an operation to Gemini3.5Flash. The accepted v4 backend has exactly two changed files out of53; prompts, schemas, validators, privacy/deletion guards and Intent-v1 remain unchanged. Real provider checks passed a Korean greeting and a correctly shaped one-card Tarot case. These checks do not establish full hosted signed-in E2E acceptance or eliminate transient provider failures.
+
+Typecheck/lint/build and1,147 tests passed; three opt-in live tests were skipped. All five deployed functions passed unauthenticated startup boundaries. Remote setting hashes match the expected primary, separate secondary credentials and enabled flag. The Google secondary privacy disclosure is public and all ten frontend HTML/JS/CSS files match the build. [Release evidence](evidence/edge-gemini-fallback-release.json).
+
+## Previous update — 17:18 KST: frontend published, AI availability blocked
 
 The latest frontend is deployed to https://jumzip.pages.dev. Cloudflare displayed success and all ten public HTML/JS/CSS files match the local build ([publication evidence](evidence/frontend-service-errors-public.json)). This publishes the earlier chat/mobile/wrapping changes plus accurate service-error feedback. Related tests passed 102; typecheck, production build, focused lint and source/build credential checks passed. No owner folder selection is now required.
 

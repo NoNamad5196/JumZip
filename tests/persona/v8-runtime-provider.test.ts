@@ -16,7 +16,7 @@ vi.mock('../../supabase/functions/_shared/persistence/repository.ts', async impo
     beginChat: async () => ({ executionId: state.id, conversationId: state.id, consultationId: state.id, characterId: 'SANI', userMessage: { id: state.id, content: '같은 카드로 다시 설명해 줘.', createdAt: '2026-09-20T00:00:00Z' } }),
     context: async () => ({ recentMessages: [], summary: '', memories: [], toolResult: { cards: state.cards } }),
     complete: async (params: CompleteParams) => params.data,
-    fail: vi.fn(),
+    fail: vi.fn(async () => undefined),
   }),
 }));
 const endpoint = 'https://api.cloudflare.com/client/v4/accounts/synthetic-test-account/ai/v1';
@@ -26,6 +26,24 @@ const completion = (value: unknown) => new Response(JSON.stringify({ choices: [{
 afterEach(() => vi.unstubAllGlobals());
 
 describe('Cloudflare Gemma provider and production runtime request parity (zero network)', () => {
+  it.each(['true', 'false', undefined])('wires the secondary provider only through the explicit server switch (%s)', async enabled => {
+    const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(new Response(null, { status: 429 }))
+      .mockResolvedValueOnce(completion({ text: '새 출발을 생각해 보자.', toolReferences: [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0 }], interpretationEvidence: [{ positionIndex: 0, keywordIndices: [0], textEvidence: '새 출발' }] }));
+    vi.stubGlobal('fetch', fetchImpl);
+    const env: Record<string, string | undefined> = { LLM_BASE_URL: endpoint, LLM_MODEL: qwen, LLM_API_KEY: 'synthetic-primary-key', LLM_STRUCTURED_FORMAT: 'json_object',
+      LLM_FALLBACK_ENABLED: enabled, LLM_FALLBACK_BASE_URL: 'https://generativelanguage.googleapis.com/v1beta/openai', LLM_FALLBACK_MODEL: 'gemini-3.5-flash', LLM_FALLBACK_API_KEY: 'synthetic-secondary-key',
+      TOOL_RECOMMENDATIONS_ENABLED: 'false', MEMORY_MAINTENANCE_ENABLED: 'false', TITLE_GENERATION_ENABLED: 'false' };
+    const execute = createExecutor({} as SupabaseClient, name => env[name]);
+    const operation = execute('chat', { schemaVersion: 1, action: 'SEND', requestId: state.id, conversationId: state.id, consultationId: null, message: '같은 카드로 다시 설명해 줘.' }, { id: state.id, isAnonymous: false });
+    if (enabled === 'true') {
+      expect((await operation).status).toBe(201); expect(fetchImpl).toHaveBeenCalledTimes(2);
+      expect(fetchImpl.mock.calls[1]![0]).toBe('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions');
+      expect(JSON.parse(String(fetchImpl.mock.calls[1]![1]!.body)).model).toBe('gemini-3.5-flash');
+    } else {
+      await expect(operation).rejects.toMatchObject({ code: 'LLM_UNAVAILABLE', details: { reason: 'LLM_RATE_LIMITED' } });
+      expect(fetchImpl).toHaveBeenCalledOnce();
+    }
+  });
   it.each([gemma, qwen])('uses the environment-selected model through actual runtime initial and repair: %s', async model => {
     const toolReferences = [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0 }];
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(completion({ text: '새 출발을 생각해 보자.', toolReferences }))

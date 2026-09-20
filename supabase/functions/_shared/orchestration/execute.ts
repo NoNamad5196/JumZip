@@ -190,7 +190,10 @@ export function createExecutor(client: SupabaseClient, environment: (name: strin
   const repository = createRepository(client);
   return async (endpoint: Endpoint, request: ActionRequest, user: AuthenticatedUser, deadlineAt = Date.now() + 100_000): Promise<ActionOutput> => {
     const providerConfig = () => ({ baseUrl: environment('LLM_BASE_URL') ?? '', model: environment('LLM_MODEL') ?? '', apiKey: environment('LLM_API_KEY'),
-      structuredFormat: environment('LLM_STRUCTURED_FORMAT') === 'json_object' ? 'json_object' as const : 'json_schema' as const });
+      structuredFormat: environment('LLM_STRUCTURED_FORMAT') === 'json_object' ? 'json_object' as const : 'json_schema' as const,
+      ...(environment('LLM_FALLBACK_ENABLED') === 'true' ? { fallback: {
+        baseUrl: environment('LLM_FALLBACK_BASE_URL') ?? '', model: environment('LLM_FALLBACK_MODEL') ?? '', apiKey: environment('LLM_FALLBACK_API_KEY') ?? '',
+      } } : {}) });
     const generate = (input: PersonaPromptInput) => {
       // Lazy initialization preserves the authoritative draw even when inference is unconfigured.
       const provider = createOpenAICompatibleProvider({ ...providerConfig(), ...inferenceTimeouts(deadlineAt) });

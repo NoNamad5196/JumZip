@@ -1,0 +1,541 @@
+{
+  "status": "DEPLOYED_AND_ENABLED",
+  "baseManifest": "docs/evidence/edge-saju-focus-release.json",
+  "baseManifestSha256": "6c84619f611038b09324e53024ac3545e5e7b884fb0e7be626fc9753727a8bb4",
+  "baseFilesSha256": "9f0b9053817c65b1d207fdaaff20288ef7e8aec0ce21a98d5f026d59c7f3e2f6",
+  "promptVersion": "JumZipPersona-v4",
+  "intentVersion": "JumZipIntent-v1",
+  "primaryModel": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "secondaryModel": "gemini-3.5-flash",
+  "fallbackTrigger": "PRIMARY_HTTP_429_ONLY",
+  "changedFiles": [
+    "supabase/functions/_shared/llm/provider.ts",
+    "supabase/functions/_shared/orchestration/execute.ts"
+  ],
+  "unchangedFiles": 51,
+  "files": [
+    {
+      "path": "supabase/config.toml",
+      "sha256": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+      "baseSha256": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+      "bytes": 1159,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/contracts/index.ts",
+      "sha256": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+      "baseSha256": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+      "bytes": 1783,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/fortune-timing.ts",
+      "sha256": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "baseSha256": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "bytes": 18477,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/full-saju.ts",
+      "sha256": "0d1d4e7709e9ee4dcdb388cf4ab6c0ff76c78201a01e76f95875390e067441a6",
+      "baseSha256": "0d1d4e7709e9ee4dcdb388cf4ab6c0ff76c78201a01e76f95875390e067441a6",
+      "bytes": 9999,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/index.ts",
+      "sha256": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "baseSha256": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "bytes": 228,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/router.ts",
+      "sha256": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "baseSha256": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "bytes": 4997,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/balance.ts",
+      "sha256": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "baseSha256": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "bytes": 5065,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/constants.ts",
+      "sha256": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "baseSha256": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "bytes": 4674,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/index.ts",
+      "sha256": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "baseSha256": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "bytes": 242,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/natal.ts",
+      "sha256": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "baseSha256": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "bytes": 3254,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/rational.ts",
+      "sha256": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "baseSha256": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "bytes": 2339,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/relations.ts",
+      "sha256": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "baseSha256": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "bytes": 2672,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/shinsal.ts",
+      "sha256": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "baseSha256": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "bytes": 5641,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/strength.ts",
+      "sha256": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "baseSha256": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "bytes": 7699,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/types.ts",
+      "sha256": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "baseSha256": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "bytes": 4040,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju-compatibility.ts",
+      "sha256": "b8755006d0053b51243c67abfd07c99fb3763fa157cbe01110ab7dbda9b4a156",
+      "baseSha256": "b8755006d0053b51243c67abfd07c99fb3763fa157cbe01110ab7dbda9b4a156",
+      "bytes": 16456,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju.ts",
+      "sha256": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "baseSha256": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "bytes": 12317,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/tarot.ts",
+      "sha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "baseSha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "bytes": 9998,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/errors.ts",
+      "sha256": "16a3b8ba406c1da85f32340580713a74340bbc89ba4aa5696556a7724c1b2610",
+      "baseSha256": "16a3b8ba406c1da85f32340580713a74340bbc89ba4aa5696556a7724c1b2610",
+      "bytes": 1334,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/handler.ts",
+      "sha256": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+      "baseSha256": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+      "bytes": 5240,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/network.ts",
+      "sha256": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+      "baseSha256": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+      "bytes": 3435,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/runtime.ts",
+      "sha256": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+      "baseSha256": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+      "bytes": 2526,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/index.ts",
+      "sha256": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "baseSha256": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "bytes": 120,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/intent.ts",
+      "sha256": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+      "baseSha256": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+      "bytes": 10820,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/provider.ts",
+      "sha256": "580c4ef3d021e649bc6b541f39be7ff09bdcd49538fdc2ad402649996fed4061",
+      "baseSha256": "fd79d8a6ef435a1aab0931a8a30db1faff0d5daa5acb8572a8872be1ade9d6d3",
+      "bytes": 11926,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/llm/reply.ts",
+      "sha256": "773f1536106ca9873088d412a6d39a6952fbc67c5ed48435dc7db11dc542f4b5",
+      "baseSha256": "773f1536106ca9873088d412a6d39a6952fbc67c5ed48435dc7db11dc542f4b5",
+      "bytes": 1824,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/validator.ts",
+      "sha256": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "baseSha256": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "bytes": 5864,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/compatibility.ts",
+      "sha256": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+      "baseSha256": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+      "bytes": 8254,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/execute.ts",
+      "sha256": "5f102c25b623954b56653160ff98dac24b4186152f4c275f294d7311b73ceb33",
+      "baseSha256": "96f8568d408d374c0ecac0d3759d51e34d78405bf381a4af360c00f881955dff",
+      "bytes": 19624,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/location.ts",
+      "sha256": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+      "baseSha256": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+      "bytes": 3611,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/maintenance.ts",
+      "sha256": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+      "baseSha256": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+      "bytes": 2401,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/memory.ts",
+      "sha256": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+      "baseSha256": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+      "bytes": 6580,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/privacy.ts",
+      "sha256": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+      "baseSha256": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+      "bytes": 385,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/saju.ts",
+      "sha256": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+      "baseSha256": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+      "bytes": 7731,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/titles.ts",
+      "sha256": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+      "baseSha256": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+      "bytes": 4810,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/cleanup.ts",
+      "sha256": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+      "baseSha256": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+      "bytes": 694,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/compatibility.ts",
+      "sha256": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+      "baseSha256": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+      "bytes": 3401,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/repository.ts",
+      "sha256": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+      "baseSha256": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+      "bytes": 13653,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/saju.ts",
+      "sha256": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+      "baseSha256": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+      "bytes": 6120,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/benchmark.ts",
+      "sha256": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "baseSha256": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "bytes": 14712,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/config.ts",
+      "sha256": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "baseSha256": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "bytes": 14854,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/context.ts",
+      "sha256": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "baseSha256": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "bytes": 4715,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/index.ts",
+      "sha256": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "baseSha256": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "bytes": 149,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/memory.ts",
+      "sha256": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+      "baseSha256": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+      "bytes": 12243,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/prompt.ts",
+      "sha256": "040661052ddf8cd7ebd66d4683c144ac407034c895de3fdb19355cf9f9f75b78",
+      "baseSha256": "040661052ddf8cd7ebd66d4683c144ac407034c895de3fdb19355cf9f9f75b78",
+      "bytes": 10734,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/tool-facts.ts",
+      "sha256": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+      "baseSha256": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+      "bytes": 7811,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/validation/requests.ts",
+      "sha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+      "baseSha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+      "bytes": 6616,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/account/index.ts",
+      "sha256": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+      "baseSha256": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+      "bytes": 70,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/chat/index.ts",
+      "sha256": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+      "baseSha256": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+      "bytes": 67,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/compatibility/index.ts",
+      "sha256": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+      "baseSha256": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+      "bytes": 76,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/deno.json",
+      "sha256": "a6335d2b3e0cc45ec3b2c1315e1f91acc5918e40c479e33c4982c314a978e62d",
+      "baseSha256": "a6335d2b3e0cc45ec3b2c1315e1f91acc5918e40c479e33c4982c314a978e62d",
+      "bytes": 213,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/saju/index.ts",
+      "sha256": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+      "baseSha256": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+      "bytes": 67,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/tarot/index.ts",
+      "sha256": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+      "baseSha256": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+      "bytes": 68,
+      "changed": false
+    }
+  ],
+  "modelRequests": 0,
+  "networkRequests": 0,
+  "deployed": true,
+  "recordedAt": "2026-09-20T08:47:31.139Z",
+  "deployedFunctions": [
+    "account",
+    "chat",
+    "compatibility",
+    "saju",
+    "tarot"
+  ],
+  "manifestSha256": "50d8bf8765bfd77372a461f87dbe670239c9a86d9f8a21996904acc1507ffd73",
+  "offline": {
+    "status": "OFFLINE_CHECKS_PASSED",
+    "stage": "C:\\Users\\nonam\\Documents\\JumZip\\supabase\\.temp\\gemini-fallback-v4-ywsYaa",
+    "stageManifestSha256": "50d8bf8765bfd77372a461f87dbe670239c9a86d9f8a21996904acc1507ffd73",
+    "stagedTypecheckPassed": true,
+    "checks": [
+      "exact 53 deployed files, only provider and execute changed, 51 byte-identical",
+      "staged TypeScript: all release TS files",
+      "primary success preserves v4 schema, serialized prompt and 900-token request",
+      "CF429 then Gemini greeting validates through actual v4 reply and separates credentials",
+      "one-card Tarot retains golden references and orientation through Gemini fallback",
+      "ordinary v4 still rejects missing references and makes only one sticky secondary repair",
+      "primary repair HTTP429 switches once without restarting the original logical answer",
+      "structured requests use the same fallback and a single total repair",
+      "non-rate failures do not invoke Gemini and a secondary429 stops at two sends",
+      "fallback body cap and shared timeout reject incomplete transport"
+    ],
+    "checksPassed": 10,
+    "verifiedFiles": 53,
+    "unchangedFiles": 51,
+    "sourceFrozen": true,
+    "networkRequests": 0,
+    "modelRequests": 0,
+    "mockRequests": 32,
+    "transport": "INJECTED_FETCH_DOUBLES",
+    "promptVersion": "JumZipPersona-v4",
+    "intentVersion": "JumZipIntent-v1",
+    "semanticQuality": "NOT_EVALUATED",
+    "deployed": false
+  },
+  "validation": {
+    "typecheck": true,
+    "lint": true,
+    "productionBuild": true,
+    "testsPassed": 1147,
+    "testsSkipped": 3,
+    "sourceCredentialScan": true,
+    "publicCredentialScan": true
+  },
+  "serverConfiguration": {
+    "checkedAt": "2026-09-20T08:46:45.603Z",
+    "checks": {
+      "LLM_MODEL": true,
+      "LLM_BASE_URL": true,
+      "LLM_API_KEY": true,
+      "LLM_FALLBACK_API_KEY": true,
+      "LLM_FALLBACK_BASE_URL": true,
+      "LLM_FALLBACK_MODEL": true,
+      "LLM_FALLBACK_ENABLED": true
+    },
+    "passed": true,
+    "fallbackEnabled": true,
+    "secretValuesLogged": false
+  },
+  "startup": {
+    "checkedAt": "2026-09-20T08:45:52.456Z",
+    "mode": "UNAUTHENTICATED_STARTUP_BOUNDARY",
+    "authRequests": 0,
+    "modelRequests": 0,
+    "dbOperations": 0,
+    "checks": [
+      {
+        "name": "account",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "chat",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "compatibility",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "saju",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "tarot",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      }
+    ],
+    "passed": true
+  },
+  "publicFrontend": "docs/evidence/frontend-gemini-fallback-public.json",
+  "live": {
+    "actualCloudflareRequests": 1,
+    "actualGeminiRequests": 4,
+    "primaryObservedStatus": 429,
+    "model": "gemini-3.5-flash",
+    "greeting": {
+      "passed": true,
+      "repaired": false,
+      "provider": "Gemini",
+      "transport": "REAL_CLOUDFLARE_429_THEN_REAL_GEMINI",
+      "completedAt": "2026-09-20T08:37:36.207Z"
+    },
+    "tarot": {
+      "passed": true,
+      "repaired": false,
+      "provider": "Gemini",
+      "transport": "SYNTHETIC_PRIMARY_429_THEN_REAL_GEMINI",
+      "completedAt": "2026-09-20T08:40:53.622Z",
+      "validationIssues": []
+    },
+    "priorTarotAttempt": {
+      "representative": false,
+      "reason": "Test passed a card array directly instead of the production toolResult.cards object; the corrected fixture is the accepted Tarot probe.",
+      "statuses": [
+        200,
+        503
+      ],
+      "automaticRetries": 0
+    },
+    "hostedAuthenticatedRequests": 0,
+    "hostedDbOrAccountOperations": 0,
+    "userDataSent": false,
+    "rawErrorBodiesLogged": false,
+    "credentialValuesLogged": false
+  },
+  "approvals": {
+    "freeTierConfirmedByOwner": true,
+    "secondaryDataTransferAndActivationApprovedByOwner": true,
+    "paidPlanChanges": 0
+  },
+  "limitations": [
+    "Successful direct synthetic provider checks and unauthenticated startup checks are not a full hosted signed-in E2E acceptance.",
+    "Gemini can also return rate limits or transient errors; secondary failure stops without recursive retries.",
+    "All prompts, schemas, validation, stored draws and deletion guards remain the accepted v4 versions."
+  ]
+}

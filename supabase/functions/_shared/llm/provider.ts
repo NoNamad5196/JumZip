@@ -46,6 +46,8 @@ export interface LLMProvider {
 export interface OpenAICompatibleConfig {
   baseUrl: string; apiKey?: string; model: string; fetchImpl?: typeof fetch;
   initialTimeoutMs?: number; repairTimeoutMs?: number; maxOutputTokens?: number;
+  /** Server-only, separate credential. Used solely after Cloudflare HTTP 429. */
+  fallback?: { baseUrl: string; apiKey: string; model: string };
   /** Use json_object for a provider without strict JSON Schema support; runtime validation remains mandatory. */
   structuredFormat?: 'json_schema' | 'json_object';
 }
@@ -158,6 +160,20 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
   try { base = new URL(config.baseUrl); } catch { throw new LLMError('LLM_NOT_CONFIGURED', false); }
   if (!['https:', 'http:'].includes(base.protocol) || base.username || base.password || base.search || base.hash) throw new LLMError('LLM_NOT_CONFIGURED', false);
   const url = config.baseUrl.replace(/\/+$/, '').replace(/\/chat\/completions$/, '') + '/chat/completions';
+  const cloudflareEndpoint = base.origin === 'https://api.cloudflare.com'
+    && /^\/client\/v4\/accounts\/[^/]+\/ai\/v1(?:\/chat\/completions)?\/?$/.test(base.pathname);
+  let fallback: Readonly<{ url: string; apiKey: string; model: string }> | undefined;
+  if (config.fallback !== undefined) {
+    const candidate = config.fallback;
+    if (!cloudflareEndpoint || !candidate || typeof candidate !== 'object' || Array.isArray(candidate)
+      || candidate.baseUrl !== 'https://generativelanguage.googleapis.com/v1beta/openai'
+      || candidate.model !== 'gemini-3.5-flash' || typeof candidate.apiKey !== 'string' || !candidate.apiKey.trim()
+      || candidate.apiKey.trim() === config.apiKey?.trim()) throw new LLMError('LLM_NOT_CONFIGURED', false);
+    fallback = Object.freeze({ url: `${candidate.baseUrl}/chat/completions`, apiKey: candidate.apiKey.trim(), model: candidate.model });
+  }
+  // Sticky only within this provider instance: a controlled repair does not retry
+  // an exhausted primary. There is no recursive request or second repair budget.
+  let usingFallback = false;
   // Cloudflare's Gemma4 example explicitly disables reasoning this way. Keep this
   // narrow to its actual account API + exact model; other compatible APIs differ.
   // https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/
@@ -186,16 +202,29 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
       const formatMessages: LLMMessage[] = config.structuredFormat === 'json_object'
         ? [{ role: 'system', content: `출력은 다음 JSON Schema를 만족하는 JSON 객체 하나다. 필수 키, enum, 자료형을 정확히 지킨다. 다른 키나 설명을 추가하지 않는다.\n${JSON.stringify(schema)}` }, ...messages]
         : [...messages];
-      const requestMessages = config.model === '@cf/qwen/qwen3-30b-a3b-fp8'
-        ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...formatMessages]
-        : formatMessages;
-      const response = await fetchImpl(url, {
-        method: 'POST', signal: controller.signal,
-        headers: { 'Content-Type': 'application/json', ...(config.apiKey ? { Authorization: `Bearer ${config.apiKey}` } : {}) },
-        body: JSON.stringify({ model: config.model, messages: requestMessages, temperature, max_tokens: config.maxOutputTokens ?? 900, stream: false,
-          ...(cloudflareGemma ? { chat_template_kwargs: { enable_thinking: false } } : {}),
-          response_format: config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } } }),
-      });
+      let target = usingFallback ? fallback : undefined;
+      const send = (secondary: typeof fallback): Promise<Response> => {
+        const requestMessages = !secondary && config.model === '@cf/qwen/qwen3-30b-a3b-fp8'
+          ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...formatMessages]
+          : formatMessages;
+        const apiKey = secondary?.apiKey ?? config.apiKey;
+        return fetchImpl(secondary?.url ?? url, {
+          method: 'POST', signal: controller.signal, ...(apiKey ? { redirect: 'error' as const } : {}),
+          headers: { 'Content-Type': 'application/json', ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}) },
+          body: JSON.stringify({ model: secondary?.model ?? config.model, messages: requestMessages,
+            ...(secondary ? { reasoning_effort: 'low' } : { temperature }), max_tokens: config.maxOutputTokens ?? 900, stream: false,
+            ...(!secondary && cloudflareGemma ? { chat_template_kwargs: { enable_thinking: false } } : {}),
+            response_format: config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } } }),
+        });
+      };
+      let response = await send(target);
+      if (controller.signal.aborted) { cancelWithoutWaiting(response.body); throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
+      if (response.status === 429 && !target && fallback) {
+        cancelWithoutWaiting(response.body);
+        usingFallback = true; target = fallback;
+        // The same controller/timer bounds both sends and the eventual body read.
+        response = await send(target);
+      }
       if (controller.signal.aborted) { cancelWithoutWaiting(response.body); throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
       if (!response.ok) {
         cancelWithoutWaiting(response.body);
@@ -229,7 +258,7 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
       finishReason = safeFinishReason(choice?.finish_reason);
       if (choice?.finish_reason === 'length') throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_INCOMPLETE');
       if (typeof choice?.message?.content !== 'string' || choice.message.content.length === 0) throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_CONTENT_MISSING');
-      return { content: choice.message.content, model: typeof body.model === 'string' ? body.model : config.model, finishReason,
+      return { content: choice.message.content, model: typeof body.model === 'string' ? body.model : target?.model ?? config.model, finishReason,
         ...(typeof body.usage?.prompt_tokens === 'number' && typeof body.usage.completion_tokens === 'number' ? { usage: { promptTokens: body.usage.prompt_tokens, completionTokens: body.usage.completion_tokens } } : {}) };
     };
     try {
