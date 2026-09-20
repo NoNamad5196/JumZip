@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-09-20T01:38:08.878Z",
+  "mode": "LOCAL_AUTH_REST_WITH_SYNTHETIC_AUTH_NOTIFICATION",
+  "publicSignupTested": false,
+  "oauthTested": false,
+  "captchaTested": false,
+  "modelCalls": 0,
+  "accountDeletionSubmitted": false,
+  "credentialsRecorded": false,
+  "reactStateInjected": false,
+  "browserProcessEnvironment": "OS allowlist only",
+  "actualReadChecks": [
+    {
+      "name": "memory-RLS-A-four-B-zero-A-four",
+      "actualRestReads": true
+    }
+  ],
+  "syntheticNotificationChecks": [
+    {
+      "name": "same-UID-TOKEN_REFRESHED-preserves-confirmation",
+      "tokenRefreshPerformed": false
+    },
+    {
+      "name": "same-UID-anonymous-to-linked-metadata-preserves-confirmation",
+      "serverIdentityLinked": false,
+      "screenshot": "tests/ui/artifacts/local-account-boundary-2026-09-20T01-38-08-877Z/same-uid-confirmation.png"
+    },
+    {
+      "name": "real-local-session-A-B-A-SDK-transition-clears-DELETE-and-modal",
+      "nativeCrossTabStorageEventObserved": true,
+      "accountDeletionSubmitted": false,
+      "screenshot": "tests/ui/artifacts/local-account-boundary-2026-09-20T01-38-08-877Z/owner-B-empty-confirmation.png"
+    },
+    {
+      "name": "memory-same-UID-preserves-draft-and-A-B-A-discards-it",
+      "screenshot": "tests/ui/artifacts/local-account-boundary-2026-09-20T01-38-08-877Z/owner-B-no-memory-draft.png"
+    }
+  ],
+  "errors": [],
+  "network": {
+    "localAuthReads": 0,
+    "localRestReads": 10,
+    "preflights": 0,
+    "localActivityWrites": 6,
+    "blockedEdge": 0,
+    "blockedMutationOrRpc": 2,
+    "blockedExternal": 0,
+    "failedReads": 0
+  },
+  "passed": false,
+  "buildOutput": "test-results/local-account-boundary-dist-2026-09-20T01-38-08-877Z",
+  "indexSha256": "3baa650814c53188a8578e3ac44f0fd67e79b2f1f6991f77103b9f0fdec12617",
+  "failure": {
+    "phase": "history-selection-identity",
+    "code": "CHECK_FAILED_SEE_PHASE"
+  },
+  "cleanup": {
+    "callbackCompleted": false,
+    "pendingCleanupCount": 0,
+    "identities": [
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      },
+      {
+        "authAbsent": true,
+        "emptyOwnedTables": 15
+      }
+    ],
+    "credentialsPersisted": false
+  },
+  "limits": [
+    "Actual local synthetic Auth identities and REST/RLS reads; no public signup, CAPTCHA or OAuth verified.",
+    "SDK cross-tab notifications and anonymous/linked metadata transitions are explicitly synthetic; no token refresh or identity-link server request.",
+    "The sole browser mutation exception is actual local touch_activity for fixture A/B; it updates account activity only. Product data changes, account deletion, other RPCs, Edge and model calls are blocked.",
+    "Fixture setup/cleanup uses the Node-only local admin helper; .env files and public dist remain unchanged."
+  ]
+}

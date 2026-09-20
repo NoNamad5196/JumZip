@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "runId": "323d5886-ddff-4781-9d75-dd92939b33bb",
+  "startedAt": "2026-09-20T01:40:33.460Z",
+  "mode": "LOCAL_BROWSER_PRODUCTION_SERVICE_SYNTHETIC_TRANSPORT",
+  "passed": true,
+  "sourceHashes": {
+    "src/lib/service.ts": "a86b3d142214f9710d98636a739718f4a399adeb17662b6981548da3b45e40cc",
+    "src/lib/auth-identity.ts": "d373f8f74cf17c25298a5b601d4f49ffaa653be85499e21087061fd2ed9aa48b",
+    "pnpm-lock.yaml": "57d96dd89183728e39694d64cd81aab488f885e46cf4a6a540aea51de12a2e3c",
+    "tests/ui/local-auth-identity-race-check.mjs": "b9386e168d477263ca0850f1c307f4488c75f8765baf22d01f0de0de5e5d4615"
+  },
+  "sourceFrozen": true,
+  "realWebLocks": true,
+  "browserContexts": 2,
+  "checks": [
+    {
+      "name": "actual_browser_Web_Locks_available",
+      "passed": true
+    },
+    {
+      "name": "seed_A_shared_with_second_tab",
+      "passed": true
+    },
+    {
+      "name": "B_OTP_network_waits_while_A_logout_is_held",
+      "passed": true
+    },
+    {
+      "name": "real_cross_tab_gate_queues_OTP_and_initialization",
+      "passed": true
+    },
+    {
+      "name": "third_tab_initialization_not_completed_outside_gate",
+      "passed": true
+    },
+    {
+      "name": "deleteA_completed",
+      "passed": true
+    },
+    {
+      "name": "loginB_completed",
+      "passed": true
+    },
+    {
+      "name": "initialization_completed",
+      "passed": true
+    },
+    {
+      "name": "tab_A_retains_B_after_old_A_logout",
+      "passed": true
+    },
+    {
+      "name": "tab_B_retains_B_after_old_A_logout",
+      "passed": true
+    },
+    {
+      "name": "cross_tab_Auth_observer_finishes_at_B",
+      "passed": true
+    },
+    {
+      "name": "B_first_rejects_A_confirmation",
+      "passed": true
+    },
+    {
+      "name": "B_first_sends_no_DELETE_or_logout",
+      "passed": true
+    },
+    {
+      "name": "B_preserved_in_both_tabs_after_stale_A_action",
+      "passed": true
+    },
+    {
+      "name": "browser_missing_WebLocks_fails_closed",
+      "passed": true
+    },
+    {
+      "name": "unsupported_browser_sends_no_Auth_or_Edge_request",
+      "passed": true
+    },
+    {
+      "name": "no_unexpected_or_pending_network",
+      "passed": true
+    }
+  ],
+  "network": {
+    "localStatic": 8,
+    "syntheticUser": 1,
+    "syntheticDelete": 1,
+    "syntheticLogout": 1,
+    "syntheticOtp": 1,
+    "blockedUnexpected": 0,
+    "pendingSynthetic": 0
+  },
+  "realAuthCalls": 0,
+  "realDatabaseCalls": 0,
+  "realEdgeCalls": 0,
+  "modelCalls": 0,
+  "externalCalls": 0,
+  "credentialsRecorded": false,
+  "limits": [
+    "Synthetic Auth/Edge transport; no public signup, CAPTCHA, OAuth provider or Persona quality claim.",
+    "Actual browser Web Locks, shared localStorage and installed SDK; no user browser profile accessed."
+  ],
+  "bundleSha256": "805a76e5b961928c1146a418fa25423af9fafde9d25758938a71599471c44636",
+  "browserVersion": "153.0.4234.32",
+  "afterSourceHashes": {
+    "src/lib/service.ts": "a86b3d142214f9710d98636a739718f4a399adeb17662b6981548da3b45e40cc",
+    "src/lib/auth-identity.ts": "d373f8f74cf17c25298a5b601d4f49ffaa653be85499e21087061fd2ed9aa48b",
+    "pnpm-lock.yaml": "57d96dd89183728e39694d64cd81aab488f885e46cf4a6a540aea51de12a2e3c",
+    "tests/ui/local-auth-identity-race-check.mjs": "b9386e168d477263ca0850f1c307f4488c75f8765baf22d01f0de0de5e5d4615"
+  },
+  "finishedAt": "2026-09-20T01:40:35.630Z",
+  "cleanup": {
+    "browserClosed": true,
+    "localServerClosed": true,
+    "pendingSynthetic": 0,
+    "realAccountsCreated": 0
+  }
+}

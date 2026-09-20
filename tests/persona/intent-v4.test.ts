@@ -21,7 +21,7 @@ function setup(values: unknown[]) {
   return { provider: observed, bodies, fetchImpl, validated: () => validated };
 }
 
-describe('Intent v4 contrast contracts without a live model', () => {
+describe('current Intent runtime retains frozen v4 contrast contracts without a live model', () => {
   it('preserves all original 18 inputs and expected fields exactly, including the observed failing expectations', () => {
     const frozen = JSON.parse(readFileSync(new URL('./benchmark-runs/intent-v3/initial18-final600/selection.json', import.meta.url), 'utf8'));
     expect(INTENT_V4_CASES.slice(0, 18)).toEqual(INTENT_V3_CASES);
@@ -45,7 +45,7 @@ describe('Intent v4 contrast contracts without a live model', () => {
       expect(result?.recommendedTools.map(row => `${row.tool}:${row.mode}`) ?? []).toEqual(candidate.expectedSlots.exactTools);
       if (result) expect(result.recommendedTools[0]!.missingSlots).toEqual(candidate.expectedSlots.missingSlots);
       expect(network).not.toHaveBeenCalled();
-      expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v4');
+      expect(JSON.stringify(source.bodies[0].messages)).toContain(INTENT_PROMPT_VERSION);
       expect(source.bodies[0]).toMatchObject({ max_tokens: 350, temperature: 0.1, response_format: { type: 'json_object' }, chat_template_kwargs: { enable_thinking: false } });
     } finally { network.mockRestore(); }
   });

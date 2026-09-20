@@ -5,8 +5,8 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-export const MODEL = 'jumzip-http-contract-double-v9';
-export const CANDIDATE = { persona: 'JumZipPersona-v9', intent: 'JumZipIntent-v4' };
+export const MODEL = 'jumzip-http-contract-double-v10';
+export const CANDIDATE = { persona: 'JumZipPersona-v10', intent: 'JumZipIntent-v5' };
 export const TARGET = 'http://127.0.0.1:54321';
 export const MESSAGES = {
   CHAT_NONE: '안녕, 오늘은 가볍게 수다 떨고 싶어.',
@@ -14,7 +14,7 @@ export const MESSAGES = {
 };
 export const SCENARIOS = [
   { id: 'CHAT_NONE', outputs: ['INTENT_NONE', 'CHAT_VALID'] },
-  { id: 'CHAT_RECOMMENDATION', outputs: ['INTENT_TAROT', 'CHAT_VALID'] },
+  { id: 'CHAT_RECOMMENDATION', outputs: ['INTENT_BAD_QUOTE', 'INTENT_TAROT', 'CHAT_VALID'] },
   { id: 'TAROT_REPAIR', outputs: ['TAROT_BAD_SPAN', 'TAROT_VALID'] },
   { id: 'TAROT_PARTIAL', outputs: ['TAROT_MALFORMED', 'TAROT_MALFORMED'] },
   { id: 'TAROT_RETRY', outputs: ['TAROT_VALID'] },
@@ -42,7 +42,7 @@ export function sourceHashes() {
 export const PLAN = {
   target: TARGET, provider: '127.0.0.1 temporary port, synthetic HTTP responses only', model: MODEL,
   candidate: CANDIDATE,
-  scenarios: SCENARIOS, maximumEdgeRequests: 7, maximumProviderHTTP: 10, actualModelCalls: 0, externalRequests: 0,
+  scenarios: SCENARIOS, maximumEdgeRequests: 7, maximumProviderHTTP: 11, actualModelCalls: 0, externalRequests: 0,
   sajuSeed: 'One pure-engine synthetic YEAR_FLOW reading saved as injected PARTIAL through local RPCs, then actual Edge retry; no external location lookup.',
   flags: { recommendations: true, titles: false, memoryMaintenance: false },
   serviceChange: 'Main switches only local functions serve to a newly generated private env, then restores the previous local env. This harness never starts/stops Supabase or llama.',
@@ -84,12 +84,18 @@ export function buildSyntheticOutput(body, output, stage, stageIndex) {
     assert(body.messages.some(item => item.role === 'system' && item.content.includes(CANDIDATE.intent)), 'INTENT_VERSION_CHANGED');
     const payload = JSON.parse(body.messages.at(-1).content);
     assert(payload.currentMessage === MESSAGES[stage], 'SYNTHETIC_INTENT_INPUT_CHANGED');
+    if (stageIndex === 1) {
+      assert(body.messages.at(-2).role === 'assistant' && body.messages.at(-2).content.includes('SERVER_REPAIR_TEXT_NOT_USER_INPUT'), 'INTENT_INVALID_OUTPUT_NOT_PRESERVED');
+      const userPayloads = body.messages.filter(item => item.role === 'user');
+      assert(userPayloads.at(-1).content === userPayloads.at(-2).content, 'ORIGINAL_INTENT_PAYLOAD_NOT_REPRESENTED');
+      assert(body.messages.some(item => item.role === 'system' && item.content.includes('STRUCTURED_VALIDATION_FAILED')), 'STRUCTURED_REPAIR_GUIDANCE_NOT_SYSTEM');
+    }
     const none = output === 'INTENT_NONE';
     return { content: JSON.stringify({ requestPurpose: none ? 'GENERAL_CHAT' : 'FORTUNE_EXPLORATION',
-      intentEvidenceQuote: none ? '가볍게 수다 떨고 싶어' : '진로 선택을 타로로 보고 싶어', intent: none ? 'small_talk' : 'career_decision',
+      intentEvidenceQuote: output === 'INTENT_BAD_QUOTE' ? 'SERVER_REPAIR_TEXT_NOT_USER_INPUT' : none ? '가볍게 수다 떨고 싶어' : '진로 선택을 타로로 보고 싶어', intent: none ? 'small_talk' : 'career_decision',
       explicitTool: none ? null : 'TAROT', explicitToolQuote: none ? null : '타로로 보고 싶어',
       targetAliasEvidence: { state: 'UNRESOLVED', source: null, quote: null }, choicesEvidence: [],
-      recentSituationPresent: false, periodPresent: false, highStakes: false }), metadata: { contract: 'INTENT_SLOT_EVIDENCE', promptVersion: CANDIDATE.intent, schemaSha256: digest(schema), repair: false } };
+      recentSituationPresent: false, periodPresent: false, highStakes: false }), metadata: { contract: 'INTENT_SLOT_EVIDENCE', promptVersion: CANDIDATE.intent, schemaSha256: digest(schema), repair: stageIndex === 1 } };
   }
   if (output === 'CHAT_VALID' || output === 'SAJU_FOCUS_VALID') {
     assert(JSON.stringify(required) === JSON.stringify(['text', 'toolReferences']), 'DEFAULT_CHAT_SCHEMA_REQUIRED');
@@ -104,8 +110,11 @@ export function buildSyntheticOutput(body, output, stage, stageIndex) {
   }
   assert(required?.includes('interpretationEvidence'), 'TAROT_EVIDENCE_SCHEMA_REQUIRED');
   if (isRepair) {
-    const repair = body.messages.at(-1).content;
-    assert(repair.includes('응답 검증에 실패했습니다.'), 'REPAIR_INSTRUCTION_MISSING');
+    const repair = body.messages.filter(item => item.role === 'system').map(item => item.content).join('\n');
+    assert(repair.includes(stage === 'TAROT_REPAIR' ? 'TAROT_EVIDENCE_SPAN_MISSING' : 'JSON_PARSE_FAILED'), 'REPAIR_DIAGNOSTIC_NOT_SYSTEM');
+    assert(body.messages.at(-2).role === 'assistant', 'INVALID_TAROT_OUTPUT_NOT_PRESERVED');
+    const userMessages = body.messages.filter(item => item.role === 'user');
+    assert(userMessages.at(-1).content === userMessages.at(-2).content, 'ORIGINAL_TAROT_INPUT_NOT_REPRESENTED');
     if (stage === 'TAROT_REPAIR') assert(repair.includes('TAROT_EVIDENCE_SPAN_MISSING')
       && repair.includes('/interpretationEvidence/0/textEvidence') && repair.includes('NOT_A_CONTIGUOUS_SUBSTRING_OF_TEXT'), 'PRECISE_SPAN_REPAIR_FEEDBACK_MISSING');
   }
@@ -149,7 +158,7 @@ async function startDouble(runName, requestedPort) {
         currentStage++; withinStage = 0; return send(200, status());
       }
       totalRequests++;
-      assert(totalRequests <= 10, 'DOUBLE_PROVIDER_HTTP_CAP');
+      assert(totalRequests <= 11, 'DOUBLE_PROVIDER_HTTP_CAP');
       const scenario = SCENARIOS[currentStage], output = scenario?.outputs[withinStage];
       assert(output && !failures.length, 'UNEXPECTED_PROVIDER_REQUEST');
       const reply = buildSyntheticOutput(body, output, scenario.id, withinStage);
@@ -180,7 +189,7 @@ async function startDouble(runName, requestedPort) {
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   if (!process.argv.includes('--serve')) console.log(JSON.stringify(PLAN, null, 2));
   else {
-    const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v9';
+    const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v10';
     const port = Number(process.argv.find(value => value.startsWith('--port='))?.slice(7) ?? 0);
     try { assert(Number.isInteger(port) && (port === 0 || port >= 1024 && port <= 65535), 'INVALID_PORT'); await startDouble(runName, port); }
     catch (error) { console.log(JSON.stringify({ status: 'NOT_STARTED', code: safeCode(error) })); process.exitCode = 1; }

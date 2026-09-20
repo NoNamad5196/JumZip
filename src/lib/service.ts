@@ -1,4 +1,5 @@
 import { createClient, type Session, type SupabaseClient } from '@supabase/supabase-js';
+import { withAuthIdentityLock } from './auth-identity';
 import type { CharacterId, Envelope } from '../../supabase/functions/_shared/contracts';
 export type { CharacterId, Envelope, TarotCard, TarotResult, ChatResult } from '../../supabase/functions/_shared/contracts';
 export type { Session };
@@ -27,8 +28,19 @@ export const authProviders = {
   google: import.meta.env.VITE_AUTH_GOOGLE_ENABLED === 'true',
   email: import.meta.env.VITE_AUTH_EMAIL_ENABLED === 'true',
 } as const;
-export const supabase: SupabaseClient | null = url && anonKey ? createClient(url, anonKey, { auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } }) : null;
+export const supabase: SupabaseClient | null = url && anonKey ? createClient(url, anonKey, { auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, skipAutoInitialize: true } }) : null;
 function db(): SupabaseClient { if (!supabase) throw new ServiceError('NOT_CONFIGURED', '서비스 연결을 준비하고 있어요. 잠시 후 다시 방문해 주세요.'); return supabase; }
+let authReady: Promise<void> | undefined;
+function initializeAuth(): Promise<void> {
+  // OAuth callback processing can install a different UID, so initialization
+  // participates in the same cross-tab boundary as explicit login and logout.
+  return authReady ??= withAuthIdentityLock(url!, async () => { const { error } = await db().auth.initialize(); check(error); })
+    .catch(error => { authReady = undefined; throw error; });
+}
+async function changeAuthIdentity<T>(operation: () => Promise<T>): Promise<T> {
+  await initializeAuth();
+  return withAuthIdentityLock(url!, operation);
+}
 function check(error: { message: string; code?: string } | null) {
   if (!error) return;
   const message = error.code === 'captcha_failed'
@@ -36,7 +48,11 @@ function check(error: { message: string; code?: string } | null) {
     : '정보를 불러오거나 저장하지 못했어요. 다시 시도해 주세요.';
   throw new ServiceError(error.code || 'DATABASE_ERROR', message, true);
 }
-async function userId() { const session = await service.getSession(); if (!session) throw new ServiceError('UNAUTHORIZED', '먼저 시작 화면에서 로그인해 주세요.'); return session.user.id; }
+async function userId(expectedUserId?: string) {
+  const session = await service.getSession(); if (!session) throw new ServiceError('UNAUTHORIZED', '먼저 시작 화면에서 로그인해 주세요.');
+  if (expectedUserId !== undefined && session.user.id !== expectedUserId) throw new ServiceError('SESSION_CHANGED', '계정이 변경됐어요. 현재 계정에서 다시 확인해 주세요.');
+  return session.user.id;
+}
 async function touch() { const { error } = await db().rpc('touch_activity'); check(error); }
 function isEnvelope(value: unknown): value is Envelope<unknown> {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
@@ -82,31 +98,42 @@ export const service = {
   captchaConfigured: !!captchaSiteKey,
   authProviders,
   capabilities,
-  async getSession(): Promise<Session | null> { if (!supabase) return null; const { data, error } = await supabase.auth.getSession(); check(error); return data.session; },
-  onAuthStateChange(callback: (session: Session | null) => void) { if (!supabase) return () => {}; const { data } = supabase.auth.onAuthStateChange((_event, session) => callback(session)); return () => data.subscription.unsubscribe(); },
-  async signInAnonymously(captchaToken?: string) { const { data, error } = await db().auth.signInAnonymously({ options: { captchaToken } }); check(error); return data.session; },
-  async signInWithOtp(email: string, captchaToken?: string) { const { error } = await db().auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}/auth`, shouldCreateUser: true, captchaToken } }); check(error); },
-  async verifyOtp(email: string, token: string) { const { data, error } = await db().auth.verifyOtp({ email, token, type: 'email' }); check(error); return data.session; },
-  async linkEmail(email: string) { const { error } = await db().auth.updateUser({ email }, { emailRedirectTo: `${location.origin}/auth` }); check(error); },
-  async linkOAuth(provider: 'google' | 'github') { const { error } = await db().auth.linkIdentity({ provider, options: { redirectTo: `${location.origin}/auth` } }); check(error); },
-  async signInWithOAuth(provider: 'google' | 'github') {
-    const session = await this.getSession();
-    if (session?.user.is_anonymous) throw new ServiceError('LINK_REQUIRED', '지금까지의 기록을 유지하려면 계정 연결을 이용해 주세요.');
-    const { error } = await db().auth.signInWithOAuth({ provider, options: { redirectTo: `${location.origin}/auth` } }); check(error);
+  async getSession(): Promise<Session | null> { if (!supabase) return null; await initializeAuth(); const { data, error } = await supabase.auth.getSession(); check(error); return data.session; },
+  onAuthStateChange(callback: (session: Session | null) => void) {
+    if (!supabase) return () => {};
+    let stopped = false, unsubscribe: (() => void) | undefined;
+    void initializeAuth().then(() => {
+      if (stopped) return;
+      const { data } = db().auth.onAuthStateChange((_event, session) => { if (!stopped) callback(session); });
+      unsubscribe = () => data.subscription.unsubscribe();
+    }).catch(() => { /* getSession reports the initialization failure to the UI. */ });
+    return () => { stopped = true; unsubscribe?.(); };
   },
-  async signOut() { const { error } = await db().auth.signOut(); check(error); },
+  async signInAnonymously(captchaToken?: string) { return changeAuthIdentity(async () => { if (await service.getSession()) throw new ServiceError('SESSION_CHANGED', '계정이 변경됐어요. 현재 계정에서 다시 시작해 주세요.'); const { data, error } = await db().auth.signInAnonymously({ options: { captchaToken } }); check(error); return data.session; }); },
+  async signInWithOtp(email: string, captchaToken?: string) { return changeAuthIdentity(async () => { const { error } = await db().auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}/auth`, shouldCreateUser: true, captchaToken } }); check(error); }); },
+  async verifyOtp(email: string, token: string) { return changeAuthIdentity(async () => { const { data, error } = await db().auth.verifyOtp({ email, token, type: 'email' }); check(error); return data.session; }); },
+  async linkEmail(email: string, expectedUserId?: string) { return changeAuthIdentity(async () => { if (expectedUserId !== undefined) await userId(expectedUserId); const { error } = await db().auth.updateUser({ email }, { emailRedirectTo: `${location.origin}/auth` }); check(error); }); },
+  async linkOAuth(provider: 'google' | 'github', expectedUserId?: string) { return changeAuthIdentity(async () => { if (expectedUserId !== undefined) await userId(expectedUserId); const { error } = await db().auth.linkIdentity({ provider, options: { redirectTo: `${location.origin}/auth` } }); check(error); }); },
+  async signInWithOAuth(provider: 'google' | 'github') {
+    return changeAuthIdentity(async () => {
+      const session = await service.getSession();
+      if (session?.user.is_anonymous) throw new ServiceError('LINK_REQUIRED', '지금까지의 기록을 유지하려면 계정 연결을 이용해 주세요.');
+      const { error } = await db().auth.signInWithOAuth({ provider, options: { redirectTo: `${location.origin}/auth` } }); check(error);
+    });
+  },
+  async signOut(expectedUserId?: string) { return changeAuthIdentity(async () => { if (expectedUserId !== undefined) await userId(expectedUserId); const { error } = await db().auth.signOut(); check(error); }); },
   async loadProfile(): Promise<Profile | null> { const id = await userId(); await touch(); const { data, error } = await db().from('profiles').select('*').eq('id', id).maybeSingle(); check(error); return data; },
-  async updateProfile(patch: Partial<Pick<Profile, 'display_name' | 'memory_enabled' | 'preferred_character'>>) { const id = await userId(); const { data, error } = await db().from('profiles').update(patch).eq('id', id).select().single(); check(error); return data as Profile; },
+  async updateProfile(patch: Partial<Pick<Profile, 'display_name' | 'memory_enabled' | 'preferred_character'>>, expectedUserId?: string) { const id = await userId(expectedUserId); const { data, error } = await db().from('profiles').update(patch).eq('id', id).select().single(); check(error); return data as Profile; },
   async listBirthProfiles(): Promise<BirthProfile[]> { const { data, error } = await db().from('birth_profiles').select('*').order('created_at'); check(error); return data || []; },
-  async saveBirthProfile(input: BirthInputValue, birthProfileId?: string, relatedPersonId?: string): Promise<BirthProfile> {
-    const id = await userId(); const values = { calendar_type: input.calendarType, leap_month: input.leapMonth, birth_date: input.birthDate, birth_time: input.birthTimeUnknown ? null : input.birthTime, unknown_birth_time: input.birthTimeUnknown, city: input.location.name, country: input.location.country || '', latitude: input.location.latitude, longitude: input.location.longitude, timezone: input.location.timezone, location_provider: input.location.provider || 'Open-Meteo', location_provider_id: input.location.providerId || null, location_resolved_at: new Date().toISOString(), gender: input.gender || null };
+  async saveBirthProfile(input: BirthInputValue, birthProfileId?: string, relatedPersonId?: string, expectedUserId?: string): Promise<BirthProfile> {
+    const id = await userId(expectedUserId); const values = { calendar_type: input.calendarType, leap_month: input.leapMonth, birth_date: input.birthDate, birth_time: input.birthTimeUnknown ? null : input.birthTime, unknown_birth_time: input.birthTimeUnknown, city: input.location.name, country: input.location.country || '', latitude: input.location.latitude, longitude: input.location.longitude, timezone: input.location.timezone, location_provider: input.location.provider || 'Open-Meteo', location_provider_id: input.location.providerId || null, location_resolved_at: new Date().toISOString(), gender: input.gender || null };
     if (relatedPersonId) { const { error } = await db().from('related_people').update({ birth_data_opt_in: true }).eq('id', relatedPersonId); check(error); }
     const query = birthProfileId ? db().from('birth_profiles').update(values).eq('id', birthProfileId) : db().from('birth_profiles').insert({ ...values, user_id: id, owner_type: relatedPersonId ? 'RELATED_PERSON' : 'USER', related_person_id: relatedPersonId || null });
     const { data, error } = await query.select().single(); check(error); return data;
   },
   async deleteBirthProfile(id: string) { const { error } = await db().from('birth_profiles').delete().eq('id', id); check(error); },
   async listRelatedPeople(): Promise<RelatedPerson[]> { const { data, error } = await db().from('related_people').select('*').order('created_at'); check(error); return data || []; },
-  async saveRelatedPerson(patch: { display_name: string; relation?: string | null; gender?: string | null; memory_opt_in?: boolean }, id?: string): Promise<RelatedPerson> { const user_id = await userId(); const query = id ? db().from('related_people').update(patch).eq('id', id) : db().from('related_people').insert({ ...patch, user_id }); const { data, error } = await query.select().single(); check(error); return data; },
+  async saveRelatedPerson(patch: { display_name: string; relation?: string | null; gender?: string | null; memory_opt_in?: boolean }, id?: string, expectedUserId?: string): Promise<RelatedPerson> { const user_id = await userId(expectedUserId); const query = id ? db().from('related_people').update(patch).eq('id', id) : db().from('related_people').insert({ ...patch, user_id }); const { data, error } = await query.select().single(); check(error); return data; },
   async deleteRelatedPerson(id: string) { const { error } = await db().from('related_people').delete().eq('id', id); check(error); },
   async listConversations(): Promise<Conversation[]> { const { data, error } = await db().from('conversations').select('*').order('last_message_at', { ascending: false, nullsFirst: false }).limit(100); check(error); return data || []; },
   async listConversationsPage(before: ConversationCursor | null = null, pageSize = 30): Promise<HistoryPage<Conversation, ConversationCursor>> {
@@ -123,7 +150,7 @@ export const service = {
     return { items, nextCursor: rows.length > limit && last ? { lastMessageAt: last.last_message_at, id: last.id } : null };
   },
   async getConversation(id: string): Promise<Conversation | null> { const { data, error } = await db().from('conversations').select('*').eq('id', id).maybeSingle(); check(error); return data; },
-  async createConversation(characterId: CharacterId): Promise<Conversation> { const id = await userId(); const { data, error } = await db().from('conversations').insert({ user_id: id, character_id: characterId }).select().single(); check(error); await touch(); return data; },
+  async createConversation(characterId: CharacterId, expectedUserId?: string): Promise<Conversation> { const id = await userId(expectedUserId); const { data, error } = await db().from('conversations').insert({ user_id: id, character_id: characterId }).select().single(); check(error); await touch(); return data; },
   async updateConversation(id: string, patch: { title: string }) { const { error } = await db().from('conversations').update({ title: patch.title }).eq('id', id); check(error); },
   async deleteConversation(id: string, options: DeletionOptions = {}) { const { error } = await db().rpc('delete_history_with_memories', { p_kind: 'CONVERSATION', p_record_id: id, p_memory_ids: options.memoryIds ?? [] }); check(error); },
   async listMessages(conversationId: string): Promise<Message[]> { const { data, error } = await db().from('messages').select('*').eq('conversation_id', conversationId).order('created_at', { ascending: false }).order('id', { ascending: false }).limit(1000); check(error); return (data || []).reverse(); },
@@ -160,11 +187,28 @@ export const service = {
     return items;
   },
   async getReading(consultationId: string): Promise<ReadingDetail | null> { const { data, error } = await db().from('consultations').select('*,tarot_draw_groups(*,tarot_draws(*)),saju_readings(*),saju_compatibility_readings(*)').eq('id', consultationId).maybeSingle(); check(error); return data; },
-  async listMemories(): Promise<Memory[]> { const { data, error } = await db().from('memories').select('*').order('created_at', { ascending: false }); check(error); return data || []; },
+  async listMemories(): Promise<Memory[]> {
+    const owner = await userId(), items: Memory[] = []; let cursor: HistoryCursor | null = null;
+    do {
+      let query = db().from('memories').select('*').eq('user_id', owner)
+        .order('created_at', { ascending: false }).order('id', { ascending: false }).limit(201);
+      if (cursor) query = query.or(olderThan(cursor));
+      const { data, error } = await query; check(error);
+      // Never publish a partial old-identity list as a complete new-identity result.
+      if ((await service.getSession())?.user.id !== owner) throw new ServiceError('SESSION_CHANGED', '계정이 변경됐어요. 기억을 다시 불러와 주세요.');
+      const page = datedPage<Memory>(data || [], 200);
+      items.push(...page.items); cursor = page.nextCursor;
+    } while (cursor);
+    return items;
+  },
   async updateMemory(id: string, patch: { content?: string; disabled_at?: string | null }) { const { error } = await db().from('memories').update(patch).eq('id', id); check(error); },
   async deleteMemory(id: string) { const { error } = await db().from('memories').delete().eq('id', id); check(error); },
-  async execute<T>(endpoint: 'chat' | 'tarot' | 'saju' | 'compatibility' | 'account', body: object): Promise<Envelope<T>> {
+  async execute<T>(endpoint: 'chat' | 'tarot' | 'saju' | 'compatibility' | 'account', body: object, options: { expectedUserId?: string } = {}): Promise<Envelope<T>> {
     const session = await service.getSession(); if (!session) throw new ServiceError('UNAUTHORIZED', '로그인이 필요해요.');
+    const deletingAccount = endpoint === 'account' && (body as { action?: string }).action === 'DELETE_ACCOUNT';
+    if ((deletingAccount && !options.expectedUserId) || (options.expectedUserId !== undefined && session.user.id !== options.expectedUserId)) {
+      throw new ServiceError('SESSION_CHANGED', '계정이 변경됐어요. 현재 계정에서 다시 확인해 주세요.');
+    }
     const payload = { schemaVersion: 1, requestId: crypto.randomUUID(), ...body };
     const send = async () => fetch(`${url}/functions/v1/${endpoint}`, { method: 'POST', headers: { Authorization: `Bearer ${session.access_token}`, apikey: anonKey!, 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(105_000) });
     let response: Response;
@@ -174,7 +218,13 @@ export const service = {
     const result = decoded as Envelope<T>;
     if (!result.ok) throw new ServiceError(result.error.code, result.error.message, result.error.retryable, result.error.details);
     if (!response.ok) throw new ServiceError('SERVER_ERROR', '서버에 연결하지 못했어요.', true);
-    if (endpoint === 'account' && (body as {action?: string}).action === 'DELETE_ACCOUNT') { await supabase?.auth.signOut({ scope: 'local' }); }
+    if (deletingAccount && (result.data as { deleted?: unknown } | null)?.deleted === true) {
+      // A slow response for A must not sign out a newly active B session.
+      await changeAuthIdentity(async () => {
+        const current = await service.getSession();
+        if (current?.user.id === session.user.id) { const { error } = await db().auth.signOut({ scope: 'local' }); check(error); }
+      });
+    }
     return result;
   },
 };

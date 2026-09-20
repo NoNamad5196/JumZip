@@ -12,9 +12,12 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const queryClient = useQueryClient();
   useEffect(() => {
     let active = true;
+    let authRevision = 0;
     const applySession = (value: Session | null) => { if (!active) return; if (currentSession.current?.user.id !== value?.user.id) { if (currentSession.current?.user.id) clearDrafts(currentSession.current.user.id); queryClient.clear(); } currentSession.current = value; setSession(value); };
-    service.getSession().then(applySession).catch(() => { if (active) setError('로그인 상태를 확인하지 못했어요. 다시 연결해 주세요.'); }).finally(() => { if (active) setLoading(false); });
-    const stop = service.onAuthStateChange((value) => { if (active) { applySession(value); setLoading(false); setError(null); } });
+    // A delayed initial read must not replace a newer login/logout event.
+    const initialRevision = authRevision;
+    service.getSession().then(value => { if (authRevision === initialRevision) applySession(value); }).catch(() => { if (active && authRevision === initialRevision) setError('로그인 상태를 확인하지 못했어요. 다시 연결해 주세요.'); }).finally(() => { if (active && authRevision === initialRevision) setLoading(false); });
+    const stop = service.onAuthStateChange((value) => { if (active) { authRevision++; applySession(value); setLoading(false); setError(null); } });
     return () => { active = false; stop(); };
   }, [queryClient]);
   return <SessionContext.Provider value={{ session, loading, error }}>{children}</SessionContext.Provider>;

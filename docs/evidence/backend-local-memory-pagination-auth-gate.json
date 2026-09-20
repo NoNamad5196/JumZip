@@ -1,0 +1,213 @@
+{
+  "at": "2026-09-20T01:43:24.351Z",
+  "runId": "3cc7dc4c-5ab5-4327-b6a8-7ad631ac4547",
+  "status": "PASSED",
+  "scope": {
+    "target": "http://127.0.0.1:54321",
+    "mode": "LOCAL_AUTH_REST_PRODUCTION_SERVICE",
+    "identities": 2,
+    "memoryRows": {
+      "ownerA": 1005,
+      "ownerB": 3
+    },
+    "actual": [
+      "admin-created synthetic Auth sessions",
+      "local PostgREST row cap and RLS",
+      "production service.listMemories",
+      "6-page keyset at one microsecond timestamp"
+    ],
+    "controlledFaults": [
+      "one page2 URI remains HTTP503 for initial plus3 SDK retries; Retry-After0",
+      "real session switches to owned B after page2 response"
+    ],
+    "serviceLoading": "TypeScript transpilation of production service and auth-identity helper in memory; replace only build-time public env and module import resolution. Node helper queue is not browser cross-tab evidence. No source or server configuration changes.",
+    "modelRequests": 0,
+    "externalRequests": 0,
+    "edgeRequests": 0,
+    "publicSignupTested": false,
+    "cleanup": "Immediate marked-ID ledger; finally delete only owned synthetic users, then verify Auth404 and all15 owned tables empty.",
+    "runCommand": "JUMZIP_RUN_LOCAL_MEMORY_PAGINATION=LOCAL node tests/backend/local-memory-pagination-smoke.mjs --run",
+    "permission": "Main local execution GO required; never load hosted environment files or restart services.",
+    "report": "test-results/local-memory-pagination-report.json"
+  },
+  "checks": [
+    {
+      "name": "admin confirmed seeded row count 1005",
+      "passed": true
+    },
+    {
+      "name": "admin confirmed seeded row count 3",
+      "passed": true
+    },
+    {
+      "name": "actual unpaginated local REST response demonstrates1000 row cap",
+      "passed": true
+    },
+    {
+      "name": "actual ownerA RLS cannot read B memories",
+      "passed": true
+    },
+    {
+      "name": "actual ownerB RLS cannot read A memories",
+      "passed": true
+    },
+    {
+      "name": "production client has selected owned synthetic session",
+      "passed": true
+    },
+    {
+      "name": "all1005 same-timestamp IDs returned in exact descending order",
+      "passed": true
+    },
+    {
+      "name": "no duplicate IDs across200-row boundaries",
+      "passed": true
+    },
+    {
+      "name": "READ_A expected distinct page count 6",
+      "passed": true
+    },
+    {
+      "name": "READ_A expected HTTP attempts including SDK retries",
+      "passed": true
+    },
+    {
+      "name": "READ_A fixed original owner filter",
+      "passed": true
+    },
+    {
+      "name": "READ_A bounded deterministic keyset queries",
+      "passed": true
+    },
+    {
+      "name": "microsecond precision retained in actual cursors",
+      "passed": true
+    },
+    {
+      "name": "injected page2 HTTP failure rejects the complete load",
+      "passed": true
+    },
+    {
+      "name": "FAULT_PAGE2 expected distinct page count 2",
+      "passed": true
+    },
+    {
+      "name": "FAULT_PAGE2 expected HTTP attempts including SDK retries",
+      "passed": true
+    },
+    {
+      "name": "FAULT_PAGE2 fixed original owner filter",
+      "passed": true
+    },
+    {
+      "name": "FAULT_PAGE2 bounded deterministic keyset queries",
+      "passed": true
+    },
+    {
+      "name": "production client has selected owned synthetic session",
+      "passed": true
+    },
+    {
+      "name": "real session switch after page2 rejects partial or mixed result",
+      "passed": true
+    },
+    {
+      "name": "SWITCH_PAGE2 expected distinct page count 2",
+      "passed": true
+    },
+    {
+      "name": "SWITCH_PAGE2 expected HTTP attempts including SDK retries",
+      "passed": true
+    },
+    {
+      "name": "SWITCH_PAGE2 fixed original owner filter",
+      "passed": true
+    },
+    {
+      "name": "SWITCH_PAGE2 bounded deterministic keyset queries",
+      "passed": true
+    },
+    {
+      "name": "subsequent B load contains only its three memories",
+      "passed": true
+    },
+    {
+      "name": "READ_B expected distinct page count 1",
+      "passed": true
+    },
+    {
+      "name": "READ_B expected HTTP attempts including SDK retries",
+      "passed": true
+    },
+    {
+      "name": "READ_B fixed original owner filter",
+      "passed": true
+    },
+    {
+      "name": "READ_B bounded deterministic keyset queries",
+      "passed": true
+    },
+    {
+      "name": "one page fault exhausted exactly3 existing SDK retries",
+      "passed": true
+    },
+    {
+      "name": "SDK emitted expected retry attempt headers without disabling retry",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "authRequests": 17,
+    "restRequests": 52,
+    "injectedHttpErrors": 4,
+    "sdkRetryAttempts": 3,
+    "blockedDestinations": 0,
+    "modelRequests": 0,
+    "externalRequests": 0,
+    "edgeRequests": 0
+  },
+  "faultRetryHeaders": [
+    null,
+    "1",
+    "2",
+    "3"
+  ],
+  "failure": null,
+  "sourceFrozen": true,
+  "sourceHashes": {
+    "src/lib/service.ts": "a86b3d142214f9710d98636a739718f4a399adeb17662b6981548da3b45e40cc",
+    "src/lib/auth-identity.ts": "d373f8f74cf17c25298a5b601d4f49ffaa653be85499e21087061fd2ed9aa48b",
+    "tests/service/memory-pagination.test.ts": "29deff1bae9a2840ec15f7eca407946f9f1aea434830a27731ff8053e221b47b",
+    "tests/backend/local-memory-pagination-smoke.mjs": "f1e28c6cfd449cf5def897ef71ace7cb5df602948d6c7376f700b2b2225f30d7",
+    "supabase/config.toml": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+    "supabase/migrations/202609190001_core.sql": "9dcde35110e20f06e8650d4af9deeb955c1df113d896a149920be3ddc1dffbfb",
+    "supabase/migrations/202609190002_execution_rpcs.sql": "251ef4f6a93fc34d1a428a27e44f3cc9030f2eb01ea8e616bf714ab028c21503",
+    "supabase/migrations/202609190003_lifecycle.sql": "836204014eea3b6026f04ed44554e410275f6e45fe14951e338061a89e3e95c5",
+    "supabase/migrations/202609190004_birth_dates.sql": "990135dba0faba5335eb63173e89f838ad4517a6977c541e3365a73ed6e8037b",
+    "supabase/migrations/202609190005_saju_persistence.sql": "ccc17b99c0f64530cdd87922dc91f64ae6796e0fa9b48fc9e5a61b82833da24b",
+    "supabase/migrations/202609190006_compatibility_persistence.sql": "1865a89a21644d55463a1c68faaecaa0c99856d86a9295286b17ed92d4ea19f0",
+    "supabase/migrations/202609190007_execution_guards.sql": "8d0870a4fab76f1966358fe50c7ab84a2e295c21e4d701ebe0d086c7f54f5c5f",
+    "supabase/migrations/202609190008_titles_and_relationship.sql": "c0b4b534eff7f3a4dfe2909a508d809fdc5fb02d4a4ce9d26031dab5469fb3c3",
+    "supabase/migrations/202609190009_location_cache.sql": "81b4aa87d12af27c6f6cafee25fed11fab48ebcf5ed1b6b124a525b84d0d9ced",
+    "supabase/migrations/202609190010_consultation_lifecycle.sql": "10fc6361e291f5ae40f1eeeeaac649cfa19b061a9a5b8cfb3aa098c1b8ea0396",
+    "supabase/migrations/202609190011_account_cascade.sql": "f5d456f3faf32ae4be8d77629473f6d0308e19ccbb835812152d3b26c4b754e9",
+    "supabase/migrations/202609190012_saju_timing_projection.sql": "11075373e26af38c484232caab923cb70f58b8c59f925bc23c23d52126f998be",
+    "supabase/migrations/202609190013_memory_consent_boundaries.sql": "5568aba43b5e1ea3957e7bd9f142a7f5b1db016092ef2630b243b28855075693",
+    "supabase/migrations/202609190014_history_memory_selection.sql": "5d357b1352bbe591194bd026daaa397758e7b329d80d43e6d2874dd7f15e65c1",
+    "supabase/migrations/202609190015_deleted_consultation_guards.sql": "f3095a46f43c0a38168f80f7d7db961a67bd0d6441869dbda5c45eeaf5068113"
+  },
+  "cleanup": [
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "authAbsent": true,
+      "emptyOwnedTables": 15
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "credentialsPersisted": false,
+  "rawUserDataPersisted": false,
+  "publicSignupTested": false
+}

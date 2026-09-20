@@ -32,7 +32,7 @@ describe('Google authentication entry and anonymous continuity', () => {
     mocked.session = { user: { id: 'existing-anonymous-user', is_anonymous: true } };
     sessionStorage.setItem('jumzip-draft:existing-anonymous-user:BOMI:conversation-1', '남겨둘 이야기');
     mount(); fireEvent.click(screen.getByRole('button', { name: 'Google로 계정 연결' }));
-    await waitFor(() => expect(mocked.link).toHaveBeenCalledWith('google'));
+    await waitFor(() => expect(mocked.link).toHaveBeenCalledWith('google', 'existing-anonymous-user'));
     expect(mocked.signIn).not.toHaveBeenCalled(); expect(mocked.signOut).not.toHaveBeenCalled();
     expect(mocked.session.user.id).toBe('existing-anonymous-user');
     expect(sessionStorage.getItem('jumzip-draft:existing-anonymous-user:BOMI:conversation-1')).toBe('남겨둘 이야기');
@@ -43,6 +43,14 @@ describe('Google authentication entry and anonymous continuity', () => {
     mount(); fireEvent.click(screen.getByRole('button', { name: 'Google로 로그인' }));
     await waitFor(() => expect(mocked.signIn).toHaveBeenCalledWith('google'));
     expect(mocked.link).not.toHaveBeenCalled();
+  });
+  it('binds an email link to the current anonymous UID', async () => {
+    mocked.session = { user: { id: 'existing-anonymous-user', is_anonymous: true } };
+    mocked.providers.google = false; mocked.providers.email = true;
+    mount(); fireEvent.change(screen.getByRole('textbox', { name: '이메일' }), { target: { value: 'fixture@example.com' } });
+    fireEvent.click(screen.getByRole('button', { name: '이메일로 계정 연결' }));
+    await waitFor(() => expect(mocked.linkEmail).toHaveBeenCalledWith('fixture@example.com', 'existing-anonymous-user'));
+    expect(mocked.email).not.toHaveBeenCalled(); expect(mocked.signOut).not.toHaveBeenCalled();
   });
   it('offers no unconfigured provider action and retains the guest entry', () => {
     mocked.providers.google = false; mount();

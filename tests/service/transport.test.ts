@@ -1,7 +1,8 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 const mocked = vi.hoisted(() => ({ fetch: vi.fn(), getSession: vi.fn() }));
-vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth: { getSession: mocked.getSession } }) }));
+vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth: { initialize: async () => ({ error: null }), getSession: mocked.getSession } }) }));
+vi.mock('../../src/lib/auth-identity', () => ({ withAuthIdentityLock: async (_url: string, operation: () => Promise<unknown>) => operation() }));
 beforeEach(() => {
   vi.resetModules(); vi.stubEnv('VITE_SUPABASE_URL', 'https://transport-fixture.supabase.co'); vi.stubEnv('VITE_SUPABASE_ANON_KEY', 'public-fixture');
   mocked.getSession.mockResolvedValue({ data: { session: { access_token: 'synthetic-session', user: { id: 'synthetic-user' } } }, error: null });

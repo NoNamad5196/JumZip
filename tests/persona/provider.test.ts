@@ -19,16 +19,16 @@ describe('OpenAI-compatible provider', () => {
     const body = JSON.parse(fetchImpl.mock.calls[0]![1]!.body as string);
     expect(fetchImpl.mock.calls[0]![0]).toBe('https://inference.example/v1/chat/completions');
     expect(body).toMatchObject({ model: 'selected-by-env', stream: false, response_format: { type: 'json_schema' } });
-    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v9' });
+    expect(reply.content).toContain('애매'); expect(reply.metadata).toMatchObject({ model: 'configured-model', promptVersion: 'JumZipPersona-v10' });
     expect(reply.segments).toHaveLength(2); expect(reply.repaired).toBe(false);
   });
-  it('repairs malformed content exactly once and does not generate extra user messages', async () => {
+  it('repairs malformed content once and replays the original final user message', async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(completion('not-json')).mockResolvedValueOnce(completion(good()));
     const provider = createOpenAICompatibleProvider({ baseUrl: 'http://localhost:8080/v1', model: 'local', fetchImpl });
     const result = await generatePersonaReply(provider, { characterId: 'SANI', currentMessage: 'hello' });
     expect(fetchImpl).toHaveBeenCalledTimes(2); expect(result.repaired).toBe(true);
     const repairBody = JSON.parse(fetchImpl.mock.calls[1]![1]!.body as string);
-    expect(repairBody.messages.filter((m: { content: string }) => m.content === 'hello')).toHaveLength(1);
+    expect(repairBody.messages.filter((m: { content: string }) => m.content === 'hello')).toHaveLength(2);
   });
   it('returns a structured failure after a failed repair; no canned assistant fallback', async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async () => completion('invalid'));

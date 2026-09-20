@@ -102,7 +102,7 @@ describe('Tarot transport, repair and public reply compatibility', () => {
       else expect(body.response_format).toEqual({ type: 'json_schema', json_schema: { name: 'jumzip_tarot_evidence_v1', strict: true, schema: TAROT_EVIDENCE_RESPONSE_SCHEMA } });
     }
     expect(bodies.map(body => body.temperature)).toEqual([0.65, 0.15]);
-    expect(bodies[1].messages.at(-1).content).toContain('TAROT_EVIDENCE_REQUIRED');
+    expect(bodies[1].messages.filter((item: { role: string }) => item.role === 'system').map((item: { content: string }) => item.content).join('\n')).toContain('TAROT_EVIDENCE_REQUIRED');
   });
   it('fails missing evidence after exactly one repair instead of silently adding a field', async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async () => completion({ text: valid().text, toolReferences: refs(cards) }));
@@ -113,7 +113,7 @@ describe('Tarot transport, repair and public reply compatibility', () => {
   it('keeps the default schema for initial and repair without the optional contract', async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async () => completion({ text: '안녕.', toolReferences: [] }));
     const provider = createOpenAICompatibleProvider({ baseUrl: 'https://example.test/v1', model: 'TEST_DOUBLE', fetchImpl });
-    await provider.generateChat([]); await provider.repairChat([], '{}', ['JSON_REQUIRED']);
+    await provider.generateChat([]); await provider.repairChat([{ role: 'user', content: '원래 질문' }], '{}', ['JSON_REQUIRED']);
     for (const call of fetchImpl.mock.calls) expect(JSON.parse(String(call[1]!.body)).response_format.json_schema).toEqual({ name: 'jumzip_chat', strict: true, schema: CHAT_RESPONSE_SCHEMA });
   });
   it('continues rejecting length-truncated evidence responses without relaxing the 900-token cap', async () => {

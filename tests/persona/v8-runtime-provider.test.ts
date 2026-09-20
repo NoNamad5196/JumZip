@@ -67,7 +67,7 @@ describe('Cloudflare Gemma provider and production runtime request parity (zero 
   it('uses the same exact option for structured generation and repair while preserving its350-token cap', async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(completion({ ok: false })).mockResolvedValueOnce(completion({ ok: true }));
     const provider = createOpenAICompatibleProvider({ baseUrl: endpoint, model: gemma, maxOutputTokens: 350, initialTimeoutMs: 8000, repairTimeoutMs: 3000, fetchImpl });
-    await provider.generateStructured({ messages: [], schema: { type: 'object' }, validate: value => { if ((value as { ok: boolean }).ok !== true) throw Error('INVALID'); return true; } });
+    await provider.generateStructured({ messages: [{ role: 'user', content: '입력의 ok 상태를 분류해 줘.' }], schema: { type: 'object' }, validate: value => { if ((value as { ok: boolean }).ok !== true) throw Error('INVALID'); return true; } });
     expect(fetchImpl).toHaveBeenCalledTimes(2);
     for (const call of fetchImpl.mock.calls) expect(JSON.parse(String(call[1]!.body))).toMatchObject({ chat_template_kwargs: { enable_thinking: false }, max_tokens: 350, temperature: 0.1 });
   });

@@ -1,0 +1,147 @@
+{
+  "startedAt": "2026-09-20T01:26:45.114Z",
+  "mode": "LIVE",
+  "preflightSha256": "8fcadf75a46eb3d54822c872ba49304798a9cda7fda1a7dba547175ec001d2e5",
+  "selectionSha256": "9426ea84e6c50db265f609567ac241ff7988ff43070913f0623969ec1f844406",
+  "rubricSha256": "3c65ded20d39cfe286588fb125dbd53b7d4f0e0a6c749171e11defee47038b21",
+  "ceilingNeurons": 4000,
+  "maximumAttempts": 168,
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+      "canonicalLF": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+      "canonicalLF": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+      "canonicalLF": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+      "canonicalLF": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/domain/frozen-expectations.ts": {
+      "raw": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96",
+      "canonicalLF": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/saju-benchmark-runner.ts": {
+      "raw": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5",
+      "canonicalLF": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5"
+    },
+    "tests/persona/v10-full84-preflight.mts": {
+      "raw": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397",
+      "canonicalLF": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397"
+    },
+    "tests/persona/v10-full84-runner.mts": {
+      "raw": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec",
+      "canonicalLF": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  }
+}

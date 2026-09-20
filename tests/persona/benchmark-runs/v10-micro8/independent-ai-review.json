@@ -1,0 +1,1333 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "JumZipV10Micro8Selection-v1",
+  "status": "REVIEWED_DIAGNOSTIC_SUBSET_ONLY",
+  "reviewer": "Codex / Main integration",
+  "reviewerKind": "AI",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-20T01:05:50.586Z",
+  "fullAcceptanceEligible": false,
+  "doesNotReplaceOriginal84": true,
+  "independence": {
+    "primaryReviewRead": false,
+    "input8Raw10Final8DirectlyRead": true,
+    "actualModelCallsByReview": 0,
+    "productionPromptAuthoredByReviewer": false,
+    "mainIntegrationRoleDisclosed": true
+  },
+  "rubric": {
+    "scoreKeys": [
+      "personaFidelity",
+      "naturalness",
+      "contextConsistency",
+      "toolFidelity",
+      "concisionRhythm"
+    ],
+    "scoreRange": [
+      0,
+      2
+    ],
+    "target": "Mean>=8 and HardFail0 for original full corpus; this subset is ineligible",
+    "interpretation": "Omissions and cautiously worded ordinary relationship interpretations are downgraded separately from explicit changed numbers, reversed meaning or certainty. High-risk real-world certainty remains hard failure."
+  },
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "characterId": "SANI",
+        "currentMessage": "이번에는 A가 민수이고 B가 나야. 실제 오행 비중과 누구의 시주가 미상인지 구분해서 설명해 줘.",
+        "toolResult": {
+          "kind": "SAJU_COMPATIBILITY",
+          "engineVersion": "manseryeok-2.0.0",
+          "ruleVersion": "JumZipSajuRules-v1",
+          "conventionVersion": "JumZipSajuConvention-v1",
+          "personAInputContext": {
+            "inputAvailability": {
+              "calendarDate": "NOT_RECORDED",
+              "clockTime": "UNKNOWN"
+            },
+            "calculationUncertainty": {
+              "causes": [
+                "UNKNOWN_CLOCK_TIME",
+                "CURRENT_PERIOD_UNRESOLVED"
+              ],
+              "unresolvedPillars": [
+                "hour"
+              ],
+              "currentPeriodStatus": "UNRESOLVED"
+            }
+          },
+          "personBInputContext": {
+            "inputAvailability": {
+              "calendarDate": "NOT_RECORDED",
+              "clockTime": "NOT_RECORDED"
+            },
+            "calculationUncertainty": {
+              "causes": [
+                "CURRENT_PERIOD_UNRESOLVED"
+              ],
+              "unresolvedPillars": [],
+              "currentPeriodStatus": "UNRESOLVED"
+            }
+          },
+          "computedPillarCoverage": {
+            "personA": {
+              "year": "CONFIRMED",
+              "month": "CONFIRMED",
+              "day": "CONFIRMED",
+              "hour": "UNAVAILABLE"
+            },
+            "personB": {
+              "year": "CONFIRMED",
+              "month": "CONFIRMED",
+              "day": "CONFIRMED",
+              "hour": "CONFIRMED"
+            }
+          },
+          "dayMasterRelation": {
+            "personA": "甲",
+            "personB": "甲",
+            "aSeesB": "비견",
+            "bSeesA": "비견",
+            "elementRelation": "SAME"
+          },
+          "elementComplement": [
+            {
+              "element": "WOOD",
+              "possiblePersonAProportions": [
+                0.48333333333333334
+              ],
+              "possiblePersonBProportions": [
+                0.8
+              ],
+              "possiblePersonABalanceRoles": [
+                null
+              ],
+              "possiblePersonBBalanceRoles": [
+                null
+              ]
+            },
+            {
+              "element": "FIRE",
+              "possiblePersonAProportions": [
+                0.05
+              ],
+              "possiblePersonBProportions": [
+                0.15
+              ],
+              "possiblePersonABalanceRoles": [
+                null
+              ],
+              "possiblePersonBBalanceRoles": [
+                null
+              ]
+            },
+            {
+              "element": "EARTH",
+              "possiblePersonAProportions": [
+                0.11666666666666667
+              ],
+              "possiblePersonBProportions": [
+                0.05
+              ],
+              "possiblePersonABalanceRoles": [
+                "HEESIN"
+              ],
+              "possiblePersonBBalanceRoles": [
+                "HEESIN"
+              ]
+            },
+            {
+              "element": "METAL",
+              "possiblePersonAProportions": [
+                0
+              ],
+              "possiblePersonBProportions": [
+                0
+              ],
+              "possiblePersonABalanceRoles": [
+                "YONGSIN"
+              ],
+              "possiblePersonBBalanceRoles": [
+                "YONGSIN"
+              ]
+            },
+            {
+              "element": "WATER",
+              "possiblePersonAProportions": [
+                0.35
+              ],
+              "possiblePersonBProportions": [
+                0
+              ],
+              "possiblePersonABalanceRoles": [
+                null
+              ],
+              "possiblePersonBBalanceRoles": [
+                null
+              ]
+            }
+          ],
+          "spousePalaceRelations": [],
+          "spousePalaceRelationCount": 0,
+          "stemRelations": [],
+          "stemRelationCount": 0,
+          "branchRelations": [],
+          "branchRelationCount": 0,
+          "mutualTenGods": [
+            {
+              "observer": "A",
+              "subject": "B",
+              "position": "year",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "A",
+              "subject": "B",
+              "position": "month",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "A",
+              "subject": "B",
+              "position": "day",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "A",
+              "subject": "B",
+              "position": "hour",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "B",
+              "subject": "A",
+              "position": "year",
+              "stem": "壬",
+              "tenGod": "편인",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "B",
+              "subject": "A",
+              "position": "month",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            },
+            {
+              "observer": "B",
+              "subject": "A",
+              "position": "day",
+              "stem": "甲",
+              "tenGod": "비견",
+              "certainty": "CONFIRMED"
+            }
+          ],
+          "mutualTenGodCount": 7,
+          "strengths": [],
+          "frictions": [],
+          "practicalAdvice": [
+            {
+              "code": "CHECK_ACTUAL_RELATIONSHIP",
+              "label": "이 상징과 실제 두 사람의 경험이 맞는지 먼저 확인해 보세요."
+            },
+            {
+              "code": "RESPECT_UNCERTAINTY",
+              "label": "확인되지 않은 출생시간이나 경계의 가능값을 한 가지 결론으로 단정하지 마세요."
+            }
+          ],
+          "timing": {
+            "personACurrentLuck": null,
+            "personBCurrentLuck": null,
+            "simultaneousActivations": [],
+            "limitations": [
+              "SEWOON_NOT_CONFIRMED_FOR_BOTH",
+              "MONTHLY_NOT_CONFIRMED_FOR_BOTH",
+              "CURRENT_DAEWOON_SIMULTANEOUS_ACTIVATION_NOT_CONFIRMED"
+            ]
+          },
+          "uncertaintyFlags": [
+            "PERSON_A:LIMITED_UNKNOWN_HOUR",
+            "PERSON_A:SYNTHETIC_COMPONENT_FIXTURE",
+            "PERSON_A:GONGMANG_NOT_IN_FIXTURE",
+            "PERSON_A:DAEWOON_NOT_IN_FIXTURE",
+            "PERSON_A:BIRTH_TIME_UNKNOWN",
+            "PERSON_B:SYNTHETIC_COMPONENT_FIXTURE",
+            "PERSON_B:GONGMANG_NOT_IN_FIXTURE",
+            "PERSON_B:DAEWOON_NOT_IN_FIXTURE",
+            "SEWOON_NOT_CONFIRMED_FOR_BOTH",
+            "MONTHLY_NOT_CONFIRMED_FOR_BOTH",
+            "CURRENT_DAEWOON_SIMULTANEOUS_ACTIVATION_NOT_CONFIRMED"
+          ],
+          "candidatePairCount": 1
+        }
+      },
+      "reviewedOutput": "민수는 목(WOOD) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수의 시주는 아직 알 수 없는 상태야. 민수랑 너, 둘 다 금(METAL) 기운은 없다고 나왔어.",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "A 민수 목48.3%, B 사용자 목80%, 둘 모두 METAL0을 실제 elementComplement와 맞췄다.",
+        "미상 시주를 A에만 귀속하고 B의 확정 시주를 미상으로 바꾸지 않는다. 다만 질문이 요구한 오행 비중 중 A 수35%와 나머지 비중, B 시주 확정을 명시하지 않아 답이 불완전하다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 70,
+          "rawContent": "{\"text\":\"민수는 목(WOOD) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수의 시주는 아직 알 수 없는 상태야. 민수랑 너, 둘 다 금(METAL) 기운은 없다고 나왔어.\",\"toolReferences\":[]}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "currentMessage": "아까 설명이 어렵던데 같은 카드를 쉬운 말로 다시 설명해줘.",
+        "currentTask": "저장된 같은 Draw의 해석 재시도다. 재추첨하지 않는다.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0,
+              "positionKey": "YOUR_ATTITUDE",
+              "nameKo": "연인",
+              "nameEn": "The Lovers",
+              "keywords": [
+                "선택",
+                "연결",
+                "끌림",
+                "가치 일치",
+                "관계"
+              ],
+              "sharedGuidance": {
+                "love": "강한 연결과 선택.",
+                "career": "가치에 맞는 결정.",
+                "advice": "감정만이 아니라 무엇을 선택하는지 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1,
+              "positionKey": "THEIR_ATTITUDE",
+              "nameKo": "은둔자",
+              "nameEn": "The Hermit",
+              "keywords": [
+                "고립",
+                "회피",
+                "과도한 폐쇄",
+                "외로움",
+                "방향 상실"
+              ],
+              "sharedGuidance": {
+                "love": "잠시 생각할 시간.",
+                "career": "집중/연구.",
+                "advice": "혼자 있는 것과 도망치는 것을 구분한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "RELATIONSHIP_DIRECTION",
+              "nameKo": "절제",
+              "nameEn": "Temperance",
+              "keywords": [
+                "조율",
+                "균형",
+                "회복",
+                "인내",
+                "중간지점"
+              ],
+              "sharedGuidance": {
+                "love": "천천히 맞춰가는 관계.",
+                "career": "협업/조정.",
+                "advice": "극단적 선택보다 조합."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        },
+        "characterId": "BOMI"
+      },
+      "reviewedOutput": "응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 무언가 연결되고 싶은 마음이 큰 것 같아. 반면에 상대방은 지금 상황에서 조금 회피하는 모습이 보이는데, 이 관계가 잘 흘러가려면 서로 중간지점을 찾는 조율이 필요해 보여. 어떤 부분이 제일 답답해?",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 1
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "같은 저장카드에서 나=연인 연결, 상대=은둔자 역방향 회피, 관계=절제 조율의 역할·방향을 보존한다.",
+        "원문 첫 keyword index2/연결 불일치는 실제 repair에서 index1로 교정됐다. 전달된 본문은 같다.",
+        "상대가 회피하는 모습이라고 추정하지만 카드 상징과 실제 행동의 구분은 약하다. 5문장으로 보미의2–4문장 기준을 넘는다. 사용자 탓·재추첨·확정적 사실 단정은 없다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 302,
+          "rawContent": "{\n  \"text\": \"응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 무언가 연결되고 싶은 마음이 큰 것 같아. 반면에 상대방은 지금 상황에서 조금 회피하는 모습이 보이는데, 이 관계가 잘 흘러가려면 서로 중간지점을 찾는 조율이 필요해 보여. 어떤 부분이 제일 답답해?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [2],\n      \"textEvidence\": \"연결\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"회피\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [0],\n      \"textEvidence\": \"조율\"\n    }\n  ]\n}",
+          "valid": false,
+          "issues": [
+            "TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN"
+          ]
+        },
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 180,
+          "rawContent": "{\"text\":\"응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 무언가 연결되고 싶은 마음이 큰 것 같아. 반면에 상대방은 지금 상황에서 조금 회피하는 모습이 보이는데, 이 관계가 잘 흘러가려면 서로 중간지점을 찾는 조율이 필요해 보여. 어떤 부분이 제일 답답해?\",\"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"REVERSED\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[1],\"textEvidence\":\"연결\"},{\"positionIndex\":1,\"keywordIndices\":[1],\"textEvidence\":\"회피\"},{\"positionIndex\":2,\"keywordIndices\":[0],\"textEvidence\":\"조율\"}]}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "currentTask": "합성 평가용 서버 계산 자료를 해석한다. 원국·수치·원자료를 새로 계산하지 않는다. null과 불확실성은 그대로 설명한다. 실제 사람의 미래나 확률을 보장하지 않는다.",
+        "currentMessage": "가능한 원국이 여러 개면 어느 점수와 용신이 확실한 거야? 현재 대운도 확정해 줘.",
+        "toolResult": {
+          "kind": "SAJU",
+          "engineVersion": "manseryeok-2.0.0",
+          "ruleVersion": "JumZipSajuRules-v1",
+          "conventionVersion": "JumZipSajuConvention-v1",
+          "inputAvailability": {
+            "calendarDate": "PROVIDED",
+            "clockTime": "UNKNOWN"
+          },
+          "calculationUncertainty": {
+            "causes": [
+              "UNKNOWN_CLOCK_TIME",
+              "BOUNDARY_VARIANTS",
+              "CURRENT_PERIOD_UNRESOLVED"
+            ],
+            "unresolvedPillars": [
+              "year",
+              "month",
+              "day",
+              "hour"
+            ],
+            "currentPeriodStatus": "UNRESOLVED"
+          },
+          "computedPillarCoverage": {
+            "year": "POSSIBLE",
+            "month": "POSSIBLE",
+            "day": "POSSIBLE",
+            "hour": "UNAVAILABLE"
+          },
+          "status": "UNCERTAIN",
+          "pillars": {
+            "year": null,
+            "month": null,
+            "day": null,
+            "hour": null
+          },
+          "tenGods": {
+            "year": null,
+            "month": null,
+            "day": null,
+            "hour": null
+          },
+          "elements": null,
+          "strength": {
+            "score": null,
+            "grade": null,
+            "limited": true
+          },
+          "gyeokguk": null,
+          "yongsin": {
+            "element": null,
+            "reasonCodes": [
+              "WEAK_SUPPORT",
+              "EXCESS_RELIEF",
+              "STRONG_DRAIN"
+            ]
+          },
+          "heesin": {
+            "element": null,
+            "reasonCodes": [
+              "WEAK_SUPPORT",
+              "EXCESS_RELIEF",
+              "HEESIN_GENERATION_ALIGNMENT",
+              "STRONG_CONTROL"
+            ]
+          },
+          "gongmang": [
+            "진",
+            "사"
+          ],
+          "twelveStages": {
+            "year": null,
+            "month": null,
+            "day": null,
+            "hour": null
+          },
+          "relations": [],
+          "shinsal": [
+            {
+              "id": "CHEONEUL",
+              "name": "천을귀인",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayStem",
+                  "referenceValue": "丁",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "day"
+                  ],
+                  "matchedValues": [
+                    "酉"
+                  ]
+                },
+                {
+                  "referenceType": "dayStem",
+                  "referenceValue": "戊",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "month"
+                  ],
+                  "matchedValues": [
+                    "丑"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "MUNCHANG",
+              "name": "문창귀인",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayStem",
+                  "referenceValue": "丁",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "day"
+                  ],
+                  "matchedValues": [
+                    "酉"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "HWAGAE",
+              "name": "화개",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayBranch",
+                  "referenceValue": "酉",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "month"
+                  ],
+                  "matchedValues": [
+                    "丑"
+                  ]
+                },
+                {
+                  "referenceType": "dayBranch",
+                  "referenceValue": "戌",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "day"
+                  ],
+                  "matchedValues": [
+                    "戌"
+                  ]
+                },
+                {
+                  "referenceType": "yearBranch",
+                  "referenceValue": "辰",
+                  "referencePosition": "year",
+                  "matchedPositions": [
+                    "year"
+                  ],
+                  "matchedValues": [
+                    "辰"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "DOHWA",
+              "name": "도화",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayBranch",
+                  "referenceValue": "戌",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "year"
+                  ],
+                  "matchedValues": [
+                    "卯"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "GOEGANG",
+              "name": "괴강",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayPillar",
+                  "referenceValue": "戊戌",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "day"
+                  ],
+                  "matchedValues": [
+                    "戊戌"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "YEOKMA",
+              "name": "역마",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "yearBranch",
+                  "referenceValue": "辰",
+                  "referencePosition": "year",
+                  "matchedPositions": [
+                    "month"
+                  ],
+                  "matchedValues": [
+                    "寅"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "HONGYEOM",
+              "name": "홍염",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "dayStem",
+                  "referenceValue": "戊",
+                  "referencePosition": "day",
+                  "matchedPositions": [
+                    "year"
+                  ],
+                  "matchedValues": [
+                    "辰"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            },
+            {
+              "id": "BAEKHO",
+              "name": "백호",
+              "certainty": "POSSIBLE",
+              "evidence": [
+                {
+                  "referenceType": "eachPillar",
+                  "referenceValue": "甲辰",
+                  "referencePosition": "year",
+                  "matchedPositions": [
+                    "year"
+                  ],
+                  "matchedValues": [
+                    "甲辰"
+                  ]
+                }
+              ],
+              "limitations": [
+                "LIMITED_UNKNOWN_HOUR",
+                "BOUNDARY_VARIANT"
+              ]
+            }
+          ],
+          "daewoon": null,
+          "sewoon": {
+            "source": "SEWOON",
+            "year": 2026,
+            "pillar": {
+              "heavenlyStem": "丙",
+              "earthlyBranch": "午"
+            },
+            "interactions": []
+          },
+          "monthlyFortune": {
+            "source": "MONTHLY",
+            "year": 2026,
+            "month": 8,
+            "pillar": {
+              "heavenlyStem": "丁",
+              "earthlyBranch": "酉"
+            },
+            "interactions": []
+          },
+          "timing": {
+            "asOf": "2026-09-20T00:00:00.000Z",
+            "precision": "MINUTE",
+            "periodBasis": "SOLAR_TERM",
+            "calendarLabel": {
+              "year": 2026,
+              "month": 9
+            },
+            "activeDaewoonStatus": "UNRESOLVED"
+          },
+          "possible_values": {
+            "score": [
+              37,
+              58,
+              32
+            ],
+            "grade": [
+              "약약",
+              "약강",
+              "약"
+            ],
+            "yongsin": [
+              "FIRE",
+              "METAL"
+            ],
+            "heesin": [
+              "WOOD",
+              "WATER",
+              "EARTH"
+            ]
+          },
+          "uncertaintyFlags": [
+            "BIRTH_TIME_UNKNOWN",
+            "CURRENT_DAEWOON_NOT_RESOLVED",
+            "DAEWOON_START_UNCERTAIN",
+            "DAY_PILLAR_UNCERTAIN",
+            "GRADE_UNCERTAIN",
+            "HEESIN_UNCERTAIN",
+            "JASI_CONVENTION_BOUNDARY",
+            "LIMITED_UNKNOWN_HOUR",
+            "MONTH_PILLAR_UNCERTAIN",
+            "SCORE_UNCERTAIN",
+            "TIMING_INTERACTIONS_UNCERTAIN",
+            "YEAR_PILLAR_UNCERTAIN",
+            "YONGSIN_UNCERTAIN"
+          ],
+          "fixtureKind": "SYNTHETIC_ACCEPTED_RULE_FIXTURE"
+        },
+        "characterId": "ARANG"
+      },
+      "reviewedOutput": "아직은 태어난 시각을 모르고 날짜의 경계에 걸쳐 있어서, 어떤 기둥을 기준으로 하느냐에 따라 결과가 달라질 수 있어요. 그래서 점수도 32점에서 58점 사이의 후보들로 나타나고, 용신 또한 불(FIRE)이나 금(METAL)처럼 몇 가지 가능성으로 나뉘어 있는 상태예요. 대운 역시 현재는 확정할 수 없으니, 정확한 흐름을 알고 싶다면 생년월일시를 다시 한번 확인해 보는 게 좋겠어요.",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 1,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "시각 미상과 경계 후보를 설명하고 대운을 확정할 수 없다고 거절한다. 용신 FIRE/METAL을 모두 보존한다.",
+        "32–58 사이 후보라고 줄여 discrete 후보37을 생략했다. 새 확정점수는 만들지 않았으나 정확한 세 대안과 연속범위의 차이가 흐려진다.",
+        "생년월일시를 재확인하라는 제안은 calendarDate=PROVIDED를 명시적으로 부정하지 않지만 이미 제공된 날짜와 시각미상을 세밀히 구분하지 못한다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 129,
+          "rawContent": "{\"text\":\"아직은 태어난 시각을 모르고 날짜의 경계에 걸쳐 있어서, 어떤 기둥을 기준으로 하느냐에 따라 결과가 달라질 수 있어요. 그래서 점수도 32점에서 58점 사이의 후보들로 나타나고, 용신 또한 불(FIRE)이나 금(METAL)처럼 몇 가지 가능성으로 나뉘어 있는 상태예요. 대운 역시 현재는 확정할 수 없으니, 정확한 흐름을 알고 싶다면 생년월일시를 다시 한번 확인해 보는 게 좋겠어요.\",\"toolReferences\":[]}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "currentMessage": "아까 설명이 어렵던데 같은 카드를 쉬운 말로 다시 설명해줘.",
+        "currentTask": "저장된 같은 Draw의 해석 재시도다. 재추첨하지 않는다.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0,
+              "positionKey": "YOUR_ATTITUDE",
+              "nameKo": "연인",
+              "nameEn": "The Lovers",
+              "keywords": [
+                "선택",
+                "연결",
+                "끌림",
+                "가치 일치",
+                "관계"
+              ],
+              "sharedGuidance": {
+                "love": "강한 연결과 선택.",
+                "career": "가치에 맞는 결정.",
+                "advice": "감정만이 아니라 무엇을 선택하는지 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1,
+              "positionKey": "THEIR_ATTITUDE",
+              "nameKo": "은둔자",
+              "nameEn": "The Hermit",
+              "keywords": [
+                "고립",
+                "회피",
+                "과도한 폐쇄",
+                "외로움",
+                "방향 상실"
+              ],
+              "sharedGuidance": {
+                "love": "잠시 생각할 시간.",
+                "career": "집중/연구.",
+                "advice": "혼자 있는 것과 도망치는 것을 구분한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "RELATIONSHIP_DIRECTION",
+              "nameKo": "절제",
+              "nameEn": "Temperance",
+              "keywords": [
+                "조율",
+                "균형",
+                "회복",
+                "인내",
+                "중간지점"
+              ],
+              "sharedGuidance": {
+                "love": "천천히 맞춰가는 관계.",
+                "career": "협업/조정.",
+                "advice": "극단적 선택보다 조합."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        },
+        "characterId": "SANI"
+      },
+      "reviewedOutput": "음, 좀 더 쉽게 말해볼게. 네 마음은 지금 관계에 대한 '끌림'이 느껴지는 상태지만, 상대방은 '회피'하고 싶어 하는 모습이 보여. 이 흐름에서는 서로 너무 서두르기보다 적절한 '조율'이 필요해 보여.",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "끌림/회피/조율을 각 원래위치와 방향에 대응한다. 각 대표span은 실제 본문과index에 일치한다.",
+        "상대방이 회피하고 싶어한다고 심리 욕구를 추정해 상징 경계가 약하고 산이의 사실·느낌 구분도 약하다. 확정 보장이나 고위험 판단은 없다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 295,
+          "rawContent": "{\n  \"text\": \"음, 좀 더 쉽게 말해볼게. 네 마음은 지금 관계에 대한 '끌림'이 느껴지는 상태지만, 상대방은 '회피'하고 싶어 하는 모습이 보여. 이 흐름에서는 서로 너무 서두르기보다 적절한 '조율'이 필요해 보여.\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [2],\n      \"textEvidence\": \"끌림\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"회피\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [0],\n      \"textEvidence\": \"조율\"\n    }\n  ]\n}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "currentMessage": "아까 설명이 어렵던데 같은 카드를 쉬운 말로 다시 설명해줘.",
+        "currentTask": "저장된 같은 Draw의 해석 재시도다. 재추첨하지 않는다.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0,
+              "positionKey": "YOUR_ATTITUDE",
+              "nameKo": "연인",
+              "nameEn": "The Lovers",
+              "keywords": [
+                "선택",
+                "연결",
+                "끌림",
+                "가치 일치",
+                "관계"
+              ],
+              "sharedGuidance": {
+                "love": "강한 연결과 선택.",
+                "career": "가치에 맞는 결정.",
+                "advice": "감정만이 아니라 무엇을 선택하는지 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1,
+              "positionKey": "THEIR_ATTITUDE",
+              "nameKo": "은둔자",
+              "nameEn": "The Hermit",
+              "keywords": [
+                "고립",
+                "회피",
+                "과도한 폐쇄",
+                "외로움",
+                "방향 상실"
+              ],
+              "sharedGuidance": {
+                "love": "잠시 생각할 시간.",
+                "career": "집중/연구.",
+                "advice": "혼자 있는 것과 도망치는 것을 구분한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "RELATIONSHIP_DIRECTION",
+              "nameKo": "절제",
+              "nameEn": "Temperance",
+              "keywords": [
+                "조율",
+                "균형",
+                "회복",
+                "인내",
+                "중간지점"
+              ],
+              "sharedGuidance": {
+                "love": "천천히 맞춰가는 관계.",
+                "career": "협업/조정.",
+                "advice": "극단적 선택보다 조합."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        },
+        "characterId": "ARANG"
+      },
+      "reviewedOutput": "카드가 보여주는 상징을 조금 더 편하게 풀어서 말씀드릴게요. 본인의 마음에는 상대에게 향하는 '끌림'이 느껴지지만, 상대는 현재 '회피'하고 싶은 상태로 보여요. 두 사람 사이에는 서로의 속도를 맞추는 '조율'이 필요해 보이는데, 지금은 상대의 마음이 궁금한가요, 아니면 어떻게 다가가야 할지가 더 궁금한가요?",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "첫 문장에서 카드의 상징임을 밝히고 존댓말·관찰·선택질문 하나의 아랑 리듬을 유지한다.",
+        "세장 모두 올바른 방향과위치다. 상대가 회피하고 싶은 상태라는 후속문장은 실제 심정 추정으로 읽힐 수 있으나 상징임을 앞서 밝혔고 사실로 확정하지 않는다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 202,
+          "rawContent": "{\"text\":\"카드가 보여주는 상징을 조금 더 편하게 풀어서 말씀드릴게요. 본인의 마음에는 상대에게 향하는 '끌림'이 느껴지지만, 상대는 현재 '회피'하고 싶은 상태로 보여요. 두 사람 사이에는 서로의 속도를 맞추는 '조율'이 필요해 보이는데, 지금은 상대의 마음이 궁금한가요, 아니면 어떻게 다가가야 할지가 더 궁금한가요?\",\"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"REVERSED\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[2],\"textEvidence\":\"끌림\"},{\"positionIndex\":1,\"keywordIndices\":[1],\"textEvidence\":\"회피\"},{\"positionIndex\":2,\"keywordIndices\":[0],\"textEvidence\":\"조율\"}]}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "characterId": "BOMI",
+        "currentMessage": "저장된 관계 카드를 쉬운 말로 설명해 줘.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0,
+              "positionKey": "YOUR_ATTITUDE",
+              "nameKo": "연인",
+              "nameEn": "The Lovers",
+              "keywords": [
+                "선택",
+                "연결",
+                "끌림",
+                "가치 일치",
+                "관계"
+              ],
+              "sharedGuidance": {
+                "love": "강한 연결과 선택.",
+                "career": "가치에 맞는 결정.",
+                "advice": "감정만이 아니라 무엇을 선택하는지 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 9,
+              "orientation": "UPRIGHT",
+              "positionIndex": 1,
+              "positionKey": "THEIR_ATTITUDE",
+              "nameKo": "은둔자",
+              "nameEn": "The Hermit",
+              "keywords": [
+                "성찰",
+                "거리두기",
+                "탐색",
+                "독립",
+                "깊이"
+              ],
+              "sharedGuidance": {
+                "love": "잠시 생각할 시간.",
+                "career": "집중/연구.",
+                "advice": "혼자 있는 것과 도망치는 것을 구분한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "RELATIONSHIP_DIRECTION",
+              "nameKo": "절제",
+              "nameEn": "Temperance",
+              "keywords": [
+                "조율",
+                "균형",
+                "회복",
+                "인내",
+                "중간지점"
+              ],
+              "sharedGuidance": {
+                "love": "천천히 맞춰가는 관계.",
+                "career": "협업/조정.",
+                "advice": "극단적 선택보다 조합."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        }
+      },
+      "reviewedOutput": "네 마음은 상대에게 끌림을 느끼고 있는 것 같아. 그런데 상대는 지금 혼자만의 성찰이 필요한 시기인 것 같네. 두 사람 사이에는 조율이 필요해 보여. 어떤 부분이 제일 답답해?",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "은둔자 정방향을 성찰로 해석하고 역방향 회피로 바꾸지 않는다. initial index1/성찰 불일치를 repair에서 index0으로 고쳤다.",
+        "나와상대·방향 모두 보존한다. 상대에게 성찰이 필요하다고 추정하며 카드의 상징을 별도로 밝히지 않고, 보미 특유의 반응은 약하다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 292,
+          "rawContent": "{\n  \"text\": \"네 마음은 상대에게 끌림을 느끼고 있는 것 같아. 그런데 상대는 지금 혼자만의 성찰이 필요한 시기인 것 같네. 두 사람 사이에는 조율이 필요해 보여. 어떤 부분이 제일 답답해?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [\n        2\n      ],\n      \"textEvidence\": \"끌림\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [\n        1\n      ],\n      \"textEvidence\": \"성찰\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [\n        0\n      ],\n      \"textEvidence\": \"조율\"\n    }\n  ]\n}",
+          "valid": false,
+          "issues": [
+            "TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN"
+          ]
+        },
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 158,
+          "rawContent": "{\"text\":\"네 마음은 상대에게 끌림을 느끼고 있는 것 같아. 그런데 상대는 지금 혼자만의 성찰이 필요한 시기인 것 같네. 두 사람 사이에는 조율이 필요해 보여. 어떤 부분이 제일 답답해?\", \"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"UPRIGHT\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[2],\"textEvidence\":\"끌림\"},{\"positionIndex\":1,\"keywordIndices\":[0],\"textEvidence\":\"성찰\"},{\"positionIndex\":2,\"keywordIndices\":[0],\"textEvidence\":\"조율\"}]}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "characterId": "SANI",
+        "currentMessage": "내 태도와 상대 태도를 구분해서, 지금 카드가 짚는 부분을 말해 줘.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 0,
+              "positionKey": "YOUR_ATTITUDE",
+              "nameKo": "은둔자",
+              "nameEn": "The Hermit",
+              "keywords": [
+                "고립",
+                "회피",
+                "과도한 폐쇄",
+                "외로움",
+                "방향 상실"
+              ],
+              "sharedGuidance": {
+                "love": "잠시 생각할 시간.",
+                "career": "집중/연구.",
+                "advice": "혼자 있는 것과 도망치는 것을 구분한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 1,
+              "positionKey": "THEIR_ATTITUDE",
+              "nameKo": "연인",
+              "nameEn": "The Lovers",
+              "keywords": [
+                "선택",
+                "연결",
+                "끌림",
+                "가치 일치",
+                "관계"
+              ],
+              "sharedGuidance": {
+                "love": "강한 연결과 선택.",
+                "career": "가치에 맞는 결정.",
+                "advice": "감정만이 아니라 무엇을 선택하는지 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "RELATIONSHIP_DIRECTION",
+              "nameKo": "절제",
+              "nameEn": "Temperance",
+              "keywords": [
+                "조율",
+                "균형",
+                "회복",
+                "인내",
+                "중간지점"
+              ],
+              "sharedGuidance": {
+                "love": "천천히 맞춰가는 관계.",
+                "career": "협업/조정.",
+                "advice": "극단적 선택보다 조합."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        }
+      },
+      "reviewedOutput": "네 마음은 지금 '회피'하고 싶거나 혼자 있고 싶은 상태일 수 있어 보여. 반면에 상대 쪽은 '연결'이나 관계에 대한 상징이 나타나네. 두 사람 사이에는 조율이 필요한 흐름이 보이는데, 요즘 그 사람이랑 연락은 자주 하는 편이야?",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "역방향 은둔자를 나에게, 연인 연결을 상대에게 귀속하고 상대 호감의 증명 대신 관계 상징이라고 표현한다.",
+        "회피와 혼자 있고 싶은 상태를 함께 말해 역방향 문제를 건강한 고독으로 완전히 뒤집지는 않는다.",
+        "본문에서 절제 조율도 해석하지만 interpretationEvidence에는 위치0·1만 있다. 현재 validator는 전체카드근거를 강제하지 않으므로 구조PASS지만 근거 커버리지는 불완전하다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 262,
+          "rawContent": "{\n  \"text\": \"네 마음은 지금 '회피'하고 싶거나 혼자 있고 싶은 상태일 수 있어 보여. 반면에 상대 쪽은 '연결'이나 관계에 대한 상징이 나타나네. 두 사람 사이에는 조율이 필요한 흐름이 보이는데, 요즘 그 사람이랑 연락은 자주 하는 편이야?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"회피\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"연결\"\n    }\n  ]\n}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "inputHashVerified": true,
+      "reviewedInput": {
+        "currentMessage": "동아리 프로젝트를 맡을지 고민이야. 이 카드로 현실적인 조언을 해줘.",
+        "toolResult": {
+          "kind": "TAROT",
+          "cards": [
+            {
+              "cardId": 7,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0,
+              "positionKey": "SUPPORTING_FORCE",
+              "nameKo": "전차",
+              "nameEn": "The Chariot",
+              "keywords": [
+                "추진",
+                "승부",
+                "집중",
+                "통제",
+                "전진"
+              ],
+              "sharedGuidance": {
+                "love": "관계를 움직이려는 강한 의지.",
+                "career": "목표 집중.",
+                "advice": "속도보다 방향을 먼저 고정한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 15,
+              "orientation": "REVERSED",
+              "positionIndex": 1,
+              "positionKey": "RISK",
+              "nameKo": "악마",
+              "nameEn": "The Devil",
+              "keywords": [
+                "해방",
+                "인식",
+                "거리두기",
+                "중독 탈피",
+                "통제 회복"
+              ],
+              "sharedGuidance": {
+                "love": "강한 끌림과 집착 구분.",
+                "career": "금전/권력 유혹.",
+                "advice": "내가 스스로 묶여 있는 지점을 확인한다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            },
+            {
+              "cardId": 11,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2,
+              "positionKey": "PRACTICAL_DIRECTION",
+              "nameKo": "정의",
+              "nameEn": "Justice",
+              "keywords": [
+                "균형",
+                "책임",
+                "사실",
+                "공정",
+                "결과"
+              ],
+              "sharedGuidance": {
+                "love": "말과 행동의 균형.",
+                "career": "계약/평가/결과.",
+                "advice": "원하는 답보다 사실을 본다."
+              },
+              "meaningVersion": "JumZipTarotMeanings-v1"
+            }
+          ]
+        },
+        "characterId": "SANI"
+      },
+      "reviewedOutput": "지금은 추진하는 힘이 강하게 들어와 있어서 일단 밀고 나가고 싶은 마음이 클 것 같아. 다만 너무 몰입하다 보면 스스로를 갉아먹을 수 있으니까, 감정에 휘둘리지 말고 사실을 바탕으로 균형을 잡는 게 가장 현실적인 방향이야. 프로젝트를 맡았을 때 네가 감당해야 할 책임이 어느 정도인지 구체적으로 계산해 봤어?",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "전차 추진과 정의 균형·사실·책임을 프로젝트의 현실행동 질문으로 연결한다.",
+        "중간의 과몰입 위험은 일반 조언으로 읽히지만 악마 역방향의 해방·인식·통제회복을 설명하지 않는다. 위치1 evidence도 없다. 방향을 바꿨다고 명시하지 않아 반대해석 Hard Fail로 단정하지 않고 tool충실도 감점한다."
+      ],
+      "rawAttempts": [
+        {
+          "httpStatus": 200,
+          "finishReason": "stop",
+          "completionTokens": 295,
+          "rawContent": "{\n  \"text\": \"지금은 추진하는 힘이 강하게 들어와 있어서 일단 밀고 나가고 싶은 마음이 클 것 같아. 다만 너무 몰입하다 보면 스스로를 갉아먹을 수 있으니까, 감정에 휘둘리지 말고 사실을 바탕으로 균형을 잡는 게 가장 현실적인 방향이야. 프로젝트를 맡았을 때 네가 감당해야 할 책임이 어느 정도인지 구체적으로 계산해 봤어?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 7,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 15,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 11,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [\n        0\n      ],\n      \"textEvidence\": \"추진\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [\n        0\n      ],\n      \"textEvidence\": \"균형\"\n    }\n  ]\n}",
+          "valid": true,
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "selected": 8,
+    "delivered": 8,
+    "rawHTTP": 10,
+    "repairCount": 2,
+    "sourceHashChecks": 32,
+    "inputHashChecks": 8,
+    "scoreTotal": 68,
+    "mean": 8.5,
+    "hardFailCount": 0,
+    "subsetThresholdMet": true,
+    "fullAcceptancePassed": false,
+    "notableLimits": [
+      "Both repairs corrected keyword index mismatches; response meaning was unchanged.",
+      "Some third-person attitude language has weak symbolic framing.",
+      "One Saju response omits discrete score37; one Tarot reply omits reversed-Devil meaning; one omits a third-card evidence row.",
+      "A single small diagnostic cannot certify generalization, full Persona character differentiation, full84 or public-product acceptance."
+    ]
+  },
+  "artifactHashes": {
+    "selection.json": "e56c237571fd94a8c591a4c93900c63c00debeb08e8039a4e89d6c5b11ad6062",
+    "results.json": "f7f3908ac047661f35439265d6f95cbe8a9c3deb5fdd84918af40c9e15983399",
+    "provider-attempts.jsonl": "80d4d3fad142d73fd752eecf0ffe4e44f4a2f4c32d0821976cad8217101ba1ed",
+    "micro-manifest.json": "6e72cc5edd7c442193f35215e87cb72332fe062af99b8075780fef1c9a53105b"
+  }
+}

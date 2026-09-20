@@ -25,7 +25,7 @@ describe('generic schema and tool projections after the preserved v2 failure', (
     const schema = { type: 'object', required: ['requiredField'] };
     const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async () => response({ missing: true }));
     const provider = createOpenAICompatibleProvider({ baseUrl: 'https://example.test/v1', model: 'test-only', fetchImpl });
-    await expect(provider.generateStructured({ messages: [], schema, validate: () => { throw Error('invalid'); } })).rejects.toMatchObject({ code: 'LLM_INVALID_RESPONSE' });
+    await expect(provider.generateStructured({ messages: [{ role: 'user', content: '원래 입력을 분류해 줘.' }], schema, validate: () => { throw Error('invalid'); } })).rejects.toMatchObject({ code: 'LLM_INVALID_RESPONSE' });
     expect(fetchImpl).toHaveBeenCalledTimes(2);
     expect(JSON.parse(fetchImpl.mock.calls[0]![1]!.body as string).response_format.json_schema.schema).toEqual(schema);
   });

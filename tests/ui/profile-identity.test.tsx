@@ -17,6 +17,6 @@ describe('profile form identity',()=>{
   fireEvent.change(nickname(),{target:{value:'이전 계정의 미완성 이름'}});fireEvent.click(screen.getByRole('radio',{name:'아랑'}));
   mocked.anonymous=false;view.rerender(tree());expect(nickname().value).toBe('이전 계정의 미완성 이름');
   mocked.id='account-b';view.rerender(tree());expect(nickname().value).toBe('다음 계정');expect((screen.getByRole('radio',{name:'보미'}) as HTMLInputElement).checked).toBe(true);
-  fireEvent.click(screen.getByRole('button',{name:'변경 내용 저장'}));await waitFor(()=>expect(mocked.save).toHaveBeenCalledWith({display_name:'다음 계정',preferred_character:'BOMI'}));
+  fireEvent.click(screen.getByRole('button',{name:'변경 내용 저장'}));await waitFor(()=>expect(mocked.save).toHaveBeenCalledWith({display_name:'다음 계정',preferred_character:'BOMI'},'account-b'));
  });
 });

@@ -6,10 +6,10 @@ import { randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { MODEL, CANDIDATE, TARGET, MESSAGES, SCENARIOS, PLAN, digest, pathsFor, sourceHashes } from './local-openai-contract-double.mjs';
 
-const EVIDENCE = 'docs/evidence/backend-local-edge-contract-v9-smoke.json';
+const EVIDENCE = 'docs/evidence/backend-local-edge-contract-v10-smoke.json';
 const TABLES = ['profiles', 'conversations', 'consultations', 'messages', 'tarot_draw_groups', 'tarot_draws', 'birth_profiles', 'saju_readings',
   'saju_compatibility_readings', 'related_people', 'memories', 'memory_suppressions', 'request_executions', 'rate_limit_buckets', 'daily_draw_claims'];
-const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v9';
+const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v10';
 const safeCode = error => error instanceof Error && /^[A-Z0-9_]{3,100}$/.test(error.message) ? error.message : 'LOCAL_CONTRACT_SMOKE_FAILED';
 const stable = value => JSON.stringify(value, function (_key, item) { return item && typeof item === 'object' && !Array.isArray(item)
   ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]])) : item; });
@@ -208,7 +208,7 @@ async function live(cleanupOnly) {
     const messages = await read(owner.client.from('messages').select('metadata').eq('user_id', owner.id));
     const executions = await read(admin.from('request_executions').select('response_data').eq('user_id', owner.id));
     check('all persisted messages and idempotent response caches omit internal evidence', !hasInternalEvidence(messages) && !hasInternalEvidence(executions));
-    check('provider and Edge counts match the fixed plan without background work', lastDoubleStatus.providerRequests === 10 && counts.edgeHTTP === 7 && counts.blockedDestinations === 0);
+    check('provider and Edge counts match the fixed plan without background work', lastDoubleStatus.providerRequests === 11 && counts.edgeHTTP === 7 && counts.blockedDestinations === 0);
     completed = true;
   } catch (error) { failure = { stage, code: safeCode(error) }; }
   finally {

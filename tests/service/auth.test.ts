@@ -1,8 +1,9 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-const auth = vi.hoisted(() => ({ getSession: vi.fn(), signInWithOAuth: vi.fn(), linkIdentity: vi.fn(), signInAnonymously: vi.fn() }));
+const auth = vi.hoisted(() => ({ initialize: async () => ({ error: null }), getSession: vi.fn(), signInWithOAuth: vi.fn(), linkIdentity: vi.fn(), signInAnonymously: vi.fn() }));
 vi.mock('@supabase/supabase-js', () => ({ createClient: () => ({ auth }) }));
+vi.mock('../../src/lib/auth-identity', () => ({ withAuthIdentityLock: async (_url: string, operation: () => Promise<unknown>) => operation() }));
 beforeEach(() => {
   vi.resetModules();
   vi.stubEnv('VITE_SUPABASE_URL', 'https://auth-fixture.supabase.co');
@@ -15,6 +16,12 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllEnvs());
 
 describe('OAuth identity continuity', () => {
+  it('does not replace a session that became active before an anonymous signup acquired ownership', async () => {
+    auth.getSession.mockResolvedValue({ data: { session: { user: { id: 'new-owner' } } }, error: null });
+    const { service } = await import('../../src/lib/service');
+    await expect(service.signInAnonymously('unused-synthetic-token')).rejects.toMatchObject({ code: 'SESSION_CHANGED' });
+    expect(auth.signInAnonymously).not.toHaveBeenCalled();
+  });
   it('explains a failed CAPTCHA without exposing provider details or retrying the same token', async () => {
     auth.signInAnonymously.mockResolvedValue({ data: { session: null }, error: { code: 'captcha_failed', message: 'private provider diagnostic' } });
     const { service } = await import('../../src/lib/service');

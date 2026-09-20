@@ -1,0 +1,392 @@
+{
+  "partialScope": {
+    "selectedCount": 8,
+    "selectedFromFocused24": 7,
+    "additionalUnchangedOriginalCoreIds": [
+      "09-decision-three:SANI"
+    ],
+    "originalFocusedCount": 24,
+    "executionOrder": [
+      "v5-ab-swapped-contrast:SANI",
+      "10-retry-same-draw:BOMI",
+      "s03-correlated-boundary:ARANG",
+      "10-retry-same-draw:SANI",
+      "10-retry-same-draw:ARANG",
+      "v5-hermit-upright-contrast:BOMI",
+      "v5-reversed-owner-contrast:SANI",
+      "09-decision-three:SANI"
+    ],
+    "orderReason": "The large A/B payload runs first; the known Tarot failure and Saju regression follow. Existing inputs, expectations and rubric remain unchanged.",
+    "unselectedIds": [
+      "v5-intent-pure-recall-no-profile",
+      "s03-correlated-boundary:BOMI",
+      "s03-correlated-boundary:SANI",
+      "s02-unknown-hour:BOMI",
+      "s05-compatibility-evidence:ARANG",
+      "s06-compatibility-uncertain:ARANG",
+      "s07-no-invented-score:ARANG",
+      "v5-legacy-provenance:ARANG",
+      "v5-pure-recall:BOMI",
+      "v5-recall-explicit-tarot:ARANG",
+      "v5-intent-pure-recall-has-profile",
+      "v5-intent-memory-control",
+      "v5-intent-current-preference",
+      "v5-intent-innate-character",
+      "v5-intent-recall-explicit-tarot",
+      "v5-intent-target-remembers",
+      "v5-intent-forget-and-tarot"
+    ],
+    "inputExpectedRubricUnchanged": true,
+    "parentAuthorization": "Main authorized v10 implementation and zero-network micro8 preparation with an 800 proposed hard cap. Actual execution still requires fresh usage confirmation and a separate live GO; the cap may stop early."
+  },
+  "schemaVersion": 1,
+  "mode": "PREFLIGHT",
+  "startedAt": "2026-09-20T00:54:16.915Z",
+  "completedAt": "2026-09-20T00:54:16.952Z",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "corpusVersion": "JumZipV10Micro8Selection-v1",
+  "sourceCorpusVersions": [
+    "JumZipV5Focused-v1",
+    "JumZipPersonaBenchmark-v1"
+  ],
+  "promptVersion": "JumZipPersona-v10",
+  "intentPromptVersion": "JumZipIntent-v5",
+  "requiredLiveVersions": [
+    "JumZipPersona-v10",
+    "JumZipIntent-v5"
+  ],
+  "preparationUsesOldSource": false,
+  "networkRequests": 0,
+  "replyCount": 8,
+  "intentCount": 0,
+  "requests": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "responseContract": "DEFAULT",
+      "sha256": "1b1262ef022a0d4831df3a95b9282f9109a4ed98c3f813cef8c73e350a18ac13",
+      "bytes": 19938,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 205.802058,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "d1c9ea96301b470513c259facdfcb60b42089556fe7d02914d7be0722c7572ad",
+      "bytes": 17014,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.219974,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "responseContract": "DEFAULT",
+      "sha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+      "bytes": 18602,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 193.656482,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "3e5a981387c196e821c5d7a6ebef7e7a4c43df11615ac48851424b244f1771f8",
+      "bytes": 16895,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 178.138145,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "bf5415f9a7f01d00a0faf6e9762a6d003dbcf291ef5f2f22bc9cc79fc732b1c4",
+      "bytes": 17039,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.447249,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "4cb521611ba97bd8bf7824a960be46137a49eb5b9744189e25a6e5c8b59577e0",
+      "bytes": 16975,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 178.865425,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "5d8c2e71fb207b0af826c909534aeb82a1f9efd3fd11994897f45d52fa53b963",
+      "bytes": 16922,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 178.383602,
+      "canaryCount": 0
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "b69c478d7dc1e00d66dbf6c13ba63a1bbbd8a7facc42a19b8b02c8e67176d9fd",
+      "bytes": 16911,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 178.283601,
+      "canaryCount": 0
+    }
+  ],
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+      "canonicalLF": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+      "canonicalLF": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+      "canonicalLF": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+      "canonicalLF": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/v10-micro8-runner.mts": {
+      "raw": "cd4ca769b4ae9463811cf627d61924fbf19891616fb9e2d6526edc73934fc894",
+      "canonicalLF": "cd4ca769b4ae9463811cf627d61924fbf19891616fb9e2d6526edc73934fc894"
+    },
+    "tests/persona/v5-focused-corpus.mts": {
+      "raw": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b",
+      "canonicalLF": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  },
+  "sourceFrozen": true,
+  "changedSources": [],
+  "destinationOrigin": "https://api.cloudflare.com",
+  "pathTemplate": "/client/v4/accounts/[configured-account]/ai/v1/chat/completions",
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "ceilingNeurons": 800,
+  "maximumAttempts": 16,
+  "thinking": {
+    "enable_thinking": false
+  },
+  "accountBudgetStatus": "PENDING_MAIN_USAGE_GO;800_IS_PROPOSED_ONLY",
+  "v9ObservedForecast": {
+    "source": "tests/persona/benchmark-runs/v9-micro8/micro-manifest.json",
+    "entries": [
+      {
+        "id": "v5-ab-swapped-contrast:SANI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 44.782266
+      },
+      {
+        "id": "10-retry-same-draw:BOMI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 42.469966777849166
+      },
+      {
+        "id": "s03-correlated-boundary:ARANG",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 40.827681
+      },
+      {
+        "id": "10-retry-same-draw:SANI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 42.63262418294118
+      },
+      {
+        "id": "10-retry-same-draw:ARANG",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 43.82422286432572
+      },
+      {
+        "id": "v5-hermit-upright-contrast:BOMI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 42.206793151639346
+      },
+      {
+        "id": "v5-reversed-owner-contrast:SANI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 43.01461616726375
+      },
+      {
+        "id": "09-decision-three:SANI",
+        "observedPriorInitial": true,
+        "estimatedInitialNeurons": 42.87008826833568
+      }
+    ],
+    "estimatedInitialRequestsNeurons": 342.62825841235485,
+    "repairScenarios": [
+      {
+        "id": "10-retry-same-draw:ARANG",
+        "serializedRequestSha256": "3698cb24e5242b107eb952f878734f74feedb7e220b40e9cc533611d92c09a92",
+        "bytes": 20256,
+        "conservativeReserveNeurons": 208.692996,
+        "estimatedNeuronsAtPriorUsage": 51.12709747666252,
+        "sourceRawRequestSha256": "c01e0c487f4dc53aeb3b7f74b539ccfe5c703dd0f5dd7be46d5dace3833a9654"
+      },
+      {
+        "id": "v5-reversed-owner-contrast:SANI",
+        "serializedRequestSha256": "70f454c43a9ddf1d68dc58360440691d9ee3c7ac14e4f8d515b6e14a241c23c9",
+        "bytes": 20149,
+        "conservativeReserveNeurons": 207.720259,
+        "estimatedNeuronsAtPriorUsage": 50.201191146901145,
+        "sourceRawRequestSha256": "94427334eab6987f357b820416af82dc88934f9a1bd4e96d981ad4734f354ff2"
+      }
+    ],
+    "estimatedTotalWithSameTwoRepairs": 443.9565470359185,
+    "estimatedPeakReservedWithSameTwoRepairs": 579.3700597675828,
+    "observedTotalNeurons": 444.46808100000004,
+    "observedHTTPAttempts": 10,
+    "limitations": [
+      "Historical output lengths and token/byte ratios are observations, not upper bounds.",
+      "All eight initial cases were observed in v9. Same-two-repair scenario retains v9 raw failures and output lengths only for serialization/cost planning; no model output is predicted or accepted.",
+      "Current repair ordering/representative-keyword prompts can change output length and repair count. Every actual request reserves its current full serialized bytes as input tokens plus900 output tokens before sending."
+    ]
+  },
+  "inheritedV5PlanningContext": {
+    "maintenanceCompletedNeurons": 47.48,
+    "maintenanceReservationReleased": true,
+    "edge": 400,
+    "reserve": 500,
+    "source": "Historical v5 authorization only; not a current balance or permission for v10. The harness does not read account usage."
+  },
+  "forecast": {
+    "source": "tests/persona/model-comparison-runs/gemma4-v4-full84/benchmark-baseline-manifest.json",
+    "priorReplySamples": 84,
+    "ratioMean": 0.22537653850882167,
+    "ratioMax": 0.23818171499914875,
+    "completionMean": 85.07142857142857,
+    "estimatedInitialRequestsNeurons": 306.013434034175,
+    "estimatedInitialRequestsUsingPriorMaxRatio": 322.3455522708781,
+    "all900OutputAtPriorMaxInputRatio": 500.14992769944956,
+    "assumptions": [
+      "Input tokenization forecast uses previous reply model observations, not a bound",
+      "Previous outputs contain no v10 evidence; the first two scenarios omit additional evidence output and are optimistic, not expected upper costs",
+      "The all900 scenario includes the output cap but still models input tokenization; repairs are extra",
+      "Repairs add usage; each request retains byte-as-token reservation",
+      "Production v10 projection changes require a fresh zero-network preflight",
+      "800 is a hard stop, not a guarantee every entry fits; report pending IDs if stopped"
+    ],
+    "sumOfAllInitialConservativeReservations": 1471.7965359999998,
+    "largestSingleReserve": 205.802058
+  },
+  "completed": true,
+  "fullAcceptanceEligible": false,
+  "pricingSource": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+  "modelOptionsSource": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/"
+}

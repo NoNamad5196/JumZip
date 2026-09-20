@@ -1,0 +1,322 @@
+{
+  "version": "JumZipIntentV5Eval-v1",
+  "intentVersion": "JumZipIntent-v5",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "startedAt": "2026-09-20T00:51:50.538Z",
+  "completedAt": "2026-09-20T00:51:50.577Z",
+  "selectionSha256": "6bea595f4f0e2d19d76cd1ec32c4c05bf8bfbe3213602964dd7ca583b05b4321",
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+    "supabase/functions/_shared/domain/full-saju.ts": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+    "supabase/functions/_shared/domain/index.ts": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+    "supabase/functions/_shared/domain/router.ts": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+    "supabase/functions/_shared/domain/rules/balance.ts": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+    "supabase/functions/_shared/domain/rules/constants.ts": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+    "supabase/functions/_shared/domain/rules/index.ts": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+    "supabase/functions/_shared/domain/rules/natal.ts": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+    "supabase/functions/_shared/domain/rules/rational.ts": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+    "supabase/functions/_shared/domain/rules/relations.ts": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+    "supabase/functions/_shared/domain/rules/shinsal.ts": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+    "supabase/functions/_shared/domain/rules/strength.ts": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+    "supabase/functions/_shared/domain/rules/types.ts": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+    "supabase/functions/_shared/domain/saju-compatibility.ts": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+    "supabase/functions/_shared/domain/saju.ts": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+    "supabase/functions/_shared/domain/tarot.ts": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+    "supabase/functions/_shared/llm/chat-contract.ts": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+    "supabase/functions/_shared/llm/index.ts": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+    "supabase/functions/_shared/llm/intent.ts": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+    "supabase/functions/_shared/llm/provider.ts": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+    "supabase/functions/_shared/llm/reply.ts": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+    "supabase/functions/_shared/llm/validator.ts": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+    "supabase/functions/_shared/persona/benchmark.ts": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+    "supabase/functions/_shared/persona/config.ts": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+    "supabase/functions/_shared/persona/context.ts": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+    "supabase/functions/_shared/persona/index.ts": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+    "supabase/functions/_shared/persona/prompt.ts": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+    "supabase/functions/_shared/persona/tool-facts.ts": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/manifest.json": "6e0f605a220b367af1a23461b2b5efebcbe76186548c32a3f8d2c2af53ff867a",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/provider-attempts.jsonl": "a65cb456ddf77a3e15b31f69e83a9ac5ea6d2b7c930cb4c11e6784f0327158bf",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/selection.json": "fc5bf6596f35c12f583b6977321e17601c8ce3fa9e4ed7e6ea83dd54587e0937",
+    "tests/persona/benchmark-runs/v5-focused/results.json": "de12b07ec8e252bf63f561171eac4c4a34201252e49a07d25a147843d921eb09",
+    "tests/persona/intent-v3-corpus.ts": "fcd25a88d54191dc68e28059a01a8a96d7eadc339a98d0408d107a788b93f68a",
+    "tests/persona/intent-v4-corpus.ts": "e22a9a9b332aaa8a3ee664b01bfcaa29ec740e72b31b4b567fe58e3af35c1d9f",
+    "tests/persona/intent-v5-corpus.ts": "0b914dbf0b74cccc154ae28568285011d83d1aaf1fe52c2aff114bc27e229480",
+    "tests/persona/intent-v5-runner.mts": "df4b953850933616c161a365dcf35297d3e6d608ae939f0402fd0998d9868653",
+    "tests/persona/saju-benchmark-corpus.ts": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+    "tests/persona/v5-focused-corpus.mts": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+  },
+  "afterSourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+    "supabase/functions/_shared/domain/full-saju.ts": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+    "supabase/functions/_shared/domain/index.ts": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+    "supabase/functions/_shared/domain/router.ts": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+    "supabase/functions/_shared/domain/rules/balance.ts": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+    "supabase/functions/_shared/domain/rules/constants.ts": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+    "supabase/functions/_shared/domain/rules/index.ts": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+    "supabase/functions/_shared/domain/rules/natal.ts": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+    "supabase/functions/_shared/domain/rules/rational.ts": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+    "supabase/functions/_shared/domain/rules/relations.ts": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+    "supabase/functions/_shared/domain/rules/shinsal.ts": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+    "supabase/functions/_shared/domain/rules/strength.ts": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+    "supabase/functions/_shared/domain/rules/types.ts": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+    "supabase/functions/_shared/domain/saju-compatibility.ts": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+    "supabase/functions/_shared/domain/saju.ts": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+    "supabase/functions/_shared/domain/tarot.ts": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+    "supabase/functions/_shared/llm/chat-contract.ts": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+    "supabase/functions/_shared/llm/index.ts": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+    "supabase/functions/_shared/llm/intent.ts": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+    "supabase/functions/_shared/llm/provider.ts": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+    "supabase/functions/_shared/llm/reply.ts": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+    "supabase/functions/_shared/llm/validator.ts": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+    "supabase/functions/_shared/persona/benchmark.ts": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+    "supabase/functions/_shared/persona/config.ts": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+    "supabase/functions/_shared/persona/context.ts": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+    "supabase/functions/_shared/persona/index.ts": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+    "supabase/functions/_shared/persona/prompt.ts": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+    "supabase/functions/_shared/persona/tool-facts.ts": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/manifest.json": "6e0f605a220b367af1a23461b2b5efebcbe76186548c32a3f8d2c2af53ff867a",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/provider-attempts.jsonl": "a65cb456ddf77a3e15b31f69e83a9ac5ea6d2b7c930cb4c11e6784f0327158bf",
+    "tests/persona/benchmark-runs/intent-v4/initial26-final800-reviewed/selection.json": "fc5bf6596f35c12f583b6977321e17601c8ce3fa9e4ed7e6ea83dd54587e0937",
+    "tests/persona/benchmark-runs/v5-focused/results.json": "de12b07ec8e252bf63f561171eac4c4a34201252e49a07d25a147843d921eb09",
+    "tests/persona/intent-v3-corpus.ts": "fcd25a88d54191dc68e28059a01a8a96d7eadc339a98d0408d107a788b93f68a",
+    "tests/persona/intent-v4-corpus.ts": "e22a9a9b332aaa8a3ee664b01bfcaa29ec740e72b31b4b567fe58e3af35c1d9f",
+    "tests/persona/intent-v5-corpus.ts": "0b914dbf0b74cccc154ae28568285011d83d1aaf1fe52c2aff114bc27e229480",
+    "tests/persona/intent-v5-runner.mts": "df4b953850933616c161a365dcf35297d3e6d608ae939f0402fd0998d9868653",
+    "tests/persona/saju-benchmark-corpus.ts": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+    "tests/persona/v5-focused-corpus.mts": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+  },
+  "sourceFrozen": true,
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "ceilingNeurons": 800,
+  "maximumAttempts": 56,
+  "requests": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "requestSha256": "5a9380e9ecb255758ce3beebb8c1809ba1968c1f084c04c5cd5865d1fe93adf5",
+      "utf8Bytes": 7955,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.864455
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "requestSha256": "391cb7db7a2d782d0e9b4a95d7ed6c807c492db244f49b889ca221105539eb6c",
+      "utf8Bytes": 7954,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.855364
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "requestSha256": "ccf0568fc78e2c1e3c6cdfed281b5173f41e6e10b994f4ee36ad2892fa260d03",
+      "utf8Bytes": 8025,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.500825
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "requestSha256": "9b9095be2879c720b36e2cb6fdeb4080e1bbad4e49f1983cd53572afccf127aa",
+      "utf8Bytes": 7932,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.655362
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "requestSha256": "8ca92316848bb70b9bdfb7beef6927e230e66029c2d2a090844cf19d5dcb0d97",
+      "utf8Bytes": 7927,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.609907
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "requestSha256": "54ea66fe7bc2545e2d97d58ca0a4644a4b260cece9af389962989c0805a889e0",
+      "utf8Bytes": 7962,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.928092
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "requestSha256": "f9a4836bd3cb8104d0cf7487ac8a6aa5fc9d7b871cfe1dab732972c51e36c371",
+      "utf8Bytes": 7928,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.618998
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "requestSha256": "07c19429e3c299fa965ddc397381f767dec65b35dafec8f7efe5f6598f7f3292",
+      "utf8Bytes": 7943,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.755363
+    },
+    {
+      "id": "v3-yearly-missing-birth",
+      "requestSha256": "48fe38671dc8096eb1683a41ff79235dbf63aa34c902976867468d5e2a5a0719",
+      "utf8Bytes": 7901,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.373541
+    },
+    {
+      "id": "v3-monthly-existing-birth",
+      "requestSha256": "7b8c8ffcb7d83b24695d992efc9611b16e25e58d873cb91db18f217dd0bd443b",
+      "utf8Bytes": 7907,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.428087
+    },
+    {
+      "id": "v3-long-compatibility-missing-partner",
+      "requestSha256": "4ec420c1c9979de2e3649bfafc5f3de1b9e483de818802bb72bd2c3d8a4bf8cd",
+      "utf8Bytes": 7940,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.72809
+    },
+    {
+      "id": "v3-long-compatibility-complete-birth",
+      "requestSha256": "8028f77d11752c40c3c246f9237328453060a8231332e044ac8e90c93d9a58cf",
+      "utf8Bytes": 7908,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.437178
+    },
+    {
+      "id": "v3-decision-missing-context",
+      "requestSha256": "1d2a3d463c3a0f46c24a385989d8c9e8664911e59191bfa8c29883410c0b1945",
+      "utf8Bytes": 7908,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.437178
+    },
+    {
+      "id": "v3-decision-two-real-choices",
+      "requestSha256": "b48b42c954bde914780fdd4b4ca92d825766f507ef7c139844334633f2dc5b29",
+      "utf8Bytes": 7977,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.064457
+    },
+    {
+      "id": "v3-relationship-resolved-alias-period",
+      "requestSha256": "f638bcccbd10aa1ee2dca6c889b98a436ace885679346c644cfb3294320e51ff",
+      "utf8Bytes": 7931,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.646271
+    },
+    {
+      "id": "v3-explicit-saju-daily",
+      "requestSha256": "715efc98f73cf69e55ce0858e2823e852f2589d99e9112a0154a097895e261c9",
+      "utf8Bytes": 7908,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.437178
+    },
+    {
+      "id": "v3-general-concern",
+      "requestSha256": "21004d6833367744cf8c79b7118c4ae7a8943f8b771870673eff2c1d0b37c2e7",
+      "utf8Bytes": 7927,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.609907
+    },
+    {
+      "id": "v3-small-talk",
+      "requestSha256": "036b2b23e3f294fbb3ae107709e934203ff42649b0c74c228e1101cea63e5e56",
+      "utf8Bytes": 7916,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.509906
+    },
+    {
+      "id": "v4-recent-user-alias-filtered-index",
+      "requestSha256": "2ae0e5ed5565f904315ccaf52e25a9a8abe79d22598cedb3d0b63c82cedc79da",
+      "utf8Bytes": 8077,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.973557
+    },
+    {
+      "id": "v4-assistant-only-alias-unresolved",
+      "requestSha256": "dd2a8f006c379de548fb755f35eb6f0e885e2927f59233338d6dccb83e86d5a3",
+      "utf8Bytes": 7997,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.246277
+    },
+    {
+      "id": "v4-recent-user-choice-pair",
+      "requestSha256": "694425114c463ecd5332609be22c5ab7c7b208d22669ce34f0522f03e5b643e6",
+      "utf8Bytes": 8048,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.709918
+    },
+    {
+      "id": "v4-unrelated-recent-quotes-not-choices",
+      "requestSha256": "77470986d6619855b534d2004b1e7efd2f9f6c423367782d4d6143c652fb2d5f",
+      "utf8Bytes": 8052,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 82.746282
+    },
+    {
+      "id": "v4-period-general-flow",
+      "requestSha256": "3aadca185b25ee316f2abeda18aed40c7148a36cecb3c0f092ba2aef582a6aac",
+      "utf8Bytes": 7920,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.54627
+    },
+    {
+      "id": "v4-period-specific-relationship",
+      "requestSha256": "3d4d4127bbc095c477e51d2c137134daf73b8bdb5c30a70505b3523be739a7cd",
+      "utf8Bytes": 7940,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.72809
+    },
+    {
+      "id": "v4-semantic-medical-high-stakes",
+      "requestSha256": "0a2a1a819f6e9e65d75bd6ea34034b93e4bb56c2c735a59ec829aa13d60f7de7",
+      "utf8Bytes": 7950,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.819
+    },
+    {
+      "id": "v4-concern-conversation-only",
+      "requestSha256": "8cddba286205532e1f7296a3678403689fbe1b660b923d4c04f1560e3597c681",
+      "utf8Bytes": 7967,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.973547
+    },
+    {
+      "id": "v5-semantic-legal-validity",
+      "requestSha256": "93b5dd2492741997fb2884f0bddc9cb072214a8780a4084c45831363edd1e2bb",
+      "utf8Bytes": 7924,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.582634
+    },
+    {
+      "id": "v5-semantic-financial-allocation",
+      "requestSha256": "c82b69fc17794a71b43851119e2d879a0ae08bf34864d8aa38724f074336ab89",
+      "utf8Bytes": 7925,
+      "maxOutputTokens": 350,
+      "reserveNeurons": 81.591725
+    }
+  ],
+  "responseTokens": 350,
+  "initialTimeoutMs": 8000,
+  "repairTimeoutMs": 3000,
+  "thinking": {
+    "enable_thinking": false
+  },
+  "completed": true,
+  "endpoint": "https://api.cloudflare.com/client/v4/accounts/[configured-account]/ai/v1/chat/completions",
+  "fullAcceptanceEligible": false,
+  "mode": "PREFLIGHT",
+  "networkRequests": 0,
+  "forecast": {
+    "historicalIntentSamples": 26,
+    "meanRatio": 0.2212414705805241,
+    "maximumRatio": 0.2218075179952013,
+    "historicalMeanOutputTokens": 92.3076923076923,
+    "initialHistoricalMean": 518.3055315228421,
+    "initialAtPriorMaxInputRatioAnd350Output": 716.2364538757664,
+    "allInitialConservativeReservations": 2291.3774590000003,
+    "largestReservation": 82.973557,
+    "limitations": [
+      "Historical token/byte ratios and output lengths are forecasts only; v5 clarifies the classification target and judgment domain; generic structured repair ordering also changes.",
+      "Every initial/repair reserves whole UTF8 bytes as input tokens plus350 output before I/O.",
+      "The800 cap can stop before28 cases; repair costs extra. Missing usage retains reservation."
+    ]
+  },
+  "actualModelCalls": 0,
+  "actualQuotaRemaining": "NOT_QUERIED",
+  "pricingSource": "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+}

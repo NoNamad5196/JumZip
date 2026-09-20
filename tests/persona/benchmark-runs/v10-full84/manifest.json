@@ -1,0 +1,2426 @@
+{
+  "schemaVersion": 1,
+  "mode": "LIVE",
+  "startedAt": "2026-09-20T01:26:45.114Z",
+  "completedAt": "2026-09-20T01:29:55.770Z",
+  "completed": true,
+  "stopReason": null,
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v10",
+  "intentPromptVersion": "JumZipIntent-v5",
+  "scope": "ORIGINAL_CORE60_PLUS_SUPPLEMENT24",
+  "expectedOrder": [
+    "01-first-meeting:BOMI",
+    "01-first-meeting:SANI",
+    "01-first-meeting:ARANG",
+    "02-small-talk:BOMI",
+    "02-small-talk:SANI",
+    "02-small-talk:ARANG",
+    "03-late-reply:BOMI",
+    "03-late-reply:SANI",
+    "03-late-reply:ARANG",
+    "04-no-tool:BOMI",
+    "04-no-tool:SANI",
+    "04-no-tool:ARANG",
+    "05-decision:BOMI",
+    "05-decision:SANI",
+    "05-decision:ARANG",
+    "06-one-card:BOMI",
+    "06-one-card:SANI",
+    "06-one-card:ARANG",
+    "07-general-three:BOMI",
+    "07-general-three:SANI",
+    "07-general-three:ARANG",
+    "08-relationship-three:BOMI",
+    "08-relationship-three:SANI",
+    "08-relationship-three:ARANG",
+    "09-decision-three:BOMI",
+    "09-decision-three:SANI",
+    "09-decision-three:ARANG",
+    "10-retry-same-draw:BOMI",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "11-redraw-request:BOMI",
+    "11-redraw-request:SANI",
+    "11-redraw-request:ARANG",
+    "12-injection:BOMI",
+    "12-injection:SANI",
+    "12-injection:ARANG",
+    "13-no-saju-data:BOMI",
+    "13-no-saju-data:SANI",
+    "13-no-saju-data:ARANG",
+    "14-high-stakes:BOMI",
+    "14-high-stakes:SANI",
+    "14-high-stakes:ARANG",
+    "15-shared-memory:BOMI",
+    "15-shared-memory:SANI",
+    "15-shared-memory:ARANG",
+    "16-private-memory:BOMI",
+    "16-private-memory:SANI",
+    "16-private-memory:ARANG",
+    "17-related-people:BOMI",
+    "17-related-people:SANI",
+    "17-related-people:ARANG",
+    "18-forget:BOMI",
+    "18-forget:SANI",
+    "18-forget:ARANG",
+    "19-summary-context:BOMI",
+    "19-summary-context:SANI",
+    "19-summary-context:ARANG",
+    "20-boundary:BOMI",
+    "20-boundary:SANI",
+    "20-boundary:ARANG",
+    "s01-confirmed-strength:BOMI",
+    "s01-confirmed-strength:SANI",
+    "s01-confirmed-strength:ARANG",
+    "s02-unknown-hour:BOMI",
+    "s02-unknown-hour:SANI",
+    "s02-unknown-hour:ARANG",
+    "s03-correlated-boundary:BOMI",
+    "s03-correlated-boundary:SANI",
+    "s03-correlated-boundary:ARANG",
+    "s04-birth-minimization:BOMI",
+    "s04-birth-minimization:SANI",
+    "s04-birth-minimization:ARANG",
+    "s05-compatibility-evidence:BOMI",
+    "s05-compatibility-evidence:SANI",
+    "s05-compatibility-evidence:ARANG",
+    "s06-compatibility-uncertain:BOMI",
+    "s06-compatibility-uncertain:SANI",
+    "s06-compatibility-uncertain:ARANG",
+    "s07-no-invented-score:BOMI",
+    "s07-no-invented-score:SANI",
+    "s07-no-invented-score:ARANG",
+    "s08-shinsal-safety:BOMI",
+    "s08-shinsal-safety:SANI",
+    "s08-shinsal-safety:ARANG"
+  ],
+  "preflightSha256": "8fcadf75a46eb3d54822c872ba49304798a9cda7fda1a7dba547175ec001d2e5",
+  "selectionSha256": "9426ea84e6c50db265f609567ac241ff7988ff43070913f0623969ec1f844406",
+  "rubricSha256": "3c65ded20d39cfe286588fb125dbd53b7d4f0e0a6c749171e11defee47038b21",
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+      "canonicalLF": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+      "canonicalLF": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+      "canonicalLF": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+      "canonicalLF": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/domain/frozen-expectations.ts": {
+      "raw": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96",
+      "canonicalLF": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/saju-benchmark-runner.ts": {
+      "raw": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5",
+      "canonicalLF": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5"
+    },
+    "tests/persona/v10-full84-preflight.mts": {
+      "raw": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397",
+      "canonicalLF": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397"
+    },
+    "tests/persona/v10-full84-runner.mts": {
+      "raw": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec",
+      "canonicalLF": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  },
+  "afterSourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53",
+      "canonicalLF": "9680e657f687bf3877b4d7208b738bddae02e1858b4c6831b582215a3953de53"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9",
+      "canonicalLF": "ff694aaf8c69c2cde1c9d25c76ba64c22c0f4dd0bf28c5bb2a963ec9e58b9eb9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578",
+      "canonicalLF": "6c090292a7b3df0e34da3ce4dff0920f7669d2c8aea101da84dc4043cba9c578"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460",
+      "canonicalLF": "c1f6ea17c5b0c4dfcbe5ba8eaa79fb2f661df100127e1c04dddfd028b4f72460"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/domain/frozen-expectations.ts": {
+      "raw": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96",
+      "canonicalLF": "32d26b8573e3abdb06ab741577c8ab2849b9d28da83a84fef99198471c586f96"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/saju-benchmark-runner.ts": {
+      "raw": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5",
+      "canonicalLF": "cd5d63abb82721bbceaf2773692245511b62156bcde9cb07ea4217641ce14ac5"
+    },
+    "tests/persona/v10-full84-preflight.mts": {
+      "raw": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397",
+      "canonicalLF": "eb001d940144ba66b3b2ebf3279948d85dee393e7511000a635c1943a4fca397"
+    },
+    "tests/persona/v10-full84-runner.mts": {
+      "raw": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec",
+      "canonicalLF": "522bf2f55169e1c99a1a2ecc2fcd65d4126ad12b4160abebe8554a63a619d0ec"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  },
+  "sourceFrozen": true,
+  "changedSources": [],
+  "sourceFreezeScope": "domain/persona/llm excluding background memory; original corpus/frozen expectations/shared accounting/new runner pair",
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "ceilingNeurons": 4000,
+  "maximumAttempts": 168,
+  "neuronsAccounted": 2945.9021859999993,
+  "attempts": [
+    {
+      "entryId": "01-first-meeting:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bc9136c99d9a8d1f4b3971f34a38b78b8baaf22525513c79579b0b673bf5d3d6",
+      "reserveNeurons": 132.628599,
+      "neurons": 25.09116,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2622,
+      "completionTokens": 46,
+      "latencyMs": 1813
+    },
+    {
+      "entryId": "01-first-meeting:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "83616e180d1c6e70931881ad4b0f6229a73ec3214022b2408430220fc7c4b53c",
+      "reserveNeurons": 131.54677,
+      "neurons": 25.472982,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2613,
+      "completionTokens": 63,
+      "latencyMs": 2109
+    },
+    {
+      "entryId": "01-first-meeting:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "37620cd1fdc20ca6d6f1003a557b7636c99a2bcc8b8e50a01147901b8f31e9cd",
+      "reserveNeurons": 132.855874,
+      "neurons": 25.418436,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2634,
+      "completionTokens": 54,
+      "latencyMs": 938
+    },
+    {
+      "entryId": "02-small-talk:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9094d3cdd46a8588b94eb210aaaad43fcc21f8832285e609052724dc8bddbda3",
+      "reserveNeurons": 132.783146,
+      "neurons": 25.436618,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2630,
+      "completionTokens": 56,
+      "latencyMs": 1381
+    },
+    {
+      "entryId": "02-small-talk:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b48953badaa99904c4dd45e778af9d51fa13c579a30c0c141f9a74aa1ab3b27b",
+      "reserveNeurons": 131.701317,
+      "neurons": 25.009341,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2622,
+      "completionTokens": 43,
+      "latencyMs": 881
+    },
+    {
+      "entryId": "02-small-talk:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3b153db0d2cbb6f88001825e070b8a8f341df860416d5fc0c95934963c070524",
+      "reserveNeurons": 133.010421,
+      "neurons": 25.4548,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2641,
+      "completionTokens": 53,
+      "latencyMs": 1613
+    },
+    {
+      "entryId": "03-late-reply:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b49c5a88b0c6d0c0b587db2a34f3b30c1cb5a11e002b13c54114b08c44480d47",
+      "reserveNeurons": 132.892238,
+      "neurons": 25.772985,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2628,
+      "completionTokens": 69,
+      "latencyMs": 1606
+    },
+    {
+      "entryId": "03-late-reply:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1e1ce310f3aae60768c194328ea554b807a6c972b801f2c8dbdbd75dd2fc9c07",
+      "reserveNeurons": 131.810409,
+      "neurons": 25.527528,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2619,
+      "completionTokens": 63,
+      "latencyMs": 1577
+    },
+    {
+      "entryId": "03-late-reply:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "fcac146f483a965c529747143bc929fb904dc782c06ab7f9bcff8f401ded6269",
+      "reserveNeurons": 133.119513,
+      "neurons": 25.491164,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2639,
+      "completionTokens": 55,
+      "latencyMs": 1568
+    },
+    {
+      "entryId": "04-no-tool:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b640f1ef3c9d1a20b6947c132f32f7097246cc7c739e29ffb3296033e6621b5b",
+      "reserveNeurons": 133.00133,
+      "neurons": 25.172979,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2631,
+      "completionTokens": 46,
+      "latencyMs": 1304
+    },
+    {
+      "entryId": "04-no-tool:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "69ca806c33a3dc17016c8c340238f04b75d2a4bddffbd4022599dd6da2447013",
+      "reserveNeurons": 131.919501,
+      "neurons": 25.227525,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2622,
+      "completionTokens": 51,
+      "latencyMs": 2467
+    },
+    {
+      "entryId": "04-no-tool:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "0ddfa4d8765d8659560edab8d4b9db1f855948604a0964f6e1122484b720884a",
+      "reserveNeurons": 133.228605,
+      "neurons": 25.572983,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2642,
+      "completionTokens": 57,
+      "latencyMs": 2008
+    },
+    {
+      "entryId": "05-decision:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "13113a27111c1efda9ad6dacee09a17aebc72f897baeab34c8d068e5ad8f7239",
+      "reserveNeurons": 133.164968,
+      "neurons": 25.572983,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2636,
+      "completionTokens": 59,
+      "latencyMs": 1415
+    },
+    {
+      "entryId": "05-decision:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "192af6044d954451382058192d74634747a9fff2897a42fc45a7f329b5c61686",
+      "reserveNeurons": 132.083139,
+      "neurons": 25.518437,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2627,
+      "completionTokens": 60,
+      "latencyMs": 2378
+    },
+    {
+      "entryId": "05-decision:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3d56e8c944cf13b6c1c0698cdb6c36676b6ee88c507e37743ff79b3ab8abca37",
+      "reserveNeurons": 133.392243,
+      "neurons": 25.536619,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2647,
+      "completionTokens": 54,
+      "latencyMs": 1361
+    },
+    {
+      "entryId": "06-one-card:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "837a27fa907c2c9480553871f38a9f1c326c26fa99bcdc7760080defc7c08583",
+      "reserveNeurons": 161.156157,
+      "neurons": 33.882157,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3280,
+      "completionTokens": 149,
+      "latencyMs": 2619
+    },
+    {
+      "entryId": "06-one-card:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "43ecd3e4586af1dcd94df1c5c0537eb0f8d32793549be9c465876ccb45a7e12a",
+      "reserveNeurons": 160.074328,
+      "neurons": 32.491234,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3271,
+      "completionTokens": 101,
+      "latencyMs": 1918
+    },
+    {
+      "entryId": "06-one-card:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "09435772b801df6a2439439e8b02ccd7c25fb610e0366caf8d47b9db051d7a12",
+      "reserveNeurons": 161.383432,
+      "neurons": 33.027603,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3291,
+      "completionTokens": 114,
+      "latencyMs": 2811
+    },
+    {
+      "entryId": "07-general-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d06f1fa237219de46c68c4b68bb3ad60cbe30e3600c88c8eed36e77e959248ce",
+      "reserveNeurons": 179.201792,
+      "neurons": 42.391333,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3763,
+      "completionTokens": 300,
+      "latencyMs": 4101
+    },
+    {
+      "entryId": "07-general-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "5eaaa6280b7370c793d4574d881fb01f066cea231df5ebed6f0c0d1e134413af",
+      "reserveNeurons": 178.119963,
+      "neurons": 38.891298,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3753,
+      "completionTokens": 175,
+      "latencyMs": 6106
+    },
+    {
+      "entryId": "07-general-three:SANI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "3639ddf9baf4ee842e3772364d517b1b19d8c53089f0731f6494d1c491984774",
+      "reserveNeurons": 201.302013,
+      "neurons": 43.836802,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4297,
+      "completionTokens": 175,
+      "latencyMs": 2936
+    },
+    {
+      "entryId": "07-general-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "326f4131e7f5f4082d1d3720ce33ccd27a40320eb76f322f905aa28df684344c",
+      "reserveNeurons": 179.429067,
+      "neurons": 39.591305,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3773,
+      "completionTokens": 194,
+      "latencyMs": 2970
+    },
+    {
+      "entryId": "08-relationship-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d768274b2f1c63cc379a155780bd45114004da376127b643df826fe7c1e7af15",
+      "reserveNeurons": 179.465431,
+      "neurons": 41.609507,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3770,
+      "completionTokens": 269,
+      "latencyMs": 4579
+    },
+    {
+      "entryId": "08-relationship-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b56a46f65ae25bb2ac772489b13d87d9d8653f1855a6014d176af60e91b05ca6",
+      "reserveNeurons": 178.383602,
+      "neurons": 42.700427,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3761,
+      "completionTokens": 312,
+      "latencyMs": 5280
+    },
+    {
+      "entryId": "08-relationship-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "265caae8793e2ade1de103cc45ecb7e0edbd8e7c3cce54fce323b8b24318e531",
+      "reserveNeurons": 179.692706,
+      "neurons": 39.18221,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3782,
+      "completionTokens": 176,
+      "latencyMs": 2604
+    },
+    {
+      "entryId": "09-decision-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "783ce34a2bcf4f3e8c9971693c323769b270067c894e453c16018f346e3a9084",
+      "reserveNeurons": 179.36543,
+      "neurons": 41.473142,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3755,
+      "completionTokens": 269,
+      "latencyMs": 6414
+    },
+    {
+      "entryId": "09-decision-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b69c478d7dc1e00d66dbf6c13ba63a1bbbd8a7facc42a19b8b02c8e67176d9fd",
+      "reserveNeurons": 178.283601,
+      "neurons": 41.473142,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3746,
+      "completionTokens": 272,
+      "latencyMs": 5385
+    },
+    {
+      "entryId": "09-decision-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "0fc0077c9041fb4e0e7ac73653f4e9142139e4b5ef748a674dedaebe317d0d91",
+      "reserveNeurons": 179.592705,
+      "neurons": 40.345858,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3766,
+      "completionTokens": 224,
+      "latencyMs": 4483
+    },
+    {
+      "entryId": "10-retry-same-draw:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d1c9ea96301b470513c259facdfcb60b42089556fe7d02914d7be0722c7572ad",
+      "reserveNeurons": 179.219974,
+      "neurons": 42.718609,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3772,
+      "completionTokens": 309,
+      "latencyMs": 8726
+    },
+    {
+      "entryId": "10-retry-same-draw:BOMI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "7736decce58ee46f1200add8b0f5969037ee489196752ceb0340a8b8c91f6e90",
+      "reserveNeurons": 205.63842,
+      "neurons": 45.309544,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4459,
+      "completionTokens": 175,
+      "latencyMs": 2159
+    },
+    {
+      "entryId": "10-retry-same-draw:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3e5a981387c196e821c5d7a6ebef7e7a4c43df11615ac48851424b244f1771f8",
+      "reserveNeurons": 178.138145,
+      "neurons": 42.418606,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3763,
+      "completionTokens": 301,
+      "latencyMs": 6722
+    },
+    {
+      "entryId": "10-retry-same-draw:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bf5415f9a7f01d00a0faf6e9762a6d003dbcf291ef5f2f22bc9cc79fc732b1c4",
+      "reserveNeurons": 179.447249,
+      "neurons": 39.436758,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3783,
+      "completionTokens": 185,
+      "latencyMs": 3601
+    },
+    {
+      "entryId": "11-redraw-request:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1b3829d8813035e94fd47b970d9d7eda68837470edd8d8d06b0ed534c95347b5",
+      "reserveNeurons": 160.992519,
+      "neurons": 31.554861,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3282,
+      "completionTokens": 63,
+      "latencyMs": 1710
+    },
+    {
+      "entryId": "11-redraw-request:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3cf3f7e3e556b2ac66a4fa983719f1339f9d1b097dfc15e2cc0e95627c029b51",
+      "reserveNeurons": 159.91069,
+      "neurons": 30.963946,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3274,
+      "completionTokens": 44,
+      "latencyMs": 738
+    },
+    {
+      "entryId": "11-redraw-request:SANI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "b606b816f219f146efba2911a9af9ba0a1c58ce92aa6e55b78439962b233ab75",
+      "reserveNeurons": 176.992679,
+      "neurons": 34.418526,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3654,
+      "completionTokens": 44,
+      "latencyMs": 732
+    },
+    {
+      "entryId": "11-redraw-request:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c7cbb88f9e5b159e149fd4c8d1480860a204b686d24b963829ecc2d4dede2aae",
+      "reserveNeurons": 161.219794,
+      "neurons": 31.954865,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3293,
+      "completionTokens": 74,
+      "latencyMs": 2282
+    },
+    {
+      "entryId": "11-redraw-request:ARANG",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "4e7a8e2d2d5af14f84368cf3c2c09c5f82b43f72eaad0b357c98da5415ae0d4a",
+      "reserveNeurons": 179.465431,
+      "neurons": 35.682175,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3703,
+      "completionTokens": 74,
+      "latencyMs": 2825
+    },
+    {
+      "entryId": "12-injection:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "52350f2eba01d9ad1c471ea01473568f3b84c2e4a557efcf408a6f09e159c824",
+      "reserveNeurons": 133.328606,
+      "neurons": 24.918431,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2639,
+      "completionTokens": 34,
+      "latencyMs": 696
+    },
+    {
+      "entryId": "12-injection:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d8ab4710d92e19cbb2163fb6565f6f112cc09e38cee11af98c6370eb0db13ffb",
+      "reserveNeurons": 132.246777,
+      "neurons": 24.936613,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2629,
+      "completionTokens": 38,
+      "latencyMs": 1045
+    },
+    {
+      "entryId": "12-injection:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "5f7c775a700926038989084c5c14daee9fdfae8387f51fa79406253a9b787c9e",
+      "reserveNeurons": 133.555881,
+      "neurons": 25.118433,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2649,
+      "completionTokens": 38,
+      "latencyMs": 994
+    },
+    {
+      "entryId": "13-no-saju-data:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "eedb64e06dc1fa557b33a300bac22890686b005148033b465b48dc47ac19e6c1",
+      "reserveNeurons": 132.874056,
+      "neurons": 25.63662,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2631,
+      "completionTokens": 63,
+      "latencyMs": 1192
+    },
+    {
+      "entryId": "13-no-saju-data:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "30a5d7e4841110b916026f21e3ea5bf2b3ac85753e785afae8dd81f9202bccb6",
+      "reserveNeurons": 131.792227,
+      "neurons": 25.500255,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2622,
+      "completionTokens": 61,
+      "latencyMs": 1914
+    },
+    {
+      "entryId": "13-no-saju-data:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "7118ecc9f1812c2192fab4abc165bd4f701fea0cd2406efb83e8723086954982",
+      "reserveNeurons": 133.101331,
+      "neurons": 25.791167,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2642,
+      "completionTokens": 65,
+      "latencyMs": 2224
+    },
+    {
+      "entryId": "14-high-stakes:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "7c9c583ffb0d02d1c9bf1def5ac7a5e9d27fa17b977d0b09a9bf3b6de43e09d0",
+      "reserveNeurons": 132.874056,
+      "neurons": 25.72753,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2626,
+      "completionTokens": 68,
+      "latencyMs": 1300
+    },
+    {
+      "entryId": "14-high-stakes:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "962b45fd0e713b1dad7d9ffbe8cc606d35d8254415492e7ae4a7bd89a652ca8a",
+      "reserveNeurons": 131.792227,
+      "neurons": 25.509346,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2617,
+      "completionTokens": 63,
+      "latencyMs": 1894
+    },
+    {
+      "entryId": "14-high-stakes:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "04992659450ff53256dc8b84eda470685311b659a9c717480a8691ed93de0833",
+      "reserveNeurons": 133.101331,
+      "neurons": 26.318445,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2637,
+      "completionTokens": 86,
+      "latencyMs": 2133
+    },
+    {
+      "entryId": "15-shared-memory:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "6cf43fc5c7e084c1af972949e4a47b29fc9069058a918d16ac1f6c3b0e97b0c8",
+      "reserveNeurons": 133.555881,
+      "neurons": 25.645711,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2641,
+      "completionTokens": 60,
+      "latencyMs": 1833
+    },
+    {
+      "entryId": "15-shared-memory:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1cfb58b723e6d4b81732514976d94968347fbc888def7800f22c676a24099253",
+      "reserveNeurons": 132.474052,
+      "neurons": 25.491164,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2633,
+      "completionTokens": 57,
+      "latencyMs": 1522
+    },
+    {
+      "entryId": "15-shared-memory:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "21beb1f70e2f735f56e0b8aeed5acaecae16698ddcc93bd62b481b20b1a377ce",
+      "reserveNeurons": 133.783156,
+      "neurons": 25.827531,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2652,
+      "completionTokens": 63,
+      "latencyMs": 1387
+    },
+    {
+      "entryId": "16-private-memory:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "599a93606564f4d9ca8f7d36e58455b6b4f318558bdf36521bd3433058588f52",
+      "reserveNeurons": 133.264969,
+      "neurons": 25.172979,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2634,
+      "completionTokens": 45,
+      "latencyMs": 860
+    },
+    {
+      "entryId": "16-private-memory:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "f9077b800ffdccfb6493e484ce7badefecb33fd621f23eafcf3cd835e2069b31",
+      "reserveNeurons": 132.18314,
+      "neurons": 25.218434,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2624,
+      "completionTokens": 50,
+      "latencyMs": 1083
+    },
+    {
+      "entryId": "16-private-memory:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "86ef5cc9d3702a62357267713a02d466a521b7d3e969cbf53010ba8b6eba0638",
+      "reserveNeurons": 133.54679,
+      "neurons": 25.254798,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2646,
+      "completionTokens": 44,
+      "latencyMs": 1217
+    },
+    {
+      "entryId": "17-related-people:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c705c2a01dd9afcac7e6795508bf7e099acaa6b945609af440972d5ff898c78c",
+      "reserveNeurons": 134.319525,
+      "neurons": 25.918441,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2665,
+      "completionTokens": 62,
+      "latencyMs": 1317
+    },
+    {
+      "entryId": "17-related-people:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "a182cad0d0b6e2f27b79f7f2208dc65ae734159b951e4c061b0618e79292a11c",
+      "reserveNeurons": 133.237696,
+      "neurons": 26.18208,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2655,
+      "completionTokens": 75,
+      "latencyMs": 1859
+    },
+    {
+      "entryId": "17-related-people:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "4acaca86caa202b00c9c92d72d11c77c590cdc7c74a43511988d62a178402b8f",
+      "reserveNeurons": 134.5468,
+      "neurons": 26.282081,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2675,
+      "completionTokens": 72,
+      "latencyMs": 1805
+    },
+    {
+      "entryId": "18-forget:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "e0ecc0c9b056bdbbf04c4c5577906f9c204719ad7c263dfb9c4fe8f7e64078e4",
+      "reserveNeurons": 132.928602,
+      "neurons": 25.18207,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2629,
+      "completionTokens": 47,
+      "latencyMs": 2220
+    },
+    {
+      "entryId": "18-forget:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9c202829ad5d05927f9fd4e7076015b8e58d9c926fdac95b9e69c2cd7d081de2",
+      "reserveNeurons": 131.846773,
+      "neurons": 25.154797,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2620,
+      "completionTokens": 49,
+      "latencyMs": 1322
+    },
+    {
+      "entryId": "18-forget:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bca6eeb0a08b0928a1f01aec43eb3148c1f0cbc65809bec0846ab37a6ee0f4b4",
+      "reserveNeurons": 133.155877,
+      "neurons": 25.63662,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2640,
+      "completionTokens": 60,
+      "latencyMs": 1096
+    },
+    {
+      "entryId": "19-summary-context:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c4aa49b569f2fa929812904b05c5a54db6991cb424e3f111f24105a4f43d85a8",
+      "reserveNeurons": 134.228615,
+      "neurons": 26.036624,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2660,
+      "completionTokens": 68,
+      "latencyMs": 1270
+    },
+    {
+      "entryId": "19-summary-context:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9a8e4ac744176c56df0f40b0fe3acef2e8f4c476be57809ac9c3e20ecf052094",
+      "reserveNeurons": 133.219514,
+      "neurons": 25.609347,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2652,
+      "completionTokens": 55,
+      "latencyMs": 1329
+    },
+    {
+      "entryId": "19-summary-context:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "388e1936e32ee0588348f03d05c7074584cb7b52e5d57c2c39164964ff4e3316",
+      "reserveNeurons": 134.801348,
+      "neurons": 25.782076,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2680,
+      "completionTokens": 52,
+      "latencyMs": 1442
+    },
+    {
+      "entryId": "20-boundary:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "89a585907442f82310ccf1f931c5fc0aa9141c8c7da2608d878ab2440eda5532",
+      "reserveNeurons": 132.81951,
+      "neurons": 25.709348,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2627,
+      "completionTokens": 67,
+      "latencyMs": 998
+    },
+    {
+      "entryId": "20-boundary:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "00a87a4744b343e6c613043ef3af6e7ff12a35b460d90d9012f6bb5670d37054",
+      "reserveNeurons": 131.964956,
+      "neurons": 25.172979,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2622,
+      "completionTokens": 49,
+      "latencyMs": 1570
+    },
+    {
+      "entryId": "20-boundary:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b4519196cbd94f488d27b1c63d60b452270c3390c2334bdbdcc438079a0a0109",
+      "reserveNeurons": 133.528608,
+      "neurons": 26.154807,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 2649,
+      "completionTokens": 76,
+      "latencyMs": 1774
+    },
+    {
+      "entryId": "s01-confirmed-strength:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "af0d2fc1c4d65c8ff3cf18c6c625fa9f704be4c0d7e8e2bd84a9e406aaf7ce3a",
+      "reserveNeurons": 169.265329,
+      "neurons": 34.845803,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3593,
+      "completionTokens": 80,
+      "latencyMs": 1456
+    },
+    {
+      "entryId": "s01-confirmed-strength:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "42892790a360b5f155e9d5c6df81ece5b783b51116d374bd14303721f0c1cfe4",
+      "reserveNeurons": 168.1835,
+      "neurons": 34.554891,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3585,
+      "completionTokens": 72,
+      "latencyMs": 1102
+    },
+    {
+      "entryId": "s01-confirmed-strength:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "eb37fd09d3df5c572843c34d621ea5c1383fb3744399ece59a98e75c17f5f733",
+      "reserveNeurons": 169.492604,
+      "neurons": 35.027623,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3604,
+      "completionTokens": 83,
+      "latencyMs": 1688
+    },
+    {
+      "entryId": "s02-unknown-hour:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "570d1efddfef3caa20a2b5d2d8af8e38d6935adb38593f44bcfc4a0e2369cb10",
+      "reserveNeurons": 180.301803,
+      "neurons": 37.191281,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3884,
+      "completionTokens": 69,
+      "latencyMs": 1332
+    },
+    {
+      "entryId": "s02-unknown-hour:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "6a69fc9b98116ba21a7f091e5a7b78873c6e82f3068d1b92b3da074c6420bd93",
+      "reserveNeurons": 179.219974,
+      "neurons": 36.691276,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3874,
+      "completionTokens": 54,
+      "latencyMs": 2054
+    },
+    {
+      "entryId": "s02-unknown-hour:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8b076cb8028f71998041fe571b897aee8e8110e78fb91847754c55e4be3d4c89",
+      "reserveNeurons": 180.529078,
+      "neurons": 37.336737,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3894,
+      "completionTokens": 71,
+      "latencyMs": 1336
+    },
+    {
+      "entryId": "s03-correlated-boundary:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "41fafa4dcfb554ff2cbaaba64c6f9c85d9d0e4e9b2549097028db51872d226cb",
+      "reserveNeurons": 193.429207,
+      "neurons": 39.864035,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4151,
+      "completionTokens": 78,
+      "latencyMs": 1079
+    },
+    {
+      "entryId": "s03-correlated-boundary:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "a49f78d44bf6f6fcb2de5ac1cff2b3d5d241e5202dc2370c59302dff012993c7",
+      "reserveNeurons": 192.347378,
+      "neurons": 39.800398,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4141,
+      "completionTokens": 79,
+      "latencyMs": 1595
+    },
+    {
+      "entryId": "s03-correlated-boundary:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+      "reserveNeurons": 193.656482,
+      "neurons": 39.873126,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4161,
+      "completionTokens": 75,
+      "latencyMs": 2063
+    },
+    {
+      "entryId": "s04-birth-minimization:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "33f86acefa8052c4b53492abfd378a9b1d2d3be37ad29313bf6927030ec59ae7",
+      "reserveNeurons": 180.283621,
+      "neurons": 37.282191,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3885,
+      "completionTokens": 72,
+      "latencyMs": 1861
+    },
+    {
+      "entryId": "s04-birth-minimization:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "91b5f6633ff4acbabb5597a1f03ea0078517ac7a85c0111cb648290324ededdc",
+      "reserveNeurons": 179.201792,
+      "neurons": 36.845823,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3876,
+      "completionTokens": 59,
+      "latencyMs": 2183
+    },
+    {
+      "entryId": "s04-birth-minimization:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8b2d41b3d9a1bc5538bcbaf9081d4dff1fcdc7844a5243a5c3ebdbb99cb88661",
+      "reserveNeurons": 180.510896,
+      "neurons": 37.554921,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3897,
+      "completionTokens": 78,
+      "latencyMs": 1338
+    },
+    {
+      "entryId": "s05-compatibility-evidence:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "0f12b54766571efc713ad4b33268abc4c9a1cbf8c3f18f8b361a12c51a6c8ce3",
+      "reserveNeurons": 208.338447,
+      "neurons": 45.991369,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4741,
+      "completionTokens": 106,
+      "latencyMs": 1987
+    },
+    {
+      "entryId": "s05-compatibility-evidence:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9626c9a72dc478ba25da5c7f6bf6e5200aea8a8fc166152feb9f9ca8140cad5e",
+      "reserveNeurons": 207.256618,
+      "neurons": 45.564092,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4733,
+      "completionTokens": 93,
+      "latencyMs": 1273
+    },
+    {
+      "entryId": "s05-compatibility-evidence:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "b17556ae8cf97e1871c4e4c96c46aeac4c229ba06a30d0203059c57347be4aae",
+      "reserveNeurons": 208.565722,
+      "neurons": 45.955005,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4752,
+      "completionTokens": 101,
+      "latencyMs": 2388
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "4c34e9abeedc34fe5810440da41fdf1a59b4e7f764ef83ff275ece91032ed857",
+      "reserveNeurons": 294.293852,
+      "neurons": 65.63702,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 6971,
+      "completionTokens": 83,
+      "latencyMs": 2684
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9f9c18284aba598f0ed88e027393f2d1d00055cad0a2384d18d38df83e2589d5",
+      "reserveNeurons": 293.212023,
+      "neurons": 64.982468,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 6962,
+      "completionTokens": 62,
+      "latencyMs": 2355
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8f519a8f577a75eaa344a10d7a1f31bd2f67b689a7e411d51c7bfc6ac204c2e1",
+      "reserveNeurons": 294.521127,
+      "neurons": 66.309754,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 6982,
+      "completionTokens": 104,
+      "latencyMs": 2445
+    },
+    {
+      "entryId": "s07-no-invented-score:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9286237546a1efa74e103e5b9228db2115be1e664cefaff61346a91986bfa999",
+      "reserveNeurons": 207.720259,
+      "neurons": 44.245897,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4720,
+      "completionTokens": 49,
+      "latencyMs": 1517
+    },
+    {
+      "entryId": "s07-no-invented-score:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "ac306dd49f1231d870194e1f3ac77887c165b865281f554ef495f2a9beddf85c",
+      "reserveNeurons": 206.63843,
+      "neurons": 44.409535,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4711,
+      "completionTokens": 58,
+      "latencyMs": 1802
+    },
+    {
+      "entryId": "s07-no-invented-score:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "e0a2e171df308bc56b644ecdbf2121797b933fb3091214e2a386a01f808ee374",
+      "reserveNeurons": 207.947534,
+      "neurons": 45.054996,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4731,
+      "completionTokens": 75,
+      "latencyMs": 2415
+    },
+    {
+      "entryId": "s08-shinsal-safety:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "3a1b00df28d85fd459f8a9d126ff1b533463ef1521fd87ce95de6aabf367708d",
+      "reserveNeurons": 180.110892,
+      "neurons": 38.282201,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3878,
+      "completionTokens": 111,
+      "latencyMs": 2885
+    },
+    {
+      "entryId": "s08-shinsal-safety:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "26759f6fb18004fa7759a803496e48ce3c838e53eb64cf054d37c004bdd4d0e9",
+      "reserveNeurons": 179.029063,
+      "neurons": 37.627649,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3869,
+      "completionTokens": 90,
+      "latencyMs": 2368
+    },
+    {
+      "entryId": "s08-shinsal-safety:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "46c5e8fae11e0fce24de24159c006192e67410f63c51d508621916489854a586",
+      "reserveNeurons": 180.338167,
+      "neurons": 37.45492,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3889,
+      "completionTokens": 77,
+      "latencyMs": 1826
+    }
+  ],
+  "requests": [
+    {
+      "entryId": "01-first-meeting:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bc9136c99d9a8d1f4b3971f34a38b78b8baaf22525513c79579b0b673bf5d3d6",
+      "bytes": 11889,
+      "conservativeReserveNeurons": 132.628599
+    },
+    {
+      "entryId": "01-first-meeting:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "83616e180d1c6e70931881ad4b0f6229a73ec3214022b2408430220fc7c4b53c",
+      "bytes": 11770,
+      "conservativeReserveNeurons": 131.54677
+    },
+    {
+      "entryId": "01-first-meeting:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "37620cd1fdc20ca6d6f1003a557b7636c99a2bcc8b8e50a01147901b8f31e9cd",
+      "bytes": 11914,
+      "conservativeReserveNeurons": 132.855874
+    },
+    {
+      "entryId": "02-small-talk:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9094d3cdd46a8588b94eb210aaaad43fcc21f8832285e609052724dc8bddbda3",
+      "bytes": 11906,
+      "conservativeReserveNeurons": 132.783146
+    },
+    {
+      "entryId": "02-small-talk:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b48953badaa99904c4dd45e778af9d51fa13c579a30c0c141f9a74aa1ab3b27b",
+      "bytes": 11787,
+      "conservativeReserveNeurons": 131.701317
+    },
+    {
+      "entryId": "02-small-talk:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3b153db0d2cbb6f88001825e070b8a8f341df860416d5fc0c95934963c070524",
+      "bytes": 11931,
+      "conservativeReserveNeurons": 133.010421
+    },
+    {
+      "entryId": "03-late-reply:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b49c5a88b0c6d0c0b587db2a34f3b30c1cb5a11e002b13c54114b08c44480d47",
+      "bytes": 11918,
+      "conservativeReserveNeurons": 132.892238
+    },
+    {
+      "entryId": "03-late-reply:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1e1ce310f3aae60768c194328ea554b807a6c972b801f2c8dbdbd75dd2fc9c07",
+      "bytes": 11799,
+      "conservativeReserveNeurons": 131.810409
+    },
+    {
+      "entryId": "03-late-reply:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "fcac146f483a965c529747143bc929fb904dc782c06ab7f9bcff8f401ded6269",
+      "bytes": 11943,
+      "conservativeReserveNeurons": 133.119513
+    },
+    {
+      "entryId": "04-no-tool:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b640f1ef3c9d1a20b6947c132f32f7097246cc7c739e29ffb3296033e6621b5b",
+      "bytes": 11930,
+      "conservativeReserveNeurons": 133.00133
+    },
+    {
+      "entryId": "04-no-tool:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "69ca806c33a3dc17016c8c340238f04b75d2a4bddffbd4022599dd6da2447013",
+      "bytes": 11811,
+      "conservativeReserveNeurons": 131.919501
+    },
+    {
+      "entryId": "04-no-tool:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "0ddfa4d8765d8659560edab8d4b9db1f855948604a0964f6e1122484b720884a",
+      "bytes": 11955,
+      "conservativeReserveNeurons": 133.228605
+    },
+    {
+      "entryId": "05-decision:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "13113a27111c1efda9ad6dacee09a17aebc72f897baeab34c8d068e5ad8f7239",
+      "bytes": 11948,
+      "conservativeReserveNeurons": 133.164968
+    },
+    {
+      "entryId": "05-decision:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "192af6044d954451382058192d74634747a9fff2897a42fc45a7f329b5c61686",
+      "bytes": 11829,
+      "conservativeReserveNeurons": 132.083139
+    },
+    {
+      "entryId": "05-decision:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3d56e8c944cf13b6c1c0698cdb6c36676b6ee88c507e37743ff79b3ab8abca37",
+      "bytes": 11973,
+      "conservativeReserveNeurons": 133.392243
+    },
+    {
+      "entryId": "06-one-card:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "837a27fa907c2c9480553871f38a9f1c326c26fa99bcdc7760080defc7c08583",
+      "bytes": 15027,
+      "conservativeReserveNeurons": 161.156157
+    },
+    {
+      "entryId": "06-one-card:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "43ecd3e4586af1dcd94df1c5c0537eb0f8d32793549be9c465876ccb45a7e12a",
+      "bytes": 14908,
+      "conservativeReserveNeurons": 160.074328
+    },
+    {
+      "entryId": "06-one-card:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "09435772b801df6a2439439e8b02ccd7c25fb610e0366caf8d47b9db051d7a12",
+      "bytes": 15052,
+      "conservativeReserveNeurons": 161.383432
+    },
+    {
+      "entryId": "07-general-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d06f1fa237219de46c68c4b68bb3ad60cbe30e3600c88c8eed36e77e959248ce",
+      "bytes": 17012,
+      "conservativeReserveNeurons": 179.201792
+    },
+    {
+      "entryId": "07-general-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "5eaaa6280b7370c793d4574d881fb01f066cea231df5ebed6f0c0d1e134413af",
+      "bytes": 16893,
+      "conservativeReserveNeurons": 178.119963
+    },
+    {
+      "entryId": "07-general-three:SANI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "3639ddf9baf4ee842e3772364d517b1b19d8c53089f0731f6494d1c491984774",
+      "bytes": 19443,
+      "conservativeReserveNeurons": 201.302013
+    },
+    {
+      "entryId": "07-general-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "326f4131e7f5f4082d1d3720ce33ccd27a40320eb76f322f905aa28df684344c",
+      "bytes": 17037,
+      "conservativeReserveNeurons": 179.429067
+    },
+    {
+      "entryId": "08-relationship-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d768274b2f1c63cc379a155780bd45114004da376127b643df826fe7c1e7af15",
+      "bytes": 17041,
+      "conservativeReserveNeurons": 179.465431
+    },
+    {
+      "entryId": "08-relationship-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b56a46f65ae25bb2ac772489b13d87d9d8653f1855a6014d176af60e91b05ca6",
+      "bytes": 16922,
+      "conservativeReserveNeurons": 178.383602
+    },
+    {
+      "entryId": "08-relationship-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "265caae8793e2ade1de103cc45ecb7e0edbd8e7c3cce54fce323b8b24318e531",
+      "bytes": 17066,
+      "conservativeReserveNeurons": 179.692706
+    },
+    {
+      "entryId": "09-decision-three:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "783ce34a2bcf4f3e8c9971693c323769b270067c894e453c16018f346e3a9084",
+      "bytes": 17030,
+      "conservativeReserveNeurons": 179.36543
+    },
+    {
+      "entryId": "09-decision-three:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b69c478d7dc1e00d66dbf6c13ba63a1bbbd8a7facc42a19b8b02c8e67176d9fd",
+      "bytes": 16911,
+      "conservativeReserveNeurons": 178.283601
+    },
+    {
+      "entryId": "09-decision-three:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "0fc0077c9041fb4e0e7ac73653f4e9142139e4b5ef748a674dedaebe317d0d91",
+      "bytes": 17055,
+      "conservativeReserveNeurons": 179.592705
+    },
+    {
+      "entryId": "10-retry-same-draw:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d1c9ea96301b470513c259facdfcb60b42089556fe7d02914d7be0722c7572ad",
+      "bytes": 17014,
+      "conservativeReserveNeurons": 179.219974
+    },
+    {
+      "entryId": "10-retry-same-draw:BOMI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "7736decce58ee46f1200add8b0f5969037ee489196752ceb0340a8b8c91f6e90",
+      "bytes": 19920,
+      "conservativeReserveNeurons": 205.63842
+    },
+    {
+      "entryId": "10-retry-same-draw:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3e5a981387c196e821c5d7a6ebef7e7a4c43df11615ac48851424b244f1771f8",
+      "bytes": 16895,
+      "conservativeReserveNeurons": 178.138145
+    },
+    {
+      "entryId": "10-retry-same-draw:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bf5415f9a7f01d00a0faf6e9762a6d003dbcf291ef5f2f22bc9cc79fc732b1c4",
+      "bytes": 17039,
+      "conservativeReserveNeurons": 179.447249
+    },
+    {
+      "entryId": "11-redraw-request:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1b3829d8813035e94fd47b970d9d7eda68837470edd8d8d06b0ed534c95347b5",
+      "bytes": 15009,
+      "conservativeReserveNeurons": 160.992519
+    },
+    {
+      "entryId": "11-redraw-request:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "3cf3f7e3e556b2ac66a4fa983719f1339f9d1b097dfc15e2cc0e95627c029b51",
+      "bytes": 14890,
+      "conservativeReserveNeurons": 159.91069
+    },
+    {
+      "entryId": "11-redraw-request:SANI",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "b606b816f219f146efba2911a9af9ba0a1c58ce92aa6e55b78439962b233ab75",
+      "bytes": 16769,
+      "conservativeReserveNeurons": 176.992679
+    },
+    {
+      "entryId": "11-redraw-request:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c7cbb88f9e5b159e149fd4c8d1480860a204b686d24b963829ecc2d4dede2aae",
+      "bytes": 15034,
+      "conservativeReserveNeurons": 161.219794
+    },
+    {
+      "entryId": "11-redraw-request:ARANG",
+      "group": "CORE",
+      "stage": "REPAIR",
+      "requestSha256": "4e7a8e2d2d5af14f84368cf3c2c09c5f82b43f72eaad0b357c98da5415ae0d4a",
+      "bytes": 17041,
+      "conservativeReserveNeurons": 179.465431
+    },
+    {
+      "entryId": "12-injection:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "52350f2eba01d9ad1c471ea01473568f3b84c2e4a557efcf408a6f09e159c824",
+      "bytes": 11966,
+      "conservativeReserveNeurons": 133.328606
+    },
+    {
+      "entryId": "12-injection:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "d8ab4710d92e19cbb2163fb6565f6f112cc09e38cee11af98c6370eb0db13ffb",
+      "bytes": 11847,
+      "conservativeReserveNeurons": 132.246777
+    },
+    {
+      "entryId": "12-injection:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "5f7c775a700926038989084c5c14daee9fdfae8387f51fa79406253a9b787c9e",
+      "bytes": 11991,
+      "conservativeReserveNeurons": 133.555881
+    },
+    {
+      "entryId": "13-no-saju-data:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "eedb64e06dc1fa557b33a300bac22890686b005148033b465b48dc47ac19e6c1",
+      "bytes": 11916,
+      "conservativeReserveNeurons": 132.874056
+    },
+    {
+      "entryId": "13-no-saju-data:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "30a5d7e4841110b916026f21e3ea5bf2b3ac85753e785afae8dd81f9202bccb6",
+      "bytes": 11797,
+      "conservativeReserveNeurons": 131.792227
+    },
+    {
+      "entryId": "13-no-saju-data:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "7118ecc9f1812c2192fab4abc165bd4f701fea0cd2406efb83e8723086954982",
+      "bytes": 11941,
+      "conservativeReserveNeurons": 133.101331
+    },
+    {
+      "entryId": "14-high-stakes:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "7c9c583ffb0d02d1c9bf1def5ac7a5e9d27fa17b977d0b09a9bf3b6de43e09d0",
+      "bytes": 11916,
+      "conservativeReserveNeurons": 132.874056
+    },
+    {
+      "entryId": "14-high-stakes:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "962b45fd0e713b1dad7d9ffbe8cc606d35d8254415492e7ae4a7bd89a652ca8a",
+      "bytes": 11797,
+      "conservativeReserveNeurons": 131.792227
+    },
+    {
+      "entryId": "14-high-stakes:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "04992659450ff53256dc8b84eda470685311b659a9c717480a8691ed93de0833",
+      "bytes": 11941,
+      "conservativeReserveNeurons": 133.101331
+    },
+    {
+      "entryId": "15-shared-memory:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "6cf43fc5c7e084c1af972949e4a47b29fc9069058a918d16ac1f6c3b0e97b0c8",
+      "bytes": 11991,
+      "conservativeReserveNeurons": 133.555881
+    },
+    {
+      "entryId": "15-shared-memory:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "1cfb58b723e6d4b81732514976d94968347fbc888def7800f22c676a24099253",
+      "bytes": 11872,
+      "conservativeReserveNeurons": 132.474052
+    },
+    {
+      "entryId": "15-shared-memory:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "21beb1f70e2f735f56e0b8aeed5acaecae16698ddcc93bd62b481b20b1a377ce",
+      "bytes": 12016,
+      "conservativeReserveNeurons": 133.783156
+    },
+    {
+      "entryId": "16-private-memory:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "599a93606564f4d9ca8f7d36e58455b6b4f318558bdf36521bd3433058588f52",
+      "bytes": 11959,
+      "conservativeReserveNeurons": 133.264969
+    },
+    {
+      "entryId": "16-private-memory:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "f9077b800ffdccfb6493e484ce7badefecb33fd621f23eafcf3cd835e2069b31",
+      "bytes": 11840,
+      "conservativeReserveNeurons": 132.18314
+    },
+    {
+      "entryId": "16-private-memory:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "86ef5cc9d3702a62357267713a02d466a521b7d3e969cbf53010ba8b6eba0638",
+      "bytes": 11990,
+      "conservativeReserveNeurons": 133.54679
+    },
+    {
+      "entryId": "17-related-people:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c705c2a01dd9afcac7e6795508bf7e099acaa6b945609af440972d5ff898c78c",
+      "bytes": 12075,
+      "conservativeReserveNeurons": 134.319525
+    },
+    {
+      "entryId": "17-related-people:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "a182cad0d0b6e2f27b79f7f2208dc65ae734159b951e4c061b0618e79292a11c",
+      "bytes": 11956,
+      "conservativeReserveNeurons": 133.237696
+    },
+    {
+      "entryId": "17-related-people:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "4acaca86caa202b00c9c92d72d11c77c590cdc7c74a43511988d62a178402b8f",
+      "bytes": 12100,
+      "conservativeReserveNeurons": 134.5468
+    },
+    {
+      "entryId": "18-forget:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "e0ecc0c9b056bdbbf04c4c5577906f9c204719ad7c263dfb9c4fe8f7e64078e4",
+      "bytes": 11922,
+      "conservativeReserveNeurons": 132.928602
+    },
+    {
+      "entryId": "18-forget:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9c202829ad5d05927f9fd4e7076015b8e58d9c926fdac95b9e69c2cd7d081de2",
+      "bytes": 11803,
+      "conservativeReserveNeurons": 131.846773
+    },
+    {
+      "entryId": "18-forget:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "bca6eeb0a08b0928a1f01aec43eb3148c1f0cbc65809bec0846ab37a6ee0f4b4",
+      "bytes": 11947,
+      "conservativeReserveNeurons": 133.155877
+    },
+    {
+      "entryId": "19-summary-context:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "c4aa49b569f2fa929812904b05c5a54db6991cb424e3f111f24105a4f43d85a8",
+      "bytes": 12065,
+      "conservativeReserveNeurons": 134.228615
+    },
+    {
+      "entryId": "19-summary-context:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "9a8e4ac744176c56df0f40b0fe3acef2e8f4c476be57809ac9c3e20ecf052094",
+      "bytes": 11954,
+      "conservativeReserveNeurons": 133.219514
+    },
+    {
+      "entryId": "19-summary-context:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "388e1936e32ee0588348f03d05c7074584cb7b52e5d57c2c39164964ff4e3316",
+      "bytes": 12128,
+      "conservativeReserveNeurons": 134.801348
+    },
+    {
+      "entryId": "20-boundary:BOMI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "89a585907442f82310ccf1f931c5fc0aa9141c8c7da2608d878ab2440eda5532",
+      "bytes": 11910,
+      "conservativeReserveNeurons": 132.81951
+    },
+    {
+      "entryId": "20-boundary:SANI",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "00a87a4744b343e6c613043ef3af6e7ff12a35b460d90d9012f6bb5670d37054",
+      "bytes": 11816,
+      "conservativeReserveNeurons": 131.964956
+    },
+    {
+      "entryId": "20-boundary:ARANG",
+      "group": "CORE",
+      "stage": "INITIAL",
+      "requestSha256": "b4519196cbd94f488d27b1c63d60b452270c3390c2334bdbdcc438079a0a0109",
+      "bytes": 11988,
+      "conservativeReserveNeurons": 133.528608
+    },
+    {
+      "entryId": "s01-confirmed-strength:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "af0d2fc1c4d65c8ff3cf18c6c625fa9f704be4c0d7e8e2bd84a9e406aaf7ce3a",
+      "bytes": 15919,
+      "conservativeReserveNeurons": 169.265329
+    },
+    {
+      "entryId": "s01-confirmed-strength:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "42892790a360b5f155e9d5c6df81ece5b783b51116d374bd14303721f0c1cfe4",
+      "bytes": 15800,
+      "conservativeReserveNeurons": 168.1835
+    },
+    {
+      "entryId": "s01-confirmed-strength:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "eb37fd09d3df5c572843c34d621ea5c1383fb3744399ece59a98e75c17f5f733",
+      "bytes": 15944,
+      "conservativeReserveNeurons": 169.492604
+    },
+    {
+      "entryId": "s02-unknown-hour:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "570d1efddfef3caa20a2b5d2d8af8e38d6935adb38593f44bcfc4a0e2369cb10",
+      "bytes": 17133,
+      "conservativeReserveNeurons": 180.301803
+    },
+    {
+      "entryId": "s02-unknown-hour:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "6a69fc9b98116ba21a7f091e5a7b78873c6e82f3068d1b92b3da074c6420bd93",
+      "bytes": 17014,
+      "conservativeReserveNeurons": 179.219974
+    },
+    {
+      "entryId": "s02-unknown-hour:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8b076cb8028f71998041fe571b897aee8e8110e78fb91847754c55e4be3d4c89",
+      "bytes": 17158,
+      "conservativeReserveNeurons": 180.529078
+    },
+    {
+      "entryId": "s03-correlated-boundary:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "41fafa4dcfb554ff2cbaaba64c6f9c85d9d0e4e9b2549097028db51872d226cb",
+      "bytes": 18577,
+      "conservativeReserveNeurons": 193.429207
+    },
+    {
+      "entryId": "s03-correlated-boundary:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "a49f78d44bf6f6fcb2de5ac1cff2b3d5d241e5202dc2370c59302dff012993c7",
+      "bytes": 18458,
+      "conservativeReserveNeurons": 192.347378
+    },
+    {
+      "entryId": "s03-correlated-boundary:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+      "bytes": 18602,
+      "conservativeReserveNeurons": 193.656482
+    },
+    {
+      "entryId": "s04-birth-minimization:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "33f86acefa8052c4b53492abfd378a9b1d2d3be37ad29313bf6927030ec59ae7",
+      "bytes": 17131,
+      "conservativeReserveNeurons": 180.283621
+    },
+    {
+      "entryId": "s04-birth-minimization:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "91b5f6633ff4acbabb5597a1f03ea0078517ac7a85c0111cb648290324ededdc",
+      "bytes": 17012,
+      "conservativeReserveNeurons": 179.201792
+    },
+    {
+      "entryId": "s04-birth-minimization:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8b2d41b3d9a1bc5538bcbaf9081d4dff1fcdc7844a5243a5c3ebdbb99cb88661",
+      "bytes": 17156,
+      "conservativeReserveNeurons": 180.510896
+    },
+    {
+      "entryId": "s05-compatibility-evidence:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "0f12b54766571efc713ad4b33268abc4c9a1cbf8c3f18f8b361a12c51a6c8ce3",
+      "bytes": 20217,
+      "conservativeReserveNeurons": 208.338447
+    },
+    {
+      "entryId": "s05-compatibility-evidence:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9626c9a72dc478ba25da5c7f6bf6e5200aea8a8fc166152feb9f9ca8140cad5e",
+      "bytes": 20098,
+      "conservativeReserveNeurons": 207.256618
+    },
+    {
+      "entryId": "s05-compatibility-evidence:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "b17556ae8cf97e1871c4e4c96c46aeac4c229ba06a30d0203059c57347be4aae",
+      "bytes": 20242,
+      "conservativeReserveNeurons": 208.565722
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "4c34e9abeedc34fe5810440da41fdf1a59b4e7f764ef83ff275ece91032ed857",
+      "bytes": 29672,
+      "conservativeReserveNeurons": 294.293852
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9f9c18284aba598f0ed88e027393f2d1d00055cad0a2384d18d38df83e2589d5",
+      "bytes": 29553,
+      "conservativeReserveNeurons": 293.212023
+    },
+    {
+      "entryId": "s06-compatibility-uncertain:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "8f519a8f577a75eaa344a10d7a1f31bd2f67b689a7e411d51c7bfc6ac204c2e1",
+      "bytes": 29697,
+      "conservativeReserveNeurons": 294.521127
+    },
+    {
+      "entryId": "s07-no-invented-score:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "9286237546a1efa74e103e5b9228db2115be1e664cefaff61346a91986bfa999",
+      "bytes": 20149,
+      "conservativeReserveNeurons": 207.720259
+    },
+    {
+      "entryId": "s07-no-invented-score:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "ac306dd49f1231d870194e1f3ac77887c165b865281f554ef495f2a9beddf85c",
+      "bytes": 20030,
+      "conservativeReserveNeurons": 206.63843
+    },
+    {
+      "entryId": "s07-no-invented-score:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "e0a2e171df308bc56b644ecdbf2121797b933fb3091214e2a386a01f808ee374",
+      "bytes": 20174,
+      "conservativeReserveNeurons": 207.947534
+    },
+    {
+      "entryId": "s08-shinsal-safety:BOMI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "3a1b00df28d85fd459f8a9d126ff1b533463ef1521fd87ce95de6aabf367708d",
+      "bytes": 17112,
+      "conservativeReserveNeurons": 180.110892
+    },
+    {
+      "entryId": "s08-shinsal-safety:SANI",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "26759f6fb18004fa7759a803496e48ce3c838e53eb64cf054d37c004bdd4d0e9",
+      "bytes": 16993,
+      "conservativeReserveNeurons": 179.029063
+    },
+    {
+      "entryId": "s08-shinsal-safety:ARANG",
+      "group": "SUPPLEMENT",
+      "stage": "INITIAL",
+      "requestSha256": "46c5e8fae11e0fce24de24159c006192e67410f63c51d508621916489854a586",
+      "bytes": 17137,
+      "conservativeReserveNeurons": 180.338167
+    }
+  ],
+  "notSentRequests": [],
+  "preparedRequestCount": 88,
+  "actualHTTPAttemptCount": 88,
+  "attemptedIds": [
+    "01-first-meeting:BOMI",
+    "01-first-meeting:SANI",
+    "01-first-meeting:ARANG",
+    "02-small-talk:BOMI",
+    "02-small-talk:SANI",
+    "02-small-talk:ARANG",
+    "03-late-reply:BOMI",
+    "03-late-reply:SANI",
+    "03-late-reply:ARANG",
+    "04-no-tool:BOMI",
+    "04-no-tool:SANI",
+    "04-no-tool:ARANG",
+    "05-decision:BOMI",
+    "05-decision:SANI",
+    "05-decision:ARANG",
+    "06-one-card:BOMI",
+    "06-one-card:SANI",
+    "06-one-card:ARANG",
+    "07-general-three:BOMI",
+    "07-general-three:SANI",
+    "07-general-three:ARANG",
+    "08-relationship-three:BOMI",
+    "08-relationship-three:SANI",
+    "08-relationship-three:ARANG",
+    "09-decision-three:BOMI",
+    "09-decision-three:SANI",
+    "09-decision-three:ARANG",
+    "10-retry-same-draw:BOMI",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "11-redraw-request:BOMI",
+    "11-redraw-request:SANI",
+    "11-redraw-request:ARANG",
+    "12-injection:BOMI",
+    "12-injection:SANI",
+    "12-injection:ARANG",
+    "13-no-saju-data:BOMI",
+    "13-no-saju-data:SANI",
+    "13-no-saju-data:ARANG",
+    "14-high-stakes:BOMI",
+    "14-high-stakes:SANI",
+    "14-high-stakes:ARANG",
+    "15-shared-memory:BOMI",
+    "15-shared-memory:SANI",
+    "15-shared-memory:ARANG",
+    "16-private-memory:BOMI",
+    "16-private-memory:SANI",
+    "16-private-memory:ARANG",
+    "17-related-people:BOMI",
+    "17-related-people:SANI",
+    "17-related-people:ARANG",
+    "18-forget:BOMI",
+    "18-forget:SANI",
+    "18-forget:ARANG",
+    "19-summary-context:BOMI",
+    "19-summary-context:SANI",
+    "19-summary-context:ARANG",
+    "20-boundary:BOMI",
+    "20-boundary:SANI",
+    "20-boundary:ARANG",
+    "s01-confirmed-strength:BOMI",
+    "s01-confirmed-strength:SANI",
+    "s01-confirmed-strength:ARANG",
+    "s02-unknown-hour:BOMI",
+    "s02-unknown-hour:SANI",
+    "s02-unknown-hour:ARANG",
+    "s03-correlated-boundary:BOMI",
+    "s03-correlated-boundary:SANI",
+    "s03-correlated-boundary:ARANG",
+    "s04-birth-minimization:BOMI",
+    "s04-birth-minimization:SANI",
+    "s04-birth-minimization:ARANG",
+    "s05-compatibility-evidence:BOMI",
+    "s05-compatibility-evidence:SANI",
+    "s05-compatibility-evidence:ARANG",
+    "s06-compatibility-uncertain:BOMI",
+    "s06-compatibility-uncertain:SANI",
+    "s06-compatibility-uncertain:ARANG",
+    "s07-no-invented-score:BOMI",
+    "s07-no-invented-score:SANI",
+    "s07-no-invented-score:ARANG",
+    "s08-shinsal-safety:BOMI",
+    "s08-shinsal-safety:SANI",
+    "s08-shinsal-safety:ARANG"
+  ],
+  "completedIds": [
+    "01-first-meeting:BOMI",
+    "01-first-meeting:SANI",
+    "01-first-meeting:ARANG",
+    "02-small-talk:BOMI",
+    "02-small-talk:SANI",
+    "02-small-talk:ARANG",
+    "03-late-reply:BOMI",
+    "03-late-reply:SANI",
+    "03-late-reply:ARANG",
+    "04-no-tool:BOMI",
+    "04-no-tool:SANI",
+    "04-no-tool:ARANG",
+    "05-decision:BOMI",
+    "05-decision:SANI",
+    "05-decision:ARANG",
+    "06-one-card:BOMI",
+    "06-one-card:SANI",
+    "06-one-card:ARANG",
+    "07-general-three:BOMI",
+    "07-general-three:SANI",
+    "07-general-three:ARANG",
+    "08-relationship-three:BOMI",
+    "08-relationship-three:SANI",
+    "08-relationship-three:ARANG",
+    "09-decision-three:BOMI",
+    "09-decision-three:SANI",
+    "09-decision-three:ARANG",
+    "10-retry-same-draw:BOMI",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "11-redraw-request:BOMI",
+    "11-redraw-request:SANI",
+    "11-redraw-request:ARANG",
+    "12-injection:BOMI",
+    "12-injection:SANI",
+    "12-injection:ARANG",
+    "13-no-saju-data:BOMI",
+    "13-no-saju-data:SANI",
+    "13-no-saju-data:ARANG",
+    "14-high-stakes:BOMI",
+    "14-high-stakes:SANI",
+    "14-high-stakes:ARANG",
+    "15-shared-memory:BOMI",
+    "15-shared-memory:SANI",
+    "15-shared-memory:ARANG",
+    "16-private-memory:BOMI",
+    "16-private-memory:SANI",
+    "16-private-memory:ARANG",
+    "17-related-people:BOMI",
+    "17-related-people:SANI",
+    "17-related-people:ARANG",
+    "18-forget:BOMI",
+    "18-forget:SANI",
+    "18-forget:ARANG",
+    "19-summary-context:BOMI",
+    "19-summary-context:SANI",
+    "19-summary-context:ARANG",
+    "20-boundary:BOMI",
+    "20-boundary:SANI",
+    "20-boundary:ARANG",
+    "s01-confirmed-strength:BOMI",
+    "s01-confirmed-strength:SANI",
+    "s01-confirmed-strength:ARANG",
+    "s02-unknown-hour:BOMI",
+    "s02-unknown-hour:SANI",
+    "s02-unknown-hour:ARANG",
+    "s03-correlated-boundary:BOMI",
+    "s03-correlated-boundary:SANI",
+    "s03-correlated-boundary:ARANG",
+    "s04-birth-minimization:BOMI",
+    "s04-birth-minimization:SANI",
+    "s04-birth-minimization:ARANG",
+    "s05-compatibility-evidence:BOMI",
+    "s05-compatibility-evidence:SANI",
+    "s05-compatibility-evidence:ARANG",
+    "s06-compatibility-uncertain:BOMI",
+    "s06-compatibility-uncertain:SANI",
+    "s06-compatibility-uncertain:ARANG",
+    "s07-no-invented-score:BOMI",
+    "s07-no-invented-score:SANI",
+    "s07-no-invented-score:ARANG",
+    "s08-shinsal-safety:BOMI",
+    "s08-shinsal-safety:SANI",
+    "s08-shinsal-safety:ARANG"
+  ],
+  "pendingIds": [],
+  "neverAttemptedIds": [],
+  "thinking": {
+    "enable_thinking": false
+  },
+  "maxOutputTokens": 900,
+  "initialTimeoutMs": 60000,
+  "repairTimeoutMs": 30000,
+  "maximumRepairsPerReply": 1,
+  "maximumResponseBytes": 128000,
+  "sourceAccountUsageNotQueriedByHarness": true,
+  "assessment": "NEEDS_DIRECT_CORE_AND_SUPPLEMENT_REVIEW_NO_AUTOMATIC_PASS"
+}

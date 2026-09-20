@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-09-20T01:55:37.299Z",
+  "mode": "PUBLIC_ACCOUNT_IDENTITY_BATCH_GUEST_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "modelRequests": 0,
+  "authRequests": 0,
+  "mutations": 0,
+  "blockedRequests": 0,
+  "build": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "redirectedTo": "/",
+      "localSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "publicSha256": "b2cdb16071f0169d5060910f2d139ddfa8034f360bf922581a33b1024d5e9035",
+      "match": true
+    },
+    {
+      "path": "/assets/AccountPages-D_td5lrD.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "fd0a6003c5d9b43d65fcb45dd91c4a16812baa9dbd217a89356a789648d1ca9f",
+      "publicSha256": "fd0a6003c5d9b43d65fcb45dd91c4a16812baa9dbd217a89356a789648d1ca9f",
+      "match": true
+    },
+    {
+      "path": "/assets/Chat-7Hdvybdo.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "0b95e72770b758fca09e880745fd501d66004ef5227d14bc869a2924cc2b66cf",
+      "publicSha256": "0b95e72770b758fca09e880745fd501d66004ef5227d14bc869a2924cc2b66cf",
+      "match": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-BsgE3zPN.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "bcc254e597646a4db8203d53633ecff76155ddcfd8bf160a17ed048ea440dbe6",
+      "publicSha256": "bcc254e597646a4db8203d53633ecff76155ddcfd8bf160a17ed048ea440dbe6",
+      "match": true
+    },
+    {
+      "path": "/assets/ConnectionState-DtAWvV35.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "6be09bf1eb7a616c82059f9afb02e9ac8c47c5a5a5cea6f9985ad7b8779a30b3",
+      "publicSha256": "6be09bf1eb7a616c82059f9afb02e9ac8c47c5a5a5cea6f9985ad7b8779a30b3",
+      "match": true
+    },
+    {
+      "path": "/assets/Reading-CgIqD0VW.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "a3b65383482e91a7b0e8af565f2583f8f2488e706226fcff39ca0b9dfab3daa4",
+      "publicSha256": "a3b65383482e91a7b0e8af565f2583f8f2488e706226fcff39ca0b9dfab3daa4",
+      "match": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-AFwO4Y7v.css",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "5c725bc14f148bf4d43ae735ccc0db5cac70003bfb797b566c3f9ab4e49f19d0",
+      "publicSha256": "5c725bc14f148bf4d43ae735ccc0db5cac70003bfb797b566c3f9ab4e49f19d0",
+      "match": true
+    },
+    {
+      "path": "/assets/index-BZZ5Cd1i.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "c722d8b7998eb2e04519951050e895466d07dc434025f6d7806fb660f5c5542e",
+      "publicSha256": "c722d8b7998eb2e04519951050e895466d07dc434025f6d7806fb660f5c5542e",
+      "match": true
+    },
+    {
+      "path": "/assets/pagination-BLNmgUtR.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "56576b0d9364886f4ad6136ca976251a2b47a3f724027fae425dec57ed468386",
+      "publicSha256": "56576b0d9364886f4ad6136ca976251a2b47a3f724027fae425dec57ed468386",
+      "match": true
+    }
+  ],
+  "views": [
+    {
+      "route": "/",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/account-identity-public/landing-360.png"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/account-identity-public/privacy-360.png"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/account-identity-public/landing-1440.png"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/account-identity-public/privacy-1440.png"
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Guest render and public byte equality only; no signup, challenge, session, Edge or model calls.",
+    "Local actual Web Locks/SDK race and Auth/REST form boundaries are recorded separately; this read-only public probe does not reproduce authentication."
+  ]
+}

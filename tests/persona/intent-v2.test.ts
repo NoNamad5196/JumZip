@@ -28,13 +28,13 @@ function classifier(value: unknown) {
 }
 const completion = (value: unknown) => new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(value) }, finish_reason: 'stop' }] }));
 
-describe('Intent v4 preserves the frozen purpose and current utterance evidence cases', () => {
+describe('Intent v5 preserves the frozen purpose and current utterance evidence cases', () => {
   it('versions the internal structured contract while retaining the public recommendation shape', async () => {
-    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v4');
+    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v5');
     expect(INTENT_RESPONSE_SCHEMA).toMatchObject({ additionalProperties: false, required: expect.arrayContaining(['requestPurpose', 'intentEvidenceQuote']) });
     const source = classifier(output());
     expect(await extractToolRecommendation(source.provider, input())).toBeNull();
-    expect(source.requests[0]?.name).toBe('jumzip_intent_v4');
+    expect(source.requests[0]?.name).toBe('jumzip_intent_v5');
     expect(source.validated).toHaveLength(1);
     expect(source.errors).toHaveLength(0);
     const payload = JSON.parse(source.requests[0]!.messages[1]!.content);

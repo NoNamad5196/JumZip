@@ -4,7 +4,7 @@ import { createOpenAICompatibleProvider, type LLMProvider, type StructuredReques
 import { INTENT_V4_CASES } from './intent-v4-corpus.ts';
 
 // Credential-free request serialization. Supplied classifications do not prove live model quality.
-describe('Intent v4 independent26 zero-network evaluation preparation', () => {
+describe('current Intent runtime retains frozen v4 independent26 zero-network regression', () => {
   it('serializes the unchanged18 plus8 new contrasts through the actual provider request builder', async () => {
     const candidates = INTENT_V4_CASES;
     const requestBytes: number[] = [], responseBytes: number[] = [];

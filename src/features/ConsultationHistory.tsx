@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useInfiniteQuery, useQueryClient } from '@tanstack/react-query';
 import { service, type ReadingSummary, type HistoryCursor } from '../lib/service';
@@ -10,13 +10,41 @@ import { RecordDeletionDialog } from './RecordDeletionDialog';
 
 const typeLabel:Record<string,string>={CHAT:'대화',TAROT:'타로',SAJU:'사주',COMPATIBILITY_TAROT:'관계 타로',COMPATIBILITY_SAJU:'사주 궁합'};
 export function ConsultationHistory() {
+ const { session } = useSession();
+ return <ConsultationContent key={session?.user.id || 'signed-out'} />;
+}
+function ConsultationContent() {
  const {session}=useSession(); const queryClient=useQueryClient(); const [search,setSearch]=useState(''); const [serverSearch,setServerSearch]=useState(''); const [type,setType]=useState('ALL');
  useEffect(()=>{const timer=setTimeout(()=>setServerSearch(search.trim()),250);return()=>clearTimeout(timer);},[search]);
  const records=useInfiniteQuery({queryKey:['readings',session?.user.id,'pages',serverSearch,type],initialPageParam:null as HistoryCursor|null,queryFn:({pageParam})=>service.listReadingsPage({cursor:pageParam,search:serverSearch,fortuneType:type}),getNextPageParam:(last)=>last.nextCursor,enabled:!!session});
  const visible=useMemo(()=>uniqueRecords(records.data?.pages.flatMap((page)=>page.items)||[]),[records.data]);
  const [editing,setEditing]=useState<{id:string;title:string}|null>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState<string|null>(null);
  const [deleting,setDeleting]=useState<ReadingSummary|null>(null);
- async function save(event:React.FormEvent){event.preventDefault();if(!editing)return;setBusy(true);setError(null);try{await service.updateReadingTitle(editing.id,editing.title.trim());await queryClient.invalidateQueries({queryKey:['readings',session?.user.id]});await queryClient.invalidateQueries({queryKey:['reading',session?.user.id,editing.id]});setEditing(null);}catch(err){setError(errorMessage(err));}finally{setBusy(false);}}
- async function remove(memoryIds:string[]){if(!deleting)return;setBusy(true);setError(null);try{await service.deleteReading(deleting.id,{memoryIds});await queryClient.invalidateQueries({queryKey:['memories',session?.user.id]});queryClient.removeQueries({queryKey:['deletion-memories',session?.user.id]});await queryClient.invalidateQueries({queryKey:['readings',session?.user.id]});await queryClient.invalidateQueries({queryKey:['messages',session?.user.id]});await queryClient.invalidateQueries({queryKey:['conversations',session?.user.id]});queryClient.removeQueries({queryKey:['reading',session?.user.id,deleting.id]});queryClient.removeQueries({queryKey:['consultation-messages',session?.user.id,deleting.id]});setDeleting(null);}catch(err){setError(errorMessage(err));}finally{setBusy(false);}}
+ const active = useRef(false);
+ useLayoutEffect(() => { active.current = true; return () => { active.current = false; }; }, []);
+ async function save(event: React.FormEvent) {
+  event.preventDefault(); if (!editing || !session || !active.current) return;
+  setBusy(true); setError(null);
+  try {
+   await service.updateReadingTitle(editing.id, editing.title.trim()); if (!active.current) return;
+   await Promise.all([queryClient.invalidateQueries({ queryKey: ['readings', session.user.id] }), queryClient.invalidateQueries({ queryKey: ['reading', session.user.id, editing.id] })]);
+   if (active.current) setEditing(null);
+  } catch (err) { if (active.current) setError(errorMessage(err)); }
+  finally { if (active.current) setBusy(false); }
+ }
+ async function remove(memoryIds: string[]) {
+  if (!deleting || !session || !active.current) return;
+  setBusy(true); setError(null);
+  try {
+   await service.deleteReading(deleting.id, { memoryIds }); if (!active.current) return;
+   await Promise.all(['memories', 'readings', 'messages', 'conversations'].map((key) => queryClient.invalidateQueries({ queryKey: [key, session.user.id] })));
+   if (!active.current) return;
+   queryClient.removeQueries({ queryKey: ['deletion-memories', session.user.id] });
+   queryClient.removeQueries({ queryKey: ['reading', session.user.id, deleting.id] });
+   queryClient.removeQueries({ queryKey: ['consultation-messages', session.user.id, deleting.id] });
+   setDeleting(null);
+  } catch (err) { if (active.current) setError(errorMessage(err)); }
+  finally { if (active.current) setBusy(false); }
+ }
  return <><div className="consultation-filters"><label className="field"><span>상담 찾기</span><input type="search" value={search} onChange={(event)=>setSearch(event.target.value)} placeholder="제목이나 함께 나눈 이야기"/></label><label className="field"><span>상담의 종류</span><select value={type} onChange={(event)=>setType(event.target.value)}><option value="ALL">모든 이야기</option>{Object.entries(typeLabel).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label></div>{records.isLoading&&<p className="muted">상담을 꺼내고 있어요…</p>}{(records.error||error)&&<Notice tone="error">{error||errorMessage(records.error)}</Notice>}{!records.isLoading&&!records.error&&!visible.length&&<EmptyState icon="history" title={serverSearch||type!=='ALL'?'찾는 상담이 아직 없어요':'아직, 쓰이지 않은 이야기'}>{serverSearch||type!=='ALL'?'다른 단어나 종류로 다시 찾아보세요.':'대화와 점술을 시작하면 이곳에 상담별로 기록이 쌓여요.'}</EmptyState>}{visible.map((record)=>{const character=characterFor(record.character_id);return <article className="record-row" key={record.id}><Avatar character={character}/><Link className="record-row-content" to={record.fortune_type==='CHAT'?`/chat/${character.slug}?conversation=${record.conversation_id}&consultation=${record.id}`:`/reading/${record.id}`}><small>{character.name} · {typeLabel[record.fortune_type]||'상담'} · {new Date(record.created_at).toLocaleDateString('ko-KR')}</small><h3>{record.title||`${character.withName} 함께한 ${typeLabel[record.fortune_type]||'이야기'}`}</h3><p>{record.result_summary?.slice(0,100)||'저장된 이야기를 다시 펼쳐보세요.'}</p></Link><div className="record-actions"><button className="icon-button" aria-label="상담 제목 수정" onClick={()=>{setEditing({id:record.id,title:record.title||''});setError(null);}}><Icon name="settings" size={16}/></button><button className="icon-button" aria-label="이 상담 삭제" onClick={()=>{setDeleting(record);setError(null);}}><Icon name="trash" size={16}/></button></div></article>;})}{records.hasNextPage&&<div className="history-more"><button className="button secondary" disabled={records.isFetching} onClick={()=>records.fetchNextPage()}>{records.isFetchingNextPage?'이야기를 더 불러오고 있어요…':'상담 더 보기'}</button></div>}{editing&&<Modal title="이 상담에 이름 붙이기" onClose={()=>setEditing(null)}><form onSubmit={save}><label className="field"><span>상담 제목</span><input value={editing.title} onChange={(event)=>setEditing({...editing,title:event.target.value})} maxLength={100} required/></label>{error&&<Notice tone="error">{error}</Notice>}<div className="form-actions"><button className="button secondary" type="button" onClick={()=>setEditing(null)}>취소</button><button className="button primary" disabled={busy||!editing.title.trim()}>{busy?'저장 중…':'저장'}</button></div></form></Modal>}{deleting&&<RecordDeletionDialog key={deleting.id} kind="CONSULTATION" recordId={deleting.id} recordTitle={deleting.title||'선택한 상담'} busy={busy} error={error} onClose={()=>setDeleting(null)} onConfirm={remove}/>}</>;
 }

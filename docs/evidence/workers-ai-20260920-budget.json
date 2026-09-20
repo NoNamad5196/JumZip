@@ -56,9 +56,38 @@
       "sourceFrozen": true,
       "accepted": false,
       "limits": "Two valid classifications wrongly suppress career recommendations as high stakes; two invalid initial outputs fail repair after the model classifies the repair instruction. Direct semantic review remains distinct from structural validity."
+    },
+    {
+      "scope": "Persona-v10 micro8",
+      "cap": 800,
+      "actualHttpAttempts": 10,
+      "neuronsAccountedFromTokenUsage": 425.986078,
+      "validatedReplies": 8,
+      "invalidAfterRepair": 0,
+      "notSent": 0,
+      "completed": true,
+      "sourceFrozen": true,
+      "repairCount": 2,
+      "primaryMean": 7.75,
+      "independentMean": 8.5,
+      "confirmedSemanticHardFails": 0,
+      "accepted": false,
+      "limits": "All8 delivered; primary mean is below8. Both reviews are AI and cover a diagnostic subset only, not original84."
+    },
+    {
+      "scope": "Intent-v5 initial28-final800",
+      "cap": 800,
+      "actualHttpAttempts": 31,
+      "neuronsAccountedFromTokenUsage": 580.678534,
+      "validatedClassifications": 26,
+      "invalidAfterRepair": 2,
+      "completed": true,
+      "sourceFrozen": true,
+      "accepted": false,
+      "limits": "26 semantically correct; assistant-only alias and merged alternatives still fail repair. Original-user repair context is retained; no repair-meta classification observed."
     }
   ],
-  "diagnosticAccountedTotal": 1647.725568,
+  "diagnosticAccountedTotal": 2654.3901800000003,
   "subsequentAccountWideUIObservation": {
     "scope": "After v8/v3, before v9/v4",
     "observedAfter": "2026-09-20T00:15:05Z",
@@ -67,11 +96,76 @@
     "remainingFromDisplayedDailyValue": 9287.68,
     "limits": "Fresh page reload and visible UI reading. Account-wide delayed usage is distinct from runner token-derived accounting and the rolling24h chart."
   },
-  "full84RunStarted": false,
+  "afterV9V4AccountWideUIObservation": {
+    "observedAfter": "2026-09-20T00:45:06Z",
+    "dailyDisplay": "1.65k/10k",
+    "last24HourDisplay": "11.22k",
+    "approximateRemaining": 8350,
+    "limits": "Rounded UI display after a fresh reload; not exact billing or a reservation for subsequent runs."
+  },
+  "full84RunStarted": true,
   "productionProviderSettingsChanged": false,
   "notes": [
     "Local caps reserve bytes-as-input-tokens plus maximum output before every request and use response token usage afterwards; unobserved usage retains its reservation.",
     "Token-derived accounted cost and delayed account-wide UI usage are different observations. Other activity on the shared account is not controlled by these runners.",
     "The separate hosted Saju focus smoke was blocked by automatic approval review before launch and is waiting for the user's exact scope approval. No account, record or model request was made by that attempted invocation."
-  ]
+  ],
+  "v10V5ExecutionAuthorization": {
+    "mainGOAfter": "2026-09-20T00:58:00Z",
+    "freshUIDailyDisplay": "1.65k/10k",
+    "combinedCaps": 1600,
+    "scope": "Frozen synthetic Persona8 then Intent28; exact Cloudflare account; no hosted database or production setting changes.",
+    "parentUserAuthorization": "Free Cloudflare Workers AI testing and implementation",
+    "paidUpgrade": false
+  },
+  "afterV10V5AccountWideUIObservation": {
+    "observedAt": "2026-09-20T01:25:00Z",
+    "dailyDisplay": "2.66k/10k",
+    "last24HourDisplay": "12.24k",
+    "approximateRemaining": 7340,
+    "limits": "Freshly reloaded account UI, rounded and potentially delayed. Observed immediately before the bounded full84 run; not a billing reservation.",
+    "timePrecision": "Approximate minute reconstructed from the immediately preceding tool sequence"
+  },
+  "v10Full84ExecutionAuthorization": {
+    "mainGOAfter": "2026-09-20T01:25:00Z",
+    "freshDailyUI": "2.66k/10k",
+    "ceilingNeurons": 4000,
+    "maximumHTTP": 168,
+    "parentUserAuthorization": "Free Cloudflare Workers AI testing and implementation",
+    "scope": "Original84 synthetic inputs; frozen v10/v5 sources; exact Cloudflare account; no hosted DB, production setting change or paid upgrade."
+  },
+  "v10Full84Result": {
+    "completed": true,
+    "entries": 84,
+    "validReplies": 81,
+    "invalidAfterRepair": 3,
+    "actualHTTPAttempts": 88,
+    "neuronsAccountedFromTokenUsage": 2945.902186,
+    "sourceFrozen": true,
+    "pending": 0,
+    "accepted": false,
+    "limits": "Both direct AI reviews retain full acceptance failure because3 Tarot replies were not delivered. Partial keyword evidence, incomplete uncertainty explanation and broader memory promises remain qualitative weaknesses. No production promotion.",
+    "primaryReview": {
+      "coreDeliveredMean": 9.31578947368421,
+      "coreOperationalMean": 8.85,
+      "supplementMean": 9,
+      "confirmedSemanticHardFails": 0,
+      "allAcceptancePassed": false
+    },
+    "independentReview": {
+      "coreDeliveredMean": 9.280701754385966,
+      "coreOperationalMean": 8.816666666666666,
+      "supplementMean": 8.875,
+      "confirmedSemanticHardFails": 0,
+      "allAcceptancePassed": false
+    }
+  },
+  "accountedTotalIncludingFull84": 5600.292366,
+  "afterV10Full84AccountWideUIObservation": {
+    "observedAt": "2026-09-20T01:45:43.387Z",
+    "dailyDisplay": "5.68k/10k",
+    "last24HourDisplay": "15.26k",
+    "approximateRemaining": 4320,
+    "limits": "Freshly reloaded rounded account-wide UI. Its5680 estimate differs from the5600.292366 token-derived ledger; it is not an exact per-run invoice. Use the larger account-wide usage for subsequent budget planning."
+  }
 }

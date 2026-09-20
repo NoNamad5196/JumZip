@@ -4,7 +4,7 @@ import { LLMError, type LLMProvider } from './provider.ts';
 import { segmentReply, validateChatOutput } from './validator.ts';
 import { selectChatResponseContract } from './chat-contract.ts';
 
-export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v9';
+export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v10';
 export interface PersonaReply {
   content: string; segments: string[]; repaired: boolean;
   metadata: { model: string; promptVersion: string; provider: 'openai-compatible'; generatedAt: string; usage?: { promptTokens: number; completionTokens: number } };

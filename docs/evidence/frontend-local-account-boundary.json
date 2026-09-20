@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-20T01:37:01.680Z",
+  "mode": "LOCAL_AUTH_REST_WITH_SYNTHETIC_AUTH_NOTIFICATION",
+  "publicSignupTested": false,
+  "oauthTested": false,
+  "captchaTested": false,
+  "modelCalls": 0,
+  "accountDeletionSubmitted": false,
+  "credentialsRecorded": false,
+  "reactStateInjected": false,
+  "browserProcessEnvironment": "OS allowlist only",
+  "actualReadChecks": [],
+  "syntheticNotificationChecks": [],
+  "errors": [],
+  "network": {
+    "localAuthReads": 0,
+    "localRestReads": 0,
+    "preflights": 0,
+    "localActivityWrites": 0,
+    "blockedEdge": 0,
+    "blockedMutationOrRpc": 0,
+    "blockedExternal": 0,
+    "failedReads": 0
+  },
+  "passed": false,
+  "failure": {
+    "phase": "fixture-setup",
+    "code": "CHECK_FAILED_SEE_PHASE"
+  },
+  "cleanup": {
+    "verified": false
+  },
+  "limits": [
+    "Actual local synthetic Auth identities and REST/RLS reads; no public signup, CAPTCHA or OAuth verified.",
+    "SDK cross-tab notifications and anonymous/linked metadata transitions are explicitly synthetic; no token refresh or identity-link server request.",
+    "The sole browser mutation exception is actual local touch_activity for fixture A/B; it updates account activity only. Product data changes, account deletion, other RPCs, Edge and model calls are blocked.",
+    "Fixture setup/cleanup uses the Node-only local admin helper; .env files and public dist remain unchanged."
+  ]
+}
