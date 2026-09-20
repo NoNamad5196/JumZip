@@ -1,0 +1,1129 @@
+{
+  "scope": "SYNTHETIC_INTENT_ONLY_NOT_FULL_ACCEPTANCE",
+  "entries": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "RECALL",
+        "intentEvidenceQuote": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "RECALL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "RECALL",
+        "intentEvidenceQuote": "내가 오래 즐겨 온 취미가 무엇이었는지 기억하고 있으면 말해 줘.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "RECALL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "종이별을 좋아한다는 얘기는 이제 기억하지 마.",
+        "recentMessages": [
+          {
+            "role": "assistant",
+            "content": "타고난 성향을 사주로 살펴볼 수도 있어."
+          }
+        ],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "MEMORY_CONTROL",
+        "intentEvidenceQuote": "종이별을 좋아한다는 얘기는 이제 기억하지 마.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "MEMORY_CONTROL"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "나는 요즘 조용히 종이별 접는 시간이 제일 좋아.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "PREFERENCE_SHARING",
+        "intentEvidenceQuote": "나는 요즘 조용히 종이별 접는 시간이 제일 좋아.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": true,
+        "periodPresent": true,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "PREFERENCE_SHARING"
+        ],
+        "intents": [
+          "small_talk",
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내가 타고난 기질이나 성향을 이해하고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "NATAL",
+            "reason": "타고난 성향은 원국의 구조를 바탕으로 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "내가 타고난 기질이나 성향을 이해하고 싶어.",
+        "intent": "natal_character",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "NATAL"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "natal_character"
+        ],
+        "explicitTool": null,
+        "missingSlots": [
+          "ownBirthData"
+        ],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "내 취미 기억해? 이번 주 모임에서 먼저 인사할지 타로로도 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "단기 관계 흐름과 다음 행동을 함께 살펴봐요.",
+            "missingSlots": [
+              "targetPerson"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "이번 주 모임에서 먼저 인사할지 타로로도 보고 싶어.",
+        "intent": "relationship_flow",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로도 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": true,
+        "periodPresent": true,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "GENERAL_3",
+          "RELATIONSHIP_3",
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "general_concern",
+          "relationship_flow",
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "missingByIntent": {
+          "general_concern": [],
+          "relationship_flow": [
+            "targetPerson"
+          ],
+          "career_decision": [
+            "choices"
+          ]
+        },
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "그 사람이 나를 기억하는지 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "지금의 감정과 관계 태도는 관계 타로 세 장으로 살펴볼 수 있어요.",
+            "missingSlots": [
+              "targetPerson",
+              "recentSituation"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "그 사람이 나를 기억하는지 타로로 보고 싶어.",
+        "intent": "target_feelings",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "target_feelings"
+        ],
+        "explicitTool": "TAROT",
+        "missingSlots": [
+          "targetPerson",
+          "recentSituation"
+        ],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "origin": "ORIGINAL_V5",
+      "input": {
+        "currentMessage": "그 얘기는 기억하지 말고, 오늘 운세는 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DAILY",
+            "reason": "오늘 필요한 조언을 한 장으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "오늘 운세는 타로로 보고 싶어.",
+        "intent": "daily_fortune",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "오늘 운세는 타로로 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": true,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "daily_fortune"
+        ],
+        "explicitTool": "TAROT",
+        "missingSlots": [],
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false
+      }
+    },
+    {
+      "id": "v3-yearly-missing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "올해 전체 흐름이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "SEWOON",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "올해 전체 흐름이 궁금해.",
+        "intent": "yearly_flow",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": true,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "SEWOON"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "yearly_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:SEWOON"
+        ],
+        "missingSlots": [
+          "ownBirthData"
+        ]
+      }
+    },
+    {
+      "id": "v3-monthly-existing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "다음 달 흐름을 살펴보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "MONTHLY",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "다음 달 흐름을 살펴보고 싶어.",
+        "intent": "monthly_flow",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": false,
+        "periodPresent": true,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "MONTHLY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "monthly_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:MONTHLY"
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "v3-long-compatibility-missing-partner",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "달새와 삼 년째 만나고 있어. 장기적인 궁합이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "SAJU",
+            "reason": "장기 궁합은 두 사람의 출생정보를 바탕으로 살펴봐요.",
+            "missingSlots": [
+              "partnerBirthData"
+            ]
+          },
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "TAROT",
+            "reason": "출생정보 없이 관계의 태도와 흐름을 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "장기적인 궁합이 궁금해.",
+        "intent": "long_term_compatibility",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "ALIAS",
+          "source": -1,
+          "quote": "달새"
+        },
+        "recentSituationPresent": true,
+        "periodPresent": true,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "COMPATIBILITY",
+        "modes": [
+          "SAJU"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "long_term_compatibility"
+        ],
+        "explicitTool": null,
+        "aliasState": "ALIAS",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "COMPATIBILITY:SAJU",
+          "COMPATIBILITY:TAROT"
+        ],
+        "missingSlots": [
+          "partnerBirthData"
+        ]
+      }
+    },
+    {
+      "id": "v3-long-compatibility-complete-birth",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "우리의 장기적인 궁합이 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": true,
+        "hasPartnerBirthData": true
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "SAJU",
+            "reason": "장기 궁합은 두 사람의 출생정보를 바탕으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "우리의 장기적인 궁합이 궁금해.",
+        "intent": "long_term_compatibility",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "COMPATIBILITY",
+        "modes": [
+          "SAJU"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "long_term_compatibility"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "COMPATIBILITY:SAJU"
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "v3-decision-missing-context",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "진로 선택을 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DECISION_3",
+            "reason": "선택을 밀어주는 힘과 현실적인 위험을 세 장으로 살펴봐요.",
+            "missingSlots": [
+              "choices",
+              "recentSituation"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "진로 선택을 타로로 보고 싶어.",
+        "intent": "career_decision",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:DECISION_3"
+        ],
+        "missingSlots": [
+          "choices",
+          "recentSituation"
+        ]
+      }
+    },
+    {
+      "id": "v3-decision-two-real-choices",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "계약 갱신을 앞두고 있어. 직장을 유지할지 대학원에 진학할지 타로로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DECISION_3",
+            "reason": "선택을 밀어주는 힘과 현실적인 위험을 세 장으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "직장을 유지할지 대학원에 진학할지 타로로 보고 싶어.",
+        "intent": "career_decision",
+        "explicitTool": "TAROT",
+        "explicitToolQuote": "타로로 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": true,
+        "periodPresent": false,
+        "choicesEvidence": [
+          {
+            "source": -1,
+            "quote": "직장을 유지할지"
+          },
+          {
+            "source": -1,
+            "quote": "대학원에 진학할지"
+          }
+        ],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "DECISION_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "career_decision"
+        ],
+        "explicitTool": "TAROT",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 2,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:DECISION_3"
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "v3-relationship-resolved-alias-period",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "달새와 다음 달 관계가 어떻게 흘러갈지 궁금해.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "MONTHLY",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "달새와 다음 달 관계가 어떻게 흘러갈지 궁금해.",
+        "intent": "monthly_flow",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "ALIAS",
+          "source": -1,
+          "quote": "달새"
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": true,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": false,
+      "structuralExpectedMatched": false,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "TAROT",
+        "modes": [
+          "RELATIONSHIP_3"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "relationship_flow"
+        ],
+        "explicitTool": null,
+        "aliasState": "ALIAS",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "TAROT:RELATIONSHIP_3"
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "v3-explicit-saju-daily",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "오늘 운세는 사주로 보고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "DAILY",
+            "reason": "직접 선택한 사주로 이어가요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "structuredOutput": {
+        "requestPurpose": "FORTUNE_EXPLORATION",
+        "intentEvidenceQuote": "오늘 운세는 사주로 보고 싶어.",
+        "intent": "daily_fortune",
+        "explicitTool": "SAJU",
+        "explicitToolQuote": "사주로 보고 싶어.",
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": true,
+        "periodPresent": true,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_RECOMMENDATION",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "SAJU",
+        "modes": [
+          "DAILY"
+        ]
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "FORTUNE_EXPLORATION"
+        ],
+        "intents": [
+          "daily_fortune"
+        ],
+        "explicitTool": "SAJU",
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [
+          "SAJU:DAILY"
+        ],
+        "missingSlots": [
+          "ownBirthData"
+        ]
+      }
+    },
+    {
+      "id": "v3-general-concern",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "요즘 마음이 복잡해서 그냥 이야기하고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "GENERAL_CHAT",
+        "intentEvidenceQuote": "요즘 마음이 복잡해서 그냥 이야기하고 싶어.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "recentSituationPresent": true,
+        "periodPresent": false,
+        "choicesEvidence": [],
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": false,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "GENERAL_CHAT"
+        ],
+        "intents": [
+          "general_concern"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "v3-small-talk",
+      "origin": "MATRIX_EXTENSION",
+      "input": {
+        "currentMessage": "안녕, 오늘은 가볍게 수다 떨고 싶어.",
+        "recentMessages": [],
+        "hasOwnBirthData": false,
+        "hasPartnerBirthData": false
+      },
+      "recommendation": null,
+      "structuredOutput": {
+        "requestPurpose": "GENERAL_CHAT",
+        "intentEvidenceQuote": "오늘은 가볍게 수다 떨고 싶어.",
+        "intent": "small_talk",
+        "explicitTool": null,
+        "explicitToolQuote": null,
+        "targetAliasEvidence": {
+          "state": "UNRESOLVED",
+          "source": null,
+          "quote": null
+        },
+        "choicesEvidence": [],
+        "recentSituationPresent": false,
+        "periodPresent": false,
+        "highStakes": false
+      },
+      "validationSucceeded": true,
+      "errorCode": null,
+      "disposition": "VALID_NONE",
+      "toolModeMatched": true,
+      "structuralExpectedMatched": true,
+      "semanticReview": "UNREVIEWED",
+      "expectedRecommendation": {
+        "recommendation": "NONE",
+        "modes": []
+      },
+      "expectedSlots": {
+        "requestPurposes": [
+          "GENERAL_CHAT"
+        ],
+        "intents": [
+          "small_talk"
+        ],
+        "explicitTool": null,
+        "aliasState": "UNRESOLVED",
+        "choiceCount": 0,
+        "highStakes": false,
+        "exactTools": [],
+        "missingSlots": []
+      }
+    }
+  ],
+  "neuronsAccounted": 283.4573799999999
+}

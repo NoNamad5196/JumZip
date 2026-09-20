@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "JumZipV8Micro8Selection-v1",
+  "sourceCorpusVersions": [
+    "JumZipV5Focused-v1",
+    "JumZipPersonaBenchmark-v1"
+  ],
+  "status": "REVIEWED_INCOMPLETE_RUNTIME_FAILED_NOT_ACCEPTANCE",
+  "reviewer": "Codex / contracts_audit",
+  "reviewerKind": "AI",
+  "method": "DIRECT_RESPONSE_REVIEW",
+  "reviewedAt": "2026-09-20T00:07:53.386Z",
+  "fullAcceptanceEligible": false,
+  "instructionsKo": "실제 응답 전체와 고정 입력을 직접 읽고 점수를 작성한다. 비어 있는 점수나 자동 체크를 품질 통과로 처리하지 않는다. AI 검토자는 AI라고 표시한다. 기존 원본84 검사를 이 작은 묶음으로 대체하지 않는다.",
+  "reply": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "민수=A의 목 48.3%와 사용자=B의 목 80%를 정확히 연결했고, 두 사람 모두 목이 최대라는 자료와 일치한다. 민수의 수가 꽤 있다는 설명도 실제 A 수35%와 모순되지 않는다.",
+        "A의 hour UNAVAILABLE/clock UNKNOWN과 B의 hour CONFIRMED를 각각 시주 미상/시주까지 확인으로 구분했다. B의 NOT_RECORDED 입력 provenance를 시주 미상으로 바꾸지 않았고 날짜 원자료를 새로 만들지 않았다.",
+        "짧고 담백한 반말3문장으로 질문의 수치와 시주 상태를 직접 답한다. 궁합 확률이나 운명 사실을 덧붙이지 않는다."
+      ],
+      "reviewedOutput": "민수는 목(木) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수는 시주를 알 수 없어서 정보가 조금 부족하고, 너는 시주까지 다 확인된 상태야. 오행 비율만 보면 민수는 수(水) 기운도 꽤 있는 편이네.",
+      "checks": [
+        "A 민수가 시주 미상이고 B는 시주가 있는 component fixture",
+        "A 목 약48.3%/수35%, B 목80%이며 둘 다 목이 최대",
+        "날짜 provenance 없는 합성 구조를 실제 사용자 출생일로 보강하지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": "82276c7ecb8ff6a2a964b870a31daf6612a93369eedcc8dc2ca34ceccb2044fb",
+      "inputSha256": "782945e98c94db2cbcb1972227e79c608a9b0adf3365131455ad89ce8f18a84b",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "DELIVERABLE_VALID_RESPONSE",
+      "semanticEvaluationStatus": "DIRECTLY_REVIEWED",
+      "scoreTreatment": "FIVE_AXIS_DIRECT_SEMANTIC_SCORE",
+      "errorCode": null,
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "1b1262ef022a0d4831df3a95b9282f9109a4ed98c3f813cef8c73e350a18ac13",
+          "httpStatus": 200,
+          "rawOutputSha256": "853949f96ce73a95259a884d989ae4c59f8f95b7f1a90bc9fcd3548b9ea12b50",
+          "exactRawOutput": "{\"text\":\"민수는 목(木) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수는 시주를 알 수 없어서 정보가 조금 부족하고, 너는 시주까지 다 확인된 상태야. 오행 비율만 보면 민수는 수(水) 기운도 꽤 있는 편이네.\",\"toolReferences\":[]}",
+          "parsedText": "민수는 목(木) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수는 시주를 알 수 없어서 정보가 조금 부족하고, 너는 시주까지 다 확인된 상태야. 오행 비율만 보면 민수는 수(水) 기운도 꽤 있는 편이네.",
+          "reproducedStructuralValidation": {
+            "ok": true,
+            "issues": []
+          },
+          "delivered": true,
+          "toolReferences": []
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "초기 응답 interpretationEvidence는5개로 상한3개를 넘어서 TAROT_EVIDENCE_SHAPE_INVALID가 재현된다. 첫 실패를 모델 의미 오류라고 바꾸어 집계하지 않는다.",
+        "수리는3개로 줄였지만 textEvidence의 고립, 회피/조율, 균형이 본문의 고립되거나 회피/조율하며 균형과 정확한 substring으로 일치하지 않아 TAROT_EVIDENCE_SPAN_MISSING이 재현된다.",
+        "초기·수리 모두 HTTP200이고 본문은 존재하지만 최종 response=null이다. raw본문은 끌림/고립·회피/조율·균형을 보존하며 건강한 고독 필요로 뒤집지 않는다. 사용자가 받은 응답으로 채점하거나 전달 의미 Hard Fail로 세지 않는다."
+      ],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": null,
+      "inputSha256": "294f41d911f38b7d938a1f1e2ab961c89fac917d816e7bef7bafdcce7ca0abf3",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "BLOCKED_BY_RESPONSE_CONTRACT_AFTER_REPAIR",
+      "semanticEvaluationStatus": "NO_DELIVERED_OUTPUT",
+      "scoreTreatment": "OPERATIONAL_ZERO_NOT_A_MODEL_SEMANTIC_GRADE",
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "0c17ac8bf5863d6d3e94982d0046e7901bbd1f08b511463ae9b7fcec39ad8d6e",
+          "httpStatus": 200,
+          "rawOutputSha256": "1a6a2daa6f8b0e86745933260f3411347e7250cf16a8cdda29eab65b8d084327",
+          "exactRawOutput": "{\n  \"text\": \"응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 연결되고 싶은 끌림을 느끼고 있는 것 같아. 반면에 상대방은 조금 고립되거나 회피하고 싶은 상태로 보여서, 서로 조율하며 균형을 맞춰가는 과정이 필요해 보여. 지금 상황에서 가장 중요한 건 뭐라고 생각해?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [2],\n      \"textEvidence\": \"끌림\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [0],\n      \"textEvidence\": \"고립\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"회피\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [0],\n      \"textEvidence\": \"조율\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"균형\"\n    }\n  ]\n}",
+          "parsedText": "응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 연결되고 싶은 끌림을 느끼고 있는 것 같아. 반면에 상대방은 조금 고립되거나 회피하고 싶은 상태로 보여서, 서로 조율하며 균형을 맞춰가는 과정이 필요해 보여. 지금 상황에서 가장 중요한 건 뭐라고 생각해?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SHAPE_INVALID"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "requestSha256": "5acb439a6a38ac71e7acd76316ef0fe71fd578f047461cad6f15042772ccacd6",
+          "httpStatus": 200,
+          "rawOutputSha256": "4a37ae683a3c52797c64218ea13facd1c1c2e3dd9e3a5bd615d5899ce17974b6",
+          "exactRawOutput": "{\n  \"text\": \"응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 연결되고 싶은 끌림을 느끼고 있는 것 같아. 반면에 상대방은 조금 고립되거나 회피하고 싶은 상태로 보여서, 서로 조율하며 균형을 맞춰가는 과정이 필요해 보여. 지금 상황에서 가장 중요한 건 뭐라고 생각해?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [\n        2\n      ],\n      \"textEvidence\": \"끌림\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"고립, 회피\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"조율, 균형\"\n    }\n  ]\n}",
+          "parsedText": "응, 다시 쉽게 말해줄게! 너는 지금 그 사람과 연결되고 싶은 끌림을 느끼고 있는 것 같아. 반면에 상대방은 조금 고립되거나 회피하고 싶은 상태로 보여서, 서로 조율하며 균형을 맞춰가는 과정이 필요해 보여. 지금 상황에서 가장 중요한 건 뭐라고 생각해?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SPAN_MISSING"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 1,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "태어난 시각이 확인되지 않아 단일 원국이 확정되지 않았다는 설명은 UNKNOWN_CLOCK_TIME/BOUNDARY_VARIANTS와 맞는다. 점수·용신의 후보와 확정 null을 구분하며 현재 대운을 확정하지 않는다.",
+        "생년월일시를 다시 확인해 달라는 말은 포괄적이지만, 이미 제공된 날짜가 없다고 주장하지는 않는다. PROVIDED를 미입력으로 바꾼 과거 오류와 동일한 Hard Fail로 세지 않는다.",
+        "사용자가 점수와 용신의 확실성을 물었는데 실제 후보32/37/58 및 FIRE/METAL을 제시하지 않고 재확인 요청으로 끝낸다. 도구 설명의 불완전성으로 toolFidelity1점이며, 후보 삭제·재계산·날조를 확정한 것은 아니다.",
+        "존댓말3문장과 차분한 제한 설명은 유지된다. 이 한 답변의 일반적인 표현을 지속적인 Generic Persona Hard Fail로 확대하지 않는다."
+      ],
+      "reviewedOutput": "현재는 태어난 시각이 확인되지 않아 원국이 하나로 확정되지 않은 상태예요. 그래서 점수나 용신도 가능한 후보들로만 나타나고 있어요. 대운 역시 정보가 부족해 지금은 확정해 드릴 수 없으니, 정확한 분석을 위해 생년월일시를 다시 한번 확인해 주시겠어요?",
+      "checks": [
+        "확정 strength score/grade null과 possible_values의 대안을 구분",
+        "현재 대운 UNRESOLVED를 ACTIVE로 꾸미지 않음",
+        "알려진 세운·월운을 원국의 강약 점수 재계산에 사용하지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": "378a21a0a41da1f2b532ed78f9c05251c322a3387b1268881d0f44cd18800a3f",
+      "inputSha256": "88e03b6c532c9def79f13a39f4d413f025eadda7c37ea951257142245702f1d3",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "DELIVERABLE_VALID_RESPONSE",
+      "semanticEvaluationStatus": "DIRECTLY_REVIEWED",
+      "scoreTreatment": "FIVE_AXIS_DIRECT_SEMANTIC_SCORE",
+      "errorCode": null,
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+          "httpStatus": 200,
+          "rawOutputSha256": "3a0408371db55f8dce63b403b687fac585757d0dbed9ee0ae4b59e3f5c04638e",
+          "exactRawOutput": "{\"text\":\"현재는 태어난 시각이 확인되지 않아 원국이 하나로 확정되지 않은 상태예요. 그래서 점수나 용신도 가능한 후보들로만 나타나고 있어요. 대운 역시 정보가 부족해 지금은 확정해 드릴 수 없으니, 정확한 분석을 위해 생년월일시를 다시 한번 확인해 주시겠어요?\",\"toolReferences\":[]}",
+          "parsedText": "현재는 태어난 시각이 확인되지 않아 원국이 하나로 확정되지 않은 상태예요. 그래서 점수나 용신도 가능한 후보들로만 나타나고 있어요. 대운 역시 정보가 부족해 지금은 확정해 드릴 수 없으니, 정확한 분석을 위해 생년월일시를 다시 한번 확인해 주시겠어요?",
+          "reproducedStructuralValidation": {
+            "ok": true,
+            "issues": []
+          },
+          "delivered": true,
+          "toolReferences": []
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "scores": {
+        "personaFidelity": 2,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "나의 연인 정방향은 끌림, 상대의 은둔자 역방향은 고립/회피, 관계의 절제 정방향은 조율/균형으로 구분한다. 저장된 카드·방향·위치가 raw toolReferences와 일치하고 재추첨하지 않는다.",
+        "이 원문은 이전 역방향 실패의 혼자만의 시간이 필요하다는 건전한 고독 주장을 포함하지 않는다. 회피하고 싶은 상태일 수도 있다는 표현은 활성 역방향 의미와 맞으므로 반대 의미 Hard Fail을 붙이지 않는다.",
+        "상대의 상태를 실제로 확인한 사실이나 호감의 증명으로 확정하지 않고 가능성으로 표현한다. 카드 설명 요청의 맥락에서 읽되, 구조 validator가 실제 타인의 마음을 증명하는 것은 아니라는 한계는 유지한다.",
+        "담백한 반말3문장, 서두르지 말자는 현실적 제안과 질문 하나가 자연스럽다. 어려운 이전 설명을 사용자 잘못으로 돌리지 않는다."
+      ],
+      "reviewedOutput": "너는 관계에 대한 끌림을 느끼고 있는 것 같은데, 상대는 지금 좀 고립되거나 회피하고 싶은 상태일 수도 있어. 앞으로는 서로 조율하면서 균형을 맞춰가는 과정이 필요해 보여. 너무 서두르지 말고 천천히 지켜보는 건 어때?",
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": "1eb28334e4beb0ad0eae72f8b0fad3547098242fc15b3a55511149f2ff1957a4",
+      "inputSha256": "f79fbec1a26342032ad01d9b0bc9dc324f110ea70c8d62e0943152acb9b93631",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "DELIVERABLE_VALID_RESPONSE",
+      "semanticEvaluationStatus": "DIRECTLY_REVIEWED",
+      "scoreTreatment": "FIVE_AXIS_DIRECT_SEMANTIC_SCORE",
+      "errorCode": null,
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "37f26c1470188ae0961119093670c716c494f73a5f944cb5e974450fedf3810d",
+          "httpStatus": 200,
+          "rawOutputSha256": "5042c0875ab00acb0d88ea53e2baabc3a0f6af55bd18975bab176f704e0e9f0a",
+          "exactRawOutput": "{\"text\":\"너는 관계에 대한 끌림을 느끼고 있는 것 같은데, 상대는 지금 좀 고립되거나 회피하고 싶은 상태일 수도 있어. 앞으로는 서로 조율하면서 균형을 맞춰가는 과정이 필요해 보여. 너무 서두르지 말고 천천히 지켜보는 건 어때?\",\"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"REVERSED\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[2],\"textEvidence\":\"끌림\"},{\"positionIndex\":1,\"keywordIndices\":[0],\"textEvidence\":\"고립\"},{\"positionIndex\":2,\"keywordIndices\":[0],\"textEvidence\":\"조율\"}]}",
+          "parsedText": "너는 관계에 대한 끌림을 느끼고 있는 것 같은데, 상대는 지금 좀 고립되거나 회피하고 싶은 상태일 수도 있어. 앞으로는 서로 조율하면서 균형을 맞춰가는 과정이 필요해 보여. 너무 서두르지 말고 천천히 지켜보는 건 어때?",
+          "reproducedStructuralValidation": {
+            "ok": true,
+            "issues": []
+          },
+          "delivered": true,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "초기·수리 모두 evidence의 고립, 회피/조율, 균형이 실제 본문에 연속된 span으로 없어서 TAROT_EVIDENCE_SPAN_MISSING이 재현된다. HTTP200과 최종 LLM_INVALID_RESPONSE를 구분한다.",
+        "raw본문의 상대방은 지금 고립이나 회피 같은 폐쇄적인 상태를 지나고 있네요는 상징과 실제 상태의 경계가 약한 서술이다. 그러나 검증에서 차단되어 delivered response가 없으므로 전달된 Hard Fail 집계에 넣지 않고 진단 관찰로만 남긴다."
+      ],
+      "reviewedOutput": null,
+      "checks": [
+        "카드와 방향 불변",
+        "이전 실패를 사용자 탓으로 돌리지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": null,
+      "inputSha256": "353fd83e8969d0fd854c9b7157a4e46b80a52289b78fe6bc61825f5eecd44548",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "BLOCKED_BY_RESPONSE_CONTRACT_AFTER_REPAIR",
+      "semanticEvaluationStatus": "NO_DELIVERED_OUTPUT",
+      "scoreTreatment": "OPERATIONAL_ZERO_NOT_A_MODEL_SEMANTIC_GRADE",
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "14b1bf08373e78c4e7b549adc6dd3129dbdb7290ede8931349214e05fb0ad754",
+          "httpStatus": 200,
+          "rawOutputSha256": "9416989a18cade7a58960d4b169c0edced356e8607aba1cba480072f1355c6ca",
+          "exactRawOutput": "{\"text\":\"당신의 마음에는 관계에 대한 끌림이 느껴지지만, 상대방은 지금 고립이나 회피 같은 폐쇄적인 상태를 지나고 있네요. 두 사람 사이에는 조율과 균형이 필요한 흐름이 보여요. 지금은 상대의 상태를 살피며 인내하는 태도가 도움이 될 것 같은데, 상대의 마음이 궁금한 건가요 아니면 어떻게 움직여야 할지가 궁금한 건가요?\",\"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"REVERSED\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[2],\"textEvidence\":\"끌림\"},{\"positionIndex\":1,\"keywordIndices\":[0,1],\"textEvidence\":\"고립, 회피\"},{\"positionIndex\":2,\"keywordIndices\":[0,1],\"textEvidence\":\"조율, 균형\"}]}",
+          "parsedText": "당신의 마음에는 관계에 대한 끌림이 느껴지지만, 상대방은 지금 고립이나 회피 같은 폐쇄적인 상태를 지나고 있네요. 두 사람 사이에는 조율과 균형이 필요한 흐름이 보여요. 지금은 상대의 상태를 살피며 인내하는 태도가 도움이 될 것 같은데, 상대의 마음이 궁금한 건가요 아니면 어떻게 움직여야 할지가 궁금한 건가요?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SPAN_MISSING"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "requestSha256": "71d00eb0c0d57904f296a542c9425c217e6a5c68d2d5103cbc19b2d98382a64a",
+          "httpStatus": 200,
+          "rawOutputSha256": "9416989a18cade7a58960d4b169c0edced356e8607aba1cba480072f1355c6ca",
+          "exactRawOutput": "{\"text\":\"당신의 마음에는 관계에 대한 끌림이 느껴지지만, 상대방은 지금 고립이나 회피 같은 폐쇄적인 상태를 지나고 있네요. 두 사람 사이에는 조율과 균형이 필요한 흐름이 보여요. 지금은 상대의 상태를 살피며 인내하는 태도가 도움이 될 것 같은데, 상대의 마음이 궁금한 건가요 아니면 어떻게 움직여야 할지가 궁금한 건가요?\",\"toolReferences\":[{\"cardId\":6,\"orientation\":\"UPRIGHT\",\"positionIndex\":0},{\"cardId\":9,\"orientation\":\"REVERSED\",\"positionIndex\":1},{\"cardId\":14,\"orientation\":\"UPRIGHT\",\"positionIndex\":2}],\"interpretationEvidence\":[{\"positionIndex\":0,\"keywordIndices\":[2],\"textEvidence\":\"끌림\"},{\"positionIndex\":1,\"keywordIndices\":[0,1],\"textEvidence\":\"고립, 회피\"},{\"positionIndex\":2,\"keywordIndices\":[0,1],\"textEvidence\":\"조율, 균형\"}]}",
+          "parsedText": "당신의 마음에는 관계에 대한 끌림이 느껴지지만, 상대방은 지금 고립이나 회피 같은 폐쇄적인 상태를 지나고 있네요. 두 사람 사이에는 조율과 균형이 필요한 흐름이 보여요. 지금은 상대의 상태를 살피며 인내하는 태도가 도움이 될 것 같은데, 상대의 마음이 궁금한 건가요 아니면 어떻게 움직여야 할지가 궁금한 건가요?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SPAN_MISSING"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "scores": {
+        "personaFidelity": 1,
+        "naturalness": 2,
+        "contextConsistency": 2,
+        "toolFidelity": 2,
+        "concisionRhythm": 2
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "이 대조 입력의 은둔자는 정방향이다. 혼자만의 성찰/거리두기 설명은 실제 정방향 keywords와 맞고 회피·폐쇄라는 역방향으로 뒤집지 않는다.",
+        "연인=나, 은둔자=상대, 절제=방향을 보존한다. 상태인 것 같아/중요해 보여라는 해석형 표현이며 상대의 실제 욕구나 호감을 확정한 사실로 제시하지 않아 보수적으로 Hard Fail0이다.",
+        "짧은 반말과 질문 하나는 적절하지만 빠른 리액션이나 보미만의 핵심 짚기보다 일반적인 관계 카드 설명에 가까워 personaFidelity1점이다. 한 응답을 세 Persona 동일 문체 또는 지속적 Generic Hard Fail로 보지는 않는다."
+      ],
+      "reviewedOutput": "네 마음은 관계나 끌림에 집중하고 있는데, 상대방은 지금 혼자만의 성찰이나 거리두기가 필요한 상태인 것 같아. 앞으로는 둘 사이의 조율과 균형이 중요해 보여. 어떤 부분이 제일 고민이야?",
+      "checks": [
+        "은둔자 정방향의 성찰/탐색을 역방향 회피로 단정하지 않음",
+        "상대 위치라도 실제 마음이나 욕구를 확정하지 않음",
+        "연인=나, 은둔자=상대, 절제=방향 보존"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": "f281954b552c2cc2abcddc81da71eabc0b22000cb47161906170bd167d7446f6",
+      "inputSha256": "c9e2be98c5556dbdd00a818126367cd18314dab04e71876dea8d7c2e6e23d1c1",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "DELIVERABLE_VALID_RESPONSE",
+      "semanticEvaluationStatus": "DIRECTLY_REVIEWED",
+      "scoreTreatment": "FIVE_AXIS_DIRECT_SEMANTIC_SCORE",
+      "errorCode": null,
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "bf2216c892b47f456265c79f6b9e91d575b506b2cb60b1ec5461059d99dfba6b",
+          "httpStatus": 200,
+          "rawOutputSha256": "7bf3ff136c4b6e8bc3f0b3a86c7e6dc6f82ad2a0d1339ebf2f7f14951da105b5",
+          "exactRawOutput": "{\n  \"text\": \"네 마음은 관계나 끌림에 집중하고 있는데, 상대방은 지금 혼자만의 성찰이나 거리두기가 필요한 상태인 것 같아. 앞으로는 둘 사이의 조율과 균형이 중요해 보여. 어떤 부분이 제일 고민이야?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 9,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [2],\n      \"textEvidence\": \"끌림\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [1],\n      \"textEvidence\": \"거리두기\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [0],\n      \"textEvidence\": \"조율\"\n    }\n  ]\n}",
+          "parsedText": "네 마음은 관계나 끌림에 집중하고 있는데, 상대방은 지금 혼자만의 성찰이나 거리두기가 필요한 상태인 것 같아. 앞으로는 둘 사이의 조율과 균형이 중요해 보여. 어떤 부분이 제일 고민이야?",
+          "reproducedStructuralValidation": {
+            "ok": true,
+            "issues": []
+          },
+          "delivered": true,
+          "toolReferences": [
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 9,
+              "orientation": "UPRIGHT",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "초기·수리 모두 textEvidence의 쉼표 연결 구절이 본문의 고립이나 회피/연결이나 끌림/조율이나 균형과 일치하지 않아 TAROT_EVIDENCE_SPAN_MISSING이 재현된다.",
+        "차단된 raw본문 자체는 은둔자 역방향을 나에게, 연인 정방향을 상대에게 귀속시키고 상징이라는 표현도 사용한다. 실제 성공한 사용자 응답으로 대체하지 않으며 delivered 의미 점수는 없고 운영점수0이다."
+      ],
+      "reviewedOutput": null,
+      "checks": [
+        "은둔자 역방향은 이번에는 나의 위치이며 상대에게 옮기지 않음",
+        "상대 위치 연인도 실제 호감의 증명이 아님",
+        "회피/과도한 폐쇄를 건전한 고독 필요로 뒤집지 않음"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": null,
+      "inputSha256": "ec864b673c04242292ca56641428a61bb0b14a689f12221acf065a7c1d5af9d1",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "BLOCKED_BY_RESPONSE_CONTRACT_AFTER_REPAIR",
+      "semanticEvaluationStatus": "NO_DELIVERED_OUTPUT",
+      "scoreTreatment": "OPERATIONAL_ZERO_NOT_A_MODEL_SEMANTIC_GRADE",
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "providerAttemptsReviewed": [
+        {
+          "attempt": 1,
+          "requestSha256": "9f7fb94eae24cbcaf9d827cf65e138efba2cd8addeede72a707a4fa6c74e7f19",
+          "httpStatus": 200,
+          "rawOutputSha256": "a85361264982967d03a01b268f193d0947f4442618352ed37c7e24b5b10e13e6",
+          "exactRawOutput": "{\n  \"text\": \"네 마음은 은둔자 역방향이라 고립이나 회피 같은 느낌이 보이고, 상대는 연인 정방향으로 연결이나 끌림 같은 상징이 떠 있어. 관계의 흐름은 절제 카드처럼 조율이나 균형이 필요한 시점인 것 같네. 요즘 그 사람이랑 연락은 자주 하는 편이야?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"고립, 회피\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [\n        1,\n        2\n      ],\n      \"textEvidence\": \"연결, 끌림\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"조율, 균형\"\n    }\n  ]\n}",
+          "parsedText": "네 마음은 은둔자 역방향이라 고립이나 회피 같은 느낌이 보이고, 상대는 연인 정방향으로 연결이나 끌림 같은 상징이 떠 있어. 관계의 흐름은 절제 카드처럼 조율이나 균형이 필요한 시점인 것 같네. 요즘 그 사람이랑 연락은 자주 하는 편이야?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SPAN_MISSING"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        },
+        {
+          "attempt": 2,
+          "requestSha256": "2a5ff2beec8a996ee301c0ca9d56520b7b3366af2bbb8947b32608ec7b7b95cb",
+          "httpStatus": 200,
+          "rawOutputSha256": "a85361264982967d03a01b268f193d0947f4442618352ed37c7e24b5b10e13e6",
+          "exactRawOutput": "{\n  \"text\": \"네 마음은 은둔자 역방향이라 고립이나 회피 같은 느낌이 보이고, 상대는 연인 정방향으로 연결이나 끌림 같은 상징이 떠 있어. 관계의 흐름은 절제 카드처럼 조율이나 균형이 필요한 시점인 것 같네. 요즘 그 사람이랑 연락은 자주 하는 편이야?\",\n  \"toolReferences\": [\n    {\n      \"cardId\": 9,\n      \"orientation\": \"REVERSED\",\n      \"positionIndex\": 0\n    },\n    {\n      \"cardId\": 6,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 1\n    },\n    {\n      \"cardId\": 14,\n      \"orientation\": \"UPRIGHT\",\n      \"positionIndex\": 2\n    }\n  ],\n  \"interpretationEvidence\": [\n    {\n      \"positionIndex\": 0,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"고립, 회피\"\n    },\n    {\n      \"positionIndex\": 1,\n      \"keywordIndices\": [\n        1,\n        2\n      ],\n      \"textEvidence\": \"연결, 끌림\"\n    },\n    {\n      \"positionIndex\": 2,\n      \"keywordIndices\": [\n        0,\n        1\n      ],\n      \"textEvidence\": \"조율, 균형\"\n    }\n  ]\n}",
+          "parsedText": "네 마음은 은둔자 역방향이라 고립이나 회피 같은 느낌이 보이고, 상대는 연인 정방향으로 연결이나 끌림 같은 상징이 떠 있어. 관계의 흐름은 절제 카드처럼 조율이나 균형이 필요한 시점인 것 같네. 요즘 그 사람이랑 연락은 자주 하는 편이야?",
+          "reproducedStructuralValidation": {
+            "ok": false,
+            "issues": [
+              "TAROT_EVIDENCE_SPAN_MISSING"
+            ]
+          },
+          "delivered": false,
+          "toolReferences": [
+            {
+              "cardId": 9,
+              "orientation": "REVERSED",
+              "positionIndex": 0
+            },
+            {
+              "cardId": 6,
+              "orientation": "UPRIGHT",
+              "positionIndex": 1
+            },
+            {
+              "cardId": 14,
+              "orientation": "UPRIGHT",
+              "positionIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "scores": {
+        "personaFidelity": 0,
+        "naturalness": 0,
+        "contextConsistency": 0,
+        "toolFidelity": 0,
+        "concisionRhythm": 0
+      },
+      "hardFails": [],
+      "evidenceKo": [
+        "이 ID의 provider-attempts는0개이다. manifest의 전송 전 예상 reserve177.047225와 누적429.522477의 합606.569702가 ceiling600을 넘어 로컬에서 LLM_RATE_LIMITED로 중단됐다.",
+        "외부 HTTP429, 모델 거절, 모델 형식 실패 또는 의미 실패로 분류하지 않는다. 점수0은 선정8개 운영 커버리지 계산용이며 실제 모델 내용에 대한 평가가 아니다."
+      ],
+      "reviewedOutput": null,
+      "checks": [
+        "추진력/위험/조언 구분",
+        "정의 카드의 현실적 균형"
+      ],
+      "reviewer": "Codex / contracts_audit",
+      "reviewerKind": "AI",
+      "method": "DIRECT_RESPONSE_REVIEW",
+      "outputSha256": null,
+      "inputSha256": "f47153bebfc428fecd97f3db75d29131d7404a14c45defdedc8bebe9d15165e6",
+      "inputHashMatchesFrozenSelection": true,
+      "inputBindingMethod": "JSON.stringify of unchanged source case with frozen v8 production projection; verified against selection.json",
+      "runtimeClassification": "LOCAL_PRE_SEND_BUDGET_STOP",
+      "semanticEvaluationStatus": "NO_DELIVERED_OUTPUT",
+      "scoreTreatment": "OPERATIONAL_ZERO_NOT_A_MODEL_SEMANTIC_GRADE",
+      "errorCode": "LLM_RATE_LIMITED",
+      "providerAttemptsReviewed": []
+    }
+  ],
+  "intent": [],
+  "rubric": {
+    "source": "https://app.notion.com/p/3e07cdef782d81da92ecf20053a3bff9",
+    "section": "7. Persona Benchmark",
+    "scoreKeys": [
+      "personaFidelity",
+      "naturalness",
+      "contextConsistency",
+      "toolFidelity",
+      "concisionRhythm"
+    ],
+    "scoreRange": [
+      0,
+      2
+    ],
+    "hardFailCategories": [
+      "Tarot/Saju 원자료 변경",
+      "세 Persona 말투가 사실상 동일",
+      "Generic 상담사 문체가 지속됨",
+      "금지표현 반복",
+      "관계 인물 혼동",
+      "Tool 결과와 정반대 설명",
+      "고위험 질문을 실제 사실처럼 확정"
+    ],
+    "fullBenchmarkTarget": "평균8/10 이상 + Hard Fail0",
+    "interpretationKo": "기존 독립 검토와 같은 보수적 의미 기준. 단순 누락·모호함은 명시적 반대 해석과 구분한다. 차단된 원문과 미전송 사례를 전달된 모델 응답으로 채점하지 않는다."
+  },
+  "summary": {
+    "selected": 8,
+    "attemptedCases": 7,
+    "providerHttpRequests": 10,
+    "providerHttp200": 10,
+    "providerHttp429": 0,
+    "validDeliveredResponses": 4,
+    "invalidAfterRepair": 3,
+    "notSentDueToLocalBudget": 1,
+    "successfulRepairs": 0,
+    "failedRepairs": 3,
+    "completed": false,
+    "sourceFrozen": true,
+    "neuronsAccounted": 429.522477,
+    "hardFailCountAmongDelivered": 0,
+    "totalOperationalScore": 38,
+    "selectedOperationalAverageWithUnservedZero": 4.75,
+    "attemptedOperationalAverageWithInvalidZero": 5.428571428571429,
+    "successfulResponseAverage": 9.5,
+    "fullOriginal84Executed": false,
+    "fullAcceptanceEligible": false,
+    "conclusion": "INCOMPLETE_RUNTIME_FAILED: valid four have no confirmed semantic Hard Fail, but 3 response-contract failures and 1 pre-send stop prevent acceptance. This diagnostic subset cannot replace original24/84 coverage."
+  },
+  "provenance": {
+    "independentOfV8PrimaryReview": true,
+    "primaryReviewRead": false,
+    "fullOutputsDirectlyRead": true,
+    "inputsDirectlyRead": true,
+    "inputBindingsVerified": 8,
+    "sourceVerification": [
+      {
+        "path": "supabase/functions/_shared/domain/fortune-timing.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/full-saju.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/index.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/router.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/balance.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/constants.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/index.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/natal.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/rational.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/relations.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/shinsal.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/strength.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/rules/types.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/saju-compatibility.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/saju.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/domain/tarot.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/chat-contract.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/index.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/intent.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/provider.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/reply.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/llm/validator.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/benchmark.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/config.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/context.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/index.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/prompt.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "supabase/functions/_shared/persona/tool-facts.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "tests/persona/saju-benchmark-corpus.ts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "tests/persona/v5-focused-corpus.mts",
+        "canonicalLFMatches": true
+      },
+      {
+        "path": "tests/persona/v8-micro8-runner.mts",
+        "canonicalLFMatches": true
+      }
+    ],
+    "artifactHashes": {
+      "results.json": "15455ddc9099b1edad22e971cce06afa932eea0588925560c65e062064a60ff9",
+      "provider-attempts.jsonl": "fc3b4c3a180eae29825da5f1f387a2e0b158358c8ef2e5732f80819039e9e188",
+      "micro-manifest.json": "dc9e339863542f960bff7f61429316d0b799af67d14a576ce6a10c9ecb881544",
+      "selection.json": "7447edfdfd39d7766d7128c93a6c69a3a4d7ee059fcc02e47629f8e395e56347",
+      "review-template.json": "f3b92c299eb9e2642feddcfa9e143b2accc080abf77727f938730dc71e72ec71"
+    },
+    "additionalModelOrNetworkCalls": 0,
+    "sourceModified": false
+  },
+  "limits": [
+    "Four structurally valid replies are the only delivered-output semantic sample. All six blocked provider texts were inspected for diagnosis without counting them as user-visible replies.",
+    "The final LLM_RATE_LIMITED is a local conservative budget guard, not a provider rate-limit response.",
+    "AI-authored qualitative review; no human reviewer is claimed. Numerical aggregation and local validator replay do not produce semantic scores.",
+    "The other focused cases, intent cases and original complete84 were not executed or approved by this run. Production quality acceptance remains unestablished."
+  ]
+}

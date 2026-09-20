@@ -2,7 +2,9 @@
 @import '@fontsource-variable/playfair-display/index.css';
 @import '@fontsource-variable/playfair-display/wght-italic.css';
 
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+@source '../';
+@source '../../index.html';
 @font-face{font-family:Pretendard;font-style:normal;font-weight:45 920;font-display:swap;src:url('/fonts/PretendardVariable.woff2') format('woff2-variations');}
 
 :root{font-family:Pretendard, sans-serif;color:#F5F0E8;background:#0C0C0E;font-synthesis:none;font-weight:400;--black:#0C0C0E;--surface:#161619;--orange:#FF7A21;--gold:#D5AF62;--ivory:#F5F0E8;--muted:#96939A;--line:rgba(245,240,232,.13);--accent:var(--orange)}

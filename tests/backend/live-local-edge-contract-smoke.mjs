@@ -4,12 +4,12 @@ import { createClient } from '@supabase/supabase-js';
 import { spawnSync } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { MODEL, TARGET, MESSAGES, SCENARIOS, PLAN, digest, pathsFor, sourceHashes } from './local-openai-contract-double.mjs';
+import { MODEL, CANDIDATE, TARGET, MESSAGES, SCENARIOS, PLAN, digest, pathsFor, sourceHashes } from './local-openai-contract-double.mjs';
 
-const EVIDENCE = 'docs/evidence/backend-local-edge-contract-smoke.json';
+const EVIDENCE = 'docs/evidence/backend-local-edge-contract-v9-smoke.json';
 const TABLES = ['profiles', 'conversations', 'consultations', 'messages', 'tarot_draw_groups', 'tarot_draws', 'birth_profiles', 'saju_readings',
   'saju_compatibility_readings', 'related_people', 'memories', 'memory_suppressions', 'request_executions', 'rate_limit_buckets', 'daily_draw_claims'];
-const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v8';
+const runName = process.argv.find(value => value.startsWith('--run-name='))?.slice(11) ?? 'candidate-v9';
 const safeCode = error => error instanceof Error && /^[A-Z0-9_]{3,100}$/.test(error.message) ? error.message : 'LOCAL_CONTRACT_SMOKE_FAILED';
 const stable = value => JSON.stringify(value, function (_key, item) { return item && typeof item === 'object' && !Array.isArray(item)
   ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]])) : item; });
@@ -123,7 +123,7 @@ async function live(cleanupOnly) {
   }
   async function storedAssistant(owner, id) {
     const row = await read(owner.client.from('messages').select('id,content,metadata,model_id,prompt_version').eq('id', id).eq('user_id', owner.id).single());
-    check(`${stage}: DB provenance explicitly identifies HTTP double and v8`, row.model_id === MODEL && row.prompt_version === 'JumZipPersona-v8');
+    check(`${stage}: DB provenance explicitly identifies HTTP double and candidate version`, row.model_id === MODEL && row.prompt_version === CANDIDATE.persona);
     check(`${stage}: persisted metadata strips internal evidence`, !hasInternalEvidence(row));
     return row;
   }
@@ -149,7 +149,7 @@ async function live(cleanupOnly) {
     check('normal NONE reload has null recommendation', noneRow.metadata.recommendation === null);
     const suggested = await phase('CHAT_RECOMMENDATION', () => edge('chat', chatRequest(MESSAGES.CHAT_RECOMMENDATION), owner));
     const recommended = suggested.data.recommendation?.recommendedTools;
-    check('Intent-v3 explicit Tarot recommendation keeps missing choices and recent situation', suggested.status === 201 && suggested.data.executionStatus === 'SUCCEEDED'
+    check('Intent explicit Tarot recommendation keeps missing choices and recent situation', suggested.status === 201 && suggested.data.executionStatus === 'SUCCEEDED'
       && recommended?.length === 1 && recommended[0].tool === 'TAROT' && recommended[0].mode === 'DECISION_3'
       && stable(recommended[0].missingSlots) === stable(['choices', 'recentSituation']));
     const recommendedRow = await storedAssistant(owner, suggested.data.assistantMessage.id);
@@ -220,7 +220,7 @@ async function live(cleanupOnly) {
     globalThis.fetch = nativeFetch;
     const frozen = digest(sourceHashes()) === digest(before);
     const report = { status: completed && !failure && pending.size === 0 && frozen ? 'PASS' : 'FAIL', at: new Date().toISOString(), runName,
-      scope: 'ACTUAL_LOCAL_AUTH_EDGE_DATABASE_WITH_SYNTHETIC_HTTP_PROVIDER', target: TARGET, model: MODEL,
+      scope: 'ACTUAL_LOCAL_AUTH_EDGE_DATABASE_WITH_SYNTHETIC_HTTP_PROVIDER', target: TARGET, model: MODEL, candidate: CANDIDATE,
       sourceHashes: before, sourceFrozen: frozen, actualModelCalls: completed ? 0 : null, externalRequests: 0, hostedDatabase: false, semanticQualityEvaluated: false,
       providerRoutingConfirmedByMain: !cleanupOnly, incompleteRunModelRouting: completed ? null : 'Failure does not independently prove all Edge provider routing; inspect stage and double counts.',
       checks, observations, counts, provider: lastDoubleStatus, cleanup, pendingCleanupCount: pending.size, failure,

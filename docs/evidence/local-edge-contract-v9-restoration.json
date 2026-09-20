@@ -1,0 +1,22 @@
+{
+  "scope": "Main verification after Persona-v9/Intent-v4 local synthetic HTTP integration",
+  "integrationEvidence": "docs/evidence/backend-local-edge-contract-v9-smoke.json",
+  "candidateEnvironmentVerifiedAt": "2026-09-20T00:25:45.230Z",
+  "originalEnvironmentRestoredAt": "2026-09-20T00:28:31.403Z",
+  "candidateAndRestoredEnvironmentComparisonsPassed": ["ALLOWED_ORIGINS", "LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL", "LLM_STRUCTURED_FORMAT", "MEMORY_MAINTENANCE_ENABLED", "TITLE_GENERATION_ENABLED", "TOOL_RECOMMENDATIONS_ENABLED"],
+  "containerProviderHealthStatusBeforeAndAfter": 200,
+  "syntheticServerStoppedThroughAuthenticatedControl": true,
+  "syntheticServerExitCode": 0,
+  "syntheticProviderRequests": 10,
+  "syntheticProviderFailures": 0,
+  "dockerDesktopOrDatabaseRestarted": false,
+  "hostedSettingsChanged": false,
+  "secretValuesRecorded": false,
+  "notes": [
+    "The noncontiguous Tarot evidence case verified the actual serialized repair request contains the failed field path and fixed diagnostic reason, then accepted a valid synthetic repair.",
+    "The Saju case starts from a synthetic PARTIAL seeded through real RPCs; the actual Edge request exercises RETRY, not CALCULATE or real model failure.",
+    "Only the project-owned local functions serve process and Edge container were switched. Other Supabase containers and the native local model remained running.",
+    "Container environments were read privately and compared as booleans. Both local providers returned HTTP200 from inside the Edge container.",
+    "This evidence establishes local transport and recovery behavior with synthetic completions, not model semantic acceptance."
+  ]
+}

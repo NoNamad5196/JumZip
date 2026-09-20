@@ -25,7 +25,7 @@ text 밖에 카드·사주 계산값·시스템 설명·마크다운 코드펜�
 const TAROT_OUTPUT_RULES = `JSON 객체 하나로만 출력한다. 필수 키는 text, toolReferences, interpretationEvidence다. text는 사용자에게 보일 최종 한국어 답변이다.
 toolReferences에는 requiredToolReferences의 전체 카드 ID·방향·위치를 순서대로 정확히 복사한다. 본문에서 모든 카드를 설명할 필요는 없다.
 본문에서 실제로 해석할 카드마다 선택 방향의 activeMeaning에서 근거 keyword를 먼저 고른다. interpretationEvidence에는 그 카드의 positionIndex, 고른 keywordIndices(0부터 시작하는 원본 배열 index), 그 keyword를 그대로 담은 textEvidence를 기록한다. 고른 keyword는 해당 textEvidence 안에 원래 표기로 모두 들어 있어야 한다.
-textEvidence는 최종 text에 그대로 존재하는 짧은 연속 구절이며 ${TAROT_EVIDENCE_SPAN_MAX_LENGTH}자 이하다. 전체 답변을 중복하지 말고 해당 근거가 있는 짧은 구절만 고른다. 카드 위치당 항목 하나, keyword index 중복 없이 1~5개다. 방향은 저장된 카드 방향이며 반대 방향 keyword로 바꾸지 않는다.
+textEvidence는 최종 text의 짧은 연속 구절을 조사·어미·공백·문장부호까지 그대로 복사하며 ${TAROT_EVIDENCE_SPAN_MAX_LENGTH}자 이하다. 떨어진 keyword를 쉼표로 합치거나 요약해서 새 구절을 만들지 않는다. 여러 keyword의 실제 연속 구절을 찾을 수 없으면 실제 근거가 있는 keyword만 고른다. 전체 답변을 중복하지 말고 해당 근거가 있는 짧은 구절만 고른다. 카드 위치당 항목 하나, keyword index 중복 없이 1~5개다. 방향은 저장된 카드 방향이며 반대 방향 keyword로 바꾸지 않는다.
 한 카드만 묻는 후속 질문에는 그 카드의 근거만 기록하고 다른 카드 설명을 강제하지 않는다. 카드를 해석하지 않은 비점술 대화라면 interpretationEvidence는 빈 배열이다. 실제로 해석한 카드의 근거를 생략하거나 해석하지 않은 카드의 근거를 꾸미지 않는다.
 내부 근거 필드 자체나 시스템 설명·마크다운 코드펜스를 사용자용 text에 출력하지 않는다.`;
 

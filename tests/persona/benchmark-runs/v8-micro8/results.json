@@ -1,0 +1,150 @@
+{
+  "scope": "MICRO8_PARTIAL_NOT_ACCEPTANCE",
+  "entries": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "민수는 목(木) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네. 민수는 시주를 알 수 없어서 정보가 조금 부족하고, 너는 시주까지 다 확인된 상태야. 오행 비율만 보면 민수는 수(水) 기운도 꽤 있는 편이네.",
+        "segments": [
+          "민수는 목(木) 비중이 48.3%로 가장 많고, 너는 80%로 훨씬 높네.",
+          "민수는 시주를 알 수 없어서 정보가 조금 부족하고, 너는 시주까지 다 확인된 상태야.",
+          "오행 비율만 보면 민수는 수(水) 기운도 꽤 있는 편이네."
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v8",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-20T00:01:11.294Z",
+          "usage": {
+            "promptTokens": 4689,
+            "completionTokens": 87
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 3755,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": null,
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "latencyMs": 17276,
+      "review": null
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_SUPPLEMENT",
+      "response": {
+        "content": "현재는 태어난 시각이 확인되지 않아 원국이 하나로 확정되지 않은 상태예요. 그래서 점수나 용신도 가능한 후보들로만 나타나고 있어요. 대운 역시 정보가 부족해 지금은 확정해 드릴 수 없으니, 정확한 분석을 위해 생년월일시를 다시 한번 확인해 주시겠어요?",
+        "segments": [
+          "현재는 태어난 시각이 확인되지 않아 원국이 하나로 확정되지 않은 상태예요.",
+          "그래서 점수나 용신도 가능한 후보들로만 나타나고 있어요.",
+          "대운 역시 정보가 부족해 지금은 확정해 드릴 수 없으니, 정확한 분석을 위해 생년월일시를 다시 한번 확인해 주시겠어요?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v8",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-20T00:01:30.876Z",
+          "usage": {
+            "promptTokens": 4161,
+            "completionTokens": 86
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 2303,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": {
+        "content": "너는 관계에 대한 끌림을 느끼고 있는 것 같은데, 상대는 지금 좀 고립되거나 회피하고 싶은 상태일 수도 있어. 앞으로는 서로 조율하면서 균형을 맞춰가는 과정이 필요해 보여. 너무 서두르지 말고 천천히 지켜보는 건 어때?",
+        "segments": [
+          "너는 관계에 대한 끌림을 느끼고 있는 것 같은데, 상대는 지금 좀 고립되거나 회피하고 싶은 상태일 수도 있어.",
+          "앞으로는 서로 조율하면서 균형을 맞춰가는 과정이 필요해 보여.",
+          "너무 서두르지 말고 천천히 지켜보는 건 어때?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v8",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-20T00:01:35.389Z",
+          "usage": {
+            "promptTokens": 3737,
+            "completionTokens": 173
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 4512,
+      "review": null
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": null,
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "latencyMs": 11179,
+      "review": null
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": {
+        "content": "네 마음은 관계나 끌림에 집중하고 있는데, 상대방은 지금 혼자만의 성찰이나 거리두기가 필요한 상태인 것 같아. 앞으로는 둘 사이의 조율과 균형이 중요해 보여. 어떤 부분이 제일 고민이야?",
+        "segments": [
+          "네 마음은 관계나 끌림에 집중하고 있는데, 상대방은 지금 혼자만의 성찰이나 거리두기가 필요한 상태인 것 같아.",
+          "앞으로는 둘 사이의 조율과 균형이 중요해 보여.",
+          "어떤 부분이 제일 고민이야?"
+        ],
+        "repaired": false,
+        "metadata": {
+          "model": "@cf/google/gemma-4-26b-a4b-it",
+          "promptVersion": "JumZipPersona-v8",
+          "provider": "openai-compatible",
+          "generatedAt": "2026-09-20T00:01:53.220Z",
+          "usage": {
+            "promptTokens": 3728,
+            "completionTokens": 283
+          }
+        }
+      },
+      "errorCode": null,
+      "latencyMs": 6650,
+      "review": null
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "origin": "NEW_CONTRAST",
+      "response": null,
+      "errorCode": "LLM_INVALID_RESPONSE",
+      "latencyMs": 17301,
+      "review": null
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "phase": "REPLY",
+      "origin": "ORIGINAL_CORE",
+      "response": null,
+      "errorCode": "LLM_RATE_LIMITED",
+      "latencyMs": 1,
+      "review": null
+    }
+  ],
+  "neuronsAccounted": 429.522477
+}

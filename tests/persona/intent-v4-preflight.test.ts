@@ -1,13 +1,12 @@
 import { describe, expect, it, vi } from 'vitest';
 import { extractToolRecommendation, INTENT_PROMPT_VERSION } from '../../supabase/functions/_shared/llm/intent.ts';
 import { createOpenAICompatibleProvider, type LLMProvider, type StructuredRequest } from '../../supabase/functions/_shared/llm/provider.ts';
-import { INTENT_V3_CASES } from './intent-v3-corpus.ts';
+import { INTENT_V4_CASES } from './intent-v4-corpus.ts';
 
-// Current-runtime regression over frozen v3 inputs, not a replay of the historical
-// v3 provider. That runner and its source-hash guard remain unchanged. No live mode.
-describe('current Intent runtime retains frozen v3 evaluation inputs', () => {
-  it('serializes the original eight plus ten missing matrix cases through the actual provider request builder', async () => {
-    const candidates = INTENT_V3_CASES;
+// Credential-free request serialization. Supplied classifications do not prove live model quality.
+describe('Intent v4 independent26 zero-network evaluation preparation', () => {
+  it('serializes the unchanged18 plus8 new contrasts through the actual provider request builder', async () => {
+    const candidates = INTENT_V4_CASES;
     const requestBytes: number[] = [], responseBytes: number[] = [];
     const actualNetwork = vi.spyOn(globalThis, 'fetch').mockImplementation(() => { throw Error('NO_NETWORK_PREFLIGHT'); });
     try {
@@ -39,8 +38,8 @@ describe('current Intent runtime retains frozen v3 evaluation inputs', () => {
         if (candidate.expectedSlots.exactTools) expect(result?.recommendedTools.map(item => item.tool + ':' + item.mode) ?? []).toEqual(candidate.expectedSlots.exactTools);
         if (expected.recommendation !== 'NONE' && candidate.expectedSlots.missingSlots) expect(result?.recommendedTools[0]?.missingSlots).toEqual(candidate.expectedSlots.missingSlots);
       }
-      expect(actualNetwork).not.toHaveBeenCalled(); expect(candidates).toHaveLength(18);
-      console.info(JSON.stringify({ scope: 'CURRENT_RUNTIME_FROZEN_V3_MOCK_REGRESSION', candidates: candidates.length, liveModelCalls: 0,
+      expect(actualNetwork).not.toHaveBeenCalled(); expect(candidates).toHaveLength(26);
+      console.info(JSON.stringify({ scope: 'INTENT_V4_MOCK_PREFLIGHT_ONLY', candidates: candidates.length, liveModelCalls: 0,
         requestUtf8Bytes: { min: Math.min(...requestBytes), max: Math.max(...requestBytes) },
         mockOutputUtf8Bytes: { min: Math.min(...responseBytes), max: Math.max(...responseBytes) },
         tokenLimit: 350, timeoutsMs: [8_000, 3_000], note: 'Bytes are not a tokenizer bound or measured inference cost.' }));

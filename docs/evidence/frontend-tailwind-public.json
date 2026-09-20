@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-09-20T00:34:59.101Z",
+  "mode": "PUBLIC_TAILWIND_SOURCE_SCOPE_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "modelRequests": 0,
+  "authRequests": 0,
+  "mutations": 0,
+  "blockedRequests": 0,
+  "build": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "redirectedTo": "/",
+      "localSha256": "d2115218a8c84fc47b3ee9060bbed58ab0daf7177124b7f2f20d2fa518ae494d",
+      "publicSha256": "d2115218a8c84fc47b3ee9060bbed58ab0daf7177124b7f2f20d2fa518ae494d",
+      "match": true
+    },
+    {
+      "path": "/assets/AccountPages-o0TTOLQ7.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "0388797929d417c9343b1d8595dd0316b3f647903ee20d98e34318896549a67c",
+      "publicSha256": "0388797929d417c9343b1d8595dd0316b3f647903ee20d98e34318896549a67c",
+      "match": true
+    },
+    {
+      "path": "/assets/Chat-Cs2o32vX.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "6f6a7fb8802debf02e2c7c8a451a89720eb54203aa227b2a89b13b3db77a2157",
+      "publicSha256": "6f6a7fb8802debf02e2c7c8a451a89720eb54203aa227b2a89b13b3db77a2157",
+      "match": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-qFCSwgQU.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "60d7b2352f26400820a831805392cf5858309a11bf5e1263fc52ecc5a0886caa",
+      "publicSha256": "60d7b2352f26400820a831805392cf5858309a11bf5e1263fc52ecc5a0886caa",
+      "match": true
+    },
+    {
+      "path": "/assets/ConnectionState-23mwsXA6.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "55bb5ec4eae1dba39edff43ce794166cf4badfa2b10f2a79e23b5dad5f8339b0",
+      "publicSha256": "55bb5ec4eae1dba39edff43ce794166cf4badfa2b10f2a79e23b5dad5f8339b0",
+      "match": true
+    },
+    {
+      "path": "/assets/Reading-zh-fVbZA.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "979f8fd76fc44aaa0387feb920bc27acb2644699c841b998fde9e677e7028325",
+      "publicSha256": "979f8fd76fc44aaa0387feb920bc27acb2644699c841b998fde9e677e7028325",
+      "match": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-AFwO4Y7v.css",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "5c725bc14f148bf4d43ae735ccc0db5cac70003bfb797b566c3f9ab4e49f19d0",
+      "publicSha256": "5c725bc14f148bf4d43ae735ccc0db5cac70003bfb797b566c3f9ab4e49f19d0",
+      "match": true
+    },
+    {
+      "path": "/assets/index-Cnf0ZR2K.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "e3635cbab0c60d97e9a138025df5fecb5d73b5ca44dfd7243e13c911865040d2",
+      "publicSha256": "e3635cbab0c60d97e9a138025df5fecb5d73b5ca44dfd7243e13c911865040d2",
+      "match": true
+    },
+    {
+      "path": "/assets/pagination-D_c-BXyE.js",
+      "status": 200,
+      "redirectedTo": null,
+      "localSha256": "4c21c56fa1e0d7f90960ed2f8c64fb90e1a3e8b5b7cac0c9a82bf115edfbcf8a",
+      "publicSha256": "4c21c56fa1e0d7f90960ed2f8c64fb90e1a3e8b5b7cac0c9a82bf115edfbcf8a",
+      "match": true
+    }
+  ],
+  "views": [
+    {
+      "route": "/",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/tailwind-public/landing-360.png"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "width": 360,
+      "scrollWidth": 360,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/tailwind-public/privacy-360.png"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/tailwind-public/landing-1440.png"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "csp": [],
+      "errors": [],
+      "screenshot": "tests/ui/artifacts/tailwind-public/privacy-1440.png"
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Guest render and public byte equality only; no signup, challenge, session, Edge or model calls.",
+    "Local before/after visual and generated-utility review is recorded separately in frontend-tailwind-source-scope.json."
+  ]
+}

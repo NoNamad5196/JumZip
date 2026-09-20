@@ -1,0 +1,77 @@
+{
+  "dateUTC": "2026-09-20",
+  "dailyResetObservedAfter": "2026-09-20T00:00:23Z",
+  "resetEvidence": "Fresh Cloudflare account usage UI: Daily usage (resets at 00:00 UTC) - Neurons used today: 0/10k. The separate last-24-hours chart still displayed 9.57k.",
+  "priorDailyDisplay": "9.57k/10k",
+  "dailyFreeAllowance": 10000,
+  "paidUpgrade": false,
+  "diagnostics": [
+    {
+      "scope": "Persona-v8 micro8",
+      "cap": 600,
+      "actualHttpAttempts": 10,
+      "neuronsAccountedFromTokenUsage": 429.522477,
+      "validatedReplies": 4,
+      "invalidAfterRepair": 3,
+      "notSent": 1,
+      "completed": false,
+      "stopReason": "LOCAL_BUDGET_OR_ATTEMPT_CAP",
+      "lastRequestReservation": 177.047225,
+      "requiredAccountedPlusReservation": 606.569702,
+      "limits": "Last entry LLM_RATE_LIMITED is the local pre-send guard, not an upstream429. Historical manifest.pendingIds is empty because the blocked entry was recorded; requests11/attempts10 prove one case was not sent. The manifest remains unmodified."
+    },
+    {
+      "scope": "Intent-v3 initial18-final600",
+      "cap": 600,
+      "actualHttpAttempts": 18,
+      "neuronsAccountedFromTokenUsage": 283.45738,
+      "validatedClassifications": 18,
+      "completed": true,
+      "stopReason": null,
+      "limits": "Structural validity does not establish recommendation or slot semantics; independent review is separate."
+    },
+    {
+      "scope": "Persona-v9 micro8",
+      "cap": 800,
+      "actualHttpAttempts": 10,
+      "neuronsAccountedFromTokenUsage": 444.468081,
+      "validatedReplies": 7,
+      "invalidAfterRepair": 1,
+      "notSent": 0,
+      "completed": true,
+      "stopReason": null,
+      "sourceFrozen": true,
+      "accepted": false,
+      "limits": "One noncontiguous evidence span still failed both initial and repair validation. All eight cases were attempted; completed execution does not imply acceptance."
+    },
+    {
+      "scope": "Intent-v4 initial26-final800-reviewed",
+      "cap": 800,
+      "actualHttpAttempts": 28,
+      "neuronsAccountedFromTokenUsage": 490.27763,
+      "validatedClassifications": 24,
+      "invalidAfterRepair": 2,
+      "completed": true,
+      "stopReason": null,
+      "sourceFrozen": true,
+      "accepted": false,
+      "limits": "Two valid classifications wrongly suppress career recommendations as high stakes; two invalid initial outputs fail repair after the model classifies the repair instruction. Direct semantic review remains distinct from structural validity."
+    }
+  ],
+  "diagnosticAccountedTotal": 1647.725568,
+  "subsequentAccountWideUIObservation": {
+    "scope": "After v8/v3, before v9/v4",
+    "observedAfter": "2026-09-20T00:15:05Z",
+    "display": "Daily usage (resets at 00:00 UTC) - Neurons used today: 712.32/10k",
+    "last24HourDisplay": "10.29k",
+    "remainingFromDisplayedDailyValue": 9287.68,
+    "limits": "Fresh page reload and visible UI reading. Account-wide delayed usage is distinct from runner token-derived accounting and the rolling24h chart."
+  },
+  "full84RunStarted": false,
+  "productionProviderSettingsChanged": false,
+  "notes": [
+    "Local caps reserve bytes-as-input-tokens plus maximum output before every request and use response token usage afterwards; unobserved usage retains its reservation.",
+    "Token-derived accounted cost and delayed account-wide UI usage are different observations. Other activity on the shared account is not controlled by these runners.",
+    "The separate hosted Saju focus smoke was blocked by automatic approval review before launch and is waiting for the user's exact scope approval. No account, record or model request was made by that attempted invocation."
+  ]
+}

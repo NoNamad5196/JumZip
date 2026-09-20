@@ -1,0 +1,833 @@
+{
+  "reviewVersion": "JumZipIntentV3IndependentReview-v1",
+  "reviewedAt": "2026-09-20T00:06:10.827Z",
+  "reviewer": "/root/repo_audit",
+  "reviewerKind": "AI_SUBAGENT",
+  "independence": "Separate from execution and Main review; this reviewer previously implemented Intent-v3 and its evaluation corpus. Not an independent human review.",
+  "status": "REVIEWED_WITH_ONE_TOOL_ROUTING_FAILURE",
+  "scope": "18 synthetic Intent-v3 Gemma4 requests; not full Persona, hosted runtime or public acceptance.",
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "intentVersion": "JumZipIntent-v3",
+  "corpusVersion": "JumZipIntentV3Eval-v1",
+  "selectionSha256": "cdc4e6e3b04c4a09a4783bb1b34628951c50e52a6fa1f0bba91ddcaaebd7874a",
+  "originalArtifacts": {
+    "results.json": "11b62cebec721f42d7137f10ecb2015388b92670cefbab6e967f2832e332e4f3",
+    "provider-attempts.jsonl": "bec8e5c082b1320e0e62657a9b30827c6aeb0eb266fc20cad005eae0a11b58e0",
+    "manifest.json": "50d0d366252949bb2d9eb2c042a31d602a20d94fcd95fcb814d1a07fd4874c8b",
+    "selection.json": "7aeb8f0ceb400ff4eccc256b8138bbd1eb99b1f2b41dac7be17fa81a6b81b266",
+    "preflight.json": "d3d976c3419e4bc362e0b21644de3583c63183d16c9a3782d7e1c5da70e054af",
+    "review-template.json": "2477a43bdc0b7def3ccaaaf577ee341b68e9dfc9120ddf12fb8b26c1842a8f4b"
+  },
+  "sourceFrozenAtRun": true,
+  "currentSourceHashDifferences": [],
+  "runComplete": true,
+  "stopReason": null,
+  "pendingIds": [],
+  "summary": {
+    "cases": 18,
+    "originalV5Cases": 8,
+    "matrixExtensionCases": 10,
+    "httpRequests": 18,
+    "http200": 18,
+    "finishReasonStop": 18,
+    "repairs": 0,
+    "validated": 18,
+    "validNone": 6,
+    "failedNull": 0,
+    "toolModeMatched": 17,
+    "automaticStructuralExpectedMatched": 16,
+    "manualPass": 15,
+    "manualNonblockingMismatch": 2,
+    "manualToolRoutingFailure": 1,
+    "originalV5ToolAndSlotCasesPassed": 8,
+    "completionTokenRange": [
+      81,
+      125
+    ]
+  },
+  "usage": {
+    "runnerAccountedNeurons": 283.4573799999999,
+    "rawProviderReportedNeurons": 283.45453453063965,
+    "allAttemptsReportedTokenUsage": true,
+    "accountingNote": "Runner uses reported prompt/completion tokens times rounded published per-million rates. Raw provider usage.neurons is recorded separately; tiny rounding difference is not silently merged.",
+    "ceilingNeurons": 600,
+    "actualAccountRemaining": "NOT_VERIFIED_BY_THIS_REVIEW",
+    "quotaRejectionObserved": false
+  },
+  "findings": [
+    {
+      "id": "I3-ROUTE-01",
+      "caseId": "v3-relationship-resolved-alias-period",
+      "impact": "WRONG_TOOL_AND_UNNECESSARY_BIRTH_DATA_SLOT",
+      "expected": {
+        "intent": "relationship_flow",
+        "tools": [
+          "TAROT:RELATIONSHIP_3"
+        ],
+        "missingSlots": []
+      },
+      "actual": {
+        "intent": "monthly_flow",
+        "tools": [
+          "SAJU:MONTHLY"
+        ],
+        "missingSlots": [
+          "ownBirthData"
+        ]
+      },
+      "mechanism": "Semantically wrong but schema-valid topic classification; no repair is triggered."
+    },
+    {
+      "id": "I3-SLOT-02",
+      "caseId": "v3-explicit-saju-daily",
+      "impact": "NO_CURRENT_ROUTE_EFFECT",
+      "field": "recentSituationPresent",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "id": "I3-LABEL-03",
+      "caseId": "v3-general-concern",
+      "impact": "NO_CURRENT_PUBLIC_RECOMMENDATION_EFFECT",
+      "expectedIntent": "general_concern",
+      "actualIntent": "small_talk"
+    }
+  ],
+  "cases": [
+    {
+      "id": "v5-intent-pure-recall-no-profile",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "1013ee5c065fc5540e7ce100e6dbc7a98ea924526cebab2f73e62c07ae6d0eef",
+      "providerAttemptSha256": "ff27cd383d2d37d4d6e9fd0ade7d9d5a49ed55707c83bbbbf237419d823e2d85",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "순수 취미 회상을 RECALL/small_talk로 유지하고 검증 성공 후 NONE. 출생자료 없음이 사주 제안으로 바뀌지 않았다."
+      ]
+    },
+    {
+      "id": "v5-intent-pure-recall-has-profile",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "82446d9fb7c4d3eed16fb85f6def4142494f42eb68368fbb712e943f269e99b4",
+      "providerAttemptSha256": "a421d50a3506a23417f8cdabac5ac4a340953ab3a4bbf264a4968b0b1c90ad3c",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "같은 회상에서 hasOwnBirthData=true여도 NONE. 프로필 존재를 상담 의도로 승격하지 않았다."
+      ]
+    },
+    {
+      "id": "v5-intent-memory-control",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "9838c188133438ac85bf40408a22aff6c71160fc1660220358e6cd70957198a6",
+      "providerAttemptSha256": "92744323d9b2c39cfc4c750ad47efca3d82033efc588fd93f2f368893cb072f2",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "기억 관리 요청은 MEMORY_CONTROL/NONE. 최근 assistant의 사주 제안은 현재 사용자의 선택이 아니다. 실제 삭제 실행을 주장하지 않는다."
+      ]
+    },
+    {
+      "id": "v5-intent-current-preference",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "2c54ddcc956abadd8486d63fe077355157c29a081fb51659c1db6219614fd1e9",
+      "providerAttemptSha256": "286cce692eea833e1f8c5b30876494cb2e553d7618de09b3e9388a513f5cb081",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "현재 취향 공유를 PREFERENCE_SHARING/NONE으로 유지. recentSituation=true는 현재 취미 설명, period=true는 요즘이라는 일반 시점의 근거가 있으나 구체적인 미래 상담 기간이 확보됐다는 증거로 확대하지 않는다."
+      ]
+    },
+    {
+      "id": "v5-intent-innate-character",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "4fbbc35065667dde03dc318285bd90e6bda185cc9ba836af2940d08155ad23d2",
+      "providerAttemptSha256": "3f4f06cb1b5d0081eb2c8b0a0923f40153792946a59ecfca91fbc50b232436b9",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "natal_character",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "NATAL",
+            "reason": "타고난 성향은 원국의 구조를 바탕으로 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "타고난 기질 자체를 묻는 의미상 요청이므로 natal_character→SAJU/NATAL. ownBirthData 부족을 보존한다."
+      ]
+    },
+    {
+      "id": "v5-intent-recall-explicit-tarot",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "6bc8d5f89de00a1f597aaccf925a113342c33a311e08c700d54f4e991a237163",
+      "providerAttemptSha256": "ccf55c08255fcb6c75139d58bef9a51bb305f99f25890c727ce694ae70a17472",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "relationship_flow",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "단기 관계 흐름과 다음 행동을 함께 살펴봐요.",
+            "missingSlots": [
+              "targetPerson"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "회상과 긍정 Tarot 요청 중 새 상담 요청을 보존. 이번 주 모임은 상황과 기간의 근거이며 별칭은 없다. 먼저 인사할지 한 대안만 있어 choicesEvidence=[]가 맞다. RELATIONSHIP_3+targetPerson은 원본의 허용 모드와 슬롯에 맞는다."
+      ]
+    },
+    {
+      "id": "v5-intent-target-remembers",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "a87e6c4867695d81e1e3dc70513276fb39804a4848e65301e0851d7c419c15ca",
+      "providerAttemptSha256": "01df96532c11d7b9a40d0ab75d232a7712955407af91fd6ad217ae58fb94de8e",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "target_feelings",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "RELATIONSHIP_3",
+            "reason": "지금의 감정과 관계 태도는 관계 타로 세 장으로 살펴볼 수 있어요.",
+            "missingSlots": [
+              "targetPerson",
+              "recentSituation"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "그 사람이 나를 기억하는지는 자기 기억 회상이 아니라 target_feelings. 그 사람이라는 해소되지 않은 대명사를 별칭으로 승격하지 않고 targetPerson/recentSituation을 모두 요청한다."
+      ]
+    },
+    {
+      "id": "v5-intent-forget-and-tarot",
+      "origin": "ORIGINAL_V5",
+      "outcome": "PASS",
+      "inputSha256": "f84c21cde05857482cfb7b4055cf7e1c99ceee5f540104e72f887aa3a06d91c1",
+      "providerAttemptSha256": "ccf71d195d4a606b05b4de30778e44c093a935a91bce06c9eb7d5531719750bd",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "daily_fortune",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DAILY",
+            "reason": "오늘 필요한 조언을 한 장으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "기억 거부와 긍정 Tarot 오늘 운세 요청을 분리해 DAILY 추천을 유지. 기간 근거 오늘이 있으며 저장/삭제 실행 주장은 없다."
+      ]
+    },
+    {
+      "id": "v3-yearly-missing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "5f9bfea0ff867e5b618eecc4ddae9838260240f42fc67fe5c0c72fa6b9e4fcb6",
+      "providerAttemptSha256": "3f6bbd73ec4435de51f3dfe4806b9223491d994791544152859a5b5be3337f05",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "yearly_flow",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "SEWOON",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "올해 전체 흐름은 yearly_flow→SAJU/SEWOON. 본인 출생자료 부족을 유지한다."
+      ]
+    },
+    {
+      "id": "v3-monthly-existing-birth",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "802c32b8b036600e59c614bb3fe39e0f20b04b8a18981856de20ba1a37e92beb",
+      "providerAttemptSha256": "39f813fa5356c3011218f23967447568cd79e0010fb855451b982086f7af97e8",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "monthly_flow",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "MONTHLY",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "다음 달의 일반 흐름은 monthly_flow→SAJU/MONTHLY. 본인 자료 true이므로 추가 출생 슬롯이 없다."
+      ]
+    },
+    {
+      "id": "v3-long-compatibility-missing-partner",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "f4bf7df8deafac90b2e1851040acc9be9e892c0d06898f02b6b1ebfde1f1ded1",
+      "providerAttemptSha256": "e6efefe4adaf6d5f8b5ac1eb368c854ad7a079eb05dec7e6d2ddd8272c96f1d0",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "long_term_compatibility",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "SAJU",
+            "reason": "장기 궁합은 두 사람의 출생정보를 바탕으로 살펴봐요.",
+            "missingSlots": [
+              "partnerBirthData"
+            ]
+          },
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "TAROT",
+            "reason": "출생정보 없이 관계의 태도와 흐름을 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "ALIAS",
+        "source": -1,
+        "quote": "달새"
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "달새는 현재 사용자 원문의 별칭이고 삼 년째 만나고 있다는 실제 관계 상황. 장기 궁합은 SAJU 궁합+partnerBirthData, 대안 Tarot 궁합은 확보된 별칭/상황 덕분에 부족슬롯 없음. period=true는 관계 지속기간 근거이며 미래 예측기간의 확인으로 확대하지 않는다."
+      ]
+    },
+    {
+      "id": "v3-long-compatibility-complete-birth",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "670f9145ab89e814f00bee26f3f649dcba88571747d5c77c72d109c79d2b3238",
+      "providerAttemptSha256": "37619bebcec3a2d981881c232512e78c88deda7edcbb4e92dda5682d3918176d",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "long_term_compatibility",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "COMPATIBILITY",
+            "mode": "SAJU",
+            "reason": "장기 궁합은 두 사람의 출생정보를 바탕으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "양쪽 birth availability가 true여서 SAJU 궁합만 제안. 우리의는 별칭 근거가 아니므로 UNRESOLVED가 맞으며 이 행렬은 별칭을 필수로 요구하지 않는다."
+      ]
+    },
+    {
+      "id": "v3-decision-missing-context",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "809032d6b9f18f256fe181ab33f538a72adeaf7c184d375cca7ad0f6910257b9",
+      "providerAttemptSha256": "8977c84aec9707f8d499fa6b4e53043faa69dfd8cea160e7c86955a0682c4f65",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "career_decision",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DECISION_3",
+            "reason": "선택을 밀어주는 힘과 현실적인 위험을 세 장으로 살펴봐요.",
+            "missingSlots": [
+              "choices",
+              "recentSituation"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "진로 선택 요청만 있고 실제 대안/현재 상황은 없다. DECISION_3를 유지하며 choices와 recentSituation 모두 부족으로 남긴다."
+      ]
+    },
+    {
+      "id": "v3-decision-two-real-choices",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "9575fa3164102a296d4afde8bf5138da2f652b28e9bc979564e196748946d173",
+      "providerAttemptSha256": "69072727302ad3c3e2c7812afef8c2a825e89176b19a4c1efe8e9200b4133ac0",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "career_decision",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "TAROT",
+            "mode": "DECISION_3",
+            "reason": "선택을 밀어주는 힘과 현실적인 위험을 세 장으로 살펴봐요.",
+            "missingSlots": []
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [
+        {
+          "source": -1,
+          "quote": "직장을 유지할지"
+        },
+        {
+          "source": -1,
+          "quote": "대학원에 진학할지"
+        }
+      ],
+      "notes": [
+        "직장을 유지할지와 대학원에 진학할지는 source=-1에 정확히 있는 비중첩의 서로 다른 실제 대안. 계약 갱신을 앞둔 현재 상황도 있으므로 DECISION_3 추가슬롯 없음이 맞다."
+      ]
+    },
+    {
+      "id": "v3-relationship-resolved-alias-period",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "FAIL_TOOL_ROUTING",
+      "inputSha256": "4e27a8c9b04367a3bddcfd6ebfb7207147f1df24bb6edd10024f754aebd40817",
+      "providerAttemptSha256": "b7402846d136e6150d3ee8d99717f34bc2f851384bc4a31eca70303f6c802f5b",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": false,
+      "toolAndModeCorrect": false,
+      "missingSlotsCorrect": false,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "monthly_flow",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "MONTHLY",
+            "reason": "절기와 원국을 바탕으로 장기적인 흐름을 살펴봐요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "ALIAS",
+        "source": -1,
+        "quote": "달새"
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "달새와 다음 달 관계라는 특정 단기 관계 질문을 monthly_flow로 분류했다. 달새/다음 달 근거는 맞지만 기간 수식어가 관계 주제를 덮어 SAJU/MONTHLY와 불필요한 ownBirthData 요청을 만든다. 동결 기대 relationship_flow→TAROT/RELATIONSHIP_3, missingSlots=[]가 원본 단기 관계 행렬과 맞는다."
+      ]
+    },
+    {
+      "id": "v3-explicit-saju-daily",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "NONBLOCKING_SLOT_MISMATCH",
+      "inputSha256": "87edb03827a11ce3f1f0afa5fdf20d8218cf3eeed64e55c04870dc6efaa4b5b8",
+      "providerAttemptSha256": "d8953b7f566e9e2c6db9eb6e5329e1e4361f112da9b987e4bd0062bddc6972c7",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": false,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_RECOMMENDATION",
+      "actualIntent": "daily_fortune",
+      "actualRecommendation": {
+        "recommendedTools": [
+          {
+            "tool": "SAJU",
+            "mode": "DAILY",
+            "reason": "직접 선택한 사주로 이어가요.",
+            "missingSlots": [
+              "ownBirthData"
+            ]
+          }
+        ]
+      },
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "명시 SAJU 우선과 DAILY+ownBirthData는 맞다. 그러나 오늘 운세를 보고 싶다는 요청 외 구체적인 현재 상황이 없는데 recentSituationPresent=true로 과대 추출했다. 현재 daily 행렬에서는 사용되지 않아 추천 영향은 없다."
+      ]
+    },
+    {
+      "id": "v3-general-concern",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "NONBLOCKING_INTENT_MISMATCH",
+      "inputSha256": "401198caed63854782fdc6dcff0c05c33f0f41eff086066ff235e0b324a7f44f",
+      "providerAttemptSha256": "691ffa5f6f14f1e975777f89a4b2287d04a79a453b944fa6cfe7aff43892025a",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": false,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "GENERAL_CHAT 및 검증 성공 NONE은 맞다. 마음이 복잡하다는 고민은 동결 기대 general_concern인데 small_talk로 분류했다. 도구 실행/추천 변화는 없지만 내부 분류 불일치를 정상 일치로 고치지 않는다. 요즘은 상담의 구체 기간이 아니므로 period=false만으로 추가 오류로 세지 않는다."
+      ]
+    },
+    {
+      "id": "v3-small-talk",
+      "origin": "MATRIX_EXTENSION",
+      "outcome": "PASS",
+      "inputSha256": "e860401d0b9b2caf58c50c476fc2ac0c54bb7b92b1eb682bac242bf6529e3656",
+      "providerAttemptSha256": "8e5c058b8cde6f9e32ab61bd43b1b22c042134566d3ab50acba1fd212d9cbae7",
+      "rawMatchesValidated": true,
+      "requestPurposeCorrect": true,
+      "intentClassificationCorrect": true,
+      "toolAndModeCorrect": true,
+      "missingSlotsCorrect": true,
+      "choicesSemanticsCorrect": true,
+      "aliasOwnershipAndMeaningCorrect": true,
+      "sourceQuotesExact": true,
+      "recentSituationCorrect": true,
+      "periodAssessment": "CONTEXTUAL_NONCONSULTATION_TIME_NOT_AUTOMATICALLY_A_MISSING_SLOT",
+      "normalNoneVsFailureCorrect": true,
+      "httpAttempts": 1,
+      "repairs": 0,
+      "disposition": "VALID_NONE",
+      "actualIntent": "small_talk",
+      "actualRecommendation": null,
+      "aliasEvidence": {
+        "state": "UNRESOLVED",
+        "source": null,
+        "quote": null
+      },
+      "choicesEvidence": [],
+      "notes": [
+        "가볍게 수다라는 small_talk/GENERAL_CHAT/NONE이 맞다. 오늘은은 일상 인사 시점이며 점술 상담 기간을 확보한 것으로 볼 필요가 없다."
+      ]
+    }
+  ],
+  "limitations": [
+    "The original 8 inputs/tool-mode expectations and all raw/validated artifacts were preserved; extension expectations were not rewritten to match output.",
+    "18 single samples are not statistical reliability or repeated-run evidence.",
+    "All 18 first responses were schema-valid; actual repair recovery, malformed JSON, timeout, quota and truncation behavior were not exercised.",
+    "No positive recent-user alias/choices or filtered-index live cases, assistant-invented alias rejection, or unrelated-but-literal choice evidence challenge was exercised.",
+    "All highStakes values are false; high-stakes positive/negative boundaries are outside this live set.",
+    "Source-valid quotes do not by themselves prove semantic alternatives or alias identity; this review assessed the actual case text.",
+    "This is a direct provider/classifier run, not hosted Edge/DB/recommendation persistence, actual memory deletion, public signup or Persona answer quality evidence.",
+    "Remaining matrix combinations include target_feelings with full context, relationship_flow missing period, default non-explicit daily, alternate birth-availability combinations and explicit tool overrides/negations.",
+    "Current-situation and period booleans have no required evidence object; minor unused-field errors can pass runtime schema."
+  ],
+  "changes": {
+    "runtime": 0,
+    "corpus": 0,
+    "originalArtifacts": 0,
+    "modelCallsDuringReview": 0
+  },
+  "conclusion": "Do not record complete Intent acceptance. Original regression cases passed; retain and address the new relationship-period topic error, and keep the two lower-impact mismatches visible."
+}

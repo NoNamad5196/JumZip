@@ -1,0 +1,592 @@
+{
+  "partialScope": {
+    "selectedCount": 8,
+    "selectedFromFocused24": 7,
+    "additionalUnchangedOriginalCoreIds": [
+      "09-decision-three:SANI"
+    ],
+    "originalFocusedCount": 24,
+    "executionOrder": [
+      "v5-ab-swapped-contrast:SANI",
+      "10-retry-same-draw:BOMI",
+      "s03-correlated-boundary:ARANG",
+      "10-retry-same-draw:SANI",
+      "10-retry-same-draw:ARANG",
+      "v5-hermit-upright-contrast:BOMI",
+      "v5-reversed-owner-contrast:SANI",
+      "09-decision-three:SANI"
+    ],
+    "orderReason": "The large A/B payload runs first; the known Tarot failure and Saju regression follow. Existing inputs, expectations and rubric remain unchanged.",
+    "unselectedIds": [
+      "v5-intent-pure-recall-no-profile",
+      "s03-correlated-boundary:BOMI",
+      "s03-correlated-boundary:SANI",
+      "s02-unknown-hour:BOMI",
+      "s05-compatibility-evidence:ARANG",
+      "s06-compatibility-uncertain:ARANG",
+      "s07-no-invented-score:ARANG",
+      "v5-legacy-provenance:ARANG",
+      "v5-pure-recall:BOMI",
+      "v5-recall-explicit-tarot:ARANG",
+      "v5-intent-pure-recall-has-profile",
+      "v5-intent-memory-control",
+      "v5-intent-current-preference",
+      "v5-intent-innate-character",
+      "v5-intent-recall-explicit-tarot",
+      "v5-intent-target-remembers",
+      "v5-intent-forget-and-tarot"
+    ],
+    "inputExpectedRubricUnchanged": true,
+    "parentAuthorization": "Main authorized v9 implementation and zero-network micro8 preparation with an 800 proposed hard cap. Actual execution still requires fresh usage confirmation and a separate live GO; the cap may stop early."
+  },
+  "schemaVersion": 1,
+  "mode": "LIVE",
+  "startedAt": "2026-09-20T00:30:50.994Z",
+  "completedAt": "2026-09-20T00:31:41.474Z",
+  "completed": true,
+  "stopReason": null,
+  "model": "@cf/google/gemma-4-26b-a4b-it",
+  "promptVersion": "JumZipPersona-v9",
+  "intentPromptVersion": "JumZipIntent-v4",
+  "corpusVersion": "JumZipV9Micro8Selection-v1",
+  "sourceCorpusVersions": [
+    "JumZipV5Focused-v1",
+    "JumZipPersonaBenchmark-v1"
+  ],
+  "sourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "a5a35e1144571472a163247087be5dc9e134ed7f1c4a47c51c1015af533d9983",
+      "canonicalLF": "a5a35e1144571472a163247087be5dc9e134ed7f1c4a47c51c1015af533d9983"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "b1b1edc89be8e8705823446214dfd044119ecad63e71e88fc343b322fb181cf9",
+      "canonicalLF": "b1b1edc89be8e8705823446214dfd044119ecad63e71e88fc343b322fb181cf9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "8e8b2d6a0f28f74681daaa7f08e34dbede0524b2f13e935bb2f5af2290b0d1b7",
+      "canonicalLF": "8e8b2d6a0f28f74681daaa7f08e34dbede0524b2f13e935bb2f5af2290b0d1b7"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "f8e1893e66f02129665ebcf16fc08b14d4c5581a3d7a2f063f5fbc52b4bd2d16",
+      "canonicalLF": "f8e1893e66f02129665ebcf16fc08b14d4c5581a3d7a2f063f5fbc52b4bd2d16"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/v5-focused-corpus.mts": {
+      "raw": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b",
+      "canonicalLF": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+    },
+    "tests/persona/v9-micro8-runner.mts": {
+      "raw": "44e81a45a3f4f8e9300d3c1af48c3c5370c5c269362fd19146fe548a94153fd3",
+      "canonicalLF": "0cbe87be74521e914917875b502f01be532198f18a94ce0b77454c357fd3bc82"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  },
+  "afterSourceHashes": {
+    "supabase/functions/_shared/domain/fortune-timing.ts": {
+      "raw": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "canonicalLF": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0"
+    },
+    "supabase/functions/_shared/domain/full-saju.ts": {
+      "raw": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+      "canonicalLF": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d"
+    },
+    "supabase/functions/_shared/domain/index.ts": {
+      "raw": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "canonicalLF": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef"
+    },
+    "supabase/functions/_shared/domain/router.ts": {
+      "raw": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "canonicalLF": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845"
+    },
+    "supabase/functions/_shared/domain/rules/balance.ts": {
+      "raw": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "canonicalLF": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7"
+    },
+    "supabase/functions/_shared/domain/rules/constants.ts": {
+      "raw": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "canonicalLF": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254"
+    },
+    "supabase/functions/_shared/domain/rules/index.ts": {
+      "raw": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "canonicalLF": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1"
+    },
+    "supabase/functions/_shared/domain/rules/natal.ts": {
+      "raw": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "canonicalLF": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff"
+    },
+    "supabase/functions/_shared/domain/rules/rational.ts": {
+      "raw": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "canonicalLF": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63"
+    },
+    "supabase/functions/_shared/domain/rules/relations.ts": {
+      "raw": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "canonicalLF": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a"
+    },
+    "supabase/functions/_shared/domain/rules/shinsal.ts": {
+      "raw": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "canonicalLF": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a"
+    },
+    "supabase/functions/_shared/domain/rules/strength.ts": {
+      "raw": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "canonicalLF": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586"
+    },
+    "supabase/functions/_shared/domain/rules/types.ts": {
+      "raw": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "canonicalLF": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020"
+    },
+    "supabase/functions/_shared/domain/saju-compatibility.ts": {
+      "raw": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+      "canonicalLF": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f"
+    },
+    "supabase/functions/_shared/domain/saju.ts": {
+      "raw": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "canonicalLF": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2"
+    },
+    "supabase/functions/_shared/domain/tarot.ts": {
+      "raw": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "canonicalLF": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13"
+    },
+    "supabase/functions/_shared/llm/chat-contract.ts": {
+      "raw": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+      "canonicalLF": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78"
+    },
+    "supabase/functions/_shared/llm/index.ts": {
+      "raw": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "canonicalLF": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b"
+    },
+    "supabase/functions/_shared/llm/intent.ts": {
+      "raw": "a5a35e1144571472a163247087be5dc9e134ed7f1c4a47c51c1015af533d9983",
+      "canonicalLF": "a5a35e1144571472a163247087be5dc9e134ed7f1c4a47c51c1015af533d9983"
+    },
+    "supabase/functions/_shared/llm/provider.ts": {
+      "raw": "b1b1edc89be8e8705823446214dfd044119ecad63e71e88fc343b322fb181cf9",
+      "canonicalLF": "b1b1edc89be8e8705823446214dfd044119ecad63e71e88fc343b322fb181cf9"
+    },
+    "supabase/functions/_shared/llm/reply.ts": {
+      "raw": "8e8b2d6a0f28f74681daaa7f08e34dbede0524b2f13e935bb2f5af2290b0d1b7",
+      "canonicalLF": "8e8b2d6a0f28f74681daaa7f08e34dbede0524b2f13e935bb2f5af2290b0d1b7"
+    },
+    "supabase/functions/_shared/llm/validator.ts": {
+      "raw": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+      "canonicalLF": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555"
+    },
+    "supabase/functions/_shared/persona/benchmark.ts": {
+      "raw": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "canonicalLF": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89"
+    },
+    "supabase/functions/_shared/persona/config.ts": {
+      "raw": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "canonicalLF": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791"
+    },
+    "supabase/functions/_shared/persona/context.ts": {
+      "raw": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "canonicalLF": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce"
+    },
+    "supabase/functions/_shared/persona/index.ts": {
+      "raw": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "canonicalLF": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3"
+    },
+    "supabase/functions/_shared/persona/prompt.ts": {
+      "raw": "f8e1893e66f02129665ebcf16fc08b14d4c5581a3d7a2f063f5fbc52b4bd2d16",
+      "canonicalLF": "f8e1893e66f02129665ebcf16fc08b14d4c5581a3d7a2f063f5fbc52b4bd2d16"
+    },
+    "supabase/functions/_shared/persona/tool-facts.ts": {
+      "raw": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde",
+      "canonicalLF": "9e8ae97e16e1993332ec58a33985bce7656f639da97ad30763844d24cd934fde"
+    },
+    "tests/persona/saju-benchmark-corpus.ts": {
+      "raw": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76",
+      "canonicalLF": "242ae9bf615aa127ad427175d05d614047a49bcc46db057809baf4ea3c884c76"
+    },
+    "tests/persona/v5-focused-corpus.mts": {
+      "raw": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b",
+      "canonicalLF": "2e8e292d66b1027aae70a08925d2b9b9e2b4a5f3dfb5b4a1794fa90b9dbd397b"
+    },
+    "tests/persona/v9-micro8-runner.mts": {
+      "raw": "44e81a45a3f4f8e9300d3c1af48c3c5370c5c269362fd19146fe548a94153fd3",
+      "canonicalLF": "0cbe87be74521e914917875b502f01be532198f18a94ce0b77454c357fd3bc82"
+    },
+    "tests/persona/v9-run-accounting.ts": {
+      "raw": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006",
+      "canonicalLF": "b23479315b470eae7e1a1627e2a94b41039775641976fc4f7b805a4663c88006"
+    }
+  },
+  "sourceFrozen": true,
+  "changedSources": [],
+  "sourceFreezeScope": "reply+intent+domain+corpus; background persona/memory.ts excluded",
+  "rates": {
+    "inputNeuronsPerMillion": 9091,
+    "outputNeuronsPerMillion": 27273
+  },
+  "ceilingNeurons": 800,
+  "maximumAttempts": 16,
+  "neuronsAccounted": 444.46808100000004,
+  "attempts": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "requestSha256": "1b1262ef022a0d4831df3a95b9282f9109a4ed98c3f813cef8c73e350a18ac13",
+      "reserveNeurons": 205.802058,
+      "neurons": 44.782266,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4689,
+      "completionTokens": 79,
+      "latencyMs": 2047
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "requestSha256": "b9e8d7a5af5207a1e51e9bd4703dc1560a77087e7e6f8ad82999d39a4fa6b321",
+      "reserveNeurons": 180.174529,
+      "neurons": 42.682245,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3807,
+      "completionTokens": 296,
+      "latencyMs": 7085
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "requestSha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+      "reserveNeurons": 193.656482,
+      "neurons": 40.827681,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4161,
+      "completionTokens": 110,
+      "latencyMs": 2453
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "requestSha256": "fa3db75f0fc294c373a5ef8329fd45a1f4f6dfbf131e25ac672ec0d79777a7df",
+      "reserveNeurons": 179.0927,
+      "neurons": 42.845883,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3798,
+      "completionTokens": 305,
+      "latencyMs": 8587
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "requestSha256": "4e24d67a18e49fd661365ff8bb2e1a079bc31d544f1feaa3dcd36f17dd1514e8",
+      "reserveNeurons": 180.401804,
+      "neurons": 44.036804,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3818,
+      "completionTokens": 342,
+      "latencyMs": 4909
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "requestSha256": "c01e0c487f4dc53aeb3b7f74b539ccfe5c703dd0f5dd7be46d5dace3833a9654",
+      "reserveNeurons": 207.047525,
+      "neurons": 50.755053,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4539,
+      "completionTokens": 348,
+      "latencyMs": 7483
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "requestSha256": "e078ae25098ae0dd4f2a70ab6a808aa545f415f9dc1418366bc61d16a1312a24",
+      "reserveNeurons": 179.81998,
+      "neurons": 42.418606,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3790,
+      "completionTokens": 292,
+      "latencyMs": 3522
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "requestSha256": "239402eb7a553179d7a7a61ac6fc2080f8a2bf65548acb0d31bd4e8a1dd3f98a",
+      "reserveNeurons": 179.338157,
+      "neurons": 43.227705,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3801,
+      "completionTokens": 318,
+      "latencyMs": 3728
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "requestSha256": "94427334eab6987f357b820416af82dc88934f9a1bd4e96d981ad4734f354ff2",
+      "reserveNeurons": 205.992969,
+      "neurons": 49.809589,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 4525,
+      "completionTokens": 318,
+      "latencyMs": 6207
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "phase": "REPLY",
+      "requestSha256": "1ef8dc05a3ff5011fad464f7d940cf9bc9a1c6e36c153bd2206c774d77e62924",
+      "reserveNeurons": 179.238156,
+      "neurons": 43.082249,
+      "usageEstimated": false,
+      "status": 200,
+      "promptTokens": 3782,
+      "completionTokens": 319,
+      "latencyMs": 4418
+    }
+  ],
+  "requests": [
+    {
+      "id": "v5-ab-swapped-contrast:SANI",
+      "phase": "REPLY",
+      "responseContract": "DEFAULT",
+      "sha256": "1b1262ef022a0d4831df3a95b9282f9109a4ed98c3f813cef8c73e350a18ac13",
+      "bytes": 19938,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 205.802058,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:BOMI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "b9e8d7a5af5207a1e51e9bd4703dc1560a77087e7e6f8ad82999d39a4fa6b321",
+      "bytes": 17119,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 180.174529,
+      "canaryCount": 0
+    },
+    {
+      "id": "s03-correlated-boundary:ARANG",
+      "phase": "REPLY",
+      "responseContract": "DEFAULT",
+      "sha256": "97c0f3554c9f7214a405d552f09a523485618bfc2b76fcf30a4ed23e781f33bd",
+      "bytes": 18602,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 193.656482,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "fa3db75f0fc294c373a5ef8329fd45a1f4f6dfbf131e25ac672ec0d79777a7df",
+      "bytes": 17000,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.0927,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "4e24d67a18e49fd661365ff8bb2e1a079bc31d544f1feaa3dcd36f17dd1514e8",
+      "bytes": 17144,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 180.401804,
+      "canaryCount": 0
+    },
+    {
+      "id": "10-retry-same-draw:ARANG",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "c01e0c487f4dc53aeb3b7f74b539ccfe5c703dd0f5dd7be46d5dace3833a9654",
+      "bytes": 20075,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 207.047525,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-hermit-upright-contrast:BOMI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "e078ae25098ae0dd4f2a70ab6a808aa545f415f9dc1418366bc61d16a1312a24",
+      "bytes": 17080,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.81998,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "239402eb7a553179d7a7a61ac6fc2080f8a2bf65548acb0d31bd4e8a1dd3f98a",
+      "bytes": 17027,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.338157,
+      "canaryCount": 0
+    },
+    {
+      "id": "v5-reversed-owner-contrast:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "94427334eab6987f357b820416af82dc88934f9a1bd4e96d981ad4734f354ff2",
+      "bytes": 19959,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 205.992969,
+      "canaryCount": 0
+    },
+    {
+      "id": "09-decision-three:SANI",
+      "phase": "REPLY",
+      "responseContract": "TAROT_EVIDENCE_V1",
+      "sha256": "1ef8dc05a3ff5011fad464f7d940cf9bc9a1c6e36c153bd2206c774d77e62924",
+      "bytes": 17016,
+      "maximumOutputTokens": 900,
+      "conservativeReserveNeurons": 179.238156,
+      "canaryCount": 0
+    }
+  ],
+  "thinking": {
+    "enable_thinking": false
+  },
+  "outputTokens": {
+    "reply": 900,
+    "intent": 350
+  },
+  "initialTimeoutMs": {
+    "reply": 60000,
+    "intent": 8000
+  },
+  "repairTimeoutMs": {
+    "reply": 30000,
+    "intent": 3000
+  },
+  "fullAcceptanceEligible": false,
+  "attemptedIds": [
+    "v5-ab-swapped-contrast:SANI",
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "v5-hermit-upright-contrast:BOMI",
+    "v5-reversed-owner-contrast:SANI",
+    "09-decision-three:SANI"
+  ],
+  "completedIds": [
+    "v5-ab-swapped-contrast:SANI",
+    "10-retry-same-draw:BOMI",
+    "s03-correlated-boundary:ARANG",
+    "10-retry-same-draw:SANI",
+    "10-retry-same-draw:ARANG",
+    "v5-hermit-upright-contrast:BOMI",
+    "v5-reversed-owner-contrast:SANI",
+    "09-decision-three:SANI"
+  ],
+  "pendingIds": [],
+  "neverAttemptedIds": [],
+  "notSentRequests": [],
+  "preparedRequestCount": 10,
+  "actualHTTPAttemptCount": 10,
+  "assessment": "NEEDS_DIRECT_REVIEW_NOT_ORIGINAL84_ACCEPTANCE"
+}

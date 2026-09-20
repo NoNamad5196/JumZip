@@ -1,5 +1,5 @@
 import type { LLMMessage } from '../persona/prompt.ts';
-import { getChatResponseDefinition, type ChatResponseContract } from './chat-contract.ts';
+import { getChatResponseDefinition, TAROT_EVIDENCE_SPAN_MAX_LENGTH, type ChatResponseContract } from './chat-contract.ts';
 export { CHAT_RESPONSE_SCHEMA } from './chat-contract.ts';
 
 export type LLMErrorCode = 'LLM_NOT_CONFIGURED' | 'LLM_TIMEOUT' | 'LLM_UNAVAILABLE' | 'LLM_AUTH_FAILED' | 'LLM_RATE_LIMITED' | 'LLM_INVALID_RESPONSE';
@@ -28,6 +28,53 @@ const MAX_RESPONSE_BYTES = 128_000;
 function cancelWithoutWaiting(stream: { cancel: () => Promise<unknown> } | null): void {
   // A hostile/custom stream can return a never-settling cancel promise or throw.
   try { void stream?.cancel().catch(() => {}); } catch { /* Best effort cleanup. */ }
+}
+
+/** Repair diagnostics only: never replace output, invent a quote, or decide validity.
+ * The validator remains authoritative. Paths and fixed reasons avoid echoing data
+ * into the extra feedback; the prior assistant output is already in the repair. */
+function tarotRepairGuidance(output: string, issues: readonly string[]): string {
+  const diagnostics: { path: string; reason: string }[] = [];
+  const add = (path: string, reason: string) => {
+    if (diagnostics.length < 16 && !diagnostics.some(item => item.path === path && item.reason === reason)) diagnostics.push({ path, reason });
+  };
+  let value: unknown;
+  try { value = JSON.parse(output); } catch { add('/', 'JSON_PARSE_FAILED'); }
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    const root = value as Record<string, unknown>;
+    const rows = root.interpretationEvidence;
+    const text = typeof root.text === 'string' ? root.text.trim() : '';
+    if (!Array.isArray(rows)) add('/interpretationEvidence', 'ARRAY_REQUIRED');
+    else {
+      if (rows.length > 3) add('/interpretationEvidence', 'AT_MOST_THREE_ROWS');
+      const seen = new Set<number>();
+      // Diagnostics stay bounded even when a malformed provider emits many rows.
+      for (const [index, row] of rows.slice(0, 12).entries()) {
+        const path = `/interpretationEvidence/${index}`;
+        if (!row || typeof row !== 'object' || Array.isArray(row)) { add(path, 'OBJECT_REQUIRED'); continue; }
+        const record = row as Record<string, unknown>;
+        if (!Number.isInteger(record.positionIndex)) add(`${path}/positionIndex`, 'INTEGER_REQUIRED');
+        else if (seen.has(record.positionIndex as number)) add(`${path}/positionIndex`, 'DUPLICATE_CARD_POSITION');
+        else seen.add(record.positionIndex as number);
+        const indices = record.keywordIndices;
+        if (!Array.isArray(indices) || indices.length < 1 || indices.length > 5 || indices.some(item => !Number.isInteger(item) || item < 0) || new Set(indices).size !== indices.length) add(`${path}/keywordIndices`, 'ONE_TO_FIVE_UNIQUE_NONNEGATIVE_INDICES_REQUIRED');
+        const span = record.textEvidence;
+        if (typeof span !== 'string' || !span.trim() || span.length > TAROT_EVIDENCE_SPAN_MAX_LENGTH) add(`${path}/textEvidence`, 'SHORT_NONEMPTY_STRING_REQUIRED');
+        else if (!text.includes(span)) add(`${path}/textEvidence`, 'NOT_A_CONTIGUOUS_SUBSTRING_OF_TEXT');
+      }
+    }
+  }
+  const issuePaths: Record<string, string> = {
+    TAROT_EVIDENCE_REQUIRED: '/interpretationEvidence', TAROT_EVIDENCE_SHAPE_INVALID: '/interpretationEvidence',
+    TAROT_EVIDENCE_POSITION_INVALID: '/interpretationEvidence/*/positionIndex',
+    TAROT_EVIDENCE_KEYWORD_INVALID: '/interpretationEvidence/*/keywordIndices',
+    TAROT_EVIDENCE_SPAN_MISSING: '/interpretationEvidence/*/textEvidence',
+    TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN: '/interpretationEvidence/*/textEvidence',
+  };
+  for (const issue of issues) if (issuePaths[issue]) add(issuePaths[issue], issue);
+  return `\n타로 근거 수리 안내: 카드 위치당 interpretationEvidence 항목은 하나만 둡니다. 실제로 해석한 카드만 기록하고 전체 카드를 억지로 설명하지 않습니다.
+textEvidence는 최종 text의 짧은 연속 구절을 조사·어미·공백·문장부호까지 그대로 복사합니다(${TAROT_EVIDENCE_SPAN_MAX_LENGTH}자 이하). 떨어진 단어를 쉼표로 합치거나 본문에 없는 요약 구절을 만들지 않습니다. 여러 keyword를 선택했다면 모두 포함하는 실제 연속 구절을 고르거나, 실제 근거가 있는 keyword만 선택합니다. keywordIndices는 해당 카드의 선택 방향 activeMeaning 원본 index를 중복 없이 1~5개 사용합니다.
+본문과 인용을 함께 다시 확인하고 최종 JSON 객체 전체를 출력합니다. 누락된 근거를 꾸미거나 실제 해석의 근거를 빈 배열로 숨기지 않습니다. 아래 경로는 진단 안내이며 정답이나 대체 근거가 아닙니다: ${JSON.stringify(diagnostics)}`;
 }
 
 /** No mock fallback. Missing endpoint/model fails before making a request. */
@@ -126,7 +173,9 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
     },
     repairChat: (messages, output, issues, contract) => {
       const { schema, name } = getChatResponseDefinition(contract);
-      return request(repairMessages(messages, output, issues), schema, name, repairTimeout, 0.15);
+      const repairedMessages = repairMessages(messages, output, issues);
+      if (contract === 'TAROT_EVIDENCE_V1') repairedMessages[repairedMessages.length - 1].content += tarotRepairGuidance(output, issues);
+      return request(repairedMessages, schema, name, repairTimeout, 0.15);
     },
     async generateStructured<T>(input: StructuredRequest<T>): Promise<T> {
       const first = await request(input.messages, input.schema, input.name ?? 'jumzip_structured', initialTimeout, 0.1);
