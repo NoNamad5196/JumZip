@@ -21,14 +21,14 @@
 
 | 구분 | 상태 |
 |---|---|
-| 공개 미리보기 | 기존 프런트엔드가 배포되어 있습니다. 저장소의 최신 화면과 차이가 있습니다. |
-| 최근 UI 개선 | 즉시 표시되는 내 메시지, 캐릭터 로딩 말풍선, 모바일 타로 배열, 한국어 줄바꿈 수정은 로컬 검증·빌드를 마쳤으며 공개 업로드 대기 중입니다. |
-| 운영 AI | Cloudflare Workers AI의 Qwen / Persona-v4 / Intent-v1을 사용합니다. 최근 확인 요청은 HTTP 429로 중단됐으며 제한의 구체적인 원인은 미확인입니다. |
+| 공개 미리보기 | 9월 20일 17:18 KST 최신 프런트엔드의 공개 배포와 HTML·JS·CSS 일치를 확인했습니다. [배포 검증](docs/evidence/frontend-service-errors-public.json) |
+| 최근 UI 개선 | 즉시 표시되는 내 메시지, 캐릭터 로딩 말풍선, 모바일 타로 배열, 한국어 줄바꿈과 AI 오류 안내 수정이 공개 화면에 반영됐습니다. AI 서비스 복구를 뜻하지는 않습니다. |
+| 운영 AI | Cloudflare Workers AI의 Qwen / Persona-v4 / Intent-v1을 사용합니다. 9월 20일 17:11 KST 확인에서 API가 일일 무료 사용량 제한 사유로 HTTP 429를 반환했습니다. 대시보드 사용량 표시와의 차이는 미확인입니다. [진단 기록](docs/evidence/workers-ai-availability-20260920-1711.json) |
 | 개발 중인 AI 수정본 | 소스의 Persona-v12 / Intent-v6와 별도로 준비한 v4.1 수정본은 아직 운영에 배포하지 않았습니다. |
 | 남은 검증 | AI 해석의 의미 정확성, 공개 가입 성공 흐름, Google 계정 연결, 전체 공개 사용자 흐름 검증이 남아 있습니다. |
 | 문구 정리 | 화면 문구의 삭제·수정 방향을 검토한 계획 단계입니다. 실제 문구 개편은 아직 적용하지 않았습니다. |
 
-**현재 소스의 Edge Functions 전체를 그대로 운영에 덮어쓰지 마세요.** 서버 수정은 [배포 안내](docs/deployment-runbook.md)의 검증된 릴리스 파일 목록과 적용 범위를 확인한 뒤 진행합니다. 최근 UI 수정과 배포 대기 상태는 [채팅 개선 기록](docs/chat-experience-repair.md), 문구 개편안은 [문구 정리 계획](docs/copy-review-plan.md)에 정리되어 있습니다.
+**현재 소스의 Edge Functions 전체를 그대로 운영에 덮어쓰지 마세요.** 서버 수정은 [배포 안내](docs/deployment-runbook.md)의 검증된 릴리스 파일 목록과 적용 범위를 확인한 뒤 진행합니다. 최근 UI 수정은 [채팅 개선 기록](docs/chat-experience-repair.md), 오류 진단과 배포 결과는 [서비스 오류 수정 기록](docs/service-error-repair.md), 문구 개편안은 [문구 정리 계획](docs/copy-review-plan.md)에 정리되어 있습니다.
 
 ## 기술 구성
 

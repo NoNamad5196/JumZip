@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-20T08:11:33.899Z",
+  "status": "PROVIDER_REJECTING_DAILY_FREE_ALLOCATION",
+  "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "actualHTTPAttempts": 1,
+  "maxOutputTokens": 1,
+  "httpStatus": 429,
+  "observedErrorCodes": [4006],
+  "allowlistedMessageSignals": ["DAILY_FREE_ALLOCATION", "NEURONS"],
+  "retryAfterSeconds": null,
+  "responseBytes": 286,
+  "responseSha256": "fbd92337a4dca7a9eb9798a972ec4c858d3e4b998babf63874bc381a1b60ceea",
+  "conservativeReservationNeurons": 0.6271,
+  "observedBilledUsage": null,
+  "syntheticOnly": true,
+  "hostedDbOrAccountOperations": 0,
+  "rawBodiesOrCredentialsPersisted": false,
+  "automaticRetries": 0,
+  "dashboardObservation": {
+    "dateKST": "2026-09-20",
+    "observedBeforeProbe": true,
+    "todayDisplayed": "5.68k/10k",
+    "rolling24HoursDisplayed": "15.26k",
+    "conflictsWithProviderRejection": true,
+    "discrepancyCause": "UNCONFIRMED"
+  },
+  "interpretation": [
+    "The production model currently rejects requests and its error message identifies the daily free allocation.",
+    "4006 is the observed API code. The official error table lists 3036 for daily allocation; classification here uses the response's fixed message signals, not an assumed equivalence of codes.",
+    "Earlier probes allowlisted only codes 3036 and 3040, so their unknown cause does not establish an unrelated incident.",
+    "Production Persona-v4 maps provider 429 to LLM_UNAVAILABLE with details.reason=LLM_RATE_LIMITED. Its previous frontend describes that error as a network disconnection.",
+    "This direct synthetic probe does not prove the original user's individual request status and does not validate model reply quality.",
+    "Official reset policy is 00:00 UTC / 09:00 KST; the next scheduled reset is 2026-09-21 09:00 KST. Recovery has not been verified."
+  ],
+  "references": [
+    "https://developers.cloudflare.com/workers-ai/platform/errors/",
+    "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+  ]
+}

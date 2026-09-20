@@ -17,8 +17,10 @@ export function PendingPersona({characterId}:{characterId:CharacterId}) {
 }
 export function ErrorPersona({characterId,message,code,details}:{characterId:CharacterId;message:string;code?:string;details?:Record<string,unknown>}) {
   const copy=personaCopy(characterId);
-  const rateLimited=code==='LLM_UNAVAILABLE'&&details?.reason==='LLM_RATE_LIMITED';
-  const intro=code?.includes('TIMEOUT')?copy.timeout:rateLimited?'AI 응답 요청이 현재 제한되어 있어요.':code==='NETWORK_ERROR'||code==='LLM_UNAVAILABLE'?copy.network:code==='TAROT_DRAW_FAILED'?copy.tarotError:code?.startsWith('SAFETY_')?copy.safety:null;
-  const explanation=code==='LLM_INVALID_RESPONSE'?'답변을 완성하지 못했어요. 보낸 메시지에서 다시 시도해 주세요.':rateLimited?'잠시 후 다시 시도해 주세요.':message;
+  const rateLimited=code==='LLM_RATE_LIMITED'||code==='LLM_UNAVAILABLE'&&details?.reason==='LLM_RATE_LIMITED';
+  if(rateLimited)return <Notice tone="error">AI 응답 요청이 제한되어 있어요. 제한이 해제된 뒤 다시 시도해 주세요.</Notice>;
+  if(code&&['LLM_UNAVAILABLE','LLM_AUTH_FAILED','LLM_NOT_CONFIGURED'].includes(code))return <Notice tone="error">AI 응답 서비스를 이용할 수 없어 답변을 받지 못했어요.</Notice>;
+  const intro=code?.includes('TIMEOUT')?copy.timeout:code==='NETWORK_ERROR'?copy.network:code==='TAROT_DRAW_FAILED'?copy.tarotError:code?.startsWith('SAFETY_')?copy.safety:null;
+  const explanation=code==='LLM_INVALID_RESPONSE'?'답변을 완성하지 못했어요. 보낸 메시지에서 다시 시도해 주세요.':message;
   return <Notice tone="error">{intro&&<><strong>{intro}</strong><br/></>}{explanation}</Notice>;
 }

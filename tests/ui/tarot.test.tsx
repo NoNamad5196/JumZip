@@ -46,8 +46,8 @@ describe('canonical card meaning fallback', () => {
   });
   it.each([
     ['LLM_TIMEOUT', 'AI 해석 응답이 늦어져 멈췄어요.'],
-    ['LLM_RATE_LIMITED', 'AI 해석 요청이 잠시 제한됐어요.'],
-    ['LLM_UNAVAILABLE', 'AI 해석 서비스에 지금 연결하기 어려워요.'],
+    ['LLM_RATE_LIMITED', 'AI 해석 요청이 제한되어 있어요.'],
+    ['LLM_UNAVAILABLE', 'AI 해석 서비스를 이용할 수 없어요.'],
     ['LLM_INVALID_RESPONSE', 'AI 해석을 완료하지 못했어요.'],
   ])('distinguishes known failure reason %s without exposing raw remote text', (reason, message) => {
     const partialError = { code: 'TAROT_INTERPRETATION_FAILED', retryable: true, details: { reason }, message: 'REMOTE_PRIVATE_CANARY' };
@@ -60,6 +60,23 @@ describe('canonical card meaning fallback', () => {
     const view = show(result([card(0)], { executionStatus: 'UNKNOWN', partialError: undefined }));
     expect(view.container.querySelector('.tarot-interpretation-status')?.textContent).toContain('AI 해석이 아직 없어요.');
     expect(view.container.textContent).not.toContain('요청이 잠시 제한');
+  });
+  it('keeps the saved draw retryable after a production wrapped rate limit without a reset-time claim or repeated server message',()=>{
+    const onRetry=vi.fn();
+    const value=result([card(9,'REVERSED')],{partialError:{code:'TAROT_INTERPRETATION_FAILED',retryable:true,details:{reason:'LLM_RATE_LIMITED'},message:'응답 서비스가 현재 요청을 제한하고 있습니다. 잠시 후 다시 시도해 주세요.'} as DrawResult['partialError']});
+    const before=JSON.stringify(value),view=show(value,{onRetry});
+    const status=view.container.querySelector('.tarot-interpretation-status')?.textContent;
+    expect(status).toBe('AI 해석 요청이 제한되어 있어요. 제한이 해제된 뒤 같은 카드로 다시 시도해 주세요.');
+    expect(status).not.toMatch(/연결|잠시|곧|내일|자정|할당량/);
+    expect(screen.getByAltText('The Hermit, 역방향')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button',{name:'해석 다시 받기'}));expect(onRetry).toHaveBeenCalledTimes(1);expect(JSON.stringify(value)).toBe(before);
+  });
+  it.each(['LLM_AUTH_FAILED','LLM_NOT_CONFIGURED','UNKNOWN_PROVIDER_REASON'])('describes unavailable service with the saved card intact for provider reason %s',reason=>{
+    const view=show(result([card(0)],{partialError:{code:'LLM_UNAVAILABLE',retryable:false,details:{reason},message:'REMOTE_PRIVATE_CANARY'} as DrawResult['partialError']}),{onRetry:vi.fn()});
+    const status=view.container.querySelector('.tarot-interpretation-status')?.textContent;
+    expect(status).toBe('AI 해석 서비스를 이용할 수 없어요. 저장된 카드는 그대로 남아 있어요.');
+    expect(status).not.toMatch(/연결|끊|잠시|제한|REMOTE_PRIVATE_CANARY/);
+    expect((screen.getByRole('button',{name:'해석 다시 받기'}) as HTMLButtonElement).disabled).toBe(true);
   });
 });
 

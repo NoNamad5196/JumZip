@@ -2,7 +2,13 @@
 
 Deadline: 2026-09-20 23:59 Asia/Seoul. User approved M0–M17 implementation. A working Tarot release is a checkpoint; independent Core v1 work continues until acceptance or a concrete external blocker.
 
-## Latest update — 14:02 KST: chat experience repair
+## Latest update — 17:18 KST: frontend published, AI availability blocked
+
+The latest frontend is deployed to https://jumzip.pages.dev. Cloudflare displayed success and all ten public HTML/JS/CSS files match the local build ([publication evidence](evidence/frontend-service-errors-public.json)). This publishes the earlier chat/mobile/wrapping changes plus accurate service-error feedback. Related tests passed 102; typecheck, production build, focused lint and source/build credential checks passed. No owner folder selection is now required.
+
+A single synthetic Qwen availability probe at 17:11 KST returned HTTP429, observed code4006, and the fixed error-message signals DAILY_FREE_ALLOCATION/NEURONS. The dashboard still displayed5.68k/10k, so its discrepancy remains unexplained. No further inference, paid upgrade, or backend deployment followed. Production remains Persona-v4/Intent-v1; AI recovery and quality acceptance remain blocked. See [diagnosis and limits](service-error-repair.md).
+
+## Previous update — 14:02 KST: chat experience repair
 
 The [chat repair batch](chat-experience-repair.md) implements immediate user bubbles, character typing feedback, immediate validated answers, safe retry reconciliation, compact mobile Tarot and labelled basic meanings when AI interpretation fails. Whole TypeScript/lint and 1,066 tests pass (three opt-in live skips); local browser regression passes ten cases (two intentional duplicate skips); production build and public credential/asset checks pass. These local checks do not certify live AI quality.
 

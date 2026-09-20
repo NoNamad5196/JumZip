@@ -25,8 +25,8 @@ function interpretationStatus(result: DrawResult): string {
   const error = result.partialError as { code?: string; details?: { reason?: unknown } } | undefined;
   const reason = typeof error?.details?.reason === 'string' ? error.details.reason : error?.code;
   if (reason === 'LLM_TIMEOUT') return 'AI 해석 응답이 늦어져 멈췄어요. 같은 카드로 해석을 다시 받을 수 있어요.';
-  if (reason === 'LLM_RATE_LIMITED') return 'AI 해석 요청이 잠시 제한됐어요. 잠시 후 같은 카드로 다시 시도해 주세요.';
-  if (['LLM_UNAVAILABLE', 'LLM_NOT_CONFIGURED', 'LLM_AUTH_FAILED'].includes(reason ?? '')) return 'AI 해석 서비스에 지금 연결하기 어려워요. 저장된 카드는 그대로 남아 있어요.';
+  if (reason === 'LLM_RATE_LIMITED') return 'AI 해석 요청이 제한되어 있어요. 제한이 해제된 뒤 같은 카드로 다시 시도해 주세요.';
+  if (error?.code === 'LLM_UNAVAILABLE' || ['LLM_UNAVAILABLE', 'LLM_NOT_CONFIGURED', 'LLM_AUTH_FAILED'].includes(reason ?? '')) return 'AI 해석 서비스를 이용할 수 없어요. 저장된 카드는 그대로 남아 있어요.';
   if (result.executionStatus === 'PARTIAL') return 'AI 해석을 완료하지 못했어요. 카드는 저장됐고, 다시 해석해도 같은 카드를 사용해요.';
   return 'AI 해석이 아직 없어요. 저장된 카드의 기본 의미를 먼저 살펴보세요.';
 }
