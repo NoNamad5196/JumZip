@@ -2,6 +2,8 @@
 
 Status: implementation and local checks passed; public frontend upload is pending. Production backend remains Qwen / Persona-v4 / Intent-v1. Neither current Persona-v12 nor the isolated v4.1 patch has been deployed.
 
+Follow-up: Korean prose now uses `word-break: keep-all` with `overflow-wrap: anywhere`. Chat, paragraphs, lists, definition text and notices preserve ordinary words while long unbroken tokens can still wrap. Headings, buttons, logos and fixed data layouts retain their own typography. The existing `pre-wrap` keeps explicit chat line breaks. [Local Edge rendering](evidence/frontend-korean-line-wrap.json) reproduced the original split and confirmed the fix at seven text widths, long-URL containment and no horizontal overflow on home/chat/privacy at 390/1024/1280/1440px. Related UI tests passed92; existing browser regression passed10 with two intentional skips; TypeScript, build and public credential scan passed. Firefox/WebKit were not verified. The rebuilt `dist` includes both this follow-up and the prior chat changes; public upload remains pending. Its latest index hash is in the linked evidence and supersedes the earlier build hash below.
+
 ## What changed
 
 - Sending immediately inserts the user's bubble and clears the composer. The next draft remains editable while an avatar and typing bubble show the pending answer. A validated complete answer appears immediately, without the old artificial sentence delay or waiting for a history refetch.

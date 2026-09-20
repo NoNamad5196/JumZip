@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-09-20T05:10:24.942Z",
+  "transport": "LOCAL_ONLY",
+  "browsers": [
+    {
+      "name": "edge",
+      "routes": [
+        {
+          "width": 390,
+          "route": "/",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "route": "/chat/bomi",
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "route": "/privacy",
+          "overflow": false
+        },
+        {
+          "width": 1024,
+          "route": "/",
+          "overflow": false
+        },
+        {
+          "width": 1024,
+          "route": "/chat/bomi",
+          "overflow": false
+        },
+        {
+          "width": 1024,
+          "route": "/privacy",
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "route": "/",
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "route": "/chat/bomi",
+          "overflow": false
+        },
+        {
+          "width": 1280,
+          "route": "/privacy",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "route": "/",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "route": "/chat/bomi",
+          "overflow": false
+        },
+        {
+          "width": 1440,
+          "route": "/privacy",
+          "overflow": false
+        }
+      ],
+      "wrapping": {
+        "sample": [
+          {
+            "width": 140,
+            "split": false
+          },
+          {
+            "width": 160,
+            "split": false
+          },
+          {
+            "width": 180,
+            "split": false
+          },
+          {
+            "width": 200,
+            "split": false
+          },
+          {
+            "width": 220,
+            "split": false
+          },
+          {
+            "width": 260,
+            "split": false
+          },
+          {
+            "width": 320,
+            "split": false
+          }
+        ],
+        "baselineReproduced": true,
+        "wordBreak": "keep-all",
+        "whiteSpace": "pre-wrap",
+        "urlOverflow": false,
+        "pageOverflow": false
+      },
+      "passed": true,
+      "version": "153.0.4234.32"
+    }
+  ],
+  "productionIndexSha256": "2901641100a82105f9136a8ecdec6e40fb94fd5500d15fe03673af88913e0505",
+  "limits": [
+    "Edge/Chromium local rendering only; Firefox and WebKit were not verified.",
+    "Synthetic text and blocked external requests; no user session, database or model calls.",
+    "Public frontend upload remains pending."
+  ]
+}
