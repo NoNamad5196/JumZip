@@ -2,9 +2,9 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import ts from 'typescript';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createOpenAICompatibleProvider, type OpenAICompatibleConfig, type LLMProvider } from '../../supabase/functions/_shared/llm/provider.ts';
-import { generatePersonaReply } from '../../supabase/functions/_shared/llm/reply.ts';
+import { type OpenAICompatibleConfig, type LLMProvider } from '../../supabase/functions/_shared/llm/provider.ts';
 
+type HistoricalConfig = Omit<OpenAICompatibleConfig, 'fallback'> & { fallback?: { baseUrl: string; apiKey: string; model: string } };
 const primaryUrl = 'https://api.cloudflare.com/client/v4/accounts/synthetic-account/ai/v1';
 const secondaryUrl = 'https://generativelanguage.googleapis.com/v1beta/openai';
 const fallback = { baseUrl: secondaryUrl, apiKey: 'secondary-test-token', model: 'gemini-3.5-flash' };
@@ -14,11 +14,11 @@ const source = readFileSync('scripts/gemini-fallback-release/provider.ts.txt', '
 // memory; no test-generated files or remote modules are used.
 const js = ts.transpileModule(source, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ESNext } }).outputText;
 const legacy = await import(/* @vite-ignore */ `data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
-const factories: [string, (config: OpenAICompatibleConfig) => LLMProvider][] = [
-  ['current candidate', createOpenAICompatibleProvider], ['exact deployed-v4 overlay', legacy.createOpenAICompatibleProvider],
+const factories: [string, (config: HistoricalConfig) => LLMProvider][] = [
+  ['historical deployed-v4 Gemini overlay', legacy.createOpenAICompatibleProvider],
 ];
 const envelope = (content = '{"text":"안녕.","toolReferences":[]}', extra: Record<string, unknown> = {}) => new Response(JSON.stringify({ choices: [{ message: { content }, finish_reason: 'stop' }], ...extra }));
-const settings = (fetchImpl: typeof fetch, overrides: Partial<OpenAICompatibleConfig> = {}): OpenAICompatibleConfig => ({ baseUrl: primaryUrl, apiKey: 'primary-test-token', model: '@cf/qwen/qwen3-30b-a3b-fp8', structuredFormat: 'json_object', fallback, fetchImpl, ...overrides });
+const settings = (fetchImpl: typeof fetch, overrides: Partial<HistoricalConfig> = {}): HistoricalConfig => ({ baseUrl: primaryUrl, apiKey: 'primary-test-token', model: '@cf/qwen/qwen3-30b-a3b-fp8', structuredFormat: 'json_object', fallback, fetchImpl, ...overrides });
 const body = (fetchMock: ReturnType<typeof vi.fn<typeof fetch>>, index: number) => JSON.parse(fetchMock.mock.calls[index]![1]!.body as string);
 const validate = (value: unknown): string => {
   if (!value || typeof value !== 'object' || (value as { intent?: unknown }).intent !== 'ok') throw Error('PRIVATE_VALIDATOR_DETAIL');
@@ -151,19 +151,6 @@ describe.each(factories)('%s: quota-only Gemini fallback', (_name, create) => {
   });
 });
 
-it('current Chat safety-validation errors never activate Gemini', async () => {
-  const fetchImpl = vi.fn<typeof fetch>().mockImplementation(async () => envelope('{"text":"나는 AI야"}'));
-  await expect(generatePersonaReply(createOpenAICompatibleProvider(settings(fetchImpl)), { characterId: 'BOMI', currentMessage: '안녕' })).rejects.toMatchObject({ code: 'LLM_INVALID_RESPONSE' });
-  expect(fetchImpl).toHaveBeenCalledTimes(2);
-  expect(fetchImpl.mock.calls.every(call => call[0] === `${primaryUrl}/chat/completions`)).toBe(true);
-});
-it('Gemini drops the Cloudflare Gemma reasoning field while primary keeps it', async () => {
-  const fetchImpl = vi.fn<typeof fetch>().mockResolvedValueOnce(new Response('', { status: 429 })).mockResolvedValueOnce(envelope());
-  await createOpenAICompatibleProvider(settings(fetchImpl, { model: '@cf/google/gemma-4-26b-a4b-it' })).generateChat(messages);
-  expect(body(fetchImpl, 0)).toHaveProperty('chat_template_kwargs.enable_thinking', false);
-  expect(body(fetchImpl, 1)).not.toHaveProperty('chat_template_kwargs');
-  expect(body(fetchImpl, 1)).not.toHaveProperty('temperature');
-});
 it('the v4 overlay excludes all unaccepted contract, diagnostic and model changes', () => {
   expect(source).not.toMatch(/TEXT_ONLY|TAROT_EVIDENCE|safeLLMDiagnostic|diagnoseValidationError|cloudflareGemma|gemma-4/);
   expect(source).toContain("required: ['text', 'toolReferences']");

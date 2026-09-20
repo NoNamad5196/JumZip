@@ -31,17 +31,20 @@ describe('Cloudflare Gemma provider and production runtime request parity (zero 
       .mockResolvedValueOnce(completion({ text: '새 출발을 생각해 보자.', toolReferences: [{ cardId: 0, orientation: 'UPRIGHT', positionIndex: 0 }], interpretationEvidence: [{ positionIndex: 0, keywordIndices: [0], textEvidence: '새 출발' }] }));
     vi.stubGlobal('fetch', fetchImpl);
     const env: Record<string, string | undefined> = { LLM_BASE_URL: endpoint, LLM_MODEL: qwen, LLM_API_KEY: 'synthetic-primary-key', LLM_STRUCTURED_FORMAT: 'json_object',
-      LLM_FALLBACK_ENABLED: enabled, LLM_FALLBACK_BASE_URL: 'https://generativelanguage.googleapis.com/v1beta/openai', LLM_FALLBACK_MODEL: 'gemini-3.5-flash', LLM_FALLBACK_API_KEY: 'synthetic-secondary-key',
+      LLM_FALLBACK_ENABLED: enabled, LLM_FALLBACK_BASE_URL: 'https://api.openai.com/v1', LLM_FALLBACK_MODEL: 'gpt-5.6-luna', LLM_FALLBACK_API_KEY: 'synthetic-secondary-key',
       TOOL_RECOMMENDATIONS_ENABLED: 'false', MEMORY_MAINTENANCE_ENABLED: 'false', TITLE_GENERATION_ENABLED: 'false' };
-    const execute = createExecutor({} as SupabaseClient, name => env[name]);
+    const rpc = vi.fn(() => ({ abortSignal: vi.fn().mockResolvedValue({ data: { reservationId: state.id, reservedMicros: 10000 }, error: null }) }));
+    const execute = createExecutor({ rpc } as unknown as SupabaseClient, name => env[name]);
     const operation = execute('chat', { schemaVersion: 1, action: 'SEND', requestId: state.id, conversationId: state.id, consultationId: null, message: '같은 카드로 다시 설명해 줘.' }, { id: state.id, isAnonymous: false });
     if (enabled === 'true') {
       expect((await operation).status).toBe(201); expect(fetchImpl).toHaveBeenCalledTimes(2);
-      expect(fetchImpl.mock.calls[1]![0]).toBe('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions');
-      expect(JSON.parse(String(fetchImpl.mock.calls[1]![1]!.body)).model).toBe('gemini-3.5-flash');
+      expect(fetchImpl.mock.calls[1]![0]).toBe('https://api.openai.com/v1/chat/completions');
+      expect(JSON.parse(String(fetchImpl.mock.calls[1]![1]!.body)).model).toBe('gpt-5.6-luna');
+      expect(rpc).toHaveBeenCalledWith('reserve_openai_budget', expect.objectContaining({p_model:'gpt-5.6-luna',p_max_output_tokens:900}));
     } else {
       await expect(operation).rejects.toMatchObject({ code: 'LLM_UNAVAILABLE', details: { reason: 'LLM_RATE_LIMITED' } });
       expect(fetchImpl).toHaveBeenCalledOnce();
+      expect(rpc).not.toHaveBeenCalled();
     }
   });
   it.each([gemma, qwen])('uses the environment-selected model through actual runtime initial and repair: %s', async model => {

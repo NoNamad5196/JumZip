@@ -21,12 +21,12 @@
 
 | 구분 | 상태 |
 |---|---|
-| 공개 미리보기 | 9월 20일 17:18 KST 최신 프런트엔드의 공개 배포와 HTML·JS·CSS 일치를 확인했습니다. [배포 검증](docs/evidence/frontend-service-errors-public.json) |
+| 공개 미리보기 | 9월 20일 18:22 KST 공개 프런트엔드 HTML·JS·CSS 10개가 새 빌드와 일치함을 확인했습니다. [배포 검증](docs/evidence/frontend-openai-fallback-public.json) |
 | 최근 UI 개선 | 즉시 표시되는 내 메시지, 캐릭터 로딩 말풍선, 모바일 타로 배열, 한국어 줄바꿈과 AI 오류 안내 수정이 공개 화면에 반영됐습니다. AI 서비스 복구를 뜻하지는 않습니다. |
-| 운영 AI | Cloudflare Qwen이 1순위이며, HTTP 429일 때만 Gemini 3.5 Flash로 전환합니다. 보조 전환은 활성화됐고 실제 한국어 인사·타로 한 장 응답을 검증했습니다. Persona-v4 / Intent-v1은 유지합니다. [전환·배포 기록](docs/gemini-fallback.md) |
-| 개발 중인 AI 수정본 | 소스의 Persona-v12 / Intent-v6와 별도로 준비한 v4.1 수정본은 아직 운영에 배포하지 않았습니다. |
+| 운영 AI 전환 | **배포·활성화 완료(18:28 KST).** Cloudflare Qwen 우선·HTTP 429일 때만 OpenAI Luna 보조로 전환합니다. Persona-v4.2 / Intent-v1을 적용하고 DB 일 $0.10·월 $1·30일 총 $1 한도를 둡니다. 실제 합성 입력 7개는 모두 응답했고 수리는 없었습니다. [전환 범위와 증거](docs/openai-fallback.md) |
+| 서버 릴리스 구분 | 이번 전환본은 검증된 운영 v4에 제한된 변경을 얹은 **Persona-v4.2 / Intent-v1**입니다. 개발 소스의 Persona-v12 / Intent-v6나 별도 v4.1 수정본을 운영에 일괄 적용하는 변경이 아닙니다. |
 | 남은 검증 | AI 해석의 의미 정확성, 공개 가입 성공 흐름, Google 계정 연결, 전체 공개 사용자 흐름 검증이 남아 있습니다. |
-| 문구 정리 | 전체 문구 개편은 계획 단계입니다. 오류 안내와 Google 보조 처리 개인정보 안내만 별도로 수정·배포했습니다. |
+| 반복 말투 수정 | v4.2에서 필수 질문 마무리와 고정 공감 순서를 제거했습니다. 최신 합성 후속 대화 3개는 모두 원치 않는 질문 없이 답했습니다. 이전 검사에서 발생한 2건의 질문 반복은 기록에 남겼으며, 이 소규모 검증을 전체 품질 통과로 보지는 않습니다. |
 
 **현재 소스의 Edge Functions 전체를 그대로 운영에 덮어쓰지 마세요.** 서버 수정은 [배포 안내](docs/deployment-runbook.md)의 검증된 릴리스 파일 목록과 적용 범위를 확인한 뒤 진행합니다. 최근 UI 수정은 [채팅 개선 기록](docs/chat-experience-repair.md), 오류 진단과 배포 결과는 [서비스 오류 수정 기록](docs/service-error-repair.md), 문구 개편안은 [문구 정리 계획](docs/copy-review-plan.md)에 정리되어 있습니다.
 
@@ -141,6 +141,7 @@ docs/                 구현 현황, 규칙, 검토 계획, 검증 근거
 | [개발 현황](docs/EXECUTION.md) | 최근 변경, 검증 결과와 남은 작업 |
 | [검증 항목](docs/acceptance-matrix.md) | M0–M17 구현 및 완료 판정 근거 |
 | [배포·복구 안내](docs/deployment-runbook.md) | 환경 설정, 마이그레이션, 검증된 서버 릴리스 |
+| [OpenAI 보조 전환](docs/openai-fallback.md) | Cloudflare 우선·Luna 보조, 비용 제한과 v4.2 검증 상태 |
 | [채팅 개선 기록](docs/chat-experience-repair.md) | 채팅·모바일 카드·한국어 줄바꿈 수정과 공개 반영 상태 |
 | [문구 정리 계획](docs/copy-review-plan.md) | 화면별 삭제·수정·유지 제안. 아직 미적용 |
 | [사주 규칙](docs/saju-rule-freeze.md) | 채택한 제품 규칙과 검증 조건 |

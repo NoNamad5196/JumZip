@@ -17,6 +17,8 @@ export function PendingPersona({characterId}:{characterId:CharacterId}) {
 }
 export function ErrorPersona({characterId,message,code,details}:{characterId:CharacterId;message:string;code?:string;details?:Record<string,unknown>}) {
   const copy=personaCopy(characterId);
+  const budgetExceeded=code==='LLM_BUDGET_EXCEEDED'||code==='LLM_UNAVAILABLE'&&details?.reason==='LLM_BUDGET_EXCEEDED';
+  if(budgetExceeded)return <Notice tone="error">보조 AI의 이용 한도나 사용 기간을 확인해 주세요. 쓴 이야기는 남아 있어요.</Notice>;
   const rateLimited=code==='LLM_RATE_LIMITED'||code==='LLM_UNAVAILABLE'&&details?.reason==='LLM_RATE_LIMITED';
   if(rateLimited)return <Notice tone="error">AI 응답 요청이 제한되어 있어요. 제한이 해제된 뒤 다시 시도해 주세요.</Notice>;
   if(code&&['LLM_UNAVAILABLE','LLM_AUTH_FAILED','LLM_NOT_CONFIGURED'].includes(code))return <Notice tone="error">AI 응답 서비스를 이용할 수 없어 답변을 받지 못했어요.</Notice>;

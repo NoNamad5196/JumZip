@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-09-20T09:22:00.570Z",
+  "mode": "PUBLIC_BUILD_READ_ONLY",
+  "origin": "https://jumzip.pages.dev",
+  "modelRequests": 0,
+  "authRequests": 0,
+  "mutations": 0,
+  "files": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "localSha256": "98f4c790bd52fcf36d9206f8b8b197a60368d79d2d58ed568b07bd0004fc4e9c",
+      "publicSha256": "98f4c790bd52fcf36d9206f8b8b197a60368d79d2d58ed568b07bd0004fc4e9c",
+      "match": true
+    },
+    {
+      "path": "/assets/AccountPages-BYijIE9d.js",
+      "status": 200,
+      "localSha256": "f9f779c9f43ada8d3756c002a95e643492729ffb1a0e5fab53ebaa9c1e4818d2",
+      "publicSha256": "f9f779c9f43ada8d3756c002a95e643492729ffb1a0e5fab53ebaa9c1e4818d2",
+      "match": true
+    },
+    {
+      "path": "/assets/Chat-NOsMsZBv.js",
+      "status": 200,
+      "localSha256": "e2635f88a2eea1abac74ece69e84ac5140e94cf50222c1d71bee2da33ad0a4af",
+      "publicSha256": "e2635f88a2eea1abac74ece69e84ac5140e94cf50222c1d71bee2da33ad0a4af",
+      "match": true
+    },
+    {
+      "path": "/assets/CompatibilitySnapshot-DnCtgOkZ.js",
+      "status": 200,
+      "localSha256": "cbca8c49c2f808df00760b1b483401a9f7e0841b0292a70c9f18600ff07f35f3",
+      "publicSha256": "cbca8c49c2f808df00760b1b483401a9f7e0841b0292a70c9f18600ff07f35f3",
+      "match": true
+    },
+    {
+      "path": "/assets/ConnectionState-BvW8MGfo.js",
+      "status": 200,
+      "localSha256": "ff6043a4efcbbe4f6f499a1d0dae1f2c1b37472d3677c32df088dba5fe03e66c",
+      "publicSha256": "ff6043a4efcbbe4f6f499a1d0dae1f2c1b37472d3677c32df088dba5fe03e66c",
+      "match": true
+    },
+    {
+      "path": "/assets/Reading-TOoAuNlN.js",
+      "status": 200,
+      "localSha256": "347e8e72f7ff7a8823f82c1728aea6a9cc299976e26d1ca779873e3afd148bfa",
+      "publicSha256": "347e8e72f7ff7a8823f82c1728aea6a9cc299976e26d1ca779873e3afd148bfa",
+      "match": true
+    },
+    {
+      "path": "/assets/es-D4THWdz3.js",
+      "status": 200,
+      "localSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "publicSha256": "a5dd4ce7a42ef7f2014d1f35856a1b6222fd91f55575e114bac41d771d3e9b30",
+      "match": true
+    },
+    {
+      "path": "/assets/index-3Nj864FJ.js",
+      "status": 200,
+      "localSha256": "bb5900eeb5d4a5e2019e3c97cd4434a426625985d2596003dd7eee498ae23235",
+      "publicSha256": "bb5900eeb5d4a5e2019e3c97cd4434a426625985d2596003dd7eee498ae23235",
+      "match": true
+    },
+    {
+      "path": "/assets/index-Dtbrk3ML.css",
+      "status": 200,
+      "localSha256": "c721bdf7241561fda2c442dc30e457904848319ca8e8fd4de7912e9e423d2684",
+      "publicSha256": "c721bdf7241561fda2c442dc30e457904848319ca8e8fd4de7912e9e423d2684",
+      "match": true
+    },
+    {
+      "path": "/assets/pagination-CZYWqw3Q.js",
+      "status": 200,
+      "localSha256": "dfd94b78118b771a13857b223f685accc38d0d65c59c396192061f371c07f704",
+      "publicSha256": "dfd94b78118b771a13857b223f685accc38d0d65c59c396192061f371c07f704",
+      "match": true
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Byte equality verifies publication only. Browser behavior and authenticated backend/LLM acceptance require separate evidence."
+  ]
+}

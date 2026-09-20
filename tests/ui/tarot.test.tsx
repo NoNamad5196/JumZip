@@ -78,6 +78,22 @@ describe('canonical card meaning fallback', () => {
     expect(status).not.toMatch(/연결|끊|잠시|제한|REMOTE_PRIVATE_CANARY/);
     expect((screen.getByRole('button',{name:'해석 다시 받기'}) as HTMLButtonElement).disabled).toBe(true);
   });
+  it.each(['LLM_BUDGET_EXCEEDED','LLM_UNAVAILABLE','TAROT_INTERPRETATION_FAILED'])('keeps stored cards and permits only a manual retry after budget denial %s, so the primary provider can recover',code=>{
+    const onRetry=vi.fn();
+    const value=result([card(9,'REVERSED')],{partialError:{code,retryable:false,...(code==='LLM_BUDGET_EXCEEDED'?{}:{details:{reason:'LLM_BUDGET_EXCEEDED'}}),message:'REMOTE_PRIVATE_CANARY'} as DrawResult['partialError']});
+    const before=JSON.stringify(value),view=show(value,{onRetry});
+    const status=view.container.querySelector('.tarot-interpretation-status')?.textContent;
+    expect(status).toBe('보조 AI의 이용 한도나 사용 기간을 확인해 주세요. 저장된 카드는 그대로 남아 있어요.');
+    expect(status).not.toMatch(/소진|초과|연결|잠시|곧|내일|자정|초기화|REMOTE_PRIVATE_CANARY/);
+    expect(screen.getByAltText('The Hermit, 역방향')).toBeTruthy();
+    expect(onRetry).not.toHaveBeenCalled();
+    const retry=screen.getByRole('button',{name:'해석 다시 받기'}) as HTMLButtonElement;
+    expect(retry.disabled).toBe(false);fireEvent.click(retry);expect(onRetry).toHaveBeenCalledTimes(1);
+    view.rerender(<MemoryRouter><TarotResult result={value} onRetry={onRetry} pending/></MemoryRouter>);
+    expect((screen.getByRole('button',{name:'해석 다시 받기'}) as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.click(screen.getByRole('button',{name:'해석 다시 받기'}));expect(onRetry).toHaveBeenCalledTimes(1);
+    expect(JSON.stringify(value)).toBe(before);
+  });
 });
 
 describe('chat Tarot display preserves the saved draw', () => {

@@ -1,0 +1,930 @@
+{
+  "status": "DEPLOYED_AND_ENABLED",
+  "baseManifest": "docs/evidence/edge-gemini-fallback-release.json",
+  "promptVersion": "JumZipPersona-v4.2",
+  "intentVersion": "JumZipIntent-v1",
+  "primaryModel": "@cf/qwen/qwen3-30b-a3b-fp8",
+  "secondaryModel": "gpt-5.6-luna",
+  "fallbackTrigger": "PRIMARY_HTTP_429_ONLY",
+  "paidScope": "USER_FACING_REPLY_ONLY",
+  "migration": "202609200016",
+  "budget": {
+    "dailyUSD": 0.1,
+    "monthlyUSD": 1,
+    "totalUSD": 1,
+    "durationDays": 30,
+    "periodTimezone": "Asia/Seoul"
+  },
+  "changedFiles": [
+    "supabase/functions/_shared/http/errors.ts",
+    "supabase/functions/_shared/llm/budget.ts",
+    "supabase/functions/_shared/llm/provider.ts",
+    "supabase/functions/_shared/llm/reply.ts",
+    "supabase/functions/_shared/orchestration/execute.ts",
+    "supabase/functions/_shared/persona/config.ts",
+    "supabase/functions/_shared/persona/prompt.ts"
+  ],
+  "unchangedFiles": 47,
+  "files": [
+    {
+      "path": "supabase/config.toml",
+      "sha256": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+      "baseSha256": "7596875ac3d442a21d469e9a117605e761336be1ff8b9c101296f88662b16349",
+      "bytes": 1159,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/contracts/index.ts",
+      "sha256": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+      "baseSha256": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+      "bytes": 1783,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/fortune-timing.ts",
+      "sha256": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "baseSha256": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+      "bytes": 18477,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/full-saju.ts",
+      "sha256": "0d1d4e7709e9ee4dcdb388cf4ab6c0ff76c78201a01e76f95875390e067441a6",
+      "baseSha256": "0d1d4e7709e9ee4dcdb388cf4ab6c0ff76c78201a01e76f95875390e067441a6",
+      "bytes": 9999,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/index.ts",
+      "sha256": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "baseSha256": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+      "bytes": 228,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/router.ts",
+      "sha256": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "baseSha256": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+      "bytes": 4997,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/balance.ts",
+      "sha256": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "baseSha256": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+      "bytes": 5065,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/constants.ts",
+      "sha256": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "baseSha256": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+      "bytes": 4674,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/index.ts",
+      "sha256": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "baseSha256": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+      "bytes": 242,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/natal.ts",
+      "sha256": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "baseSha256": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+      "bytes": 3254,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/rational.ts",
+      "sha256": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "baseSha256": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+      "bytes": 2339,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/relations.ts",
+      "sha256": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "baseSha256": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+      "bytes": 2672,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/shinsal.ts",
+      "sha256": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "baseSha256": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+      "bytes": 5641,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/strength.ts",
+      "sha256": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "baseSha256": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+      "bytes": 7699,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/rules/types.ts",
+      "sha256": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "baseSha256": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+      "bytes": 4040,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju-compatibility.ts",
+      "sha256": "b8755006d0053b51243c67abfd07c99fb3763fa157cbe01110ab7dbda9b4a156",
+      "baseSha256": "b8755006d0053b51243c67abfd07c99fb3763fa157cbe01110ab7dbda9b4a156",
+      "bytes": 16456,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/saju.ts",
+      "sha256": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "baseSha256": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+      "bytes": 12317,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/domain/tarot.ts",
+      "sha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "baseSha256": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+      "bytes": 9998,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/errors.ts",
+      "sha256": "78d81ba8ccb4e524e4ea799b9a87232710e1e5cc6c4b0c2ff301bd7a9b25064f",
+      "baseSha256": "16a3b8ba406c1da85f32340580713a74340bbc89ba4aa5696556a7724c1b2610",
+      "bytes": 1557,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/http/handler.ts",
+      "sha256": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+      "baseSha256": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+      "bytes": 5240,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/network.ts",
+      "sha256": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+      "baseSha256": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+      "bytes": 3435,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/http/runtime.ts",
+      "sha256": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+      "baseSha256": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+      "bytes": 2526,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/budget.ts",
+      "sha256": "051665e2dc33a9a41e45f85752b8b62b4414aa1f804bbfaa1d2aeb9e457c4fe5",
+      "baseSha256": null,
+      "bytes": 1551,
+      "added": true,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/llm/index.ts",
+      "sha256": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "baseSha256": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+      "bytes": 120,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/intent.ts",
+      "sha256": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+      "baseSha256": "9d39558885c4db379e04b598812199ab6783a43aa21c6c3558ac384dd3044996",
+      "bytes": 10820,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/llm/provider.ts",
+      "sha256": "42707b639ac33211ea8a4fc7e570ffb3b9376498577bcfe3a9085064ccdf4969",
+      "baseSha256": "580c4ef3d021e649bc6b541f39be7ff09bdcd49538fdc2ad402649996fed4061",
+      "bytes": 15987,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/llm/reply.ts",
+      "sha256": "a396cbc9ecb271f65c8bff8b3061030bdce7bfefd37ca29297df3c2305dd8faa",
+      "baseSha256": "773f1536106ca9873088d412a6d39a6952fbc67c5ed48435dc7db11dc542f4b5",
+      "bytes": 1826,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/llm/validator.ts",
+      "sha256": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "baseSha256": "4b06c55f144bb0fe5854954a337f56e77c3ea14fe6878818922488b456ace1d4",
+      "bytes": 5864,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/compatibility.ts",
+      "sha256": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+      "baseSha256": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+      "bytes": 8254,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/execute.ts",
+      "sha256": "2f2f1c5f1812573e92faaa5c897b751b5abfaf4149116c1cef793f79d05efe3d",
+      "baseSha256": "5f102c25b623954b56653160ff98dac24b4186152f4c275f294d7311b73ceb33",
+      "bytes": 19766,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/location.ts",
+      "sha256": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+      "baseSha256": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+      "bytes": 3611,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/maintenance.ts",
+      "sha256": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+      "baseSha256": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+      "bytes": 2401,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/memory.ts",
+      "sha256": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+      "baseSha256": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+      "bytes": 6580,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/privacy.ts",
+      "sha256": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+      "baseSha256": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+      "bytes": 385,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/saju.ts",
+      "sha256": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+      "baseSha256": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+      "bytes": 7731,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/orchestration/titles.ts",
+      "sha256": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+      "baseSha256": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+      "bytes": 4810,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/cleanup.ts",
+      "sha256": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+      "baseSha256": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+      "bytes": 694,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/compatibility.ts",
+      "sha256": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+      "baseSha256": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+      "bytes": 3401,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/repository.ts",
+      "sha256": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+      "baseSha256": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+      "bytes": 13653,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persistence/saju.ts",
+      "sha256": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+      "baseSha256": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+      "bytes": 6120,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/benchmark.ts",
+      "sha256": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "baseSha256": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+      "bytes": 14712,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/config.ts",
+      "sha256": "4cd267158d9cf459253ac2fc9e1cfdd693bd74db5f699ce4ce2d44bc0620173f",
+      "baseSha256": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+      "bytes": 16335,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/persona/context.ts",
+      "sha256": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "baseSha256": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+      "bytes": 4715,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/index.ts",
+      "sha256": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "baseSha256": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+      "bytes": 149,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/memory.ts",
+      "sha256": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+      "baseSha256": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+      "bytes": 12243,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/persona/prompt.ts",
+      "sha256": "861f9e5fb18b7dac2db381a86e4261478abcdd6a8a4b6c4b830c9454e09da81b",
+      "baseSha256": "040661052ddf8cd7ebd66d4683c144ac407034c895de3fdb19355cf9f9f75b78",
+      "bytes": 12738,
+      "added": false,
+      "changed": true
+    },
+    {
+      "path": "supabase/functions/_shared/persona/tool-facts.ts",
+      "sha256": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+      "baseSha256": "d3ec3962473ccab87637d191eb1daf35367887f60e0c0db59f7326fe9a740651",
+      "bytes": 7811,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/_shared/validation/requests.ts",
+      "sha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+      "baseSha256": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+      "bytes": 6616,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/account/index.ts",
+      "sha256": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+      "baseSha256": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+      "bytes": 70,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/chat/index.ts",
+      "sha256": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+      "baseSha256": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+      "bytes": 67,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/compatibility/index.ts",
+      "sha256": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+      "baseSha256": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+      "bytes": 76,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/deno.json",
+      "sha256": "a6335d2b3e0cc45ec3b2c1315e1f91acc5918e40c479e33c4982c314a978e62d",
+      "baseSha256": "a6335d2b3e0cc45ec3b2c1315e1f91acc5918e40c479e33c4982c314a978e62d",
+      "bytes": 213,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/saju/index.ts",
+      "sha256": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+      "baseSha256": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+      "bytes": 67,
+      "added": false,
+      "changed": false
+    },
+    {
+      "path": "supabase/functions/tarot/index.ts",
+      "sha256": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+      "baseSha256": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+      "bytes": 68,
+      "added": false,
+      "changed": false
+    }
+  ],
+  "modelRequests": 0,
+  "networkRequests": 0,
+  "deployed": true,
+  "recordedAt": "2026-09-20T09:30:29.140Z",
+  "deployedFunctions": [
+    "account",
+    "chat",
+    "compatibility",
+    "saju",
+    "tarot"
+  ],
+  "manifestSha256": "535278a18113ef4b8832e142815e534643eda014c3f4cc0744a97112a338005c",
+  "offline": {
+    "status": "OFFLINE_CHECKS_PASSED",
+    "stage": "C:\\Users\\nonam\\Documents\\JumZip\\supabase\\.temp\\openai-fallback-v4-2-qjtA9h",
+    "stageManifestSha256": "535278a18113ef4b8832e142815e534643eda014c3f4cc0744a97112a338005c",
+    "stagedTypecheckPassed": true,
+    "checks": [
+      "exact 54 files, six modified and one added, 47 deployed files byte-identical",
+      "staged TypeScript: all release TS files",
+      "primary success preserves v4 schema, serialized prompt and 900-token request",
+      "CF429 then OpenAI Luna greeting validates through actual v4 reply and separates credentials",
+      "one-card Tarot retains golden references and orientation through OpenAI Luna fallback",
+      "ordinary v4 still rejects missing references and makes only one sticky secondary repair",
+      "primary repair HTTP429 switches once without restarting the original logical answer",
+      "structured requests use the same fallback and a single total repair",
+      "non-rate failures do not invoke OpenAI Luna and a secondary429 stops at two sends",
+      "fallback body cap and shared timeout reject incomplete transport",
+      "every paid send reserves complete UTF8 bytes first and settles bounded reported usage",
+      "actual staged budget helper gates paid fetch and projects only reservation and usage fields",
+      "budget rejection or malformed reservation fails closed before paid network and preserves safe public reason",
+      "unknown usage retains its hold and a denied repair never starts a second paid send",
+      "late reservation and oversized input cannot start paid requests",
+      "runtime enables paid fallback only for user-facing generation; intent/title/memory stay primary-only"
+    ],
+    "checksPassed": 16,
+    "verifiedFiles": 54,
+    "unchangedFiles": 47,
+    "sourceFrozen": true,
+    "networkRequests": 0,
+    "modelRequests": 0,
+    "mockRequests": 47,
+    "transport": "INJECTED_FETCH_DOUBLES",
+    "promptVersion": "JumZipPersona-v4.2",
+    "intentVersion": "JumZipIntent-v1",
+    "semanticQuality": "NOT_EVALUATED",
+    "deployed": false
+  },
+  "validation": {
+    "typecheck": true,
+    "lint": true,
+    "productionBuild": true,
+    "fullSuiteTestsPassed": 1233,
+    "fullSuiteTestsSkipped": 3,
+    "afterFinalPromptRevision": {
+      "relatedTestsPassed": 11,
+      "stagedChecksPassed": 16
+    },
+    "sourceCredentialScan": true,
+    "publicCredentialScan": true,
+    "assetCheck": true
+  },
+  "serverConfiguration": {
+    "checkedAt": "2026-09-20T09:28:04.337Z",
+    "checks": {
+      "LLM_MODEL": true,
+      "LLM_BASE_URL": true,
+      "LLM_API_KEY": true,
+      "LLM_FALLBACK_API_KEY": true,
+      "LLM_FALLBACK_BASE_URL": true,
+      "LLM_FALLBACK_MODEL": true,
+      "LLM_FALLBACK_ENABLED": true
+    },
+    "passed": true,
+    "fallbackEnabled": true,
+    "secretValuesLogged": false
+  },
+  "startup": {
+    "checkedAt": "2026-09-20T09:26:10.395Z",
+    "mode": "UNAUTHENTICATED_STARTUP_BOUNDARY",
+    "authRequests": 0,
+    "modelRequests": 0,
+    "dbOperations": 0,
+    "checks": [
+      {
+        "name": "account",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "chat",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "compatibility",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "saju",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      },
+      {
+        "name": "tarot",
+        "options": 204,
+        "unauthenticatedPost": 401,
+        "allowedOrigin": true
+      }
+    ],
+    "passed": true
+  },
+  "publicFrontend": "docs/evidence/frontend-openai-fallback-public.json",
+  "budgetDatabase": {
+    "migration": "202609200016",
+    "applied": true,
+    "migrationSha256": "c36091a6cd217c6233402fa5de1e964cf13601b9f0f7a4cb3ac75b1fc5142f75",
+    "dailyUSD": 0.1,
+    "monthlyUSD": 1,
+    "totalUSD": 1,
+    "expiresAt": "2026-10-20T09:12:35.300928+00:00",
+    "timezone": "Asia/Seoul",
+    "localSqlTests": 9,
+    "hostedRollbackSmoke": {
+      "passed": true,
+      "reservation": true,
+      "settlement": true,
+      "duplicateRefundPrevented": true,
+      "cap": true,
+      "expiry": true,
+      "permissions": true
+    },
+    "conservativeMicroUSDConsumedAfterProbes": 11887,
+    "externalKeyUsageNotCovered": true
+  },
+  "live": {
+    "actualCloudflareRequests": 0,
+    "actualOpenAIRequests": 14,
+    "primary429": "MOCKED",
+    "finalStageProbe": {
+      "startedAt": "2026-09-20T09:23:36.926Z",
+      "manifestSha256": "535278a18113ef4b8832e142815e534643eda014c3f4cc0744a97112a338005c",
+      "maximumPaidRequests": 9,
+      "maxOutputTokensPerRequest": 900,
+      "maximumInputBytes": 24000,
+      "attempts": [
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:37.531Z",
+          "httpStatus": 200,
+          "elapsedMs": 1407
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:39.063Z",
+          "httpStatus": 200,
+          "elapsedMs": 1448
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:40.573Z",
+          "httpStatus": 200,
+          "elapsedMs": 1360
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:41.999Z",
+          "httpStatus": 200,
+          "elapsedMs": 1596
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:43.654Z",
+          "httpStatus": 200,
+          "elapsedMs": 1394
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:45.105Z",
+          "httpStatus": 200,
+          "elapsedMs": 2038
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:23:47.196Z",
+          "httpStatus": 200,
+          "elapsedMs": 1932
+        }
+      ],
+      "cases": [
+        {
+          "id": "BOMI-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3140,
+            "completionTokens": 47
+          },
+          "text": "오, 발표 무사히 끝냈네! 긴장했는데 생각보다 잘됐다니 다행이다. 오늘은 어깨 좀 펴도 돼."
+        },
+        {
+          "id": "BOMI-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3212,
+            "completionTokens": 50
+          },
+          "text": "발표 끝내고 커피까지 마셨으면 오늘 일정 꽤 알차게 마무리했네. 지금은 그냥 편하게 쉬는 모드로 있자."
+        },
+        {
+          "id": "SANI-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3133,
+            "completionTokens": 60
+          },
+          "text": "발표 무사히 끝냈네. 긴장했는데도 생각보다 잘 됐다면 준비한 게 제대로 나온 모양이야. 오늘은 발표 자료보다 끝났다는 사실을 좀 즐겨도 되겠다."
+        },
+        {
+          "id": "SANI-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3218,
+            "completionTokens": 76
+          },
+          "text": "발표 끝내고 커피까지 마셨으면 오늘 일정은 꽤 깔끔하게 마무리됐네. 긴장한 날 뒤에 마시는 커피가 유난히 맛있을 때가 있지. 오늘은 그냥 이 흐름대로 느슨하게 있어도 되겠다."
+        },
+        {
+          "id": "ARANG-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3071,
+            "completionTokens": 73
+          },
+          "text": "발표를 무사히 마치셨군요. 긴장했는데도 생각보다 잘 끝났다면, 준비한 만큼 제대로 해낸 겁니다. 오늘은 그 결과를 굳이 깎아내리지 말고 잘 해냈다고 인정해도 되겠어요."
+        },
+        {
+          "id": "ARANG-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3169,
+            "completionTokens": 60
+          },
+          "text": "발표도 끝내고 동료와 커피까지 마셨군요. 긴장이 풀린 뒤의 커피는 유난히 맛있죠. 오늘은 조언 없이, 그냥 편하게 이야기할게요."
+        },
+        {
+          "id": "tarot-one-card",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3354,
+            "completionTokens": 160
+          },
+          "text": "별 정방향은 지금 시작하려는 취미에 희망, 영감, 회복, 가능성이 있다는 상징이야. 잘해야 한다는 부담보다 “이걸 하면서 내가 다시 살아나는 느낌이 있나”를 기준으로 보면 좋아. 처음부터 큰 성과를 내려고 하기보다, 작게 시작해서 꾸준히 이어가면 취미의 의미가 더 선명해질 수 있어. 카드가 적성이나 성공을 보장하는 건 아니지만, 너한테 긍정적인 자극과 회복의 계기가 될 가능성을 살펴보라는 메시지로 읽혀."
+        }
+      ],
+      "syntheticOnly": true,
+      "primary429": "MOCKED",
+      "userAccountOrConversationWrites": 0,
+      "persistentCostLedger": true,
+      "passed": true,
+      "unwantedQuestionCases": [],
+      "paidRequests": 7,
+      "completedAt": "2026-09-20T09:23:49.159Z",
+      "budget": {
+        "consumed_micros": 11887,
+        "daily_limit_micros": 100000,
+        "total_limit_micros": 1000000,
+        "expires_at": "2026-10-20T09:12:35.300928+00:00"
+      },
+      "limitedQualityReview": {
+        "independentAIReadOnly": true,
+        "unwantedQuestionsSuppressedInThreeFollowups": true,
+        "overallPersonaAcceptance": false,
+        "remaining": [
+          "BOMI-2 and SANI-2 still offer rest/activity suggestions despite the no-advice preference.",
+          "BOMI and SANI opening structures remain similar for the same input.",
+          "ARANG-1 assumes unexpressed self-discounting; ARANG-2 ends with meta-conversation.",
+          "Tarot content remains broadly generic despite valid references and no success guarantee."
+        ],
+        "additionalModelRequests": 0
+      }
+    },
+    "priorPromptProbe": {
+      "startedAt": "2026-09-20T09:17:23.192Z",
+      "manifestSha256": "9634145ff62dc4b3b38c78303fce18c64750f981c9f663c2f444810fcceec14d",
+      "maximumPaidRequests": 10,
+      "maxOutputTokensPerRequest": 900,
+      "maximumInputBytes": 24000,
+      "attempts": [
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:23.835Z",
+          "httpStatus": 200,
+          "elapsedMs": 2228
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:26.200Z",
+          "httpStatus": 200,
+          "elapsedMs": 1929
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:28.196Z",
+          "httpStatus": 200,
+          "elapsedMs": 1608
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:29.877Z",
+          "httpStatus": 200,
+          "elapsedMs": 1596
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:31.534Z",
+          "httpStatus": 200,
+          "elapsedMs": 1482
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:33.075Z",
+          "httpStatus": 200,
+          "elapsedMs": 1390
+        },
+        {
+          "provider": "OpenAI",
+          "startedAt": "2026-09-20T09:17:34.525Z",
+          "httpStatus": 200,
+          "elapsedMs": 2802
+        }
+      ],
+      "cases": [
+        {
+          "id": "BOMI-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2821,
+            "completionTokens": 61
+          },
+          "text": "오, 발표 무사히 끝냈네! 긴장했는데도 생각보다 잘했다면 오늘 꽤 뿌듯해해도 돼. 이제 긴장 풀고 맛있는 거 하나 보상해주자."
+        },
+        {
+          "id": "BOMI-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2907,
+            "completionTokens": 51
+          },
+          "text": "좋지, 오늘은 발표도 끝냈고 커피까지 마셨으니 그냥 느슨하게 쉬는 모드로 가자. 무슨 커피 마셨어?"
+        },
+        {
+          "id": "SANI-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2809,
+            "completionTokens": 67
+          },
+          "text": "오, 발표 무사히 끝냈네. 긴장했는데 생각보다 잘 됐다면 오늘은 꽤 뿌듯해해도 돼. 이제 머릿속에서 발표 장면 반복 재생은 잠깐 꺼두자."
+        },
+        {
+          "id": "SANI-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2901,
+            "completionTokens": 50
+          },
+          "text": "좋지. 발표도 끝내고 커피까지 마셨으면 오늘 할 일은 꽤 잘 해낸 셈이네. 무슨 얘기 했어?"
+        },
+        {
+          "id": "ARANG-1",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2816,
+            "completionTokens": 73
+          },
+          "text": "발표를 무사히 마치셨군요. 긴장했는데도 생각보다 잘 끝났다면, 준비한 만큼 실력이 제대로 나온 거예요. 오늘은 결과를 따져보기보다 “해냈다”는 감각을 조금 누리셔도 좋겠습니다."
+        },
+        {
+          "id": "ARANG-2",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 2914,
+            "completionTokens": 76
+          },
+          "text": "좋아요. 오늘은 굳이 의미를 찾거나 다음 계획을 세우지 말고, 발표도 끝났고 커피도 마신 사람답게 느긋하게 있어요. 긴장 풀린 뒤 마시는 커피가 유난히 맛있을 때가 있죠."
+        },
+        {
+          "id": "tarot-one-card",
+          "model": "gpt-5.6-luna",
+          "promptVersion": "JumZipPersona-v4.2",
+          "repaired": false,
+          "usage": {
+            "promptTokens": 3030,
+            "completionTokens": 143
+          },
+          "text": "별 정방향은 지금 시작하려는 취미에 희망, 영감, 회복, 가능성이 있다는 뜻으로 볼 수 있어. 결과를 빨리 내야 한다기보다, 그 활동 자체가 마음을 환기하고 꾸준히 이어갈 동력을 줄 수 있다는 쪽이야. 다만 기대만 크게 키우기보다 작은 목표나 정해진 시간을 만들어 실제 행동으로 연결하는 게 좋아. 별빛도 전기세는 안 내지만, 취미는 시간을 조금 써야 빛나거든."
+        }
+      ],
+      "syntheticOnly": true,
+      "primary429": "MOCKED",
+      "userAccountOrConversationWrites": 0,
+      "persistentCostLedger": true,
+      "passed": true,
+      "paidRequests": 7,
+      "completedAt": "2026-09-20T09:17:37.360Z",
+      "budget": {
+        "consumed_micros": 5678,
+        "daily_limit_micros": 100000,
+        "total_limit_micros": 1000000,
+        "expires_at": "2026-10-20T09:12:35.300928+00:00"
+      },
+      "limitedQualityPassed": false,
+      "unwantedQuestionCases": [
+        "BOMI-2",
+        "SANI-2"
+      ],
+      "note": "Transport/validator success did not establish interaction quality; original outputs retained."
+    },
+    "hostedAuthenticatedEdgeRequests": 0,
+    "userDataSent": false,
+    "conversationOrUserAccountWrites": 0,
+    "costLedgerWrites": true,
+    "credentialValuesLogged": false
+  },
+  "approvals": {
+    "paidModelAndLimitsRequested": true,
+    "openAIConversationContextAndToolResultTransferExplicitlyApproved": true,
+    "activationExplicitlyApproved": true,
+    "externalBillingSettingsChanged": false
+  },
+  "limitations": [
+    "The cost cap applies only to this JumZip paid fallback path, not other uses of the OpenAI key/account.",
+    "Accounting intentionally uses conservative input pricing and retains uncertain holds; it is not an OpenAI invoice.",
+    "Seven final synthetic cases are a limited conversation-quality check, not full Persona or Saju/compatibility quality acceptance.",
+    "Full public authenticated end-to-end acceptance was not rerun in this change.",
+    "Providers may still fail; there is no uncontrolled retry or Gemini path."
+  ]
+}

@@ -6,6 +6,7 @@ import { ApiFailure, safeFailure, partialFailureDetails } from '../http/errors.t
 import { createRepository, type Repository, type ClaimedRequest, type DrawSnapshot, type BeginParams } from '../persistence/repository.ts';
 import { drawTarot, buildTarotInterpretationData } from '../domain/tarot.ts';
 import { createOpenAICompatibleProvider } from '../llm/provider.ts';
+import { createOpenAIBudget } from '../llm/budget.ts';
 import { generatePersonaReply, type PersonaReply } from '../llm/reply.ts';
 import { extractToolRecommendation, type Recommendation } from '../llm/intent.ts';
 import type { PersonaPromptInput } from '../persona/prompt.ts';
@@ -189,14 +190,15 @@ export function createActionExecutor(dependencies: ExecutorDependencies) {
 export function createExecutor(client: SupabaseClient, environment: (name: string) => string | undefined) {
   const repository = createRepository(client);
   return async (endpoint: Endpoint, request: ActionRequest, user: AuthenticatedUser, deadlineAt = Date.now() + 100_000): Promise<ActionOutput> => {
-    const providerConfig = () => ({ baseUrl: environment('LLM_BASE_URL') ?? '', model: environment('LLM_MODEL') ?? '', apiKey: environment('LLM_API_KEY'),
+    const providerConfig = (allowPaidFallback = false) => ({ baseUrl: environment('LLM_BASE_URL') ?? '', model: environment('LLM_MODEL') ?? '', apiKey: environment('LLM_API_KEY'),
       structuredFormat: environment('LLM_STRUCTURED_FORMAT') === 'json_object' ? 'json_object' as const : 'json_schema' as const,
-      ...(environment('LLM_FALLBACK_ENABLED') === 'true' ? { fallback: {
+      ...(allowPaidFallback && environment('LLM_FALLBACK_ENABLED') === 'true' ? { fallback: {
         baseUrl: environment('LLM_FALLBACK_BASE_URL') ?? '', model: environment('LLM_FALLBACK_MODEL') ?? '', apiKey: environment('LLM_FALLBACK_API_KEY') ?? '',
+        reserve: createOpenAIBudget(client),
       } } : {}) });
     const generate = (input: PersonaPromptInput) => {
       // Lazy initialization preserves the authoritative draw even when inference is unconfigured.
-      const provider = createOpenAICompatibleProvider({ ...providerConfig(), ...inferenceTimeouts(deadlineAt) });
+      const provider = createOpenAICompatibleProvider({ ...providerConfig(true), ...inferenceTimeouts(deadlineAt) });
       return generatePersonaReply(provider, input);
   };
   const saju = createSajuActionExecutor({ readings: createSajuRepository(client), executions: repository, calculate: calculateFullSajuWithTiming,

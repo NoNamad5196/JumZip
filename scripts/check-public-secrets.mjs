@@ -24,6 +24,7 @@ function inspectFile(file){
   for(const [name,value] of secrets)if(source.includes(value))failures.push({file:relative(root,file),reason:`configured server credential: ${name}`});
   if(/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----\s+[A-Za-z0-9+/=\r\n]{32,}/.test(source))failures.push({file:relative(root,file),reason:'private key block'});
   if(/cfut_[A-Za-z0-9_-]{35,}/.test(source))failures.push({file:relative(root,file),reason:'Cloudflare API credential'});
+  if(/sk-proj-[A-Za-z0-9_-]{40,}/.test(source))failures.push({file:relative(root,file),reason:'OpenAI project credential'});
   for(const token of source.matchAll(/eyJ[A-Za-z0-9_-]+\.([A-Za-z0-9_-]+)\.[A-Za-z0-9_-]+/g)){
    try{if(JSON.parse(Buffer.from(token[1],'base64url').toString()).role==='service_role')failures.push({file:relative(root,file),reason:'service-role JWT'});}catch{/* Non-JWT source text is ignored. */}
   }

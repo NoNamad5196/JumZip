@@ -3,7 +3,7 @@ import { getTarotMeaning } from '../domain/tarot.ts';
 import { getChatResponseDefinition, TAROT_EVIDENCE_SPAN_MAX_LENGTH, type ChatResponseContract } from './chat-contract.ts';
 export { CHAT_RESPONSE_SCHEMA } from './chat-contract.ts';
 
-export type LLMErrorCode = 'LLM_NOT_CONFIGURED' | 'LLM_TIMEOUT' | 'LLM_UNAVAILABLE' | 'LLM_AUTH_FAILED' | 'LLM_RATE_LIMITED' | 'LLM_INVALID_RESPONSE';
+export type LLMErrorCode = 'LLM_NOT_CONFIGURED' | 'LLM_TIMEOUT' | 'LLM_UNAVAILABLE' | 'LLM_AUTH_FAILED' | 'LLM_RATE_LIMITED' | 'LLM_INVALID_RESPONSE' | 'LLM_BUDGET_EXCEEDED';
 const VALIDATION_ISSUES = ['JSON_REQUIRED', 'RESPONSE_SCHEMA_INVALID', 'RESPONSE_CONTRACT_MISMATCH', 'MODEL_CONTROL_TEXT', 'PERSONA_BREAK', 'FORBIDDEN_CERTAINTY_OR_DEPENDENCY', 'BOMI_RELATIONSHIP_BOUNDARY', 'TOOL_REFERENCE_INVALID', 'TOOL_RESULT_CHANGED', 'UNSUPPORTED_PROBABILITY', 'TOOL_SCORE_CHANGED', 'TOOL_SCORE_POSSIBILITIES_CHANGED', 'TAROT_EVIDENCE_REQUIRED', 'TAROT_EVIDENCE_SHAPE_INVALID', 'TAROT_EVIDENCE_POSITION_INVALID', 'TAROT_EVIDENCE_KEYWORD_INVALID', 'TAROT_EVIDENCE_SPAN_MISSING', 'TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN', 'STRUCTURED_VALIDATION_FAILED', 'RESPONSE_VALIDATION_FAILED', 'REPAIR_USER_MESSAGE_MISSING'] as const;
 const DIAGNOSTIC_ISSUES = [...VALIDATION_ISSUES, 'HTTP_AUTH_FAILED', 'HTTP_RATE_LIMITED', 'HTTP_UNAVAILABLE', 'NETWORK_ERROR', 'REQUEST_TIMEOUT', 'RESPONSE_BODY_MISSING', 'RESPONSE_BODY_TOO_LARGE', 'RESPONSE_ENVELOPE_JSON_INVALID', 'RESPONSE_ENVELOPE_INVALID', 'RESPONSE_CONTENT_MISSING', 'RESPONSE_INCOMPLETE', 'INTENT_ALIAS_SOURCE_INVALID', 'INTENT_CHOICES_INVALID'] as const;
 export type LLMFailureStage = 'TRANSPORT' | 'ENVELOPE' | 'PARSE' | 'VALIDATION';
@@ -43,11 +43,14 @@ export interface LLMProvider {
   generateStructured<T>(input: StructuredRequest<T>): Promise<T>;
   repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[], contract?: ChatResponseContract, context?: TarotRepairContext): Promise<ProviderResult>;
 }
+export interface FallbackReservationRequest { model: string; maxOutputTokens: number; inputBytes: number }
+export interface FallbackUsage { promptTokens: number; completionTokens: number }
+export interface FallbackReservation { settle(usage: FallbackUsage): Promise<void> }
 export interface OpenAICompatibleConfig {
   baseUrl: string; apiKey?: string; model: string; fetchImpl?: typeof fetch;
   initialTimeoutMs?: number; repairTimeoutMs?: number; maxOutputTokens?: number;
   /** Server-only, separate credential. Used solely after Cloudflare HTTP 429. */
-  fallback?: { baseUrl: string; apiKey: string; model: string };
+  fallback?: { baseUrl: string; apiKey: string; model: string; reserve(request: FallbackReservationRequest): Promise<FallbackReservation> };
   /** Use json_object for a provider without strict JSON Schema support; runtime validation remains mandatory. */
   structuredFormat?: 'json_schema' | 'json_object';
 }
@@ -55,6 +58,24 @@ export interface OpenAICompatibleConfig {
 // Bound decoded transport bytes before JSON allocation. A provider may omit or lie about
 // Content-Length, and Response.text() would allocate the entire body before validation.
 const MAX_RESPONSE_BYTES = 128_000;
+const MAX_FALLBACK_INPUT_BYTES = 64_000;
+const MAX_FALLBACK_OUTPUT_TOKENS = 900;
+function fallbackUsage(value: unknown, inputBytes: number, maxOutputTokens: number): FallbackUsage | undefined {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return undefined;
+  const usage = value as Record<string, unknown>;
+  const promptTokens = usage.prompt_tokens, completionTokens = usage.completion_tokens;
+  if (typeof promptTokens !== 'number' || !Number.isSafeInteger(promptTokens) || promptTokens < 0 || promptTokens > inputBytes + 1024
+    || typeof completionTokens !== 'number' || !Number.isSafeInteger(completionTokens) || completionTokens < 0 || completionTokens > maxOutputTokens) return undefined;
+  return { promptTokens, completionTokens };
+}
+function reservationFailure(error: unknown): LLMError {
+  // Only a fixed server-owned code can cross the budget boundary, never its text.
+  try {
+    if (error && typeof error === 'object' && (error as { code?: unknown }).code === 'LLM_BUDGET_EXCEEDED') return new LLMError('LLM_BUDGET_EXCEEDED', false);
+  } catch { /* An untrusted getter is not a budget diagnostic. */ }
+  return new LLMError('LLM_RATE_LIMITED');
+}
+
 function cancelWithoutWaiting(stream: { cancel: () => Promise<unknown> } | null): void {
   // A hostile/custom stream can return a never-settling cancel promise or throw.
   try { void stream?.cancel().catch(() => {}); } catch { /* Best effort cleanup. */ }
@@ -162,14 +183,15 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
   const url = config.baseUrl.replace(/\/+$/, '').replace(/\/chat\/completions$/, '') + '/chat/completions';
   const cloudflareEndpoint = base.origin === 'https://api.cloudflare.com'
     && /^\/client\/v4\/accounts\/[^/]+\/ai\/v1(?:\/chat\/completions)?\/?$/.test(base.pathname);
-  let fallback: Readonly<{ url: string; apiKey: string; model: string }> | undefined;
+  let fallback: Readonly<{ url: string; apiKey: string; model: string; reserve: NonNullable<OpenAICompatibleConfig['fallback']>['reserve']; maxOutputTokens: number }> | undefined;
   if (config.fallback !== undefined) {
     const candidate = config.fallback;
     if (!cloudflareEndpoint || !candidate || typeof candidate !== 'object' || Array.isArray(candidate)
-      || candidate.baseUrl !== 'https://generativelanguage.googleapis.com/v1beta/openai'
-      || candidate.model !== 'gemini-3.5-flash' || typeof candidate.apiKey !== 'string' || !candidate.apiKey.trim()
-      || candidate.apiKey.trim() === config.apiKey?.trim()) throw new LLMError('LLM_NOT_CONFIGURED', false);
-    fallback = Object.freeze({ url: `${candidate.baseUrl}/chat/completions`, apiKey: candidate.apiKey.trim(), model: candidate.model });
+      || candidate.baseUrl !== 'https://api.openai.com/v1'
+      || candidate.model !== 'gpt-5.6-luna' || typeof candidate.apiKey !== 'string' || !candidate.apiKey.trim()
+      || candidate.apiKey.trim() === config.apiKey?.trim() || typeof candidate.reserve !== 'function'
+      || !Number.isSafeInteger(config.maxOutputTokens ?? 900) || (config.maxOutputTokens ?? 900) < 1) throw new LLMError('LLM_NOT_CONFIGURED', false);
+    fallback = Object.freeze({ url: `${candidate.baseUrl}/chat/completions`, apiKey: candidate.apiKey.trim(), model: candidate.model, reserve: candidate.reserve, maxOutputTokens: Math.min(config.maxOutputTokens ?? 900, MAX_FALLBACK_OUTPUT_TOKENS) });
   }
   // Sticky only within this provider instance: a controlled repair does not retry
   // an exhausted primary. There is no recursive request or second repair budget.
@@ -203,18 +225,39 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
         ? [{ role: 'system', content: `출력은 다음 JSON Schema를 만족하는 JSON 객체 하나다. 필수 키, enum, 자료형을 정확히 지킨다. 다른 키나 설명을 추가하지 않는다.\n${JSON.stringify(schema)}` }, ...messages]
         : [...messages];
       let target = usingFallback ? fallback : undefined;
-      const send = (secondary: typeof fallback): Promise<Response> => {
+      let settlement: { reservation: FallbackReservation; inputBytes: number; maxOutputTokens: number } | undefined;
+      const send = async (secondary: typeof fallback): Promise<Response> => {
         const requestMessages = !secondary && config.model === '@cf/qwen/qwen3-30b-a3b-fp8'
           ? [{ role: 'system' as const, content: '이 요청은 짧은 최종 JSON 응답만 필요하다. /no_think' }, ...formatMessages]
           : formatMessages;
         const apiKey = secondary?.apiKey ?? config.apiKey;
+        const responseFormat = config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } };
+        // Keep primary serialization unchanged. OpenAI uses a separate documented
+        // request dialect; neither CF options nor its credential cross providers.
+        const requestBody = JSON.stringify(secondary ? {
+          model: secondary.model, messages: requestMessages, reasoning_effort: 'none',
+          max_completion_tokens: secondary.maxOutputTokens, store: false, service_tier: 'default', stream: false,
+          response_format: responseFormat,
+        } : { model: config.model, messages: requestMessages, temperature, max_tokens: config.maxOutputTokens ?? 900, stream: false,
+          ...(cloudflareGemma ? { chat_template_kwargs: { enable_thinking: false } } : {}),
+          response_format: responseFormat });
+        if (controller.signal.aborted) { throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
+        if (secondary) {
+          const inputBytes = new TextEncoder().encode(requestBody).byteLength;
+          if (inputBytes > MAX_FALLBACK_INPUT_BYTES) throw new LLMError('LLM_BUDGET_EXCEEDED', false);
+          let reservation: FallbackReservation;
+          try {
+            reservation = await secondary.reserve(Object.freeze({ model: secondary.model, maxOutputTokens: secondary.maxOutputTokens, inputBytes }));
+            if (!reservation || typeof reservation !== 'object' || typeof reservation.settle !== 'function') throw new Error('INVALID_RESERVATION');
+          } catch (error) { throw reservationFailure(error); }
+          // A late reservation must never start a paid request after the deadline.
+          if (controller.signal.aborted) { throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
+          settlement = { reservation, inputBytes, maxOutputTokens: secondary.maxOutputTokens };
+        }
         return fetchImpl(secondary?.url ?? url, {
           method: 'POST', signal: controller.signal, ...(apiKey ? { redirect: 'error' as const } : {}),
           headers: { 'Content-Type': 'application/json', ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}) },
-          body: JSON.stringify({ model: secondary?.model ?? config.model, messages: requestMessages,
-            ...(secondary ? { reasoning_effort: 'low' } : { temperature }), max_tokens: config.maxOutputTokens ?? 900, stream: false,
-            ...(!secondary && cloudflareGemma ? { chat_template_kwargs: { enable_thinking: false } } : {}),
-            response_format: config.structuredFormat === 'json_object' ? { type: 'json_object' } : { type: 'json_schema', json_schema: { name, strict: true, schema } } }),
+          body: requestBody,
         });
       };
       let response = await send(target);
@@ -258,8 +301,16 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
       finishReason = safeFinishReason(choice?.finish_reason);
       if (choice?.finish_reason === 'length') throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_INCOMPLETE');
       if (typeof choice?.message?.content !== 'string' || choice.message.content.length === 0) throw failure('LLM_INVALID_RESPONSE', 'RESPONSE_CONTENT_MISSING');
+      // Bill only bounded numeric usage from a successful response envelope. Any
+      // missing/invalid usage or failed transport keeps the full conservative hold.
+      const paidUsage = settlement ? fallbackUsage(body.usage, settlement.inputBytes, settlement.maxOutputTokens) : undefined;
+      if (settlement && paidUsage) {
+        try { await settlement.reservation.settle(Object.freeze(paidUsage)); }
+        catch { /* Settlement failure preserves the answer and the reserved cost. */ }
+        if (controller.signal.aborted) { throw failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT'); }
+      }
       return { content: choice.message.content, model: typeof body.model === 'string' ? body.model : target?.model ?? config.model, finishReason,
-        ...(typeof body.usage?.prompt_tokens === 'number' && typeof body.usage.completion_tokens === 'number' ? { usage: { promptTokens: body.usage.prompt_tokens, completionTokens: body.usage.completion_tokens } } : {}) };
+        ...(settlement ? (paidUsage ? { usage: paidUsage } : {}) : (typeof body.usage?.prompt_tokens === 'number' && typeof body.usage.completion_tokens === 'number' ? { usage: { promptTokens: body.usage.prompt_tokens, completionTokens: body.usage.completion_tokens } } : {})) };
     };
     try {
       return await Promise.race([execute(), new Promise<never>((_, reject) => { timer = setTimeout(() => { controller.abort(); cancelWithoutWaiting(activeReader); reject(failure('LLM_TIMEOUT', 'REQUEST_TIMEOUT')); }, timeoutMs); })]);

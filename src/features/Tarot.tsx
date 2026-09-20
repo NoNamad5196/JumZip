@@ -19,14 +19,18 @@ export function tarotBasicMeaning(card: DrawCard) {
   if (!meaning || !['UPRIGHT', 'REVERSED'].includes(card.orientation)) return null;
   return { name: meaning.nameKo, keywords: card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed };
 }
-function interpretationStatus(result: DrawResult): string {
+function interpretationFailureReason(result: DrawResult): string | undefined {
   // The API may wrap the provider reason in partialError.details. Keep the public
   // DrawResult shape unchanged and never render arbitrary remote error text.
   const error = result.partialError as { code?: string; details?: { reason?: unknown } } | undefined;
-  const reason = typeof error?.details?.reason === 'string' ? error.details.reason : error?.code;
+  return typeof error?.details?.reason === 'string' ? error.details.reason : error?.code;
+}
+function interpretationStatus(result: DrawResult): string {
+  const reason = interpretationFailureReason(result);
+  if (reason === 'LLM_BUDGET_EXCEEDED') return '보조 AI의 이용 한도나 사용 기간을 확인해 주세요. 저장된 카드는 그대로 남아 있어요.';
   if (reason === 'LLM_TIMEOUT') return 'AI 해석 응답이 늦어져 멈췄어요. 같은 카드로 해석을 다시 받을 수 있어요.';
   if (reason === 'LLM_RATE_LIMITED') return 'AI 해석 요청이 제한되어 있어요. 제한이 해제된 뒤 같은 카드로 다시 시도해 주세요.';
-  if (error?.code === 'LLM_UNAVAILABLE' || ['LLM_UNAVAILABLE', 'LLM_NOT_CONFIGURED', 'LLM_AUTH_FAILED'].includes(reason ?? '')) return 'AI 해석 서비스를 이용할 수 없어요. 저장된 카드는 그대로 남아 있어요.';
+  if (result.partialError?.code === 'LLM_UNAVAILABLE' || ['LLM_UNAVAILABLE', 'LLM_NOT_CONFIGURED', 'LLM_AUTH_FAILED'].includes(reason ?? '')) return 'AI 해석 서비스를 이용할 수 없어요. 저장된 카드는 그대로 남아 있어요.';
   if (result.executionStatus === 'PARTIAL') return 'AI 해석을 완료하지 못했어요. 카드는 저장됐고, 다시 해석해도 같은 카드를 사용해요.';
   return 'AI 해석이 아직 없어요. 저장된 카드의 기본 의미를 먼저 살펴보세요.';
 }
@@ -61,7 +65,7 @@ export function TarotResult({ result, pending, onRetry, onRedraw, onCopy, showDe
     </>}
     <div className="tarot-actions" data-export="hide">
       {showDetails && <Link to={`/reading/${result.consultationId}`}><Icon name="arrow" size={15}/>결과 자세히 보기</Link>}
-      {onRetry && <button type="button" disabled={pending || result.partialError?.retryable === false} onClick={onRetry}><Icon name="history" size={15} />해석 다시 받기</button>}
+      {onRetry && <button type="button" disabled={pending || result.partialError?.retryable === false && interpretationFailureReason(result) !== 'LLM_BUDGET_EXCEEDED'} onClick={onRetry}><Icon name="history" size={15} />해석 다시 받기</button>}
       {onRedraw && result.mode !== 'DAILY' && <button type="button" disabled={pending} onClick={onRedraw}><Icon name="cards" size={15} />새로 뽑기</button>}
       {onCopy && <button type="button" onClick={onCopy}><Icon name="copy" size={15} />결과 복사</button>}
     </div>

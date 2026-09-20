@@ -2,7 +2,17 @@
 
 Deadline: 2026-09-20 23:59 Asia/Seoul. User approved M0–M17 implementation. A working Tarot release is a checkpoint; independent Core v1 work continues until acceptance or a concrete external blocker.
 
-## Latest update — 17:47 KST: Cloudflare-first Gemini fallback enabled
+## Latest update — 18:28 KST: Cloudflare-first OpenAI Luna enabled with a persistent spending cap
+
+Gemini has been removed from active configuration and replaced with `gpt-5.6-luna`. Cloudflare remains first; only HTTP429 during a user-facing reply can trigger paid fallback. Intent, titles and memory maintenance stay Cloudflare-only. The owner explicitly approved OpenAI transmission and activation. The DB enforces $0.10/day, $1/calendar month, and $1 total through 2026-10-20 18:12 KST, reserving before every paid request including repair. These are JumZip limits, not account-wide limits for other applications. See [configuration and accounting](openai-fallback.md).
+
+Persona-v4.2 / Intent-v1 is deployed to all five Edge Functions:54 manifest files (six modified, one added,47 unchanged). Candidate v12/v6 and separate v4.1 contracts remain unaccepted. The public frontend discloses OpenAI processing and displays budget failures while preserving saved messages/cards. All ten public HTML/JS/CSS files match the build.
+
+Typecheck/lint/build,1,233 full-suite tests and three expected live skips passed; after the final prompt refinement11 related tests and16 staged groups passed. Hosted budget RPC reservation/settlement/idempotency/cap/expiry/permission checks passed inside a rolled-back transaction. Each deployed function passed OPTIONS204 and unauthenticatedPOST401; remote configuration hashes match.
+
+Two synthetic runs made14 actual Luna requests and consumed11,887 micro-USD (~$0.0119) under conservative accounting. The first prompt delivered responses but failed two no-question preferences. After refinement all seven final cases returned valid responses without repair and all three no-question followups omitted questions. This is a bounded improvement check; broader naturalness and domain interpretation quality remain incomplete. Primary429 was mocked; no actual user conversations or accounts were used. [Full evidence](evidence/edge-openai-fallback-release.json).
+
+## Earlier update — 17:47 KST: Cloudflare-first Gemini fallback enabled (superseded)
 
 The [Gemini fallback release](gemini-fallback.md) is deployed and enabled after owner confirmation of Free Tier and approval of the stated Google data transfer. Cloudflare remains primary; only HTTP429 switches an operation to Gemini3.5Flash. The accepted v4 backend has exactly two changed files out of53; prompts, schemas, validators, privacy/deletion guards and Intent-v1 remain unchanged. Real provider checks passed a Korean greeting and a correctly shaped one-card Tarot case. These checks do not establish full hosted signed-in E2E acceptance or eliminate transient provider failures.
 
