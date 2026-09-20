@@ -1,0 +1,31 @@
+{
+  "scope": "Main verification after Persona-v11/Intent-v6 local synthetic HTTP integration",
+  "integrationEvidence": "docs/evidence/backend-local-edge-contract-v11-smoke-retry2.json",
+  "candidateEnvironmentVerifiedAt": "2026-09-20T02:13:51.343Z",
+  "originalEnvironmentRestoredAt": "2026-09-20T02:14:45.980Z",
+  "candidateAndRestoredEnvironmentComparisonsPassed": [
+    "ALLOWED_ORIGINS",
+    "LLM_API_KEY",
+    "LLM_BASE_URL",
+    "LLM_MODEL",
+    "LLM_STRUCTURED_FORMAT",
+    "MEMORY_MAINTENANCE_ENABLED",
+    "TITLE_GENERATION_ENABLED",
+    "TOOL_RECOMMENDATIONS_ENABLED"
+  ],
+  "containerProviderHealthStatusBeforeAndAfter": 200,
+  "syntheticServerStoppedThroughAuthenticatedControl": true,
+  "syntheticServerExitCode": 0,
+  "syntheticProviderRequests": 11,
+  "syntheticProviderFailures": 0,
+  "dockerDesktopOrDatabaseRestarted": false,
+  "hostedSettingsChanged": false,
+  "secretValuesRecorded": false,
+  "notes": [
+    "Initial failed report preserves fixture sentence-normalization mismatch; both owned identities fully cleaned.",
+    "Retry1 preserves missing Node --experimental-transform-types option during pure Saju seed import, after44 passing checks; both owned identities fully cleaned.",
+    "Harness now imports the pure seed engine before any credentials or HTTP, failing early if the Node option is missing. Production code was not changed for these fixture issues.",
+    "Retry2 passes53 actual local Auth/Edge/Postgres checks with7 Edge and11 explicitly synthetic provider requests, then confirms Auth404/fifteen empty tables for both owned accounts.",
+    "Canonical initial/repair Tarot index tables, fixed Intent choices diagnostics, original final-user payload, PARTIAL/retry/replay and stored Saju YEAR_FLOW all verified. This is not actual model quality or public Auth evidence."
+  ]
+}

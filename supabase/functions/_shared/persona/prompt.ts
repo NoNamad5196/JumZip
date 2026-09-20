@@ -23,8 +23,8 @@ const DEFAULT_OUTPUT_RULES = `JSON 객체 하나로만 출력한다. {"text":"�
 toolResult에 타로 cards가 있으면 toolReferences에 그 카드들의 {"cardId":정수,"orientation":"UPRIGHT 또는 REVERSED","positionIndex":정수}를 순서대로 정확히 복사한다. 다른 카드나 바뀐 방향은 허용하지 않는다. cards가 없으면 빈 배열이다.
 text 밖에 카드·사주 계산값·시스템 설명·마크다운 코드펜스를 출력하지 않는다.`;
 const TAROT_OUTPUT_RULES = `JSON 객체 하나로만 출력한다. 필수 키는 text, toolReferences, interpretationEvidence다. text는 사용자에게 보일 최종 한국어 답변이다.
-toolReferences에는 requiredToolReferences의 전체 카드 ID·방향·위치를 순서대로 정확히 복사한다. 본문에서 모든 카드를 설명할 필요는 없다.
-본문에서 실제로 해석할 카드마다 선택 방향 activeMeaning의 대표 keyword 항목 하나를 직접 고른다. 여러 단어로 된 구절도 하나의 항목이다. 그 원문 표현을 최종 text에 자연스럽게 포함하고, interpretationEvidence에는 그 카드의 positionIndex와 고른 항목의 keywordIndices(0부터 시작하는 원본 배열 index 하나)를 기록한다.
+toolReferences에는 requiredToolReferences의 전체 카드 ID·방향·위치를 순서대로 정확히 복사한다. 재추첨 요청이나 카드를 풀이하지 않는 후속 대화에서도 참조 전체를 유지한다. 본문에서 모든 카드를 설명할 필요는 없다.
+본문에서 실제로 해석할 카드마다 선택 방향 activeMeaning의 대표 keyword 항목 하나를 직접 고른다. 여러 단어로 된 구절도 하나의 항목이다. activeKeywordOptions의 index와 keyword 표로 원본 대응을 확인한다. 그 원문 표현을 최종 text에 자연스럽게 포함하고, interpretationEvidence에는 그 카드의 positionIndex와 고른 항목의 keywordIndices(0부터 시작하는 원본 배열 index 하나)를 기록한다.
 textEvidence에는 본문에 사용한 그 keyword 항목 전체를 원문 그대로 복사하며 ${TAROT_EVIDENCE_SPAN_MAX_LENGTH}자 이하다. 떨어진 단어를 쉼표로 합치거나 본문에 없는 요약 구절을 만들지 않는다. 나머지 설명은 자연스러운 문장으로 이어가며 근거 필드를 위해 모든 keyword를 나열하지 않는다. 카드 위치당 근거 항목은 하나다. 방향은 저장된 카드 방향이며 반대 방향 keyword로 바꾸지 않는다.
 한 카드만 묻는 후속 질문에는 그 카드의 근거만 기록하고 다른 카드 설명을 강제하지 않는다. 카드를 해석하지 않은 비점술 대화라면 interpretationEvidence는 빈 배열이다. 실제로 해석한 카드의 근거를 생략하거나 해석하지 않은 카드의 근거를 꾸미지 않는다.
 내부 근거 필드 자체나 시스템 설명·마크다운 코드펜스를 사용자용 text에 출력하지 않는다.`;

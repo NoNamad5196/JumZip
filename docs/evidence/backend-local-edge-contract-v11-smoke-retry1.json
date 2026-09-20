@@ -1,0 +1,502 @@
+{
+  "status": "FAIL",
+  "at": "2026-09-20T02:11:12.446Z",
+  "runName": "candidate-v11-retry1",
+  "scope": "ACTUAL_LOCAL_AUTH_EDGE_DATABASE_WITH_SYNTHETIC_HTTP_PROVIDER",
+  "target": "http://127.0.0.1:54321",
+  "model": "jumzip-http-contract-double-v11",
+  "candidate": {
+    "persona": "JumZipPersona-v11",
+    "intent": "JumZipIntent-v6"
+  },
+  "sourceHashes": {
+    "supabase/migrations/202609190001_core.sql": "9dcde35110e20f06e8650d4af9deeb955c1df113d896a149920be3ddc1dffbfb",
+    "supabase/migrations/202609190002_execution_rpcs.sql": "251ef4f6a93fc34d1a428a27e44f3cc9030f2eb01ea8e616bf714ab028c21503",
+    "supabase/migrations/202609190003_lifecycle.sql": "836204014eea3b6026f04ed44554e410275f6e45fe14951e338061a89e3e95c5",
+    "supabase/migrations/202609190004_birth_dates.sql": "990135dba0faba5335eb63173e89f838ad4517a6977c541e3365a73ed6e8037b",
+    "supabase/migrations/202609190005_saju_persistence.sql": "ccc17b99c0f64530cdd87922dc91f64ae6796e0fa9b48fc9e5a61b82833da24b",
+    "supabase/migrations/202609190006_compatibility_persistence.sql": "1865a89a21644d55463a1c68faaecaa0c99856d86a9295286b17ed92d4ea19f0",
+    "supabase/migrations/202609190007_execution_guards.sql": "8d0870a4fab76f1966358fe50c7ab84a2e295c21e4d701ebe0d086c7f54f5c5f",
+    "supabase/migrations/202609190008_titles_and_relationship.sql": "c0b4b534eff7f3a4dfe2909a508d809fdc5fb02d4a4ce9d26031dab5469fb3c3",
+    "supabase/migrations/202609190009_location_cache.sql": "81b4aa87d12af27c6f6cafee25fed11fab48ebcf5ed1b6b124a525b84d0d9ced",
+    "supabase/migrations/202609190010_consultation_lifecycle.sql": "10fc6361e291f5ae40f1eeeeaac649cfa19b061a9a5b8cfb3aa098c1b8ea0396",
+    "supabase/migrations/202609190011_account_cascade.sql": "f5d456f3faf32ae4be8d77629473f6d0308e19ccbb835812152d3b26c4b754e9",
+    "supabase/migrations/202609190012_saju_timing_projection.sql": "11075373e26af38c484232caab923cb70f58b8c59f925bc23c23d52126f998be",
+    "supabase/migrations/202609190013_memory_consent_boundaries.sql": "5568aba43b5e1ea3957e7bd9f142a7f5b1db016092ef2630b243b28855075693",
+    "supabase/migrations/202609190014_history_memory_selection.sql": "5d357b1352bbe591194bd026daaa397758e7b329d80d43e6d2874dd7f15e65c1",
+    "supabase/migrations/202609190015_deleted_consultation_guards.sql": "f3095a46f43c0a38168f80f7d7db961a67bd0d6441869dbda5c45eeaf5068113",
+    "supabase/functions/_shared/contracts/index.ts": "bbba19d69742841c56dce7bb2201f53a44ddf378153f037b9457d88721580a61",
+    "supabase/functions/_shared/domain/fortune-timing.ts": "4f12ed1407a0e08584f47de188bfda6cf09480dd9f9b6953508debb528194eb0",
+    "supabase/functions/_shared/domain/full-saju.ts": "471a638c7535e1deece3d14b30391af3e9bd2c8e778e33a2e3515142cc16a08d",
+    "supabase/functions/_shared/domain/index.ts": "21d366cf53bfd675cba2638d9ccf7af43f2fcb6771b982aa2c8757bb8a0402ef",
+    "supabase/functions/_shared/domain/router.ts": "744e1b07a32183d9839f203ece853b4a19b3a847e956032d5f5b38ccf0a2f845",
+    "supabase/functions/_shared/domain/rules/balance.ts": "10a0803d447821cca1badc912a29a8306cca244e86e97036967e47e811f512d7",
+    "supabase/functions/_shared/domain/rules/constants.ts": "d7093429bdad48a5b69665e4601312b8e12b670cde82b46bf2f04dd85f15b254",
+    "supabase/functions/_shared/domain/rules/index.ts": "21a39cecc23d8a2c948c9e916ada23ac4e7cafb949853d60ec184fa3947d50e1",
+    "supabase/functions/_shared/domain/rules/natal.ts": "5c52dae5720ad5451c6ecc86f788b4e2716d0c4ccf7c3a8b26b22ea7ea362bff",
+    "supabase/functions/_shared/domain/rules/rational.ts": "24d6904ad37b2823a35f066305c9f94c4d08dcb37e676f83d4ec041393c3ba63",
+    "supabase/functions/_shared/domain/rules/relations.ts": "c89cab9eedfdc3dd05f0cb4d8851ca978e7d2211a9eac21e338366faed6e456a",
+    "supabase/functions/_shared/domain/rules/shinsal.ts": "1ce95da224e61e61b0a34742c06dcdaa6443651cd3fdffa6c9a526b8de29fc7a",
+    "supabase/functions/_shared/domain/rules/strength.ts": "e6fc0633cf76ac2f7b84d6f1279a4d8affec3515d63ae25a801a255ad6f26586",
+    "supabase/functions/_shared/domain/rules/types.ts": "e5e718d50d00df6d9859ff78166f8ca3d06a25c5c37f7f57fc2fb7aad78d7020",
+    "supabase/functions/_shared/domain/saju-compatibility.ts": "054ac20331138c417c34dce3f5b0409ebc33fa4f708d3b7f6b7eccfdb55de78f",
+    "supabase/functions/_shared/domain/saju.ts": "f713893b2c7c1667e633d7c2647c8e344fbe06b76c99de24489ae543719999e2",
+    "supabase/functions/_shared/domain/tarot.ts": "8caadca604c16489543e57ecbd8181753080237052a3a0fa69b2a2d8df19ab13",
+    "supabase/functions/_shared/http/errors.ts": "16a3b8ba406c1da85f32340580713a74340bbc89ba4aa5696556a7724c1b2610",
+    "supabase/functions/_shared/http/handler.ts": "66ac20964597759098e05cc415fbd695789356fe43813eab092a9f97e251d6c0",
+    "supabase/functions/_shared/http/network.ts": "9094515654f6cd4222008049adb1945ca54907625597ee8c1860ac1d90b5d885",
+    "supabase/functions/_shared/http/runtime.ts": "33476bc95707b0b7b84d555639332009131fe35c9e94c491e6dc75be5d4eb0c6",
+    "supabase/functions/_shared/llm/chat-contract.ts": "0e549094905b38060a14092b600cd1fbb46c0a41eb66d73bb43d6575a10bde78",
+    "supabase/functions/_shared/llm/index.ts": "373de6095d1c111c90840d5788a45102c9f34958cfbffcda1c652399643d820b",
+    "supabase/functions/_shared/llm/intent.ts": "19a6120041ba81a8d38b56c1f5300db9118b3c8ee0ab13e3ab97c360c2b28e18",
+    "supabase/functions/_shared/llm/provider.ts": "7e95f5aa891467a213a144bf83532d6b9e28324a692df82447e0b20442c2e325",
+    "supabase/functions/_shared/llm/reply.ts": "aaaa6596fd0c8b314677be0dd14711e41c81cd12a9e58f0933928ad5f5fb19cf",
+    "supabase/functions/_shared/llm/validator.ts": "53f193878948847e7f4e7c5f4d1ecd3de56fb153f71f56cc91162e06ea203555",
+    "supabase/functions/_shared/orchestration/compatibility.ts": "494b366b117e03efd9061801cf49396ec2dc352b7db6de37059b2124f246c999",
+    "supabase/functions/_shared/orchestration/execute.ts": "96f8568d408d374c0ecac0d3759d51e34d78405bf381a4af360c00f881955dff",
+    "supabase/functions/_shared/orchestration/location.ts": "c0eb566b78ace5f1b5d00364a0c992b78ee65ef2af851986c289b10fce5c1670",
+    "supabase/functions/_shared/orchestration/maintenance.ts": "c8dadc23522486a6d1b8486b80cc0be4a432dabd511457f6918fa276144c689c",
+    "supabase/functions/_shared/orchestration/memory.ts": "fb6a2a5cd85c851e4c4b422f780f4a6c3a100cbeabbfd6ae807b0e4929abfe03",
+    "supabase/functions/_shared/orchestration/privacy.ts": "c090714da7925e39618217a6d2c70672c3b4456af5b534d4364fa913c15b65ef",
+    "supabase/functions/_shared/orchestration/saju.ts": "baf2d639a27677750b077344f6f339b26e106eb594c512b77b983d2bc1b624ac",
+    "supabase/functions/_shared/orchestration/titles.ts": "a220e533422bac4b7a7a58ac9eb4bac4f35d3f7dbcaa77db666b4d1bbfd232b7",
+    "supabase/functions/_shared/persistence/cleanup.ts": "fc5b26f011b9b1617e4d636c30a9b543f4b938c7a0453ce4b7fc96af6ed3824d",
+    "supabase/functions/_shared/persistence/compatibility.ts": "4046f933650dc097b35415ca2bee22627d3b60b1549009bf90684c9d8b089bf5",
+    "supabase/functions/_shared/persistence/repository.ts": "03e6900786be624124d7f0ca7e87052a92f43c06d129fda20bea661b31f06b05",
+    "supabase/functions/_shared/persistence/saju.ts": "b7d6f052c2cf7807d2940c17a0bdcdf090769a0de1054dd3836e9f3676cfd35e",
+    "supabase/functions/_shared/persona/benchmark.ts": "82f50c015790654db5e21ef0b2cd2ba11f8310b000e022909e8ec2e31ec5fa89",
+    "supabase/functions/_shared/persona/config.ts": "6208ee0d573035137d0f75a973778c126dd2342727bcb068304c46a31fde0791",
+    "supabase/functions/_shared/persona/context.ts": "785535fa1875d4554a5850e377d30fe3ea015f805892e1bdfc36965b11a1f1ce",
+    "supabase/functions/_shared/persona/index.ts": "ac656a0e10f407ed5bd51318456806c7ce97c15ca057fb9701ae3f363f72aec3",
+    "supabase/functions/_shared/persona/memory.ts": "e7678b13e69c2f43328edcd53960da9b57749a8e803622f6703df9574942bdbf",
+    "supabase/functions/_shared/persona/prompt.ts": "1fa7de914cebe3df0f096a2781ec4846a732b00cee16e9b19e57b67f4a2eaa53",
+    "supabase/functions/_shared/persona/tool-facts.ts": "fd9d478876ff0d4eda159f7ec9c509187f897c3da85bd960cad4661dc3d8a5e2",
+    "supabase/functions/_shared/validation/requests.ts": "aa43d11316427aeea509dd64a4fd339c96b18c5575dbd85e6744e0beef61a568",
+    "supabase/functions/account/index.ts": "cd92aa75064eff3a2dda4a9ac7873df559a14d62e7c16aab3e07433ef57b3ffb",
+    "supabase/functions/chat/index.ts": "1c1a9b7e4aec25562f7125dad65c4dcfe97cdd50ff0c9cfe5eb2b4a4ffb90f29",
+    "supabase/functions/compatibility/index.ts": "f950ea8833e6ae6b8f1fe06057b5bbe0cb048e34a78f4c123a796f1e39f4d51c",
+    "supabase/functions/saju/index.ts": "7beeafeccfd28e5e7b011950e327a289f0b2b28db4d212fd5ae3872529c23597",
+    "supabase/functions/tarot/index.ts": "f9c922b8efe04dfd06ef4d7abca43eaeefd18b0abe3d02256e42ddd4bd454f52",
+    "tests/backend/live-local-edge-contract-v11-smoke.mjs": "52527f6e210100c4bda44af319db1672f48f67c03d64a96307440f187ce16b14",
+    "tests/backend/local-openai-contract-double-v11.mjs": "c7a2cf2e4e7e4c260995a3892a4af15d51dc152d5003a281c1a8deb44fadf3fb"
+  },
+  "sourceFrozen": true,
+  "actualModelCalls": null,
+  "externalRequests": 0,
+  "hostedDatabase": false,
+  "semanticQualityEvaluated": false,
+  "providerRoutingConfirmedByMain": true,
+  "incompleteRunModelRouting": "Failure does not independently prove all Edge provider routing; inspect stage and double counts.",
+  "checks": [
+    {
+      "name": "fresh local double matches frozen candidate source and has no prior requests",
+      "passed": true
+    },
+    {
+      "name": "local Auth getUser verifies the synthetic anonymous session",
+      "passed": true
+    },
+    {
+      "name": "local Auth getUser verifies the synthetic anonymous session",
+      "passed": true
+    },
+    {
+      "name": "stranger RLS cannot read the owned conversation",
+      "passed": true
+    },
+    {
+      "name": "CHAT_NONE: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "CHAT_NONE: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "CHAT_NONE: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "valid NONE classification yields successful Chat with null recommendation",
+      "passed": true
+    },
+    {
+      "name": "CHAT_NONE: DB provenance explicitly identifies HTTP double and candidate version",
+      "passed": true
+    },
+    {
+      "name": "CHAT_NONE: persisted metadata strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "normal NONE reload has null recommendation",
+      "passed": true
+    },
+    {
+      "name": "CHAT_RECOMMENDATION: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "CHAT_RECOMMENDATION: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "CHAT_RECOMMENDATION: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "Intent repaired two choices are present while recent situation stays missing",
+      "passed": true
+    },
+    {
+      "name": "CHAT_RECOMMENDATION: DB provenance explicitly identifies HTTP double and candidate version",
+      "passed": true
+    },
+    {
+      "name": "CHAT_RECOMMENDATION: persisted metadata strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "recommendation reload equals the actual Edge response",
+      "passed": true
+    },
+    {
+      "name": "recommendation alone does not execute a draw",
+      "passed": true
+    },
+    {
+      "name": "TAROT_REPAIR: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "TAROT_REPAIR: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "TAROT_REPAIR: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "missing evidence is repaired exactly once and then succeeds",
+      "passed": true
+    },
+    {
+      "name": "TAROT_REPAIR: DB provenance explicitly identifies HTTP double and candidate version",
+      "passed": true
+    },
+    {
+      "name": "TAROT_REPAIR: persisted metadata strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "TAROT_PARTIAL: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "TAROT_PARTIAL: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "TAROT_PARTIAL: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "malformed initial plus one malformed repair leaves an explicit saved PARTIAL",
+      "passed": true
+    },
+    {
+      "name": "partial draw reload exactly matches public saved cards",
+      "passed": true
+    },
+    {
+      "name": "partial draw has no fabricated assistant result",
+      "passed": true
+    },
+    {
+      "name": "stranger cannot read partial draw cards",
+      "passed": true
+    },
+    {
+      "name": "TAROT_RETRY: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "TAROT_RETRY: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "TAROT_RETRY: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "retry reuses stored cards and finishes the same draw",
+      "passed": true
+    },
+    {
+      "name": "TAROT_RETRY: DB provenance explicitly identifies HTTP double and candidate version",
+      "passed": true
+    },
+    {
+      "name": "TAROT_RETRY: persisted metadata strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "retry message reload retains canonical draw linkage",
+      "passed": true
+    },
+    {
+      "name": "RETRY_REPLAY: valid authenticated Edge envelope",
+      "passed": true
+    },
+    {
+      "name": "RETRY_REPLAY: public reply strips internal evidence",
+      "passed": true
+    },
+    {
+      "name": "RETRY_REPLAY: exact bounded provider request sequence",
+      "passed": true
+    },
+    {
+      "name": "same UUID replays identical data with zero provider calls or persisted changes",
+      "passed": true
+    },
+    {
+      "name": "only two real draw groups exist after retry and replay",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "stage": "CHAT_NONE",
+      "endpoint": "chat",
+      "httpStatus": 201,
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "CHAT_RECOMMENDATION",
+      "endpoint": "chat",
+      "httpStatus": 201,
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "TAROT_REPAIR",
+      "endpoint": "tarot",
+      "httpStatus": 201,
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "TAROT_PARTIAL",
+      "endpoint": "tarot",
+      "httpStatus": 200,
+      "status": "PARTIAL",
+      "code": "LLM_INVALID_RESPONSE"
+    },
+    {
+      "stage": "TAROT_RETRY",
+      "endpoint": "tarot",
+      "httpStatus": 200,
+      "status": "SUCCEEDED",
+      "code": null
+    },
+    {
+      "stage": "RETRY_REPLAY",
+      "endpoint": "tarot",
+      "httpStatus": 200,
+      "status": "SUCCEEDED",
+      "code": null
+    }
+  ],
+  "counts": {
+    "authHTTP": 10,
+    "restHTTP": 50,
+    "edgeHTTP": 6,
+    "doubleControlHTTP": 14,
+    "blockedDestinations": 0,
+    "actualModelCalls": 0,
+    "externalRequests": 0
+  },
+  "provider": {
+    "kind": "JUMZIP_SYNTHETIC_HTTP_DOUBLE",
+    "model": "jumzip-http-contract-double-v11",
+    "stage": "RETRY_REPLAY",
+    "withinStage": 0,
+    "providerRequests": 10,
+    "attempts": [
+      {
+        "stage": "CHAT_NONE",
+        "output": "INTENT_NONE",
+        "index": 0,
+        "requestBytes": 8699,
+        "contract": "INTENT_SLOT_EVIDENCE",
+        "promptVersion": "JumZipIntent-v6",
+        "schemaSha256": "e4a5429d927615eab1fc6601a483a4e157ec889be1c9f853f8551aac377096b9",
+        "repair": false
+      },
+      {
+        "stage": "CHAT_NONE",
+        "output": "CHAT_VALID",
+        "index": 1,
+        "requestBytes": 11716,
+        "contract": "DEFAULT",
+        "schemaSha256": "da36e96970ab9f29421d8e4bd00bd4bb38b866fb2d52bbb7185456d6c23e7abe",
+        "repair": false
+      },
+      {
+        "stage": "CHAT_RECOMMENDATION",
+        "output": "INTENT_BAD_CHOICES",
+        "index": 0,
+        "requestBytes": 8988,
+        "contract": "INTENT_SLOT_EVIDENCE",
+        "promptVersion": "JumZipIntent-v6",
+        "schemaSha256": "e4a5429d927615eab1fc6601a483a4e157ec889be1c9f853f8551aac377096b9",
+        "repair": false
+      },
+      {
+        "stage": "CHAT_RECOMMENDATION",
+        "output": "INTENT_TAROT",
+        "index": 1,
+        "requestBytes": 11003,
+        "contract": "INTENT_SLOT_EVIDENCE",
+        "promptVersion": "JumZipIntent-v6",
+        "schemaSha256": "e4a5429d927615eab1fc6601a483a4e157ec889be1c9f853f8551aac377096b9",
+        "repair": true
+      },
+      {
+        "stage": "CHAT_RECOMMENDATION",
+        "output": "CHAT_VALID",
+        "index": 2,
+        "requestBytes": 12484,
+        "contract": "DEFAULT",
+        "schemaSha256": "da36e96970ab9f29421d8e4bd00bd4bb38b866fb2d52bbb7185456d6c23e7abe",
+        "repair": false
+      },
+      {
+        "stage": "TAROT_REPAIR",
+        "output": "TAROT_BAD_SPAN",
+        "index": 0,
+        "requestBytes": 15765,
+        "contract": "TAROT_EVIDENCE_V1",
+        "schemaSha256": "4c65330bd3a60764b4b445377f50d13db0e38ebc97ff1eea0f5de8b8e757aec9",
+        "repair": false,
+        "cards": [
+          {
+            "cardId": 19,
+            "orientation": "UPRIGHT",
+            "positionIndex": 0
+          }
+        ],
+        "initialCanonicalKeywordTableVerified": true,
+        "trustedRepairTableVerified": false,
+        "responseKind": "TAROT_BAD_SPAN",
+        "responseIncludesEvidence": true
+      },
+      {
+        "stage": "TAROT_REPAIR",
+        "output": "TAROT_VALID",
+        "index": 1,
+        "requestBytes": 18844,
+        "contract": "TAROT_EVIDENCE_V1",
+        "schemaSha256": "4c65330bd3a60764b4b445377f50d13db0e38ebc97ff1eea0f5de8b8e757aec9",
+        "repair": true,
+        "cards": [
+          {
+            "cardId": 19,
+            "orientation": "UPRIGHT",
+            "positionIndex": 0
+          }
+        ],
+        "initialCanonicalKeywordTableVerified": true,
+        "trustedRepairTableVerified": true,
+        "responseKind": "TAROT_VALID",
+        "responseIncludesEvidence": true
+      },
+      {
+        "stage": "TAROT_PARTIAL",
+        "output": "TAROT_MALFORMED",
+        "index": 0,
+        "requestBytes": 15909,
+        "contract": "TAROT_EVIDENCE_V1",
+        "schemaSha256": "4c65330bd3a60764b4b445377f50d13db0e38ebc97ff1eea0f5de8b8e757aec9",
+        "repair": false,
+        "cards": [
+          {
+            "cardId": 5,
+            "orientation": "UPRIGHT",
+            "positionIndex": 0
+          }
+        ],
+        "initialCanonicalKeywordTableVerified": true,
+        "trustedRepairTableVerified": false,
+        "responseKind": "TAROT_MALFORMED",
+        "responseIncludesEvidence": false
+      },
+      {
+        "stage": "TAROT_PARTIAL",
+        "output": "TAROT_MALFORMED",
+        "index": 1,
+        "requestBytes": 18447,
+        "contract": "TAROT_EVIDENCE_V1",
+        "schemaSha256": "4c65330bd3a60764b4b445377f50d13db0e38ebc97ff1eea0f5de8b8e757aec9",
+        "repair": true,
+        "cards": [
+          {
+            "cardId": 5,
+            "orientation": "UPRIGHT",
+            "positionIndex": 0
+          }
+        ],
+        "initialCanonicalKeywordTableVerified": true,
+        "trustedRepairTableVerified": true,
+        "responseKind": "TAROT_MALFORMED",
+        "responseIncludesEvidence": false
+      },
+      {
+        "stage": "TAROT_RETRY",
+        "output": "TAROT_VALID",
+        "index": 0,
+        "requestBytes": 15909,
+        "contract": "TAROT_EVIDENCE_V1",
+        "schemaSha256": "4c65330bd3a60764b4b445377f50d13db0e38ebc97ff1eea0f5de8b8e757aec9",
+        "repair": false,
+        "cards": [
+          {
+            "cardId": 5,
+            "orientation": "UPRIGHT",
+            "positionIndex": 0
+          }
+        ],
+        "initialCanonicalKeywordTableVerified": true,
+        "trustedRepairTableVerified": false,
+        "responseKind": "TAROT_VALID",
+        "responseIncludesEvidence": true
+      }
+    ],
+    "failures": [],
+    "sourceHash": "44ffb1b84d6e21016f0ff6303a895b62785e316a173d1c9f82de60600c72bb3f",
+    "sourceFrozen": true
+  },
+  "cleanup": [
+    {
+      "auth404": true,
+      "emptyOwnedTables": 15
+    },
+    {
+      "auth404": true,
+      "emptyOwnedTables": 15
+    }
+  ],
+  "pendingCleanupCount": 0,
+  "failure": {
+    "stage": "SAJU_SEED",
+    "code": "LOCAL_CONTRACT_SMOKE_FAILED"
+  },
+  "limitations": [
+    "HTTP completions are explicit synthetic doubles, not model quality evidence.",
+    "Cloudflare-only provider options are covered by separate zero-network runtime tests.",
+    "Title and memory maintenance are disabled in this dedicated temporary local env; their lifecycle is outside this test.",
+    "Main must restore the original local functions serve env; this harness never changes services."
+  ]
+}

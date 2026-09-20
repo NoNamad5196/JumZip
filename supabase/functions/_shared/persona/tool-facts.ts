@@ -68,6 +68,7 @@ export function buildPersonaToolFacts(value: unknown): unknown {
       const activeMeaning = card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed;
       return { cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex, positionKey: card.positionKey,
         nameKo: meaning.nameKo, orientationLabel, positionLabel, activeMeaning,
+        activeKeywordOptions: activeMeaning.map((keyword, index) => ({ index, keyword })),
         meaningProvenance: { meaningVersion: TAROT_MEANING_VERSION, cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex, positionKey: card.positionKey },
         selectedDirectionBasisKo: `“${positionLabel}” 위치의 ${meaning.nameKo} ${orientationLabel}에 주어진 상징 키워드는 ${activeMeaning.join(', ')}입니다. 이는 실제 사람의 심정이나 행동을 관찰했다는 뜻이 아닙니다.`,
         symbolicFrame: { evidenceKind: 'SYMBOLIC_NOT_OBSERVED', subjectRole, meaningSource: 'activeMeaning', certainty: 'POSSIBILITY' },

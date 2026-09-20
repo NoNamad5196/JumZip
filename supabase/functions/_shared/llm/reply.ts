@@ -4,7 +4,7 @@ import { LLMError, type LLMProvider } from './provider.ts';
 import { segmentReply, validateChatOutput } from './validator.ts';
 import { selectChatResponseContract } from './chat-contract.ts';
 
-export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v10';
+export const PERSONA_PROMPT_VERSION = 'JumZipPersona-v11';
 export interface PersonaReply {
   content: string; segments: string[]; repaired: boolean;
   metadata: { model: string; promptVersion: string; provider: 'openai-compatible'; generatedAt: string; usage?: { promptTokens: number; completionTokens: number } };
@@ -22,7 +22,9 @@ export async function generatePersonaReply(provider: LLMProvider, input: Persona
   let repaired = false;
   if (!initial.ok) {
     repaired = true;
-    output = await provider.repairChat(messages, first.content, initial.issues, contract);
+    const context = contract === 'TAROT_EVIDENCE_V1' && expectedCards
+      ? { expectedCards: expectedCards.map(({ cardId, orientation, positionIndex }) => ({ cardId, orientation, positionIndex })) } : undefined;
+    output = await provider.repairChat(messages, first.content, initial.issues, contract, context);
     validated = validateChatOutput(output.content, validationOptions);
   }
   if (!validated.ok) throw new LLMError('LLM_INVALID_RESPONSE');

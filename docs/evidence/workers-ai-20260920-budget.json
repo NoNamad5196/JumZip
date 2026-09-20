@@ -167,5 +167,51 @@
     "last24HourDisplay": "15.26k",
     "approximateRemaining": 4320,
     "limits": "Freshly reloaded rounded account-wide UI. Its5680 estimate differs from the5600.292366 token-derived ledger; it is not an exact per-run invoice. Use the larger account-wide usage for subsequent budget planning."
-  }
+  },
+  "beforeV11Full84AccountWideUIObservation": {
+    "observedAt": "2026-09-20T02:16:07.303Z",
+    "dailyDisplay": "5.68k/10k",
+    "last24HourDisplay": "15.26k",
+    "approximateRemaining": 4320,
+    "limits": "Freshly reloaded visible account UI immediately before execution; rounded usage is not a reservation."
+  },
+  "v11Full84ExecutionAuthorization": {
+    "mainGOAt": "2026-09-20T02:16:07.305Z",
+    "freshDailyUI": "5.68k/10k",
+    "ceilingNeurons": 3400,
+    "maximumHTTP": 168,
+    "parentUserAuthorization": "Free Cloudflare Workers AI testing and implementation",
+    "scope": "Original84 synthetic inputs and frozen v11/v6 source; exact Cloudflare account; no hosted DB, production settings or paid upgrade.",
+    "plannedSubsequentIntentCeiling": 700,
+    "minimumDisplayedReserveAfterBothCaps": 220,
+    "subsequentIntentRequiresFreshUsageCheck": true
+  },
+  "v11Full84Result": {
+    "completed": false,
+    "stopReason": "PROVIDER_QUOTA_OR_RATE_LIMIT",
+    "actualHTTPAttempts": 1,
+    "httpStatus": 429,
+    "modelResponses": 0,
+    "completedCases": 0,
+    "pendingCases": 84,
+    "sourceFrozen": true,
+    "unknownUsageReservation": 132.628599,
+    "actualBilledNeurons": null,
+    "semanticQuality": "NOT_EVALUATED",
+    "productionPromoted": false,
+    "limits": "Original full84 artifacts preserved. Error body omitted by the frozen runner; quota versus capacity is unknown. No subsequent Intent request has been made."
+  },
+  "afterV11FailureDiagnostic": {
+    "evidence": "docs/evidence/workers-ai-v11-429-diagnostic.json",
+    "httpAttempts": 1,
+    "httpStatus": 429,
+    "errorCodes": [],
+    "category": "UNCLASSIFIED_HTTP_ERROR",
+    "retryAfterSeconds": null,
+    "unknownUsageReservation": 1.581834,
+    "actualBilledNeurons": null,
+    "additionalModelCallsStopped": true,
+    "limits": "One-token synthetic diagnostic; no model text or raw error body retained. No known numeric daily-quota/capacity code was exposed by the response classifier, so the cause remains unknown."
+  },
+  "unsettledReservationsAfterV11": 134.210433
 }

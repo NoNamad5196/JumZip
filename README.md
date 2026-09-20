@@ -14,7 +14,7 @@ Local backend requires Docker Desktop: `node node_modules/supabase/dist/supabase
 
 The [public preview](https://jumzip.pages.dev) is deployed. Tarot, Saju, compatibility, history, memory and exports are implemented, but full release acceptance is still open: model semantic quality, public signup and Google linking remain required. See the [acceptance matrix](docs/acceptance-matrix.md) and [execution status](docs/EXECUTION.md) for evidence and limitations.
 
-The working tree includes unaccepted Persona-v10/Intent-v5 candidates; production uses Qwen/Persona-v4/Intent-v1. Do not deploy the current functions wholesale. Follow the [deployment runbook](docs/deployment-runbook.md) and its verified release manifest to preserve the accepted server version. See also [asset provenance](docs/assets-audit.md) and the [Saju rule gate](docs/saju-rule-freeze.md). Missing backend/model configuration produces an explicit unavailable state; it never simulates a successful fortune reading.
+The working tree includes unaccepted Persona-v11/Intent-v6 candidates; production uses Qwen/Persona-v4/Intent-v1. Do not deploy the current functions wholesale. Follow the [deployment runbook](docs/deployment-runbook.md) and its verified release manifest to preserve the accepted server version. See also [asset provenance](docs/assets-audit.md) and the [Saju rule gate](docs/saju-rule-freeze.md). Missing backend/model configuration produces an explicit unavailable state; it never simulates a successful fortune reading.
 
 ## Data integrity
 

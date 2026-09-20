@@ -22,10 +22,10 @@ function setup(values: unknown[]) {
 }
 const get = (id: string) => INTENT_V4_CASES.find(candidate => candidate.id === id)!;
 
-describe('Intent v5 current-payload and judgment-domain contracts, not live semantic quality', () => {
+describe('Current Intent runtime retains frozen v5 current-payload and judgment-domain contracts', () => {
   it('preserves the original26 inputs and expectations exactly against the executed v4 selection', () => {
     const frozen = JSON.parse(readFileSync(new URL('./benchmark-runs/intent-v4/initial26-final800-reviewed/selection.json', import.meta.url), 'utf8'));
-    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v5');
+    expect(INTENT_PROMPT_VERSION).toBe('JumZipIntent-v6');
     expect(INTENT_V5_CASES).toHaveLength(28);
     expect(INTENT_V5_CASES.slice(0, 26)).toEqual(INTENT_V4_CASES);
     for (const [index, item] of INTENT_V5_CASES.slice(0, 26).entries()) {

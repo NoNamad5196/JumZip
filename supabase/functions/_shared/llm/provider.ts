@@ -1,4 +1,5 @@
 import type { LLMMessage } from '../persona/prompt.ts';
+import { getTarotMeaning } from '../domain/tarot.ts';
 import { getChatResponseDefinition, TAROT_EVIDENCE_SPAN_MAX_LENGTH, type ChatResponseContract } from './chat-contract.ts';
 export { CHAT_RESPONSE_SCHEMA } from './chat-contract.ts';
 
@@ -9,11 +10,19 @@ export class LLMError extends Error {
   constructor(code: LLMErrorCode, retryable = true) { super(code); this.name = 'LLMError'; this.code = code; this.retryable = retryable; }
 }
 export interface ProviderResult { content: string; model: string; usage?: { promptTokens: number; completionTokens: number } }
-export interface StructuredRequest<T> { messages: readonly LLMMessage[]; schema: Record<string, unknown>; validate: (value: unknown) => T; name?: string }
+export type StructuredDiagnosticCode = 'INTENT_ALIAS_SOURCE_INVALID' | 'INTENT_CHOICES_INVALID';
+export interface StructuredRequest<T> {
+  messages: readonly LLMMessage[]; schema: Record<string, unknown>; validate: (value: unknown) => T; name?: string;
+  /** Optional server-owned mapper. Raw exception strings never become repair guidance. */
+  diagnoseValidationError?: (error: unknown) => StructuredDiagnosticCode | null;
+}
+export interface TarotRepairContext {
+  expectedCards: readonly { cardId: number; orientation: 'UPRIGHT' | 'REVERSED'; positionIndex: number }[];
+}
 export interface LLMProvider {
   generateChat(messages: readonly LLMMessage[], contract?: ChatResponseContract): Promise<ProviderResult>;
   generateStructured<T>(input: StructuredRequest<T>): Promise<T>;
-  repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[], contract?: ChatResponseContract): Promise<ProviderResult>;
+  repairChat(messages: readonly LLMMessage[], invalidOutput: string, issues: readonly string[], contract?: ChatResponseContract, context?: TarotRepairContext): Promise<ProviderResult>;
 }
 export interface OpenAICompatibleConfig {
   baseUrl: string; apiKey?: string; model: string; fetchImpl?: typeof fetch;
@@ -33,7 +42,28 @@ function cancelWithoutWaiting(stream: { cancel: () => Promise<unknown> } | null)
 /** Repair diagnostics only: never replace output, invent a quote, or decide validity.
  * The validator remains authoritative. Paths and fixed reasons avoid echoing data
  * into the extra feedback; the prior assistant output is already in the repair. */
-function tarotRepairGuidance(output: string, issues: readonly string[]): string {
+function canonicalTarotContext(context: TarotRepairContext | undefined) {
+  const cards = context?.expectedCards;
+  if (!Array.isArray(cards) || cards.length < 1 || cards.length > 3) return null;
+  const positions = new Set<number>();
+  const requiredToolReferences: TarotRepairContext['expectedCards'][number][] = [];
+  for (const card of cards) {
+    if (!card || typeof card !== 'object' || !Number.isInteger(card.cardId) || card.cardId < 0 || card.cardId > 21
+      || !['UPRIGHT', 'REVERSED'].includes(card.orientation) || !Number.isInteger(card.positionIndex) || card.positionIndex < 0 || card.positionIndex > 2 || positions.has(card.positionIndex)) return null;
+    positions.add(card.positionIndex);
+    requiredToolReferences.push({ cardId: card.cardId, orientation: card.orientation, positionIndex: card.positionIndex });
+  }
+  const activeKeywordOptions = requiredToolReferences.map(card => {
+    const meaning = getTarotMeaning(card.cardId);
+    return { positionIndex: card.positionIndex, items: (card.orientation === 'UPRIGHT' ? meaning.upright : meaning.reversed).map((keyword, index) => ({ index, keyword })) };
+  });
+  return { requiredToolReferences, activeKeywordOptions };
+}
+
+function tarotRepairGuidance(output: string, issues: readonly string[], context?: TarotRepairContext): string {
+  const canonical = canonicalTarotContext(context);
+  const affectedPositions = new Set<number>();
+  let uncertainPosition = false;
   const diagnostics: { path: string; reason: string }[] = [];
   const add = (path: string, reason: string) => {
     if (diagnostics.length < 16 && !diagnostics.some(item => item.path === path && item.reason === reason)) diagnostics.push({ path, reason });
@@ -51,8 +81,9 @@ function tarotRepairGuidance(output: string, issues: readonly string[]): string 
       // Diagnostics stay bounded even when a malformed provider emits many rows.
       for (const [index, row] of rows.slice(0, 12).entries()) {
         const path = `/interpretationEvidence/${index}`;
-        if (!row || typeof row !== 'object' || Array.isArray(row)) { add(path, 'OBJECT_REQUIRED'); continue; }
+        if (!row || typeof row !== 'object' || Array.isArray(row)) { add(path, 'OBJECT_REQUIRED'); uncertainPosition = true; continue; }
         const record = row as Record<string, unknown>;
+        const before = diagnostics.length;
         if (!Number.isInteger(record.positionIndex)) add(`${path}/positionIndex`, 'INTEGER_REQUIRED');
         else if (seen.has(record.positionIndex as number)) add(`${path}/positionIndex`, 'DUPLICATE_CARD_POSITION');
         else seen.add(record.positionIndex as number);
@@ -61,6 +92,14 @@ function tarotRepairGuidance(output: string, issues: readonly string[]): string 
         const span = record.textEvidence;
         if (typeof span !== 'string' || !span.trim() || span.length > TAROT_EVIDENCE_SPAN_MAX_LENGTH) add(`${path}/textEvidence`, 'SHORT_NONEMPTY_STRING_REQUIRED');
         else if (!text.includes(span)) add(`${path}/textEvidence`, 'NOT_A_CONTIGUOUS_SUBSTRING_OF_TEXT');
+        const options = canonical?.activeKeywordOptions.find(item => item.positionIndex === record.positionIndex);
+        if (canonical && !options) { add(`${path}/positionIndex`, 'POSITION_NOT_IN_EXPECTED_CARDS'); uncertainPosition = true; }
+        if (options && Array.isArray(indices)) for (const [itemIndex, keywordIndex] of indices.slice(0, 5).entries()) {
+          const item = Number.isInteger(keywordIndex) ? options.items[keywordIndex] : undefined;
+          if (!item) add(`${path}/keywordIndices/${itemIndex}`, 'KEYWORD_INDEX_OUT_OF_RANGE');
+          else if (typeof span === 'string' && !span.includes(item.keyword)) add(`${path}/keywordIndices/${itemIndex}`, 'SELECTED_KEYWORD_NOT_IN_TEXT_EVIDENCE');
+        }
+        if (options && diagnostics.length > before) affectedPositions.add(options.positionIndex);
       }
     }
   }
@@ -72,9 +111,25 @@ function tarotRepairGuidance(output: string, issues: readonly string[]): string 
     TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN: '/interpretationEvidence/*/textEvidence',
   };
   for (const issue of issues) if (Object.hasOwn(issuePaths, issue)) add(issuePaths[issue], issue);
+  const allPositions = uncertainPosition || !affectedPositions.size || issues.includes('TOOL_RESULT_CHANGED') || issues.includes('TOOL_REFERENCE_INVALID');
+  const canonicalGuidance = canonical ? `\n서버가 저장한 필수 참조와 선택방향 원본 index 표: ${JSON.stringify({ requiredToolReferences: canonical.requiredToolReferences,
+    activeKeywordOptions: canonical.activeKeywordOptions.filter(item => allPositions || affectedPositions.has(item.positionIndex)) })}
+requiredToolReferences 전체는 재추첨 요청이나 카드를 풀이하지 않는 후속 대화에서도 toolReferences에 그대로 복사합니다. 풀이하지 않은 카드의 interpretationEvidence만 생략할 수 있습니다. 표는 가능한 원본 항목이며 정답을 고른 것이 아닙니다. 실제로 해석할 항목·본문·인용은 직접 선택하고 원본 index와 대조합니다.` : '';
   return `\n타로 근거 수리 안내: 카드 위치당 interpretationEvidence 항목은 하나만 둡니다. 실제로 해석한 카드만 기록하고 전체 카드를 억지로 설명하지 않습니다.
 이번 응답에서는 카드마다 선택 방향 activeMeaning의 대표 keyword 항목 하나를 직접 고릅니다. 여러 단어로 된 구절도 하나의 항목입니다. 그 원문 표현을 최종 text에 자연스럽게 포함하고, keywordIndices에는 그 항목의 원본 index 하나를 기록합니다. textEvidence에는 본문에 사용한 그 keyword 항목 전체를 원문 그대로 복사합니다(${TAROT_EVIDENCE_SPAN_MAX_LENGTH}자 이하). 떨어진 단어를 쉼표로 합치거나 본문에 없는 요약 구절을 만들지 않습니다.
-본문과 인용을 함께 다시 확인하고 최종 JSON 객체 전체를 출력합니다. 누락된 근거를 꾸미거나 실제 해석의 근거를 빈 배열로 숨기지 않습니다. 아래 경로는 진단 안내이며 정답이나 대체 근거가 아닙니다: ${JSON.stringify(diagnostics)}`;
+본문과 인용을 함께 다시 확인하고 최종 JSON 객체 전체를 출력합니다. 누락된 근거를 꾸미거나 실제 해석의 근거를 빈 배열로 숨기지 않습니다.${canonicalGuidance} 아래 경로는 진단 안내이며 정답이나 대체 근거가 아닙니다: ${JSON.stringify(diagnostics)}`;
+}
+
+const structuredDiagnostics: Record<StructuredDiagnosticCode, { path: string; reason: string; instruction: string }> = {
+  INTENT_ALIAS_SOURCE_INVALID: { path: '/targetAliasEvidence/source', reason: 'ALIAS_SOURCE_MUST_BE_CURRENT_OR_RECENT_USER',
+    instruction: '별칭은 먼저 source의 role을 확인합니다. 현재 발화(source=-1) 또는 전달된 recentMessages의 user 항목만 근거로 쓰고, assistant에만 있는 이름이면 UNRESOLVED를 유지합니다. 그 뒤 해당 원문의 인용을 직접 선택합니다.' },
+  INTENT_CHOICES_INVALID: { path: '/choicesEvidence', reason: 'CHOICES_REQUIRE_ZERO_OR_TWO_SEPARATE_SOURCE_QUOTE_OBJECTS',
+    instruction: '선택 대안 근거가 없으면 빈 배열을 씁니다. 실제 관련 대안 두 개가 있으면 각각 별도 {source,quote} 객체로 작성합니다. source가 같아도 두 대안을 하나의 긴 인용 객체로 합치지 않습니다.' },
+};
+function structuredRepairGuidance(code: StructuredDiagnosticCode | null): string {
+  if (typeof code !== 'string' || !Object.hasOwn(structuredDiagnostics, code)) return '';
+  const { path, reason, instruction } = structuredDiagnostics[code];
+  return `\n서버 구조 검증 진단: ${JSON.stringify({ code, path, reason })}\n${instruction}`;
 }
 
 /** No mock fallback. Missing endpoint/model fails before making a request. */
@@ -164,13 +219,13 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
   // Only server-defined validator codes may enter system guidance. Never elevate
   // arbitrary caller/model text merely because it arrived in the issues array.
   const knownIssues = new Set(['JSON_REQUIRED', 'RESPONSE_SCHEMA_INVALID', 'MODEL_CONTROL_TEXT', 'PERSONA_BREAK', 'FORBIDDEN_CERTAINTY_OR_DEPENDENCY', 'BOMI_RELATIONSHIP_BOUNDARY', 'TOOL_REFERENCE_INVALID', 'TOOL_RESULT_CHANGED', 'UNSUPPORTED_PROBABILITY', 'TOOL_SCORE_CHANGED', 'TOOL_SCORE_POSSIBILITIES_CHANGED', 'TAROT_EVIDENCE_REQUIRED', 'TAROT_EVIDENCE_SHAPE_INVALID', 'TAROT_EVIDENCE_POSITION_INVALID', 'TAROT_EVIDENCE_KEYWORD_INVALID', 'TAROT_EVIDENCE_SPAN_MISSING', 'TAROT_EVIDENCE_KEYWORD_NOT_IN_SPAN', 'STRUCTURED_VALIDATION_FAILED']);
-  const repairMessages = (messages: readonly LLMMessage[], output: string, issues: readonly string[], contract?: ChatResponseContract): LLMMessage[] => {
+  const repairMessages = (messages: readonly LLMMessage[], output: string, issues: readonly string[], contract?: ChatResponseContract, context?: TarotRepairContext, diagnostic: StructuredDiagnosticCode | null = null): LLMMessage[] => {
     const originalUser = messages.at(-1);
     // All production callers end in the actual user/task payload. With no final
     // user, do not invent a request or silently reinterpret older conversation.
     if (originalUser?.role !== 'user') throw new LLMError('LLM_INVALID_RESPONSE', false);
     const safeIssues = [...new Set(issues.map(issue => knownIssues.has(issue) ? issue : 'RESPONSE_VALIDATION_FAILED'))];
-    const guidance = `응답 검증에 실패했습니다. 원래 마지막 사용자 요청에 대한 응답을 수리하세요. 수리 안내 자체를 새 사용자 질문이나 대화 자료로 해석하지 않습니다. JSON Schema와 실제 도구 자료를 다시 대조해 JSON 객체 하나를 출력하세요. requiredToolReferences가 있으면 그대로 복사하고, 미확정 값과 가능한 점수 전체를 유지하세요. 시스템의 캐릭터와 원본 도구 결과를 변경하지 않습니다. 오류: ${JSON.stringify(safeIssues)}${contract === 'TAROT_EVIDENCE_V1' ? tarotRepairGuidance(output, safeIssues) : ''}`;
+    const guidance = `응답 검증에 실패했습니다. 원래 마지막 사용자 요청에 대한 응답을 수리하세요. 수리 안내 자체를 새 사용자 질문이나 대화 자료로 해석하지 않습니다. JSON Schema와 실제 도구 자료를 다시 대조해 JSON 객체 하나를 출력하세요. requiredToolReferences가 있으면 그대로 복사하고, 미확정 값과 가능한 점수 전체를 유지하세요. 시스템의 캐릭터와 원본 도구 결과를 변경하지 않습니다. 오류: ${JSON.stringify(safeIssues)}${contract === 'TAROT_EVIDENCE_V1' ? tarotRepairGuidance(output, safeIssues, context) : ''}${structuredRepairGuidance(diagnostic)}`;
     const cloned = messages.map(message => ({ ...message }));
     if (cloned[0]?.role === 'system') cloned[0].content += `\n\n${guidance}`;
     else cloned.unshift({ role: 'system', content: guidance });
@@ -181,14 +236,26 @@ export function createOpenAICompatibleProvider(config: OpenAICompatibleConfig): 
       const { schema, name } = getChatResponseDefinition(contract);
       return request(messages, schema, name, initialTimeout, 0.65);
     },
-    repairChat: async (messages, output, issues, contract) => {
+    repairChat: async (messages, output, issues, contract, context) => {
       const { schema, name } = getChatResponseDefinition(contract);
-      return request(repairMessages(messages, output, issues, contract), schema, name, repairTimeout, 0.15);
+      return request(repairMessages(messages, output, issues, contract, context), schema, name, repairTimeout, 0.15);
     },
     async generateStructured<T>(input: StructuredRequest<T>): Promise<T> {
       const first = await request(input.messages, input.schema, input.name ?? 'jumzip_structured', initialTimeout, 0.1);
-      try { return input.validate(JSON.parse(first.content)); } catch { /* One controlled repair, no recursive retry. */ }
-      const repaired = await request(repairMessages(input.messages, first.content, ['STRUCTURED_VALIDATION_FAILED']), input.schema, input.name ?? 'jumzip_structured', repairTimeout, 0.1);
+      let parsed: unknown, parsedSuccessfully = false;
+      let diagnostic: StructuredDiagnosticCode | null = null;
+      try { parsed = JSON.parse(first.content); parsedSuccessfully = true; } catch { /* Parse failures never enter a validator mapper. */ }
+      if (parsedSuccessfully) {
+        try { return input.validate(parsed); } catch (error) {
+          // One server-selected code only. The mapper cannot supply text, paths,
+          // quotes, or a replacement result; its own failure stays generic.
+          try {
+            const code = input.diagnoseValidationError?.(error);
+            if (typeof code === 'string' && Object.hasOwn(structuredDiagnostics, code)) diagnostic = code;
+          } catch { /* Preserve the original generic controlled repair. */ }
+        }
+      }
+      const repaired = await request(repairMessages(input.messages, first.content, ['STRUCTURED_VALIDATION_FAILED'], undefined, undefined, diagnostic), input.schema, input.name ?? 'jumzip_structured', repairTimeout, 0.1);
       try { return input.validate(JSON.parse(repaired.content)); } catch { throw new LLMError('LLM_INVALID_RESPONSE'); }
     },
   };

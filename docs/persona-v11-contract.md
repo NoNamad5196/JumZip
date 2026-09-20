@@ -1,6 +1,6 @@
 # Persona-v11 / Intent-v6 제안 — 신뢰된 수리 힌트와 고정 구조 진단
 
-상태: **PROPOSED_NOT_IMPLEMENTED**. Main이 v10 체크포인트를 고정한 뒤 별도 source GO를 주기 전에는 production을 수정하지 않는다. 실제 모델 호출0. 이 문서는 v10 full84의 확인된 구조 실패에 대한 좁은 제안이며, 의미 품질 개선이나 원본84 통과를 주장하지 않는다.
+상태: **LOCAL_IMPLEMENTED_NOT_LIVE**. Main이 v10 체크포인트 `cea2f11`을 고정한 뒤 source GO를 주어 아래 계약을 구현했다. v11 실제 모델 호출0, 배포0. 이 문서는 v10 full84의 확인된 구조 실패에 대한 좁은 변경이며, 의미 품질 개선이나 원본84 통과를 주장하지 않는다.
 
 ## 확인된 문제
 
@@ -60,7 +60,7 @@ v10의 수리 message 순서는 유지한다. 서버 고정 안내+검증한 can
 
 ## Intent-v6와 같은 provider batch에 통합하는 최소안
 
-이 절은 Main의 추가 설계 요청에 따른 **제안**이다. 코드 GO가 아니다. Backend의 v5 실패 raw4개 offline 재현에서는 assistant 발화의 별칭을 선택한 `INTENT_ALIAS_SOURCE_INVALID`와 두 대안을 하나의 객체에 합친 `INTENT_CHOICES_INVALID`가 각각 초기·수리에서 반복됐다. 현재 `generateStructured`는 JSON 파싱과 `validate` 예외를 같은 catch에서 처리하여 모두 `STRUCTURED_VALIDATION_FAILED`만 넘긴다. source role 및 선택지 길이0또는2는 현재 JSON Schema만으로는 특정하지 못하는 runtime 제약이다.
+이 절은 Main의 추가 설계 요청과 source GO에 따라 같은 provider batch에 구현했다. Backend의 v5 실패 raw4개 offline 재현에서는 assistant 발화의 별칭을 선택한 `INTENT_ALIAS_SOURCE_INVALID`와 두 대안을 하나의 객체에 합친 `INTENT_CHOICES_INVALID`가 각각 초기·수리에서 반복됐다. v10 `generateStructured`는 JSON 파싱과 `validate` 예외를 같은 catch에서 처리하여 모두 `STRUCTURED_VALIDATION_FAILED`만 넘겼다. source role 및 선택지 길이0또는2는 현재 JSON Schema만으로는 특정하지 못하는 runtime 제약이다.
 
 ### 선택적 내부 mapper
 
@@ -119,7 +119,7 @@ alias의 현재/관련 user 범위, 선택지의 실제 대안 의미·중복/�
 
 - Domain은 `provider.ts`의 유일한 편집 owner다. Tarot context·structured hook·registry·공통 수리 helper·provider tests를 한 batch로 검증한다.
 - Backend는 `intent.ts`와 Intent 관련 tests/새 준비 runner owner다. Domain이 확정한 optional type을 import하고 mapper/두 절차만 연결한다. provider를 병행 편집하지 않는다.
-- Main이 source GO를 주면 provider optional type을 먼저 안정화하고 Backend에 전달한다. 양쪽 runtime 동결 뒤 최종 source hash·사전 비용을 계산한다. 이는 아직 실행한 절차가 아닌 제안된 작업 순서다.
+- Main의 source GO 뒤 provider optional type을 먼저 안정화하여 Backend에 전달했다. 양쪽 runtime 동결 뒤 최종 source hash·사전 비용을 계산했다. 모델 실행은 별도 GO가 필요하다.
 
 ### 추가 회귀 목록
 
@@ -156,3 +156,11 @@ v11은 특정 카드나 실패 문구를 금칙어로 외우게 하지 않고, �
 먼저 위 unit/TS/lint 및 실제 provider body의0-network preflight를 완료한다. 원본84 입력·순서·reviewChecks를 다시 고정하고 v11 source와 전달 계약을 별도 디렉터리에 기록한다. v10 full84는2945.90neurons였지만 추가 index 표와 수리 횟수 때문에 다음 비용이 같다고 가정하지 않는다. 각 요청 전에 byte-as-token+900 예약을 계속 적용한다.
 
 현재 Main이 알려준 계정 사용량/잔여는 실행 허가가 아니다. 다음에는 근거 없이 micro→full을 반복하지 않고 Main의 최신 사용량 확인·예산·실행 GO가 정한 범위만 실행한다. 실제 호출은 아직0이며, 이 문서에는 다음84의 완료나 품질 통과를 예약하지 않는다.
+
+## 구현·로컬 검증 기록
+
+`provider.ts`의 optional `TarotRepairContext`와 `StructuredDiagnosticCode`/`diagnoseValidationError`가 위 계약대로 구현됐다. `reply.ts`는 최소 tuple만 전달하고 버전을 `JumZipPersona-v11`로 기록한다. `tool-facts.ts`의 각 Tarot card에 `activeKeywordOptions:[{index,keyword}]`를 추가했으며, 수리 system의 canonical 자료는 `{requiredToolReferences,activeKeywordOptions:[{positionIndex,items:[{index,keyword}]}]}`다. schema·validator·원본 dataset·corpus는 수정하지 않았다.
+
+새 `tests/persona/v11-repair.test.ts` 27개와 기존 provider/context/cap/timeout 회귀를 포함해 Persona 전체319개 PASS, opt-in2개 SKIP이었다. all22×2×3 표의 모든 항목 일치, 한 위치로 진단 축소, 원래 참조 순서, 잘못된 context 생략, 최소 tuple/canary 경계, generic fallback 및 mapper 호출 횟수, 정확히1회 모델 수리, 의미 오류 구조 통과 반례를 확인했다. 전체 TypeScript 및 scoped ESLint도 통과했다. Vite build는 기존 `dist`를 덮지 않고 `test-results/v11-build`에서 통과했다. 이 로컬 검사는 실제 모델 준수율·의미 품질을 측정한 것이 아니다.
+
+새 원본84 준비는 [persona-v11-full84-preparation.md](persona-v11-full84-preparation.md)에 기록했다. 원본84를 바꾸지 않은 injected transport 사전 점검만 실행했으며, v11 live model 호출과 배포는 아직 없다.

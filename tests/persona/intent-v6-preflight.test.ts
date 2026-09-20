@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from 'vitest';
 import { extractToolRecommendation, INTENT_PROMPT_VERSION } from '../../supabase/functions/_shared/llm/intent.ts';
 import { createOpenAICompatibleProvider, type LLMProvider, type StructuredRequest } from '../../supabase/functions/_shared/llm/provider.ts';
-import { INTENT_V5_CASES } from './intent-v5-corpus.ts';
+import { INTENT_V6_CASES } from './intent-v6-corpus.ts';
 
 // Credential-free request serialization. Supplied classifications do not prove live model quality.
-describe('Current Intent runtime retains historical v5 independent28 zero-network regression', () => {
-  it('serializes the unchanged26 plus2 new safety contrasts through the actual provider request builder', async () => {
-    const candidates = INTENT_V5_CASES;
+describe('Intent v6 unchanged28 zero-network evaluation preparation', () => {
+  it('serializes all unchanged28 historical input and expected pairs through the actual provider request builder', async () => {
+    const candidates = INTENT_V6_CASES;
     const requestBytes: number[] = [], responseBytes: number[] = [];
     const actualNetwork = vi.spyOn(globalThis, 'fetch').mockImplementation(() => { throw Error('NO_NETWORK_PREFLIGHT'); });
     try {
@@ -39,7 +39,7 @@ describe('Current Intent runtime retains historical v5 independent28 zero-networ
         if (expected.recommendation !== 'NONE' && candidate.expectedSlots.missingSlots) expect(result?.recommendedTools[0]?.missingSlots).toEqual(candidate.expectedSlots.missingSlots);
       }
       expect(actualNetwork).not.toHaveBeenCalled(); expect(candidates).toHaveLength(28);
-      console.info(JSON.stringify({ scope: 'HISTORICAL_INTENT_V5_CURRENT_RUNTIME_MOCK_ONLY', candidates: candidates.length, liveModelCalls: 0,
+      console.info(JSON.stringify({ scope: 'INTENT_V6_MOCK_PREFLIGHT_ONLY', candidates: candidates.length, liveModelCalls: 0,
         requestUtf8Bytes: { min: Math.min(...requestBytes), max: Math.max(...requestBytes) },
         mockOutputUtf8Bytes: { min: Math.min(...responseBytes), max: Math.max(...responseBytes) },
         tokenLimit: 350, timeoutsMs: [8_000, 3_000], note: 'Bytes are not a tokenizer bound or measured inference cost.' }));
